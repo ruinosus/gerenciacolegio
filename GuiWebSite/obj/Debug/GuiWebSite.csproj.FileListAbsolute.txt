@@ -3,3 +3,8 @@ C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWebSite\bin\GuiWebSite.pdb
 C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWebSite\obj\Debug\GuiWebSite.dll
 C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWebSite\obj\Debug\GuiWebSite.pdb
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWebSite\bin\GuiWebSite.dll
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWebSite\bin\GuiWebSite.pdb
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWebSite\obj\Debug\GuiWebSite.dll
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWebSite\obj\Debug\GuiWebSite.pdb

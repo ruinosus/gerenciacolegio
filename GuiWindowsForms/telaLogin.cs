@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace GuiWindowsForms
 {
-    public partial class Form1 : Form
+    public partial class telaLogin : Form
     {
-        public Form1()
+        public telaLogin()
         {
             InitializeComponent();
         }
