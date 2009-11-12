@@ -5,3 +5,11 @@ C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWindowsForms\obj\Debug\GuiWindowsFo
 C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
 C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe
 C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.pdb
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.pdb
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.Properties.Resources.resources
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.pdb
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaLogin.resources
