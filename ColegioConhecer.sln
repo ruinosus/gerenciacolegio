@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiWindowsForms", "GuiWindowsForms\GuiWindowsForms.csproj", "{D79963B9-116E-4E56-ABA5-26F9392FD1C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocios", "Negocios\Negocios.csproj", "{E035BBFD-00D4-461F-9AF9-D57B45582B93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiWebSite", "GuiWebSite\GuiWebSite.csproj", "{B47CFFD2-9323-4A98-BAB6-6E7928840B1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D79963B9-116E-4E56-ABA5-26F9392FD1C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D79963B9-116E-4E56-ABA5-26F9392FD1C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D79963B9-116E-4E56-ABA5-26F9392FD1C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D79963B9-116E-4E56-ABA5-26F9392FD1C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E035BBFD-00D4-461F-9AF9-D57B45582B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E035BBFD-00D4-461F-9AF9-D57B45582B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E035BBFD-00D4-461F-9AF9-D57B45582B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E035BBFD-00D4-461F-9AF9-D57B45582B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B47CFFD2-9323-4A98-BAB6-6E7928840B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B47CFFD2-9323-4A98-BAB6-6E7928840B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B47CFFD2-9323-4A98-BAB6-6E7928840B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B47CFFD2-9323-4A98-BAB6-6E7928840B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

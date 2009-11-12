@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E035BBFD-00D4-461F-9AF9-D57B45582B93}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Negocios</RootNamespace>
+    <AssemblyName>Negocios</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.0.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="ModuloAuxiliar\BaseFiltro\FiltroConsulta.cs" />
+    <Compile Include="ModuloAuxiliar\BaseRepositorio\BaseRepositorioInicial.cs" />
+    <Compile Include="ModuloAuxiliar\Enums\Enumeradores.cs" />
+    <Compile Include="ModuloAuxiliar\Excecoes\ConstantesAuxiliar.cs" />
+    <Compile Include="ModuloAuxiliar\Excecoes\GenericException.cs" />
+    <Compile Include="ModuloAuxiliar\Excecoes\GenericExceptionMessages.cs" />
+    <Compile Include="ModuloAuxiliar\Excecoes\NenhumCriterioInformadoExcecao.cs" />
+    <Compile Include="ModuloAuxiliar\Fabricas\ModuloAuxiliarFabrica.cs" />
+    <Compile Include="ModuloAuxiliar\Filtros\CidadeFiltroConsulta.cs" />
+    <Compile Include="ModuloAuxiliar\Filtros\EstadoFiltroConsulta.cs" />
+    <Compile Include="ModuloAuxiliar\Filtros\RegiaoFiltroConsulta.cs" />
+    <Compile Include="ModuloAuxiliar\Processos\CidadeEstadoRegiaoProcesso.cs" />
+    <Compile Include="ModuloAuxiliar\Processos\Interfaces\ICidadeEstadoRegiaoProcesso.cs" />
+    <Compile Include="ModuloAuxiliar\Repositorios\CidadeEstadoRegiaoRepositorio.cs" />
+    <Compile Include="ModuloAuxiliar\Repositorios\Interfaces\ICidadeEstadoRegiaoRepositorio.cs" />
+    <Compile Include="ModuloAuxiliar\Singleton\Singleton.cs" />
+    <Compile Include="ModuloAuxiliar\Util\ClassManipularImagem.cs" />
+    <Compile Include="ModuloAuxiliar\Util\ClsMetodosAuxiliares.cs" />
+    <Compile Include="ModuloAuxiliar\Util\CustomComparer\AttributeNotExistsException.cs" />
+    <Compile Include="ModuloAuxiliar\Util\CustomComparer\Comparer.cs" />
+    <Compile Include="ModuloAuxiliar\Util\CustomComparer\CustomComparer.cs" />
+    <Compile Include="ModuloAuxiliar\Util\CustomComparer\ICustomComparer.cs" />
+    <Compile Include="ModuloAuxiliar\Util\CustomComparer\Util.cs" />
+    <Compile Include="ModuloAuxiliar\Util\CustomComparer\Validator.cs" />
+    <Compile Include="ModuloAuxiliar\Util\CustomComparer\Values.cs" />
+    <Compile Include="ModuloAuxiliar\Util\Email\MailProvider.cs" />
+    <Compile Include="ModuloAuxiliar\Util\ImageUtil.cs" />
+    <Compile Include="ModuloAuxiliar\Util\Seguranca\Crypt.cs" />
+    <Compile Include="ModuloAuxiliar\Util\Seguranca\Hash.cs" />
+    <Compile Include="ModuloAuxiliar\Util\Validacao.cs" />
+    <Compile Include="ModuloAuxiliar\VOs\Cidade.cs" />
+    <Compile Include="ModuloAuxiliar\VOs\ClasseAuxiliar.cs" />
+    <Compile Include="ModuloAuxiliar\VOs\Endereco.cs" />
+    <Compile Include="ModuloAuxiliar\VOs\Estado.cs" />
+    <Compile Include="ModuloAuxiliar\VOs\PessoaVO.cs" />
+    <Compile Include="ModuloAuxiliar\VOs\Regiao.cs" />
+    <Compile Include="ModuloAuxiliar\VOs\RegistroModificacao.cs" />
+    <Compile Include="ModuloAuxiliar\VOs\Rg.cs" />
+    <Compile Include="ModuloComentario\Excecoes\ComentarioDadoNaoInformadoExcecao.cs" />
+    <Compile Include="ModuloComentario\Excecoes\ComentarioNaoAlteradoExcecao.cs" />
+    <Compile Include="ModuloComentario\Excecoes\ComentarioNaoExcluidoExcecao.cs" />
+    <Compile Include="ModuloComentario\Excecoes\ComentarioNaoIncluidoExcecao.cs" />
+    <Compile Include="ModuloComentario\Excecoes\ConstantesComentario.cs" />
+    <Compile Include="ModuloComentario\Fabricas\ModuloComentarioFabrica.cs" />
+    <Compile Include="ModuloComentario\Filtros\ComentarioFiltroConsulta.cs" />
+    <Compile Include="ModuloComentario\Processos\ComentarioProcesso.cs" />
+    <Compile Include="ModuloComentario\Processos\interfaces\IComentarioProcesso.cs" />
+    <Compile Include="ModuloComentario\Repositorios\ComentarioRepositorio.cs" />
+    <Compile Include="ModuloComentario\Repositorios\interfaces\IComentarioRepositorio.cs" />
+    <Compile Include="ModuloComentario\VOs\ComentarioVO.cs" />
+    <Compile Include="ModuloConexao\BancoConexao.cs" />
+    <Compile Include="ModuloConexao\LockingHints.cs" />
+    <Compile Include="ModuloControleAcesso\Excecoes\ConstantesControleAcesso.cs" />
+    <Compile Include="ModuloControleAcesso\Excecoes\UsuarioSistemaCadastroPendenteExcecao.cs" />
+    <Compile Include="ModuloControleAcesso\Excecoes\UsuarioSistemaLoginJaInformadoExcecao.cs" />
+    <Compile Include="ModuloControleAcesso\Excecoes\UsuarioSistemaLoginNaoInformadoExcecao.cs" />
+    <Compile Include="ModuloControleAcesso\Excecoes\UsuarioSistemaLoginSenhaIncorretosExcecao.cs" />
+    <Compile Include="ModuloControleAcesso\Excecoes\UsuarioSistemaNaoAlteradoExcecao.cs" />
+    <Compile Include="ModuloControleAcesso\Excecoes\UsuarioSistemaNaoExcluidoExcecao.cs" />
+    <Compile Include="ModuloControleAcesso\Excecoes\UsuarioSistemaNaoIncluidoExcecao.cs" />
+    <Compile Include="ModuloControleAcesso\Excecoes\UsuarioSitemaDadoNaoInformadoExcecao.cs" />
+    <Compile Include="ModuloControleAcesso\Fabricas\ModuloControleAcessoFabrica.cs" />
+    <Compile Include="ModuloControleAcesso\Filtros\UsuarioSistemaFiltroConsulta.cs" />
+    <Compile Include="ModuloControleAcesso\Processos\interfaces\IUsuarioSistemaProcesso.cs" />
+    <Compile Include="ModuloControleAcesso\Processos\UsuarioSistemaProcesso.cs" />
+    <Compile Include="ModuloControleAcesso\Repositorios\Interfaces\IUsuarioSistemaRepositorio.cs" />
+    <Compile Include="ModuloControleAcesso\Repositorios\UsuarioSistemaRepositorio.cs" />
+    <Compile Include="ModuloControleAcesso\VOs\UsuarioSistemaVO.cs" />
+    <Compile Include="ModuloPostagem\Excecoes\ConstantesPostagens.cs" />
+    <Compile Include="ModuloPostagem\Excecoes\PostagemDadoNaoInformadoExcecao.cs" />
+    <Compile Include="ModuloPostagem\Excecoes\PostagemNaoAlteradaExcecao.cs" />
+    <Compile Include="ModuloPostagem\Excecoes\PostagemNaoExcluidaExcecao.cs" />
+    <Compile Include="ModuloPostagem\Excecoes\PostagemNaoIncluidaExcecao.cs" />
+    <Compile Include="ModuloPostagem\Fabricas\ModuloPostagemFabrica.cs" />
+    <Compile Include="ModuloPostagem\Filtros\PostagemFiltroConsulta.cs" />
+    <Compile Include="ModuloPostagem\Processos\interfaces\IPostagemProcesso.cs" />
+    <Compile Include="ModuloPostagem\Processos\PostagemProcesso.cs" />
+    <Compile Include="ModuloPostagem\Repositorios\interfaces\IPostagemRepositorio.cs" />
+    <Compile Include="ModuloPostagem\Repositorios\PostagemRepositorio.cs" />
+    <Compile Include="ModuloPostagem\VOs\PostagemVO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ModuloAuxiliar\Util\MenuController\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
