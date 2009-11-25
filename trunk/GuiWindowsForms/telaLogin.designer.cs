@@ -69,6 +69,7 @@
             this.btnLogar.Size = new System.Drawing.Size(76, 76);
             this.btnLogar.TabIndex = 2;
             this.btnLogar.UseVisualStyleBackColor = false;
+            this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             // 
             // pnlLogin
             // 
@@ -99,13 +100,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1008, 732);
+            this.ClientSize = new System.Drawing.Size(1000, 722);
             this.Controls.Add(this.pnlLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "telaLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
