@@ -9,19 +9,11 @@ using System.Windows.Forms;
 
 namespace GuiWindowsForms
 {
-    public partial class telaLogin : Form
+    public partial class telaPrincipal : Form
     {
-        public telaLogin()
+        public telaPrincipal()
         {
             InitializeComponent();
-        }
-
-        private void btnLogar_Click(object sender, EventArgs e)
-        {
-            
-            telaPrincipal tela = new telaPrincipal();
-            tela.Show();
-            
         }
     }
 }
