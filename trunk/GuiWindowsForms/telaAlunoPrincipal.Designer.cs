@@ -1,6 +1,6 @@
 ﻿namespace GuiWindowsForms
 {
-    partial class telaPrincipal
+    partial class telaAlunoPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoPrincipal));
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnAluno = new System.Windows.Forms.Button();
+            this.btnFuncionario = new System.Windows.Forms.Button();
+            this.btnCadastrarAluno = new System.Windows.Forms.Button();
+            this.lblDesconectar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -64,6 +66,16 @@
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             // 
+            // btnAluno
+            // 
+            this.btnAluno.BackColor = System.Drawing.Color.Green;
+            this.btnAluno.Location = new System.Drawing.Point(418, 70);
+            this.btnAluno.Name = "btnAluno";
+            this.btnAluno.Size = new System.Drawing.Size(87, 23);
+            this.btnAluno.TabIndex = 4;
+            this.btnAluno.Text = "ALUNO";
+            this.btnAluno.UseVisualStyleBackColor = false;
+            // 
             // btnFuncionario
             // 
             this.btnFuncionario.Location = new System.Drawing.Point(582, 70);
@@ -73,25 +85,35 @@
             this.btnFuncionario.Text = "Funcionário";
             this.btnFuncionario.UseVisualStyleBackColor = true;
             // 
-            // btnAluno
+            // btnCadastrarAluno
             // 
-            this.btnAluno.Location = new System.Drawing.Point(418, 70);
-            this.btnAluno.Name = "btnAluno";
-            this.btnAluno.Size = new System.Drawing.Size(87, 23);
-            this.btnAluno.TabIndex = 6;
-            this.btnAluno.Text = "Aluno";
-            this.btnAluno.UseVisualStyleBackColor = true;
-            this.btnAluno.Click += new System.EventHandler(this.btnAluno_Click);
+            this.btnCadastrarAluno.Location = new System.Drawing.Point(326, 677);
+            this.btnCadastrarAluno.Name = "btnCadastrarAluno";
+            this.btnCadastrarAluno.Size = new System.Drawing.Size(112, 23);
+            this.btnCadastrarAluno.TabIndex = 6;
+            this.btnCadastrarAluno.Text = "Cadastrar";
+            this.btnCadastrarAluno.UseVisualStyleBackColor = true;
             // 
-            // telaPrincipal
+            // lblDesconectar
+            // 
+            this.lblDesconectar.AutoSize = true;
+            this.lblDesconectar.Location = new System.Drawing.Point(909, 9);
+            this.lblDesconectar.Name = "lblDesconectar";
+            this.lblDesconectar.Size = new System.Drawing.Size(79, 13);
+            this.lblDesconectar.TabIndex = 7;
+            this.lblDesconectar.Text = "Desconectar";
+            // 
+            // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
-            this.Controls.Add(this.btnAluno);
+            this.Controls.Add(this.lblDesconectar);
+            this.Controls.Add(this.btnCadastrarAluno);
             this.Controls.Add(this.btnFuncionario);
+            this.Controls.Add(this.btnAluno);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.lblHelloUsuario);
@@ -100,7 +122,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "telaPrincipal";
+            this.Name = "telaAlunoPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.ResumeLayout(false);
@@ -113,7 +135,9 @@
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button btnFuncionario;
         private System.Windows.Forms.Button btnAluno;
+        private System.Windows.Forms.Button btnFuncionario;
+        private System.Windows.Forms.Button btnCadastrarAluno;
+        private System.Windows.Forms.Label lblDesconectar;
     }
 }
