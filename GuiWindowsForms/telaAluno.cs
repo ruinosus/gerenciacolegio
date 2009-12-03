@@ -9,17 +9,11 @@ using System.Windows.Forms;
 
 namespace GuiWindowsForms
 {
-    public partial class telaPrincipal : Form
+    public partial class telaAluno : Form
     {
-        public telaPrincipal()
+        public telaAluno()
         {
             InitializeComponent();
-        }
-
-        private void btnAluno_Click(object sender, EventArgs e)
-        {
-            telaAlunoPrincipal tela = new telaAlunoPrincipal();
-            tela.Show();
         }
     }
 }
