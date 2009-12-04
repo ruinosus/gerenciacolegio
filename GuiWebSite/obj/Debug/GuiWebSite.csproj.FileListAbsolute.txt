@@ -13,3 +13,8 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\bin\GuiWebSite.pdb
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\obj\Debug\GuiWebSite.dll
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\obj\Debug\GuiWebSite.pdb
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWebSite\bin\GuiWebSite.dll
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWebSite\bin\GuiWebSite.pdb
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWebSite\obj\Debug\GuiWebSite.dll
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWebSite\obj\Debug\GuiWebSite.pdb

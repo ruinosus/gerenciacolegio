@@ -11,6 +11,7 @@ namespace GuiWindowsForms
 {
     public partial class telaPrincipal : Form
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaPrincipal));
         public telaPrincipal()
         {
             InitializeComponent();
@@ -21,5 +22,11 @@ namespace GuiWindowsForms
             telaAlunoPrincipal tela = new telaAlunoPrincipal();
             tela.Show();
         }
+
+        private void btnAluno_MouseHover(object sender, EventArgs e)
+        {
+            this.btnAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_aluno_142x115_over;
+        }
+
     }
 }
