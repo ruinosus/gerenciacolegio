@@ -39,9 +39,12 @@
             // lblHelloUsuario
             // 
             this.lblHelloUsuario.AutoSize = true;
+            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
             this.lblHelloUsuario.Location = new System.Drawing.Point(802, 9);
             this.lblHelloUsuario.Name = "lblHelloUsuario";
-            this.lblHelloUsuario.Size = new System.Drawing.Size(87, 13);
+            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
             this.lblHelloUsuario.TabIndex = 1;
             this.lblHelloUsuario.Text = "Hello Usuário!";
             // 
@@ -49,39 +52,52 @@
             // 
             this.txtLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtLogin.Location = new System.Drawing.Point(326, 248);
+            this.txtLogin.Location = new System.Drawing.Point(285, 248);
             this.txtLogin.MaxLength = 60;
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(433, 26);
+            this.txtLogin.Size = new System.Drawing.Size(415, 26);
             this.txtLogin.TabIndex = 2;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(786, 248);
+            this.btnPesquisar.AutoEllipsis = true;
+            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.Search_76x761;
+            this.btnPesquisar.FlatAppearance.BorderSize = 0;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Location = new System.Drawing.Point(737, 225);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(112, 23);
+            this.btnPesquisar.Size = new System.Drawing.Size(72, 72);
             this.btnPesquisar.TabIndex = 3;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.UseVisualStyleBackColor = false;
             // 
             // btnFuncionario
             // 
-            this.btnFuncionario.Location = new System.Drawing.Point(582, 70);
+            this.btnFuncionario.AutoEllipsis = false;
+            this.btnFuncionario.BackColor = System.Drawing.Color.Transparent;
+            this.btnFuncionario.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFuncionario.BackgroundImage")));
+            this.btnFuncionario.FlatAppearance.BorderSize = 0;
+            this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuncionario.Location = new System.Drawing.Point(424, 12);
             this.btnFuncionario.Name = "btnFuncionario";
-            this.btnFuncionario.Size = new System.Drawing.Size(87, 23);
+            this.btnFuncionario.Size = new System.Drawing.Size(142, 114);
             this.btnFuncionario.TabIndex = 5;
-            this.btnFuncionario.Text = "Funcionário";
             this.btnFuncionario.UseVisualStyleBackColor = true;
             // 
             // btnAluno
             // 
-            this.btnAluno.Location = new System.Drawing.Point(418, 70);
+            this.btnAluno.AutoEllipsis = true;
+            this.btnAluno.BackColor = System.Drawing.Color.Transparent;
+            this.btnAluno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAluno.BackgroundImage")));
+            this.btnAluno.FlatAppearance.BorderSize = 0;
+            this.btnAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAluno.Location = new System.Drawing.Point(276, 9);
             this.btnAluno.Name = "btnAluno";
-            this.btnAluno.Size = new System.Drawing.Size(87, 23);
+            this.btnAluno.Size = new System.Drawing.Size(142, 114);
             this.btnAluno.TabIndex = 6;
-            this.btnAluno.Text = "Aluno";
-            this.btnAluno.UseVisualStyleBackColor = true;
+            this.btnAluno.UseVisualStyleBackColor = false;
             this.btnAluno.Click += new System.EventHandler(this.btnAluno_Click);
+            this.btnAluno.MouseHover += new System.EventHandler(this.btnAluno_MouseHover);
             // 
             // telaPrincipal
             // 
