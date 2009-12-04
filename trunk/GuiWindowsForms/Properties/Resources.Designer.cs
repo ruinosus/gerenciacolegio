@@ -60,6 +60,20 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icone_aluno_142x113 {
+            get {
+                object obj = ResourceManager.GetObject("icone_aluno_142x113", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icone_aluno_142x113_hover {
+            get {
+                object obj = ResourceManager.GetObject("icone_aluno_142x113_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icone_aluno_142x115 {
             get {
                 object obj = ResourceManager.GetObject("icone_aluno_142x115", resourceCulture);
@@ -70,6 +84,48 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap icone_aluno_142x115_over {
             get {
                 object obj = ResourceManager.GetObject("icone_aluno_142x115_over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icone_cadastrar {
+            get {
+                object obj = ResourceManager.GetObject("icone_cadastrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icone_cadastrar1 {
+            get {
+                object obj = ResourceManager.GetObject("icone_cadastrar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icone_cadastrar2 {
+            get {
+                object obj = ResourceManager.GetObject("icone_cadastrar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icone_desconectar {
+            get {
+                object obj = ResourceManager.GetObject("icone_desconectar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icone_prof_142x113 {
+            get {
+                object obj = ResourceManager.GetObject("icone_prof_142x113", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icone_prof_142x113_hover {
+            get {
+                object obj = ResourceManager.GetObject("icone_prof_142x113_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -112,6 +168,13 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap modelo_tela_iconemenor1 {
             get {
                 object obj = ResourceManager.GetObject("modelo tela-iconemenor1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Search_76x76 {
+            get {
+                object obj = ResourceManager.GetObject("Search_76x76", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
