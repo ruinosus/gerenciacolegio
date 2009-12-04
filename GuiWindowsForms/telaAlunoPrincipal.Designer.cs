@@ -93,6 +93,7 @@
             this.btnCadastrarAluno.TabIndex = 6;
             this.btnCadastrarAluno.Text = "Cadastrar";
             this.btnCadastrarAluno.UseVisualStyleBackColor = true;
+            this.btnCadastrarAluno.Click += new System.EventHandler(this.btnCadastrarAluno_Click);
             // 
             // lblDesconectar
             // 

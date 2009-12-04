@@ -19,8 +19,8 @@ namespace GuiWindowsForms
         private void btnLogar_Click(object sender, EventArgs e)
         {
             
-            telaPrincipal tela = new telaPrincipal();
-            tela.Show();
+            telaPrincipal telaPrincipal = new telaPrincipal();
+            telaPrincipal.Show();
             
         }
     }

@@ -15,5 +15,11 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
         }
+
+        private void btnCadastrarAluno_Click(object sender, EventArgs e)
+        {
+            telaAluno telaAluno = new telaAluno();
+            telaAluno.Show();
+        }
     }
 }
