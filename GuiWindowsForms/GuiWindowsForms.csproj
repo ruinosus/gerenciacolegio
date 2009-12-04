@@ -126,16 +126,10 @@
     <None Include="Resources\modelo tela-iconemenor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Search_76x76.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Search_76x761.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icone_aluno_142x115.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icone_aluno_142x1151.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icone_prof_142x115.png" />
@@ -144,13 +138,37 @@
     <None Include="Resources\icone_aluno_142x1152.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icone_prof_142x1151.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icone_aluno_142x115_over.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icone_prof_142x115_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_aluno_142x113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_prof_142x113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_aluno_142x113_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_prof_142x113_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_76x762.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_desconectar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_cadastrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_cadastrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_cadastrar2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
