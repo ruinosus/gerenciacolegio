@@ -15,5 +15,11 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
         }
+
+        private void btnResponsaveis_Click(object sender, EventArgs e)
+        {
+            telaAlunoResponsavel telaAlunoRespons = new telaAlunoResponsavel();
+            telaAlunoRespons.Show();
+        }
     }
 }

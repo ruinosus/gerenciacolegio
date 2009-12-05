@@ -128,14 +128,14 @@
             this.gpbDadosPessoais.Size = new System.Drawing.Size(820, 350);
             this.gpbDadosPessoais.TabIndex = 0;
             this.gpbDadosPessoais.TabStop = false;
-            this.gpbDadosPessoais.Text = "DADOS PESSOAIS";
+            this.gpbDadosPessoais.Text = "DADOS PESSOAIS ALUNO";
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(128, 113);
             this.textBox3.MaxLength = 40;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.Size = new System.Drawing.Size(220, 20);
             this.textBox3.TabIndex = 34;
             // 
             // lblEmail
@@ -167,7 +167,7 @@
             // 
             // mkdFoneEmergencia
             // 
-            this.mkdFoneEmergencia.Location = new System.Drawing.Point(544, 305);
+            this.mkdFoneEmergencia.Location = new System.Drawing.Point(604, 305);
             this.mkdFoneEmergencia.Mask = "(99) 0000-0000";
             this.mkdFoneEmergencia.Name = "mkdFoneEmergencia";
             this.mkdFoneEmergencia.Size = new System.Drawing.Size(111, 20);
@@ -176,7 +176,7 @@
             // lblFoneEmergencia
             // 
             this.lblFoneEmergencia.AutoSize = true;
-            this.lblFoneEmergencia.Location = new System.Drawing.Point(460, 305);
+            this.lblFoneEmergencia.Location = new System.Drawing.Point(505, 305);
             this.lblFoneEmergencia.Name = "lblFoneEmergencia";
             this.lblFoneEmergencia.Size = new System.Drawing.Size(78, 13);
             this.lblFoneEmergencia.TabIndex = 29;
@@ -202,7 +202,7 @@
             // 
             // mkdFoneAluno
             // 
-            this.mkdFoneAluno.Location = new System.Drawing.Point(358, 113);
+            this.mkdFoneAluno.Location = new System.Drawing.Point(604, 113);
             this.mkdFoneAluno.Mask = "(99) 0000-0000";
             this.mkdFoneAluno.Name = "mkdFoneAluno";
             this.mkdFoneAluno.Size = new System.Drawing.Size(111, 20);
@@ -211,7 +211,7 @@
             // lblFoneAluno
             // 
             this.lblFoneAluno.AutoSize = true;
-            this.lblFoneAluno.Location = new System.Drawing.Point(277, 113);
+            this.lblFoneAluno.Location = new System.Drawing.Point(505, 113);
             this.lblFoneAluno.Name = "lblFoneAluno";
             this.lblFoneAluno.Size = new System.Drawing.Size(75, 13);
             this.lblFoneAluno.TabIndex = 25;
@@ -482,6 +482,7 @@
             this.btnResponsaveis.TabIndex = 4;
             this.btnResponsaveis.Text = "Responsáveis";
             this.btnResponsaveis.UseVisualStyleBackColor = true;
+            this.btnResponsaveis.Click += new System.EventHandler(this.btnResponsaveis_Click);
             // 
             // btnInfoMedica
             // 
