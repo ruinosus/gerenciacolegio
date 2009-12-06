@@ -227,6 +227,48 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7004_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\webdev-ok-128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons7069.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar_final_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok_final_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\voltar_final_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\injecao_72x72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\responsavel_72x72_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\academico_72x72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dados_72x72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\responsavel_72x72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons7897.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financeiro_72x72.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
