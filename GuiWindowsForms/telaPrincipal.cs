@@ -11,9 +11,22 @@ namespace GuiWindowsForms
 {
     public partial class telaPrincipal : Form
     {
+        private static telaPrincipal telaprincipal;
+
+        public static telaPrincipal getInstancia()
+        {
+            if (telaprincipal == null)
+            {
+                telaprincipal = new telaPrincipal();
+            }
+            return telaprincipal;
+        }
+        
+        
         public telaPrincipal()
         {
             InitializeComponent();
+            telaLogin.ActiveForm.Hide();
         }
 
         /// <summary>
@@ -23,8 +36,8 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnAluno_Click(object sender, EventArgs e)
         {
-            telaAlunoPrincipal tela = new telaAlunoPrincipal();
-            tela.Show();
+            telaAlunoPrincipal telaAlunoPrincipal = telaAlunoPrincipal.getInstancia();
+            telaAlunoPrincipal.Show();
         }
 
         /// <summary>
@@ -69,6 +82,12 @@ namespace GuiWindowsForms
         {
             this.btnFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_prof_142x113_hover;
             lblFuncionarioOculto.Visible = true;
+        }
+
+        private void telaPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
         }
 
     }
