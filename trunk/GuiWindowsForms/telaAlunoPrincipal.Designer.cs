@@ -158,6 +158,7 @@
             this.Name = "telaAlunoPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoPrincipal_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

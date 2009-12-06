@@ -629,6 +629,7 @@
             this.Name = "telaAluno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAluno_FormClosing);
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();

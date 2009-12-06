@@ -40,6 +40,10 @@
             this.btnResponsaveis = new System.Windows.Forms.Button();
             this.btnDados = new System.Windows.Forms.Button();
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lblLocalTrabalho = new System.Windows.Forms.Label();
             this.txtProfissao = new System.Windows.Forms.TextBox();
             this.lblProfissao = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
@@ -70,10 +74,6 @@
             this.lblNascimento = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
-            this.lblLocalTrabalho = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
@@ -226,6 +226,40 @@
             this.gpbDadosPessoais.TabIndex = 26;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DADOS DO RESPONSÁVEL";
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(582, 159);
+            this.maskedTextBox2.Mask = "(99) 0000-0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(111, 20);
+            this.maskedTextBox2.TabIndex = 42;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(463, 159);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Fone do Trabalho:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(582, 116);
+            this.textBox3.MaxLength = 30;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(222, 20);
+            this.textBox3.TabIndex = 40;
+            // 
+            // lblLocalTrabalho
+            // 
+            this.lblLocalTrabalho.AutoSize = true;
+            this.lblLocalTrabalho.Location = new System.Drawing.Point(463, 116);
+            this.lblLocalTrabalho.Name = "lblLocalTrabalho";
+            this.lblLocalTrabalho.Size = new System.Drawing.Size(114, 13);
+            this.lblLocalTrabalho.TabIndex = 39;
+            this.lblLocalTrabalho.Text = "Local de Trabalho:";
             // 
             // txtProfissao
             // 
@@ -494,40 +528,6 @@
             this.btnAdicionarImagem.Text = "adicionar foto";
             this.btnAdicionarImagem.UseVisualStyleBackColor = true;
             // 
-            // lblLocalTrabalho
-            // 
-            this.lblLocalTrabalho.AutoSize = true;
-            this.lblLocalTrabalho.Location = new System.Drawing.Point(463, 116);
-            this.lblLocalTrabalho.Name = "lblLocalTrabalho";
-            this.lblLocalTrabalho.Size = new System.Drawing.Size(114, 13);
-            this.lblLocalTrabalho.TabIndex = 39;
-            this.lblLocalTrabalho.Text = "Local de Trabalho:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(582, 116);
-            this.textBox3.MaxLength = 30;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(222, 20);
-            this.textBox3.TabIndex = 40;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(582, 159);
-            this.maskedTextBox2.Mask = "(99) 0000-0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(111, 20);
-            this.maskedTextBox2.TabIndex = 42;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(463, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Fone do Trabalho:";
-            // 
             // telaAlunoResponsavel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,6 +549,7 @@
             this.Controls.Add(this.pctImagem);
             this.Name = "telaAlunoResponsavel";
             this.Text = "telaAlunoResponsavel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoResponsavel_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();

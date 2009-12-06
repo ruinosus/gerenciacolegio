@@ -11,6 +11,17 @@ namespace GuiWindowsForms
 {
     public partial class telaLogin : Form
     {
+        private static telaLogin telalogin;
+
+        public static telaLogin getInstancia()
+        {
+            if (telalogin == null)
+            {
+                telalogin = new telaLogin();
+            }
+            return telalogin;
+        }
+
         public telaLogin()
         {
             InitializeComponent();
@@ -18,10 +29,8 @@ namespace GuiWindowsForms
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            
-            telaPrincipal telaPrincipal = new telaPrincipal();
-            telaPrincipal.Show();
-            
+            telaPrincipal telaPrincipal = telaPrincipal.getInstancia();
+            telaPrincipal.Show();          
         }
     }
 }

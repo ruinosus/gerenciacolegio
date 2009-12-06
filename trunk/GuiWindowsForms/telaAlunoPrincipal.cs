@@ -11,15 +11,33 @@ namespace GuiWindowsForms
 {
     public partial class telaAlunoPrincipal : Form
     {
+        private static telaAlunoPrincipal telaalunoprincipal;
+
+        public static telaAlunoPrincipal getInstancia()
+        {
+            if (telaalunoprincipal == null)
+            {
+                telaalunoprincipal = new telaAlunoPrincipal();
+            }
+            return telaalunoprincipal;
+        }
+
         public telaAlunoPrincipal()
         {
             InitializeComponent();
+            telaPrincipal.ActiveForm.Hide();
         }
 
         private void btnCadastrarAluno_Click(object sender, EventArgs e)
         {
-            telaAlunoResponsavel tela = new telaAlunoResponsavel();
-            tela.Show();
+            telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            telaalunoresponsavel.Show();
+        }
+
+        private void telaAlunoPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            telaPrincipal telaprincipal = telaPrincipal.getInstancia();
+            telaprincipal.Show();
         }
     }
 }
