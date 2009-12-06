@@ -34,5 +34,6 @@ namespace GuiWindowsForms
             telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
             telaalunoprincipal.Show();
         }
+
     }
 }

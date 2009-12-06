@@ -60,6 +60,48 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap academico_72x72 {
+            get {
+                object obj = ResourceManager.GetObject("academico_72x72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap adicionar {
+            get {
+                object obj = ResourceManager.GetObject("adicionar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap adicionar_final_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("adicionar_final_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap adicionar1 {
+            get {
+                object obj = ResourceManager.GetObject("adicionar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap dados_72x72 {
+            get {
+                object obj = ResourceManager.GetObject("dados_72x72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap financeiro_72x72 {
+            get {
+                object obj = ResourceManager.GetObject("financeiro_72x72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icone_aluno_142x113 {
             get {
                 object obj = ResourceManager.GetObject("icone_aluno_142x113", resourceCulture);
@@ -144,6 +186,20 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icons7897 {
+            get {
+                object obj = ResourceManager.GetObject("icons7897", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap injecao_72x72 {
+            get {
+                object obj = ResourceManager.GetObject("injecao_72x72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap modelo_tela {
             get {
                 object obj = ResourceManager.GetObject("modelo-tela", resourceCulture);
@@ -172,6 +228,27 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap ok_final_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("ok_final_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ok_menor {
+            get {
+                object obj = ResourceManager.GetObject("ok_menor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap responsavel_72x72 {
+            get {
+                object obj = ResourceManager.GetObject("responsavel_72x72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Search_76x76 {
             get {
                 object obj = ResourceManager.GetObject("Search_76x76", resourceCulture);
@@ -182,6 +259,20 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap Search_76x761 {
             get {
                 object obj = ResourceManager.GetObject("Search_76x761", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap seta_voltar {
+            get {
+                object obj = ResourceManager.GetObject("seta_voltar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap voltar_final_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("voltar_final_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

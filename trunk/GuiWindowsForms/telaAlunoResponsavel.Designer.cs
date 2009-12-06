@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoResponsavel));
             this.lblFoneEmerg = new System.Windows.Forms.Label();
             this.lblResponsavel = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
             this.lblMatricula = new System.Windows.Forms.Label();
             this.lblNomeAluno = new System.Windows.Forms.Label();
             this.pctImagem = new System.Windows.Forms.PictureBox();
-            this.btnAcademico = new System.Windows.Forms.Button();
-            this.btnFinanceiro = new System.Windows.Forms.Button();
-            this.btnInfoMedica = new System.Windows.Forms.Button();
-            this.btnResponsaveis = new System.Windows.Forms.Button();
-            this.btnDados = new System.Windows.Forms.Button();
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,6 +70,15 @@
             this.lblNascimento = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
+            this.btnDesconectar = new System.Windows.Forms.Button();
+            this.lblHelloUsuario = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnDados = new System.Windows.Forms.Button();
+            this.btnResponsaveis = new System.Windows.Forms.Button();
+            this.btnInfoMedica = new System.Windows.Forms.Button();
+            this.btnFinanceiro = new System.Windows.Forms.Button();
+            this.btnAcademico = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
@@ -131,57 +136,6 @@
             this.pctImagem.Size = new System.Drawing.Size(127, 134);
             this.pctImagem.TabIndex = 14;
             this.pctImagem.TabStop = false;
-            // 
-            // btnAcademico
-            // 
-            this.btnAcademico.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAcademico.Location = new System.Drawing.Point(893, 582);
-            this.btnAcademico.Name = "btnAcademico";
-            this.btnAcademico.Size = new System.Drawing.Size(90, 70);
-            this.btnAcademico.TabIndex = 25;
-            this.btnAcademico.Text = "Acadêmico";
-            this.btnAcademico.UseVisualStyleBackColor = true;
-            // 
-            // btnFinanceiro
-            // 
-            this.btnFinanceiro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFinanceiro.Location = new System.Drawing.Point(893, 478);
-            this.btnFinanceiro.Name = "btnFinanceiro";
-            this.btnFinanceiro.Size = new System.Drawing.Size(90, 70);
-            this.btnFinanceiro.TabIndex = 24;
-            this.btnFinanceiro.Text = "Financeiro";
-            this.btnFinanceiro.UseVisualStyleBackColor = true;
-            // 
-            // btnInfoMedica
-            // 
-            this.btnInfoMedica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInfoMedica.Location = new System.Drawing.Point(893, 379);
-            this.btnInfoMedica.Name = "btnInfoMedica";
-            this.btnInfoMedica.Size = new System.Drawing.Size(90, 70);
-            this.btnInfoMedica.TabIndex = 23;
-            this.btnInfoMedica.Text = "Informações Médicas";
-            this.btnInfoMedica.UseVisualStyleBackColor = true;
-            // 
-            // btnResponsaveis
-            // 
-            this.btnResponsaveis.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResponsaveis.Enabled = false;
-            this.btnResponsaveis.Location = new System.Drawing.Point(893, 283);
-            this.btnResponsaveis.Name = "btnResponsaveis";
-            this.btnResponsaveis.Size = new System.Drawing.Size(90, 70);
-            this.btnResponsaveis.TabIndex = 22;
-            this.btnResponsaveis.Text = "Responsáveis";
-            this.btnResponsaveis.UseVisualStyleBackColor = true;
-            // 
-            // btnDados
-            // 
-            this.btnDados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDados.Location = new System.Drawing.Point(893, 191);
-            this.btnDados.Name = "btnDados";
-            this.btnDados.Size = new System.Drawing.Size(90, 70);
-            this.btnDados.TabIndex = 21;
-            this.btnDados.Text = "Dados";
-            this.btnDados.UseVisualStyleBackColor = true;
             // 
             // gpbDadosPessoais
             // 
@@ -520,13 +474,149 @@
             // 
             // btnAdicionarImagem
             // 
+            this.btnAdicionarImagem.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar_final_32x32;
             this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarImagem.Location = new System.Drawing.Point(248, 152);
+            this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
+            this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarImagem.Location = new System.Drawing.Point(290, 152);
+            this.btnAdicionarImagem.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdicionarImagem.Name = "btnAdicionarImagem";
-            this.btnAdicionarImagem.Size = new System.Drawing.Size(127, 23);
-            this.btnAdicionarImagem.TabIndex = 27;
-            this.btnAdicionarImagem.Text = "adicionar foto";
-            this.btnAdicionarImagem.UseVisualStyleBackColor = true;
+            this.btnAdicionarImagem.Size = new System.Drawing.Size(34, 34);
+            this.btnAdicionarImagem.TabIndex = 43;
+            this.btnAdicionarImagem.Tag = "";
+            this.btnAdicionarImagem.UseVisualStyleBackColor = false;
+            // 
+            // btnDesconectar
+            // 
+            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
+            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
+            this.btnDesconectar.FlatAppearance.BorderSize = 0;
+            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
+            this.btnDesconectar.Name = "btnDesconectar";
+            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
+            this.btnDesconectar.TabIndex = 47;
+            this.btnDesconectar.Tag = "";
+            this.btnDesconectar.UseVisualStyleBackColor = false;
+            // 
+            // lblHelloUsuario
+            // 
+            this.lblHelloUsuario.AutoSize = true;
+            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
+            this.lblHelloUsuario.Location = new System.Drawing.Point(794, 5);
+            this.lblHelloUsuario.Name = "lblHelloUsuario";
+            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
+            this.lblHelloUsuario.TabIndex = 46;
+            this.lblHelloUsuario.Text = "Hello Usuário!";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.ok_final_32x32;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Location = new System.Drawing.Point(86, 677);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(32, 34);
+            this.btnSalvar.TabIndex = 45;
+            this.btnSalvar.Tag = "";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.voltar_final_32x32;
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(31, 677);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(33, 34);
+            this.btnVoltar.TabIndex = 44;
+            this.btnVoltar.Tag = "";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            // 
+            // btnDados
+            // 
+            this.btnDados.AccessibleDescription = "";
+            this.btnDados.BackColor = System.Drawing.Color.Transparent;
+            this.btnDados.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDados.BackgroundImage")));
+            this.btnDados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDados.FlatAppearance.BorderSize = 0;
+            this.btnDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDados.Location = new System.Drawing.Point(898, 191);
+            this.btnDados.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDados.Name = "btnDados";
+            this.btnDados.Size = new System.Drawing.Size(72, 72);
+            this.btnDados.TabIndex = 48;
+            this.btnDados.Tag = "";
+            this.btnDados.UseVisualStyleBackColor = false;
+            // 
+            // btnResponsaveis
+            // 
+            this.btnResponsaveis.BackColor = System.Drawing.Color.Transparent;
+            this.btnResponsaveis.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnResponsaveis.BackgroundImage")));
+            this.btnResponsaveis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResponsaveis.FlatAppearance.BorderSize = 0;
+            this.btnResponsaveis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResponsaveis.Location = new System.Drawing.Point(898, 283);
+            this.btnResponsaveis.Margin = new System.Windows.Forms.Padding(0);
+            this.btnResponsaveis.Name = "btnResponsaveis";
+            this.btnResponsaveis.Size = new System.Drawing.Size(72, 72);
+            this.btnResponsaveis.TabIndex = 49;
+            this.btnResponsaveis.Tag = "";
+            this.btnResponsaveis.UseVisualStyleBackColor = false;
+            // 
+            // btnInfoMedica
+            // 
+            this.btnInfoMedica.BackColor = System.Drawing.Color.Transparent;
+            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icons7897;
+            this.btnInfoMedica.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInfoMedica.FlatAppearance.BorderSize = 0;
+            this.btnInfoMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfoMedica.Location = new System.Drawing.Point(898, 379);
+            this.btnInfoMedica.Margin = new System.Windows.Forms.Padding(0);
+            this.btnInfoMedica.Name = "btnInfoMedica";
+            this.btnInfoMedica.Size = new System.Drawing.Size(72, 72);
+            this.btnInfoMedica.TabIndex = 50;
+            this.btnInfoMedica.Tag = "";
+            this.btnInfoMedica.UseVisualStyleBackColor = false;
+            // 
+            // btnFinanceiro
+            // 
+            this.btnFinanceiro.BackColor = System.Drawing.Color.Transparent;
+            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_72x72;
+            this.btnFinanceiro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFinanceiro.FlatAppearance.BorderSize = 0;
+            this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinanceiro.Location = new System.Drawing.Point(898, 478);
+            this.btnFinanceiro.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFinanceiro.Name = "btnFinanceiro";
+            this.btnFinanceiro.Size = new System.Drawing.Size(72, 72);
+            this.btnFinanceiro.TabIndex = 51;
+            this.btnFinanceiro.Tag = "";
+            this.btnFinanceiro.UseVisualStyleBackColor = false;
+            // 
+            // btnAcademico
+            // 
+            this.btnAcademico.BackColor = System.Drawing.Color.Transparent;
+            this.btnAcademico.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAcademico.BackgroundImage")));
+            this.btnAcademico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAcademico.FlatAppearance.BorderSize = 0;
+            this.btnAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcademico.Location = new System.Drawing.Point(898, 582);
+            this.btnAcademico.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAcademico.Name = "btnAcademico";
+            this.btnAcademico.Size = new System.Drawing.Size(72, 72);
+            this.btnAcademico.TabIndex = 52;
+            this.btnAcademico.Tag = "";
+            this.btnAcademico.UseVisualStyleBackColor = false;
             // 
             // telaAlunoResponsavel
             // 
@@ -534,13 +624,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(994, 716);
-            this.Controls.Add(this.btnAdicionarImagem);
-            this.Controls.Add(this.gpbDadosPessoais);
             this.Controls.Add(this.btnAcademico);
             this.Controls.Add(this.btnFinanceiro);
             this.Controls.Add(this.btnInfoMedica);
             this.Controls.Add(this.btnResponsaveis);
             this.Controls.Add(this.btnDados);
+            this.Controls.Add(this.btnDesconectar);
+            this.Controls.Add(this.lblHelloUsuario);
+            this.Controls.Add(this.btnSalvar);
+            this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.btnAdicionarImagem);
+            this.Controls.Add(this.gpbDadosPessoais);
             this.Controls.Add(this.lblFoneEmerg);
             this.Controls.Add(this.lblResponsavel);
             this.Controls.Add(this.lblSerie);
@@ -566,11 +660,6 @@
         private System.Windows.Forms.Label lblMatricula;
         private System.Windows.Forms.Label lblNomeAluno;
         private System.Windows.Forms.PictureBox pctImagem;
-        private System.Windows.Forms.Button btnAcademico;
-        private System.Windows.Forms.Button btnFinanceiro;
-        private System.Windows.Forms.Button btnInfoMedica;
-        private System.Windows.Forms.Button btnResponsaveis;
-        private System.Windows.Forms.Button btnDados;
         private System.Windows.Forms.GroupBox gpbDadosPessoais;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
@@ -599,12 +688,21 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Button btnAdicionarImagem;
         private System.Windows.Forms.Label lblProfissao;
         private System.Windows.Forms.TextBox txtProfissao;
         private System.Windows.Forms.Label lblLocalTrabalho;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAdicionarImagem;
+        private System.Windows.Forms.Button btnDesconectar;
+        private System.Windows.Forms.Label lblHelloUsuario;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnDados;
+        private System.Windows.Forms.Button btnResponsaveis;
+        private System.Windows.Forms.Button btnInfoMedica;
+        private System.Windows.Forms.Button btnFinanceiro;
+        private System.Windows.Forms.Button btnAcademico;
     }
 }
