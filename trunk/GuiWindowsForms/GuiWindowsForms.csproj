@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D79963B9-116E-4E56-ABA5-26F9392FD1C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -308,6 +308,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\responsavel_73x66_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok_32x32_tipo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok_32x32_tipo2_final.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

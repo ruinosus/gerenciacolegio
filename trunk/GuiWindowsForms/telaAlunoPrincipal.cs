@@ -25,7 +25,8 @@ namespace GuiWindowsForms
         public telaAlunoPrincipal()
         {
             InitializeComponent();
-            telaPrincipal.ActiveForm.Hide();
+            telaPrincipal telaprincipal = telaPrincipal.getInstancia();
+            telaprincipal.Hide();
         }
 
         private void btnCadastrarAluno_Click(object sender, EventArgs e)

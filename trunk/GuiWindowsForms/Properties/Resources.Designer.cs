@@ -284,6 +284,20 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap ok_32x32_tipo2 {
+            get {
+                object obj = ResourceManager.GetObject("ok_32x32_tipo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ok_32x32_tipo2_final {
+            get {
+                object obj = ResourceManager.GetObject("ok_32x32_tipo2_final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ok_final_32x32 {
             get {
                 object obj = ResourceManager.GetObject("ok_final_32x32", resourceCulture);
