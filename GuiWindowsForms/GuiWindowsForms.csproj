@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D79963B9-116E-4E56-ABA5-26F9392FD1C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -69,6 +69,12 @@
     <Compile Include="telaAluno.Designer.cs">
       <DependentUpon>telaAluno.cs</DependentUpon>
     </Compile>
+    <Compile Include="telaAlunoMedicacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaAlunoMedicacao.Designer.cs">
+      <DependentUpon>telaAlunoMedicacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="telaAlunoPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="telaAluno.resx">
       <DependentUpon>telaAluno.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaAlunoMedicacao.resx">
+      <DependentUpon>telaAlunoMedicacao.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="telaAlunoPrincipal.resx">
