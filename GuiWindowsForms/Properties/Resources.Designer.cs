@@ -67,6 +67,20 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap academico_73x72 {
+            get {
+                object obj = ResourceManager.GetObject("academico_73x72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap academico_73x72_hover {
+            get {
+                object obj = ResourceManager.GetObject("academico_73x72_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap adicionar {
             get {
                 object obj = ResourceManager.GetObject("adicionar", resourceCulture);
@@ -95,9 +109,37 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap dados_73x74 {
+            get {
+                object obj = ResourceManager.GetObject("dados_73x74", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap dados_73x74_hover {
+            get {
+                object obj = ResourceManager.GetObject("dados_73x74_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap financeiro_72x72 {
             get {
                 object obj = ResourceManager.GetObject("financeiro_72x72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap financeiro_73x60 {
+            get {
+                object obj = ResourceManager.GetObject("financeiro_73x60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap financeiro_73x60_hover {
+            get {
+                object obj = ResourceManager.GetObject("financeiro_73x60_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -200,6 +242,20 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap injecao_73x73 {
+            get {
+                object obj = ResourceManager.GetObject("injecao_73x73", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap injecao_73x73_hover {
+            get {
+                object obj = ResourceManager.GetObject("injecao_73x73_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap modelo_tela {
             get {
                 object obj = ResourceManager.GetObject("modelo-tela", resourceCulture);
@@ -245,6 +301,20 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap responsavel_72x72 {
             get {
                 object obj = ResourceManager.GetObject("responsavel_72x72", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap responsavel_73x66 {
+            get {
+                object obj = ResourceManager.GetObject("responsavel_73x66", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap responsavel_73x66_hover {
+            get {
+                object obj = ResourceManager.GetObject("responsavel_73x66_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
