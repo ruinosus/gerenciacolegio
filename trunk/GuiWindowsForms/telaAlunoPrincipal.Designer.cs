@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoPrincipal));
             this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.txtBusca = new System.Windows.Forms.TextBox();
             this.btnAluno = new System.Windows.Forms.Button();
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnCadastrarAluno = new System.Windows.Forms.Button();
@@ -51,15 +51,17 @@
             this.lblHelloUsuario.TabIndex = 1;
             this.lblHelloUsuario.Text = "Hello Usuário!";
             // 
-            // txtLogin
+            // txtBusca
             // 
-            this.txtLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtLogin.Location = new System.Drawing.Point(285, 248);
-            this.txtLogin.MaxLength = 60;
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(415, 26);
-            this.txtLogin.TabIndex = 2;
+            this.txtBusca.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusca.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtBusca.Location = new System.Drawing.Point(285, 248);
+            this.txtBusca.MaxLength = 60;
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(415, 26);
+            this.txtBusca.TabIndex = 2;
+            this.txtBusca.Leave += new System.EventHandler(this.txtLogin_Leave);
+            this.txtBusca.Enter += new System.EventHandler(this.txtLogin_Enter);
             // 
             // btnAluno
             // 
@@ -148,7 +150,7 @@
             this.Controls.Add(this.btnCadastrarAluno);
             this.Controls.Add(this.btnFuncionario);
             this.Controls.Add(this.btnAluno);
-            this.Controls.Add(this.txtLogin);
+            this.Controls.Add(this.txtBusca);
             this.Controls.Add(this.lblHelloUsuario);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -167,7 +169,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblHelloUsuario;
-        private System.Windows.Forms.TextBox txtLogin;
+        private System.Windows.Forms.TextBox txtBusca;
         private System.Windows.Forms.Button btnAluno;
         private System.Windows.Forms.Button btnFuncionario;
         private System.Windows.Forms.Button btnCadastrarAluno;

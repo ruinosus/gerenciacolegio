@@ -46,6 +46,8 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(200, 26);
             this.txtLogin.TabIndex = 0;
+            this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
+            this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
             // 
             // txtSenha
             // 
@@ -56,6 +58,8 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(200, 26);
             this.txtSenha.TabIndex = 1;
+            this.txtSenha.Leave += new System.EventHandler(this.txtSenha_Leave);
+            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
             // 
             // btnLogar
             // 
