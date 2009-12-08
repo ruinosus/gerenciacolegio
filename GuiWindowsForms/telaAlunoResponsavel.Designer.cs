@@ -91,51 +91,66 @@
             // lblFoneEmerg
             // 
             this.lblFoneEmerg.AutoSize = true;
+            this.lblFoneEmerg.BackColor = System.Drawing.Color.Transparent;
+            this.lblFoneEmerg.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblFoneEmerg.ForeColor = System.Drawing.Color.Yellow;
             this.lblFoneEmerg.Location = new System.Drawing.Point(394, 133);
             this.lblFoneEmerg.Name = "lblFoneEmerg";
-            this.lblFoneEmerg.Size = new System.Drawing.Size(64, 13);
+            this.lblFoneEmerg.Size = new System.Drawing.Size(98, 19);
             this.lblFoneEmerg.TabIndex = 20;
             this.lblFoneEmerg.Text = "Fone Emerg";
             // 
             // lblResponsavel
             // 
             this.lblResponsavel.AutoSize = true;
+            this.lblResponsavel.BackColor = System.Drawing.Color.Transparent;
+            this.lblResponsavel.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblResponsavel.ForeColor = System.Drawing.Color.Yellow;
             this.lblResponsavel.Location = new System.Drawing.Point(394, 104);
             this.lblResponsavel.Name = "lblResponsavel";
-            this.lblResponsavel.Size = new System.Drawing.Size(100, 13);
+            this.lblResponsavel.Size = new System.Drawing.Size(155, 19);
             this.lblResponsavel.TabIndex = 19;
             this.lblResponsavel.Text = "Nome Responsável";
             // 
             // lblSerie
             // 
             this.lblSerie.AutoSize = true;
+            this.lblSerie.BackColor = System.Drawing.Color.Transparent;
+            this.lblSerie.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblSerie.ForeColor = System.Drawing.Color.Yellow;
             this.lblSerie.Location = new System.Drawing.Point(394, 74);
             this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(31, 13);
+            this.lblSerie.Size = new System.Drawing.Size(48, 19);
             this.lblSerie.TabIndex = 18;
             this.lblSerie.Text = "Série";
             // 
             // lblMatricula
             // 
             this.lblMatricula.AutoSize = true;
+            this.lblMatricula.BackColor = System.Drawing.Color.Transparent;
+            this.lblMatricula.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblMatricula.ForeColor = System.Drawing.Color.Yellow;
             this.lblMatricula.Location = new System.Drawing.Point(394, 45);
             this.lblMatricula.Name = "lblMatricula";
-            this.lblMatricula.Size = new System.Drawing.Size(50, 13);
+            this.lblMatricula.Size = new System.Drawing.Size(80, 19);
             this.lblMatricula.TabIndex = 17;
             this.lblMatricula.Text = "Matricula";
             // 
             // lblNomeAluno
             // 
             this.lblNomeAluno.AutoSize = true;
-            this.lblNomeAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeAluno.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeAluno.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNomeAluno.ForeColor = System.Drawing.Color.Yellow;
             this.lblNomeAluno.Location = new System.Drawing.Point(394, 12);
             this.lblNomeAluno.Name = "lblNomeAluno";
-            this.lblNomeAluno.Size = new System.Drawing.Size(80, 13);
+            this.lblNomeAluno.Size = new System.Drawing.Size(124, 19);
             this.lblNomeAluno.TabIndex = 16;
             this.lblNomeAluno.Text = "Nome do Aluno";
             // 
             // pctImagem
             // 
+            this.pctImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(189)))), ((int)(((byte)(228)))));
             this.pctImagem.Location = new System.Drawing.Point(248, 12);
             this.pctImagem.Name = "pctImagem";
             this.pctImagem.Size = new System.Drawing.Size(127, 134);
@@ -577,14 +592,14 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.ok_final_32x32;
+            this.btnSalvar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.ok_32x32_tipo2_final;
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.Location = new System.Drawing.Point(86, 677);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(32, 34);
+            this.btnSalvar.Size = new System.Drawing.Size(36, 29);
             this.btnSalvar.TabIndex = 45;
             this.btnSalvar.Tag = "";
             this.btnSalvar.UseVisualStyleBackColor = false;

@@ -37,3 +37,4 @@ C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsFo
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavel.resources
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavel.resources
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMedicacao.resources

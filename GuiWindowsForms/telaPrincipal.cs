@@ -26,7 +26,8 @@ namespace GuiWindowsForms
         public telaPrincipal()
         {
             InitializeComponent();
-            telaLogin.ActiveForm.Hide();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Hide();
         }
 
         /// <summary>
