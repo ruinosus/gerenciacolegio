@@ -798,6 +798,7 @@
             this.Controls.Add(this.lblMatricula);
             this.Controls.Add(this.lblNomeAluno);
             this.Controls.Add(this.pctImagem);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "telaAlunoResponsavel";
             this.Text = "telaAlunoResponsavel";

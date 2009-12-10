@@ -18,3 +18,8 @@ C:\Users\Alexandre Alves\Desktop\Conhecer\Negocios\bin\Debug\Negocios.pdb
 C:\Users\Alexandre Alves\Desktop\Conhecer\Negocios\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Alexandre Alves\Desktop\Conhecer\Negocios\obj\Debug\Negocios.dll
 C:\Users\Alexandre Alves\Desktop\Conhecer\Negocios\obj\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\Coleg. Conhecer\Negocios\bin\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Coleg. Conhecer\Negocios\bin\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\Coleg. Conhecer\Negocios\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dudu\Desktop\Coleg. Conhecer\Negocios\obj\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Coleg. Conhecer\Negocios\obj\Debug\Negocios.pdb

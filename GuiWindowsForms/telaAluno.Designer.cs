@@ -85,6 +85,7 @@
             this.lblMedico_menu = new System.Windows.Forms.Label();
             this.lblResponsavel_menu = new System.Windows.Forms.Label();
             this.lblDados_Menu = new System.Windows.Forms.Label();
+            this.cmbSelecionarAluno = new System.Windows.Forms.ComboBox();
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.SuspendLayout();
@@ -770,6 +771,15 @@
             this.lblDados_Menu.Text = "Dados Pessoais";
             this.lblDados_Menu.Visible = false;
             // 
+            // cmbSelecionarAluno
+            // 
+            this.cmbSelecionarAluno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbSelecionarAluno.FormattingEnabled = true;
+            this.cmbSelecionarAluno.Location = new System.Drawing.Point(643, 177);
+            this.cmbSelecionarAluno.Name = "cmbSelecionarAluno";
+            this.cmbSelecionarAluno.Size = new System.Drawing.Size(216, 21);
+            this.cmbSelecionarAluno.TabIndex = 63;
+            // 
             // telaAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -777,6 +787,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.cmbSelecionarAluno);
             this.Controls.Add(this.lblAcademico_menu);
             this.Controls.Add(this.lblFinanceiro_menu);
             this.Controls.Add(this.lblMedico_menu);
@@ -873,6 +884,7 @@
         private System.Windows.Forms.Label lblMedico_menu;
         private System.Windows.Forms.Label lblResponsavel_menu;
         private System.Windows.Forms.Label lblDados_Menu;
+        private System.Windows.Forms.ComboBox cmbSelecionarAluno;
 
 
 
