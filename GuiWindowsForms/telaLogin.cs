@@ -29,8 +29,8 @@ namespace GuiWindowsForms
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            telaPrincipal telaPrincipal = telaPrincipal.getInstancia();
-            telaPrincipal.Show();
+            telaAlunoPrincipal telaAlunoPrincipal = telaAlunoPrincipal.getInstancia();
+            telaAlunoPrincipal.Show();
         }
 
         #region Métodos que controlam a mudança de cor dos campos quando selecionados ou não

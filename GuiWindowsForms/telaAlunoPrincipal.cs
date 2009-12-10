@@ -25,8 +25,8 @@ namespace GuiWindowsForms
         public telaAlunoPrincipal()
         {
             InitializeComponent();
-            telaPrincipal telaprincipal = telaPrincipal.getInstancia();
-            telaprincipal.Hide();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Hide();
         }
 
         private void btnCadastrarAluno_Click(object sender, EventArgs e)
@@ -37,8 +37,8 @@ namespace GuiWindowsForms
 
         private void telaAlunoPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            telaPrincipal telaprincipal = telaPrincipal.getInstancia();
-            telaprincipal.Show();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
         }
 
         /// <summary>
