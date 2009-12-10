@@ -37,6 +37,7 @@
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblAlunoOculto = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnConfiguracoes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -137,6 +138,15 @@
             this.btnPesquisar.TabIndex = 9;
             this.btnPesquisar.UseVisualStyleBackColor = false;
             // 
+            // btnConfiguracoes
+            // 
+            this.btnConfiguracoes.Location = new System.Drawing.Point(610, 31);
+            this.btnConfiguracoes.Name = "btnConfiguracoes";
+            this.btnConfiguracoes.Size = new System.Drawing.Size(105, 68);
+            this.btnConfiguracoes.TabIndex = 10;
+            this.btnConfiguracoes.Text = "Configurações";
+            this.btnConfiguracoes.UseVisualStyleBackColor = true;
+            // 
             // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -144,6 +154,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.btnConfiguracoes);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.lblAlunoOculto);
             this.Controls.Add(this.btnDesconectar);
@@ -176,5 +187,6 @@
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblAlunoOculto;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnConfiguracoes;
     }
 }

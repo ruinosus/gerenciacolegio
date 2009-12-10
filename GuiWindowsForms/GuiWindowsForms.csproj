@@ -69,6 +69,12 @@
     <Compile Include="telaAluno.Designer.cs">
       <DependentUpon>telaAluno.cs</DependentUpon>
     </Compile>
+    <Compile Include="telaAlunoAcademico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaAlunoAcademico.Designer.cs">
+      <DependentUpon>telaAlunoAcademico.cs</DependentUpon>
+    </Compile>
     <Compile Include="telaAlunoMedicacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="telaAluno.resx">
       <DependentUpon>telaAluno.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaAlunoAcademico.resx">
+      <DependentUpon>telaAlunoAcademico.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="telaAlunoMedicacao.resx">
@@ -106,6 +116,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telaAlunoResponsavelBusca.resx">
       <DependentUpon>telaAlunoResponsavelBusca.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConfiguracoes.resx">
+      <DependentUpon>telaConfiguracoes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConfiguracoesControleDeAcesso.resx">
+      <DependentUpon>telaConfiguracoesControleDeAcesso.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="telaLogin.resx">
@@ -141,6 +159,18 @@
     </Compile>
     <Compile Include="telaAlunoResponsavelBusca.Designer.cs">
       <DependentUpon>telaAlunoResponsavelBusca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConfiguracoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConfiguracoes.Designer.cs">
+      <DependentUpon>telaConfiguracoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConfiguracoesControleDeAcesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConfiguracoesControleDeAcesso.Designer.cs">
+      <DependentUpon>telaConfiguracoesControleDeAcesso.cs</DependentUpon>
     </Compile>
     <Compile Include="telaLogin.cs">
       <SubType>Form</SubType>
