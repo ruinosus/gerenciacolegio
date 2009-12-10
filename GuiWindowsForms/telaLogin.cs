@@ -29,9 +29,51 @@ namespace GuiWindowsForms
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            telaAlunoPrincipal telaAlunoPrincipal = telaAlunoPrincipal.getInstancia();
-            telaAlunoPrincipal.Show();
+
+            #region Validação dos campos de login e senha
+
+            try
+            {
+                lblErro.Visible = false;
+
+                if (String.IsNullOrEmpty(txtLogin.Text))
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
+                }
+                else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    throw new Exception("O login deve conter entre 8 e 20 dígitos.");
+                }
+                else
+                {
+                    if(String.IsNullOrEmpty(txtSenha.Text))
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
+                    }
+                    else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        throw new Exception("O login deve conter entre 8 e 20 dígitos.");
+                    }
+                    else
+                    {
+                        telaAlunoPrincipal telaAlunoPrincipal = telaAlunoPrincipal.getInstancia();
+                        telaAlunoPrincipal.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblErro.Visible = true;
+                lblErro.Text = ex.Message; 
+            }
+
+            #endregion
         }
+
 
         #region Métodos que controlam a mudança de cor dos campos quando selecionados ou não
 

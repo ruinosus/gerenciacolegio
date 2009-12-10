@@ -39,6 +39,7 @@
             // 
             // txtLogin
             // 
+            this.txtLogin.BackColor = System.Drawing.SystemColors.Window;
             this.txtLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogin.ForeColor = System.Drawing.Color.MidnightBlue;
             this.txtLogin.Location = new System.Drawing.Point(13, 24);
@@ -84,7 +85,7 @@
             this.pnlLogin.Controls.Add(this.txtLogin);
             this.pnlLogin.Location = new System.Drawing.Point(361, 379);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(314, 168);
+            this.pnlLogin.Size = new System.Drawing.Size(627, 168);
             this.pnlLogin.TabIndex = 3;
             // 
             // lblErro
@@ -97,6 +98,7 @@
             this.lblErro.Size = new System.Drawing.Size(158, 23);
             this.lblErro.TabIndex = 3;
             this.lblErro.Text = "Senha Incorreta!";
+            this.lblErro.Visible = false;
             // 
             // telaLogin
             // 

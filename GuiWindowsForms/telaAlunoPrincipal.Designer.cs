@@ -33,11 +33,10 @@
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.btnAluno = new System.Windows.Forms.Button();
             this.btnFuncionario = new System.Windows.Forms.Button();
-            this.btnCadastrarAluno = new System.Windows.Forms.Button();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblAlunoOculto = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnConfiguracoes = new System.Windows.Forms.Button();
+            this.btnCadastrarAluno = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -88,19 +87,6 @@
             this.btnFuncionario.TabIndex = 5;
             this.btnFuncionario.UseVisualStyleBackColor = false;
             // 
-            // btnCadastrarAluno
-            // 
-            this.btnCadastrarAluno.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrarAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_cadastrar2;
-            this.btnCadastrarAluno.FlatAppearance.BorderSize = 0;
-            this.btnCadastrarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarAluno.Location = new System.Drawing.Point(366, 600);
-            this.btnCadastrarAluno.Name = "btnCadastrarAluno";
-            this.btnCadastrarAluno.Size = new System.Drawing.Size(189, 109);
-            this.btnCadastrarAluno.TabIndex = 6;
-            this.btnCadastrarAluno.UseVisualStyleBackColor = false;
-            this.btnCadastrarAluno.Click += new System.EventHandler(this.btnCadastrarAluno_Click);
-            // 
             // btnDesconectar
             // 
             this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
@@ -112,6 +98,7 @@
             this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
             this.btnDesconectar.TabIndex = 7;
             this.btnDesconectar.UseVisualStyleBackColor = false;
+            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
             // lblAlunoOculto
             // 
@@ -138,14 +125,19 @@
             this.btnPesquisar.TabIndex = 9;
             this.btnPesquisar.UseVisualStyleBackColor = false;
             // 
-            // btnConfiguracoes
+            // btnCadastrarAluno
             // 
-            this.btnConfiguracoes.Location = new System.Drawing.Point(610, 31);
-            this.btnConfiguracoes.Name = "btnConfiguracoes";
-            this.btnConfiguracoes.Size = new System.Drawing.Size(105, 68);
-            this.btnConfiguracoes.TabIndex = 10;
-            this.btnConfiguracoes.Text = "Configurações";
-            this.btnConfiguracoes.UseVisualStyleBackColor = true;
+            this.btnCadastrarAluno.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastrarAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_ok_cadastrar_110x52;
+            this.btnCadastrarAluno.FlatAppearance.BorderSize = 0;
+            this.btnCadastrarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarAluno.Location = new System.Drawing.Point(31, 667);
+            this.btnCadastrarAluno.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCadastrarAluno.Name = "btnCadastrarAluno";
+            this.btnCadastrarAluno.Size = new System.Drawing.Size(110, 52);
+            this.btnCadastrarAluno.TabIndex = 6;
+            this.btnCadastrarAluno.UseVisualStyleBackColor = false;
+            this.btnCadastrarAluno.Click += new System.EventHandler(this.btnCadastrarAluno_Click);
             // 
             // telaAlunoPrincipal
             // 
@@ -154,7 +146,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
-            this.Controls.Add(this.btnConfiguracoes);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.lblAlunoOculto);
             this.Controls.Add(this.btnDesconectar);
@@ -183,10 +174,9 @@
         private System.Windows.Forms.TextBox txtBusca;
         private System.Windows.Forms.Button btnAluno;
         private System.Windows.Forms.Button btnFuncionario;
-        private System.Windows.Forms.Button btnCadastrarAluno;
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblAlunoOculto;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button btnConfiguracoes;
+        private System.Windows.Forms.Button btnCadastrarAluno;
     }
 }
