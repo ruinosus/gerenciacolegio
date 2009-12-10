@@ -800,8 +800,9 @@
             this.Controls.Add(this.pctImagem);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "telaAlunoResponsavel";
-            this.Text = "telaAlunoResponsavel";
+            this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoResponsavel_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.gpbDadosPessoais.ResumeLayout(false);
