@@ -27,7 +27,7 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
             telaAlunoPrincipal.ActiveForm.Hide();
-        }
+        } 
 
         private void telaAlunoResponsavel_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -411,6 +411,8 @@ namespace GuiWindowsForms
             mskFoneResidencia.BackColor = System.Drawing.Color.White;
         }
         #endregion
+
+  
 
     }
 }
