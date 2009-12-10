@@ -86,7 +86,7 @@
             // btnFinanceiro
             // 
             this.btnFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_72x72;
+            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60;
             this.btnFinanceiro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinanceiro.FlatAppearance.BorderSize = 0;
             this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -101,7 +101,7 @@
             // btnInfoMedica
             // 
             this.btnInfoMedica.BackColor = System.Drawing.Color.Transparent;
-            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icons7897;
+            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73;
             this.btnInfoMedica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInfoMedica.FlatAppearance.BorderSize = 0;
             this.btnInfoMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

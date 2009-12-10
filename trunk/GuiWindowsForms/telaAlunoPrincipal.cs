@@ -60,5 +60,10 @@ namespace GuiWindowsForms
         {
             txtBusca.BackColor = System.Drawing.Color.White;
         }
+
+        private void btnDesconectar_Click(object sender, EventArgs e)
+        {
+            telaalunoprincipal.Close();
+        }
     }
 }

@@ -118,35 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icone_cadastrar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icone_cadastrar1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icone_aluno_142x113_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icone_aluno_142x113_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="modelo tela-azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modelo tela-azul.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_aluno_142x115_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icone_aluno_142x115_over.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="webdev-ok-76x76" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\webdev-ok-76x76.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="webdev-ok-76x761" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\webdev-ok-76x761.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icone_aluno_142x115" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icone_aluno_142x1152.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Search_76x761" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search_76x761.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icone_prof_142x115" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icone_prof_142x1151.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icone_cadastrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icone_cadastrar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="modelo tela-iconemenor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modelo tela-iconemenor.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,24 +154,6 @@
   <data name="modelo tela-iconemenor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modelo tela-iconemenor.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icone_prof_142x115_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icone_prof_142x115_over.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icone_cadastrar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icone_cadastrar2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="seta_voltar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7004_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ok_menor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\webdev-ok-128x128.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="adicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons7069.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="adicionar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adicionar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="adicionar_final_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adicionar_final_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -198,24 +162,6 @@
   </data>
   <data name="voltar_final_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\voltar_final_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="injecao_72x72" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\injecao_72x72.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="academico_72x72" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\academico_72x72.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dados_72x72" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dados_72x72.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="responsavel_72x72" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\responsavel_72x72.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons7897" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons7897.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="financeiro_72x72" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\financeiro_72x72.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="academico_73x72" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\academico_73x72.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,10 +193,10 @@
   <data name="responsavel_73x66_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\responsavel_73x66_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ok_32x32_tipo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ok_32x32_tipo2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ok_32x32_tipo2_final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ok_32x32_tipo2_final.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_ok_cadastrar_110x52" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_ok_cadastrar_110x52.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
