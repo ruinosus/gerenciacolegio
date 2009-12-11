@@ -31,8 +31,6 @@
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.cmbSerie = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.mskFoneEmergencia = new System.Windows.Forms.MaskedTextBox();
             this.lblFoneEmergencia = new System.Windows.Forms.Label();
             this.cmbResidCom = new System.Windows.Forms.ComboBox();
@@ -97,8 +95,6 @@
             this.gpbDadosPessoais.BackColor = System.Drawing.Color.Transparent;
             this.gpbDadosPessoais.Controls.Add(this.txtEmail);
             this.gpbDadosPessoais.Controls.Add(this.lblEmail);
-            this.gpbDadosPessoais.Controls.Add(this.cmbSerie);
-            this.gpbDadosPessoais.Controls.Add(this.label5);
             this.gpbDadosPessoais.Controls.Add(this.mskFoneEmergencia);
             this.gpbDadosPessoais.Controls.Add(this.lblFoneEmergencia);
             this.gpbDadosPessoais.Controls.Add(this.cmbResidCom);
@@ -156,26 +152,6 @@
             this.lblEmail.Size = new System.Drawing.Size(77, 13);
             this.lblEmail.TabIndex = 33;
             this.lblEmail.Text = "Email Aluno:";
-            // 
-            // cmbSerie
-            // 
-            this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSerie.FormattingEnabled = true;
-            this.cmbSerie.Location = new System.Drawing.Point(683, 32);
-            this.cmbSerie.Name = "cmbSerie";
-            this.cmbSerie.Size = new System.Drawing.Size(121, 21);
-            this.cmbSerie.TabIndex = 32;
-            this.cmbSerie.Leave += new System.EventHandler(this.cmbSerie_Leave);
-            this.cmbSerie.Enter += new System.EventHandler(this.cmbSerie_Enter);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(643, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Série:";
             // 
             // mskFoneEmergencia
             // 
@@ -900,8 +876,6 @@
         private System.Windows.Forms.Button btnAcademico;
         private System.Windows.Forms.MaskedTextBox mskFoneEmergencia;
         private System.Windows.Forms.Label lblFoneEmergencia;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbSerie;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnVoltar;
