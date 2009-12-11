@@ -199,4 +199,13 @@
   <data name="btn_ok_cadastrar_110x52" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn_ok_cadastrar_110x52.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="configuracoes_142x113" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\configuracoes_142x113.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="configuracoes_137x101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\configuracoes_137x101.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="responsavel_73x66_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\responsavel_73x66_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

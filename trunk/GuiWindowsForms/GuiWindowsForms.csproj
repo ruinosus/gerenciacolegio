@@ -364,6 +364,15 @@
   <ItemGroup>
     <None Include="Resources\btn_ok_cadastrar_110x52.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuracoes_142x113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuracoes_137x101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\responsavel_73x66_disabled.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
