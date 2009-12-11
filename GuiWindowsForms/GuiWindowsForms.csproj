@@ -373,6 +373,21 @@
   <ItemGroup>
     <None Include="Resources\responsavel_73x66_disabled.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\matricula_73x73.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\matricula_68x69.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\matricula_68x69_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_aluno_142x113_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dados_73x74_disabled.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

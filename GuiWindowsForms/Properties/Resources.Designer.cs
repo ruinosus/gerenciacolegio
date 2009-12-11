@@ -109,6 +109,13 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap dados_73x74_disabled {
+            get {
+                object obj = ResourceManager.GetObject("dados_73x74_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap dados_73x74_hover {
             get {
                 object obj = ResourceManager.GetObject("dados_73x74_hover", resourceCulture);
@@ -133,6 +140,13 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap icone_aluno_142x113 {
             get {
                 object obj = ResourceManager.GetObject("icone_aluno_142x113", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icone_aluno_142x113_disabled {
+            get {
+                object obj = ResourceManager.GetObject("icone_aluno_142x113_disabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -175,6 +189,27 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap injecao_73x73_hover {
             get {
                 object obj = ResourceManager.GetObject("injecao_73x73_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap matricula_68x69 {
+            get {
+                object obj = ResourceManager.GetObject("matricula_68x69", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap matricula_68x69_hover {
+            get {
+                object obj = ResourceManager.GetObject("matricula_68x69_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap matricula_73x73 {
+            get {
+                object obj = ResourceManager.GetObject("matricula_73x73", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

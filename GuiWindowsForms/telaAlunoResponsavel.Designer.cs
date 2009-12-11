@@ -84,6 +84,8 @@
             this.lblMedico_menu = new System.Windows.Forms.Label();
             this.lblFinanceiro_menu = new System.Windows.Forms.Label();
             this.lblAcademico_menu = new System.Windows.Forms.Label();
+            this.lblMatricula_menu = new System.Windows.Forms.Label();
+            this.btnMatricula = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
@@ -770,12 +772,44 @@
             this.lblAcademico_menu.Text = "Acadêmico";
             this.lblAcademico_menu.Visible = false;
             // 
+            // lblMatricula_menu
+            // 
+            this.lblMatricula_menu.AutoSize = true;
+            this.lblMatricula_menu.BackColor = System.Drawing.Color.Transparent;
+            this.lblMatricula_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.lblMatricula_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblMatricula_menu.Location = new System.Drawing.Point(900, 166);
+            this.lblMatricula_menu.Name = "lblMatricula_menu";
+            this.lblMatricula_menu.Size = new System.Drawing.Size(69, 17);
+            this.lblMatricula_menu.TabIndex = 67;
+            this.lblMatricula_menu.Text = "Matrícula";
+            this.lblMatricula_menu.Visible = false;
+            // 
+            // btnMatricula
+            // 
+            this.btnMatricula.BackColor = System.Drawing.Color.Transparent;
+            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69;
+            this.btnMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMatricula.FlatAppearance.BorderSize = 0;
+            this.btnMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMatricula.Location = new System.Drawing.Point(898, 88);
+            this.btnMatricula.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMatricula.Name = "btnMatricula";
+            this.btnMatricula.Size = new System.Drawing.Size(68, 69);
+            this.btnMatricula.TabIndex = 66;
+            this.btnMatricula.Tag = "Dados Pessoais";
+            this.btnMatricula.UseVisualStyleBackColor = false;
+            this.btnMatricula.MouseLeave += new System.EventHandler(this.btnMatricula_MouseLeave);
+            this.btnMatricula.MouseEnter += new System.EventHandler(this.btnMatricula_MouseEnter);
+            // 
             // telaAlunoResponsavel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(994, 716);
+            this.Controls.Add(this.lblMatricula_menu);
+            this.Controls.Add(this.btnMatricula);
             this.Controls.Add(this.lblAcademico_menu);
             this.Controls.Add(this.lblFinanceiro_menu);
             this.Controls.Add(this.lblMedico_menu);
@@ -869,5 +903,7 @@
         private System.Windows.Forms.Label lblMedico_menu;
         private System.Windows.Forms.Label lblFinanceiro_menu;
         private System.Windows.Forms.Label lblAcademico_menu;
+        private System.Windows.Forms.Label lblMatricula_menu;
+        private System.Windows.Forms.Button btnMatricula;
     }
 }

@@ -86,6 +86,8 @@
             this.lblResponsavel_menu = new System.Windows.Forms.Label();
             this.lblDados_Menu = new System.Windows.Forms.Label();
             this.cmbSelecionarAluno = new System.Windows.Forms.ComboBox();
+            this.lblMatricula_menu = new System.Windows.Forms.Label();
+            this.btnMatricula = new System.Windows.Forms.Button();
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.SuspendLayout();
@@ -508,7 +510,7 @@
             // btnDados
             // 
             this.btnDados.BackColor = System.Drawing.Color.Transparent;
-            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74;
+            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled;
             this.btnDados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDados.Enabled = false;
             this.btnDados.FlatAppearance.BorderSize = 0;
@@ -764,13 +766,12 @@
             this.lblDados_Menu.AutoSize = true;
             this.lblDados_Menu.BackColor = System.Drawing.Color.Transparent;
             this.lblDados_Menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDados_Menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblDados_Menu.ForeColor = System.Drawing.Color.White;
             this.lblDados_Menu.Location = new System.Drawing.Point(876, 265);
             this.lblDados_Menu.Name = "lblDados_Menu";
             this.lblDados_Menu.Size = new System.Drawing.Size(110, 17);
             this.lblDados_Menu.TabIndex = 58;
             this.lblDados_Menu.Text = "Dados Pessoais";
-            this.lblDados_Menu.Visible = false;
             // 
             // cmbSelecionarAluno
             // 
@@ -781,6 +782,36 @@
             this.cmbSelecionarAluno.Size = new System.Drawing.Size(216, 21);
             this.cmbSelecionarAluno.TabIndex = 63;
             // 
+            // lblMatricula_menu
+            // 
+            this.lblMatricula_menu.AutoSize = true;
+            this.lblMatricula_menu.BackColor = System.Drawing.Color.Transparent;
+            this.lblMatricula_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.lblMatricula_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblMatricula_menu.Location = new System.Drawing.Point(900, 166);
+            this.lblMatricula_menu.Name = "lblMatricula_menu";
+            this.lblMatricula_menu.Size = new System.Drawing.Size(69, 17);
+            this.lblMatricula_menu.TabIndex = 65;
+            this.lblMatricula_menu.Text = "Matrícula";
+            this.lblMatricula_menu.Visible = false;
+            // 
+            // btnMatricula
+            // 
+            this.btnMatricula.BackColor = System.Drawing.Color.Transparent;
+            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69;
+            this.btnMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMatricula.FlatAppearance.BorderSize = 0;
+            this.btnMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMatricula.Location = new System.Drawing.Point(898, 88);
+            this.btnMatricula.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMatricula.Name = "btnMatricula";
+            this.btnMatricula.Size = new System.Drawing.Size(68, 69);
+            this.btnMatricula.TabIndex = 64;
+            this.btnMatricula.Tag = "Dados Pessoais";
+            this.btnMatricula.UseVisualStyleBackColor = false;
+            this.btnMatricula.MouseLeave += new System.EventHandler(this.btnMatricula_MouseLeave);
+            this.btnMatricula.MouseEnter += new System.EventHandler(this.btnMatricula_MouseEnter);
+            // 
             // telaAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -788,6 +819,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblMatricula_menu);
+            this.Controls.Add(this.btnMatricula);
             this.Controls.Add(this.cmbSelecionarAluno);
             this.Controls.Add(this.lblAcademico_menu);
             this.Controls.Add(this.lblFinanceiro_menu);
@@ -886,6 +919,8 @@
         private System.Windows.Forms.Label lblResponsavel_menu;
         private System.Windows.Forms.Label lblDados_Menu;
         private System.Windows.Forms.ComboBox cmbSelecionarAluno;
+        private System.Windows.Forms.Label lblMatricula_menu;
+        private System.Windows.Forms.Button btnMatricula;
 
 
 

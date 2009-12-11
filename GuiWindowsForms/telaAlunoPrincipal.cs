@@ -30,8 +30,8 @@ namespace GuiWindowsForms
 
         private void btnCadastrarAluno_Click(object sender, EventArgs e)
         {
-            telaAluno telaaluno = telaAluno.getInstancia();
-            telaaluno.Show();
+            telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            telaalunoresponsavel.Show();
         }
 
         private void telaAlunoPrincipal_FormClosing(object sender, FormClosingEventArgs e)
