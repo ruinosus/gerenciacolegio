@@ -116,7 +116,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(45, 191);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1060, 350);
+            this.dataGridView1.Size = new System.Drawing.Size(900, 350);
             this.dataGridView1.TabIndex = 36;
             // 
             // btnVoltar
@@ -126,10 +126,10 @@
             this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(36, 677);
+            this.btnVoltar.Location = new System.Drawing.Point(35, 679);
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(38, 34);
+            this.btnVoltar.Size = new System.Drawing.Size(32, 34);
             this.btnVoltar.TabIndex = 46;
             this.btnVoltar.Tag = "";
             this.btnVoltar.UseVisualStyleBackColor = false;
@@ -165,7 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
-            this.ClientSize = new System.Drawing.Size(1160, 716);
+            this.ClientSize = new System.Drawing.Size(1000, 722);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.btnVoltar);
