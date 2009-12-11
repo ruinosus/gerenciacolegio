@@ -150,7 +150,7 @@
             // 
             // pctImagem
             // 
-            this.pctImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(189)))), ((int)(((byte)(228)))));
+            this.pctImagem.BackColor = System.Drawing.Color.Transparent;
             this.pctImagem.Location = new System.Drawing.Point(248, 12);
             this.pctImagem.Name = "pctImagem";
             this.pctImagem.Size = new System.Drawing.Size(127, 134);
@@ -640,8 +640,9 @@
             // btnResponsaveis
             // 
             this.btnResponsaveis.BackColor = System.Drawing.Color.Transparent;
-            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66;
+            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled;
             this.btnResponsaveis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResponsaveis.Enabled = false;
             this.btnResponsaveis.FlatAppearance.BorderSize = 0;
             this.btnResponsaveis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResponsaveis.Location = new System.Drawing.Point(898, 283);
@@ -723,13 +724,12 @@
             this.lblResponsavel_menu.AutoSize = true;
             this.lblResponsavel_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblResponsavel_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblResponsavel_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblResponsavel_menu.ForeColor = System.Drawing.Color.White;
             this.lblResponsavel_menu.Location = new System.Drawing.Point(885, 353);
             this.lblResponsavel_menu.Name = "lblResponsavel_menu";
             this.lblResponsavel_menu.Size = new System.Drawing.Size(97, 17);
             this.lblResponsavel_menu.TabIndex = 54;
             this.lblResponsavel_menu.Text = "Responsáveis";
-            this.lblResponsavel_menu.Visible = false;
             // 
             // lblMedico_menu
             // 

@@ -483,7 +483,7 @@
             // 
             // pctImagem
             // 
-            this.pctImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(189)))), ((int)(((byte)(228)))));
+            this.pctImagem.BackColor = System.Drawing.Color.Transparent;
             this.pctImagem.Location = new System.Drawing.Point(248, 12);
             this.pctImagem.Name = "pctImagem";
             this.pctImagem.Size = new System.Drawing.Size(127, 134);
@@ -510,6 +510,7 @@
             this.btnDados.BackColor = System.Drawing.Color.Transparent;
             this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74;
             this.btnDados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDados.Enabled = false;
             this.btnDados.FlatAppearance.BorderSize = 0;
             this.btnDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDados.Location = new System.Drawing.Point(898, 191);

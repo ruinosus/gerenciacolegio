@@ -25,14 +25,13 @@ namespace GuiWindowsForms
         public telaAlunoPrincipal()
         {
             InitializeComponent();
-            telaLogin telalogin = telaLogin.getInstancia();
-            telalogin.Hide();
+            telaLogin.ActiveForm.Hide();
         }
 
         private void btnCadastrarAluno_Click(object sender, EventArgs e)
         {
-            telaAlunoResponsavel telaalunoresponsavel = new telaAlunoResponsavel();// telaAlunoResponsavel.getInstancia();
-            telaalunoresponsavel.Show();
+            telaAluno telaaluno = telaAluno.getInstancia();
+            telaaluno.Show();
         }
 
         private void telaAlunoPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -64,6 +63,64 @@ namespace GuiWindowsForms
         private void btnDesconectar_Click(object sender, EventArgs e)
         {
             telaalunoprincipal.Close();
+        }
+
+        private void btnAluno_Enter(object sender, EventArgs e)
+        {
+            lblAlunoOculto.Visible = true;
+        }
+
+        private void btnAluno_Leave(object sender, EventArgs e)
+        {
+            lblAlunoOculto.Visible = false;
+        }
+
+        private void btnFuncionario_Enter(object sender, EventArgs e)
+        {
+            lblAlunoOculto.Visible = false;
+            lblFuncOculto.Visible = true;
+        }
+
+        private void btnFuncionario_Leave(object sender, EventArgs e)
+        {
+            lblFuncOculto.Visible = false;
+        }
+
+        private void btnConfiguracoes_Enter(object sender, EventArgs e)
+        {
+            lblAlunoOculto.Visible = false;
+            lblConfOculto.Visible = true;
+        }
+
+        private void btnConfiguracoes_Leave(object sender, EventArgs e)
+        {
+            lblConfOculto.Visible = false;
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (String.IsNullOrEmpty(txtBusca.Text))
+                {
+                    txtBusca.BackColor = System.Drawing.Color.LawnGreen;
+                    throw new Exception("Digite algum critério para a pesquisa.");
+                }
+                else if (txtBusca.Text.Length < 4)
+                {
+                    txtBusca.BackColor = System.Drawing.Color.LawnGreen;
+                    throw new Exception("Digite argumentos para pesquisa maiores que 3 caracteres.");
+                }
+                else
+                {
+                    lblErro.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                lblErro.Visible = true;
+                lblErro.Text = ex.Message;
+            }
         }
     }
 }

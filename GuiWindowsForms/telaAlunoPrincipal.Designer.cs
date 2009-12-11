@@ -37,6 +37,10 @@
             this.lblAlunoOculto = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnCadastrarAluno = new System.Windows.Forms.Button();
+            this.lblFuncOculto = new System.Windows.Forms.Label();
+            this.lblConfOculto = new System.Windows.Forms.Label();
+            this.btnConfiguracoes = new System.Windows.Forms.Button();
+            this.lblErro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -74,6 +78,8 @@
             this.btnAluno.Size = new System.Drawing.Size(142, 113);
             this.btnAluno.TabIndex = 4;
             this.btnAluno.UseVisualStyleBackColor = false;
+            this.btnAluno.Leave += new System.EventHandler(this.btnAluno_Leave);
+            this.btnAluno.Enter += new System.EventHandler(this.btnAluno_Enter);
             // 
             // btnFuncionario
             // 
@@ -86,6 +92,8 @@
             this.btnFuncionario.Size = new System.Drawing.Size(142, 113);
             this.btnFuncionario.TabIndex = 5;
             this.btnFuncionario.UseVisualStyleBackColor = false;
+            this.btnFuncionario.Leave += new System.EventHandler(this.btnFuncionario_Leave);
+            this.btnFuncionario.Enter += new System.EventHandler(this.btnFuncionario_Enter);
             // 
             // btnDesconectar
             // 
@@ -106,7 +114,7 @@
             this.lblAlunoOculto.BackColor = System.Drawing.Color.Transparent;
             this.lblAlunoOculto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblAlunoOculto.ForeColor = System.Drawing.Color.Yellow;
-            this.lblAlunoOculto.Location = new System.Drawing.Point(307, 125);
+            this.lblAlunoOculto.Location = new System.Drawing.Point(311, 119);
             this.lblAlunoOculto.Name = "lblAlunoOculto";
             this.lblAlunoOculto.Size = new System.Drawing.Size(70, 23);
             this.lblAlunoOculto.TabIndex = 8;
@@ -124,6 +132,7 @@
             this.btnPesquisar.Size = new System.Drawing.Size(74, 75);
             this.btnPesquisar.TabIndex = 9;
             this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnCadastrarAluno
             // 
@@ -139,6 +148,60 @@
             this.btnCadastrarAluno.UseVisualStyleBackColor = false;
             this.btnCadastrarAluno.Click += new System.EventHandler(this.btnCadastrarAluno_Click);
             // 
+            // lblFuncOculto
+            // 
+            this.lblFuncOculto.AutoSize = true;
+            this.lblFuncOculto.BackColor = System.Drawing.Color.Transparent;
+            this.lblFuncOculto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFuncOculto.ForeColor = System.Drawing.Color.Yellow;
+            this.lblFuncOculto.Location = new System.Drawing.Point(450, 119);
+            this.lblFuncOculto.Name = "lblFuncOculto";
+            this.lblFuncOculto.Size = new System.Drawing.Size(125, 23);
+            this.lblFuncOculto.TabIndex = 10;
+            this.lblFuncOculto.Text = "Funcionários";
+            this.lblFuncOculto.Visible = false;
+            // 
+            // lblConfOculto
+            // 
+            this.lblConfOculto.AutoSize = true;
+            this.lblConfOculto.BackColor = System.Drawing.Color.Transparent;
+            this.lblConfOculto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblConfOculto.ForeColor = System.Drawing.Color.Yellow;
+            this.lblConfOculto.Location = new System.Drawing.Point(598, 119);
+            this.lblConfOculto.Name = "lblConfOculto";
+            this.lblConfOculto.Size = new System.Drawing.Size(138, 23);
+            this.lblConfOculto.TabIndex = 12;
+            this.lblConfOculto.Text = "Configurações";
+            this.lblConfOculto.Visible = false;
+            // 
+            // btnConfiguracoes
+            // 
+            this.btnConfiguracoes.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfiguracoes.BackgroundImage = global::GuiWindowsForms.Properties.Resources.configuracoes_137x101;
+            this.btnConfiguracoes.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracoes.Location = new System.Drawing.Point(593, 12);
+            this.btnConfiguracoes.Margin = new System.Windows.Forms.Padding(0);
+            this.btnConfiguracoes.Name = "btnConfiguracoes";
+            this.btnConfiguracoes.Size = new System.Drawing.Size(137, 101);
+            this.btnConfiguracoes.TabIndex = 11;
+            this.btnConfiguracoes.UseVisualStyleBackColor = false;
+            this.btnConfiguracoes.Leave += new System.EventHandler(this.btnConfiguracoes_Leave);
+            this.btnConfiguracoes.Enter += new System.EventHandler(this.btnConfiguracoes_Enter);
+            // 
+            // lblErro
+            // 
+            this.lblErro.AutoSize = true;
+            this.lblErro.BackColor = System.Drawing.Color.Transparent;
+            this.lblErro.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErro.ForeColor = System.Drawing.Color.Yellow;
+            this.lblErro.Location = new System.Drawing.Point(281, 680);
+            this.lblErro.Name = "lblErro";
+            this.lblErro.Size = new System.Drawing.Size(158, 23);
+            this.lblErro.TabIndex = 13;
+            this.lblErro.Text = "Senha Incorreta!";
+            this.lblErro.Visible = false;
+            // 
             // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -146,6 +209,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblErro);
+            this.Controls.Add(this.lblConfOculto);
+            this.Controls.Add(this.btnConfiguracoes);
+            this.Controls.Add(this.lblFuncOculto);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.lblAlunoOculto);
             this.Controls.Add(this.btnDesconectar);
@@ -178,5 +245,9 @@
         private System.Windows.Forms.Label lblAlunoOculto;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnCadastrarAluno;
+        private System.Windows.Forms.Label lblFuncOculto;
+        private System.Windows.Forms.Label lblConfOculto;
+        private System.Windows.Forms.Button btnConfiguracoes;
+        private System.Windows.Forms.Label lblErro;
     }
 }

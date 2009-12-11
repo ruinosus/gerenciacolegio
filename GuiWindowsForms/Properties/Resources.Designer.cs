@@ -88,6 +88,20 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap configuracoes_137x101 {
+            get {
+                object obj = ResourceManager.GetObject("configuracoes_137x101", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap configuracoes_142x113 {
+            get {
+                object obj = ResourceManager.GetObject("configuracoes_142x113", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap dados_73x74 {
             get {
                 object obj = ResourceManager.GetObject("dados_73x74", resourceCulture);
@@ -210,6 +224,13 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap responsavel_73x66 {
             get {
                 object obj = ResourceManager.GetObject("responsavel_73x66", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap responsavel_73x66_disabled {
+            get {
+                object obj = ResourceManager.GetObject("responsavel_73x66_disabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
