@@ -31,7 +31,7 @@ namespace GuiWindowsForms
 
         private void btnCadastrarAluno_Click(object sender, EventArgs e)
         {
-            telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            telaAlunoResponsavel telaalunoresponsavel = new telaAlunoResponsavel();// telaAlunoResponsavel.getInstancia();
             telaalunoresponsavel.Show();
         }
 
