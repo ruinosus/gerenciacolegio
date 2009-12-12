@@ -13,6 +13,8 @@ namespace GuiWindowsForms
     {
         private static telaLogin telalogin;
 
+        private static bool IsShown = false;
+
         public static telaLogin getInstancia()
         {
             if (telalogin == null)
@@ -20,6 +22,17 @@ namespace GuiWindowsForms
                 telalogin = new telaLogin();
             }
             return telalogin;
+        }
+
+        public new void Show()
+        {
+            if (IsShown)
+                base.Show();
+            else
+            {
+                base.Show();
+                IsShown = true;
+            }
         }
 
         public telaLogin()
@@ -61,6 +74,7 @@ namespace GuiWindowsForms
                     else
                     {
                         telaAlunoPrincipal telaAlunoPrincipal = telaAlunoPrincipal.getInstancia();
+                        this.Visible = false;
                         telaAlunoPrincipal.Show();
                     }
                 }
@@ -118,5 +132,10 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+        private void telaLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread();
+        }
     }
 }
