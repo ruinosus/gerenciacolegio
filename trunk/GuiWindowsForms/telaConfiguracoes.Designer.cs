@@ -31,8 +31,10 @@
             this.btnControledeAcesso = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.ckbAlteracaoFolhaChamada = new System.Windows.Forms.Button();
+            this.btnSerie = new System.Windows.Forms.Button();
             this.btnDesconectar = new System.Windows.Forms.Button();
+            this.lblDesconto = new System.Windows.Forms.Button();
+            this.btnAtividades = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnControledeAcesso
@@ -72,15 +74,15 @@
             this.btnVoltar.Tag = "";
             this.btnVoltar.UseVisualStyleBackColor = false;
             // 
-            // ckbAlteracaoFolhaChamada
+            // btnSerie
             // 
-            this.ckbAlteracaoFolhaChamada.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbAlteracaoFolhaChamada.Location = new System.Drawing.Point(847, 190);
-            this.ckbAlteracaoFolhaChamada.Name = "ckbAlteracaoFolhaChamada";
-            this.ckbAlteracaoFolhaChamada.Size = new System.Drawing.Size(135, 23);
-            this.ckbAlteracaoFolhaChamada.TabIndex = 54;
-            this.ckbAlteracaoFolhaChamada.Text = "Série";
-            this.ckbAlteracaoFolhaChamada.UseVisualStyleBackColor = true;
+            this.btnSerie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSerie.Location = new System.Drawing.Point(847, 190);
+            this.btnSerie.Name = "btnSerie";
+            this.btnSerie.Size = new System.Drawing.Size(135, 23);
+            this.btnSerie.TabIndex = 54;
+            this.btnSerie.Text = "Série";
+            this.btnSerie.UseVisualStyleBackColor = true;
             // 
             // btnDesconectar
             // 
@@ -95,6 +97,26 @@
             this.btnDesconectar.Tag = "";
             this.btnDesconectar.UseVisualStyleBackColor = false;
             // 
+            // lblDesconto
+            // 
+            this.lblDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDesconto.Location = new System.Drawing.Point(847, 266);
+            this.lblDesconto.Name = "lblDesconto";
+            this.lblDesconto.Size = new System.Drawing.Size(135, 23);
+            this.lblDesconto.TabIndex = 65;
+            this.lblDesconto.Text = "Desconto de Matrículas";
+            this.lblDesconto.UseVisualStyleBackColor = true;
+            // 
+            // btnAtividades
+            // 
+            this.btnAtividades.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAtividades.Location = new System.Drawing.Point(847, 343);
+            this.btnAtividades.Name = "btnAtividades";
+            this.btnAtividades.Size = new System.Drawing.Size(135, 23);
+            this.btnAtividades.TabIndex = 86;
+            this.btnAtividades.Text = "Atividades";
+            this.btnAtividades.UseVisualStyleBackColor = true;
+            // 
             // gpbControleDeAcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,8 +124,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.btnAtividades);
+            this.Controls.Add(this.lblDesconto);
             this.Controls.Add(this.btnDesconectar);
-            this.Controls.Add(this.ckbAlteracaoFolhaChamada);
+            this.Controls.Add(this.btnSerie);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.btnControledeAcesso);
@@ -124,7 +148,9 @@
         private System.Windows.Forms.Button btnControledeAcesso;
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Button ckbAlteracaoFolhaChamada;
+        private System.Windows.Forms.Button btnSerie;
         private System.Windows.Forms.Button btnDesconectar;
+        private System.Windows.Forms.Button lblDesconto;
+        private System.Windows.Forms.Button btnAtividades;
     }
 }

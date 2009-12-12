@@ -1,6 +1,6 @@
 ﻿namespace GuiWindowsForms
 {
-    partial class telaConfiguracoesDescontoMatricula
+    partial class telaConfiguracoesAtividades
     {
         /// <summary>
         /// Required designer variable.
@@ -28,44 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDesconto = new System.Windows.Forms.Button();
-            this.btnSerie = new System.Windows.Forms.Button();
             this.btnControledeAcesso = new System.Windows.Forms.Button();
+            this.btnSerie = new System.Windows.Forms.Button();
+            this.lblDesconto = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.lblHelloUsuario = new System.Windows.Forms.Label();
+            this.btnDesconectar = new System.Windows.Forms.Button();
+            this.btnAtividades = new System.Windows.Forms.Button();
             this.gpbSerie = new System.Windows.Forms.GroupBox();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.btnDesconectar = new System.Windows.Forms.Button();
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnAtividades = new System.Windows.Forms.Button();
+            this.btnAdicionarImagem = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblDesconto
-            // 
-            this.lblDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDesconto.Location = new System.Drawing.Point(847, 266);
-            this.lblDesconto.Name = "lblDesconto";
-            this.lblDesconto.Size = new System.Drawing.Size(135, 23);
-            this.lblDesconto.TabIndex = 64;
-            this.lblDesconto.Text = "Desconto de Matrículas";
-            this.lblDesconto.UseVisualStyleBackColor = true;
-            // 
-            // btnSerie
-            // 
-            this.btnSerie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSerie.Location = new System.Drawing.Point(847, 190);
-            this.btnSerie.Name = "btnSerie";
-            this.btnSerie.Size = new System.Drawing.Size(135, 23);
-            this.btnSerie.TabIndex = 63;
-            this.btnSerie.Text = "Série";
-            this.btnSerie.UseVisualStyleBackColor = true;
             // 
             // btnControledeAcesso
             // 
@@ -73,15 +56,87 @@
             this.btnControledeAcesso.Location = new System.Drawing.Point(12, 191);
             this.btnControledeAcesso.Name = "btnControledeAcesso";
             this.btnControledeAcesso.Size = new System.Drawing.Size(135, 23);
-            this.btnControledeAcesso.TabIndex = 62;
+            this.btnControledeAcesso.TabIndex = 63;
             this.btnControledeAcesso.Text = "Controle de Acesso";
             this.btnControledeAcesso.UseVisualStyleBackColor = true;
+            // 
+            // btnSerie
+            // 
+            this.btnSerie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSerie.Location = new System.Drawing.Point(847, 190);
+            this.btnSerie.Name = "btnSerie";
+            this.btnSerie.Size = new System.Drawing.Size(135, 23);
+            this.btnSerie.TabIndex = 64;
+            this.btnSerie.Text = "Série";
+            this.btnSerie.UseVisualStyleBackColor = true;
+            // 
+            // lblDesconto
+            // 
+            this.lblDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDesconto.Location = new System.Drawing.Point(847, 266);
+            this.lblDesconto.Name = "lblDesconto";
+            this.lblDesconto.Size = new System.Drawing.Size(135, 23);
+            this.lblDesconto.TabIndex = 65;
+            this.lblDesconto.Text = "Desconto de Matrículas";
+            this.lblDesconto.UseVisualStyleBackColor = true;
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.voltar_final_32x32;
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(27, 677);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(28, 34);
+            this.btnVoltar.TabIndex = 66;
+            this.btnVoltar.Tag = "";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            // 
+            // lblHelloUsuario
+            // 
+            this.lblHelloUsuario.AutoSize = true;
+            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
+            this.lblHelloUsuario.Location = new System.Drawing.Point(794, 5);
+            this.lblHelloUsuario.Name = "lblHelloUsuario";
+            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
+            this.lblHelloUsuario.TabIndex = 67;
+            this.lblHelloUsuario.Text = "Hello Usuário!";
+            // 
+            // btnDesconectar
+            // 
+            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
+            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
+            this.btnDesconectar.FlatAppearance.BorderSize = 0;
+            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
+            this.btnDesconectar.Name = "btnDesconectar";
+            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
+            this.btnDesconectar.TabIndex = 68;
+            this.btnDesconectar.Tag = "";
+            this.btnDesconectar.UseVisualStyleBackColor = false;
+            // 
+            // btnAtividades
+            // 
+            this.btnAtividades.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAtividades.Location = new System.Drawing.Point(847, 343);
+            this.btnAtividades.Name = "btnAtividades";
+            this.btnAtividades.Size = new System.Drawing.Size(135, 23);
+            this.btnAtividades.TabIndex = 87;
+            this.btnAtividades.Text = "Atividades";
+            this.btnAtividades.UseVisualStyleBackColor = true;
             // 
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
+            this.gpbSerie.Controls.Add(this.pictureBox1);
+            this.gpbSerie.Controls.Add(this.btnAdicionarImagem);
             this.gpbSerie.Controls.Add(this.btnExcluir);
-            this.gpbSerie.Controls.Add(this.textBox1);
+            this.gpbSerie.Controls.Add(this.txtValor);
             this.gpbSerie.Controls.Add(this.btnSalvar);
             this.gpbSerie.Controls.Add(this.lblValor);
             this.gpbSerie.Controls.Add(this.txtDescricao);
@@ -91,9 +146,9 @@
             this.gpbSerie.Location = new System.Drawing.Point(153, 129);
             this.gpbSerie.Name = "gpbSerie";
             this.gpbSerie.Size = new System.Drawing.Size(688, 550);
-            this.gpbSerie.TabIndex = 65;
+            this.gpbSerie.TabIndex = 88;
             this.gpbSerie.TabStop = false;
-            this.gpbSerie.Text = "DESCONTO MATRICULA";
+            this.gpbSerie.Text = "ATIVIDADES";
             // 
             // btnExcluir
             // 
@@ -105,13 +160,13 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtValor
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 134);
-            this.textBox1.MaxLength = 10;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtValor.Location = new System.Drawing.Point(92, 134);
+            this.txtValor.MaxLength = 10;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(112, 20);
+            this.txtValor.TabIndex = 4;
             // 
             // btnSalvar
             // 
@@ -135,9 +190,9 @@
             // txtDescricao
             // 
             this.txtDescricao.Location = new System.Drawing.Point(92, 69);
-            this.txtDescricao.MaxLength = 30;
+            this.txtDescricao.MaxLength = 50;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(249, 20);
+            this.txtDescricao.Size = new System.Drawing.Size(330, 20);
             this.txtDescricao.TabIndex = 2;
             // 
             // lblDescricao
@@ -157,80 +212,47 @@
             this.dataGridView1.Size = new System.Drawing.Size(640, 285);
             this.dataGridView1.TabIndex = 0;
             // 
-            // lblHelloUsuario
+            // btnAdicionarImagem
             // 
-            this.lblHelloUsuario.AutoSize = true;
-            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(794, 5);
-            this.lblHelloUsuario.Name = "lblHelloUsuario";
-            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
-            this.lblHelloUsuario.TabIndex = 66;
-            this.lblHelloUsuario.Text = "Hello Usuário!";
+            this.btnAdicionarImagem.Location = new System.Drawing.Point(538, 108);
+            this.btnAdicionarImagem.Name = "btnAdicionarImagem";
+            this.btnAdicionarImagem.Size = new System.Drawing.Size(126, 23);
+            this.btnAdicionarImagem.TabIndex = 70;
+            this.btnAdicionarImagem.Text = "Adicionar Imagem";
+            this.btnAdicionarImagem.UseVisualStyleBackColor = true;
             // 
-            // btnDesconectar
+            // pictureBox1
             // 
-            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
-            this.btnDesconectar.TabIndex = 67;
-            this.btnDesconectar.Tag = "";
-            this.btnDesconectar.UseVisualStyleBackColor = false;
+            this.pictureBox1.Location = new System.Drawing.Point(538, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(126, 80);
+            this.pictureBox1.TabIndex = 71;
+            this.pictureBox1.TabStop = false;
             // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.voltar_final_32x32;
-            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(27, 677);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(28, 34);
-            this.btnVoltar.TabIndex = 68;
-            this.btnVoltar.Tag = "";
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            // 
-            // btnAtividades
-            // 
-            this.btnAtividades.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAtividades.Location = new System.Drawing.Point(847, 343);
-            this.btnAtividades.Name = "btnAtividades";
-            this.btnAtividades.Size = new System.Drawing.Size(135, 23);
-            this.btnAtividades.TabIndex = 88;
-            this.btnAtividades.Text = "Atividades";
-            this.btnAtividades.UseVisualStyleBackColor = true;
-            // 
-            // telaConfiguracoesDescontoMatricula
+            // telaConfiguracoesAtividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(994, 716);
+            this.Controls.Add(this.gpbSerie);
             this.Controls.Add(this.btnAtividades);
-            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblHelloUsuario);
-            this.Controls.Add(this.gpbSerie);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblDesconto);
             this.Controls.Add(this.btnSerie);
             this.Controls.Add(this.btnControledeAcesso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "telaConfiguracoesDescontoMatricula";
+            this.Name = "telaConfiguracoesAtividades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.gpbSerie.ResumeLayout(false);
             this.gpbSerie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,20 +260,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Button lblDesconto;
-        private System.Windows.Forms.Button btnSerie;
         private System.Windows.Forms.Button btnControledeAcesso;
+        private System.Windows.Forms.Button btnSerie;
+        private System.Windows.Forms.Button lblDesconto;
+        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Label lblHelloUsuario;
+        private System.Windows.Forms.Button btnDesconectar;
+        private System.Windows.Forms.Button btnAtividades;
         private System.Windows.Forms.GroupBox gpbSerie;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lblHelloUsuario;
-        private System.Windows.Forms.Button btnDesconectar;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Button btnAtividades;
+        private System.Windows.Forms.Button btnAdicionarImagem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
