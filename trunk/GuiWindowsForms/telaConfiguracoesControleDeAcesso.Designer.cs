@@ -163,6 +163,7 @@
             // 
             // btnControledeAcesso
             // 
+            this.btnControledeAcesso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnControledeAcesso.Location = new System.Drawing.Point(12, 191);
             this.btnControledeAcesso.Name = "btnControledeAcesso";
             this.btnControledeAcesso.Size = new System.Drawing.Size(135, 23);
@@ -172,6 +173,7 @@
             // 
             // ckbAlteracaoFolhaChamada
             // 
+            this.ckbAlteracaoFolhaChamada.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbAlteracaoFolhaChamada.Location = new System.Drawing.Point(847, 190);
             this.ckbAlteracaoFolhaChamada.Name = "ckbAlteracaoFolhaChamada";
             this.ckbAlteracaoFolhaChamada.Size = new System.Drawing.Size(135, 23);
@@ -1108,7 +1110,7 @@
             this.MinimizeBox = false;
             this.Name = "telaConfiguracoesControleDeAcesso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "telaConfiguracoesControleDeAcesso";
+            this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.gpbControleDeAcesso.ResumeLayout(false);
             this.gpbControleDeAcesso.PerformLayout();
             this.ResumeLayout(false);

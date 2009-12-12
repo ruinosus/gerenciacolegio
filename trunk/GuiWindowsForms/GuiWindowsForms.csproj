@@ -136,6 +136,14 @@
       <DependentUpon>telaConfiguracoesControleDeAcesso.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="telaConfiguracoesDescontoMatricula.resx">
+      <DependentUpon>telaConfiguracoesDescontoMatricula.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConfiguracoesSerie.resx">
+      <DependentUpon>telaConfiguracoesSerie.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="telaLogin.resx">
       <DependentUpon>telaLogin.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -175,6 +183,18 @@
     </Compile>
     <Compile Include="telaConfiguracoes.Designer.cs">
       <DependentUpon>telaConfiguracoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConfiguracoesDescontoMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConfiguracoesDescontoMatricula.Designer.cs">
+      <DependentUpon>telaConfiguracoesDescontoMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConfiguracoesSerie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConfiguracoesSerie.Designer.cs">
+      <DependentUpon>telaConfiguracoesSerie.cs</DependentUpon>
     </Compile>
     <Compile Include="telaConfiguracoesControleDeAcesso.cs">
       <SubType>Form</SubType>
