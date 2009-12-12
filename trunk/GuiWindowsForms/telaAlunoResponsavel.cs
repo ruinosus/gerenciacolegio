@@ -10,9 +10,20 @@ using System.Windows.Forms;
 namespace GuiWindowsForms
 {
     public partial class telaAlunoResponsavel : Form
-    {
+    {      
+        /*
+         * Atributo para o Singleton da tela
+         * Atributo para controle de exibição da tela
+         * */
 
         private static telaAlunoResponsavel telaalunoresponsavel;
+
+        private static bool IsShown = false;
+
+        /// <summary>
+        /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
+        /// </summary>
+        /// <returns>retorna a instância da tela em uso ou uma nova</returns>
 
         public static telaAlunoResponsavel getInstancia()
         {
@@ -23,14 +34,43 @@ namespace GuiWindowsForms
             return telaalunoresponsavel;
         }
 
+        /// <summary>
+        /// Construtor da tela
+        /// </summary>
+
         public telaAlunoResponsavel()
         {
             InitializeComponent();
-            telaAlunoPrincipal.ActiveForm.Hide();
-        } 
+        }
+
+        /// <summary>
+        /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
+        /// </summary>
+
+        public new void Show()
+        {
+            if (IsShown)
+                base.Show();
+            else
+            {
+                base.Show();
+                IsShown = true;
+            }
+        }
+
+        /// <summary>
+        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
+        /// pelo singleton
+        /// </summary>
+        /// <param name="sender">Tela</param>
+        /// <param name="e">Cancela seu fechamento, permite só que seja ocultada</param>
 
         private void telaAlunoResponsavel_FormClosing(object sender, FormClosingEventArgs e)
         {
+            e.Cancel = true;
+            IsShown = false;
+            this.Hide();
+
             telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
             telaalunoprincipal.Show();
         }
@@ -145,6 +185,28 @@ namespace GuiWindowsForms
         {
             this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72;
             lblAcademico_menu.Visible = false;
+        }
+
+        /// <summary>
+        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnMatricula_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_hover;
+            lblMatricula_menu.Visible = true;
+        }
+
+        /// <summary>
+        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnMatricula_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69;
+            lblMatricula_menu.Visible = false;
         }
 
         #endregion
@@ -411,30 +473,5 @@ namespace GuiWindowsForms
             mskFoneResidencia.BackColor = System.Drawing.Color.White;
         }
         #endregion
-
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnMatricula_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_hover;
-            lblMatricula_menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnMatricula_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69;
-            lblMatricula_menu.Visible = false;
-        }
-
-  
-
     }
 }
