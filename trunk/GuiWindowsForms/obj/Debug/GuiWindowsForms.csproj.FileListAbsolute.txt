@@ -62,5 +62,10 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelBusca.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.gpbControleDeAcesso.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesControleDeAcesso.resources
+<<<<<<< .mine
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesDescontoMatricula.resources
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesSerie.resources
+=======
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesDescontoMatricula.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesSerie.resources
+>>>>>>> .r26

@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.gpbMatricula = new System.Windows.Forms.GroupBox();
+            this.txtTotalValor = new System.Windows.Forms.TextBox();
+            this.lblTotalValor = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblDesconto = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblNumeroMatricula = new System.Windows.Forms.Label();
+            this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
+            this.lblDataMatricula = new System.Windows.Forms.Label();
+            this.lblTurma = new System.Windows.Forms.Label();
+            this.cmbTurma = new System.Windows.Forms.ComboBox();
+            this.lblTurno = new System.Windows.Forms.Label();
+            this.cmbTurno = new System.Windows.Forms.ComboBox();
+            this.lblSerie = new System.Windows.Forms.Label();
+            this.cmbSerie = new System.Windows.Forms.ComboBox();
+            this.lblValor = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
-            this.lblValor = new System.Windows.Forms.Label();
-            this.cmbSerie = new System.Windows.Forms.ComboBox();
-            this.lblSerie = new System.Windows.Forms.Label();
-            this.lblTurno = new System.Windows.Forms.Label();
-            this.cmbTurno = new System.Windows.Forms.ComboBox();
-            this.lblTurma = new System.Windows.Forms.Label();
-            this.cmbTurma = new System.Windows.Forms.ComboBox();
-            this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
-            this.lblDataMatricula = new System.Windows.Forms.Label();
-            this.lblNumeroMatricula = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblDesconto = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lblTotalValor = new System.Windows.Forms.Label();
-            this.txtTotalValor = new System.Windows.Forms.TextBox();
             this.lblFoneEmerg = new System.Windows.Forms.Label();
             this.lblResponsavel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -95,6 +95,141 @@
             this.gpbMatricula.TabStop = false;
             this.gpbMatricula.Text = "MATRÍCULA DO ALUNO";
             // 
+            // txtTotalValor
+            // 
+            this.txtTotalValor.Location = new System.Drawing.Point(668, 306);
+            this.txtTotalValor.Name = "txtTotalValor";
+            this.txtTotalValor.ReadOnly = true;
+            this.txtTotalValor.Size = new System.Drawing.Size(123, 20);
+            this.txtTotalValor.TabIndex = 47;
+            // 
+            // lblTotalValor
+            // 
+            this.lblTotalValor.AutoSize = true;
+            this.lblTotalValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalValor.ForeColor = System.Drawing.Color.Red;
+            this.lblTotalValor.Location = new System.Drawing.Point(496, 304);
+            this.lblTotalValor.Name = "lblTotalValor";
+            this.lblTotalValor.Size = new System.Drawing.Size(160, 20);
+            this.lblTotalValor.TabIndex = 46;
+            this.lblTotalValor.Text = "Total à pagar (R$):";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(103, 225);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(163, 21);
+            this.comboBox1.TabIndex = 45;
+            // 
+            // lblDesconto
+            // 
+            this.lblDesconto.AutoSize = true;
+            this.lblDesconto.Location = new System.Drawing.Point(29, 228);
+            this.lblDesconto.Name = "lblDesconto";
+            this.lblDesconto.Size = new System.Drawing.Size(65, 13);
+            this.lblDesconto.TabIndex = 44;
+            this.lblDesconto.Text = "Desconto:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(103, 179);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(123, 20);
+            this.textBox1.TabIndex = 42;
+            // 
+            // lblNumeroMatricula
+            // 
+            this.lblNumeroMatricula.AutoSize = true;
+            this.lblNumeroMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroMatricula.Location = new System.Drawing.Point(665, 27);
+            this.lblNumeroMatricula.Name = "lblNumeroMatricula";
+            this.lblNumeroMatricula.Size = new System.Drawing.Size(126, 13);
+            this.lblNumeroMatricula.TabIndex = 41;
+            this.lblNumeroMatricula.Text = "Número da Matrícula";
+            // 
+            // dtpNascimento
+            // 
+            this.dtpNascimento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNascimento.Location = new System.Drawing.Point(500, 21);
+            this.dtpNascimento.Name = "dtpNascimento";
+            this.dtpNascimento.Size = new System.Drawing.Size(110, 20);
+            this.dtpNascimento.TabIndex = 40;
+            // 
+            // lblDataMatricula
+            // 
+            this.lblDataMatricula.AutoSize = true;
+            this.lblDataMatricula.Location = new System.Drawing.Point(380, 27);
+            this.lblDataMatricula.Name = "lblDataMatricula";
+            this.lblDataMatricula.Size = new System.Drawing.Size(114, 13);
+            this.lblDataMatricula.TabIndex = 39;
+            this.lblDataMatricula.Text = "Data da Matrícula:";
+            // 
+            // lblTurma
+            // 
+            this.lblTurma.AutoSize = true;
+            this.lblTurma.Location = new System.Drawing.Point(241, 118);
+            this.lblTurma.Name = "lblTurma";
+            this.lblTurma.Size = new System.Drawing.Size(46, 13);
+            this.lblTurma.TabIndex = 38;
+            this.lblTurma.Text = "Turma:";
+            // 
+            // cmbTurma
+            // 
+            this.cmbTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTurma.FormattingEnabled = true;
+            this.cmbTurma.Location = new System.Drawing.Point(291, 115);
+            this.cmbTurma.Name = "cmbTurma";
+            this.cmbTurma.Size = new System.Drawing.Size(101, 21);
+            this.cmbTurma.TabIndex = 37;
+            // 
+            // lblTurno
+            // 
+            this.lblTurno.AutoSize = true;
+            this.lblTurno.Location = new System.Drawing.Point(50, 118);
+            this.lblTurno.Name = "lblTurno";
+            this.lblTurno.Size = new System.Drawing.Size(44, 13);
+            this.lblTurno.TabIndex = 36;
+            this.lblTurno.Text = "Turno:";
+            // 
+            // cmbTurno
+            // 
+            this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTurno.FormattingEnabled = true;
+            this.cmbTurno.Location = new System.Drawing.Point(103, 115);
+            this.cmbTurno.Name = "cmbTurno";
+            this.cmbTurno.Size = new System.Drawing.Size(101, 21);
+            this.cmbTurno.TabIndex = 35;
+            // 
+            // lblSerie
+            // 
+            this.lblSerie.AutoSize = true;
+            this.lblSerie.Location = new System.Drawing.Point(54, 82);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(40, 13);
+            this.lblSerie.TabIndex = 34;
+            this.lblSerie.Text = "Série:";
+            // 
+            // cmbSerie
+            // 
+            this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSerie.FormattingEnabled = true;
+            this.cmbSerie.Location = new System.Drawing.Point(103, 79);
+            this.cmbSerie.Name = "cmbSerie";
+            this.cmbSerie.Size = new System.Drawing.Size(163, 21);
+            this.cmbSerie.TabIndex = 33;
+            // 
+            // lblValor
+            // 
+            this.lblValor.AutoSize = true;
+            this.lblValor.Location = new System.Drawing.Point(29, 182);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(68, 13);
+            this.lblValor.TabIndex = 0;
+            this.lblValor.Text = "Valor (R$):";
+            // 
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
@@ -134,141 +269,6 @@
             this.btnDesconectar.TabIndex = 81;
             this.btnDesconectar.Tag = "Desconectar";
             this.btnDesconectar.UseVisualStyleBackColor = false;
-            // 
-            // lblValor
-            // 
-            this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(29, 182);
-            this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(68, 13);
-            this.lblValor.TabIndex = 0;
-            this.lblValor.Text = "Valor (R$):";
-            // 
-            // cmbSerie
-            // 
-            this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSerie.FormattingEnabled = true;
-            this.cmbSerie.Location = new System.Drawing.Point(103, 79);
-            this.cmbSerie.Name = "cmbSerie";
-            this.cmbSerie.Size = new System.Drawing.Size(163, 21);
-            this.cmbSerie.TabIndex = 33;
-            // 
-            // lblSerie
-            // 
-            this.lblSerie.AutoSize = true;
-            this.lblSerie.Location = new System.Drawing.Point(54, 82);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(40, 13);
-            this.lblSerie.TabIndex = 34;
-            this.lblSerie.Text = "Série:";
-            // 
-            // lblTurno
-            // 
-            this.lblTurno.AutoSize = true;
-            this.lblTurno.Location = new System.Drawing.Point(50, 118);
-            this.lblTurno.Name = "lblTurno";
-            this.lblTurno.Size = new System.Drawing.Size(44, 13);
-            this.lblTurno.TabIndex = 36;
-            this.lblTurno.Text = "Turno:";
-            // 
-            // cmbTurno
-            // 
-            this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTurno.FormattingEnabled = true;
-            this.cmbTurno.Location = new System.Drawing.Point(103, 115);
-            this.cmbTurno.Name = "cmbTurno";
-            this.cmbTurno.Size = new System.Drawing.Size(101, 21);
-            this.cmbTurno.TabIndex = 35;
-            // 
-            // lblTurma
-            // 
-            this.lblTurma.AutoSize = true;
-            this.lblTurma.Location = new System.Drawing.Point(241, 118);
-            this.lblTurma.Name = "lblTurma";
-            this.lblTurma.Size = new System.Drawing.Size(46, 13);
-            this.lblTurma.TabIndex = 38;
-            this.lblTurma.Text = "Turma:";
-            // 
-            // cmbTurma
-            // 
-            this.cmbTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTurma.FormattingEnabled = true;
-            this.cmbTurma.Location = new System.Drawing.Point(291, 115);
-            this.cmbTurma.Name = "cmbTurma";
-            this.cmbTurma.Size = new System.Drawing.Size(101, 21);
-            this.cmbTurma.TabIndex = 37;
-            // 
-            // dtpNascimento
-            // 
-            this.dtpNascimento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(500, 21);
-            this.dtpNascimento.Name = "dtpNascimento";
-            this.dtpNascimento.Size = new System.Drawing.Size(110, 20);
-            this.dtpNascimento.TabIndex = 40;
-            // 
-            // lblDataMatricula
-            // 
-            this.lblDataMatricula.AutoSize = true;
-            this.lblDataMatricula.Location = new System.Drawing.Point(380, 27);
-            this.lblDataMatricula.Name = "lblDataMatricula";
-            this.lblDataMatricula.Size = new System.Drawing.Size(114, 13);
-            this.lblDataMatricula.TabIndex = 39;
-            this.lblDataMatricula.Text = "Data da Matrícula:";
-            // 
-            // lblNumeroMatricula
-            // 
-            this.lblNumeroMatricula.AutoSize = true;
-            this.lblNumeroMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroMatricula.Location = new System.Drawing.Point(665, 27);
-            this.lblNumeroMatricula.Name = "lblNumeroMatricula";
-            this.lblNumeroMatricula.Size = new System.Drawing.Size(126, 13);
-            this.lblNumeroMatricula.TabIndex = 41;
-            this.lblNumeroMatricula.Text = "Número da Matrícula";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(103, 179);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 20);
-            this.textBox1.TabIndex = 42;
-            // 
-            // lblDesconto
-            // 
-            this.lblDesconto.AutoSize = true;
-            this.lblDesconto.Location = new System.Drawing.Point(29, 228);
-            this.lblDesconto.Name = "lblDesconto";
-            this.lblDesconto.Size = new System.Drawing.Size(65, 13);
-            this.lblDesconto.TabIndex = 44;
-            this.lblDesconto.Text = "Desconto:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 225);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(163, 21);
-            this.comboBox1.TabIndex = 45;
-            // 
-            // lblTotalValor
-            // 
-            this.lblTotalValor.AutoSize = true;
-            this.lblTotalValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalValor.ForeColor = System.Drawing.Color.Red;
-            this.lblTotalValor.Location = new System.Drawing.Point(496, 304);
-            this.lblTotalValor.Name = "lblTotalValor";
-            this.lblTotalValor.Size = new System.Drawing.Size(160, 20);
-            this.lblTotalValor.TabIndex = 46;
-            this.lblTotalValor.Text = "Total à pagar (R$):";
-            // 
-            // txtTotalValor
-            // 
-            this.txtTotalValor.Location = new System.Drawing.Point(668, 306);
-            this.txtTotalValor.Name = "txtTotalValor";
-            this.txtTotalValor.ReadOnly = true;
-            this.txtTotalValor.Size = new System.Drawing.Size(123, 20);
-            this.txtTotalValor.TabIndex = 47;
             // 
             // lblFoneEmerg
             // 
@@ -544,6 +544,7 @@
             this.Name = "telaAlunoMatricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMatricula_FormClosing);
             this.gpbMatricula.ResumeLayout(false);
             this.gpbMatricula.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();

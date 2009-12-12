@@ -331,8 +331,8 @@
   <data name="btnResponsaveis.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDgAA
-        Cw4BQL7hQQAAHBBJREFUeF7tnAl4jOf6/5/ZJzOR2MVSqlpbF121pZZaSylFUbHEvkUkIXsssSeEkNj3
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDQAA
+        Cw0B7QfALAAAHBBJREFUeF7tnAl4jOf6/5/ZJzOR2MVSqlpbF121pZZaSylFUbHEvkUkIXsssSeEkNj3
         iCX2JCT2qqo9hKCEHtRWdNE/bY9T9f1973dmdPRog9Pzr3NO57ru6531nXk/+d7r86ADoP66/Q4BAfSX
         /TaDv+DkI5C7gB7VzbxsOhXe3KLGtrOoSV0sanpXi5rdy1xxQW/DeykBpshlQaaYFYNMw1aHGLqvHaR7
         Iz3cUCwjwqDWRRrVuiijSuf9tHAew00qg8c21R/ulxT2VGptGD8b6TinnDs9Qu84/yCdGtXm4c7nerfL
@@ -458,8 +458,8 @@
   <data name="btnDados.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDgAA
-        Cw4BQL7hQQAALudJREFUeF7NfAVYVfna/UbCAFuU7kYUO8ccW7BFQlFRFBUdEBUBUUIUbBG7Rh27G1tR
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAALDQAA
+        Cw0B7QfALAAALudJREFUeF7NfAVYVfna/UbCAFuU7kYUO8ccW7BFQlFRFBUdEBUBUUIUbBG7Rh27G1tR
         6e4QsLsDEWX9128rfvfOvd+duXdm7vc/z/NyDpxir7Pe9eY+CgCkqouCgsL32//bjTp16kgBAQFS3bp1
         pWrVqknv37+XKioqpNq1a0tKSkrSx48f5b81adJEev36tSReHvgsaTauLxWV3JeC1yRKn8orJEkRkoKC
         qgSptqTw6ZmxQo0a/SqfnNysrd3oo6/vHKm2Wm3pyZMnfIyC/Lrl5eXy+3369El+75o1a0oNGzaUPnz4

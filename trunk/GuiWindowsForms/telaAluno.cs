@@ -64,7 +64,7 @@ namespace GuiWindowsForms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        /// 
+        
         private void btnResponsaveis_Click(object sender, EventArgs e)
         {
             this.Hide();

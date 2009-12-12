@@ -124,6 +124,8 @@ namespace GuiWindowsForms
         private void btnDesconectar_Click(object sender, EventArgs e)
         {
             this.Close();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
         }
 
         #region Controle de mudança das figuras e exibição dos textos das mesmas

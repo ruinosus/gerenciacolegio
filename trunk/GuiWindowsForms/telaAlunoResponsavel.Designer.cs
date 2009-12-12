@@ -637,6 +637,7 @@
             this.btnDados.Tag = "";
             this.btnDados.UseVisualStyleBackColor = false;
             this.btnDados.MouseLeave += new System.EventHandler(this.btnDados_MouseLeave);
+            this.btnDados.Click += new System.EventHandler(this.btnDados_Click);
             this.btnDados.MouseEnter += new System.EventHandler(this.btnDados_MouseEnter);
             // 
             // btnResponsaveis
@@ -672,6 +673,7 @@
             this.btnInfoMedica.Tag = "";
             this.btnInfoMedica.UseVisualStyleBackColor = false;
             this.btnInfoMedica.MouseLeave += new System.EventHandler(this.btnInfoMedica_MouseLeave);
+            this.btnInfoMedica.Click += new System.EventHandler(this.btnInfoMedica_Click);
             this.btnInfoMedica.MouseEnter += new System.EventHandler(this.btnInfoMedica_MouseEnter);
             // 
             // btnFinanceiro
@@ -689,6 +691,7 @@
             this.btnFinanceiro.Tag = "";
             this.btnFinanceiro.UseVisualStyleBackColor = false;
             this.btnFinanceiro.MouseLeave += new System.EventHandler(this.btnFinanceiro_MouseLeave);
+            this.btnFinanceiro.Click += new System.EventHandler(this.btnFinanceiro_Click);
             this.btnFinanceiro.MouseEnter += new System.EventHandler(this.btnFinanceiro_MouseEnter);
             // 
             // btnAcademico
@@ -706,6 +709,7 @@
             this.btnAcademico.Tag = "";
             this.btnAcademico.UseVisualStyleBackColor = false;
             this.btnAcademico.MouseLeave += new System.EventHandler(this.btnAcademico_MouseLeave);
+            this.btnAcademico.Click += new System.EventHandler(this.btnAcademico_Click);
             this.btnAcademico.MouseEnter += new System.EventHandler(this.btnAcademico_MouseEnter);
             // 
             // lblDados_Menu
@@ -800,6 +804,7 @@
             this.btnMatricula.Tag = "Dados Pessoais";
             this.btnMatricula.UseVisualStyleBackColor = false;
             this.btnMatricula.MouseLeave += new System.EventHandler(this.btnMatricula_MouseLeave);
+            this.btnMatricula.Click += new System.EventHandler(this.btnMatricula_Click);
             this.btnMatricula.MouseEnter += new System.EventHandler(this.btnMatricula_MouseEnter);
             // 
             // telaAlunoResponsavel

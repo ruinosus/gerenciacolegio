@@ -41,6 +41,17 @@
             this.lblNomeAluno = new System.Windows.Forms.Label();
             this.pctImagem = new System.Windows.Forms.PictureBox();
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.lblSituacaoEspecial = new System.Windows.Forms.Label();
+            this.txtSituacaoEspecial = new System.Windows.Forms.TextBox();
+            this.lblDescricaoMedica = new System.Windows.Forms.Label();
+            this.txtDescricaoMedica = new System.Windows.Forms.TextBox();
+            this.txtPlanoSaude = new System.Windows.Forms.TextBox();
+            this.lblPlanoSaude = new System.Windows.Forms.Label();
+            this.lblHospital = new System.Windows.Forms.Label();
+            this.txtHospital = new System.Windows.Forms.TextBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdbPositivo = new System.Windows.Forms.RadioButton();
+            this.cmbGrupoSanguineo = new System.Windows.Forms.ComboBox();
             this.txtNomeMedico = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.mkdFone = new System.Windows.Forms.MaskedTextBox();
@@ -53,17 +64,6 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.cmbGrupoSanguineo = new System.Windows.Forms.ComboBox();
-            this.rdbPositivo = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.txtHospital = new System.Windows.Forms.TextBox();
-            this.lblHospital = new System.Windows.Forms.Label();
-            this.lblPlanoSaude = new System.Windows.Forms.Label();
-            this.txtPlanoSaude = new System.Windows.Forms.TextBox();
-            this.txtDescricaoMedica = new System.Windows.Forms.TextBox();
-            this.lblDescricaoMedica = new System.Windows.Forms.Label();
-            this.lblSituacaoEspecial = new System.Windows.Forms.Label();
-            this.txtSituacaoEspecial = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
@@ -227,6 +227,110 @@
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DESCRIÇÕES MÉDICAS DO ALUNO";
             // 
+            // lblSituacaoEspecial
+            // 
+            this.lblSituacaoEspecial.AutoSize = true;
+            this.lblSituacaoEspecial.Location = new System.Drawing.Point(46, 363);
+            this.lblSituacaoEspecial.Name = "lblSituacaoEspecial";
+            this.lblSituacaoEspecial.Size = new System.Drawing.Size(113, 13);
+            this.lblSituacaoEspecial.TabIndex = 45;
+            this.lblSituacaoEspecial.Text = "Situação Especial:";
+            // 
+            // txtSituacaoEspecial
+            // 
+            this.txtSituacaoEspecial.Location = new System.Drawing.Point(49, 379);
+            this.txtSituacaoEspecial.MaxLength = 300;
+            this.txtSituacaoEspecial.Multiline = true;
+            this.txtSituacaoEspecial.Name = "txtSituacaoEspecial";
+            this.txtSituacaoEspecial.Size = new System.Drawing.Size(716, 76);
+            this.txtSituacaoEspecial.TabIndex = 44;
+            // 
+            // lblDescricaoMedica
+            // 
+            this.lblDescricaoMedica.AutoSize = true;
+            this.lblDescricaoMedica.Location = new System.Drawing.Point(46, 255);
+            this.lblDescricaoMedica.Name = "lblDescricaoMedica";
+            this.lblDescricaoMedica.Size = new System.Drawing.Size(436, 13);
+            this.lblDescricaoMedica.TabIndex = 43;
+            this.lblDescricaoMedica.Text = "Medicação a ser ministrada em caso de dor ou febre (especificar dosagem):";
+            // 
+            // txtDescricaoMedica
+            // 
+            this.txtDescricaoMedica.Location = new System.Drawing.Point(49, 271);
+            this.txtDescricaoMedica.MaxLength = 300;
+            this.txtDescricaoMedica.Multiline = true;
+            this.txtDescricaoMedica.Name = "txtDescricaoMedica";
+            this.txtDescricaoMedica.Size = new System.Drawing.Size(716, 76);
+            this.txtDescricaoMedica.TabIndex = 42;
+            // 
+            // txtPlanoSaude
+            // 
+            this.txtPlanoSaude.Location = new System.Drawing.Point(564, 205);
+            this.txtPlanoSaude.MaxLength = 30;
+            this.txtPlanoSaude.Name = "txtPlanoSaude";
+            this.txtPlanoSaude.Size = new System.Drawing.Size(201, 20);
+            this.txtPlanoSaude.TabIndex = 41;
+            // 
+            // lblPlanoSaude
+            // 
+            this.lblPlanoSaude.AutoSize = true;
+            this.lblPlanoSaude.Location = new System.Drawing.Point(446, 205);
+            this.lblPlanoSaude.Name = "lblPlanoSaude";
+            this.lblPlanoSaude.Size = new System.Drawing.Size(101, 13);
+            this.lblPlanoSaude.TabIndex = 40;
+            this.lblPlanoSaude.Text = "Plano de Saúde:";
+            // 
+            // lblHospital
+            // 
+            this.lblHospital.AutoSize = true;
+            this.lblHospital.Location = new System.Drawing.Point(46, 208);
+            this.lblHospital.Name = "lblHospital";
+            this.lblHospital.Size = new System.Drawing.Size(57, 13);
+            this.lblHospital.TabIndex = 39;
+            this.lblHospital.Text = "Hospital:";
+            // 
+            // txtHospital
+            // 
+            this.txtHospital.Location = new System.Drawing.Point(163, 205);
+            this.txtHospital.MaxLength = 30;
+            this.txtHospital.Name = "txtHospital";
+            this.txtHospital.Size = new System.Drawing.Size(201, 20);
+            this.txtHospital.TabIndex = 38;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButton2.Location = new System.Drawing.Point(414, 122);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(76, 17);
+            this.radioButton2.TabIndex = 37;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Negativo";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // rdbPositivo
+            // 
+            this.rdbPositivo.AutoSize = true;
+            this.rdbPositivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbPositivo.Location = new System.Drawing.Point(338, 122);
+            this.rdbPositivo.Name = "rdbPositivo";
+            this.rdbPositivo.Size = new System.Drawing.Size(70, 17);
+            this.rdbPositivo.TabIndex = 36;
+            this.rdbPositivo.TabStop = true;
+            this.rdbPositivo.Text = "Positivo";
+            this.rdbPositivo.UseVisualStyleBackColor = true;
+            // 
+            // cmbGrupoSanguineo
+            // 
+            this.cmbGrupoSanguineo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbGrupoSanguineo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGrupoSanguineo.FormattingEnabled = true;
+            this.cmbGrupoSanguineo.Location = new System.Drawing.Point(163, 119);
+            this.cmbGrupoSanguineo.Name = "cmbGrupoSanguineo";
+            this.cmbGrupoSanguineo.Size = new System.Drawing.Size(72, 21);
+            this.cmbGrupoSanguineo.TabIndex = 35;
+            // 
             // txtNomeMedico
             // 
             this.txtNomeMedico.Location = new System.Drawing.Point(163, 165);
@@ -352,110 +456,6 @@
             this.lblHelloUsuario.TabIndex = 37;
             this.lblHelloUsuario.Text = "Hello Usuário!";
             // 
-            // cmbGrupoSanguineo
-            // 
-            this.cmbGrupoSanguineo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbGrupoSanguineo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGrupoSanguineo.FormattingEnabled = true;
-            this.cmbGrupoSanguineo.Location = new System.Drawing.Point(163, 119);
-            this.cmbGrupoSanguineo.Name = "cmbGrupoSanguineo";
-            this.cmbGrupoSanguineo.Size = new System.Drawing.Size(72, 21);
-            this.cmbGrupoSanguineo.TabIndex = 35;
-            // 
-            // rdbPositivo
-            // 
-            this.rdbPositivo.AutoSize = true;
-            this.rdbPositivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbPositivo.Location = new System.Drawing.Point(338, 122);
-            this.rdbPositivo.Name = "rdbPositivo";
-            this.rdbPositivo.Size = new System.Drawing.Size(70, 17);
-            this.rdbPositivo.TabIndex = 36;
-            this.rdbPositivo.TabStop = true;
-            this.rdbPositivo.Text = "Positivo";
-            this.rdbPositivo.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton2.Location = new System.Drawing.Point(414, 122);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 17);
-            this.radioButton2.TabIndex = 37;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Negativo";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // txtHospital
-            // 
-            this.txtHospital.Location = new System.Drawing.Point(163, 205);
-            this.txtHospital.MaxLength = 30;
-            this.txtHospital.Name = "txtHospital";
-            this.txtHospital.Size = new System.Drawing.Size(201, 20);
-            this.txtHospital.TabIndex = 38;
-            // 
-            // lblHospital
-            // 
-            this.lblHospital.AutoSize = true;
-            this.lblHospital.Location = new System.Drawing.Point(46, 208);
-            this.lblHospital.Name = "lblHospital";
-            this.lblHospital.Size = new System.Drawing.Size(57, 13);
-            this.lblHospital.TabIndex = 39;
-            this.lblHospital.Text = "Hospital:";
-            // 
-            // lblPlanoSaude
-            // 
-            this.lblPlanoSaude.AutoSize = true;
-            this.lblPlanoSaude.Location = new System.Drawing.Point(446, 205);
-            this.lblPlanoSaude.Name = "lblPlanoSaude";
-            this.lblPlanoSaude.Size = new System.Drawing.Size(101, 13);
-            this.lblPlanoSaude.TabIndex = 40;
-            this.lblPlanoSaude.Text = "Plano de Saúde:";
-            // 
-            // txtPlanoSaude
-            // 
-            this.txtPlanoSaude.Location = new System.Drawing.Point(564, 205);
-            this.txtPlanoSaude.MaxLength = 30;
-            this.txtPlanoSaude.Name = "txtPlanoSaude";
-            this.txtPlanoSaude.Size = new System.Drawing.Size(201, 20);
-            this.txtPlanoSaude.TabIndex = 41;
-            // 
-            // txtDescricaoMedica
-            // 
-            this.txtDescricaoMedica.Location = new System.Drawing.Point(49, 271);
-            this.txtDescricaoMedica.MaxLength = 300;
-            this.txtDescricaoMedica.Multiline = true;
-            this.txtDescricaoMedica.Name = "txtDescricaoMedica";
-            this.txtDescricaoMedica.Size = new System.Drawing.Size(716, 76);
-            this.txtDescricaoMedica.TabIndex = 42;
-            // 
-            // lblDescricaoMedica
-            // 
-            this.lblDescricaoMedica.AutoSize = true;
-            this.lblDescricaoMedica.Location = new System.Drawing.Point(46, 255);
-            this.lblDescricaoMedica.Name = "lblDescricaoMedica";
-            this.lblDescricaoMedica.Size = new System.Drawing.Size(436, 13);
-            this.lblDescricaoMedica.TabIndex = 43;
-            this.lblDescricaoMedica.Text = "Medicação a ser ministrada em caso de dor ou febre (especificar dosagem):";
-            // 
-            // lblSituacaoEspecial
-            // 
-            this.lblSituacaoEspecial.AutoSize = true;
-            this.lblSituacaoEspecial.Location = new System.Drawing.Point(46, 363);
-            this.lblSituacaoEspecial.Name = "lblSituacaoEspecial";
-            this.lblSituacaoEspecial.Size = new System.Drawing.Size(113, 13);
-            this.lblSituacaoEspecial.TabIndex = 45;
-            this.lblSituacaoEspecial.Text = "Situação Especial:";
-            // 
-            // txtSituacaoEspecial
-            // 
-            this.txtSituacaoEspecial.Location = new System.Drawing.Point(49, 379);
-            this.txtSituacaoEspecial.MaxLength = 300;
-            this.txtSituacaoEspecial.Multiline = true;
-            this.txtSituacaoEspecial.Name = "txtSituacaoEspecial";
-            this.txtSituacaoEspecial.Size = new System.Drawing.Size(716, 76);
-            this.txtSituacaoEspecial.TabIndex = 44;
-            // 
             // telaAlunoMedicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,6 +485,7 @@
             this.Name = "telaAlunoMedicacao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMedicacao_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
