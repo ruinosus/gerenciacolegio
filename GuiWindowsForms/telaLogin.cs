@@ -73,8 +73,8 @@ namespace GuiWindowsForms
                     }
                     else
                     {
+                        this.Hide();
                         telaAlunoPrincipal telaAlunoPrincipal = telaAlunoPrincipal.getInstancia();
-                        this.Visible = false;
                         telaAlunoPrincipal.Show();
                     }
                 }

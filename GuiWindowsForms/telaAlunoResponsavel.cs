@@ -56,6 +56,56 @@ namespace GuiWindowsForms
                 base.Show();
                 IsShown = true;
             }
+
+            //return SelecionaForm(aux);
+        }
+
+        private Form SelecionaForm(int formId)
+        {
+            Form form = null;
+
+            if (formId == 1)
+            {
+                telaAluno telaalunoaux = telaAluno.getInstancia();
+                form = telaalunoaux;
+            }
+            else if (formId == 2)
+            {
+                telaAlunoAcademico telaalunoacademicoaux = telaAlunoAcademico.getInstancia();
+                form = telaalunoacademicoaux;
+            }
+            else if (formId == 3)
+            {
+                telaAlunoMatricula telaalunomatriculaaux = telaAlunoMatricula.getInstancia();
+                form = telaalunomatriculaaux;
+            }
+            else if (formId == 4)
+            {
+                telaAlunoMedicacao telaalunomedicacaoaux = telaAlunoMedicacao.getInstancia();
+                form = telaalunomedicacaoaux;
+            }
+            else if (formId == 5)
+            {
+                telaAlunoPrincipal telaalunoprincipalaux = telaAlunoPrincipal.getInstancia();
+                form = telaalunoprincipalaux;
+            }
+            else if (formId == 6)
+            {
+                telaAlunoResponsavel telaalunoresponsavelaux = telaAlunoResponsavel.getInstancia();
+                form = telaalunoresponsavelaux;
+            }
+            else if (formId == 7)
+            {
+                telaAlunoResponsavelBusca telaalunoresponsavelbuscaaux = telaAlunoResponsavelBusca.getInstancia();
+                form = telaalunoresponsavelbuscaaux;
+            }
+            else if (formId == 8)
+            {
+                telaLogin telaloginaux = telaLogin.getInstancia();
+                form = telaloginaux;
+            }
+
+            return form;
         }
 
         /// <summary>
@@ -473,5 +523,46 @@ namespace GuiWindowsForms
             mskFoneResidencia.BackColor = System.Drawing.Color.White;
         }
         #endregion
+
+        /// <summary>
+        /// Fecha a tela ativa e exibe a tela de responsáveis
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnDados_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            telaAluno telaaluno = telaAluno.getInstancia();
+            telaaluno.Show();
+        }
+
+        private void btnMatricula_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            telaAlunoMatricula telaalunomatricula = telaAlunoMatricula.getInstancia();
+            telaalunomatricula.Show();
+        }
+
+        private void btnInfoMedica_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            telaAlunoMedicacao telaalunomedicacao = telaAlunoMedicacao.getInstancia();
+            telaalunomedicacao.Show();
+        }
+
+        private void btnFinanceiro_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            //telaAlunoMedicacao telaalunomedicacao = telaAlunoMedicacao.getInstancia();
+            //telaalunomedicacao.Show();
+        }
+
+        private void btnAcademico_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
+            telaalunoacademico.Show();
+        }
     }
 }
