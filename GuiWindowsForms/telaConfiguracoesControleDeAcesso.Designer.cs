@@ -32,7 +32,7 @@
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnControledeAcesso = new System.Windows.Forms.Button();
-            this.ckbAlteracaoFolhaChamada = new System.Windows.Forms.Button();
+            this.btnSerie = new System.Windows.Forms.Button();
             this.gpbControleDeAcesso = new System.Windows.Forms.GroupBox();
             this.lblDebitos = new System.Windows.Forms.Label();
             this.ckbAlteracaoDebitos = new System.Windows.Forms.CheckBox();
@@ -118,6 +118,8 @@
             this.lblNomeFuncionario = new System.Windows.Forms.Label();
             this.cmbFuncionario = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.lblDesconto = new System.Windows.Forms.Button();
+            this.btnAtividades = new System.Windows.Forms.Button();
             this.gpbControleDeAcesso.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,15 +173,15 @@
             this.btnControledeAcesso.Text = "Controle de Acesso";
             this.btnControledeAcesso.UseVisualStyleBackColor = true;
             // 
-            // ckbAlteracaoFolhaChamada
+            // btnSerie
             // 
-            this.ckbAlteracaoFolhaChamada.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbAlteracaoFolhaChamada.Location = new System.Drawing.Point(847, 190);
-            this.ckbAlteracaoFolhaChamada.Name = "ckbAlteracaoFolhaChamada";
-            this.ckbAlteracaoFolhaChamada.Size = new System.Drawing.Size(135, 23);
-            this.ckbAlteracaoFolhaChamada.TabIndex = 53;
-            this.ckbAlteracaoFolhaChamada.Text = "Série";
-            this.ckbAlteracaoFolhaChamada.UseVisualStyleBackColor = true;
+            this.btnSerie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSerie.Location = new System.Drawing.Point(847, 190);
+            this.btnSerie.Name = "btnSerie";
+            this.btnSerie.Size = new System.Drawing.Size(135, 23);
+            this.btnSerie.TabIndex = 53;
+            this.btnSerie.Text = "Série";
+            this.btnSerie.UseVisualStyleBackColor = true;
             // 
             // gpbControleDeAcesso
             // 
@@ -1092,6 +1094,26 @@
             this.btnSalvar.Tag = "";
             this.btnSalvar.UseVisualStyleBackColor = false;
             // 
+            // lblDesconto
+            // 
+            this.lblDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDesconto.Location = new System.Drawing.Point(847, 266);
+            this.lblDesconto.Name = "lblDesconto";
+            this.lblDesconto.Size = new System.Drawing.Size(135, 23);
+            this.lblDesconto.TabIndex = 84;
+            this.lblDesconto.Text = "Desconto de Matrículas";
+            this.lblDesconto.UseVisualStyleBackColor = true;
+            // 
+            // btnAtividades
+            // 
+            this.btnAtividades.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAtividades.Location = new System.Drawing.Point(847, 343);
+            this.btnAtividades.Name = "btnAtividades";
+            this.btnAtividades.Size = new System.Drawing.Size(135, 23);
+            this.btnAtividades.TabIndex = 85;
+            this.btnAtividades.Text = "Atividades";
+            this.btnAtividades.UseVisualStyleBackColor = true;
+            // 
             // telaConfiguracoesControleDeAcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1099,9 +1121,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(994, 716);
+            this.Controls.Add(this.btnAtividades);
+            this.Controls.Add(this.lblDesconto);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.gpbControleDeAcesso);
-            this.Controls.Add(this.ckbAlteracaoFolhaChamada);
+            this.Controls.Add(this.btnSerie);
             this.Controls.Add(this.btnControledeAcesso);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblHelloUsuario);
@@ -1124,7 +1148,7 @@
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.Button btnControledeAcesso;
-        private System.Windows.Forms.Button ckbAlteracaoFolhaChamada;
+        private System.Windows.Forms.Button btnSerie;
         private System.Windows.Forms.GroupBox gpbControleDeAcesso;
         private System.Windows.Forms.ComboBox cmbFuncionario;
         private System.Windows.Forms.Label lblNomeFuncionario;
@@ -1210,5 +1234,7 @@
         private System.Windows.Forms.CheckBox ckbAlteracaoDebitos;
         private System.Windows.Forms.CheckBox ckbVisualizacaoDebitos;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button lblDesconto;
+        private System.Windows.Forms.Button btnAtividades;
     }
 }
