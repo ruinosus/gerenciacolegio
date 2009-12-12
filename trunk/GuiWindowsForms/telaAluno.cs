@@ -47,7 +47,7 @@ namespace GuiWindowsForms
         /// <summary>
         /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
         /// </summary>
-        
+
         public new void Show()
         {
             if (IsShown)
@@ -57,19 +57,22 @@ namespace GuiWindowsForms
                 base.Show();
                 IsShown = true;
             }
+
+            //return SelecionaForm(aux);
         }
 
         /// <summary>
-        /// Fecha a tela ativa e exibe a tela de responsáveis
+        /// Botão para esconder a tela e voltar para a tela de login
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
-        private void btnResponsaveis_Click(object sender, EventArgs e)
+
+        private void btnDesconectar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            telaAlunoResponsavel telaAlunoRespons = telaAlunoResponsavel.getInstancia();
-            telaAlunoRespons.Show();
+            Program.ultimaTela = 9;
+            this.Close();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
         }
 
         /// <summary>
@@ -78,15 +81,22 @@ namespace GuiWindowsForms
         /// </summary>
         /// <param name="sender">Tela</param>
         /// <param name="e">Cancela seu fechamento, permite só que seja ocultada</param>
-        
+
         private void telaAluno_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
             IsShown = false;
             this.Hide();
 
-            telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
-            telaalunoprincipal.Show();
+            if (Program.ultimaTela != 7)
+            {
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+            else
+            {
+                Program.ultimaTela = 6;
+                Program.SelecionaForm(Program.ultimaTela);
+            }
         }
 
         #region Controle de mudança das figuras e exibição dos textos das mesmas
@@ -507,6 +517,151 @@ namespace GuiWindowsForms
         {
             mskFoneEmergencia.BackColor = System.Drawing.Color.White;
         }
+        #endregion
+
+        #region Botoes do menu de navegação
+
+        /// <summary>
+        /// Fecha a tela ativa e exibe a tela de dados gerais
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnResponsaveis_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            telaalunoresponsavel.Show();
+        }
+
+        /// <summary>
+        /// Fecha a tela ativa e exibe a tela de matricula
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnMatricula_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoMatricula telaalunomatricula = telaAlunoMatricula.getInstancia();
+            telaalunomatricula.Show();
+        }
+
+        /// <summary>
+        /// Fecha a tela ativa e exibe a tela de dados médicos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnInfoMedica_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoMedicacao telaalunomedicacao = telaAlunoMedicacao.getInstancia();
+            telaalunomedicacao.Show();
+        }
+
+        /// <summary>
+        /// Fecha a tela ativa e exibe a tela de dados financeiros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnFinanceiro_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoFinanceiro telaalunofinanceiro = telaAlunoFinanceiro.getInstancia();
+            telaalunofinanceiro.Show();
+        }
+
+        /// <summary>
+        /// Fecha a tela ativa e exibe a tela de dados academicos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnAcademico_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
+            telaalunoacademico.Show();
+        }
+
+        #endregion
+
+        #region Controle dos textos e das ações dos botões de ação inferiores
+
+        /// <summary>
+        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnVoltar_MouseEnter(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = true;
+            lblInfoControles.Text = "Voltar";
+        }
+
+        /// <summary>
+        /// Oculta o texto referente ao controle quando o mouse passa sobre ele
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnVoltar_MouseLeave(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = false;
+        }
+
+        /// <summary>
+        /// Oculta o texto referente ao controle quando o mouse passa sobre ele
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnSalvar_MouseLeave(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = false;
+        }
+
+        /// <summary>
+        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnSalvar_MouseEnter(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = true;
+            lblInfoControles.Text = "Salvar Informações";
+        }
+
+        /// <summary>
+        /// Retorna para tela anterior ocultando a atual e chamando a instância da última tela acessada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            if (Program.ultimaTela != 7)
+            {
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+            else
+            {
+                Program.ultimaTela = 6;
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+        }
+
         #endregion
 
     }

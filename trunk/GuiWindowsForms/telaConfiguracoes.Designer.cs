@@ -1,6 +1,6 @@
 ﻿namespace GuiWindowsForms
 {
-    partial class gpbControleDeAcesso
+    partial class telaConfiguracoes
     {
         /// <summary>
         /// Required designer variable.
@@ -96,6 +96,7 @@
             this.btnDesconectar.TabIndex = 55;
             this.btnDesconectar.Tag = "";
             this.btnDesconectar.UseVisualStyleBackColor = false;
+            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
             // lblDesconto
             // 
@@ -117,7 +118,7 @@
             this.btnAtividades.Text = "Atividades";
             this.btnAtividades.UseVisualStyleBackColor = true;
             // 
-            // gpbControleDeAcesso
+            // telaConfiguracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,9 +136,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "gpbControleDeAcesso";
+            this.Name = "telaConfiguracoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoes_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
