@@ -223,4 +223,19 @@
   <data name="dados_73x74_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dados_73x74_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="academico_73x72_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\academico_73x72_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="financeiro_73x60_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\financeiro_73x60_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icone_prof_142x113_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icone_prof_142x113_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injecao_73x73_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\injecao_73x73_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="matricula_68x69_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\matricula_68x69_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

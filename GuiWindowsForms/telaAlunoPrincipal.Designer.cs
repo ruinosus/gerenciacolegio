@@ -186,6 +186,7 @@
             this.btnConfiguracoes.Size = new System.Drawing.Size(137, 101);
             this.btnConfiguracoes.TabIndex = 11;
             this.btnConfiguracoes.UseVisualStyleBackColor = false;
+            this.btnConfiguracoes.Click += new System.EventHandler(this.btnConfiguracoes_Click);
             this.btnConfiguracoes.Leave += new System.EventHandler(this.btnConfiguracoes_Leave);
             this.btnConfiguracoes.Enter += new System.EventHandler(this.btnConfiguracoes_Enter);
             // 

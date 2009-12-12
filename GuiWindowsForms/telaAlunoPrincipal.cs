@@ -68,6 +68,7 @@ namespace GuiWindowsForms
         private void btnCadastrarAluno_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Program.ultimaTela = 6;
             telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
             telaalunoresponsavel.Show();
         }
@@ -85,8 +86,15 @@ namespace GuiWindowsForms
             IsShown = false;
             this.Hide();
 
-            telaLogin telalogin = telaLogin.getInstancia();
-            telalogin.Show();
+            if (Program.ultimaTela != 6)
+            {
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+            else
+            {
+                Program.ultimaTela = 9;
+                Program.SelecionaForm(Program.ultimaTela);
+            }
         }
 
         #region Mudança de cores das textboxes e outros controles
@@ -123,6 +131,7 @@ namespace GuiWindowsForms
     
         private void btnDesconectar_Click(object sender, EventArgs e)
         {
+            Program.ultimaTela = 9;
             this.Close();
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
@@ -233,6 +242,14 @@ namespace GuiWindowsForms
                 lblErro.Visible = true;
                 lblErro.Text = ex.Message;
             }
+        }
+
+        private void btnConfiguracoes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 6;
+            telaConfiguracoes telaconfiguracoes = telaConfiguracoes.getInstancia();
+            telaconfiguracoes.Show();
         }
     }
 }

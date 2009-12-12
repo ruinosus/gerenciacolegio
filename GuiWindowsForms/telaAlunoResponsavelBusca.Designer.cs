@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoResponsavelBusca));
             this.lblFoneEmerg = new System.Windows.Forms.Label();
             this.lblResponsavel = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
@@ -35,9 +36,11 @@
             this.lblNomeAluno = new System.Windows.Forms.Label();
             this.pctImagem = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.lblHelloUsuario = new System.Windows.Forms.Label();
+            this.lblInfoControles = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
+            this.lblHelloUsuario = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -104,7 +107,7 @@
             // 
             // pctImagem
             // 
-            this.pctImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(189)))), ((int)(((byte)(228)))));
+            this.pctImagem.BackColor = System.Drawing.Color.Transparent;
             this.pctImagem.Location = new System.Drawing.Point(289, 12);
             this.pctImagem.Name = "pctImagem";
             this.pctImagem.Size = new System.Drawing.Size(148, 134);
@@ -119,32 +122,18 @@
             this.dataGridView1.Size = new System.Drawing.Size(900, 350);
             this.dataGridView1.TabIndex = 36;
             // 
-            // btnVoltar
+            // lblInfoControles
             // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.voltar_final_32x32;
-            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(35, 679);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(32, 34);
-            this.btnVoltar.TabIndex = 46;
-            this.btnVoltar.Tag = "";
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            // 
-            // lblHelloUsuario
-            // 
-            this.lblHelloUsuario.AutoSize = true;
-            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(926, 5);
-            this.lblHelloUsuario.Name = "lblHelloUsuario";
-            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
-            this.lblHelloUsuario.TabIndex = 48;
-            this.lblHelloUsuario.Text = "Hello Usuário!";
+            this.lblInfoControles.AutoSize = true;
+            this.lblInfoControles.BackColor = System.Drawing.Color.Transparent;
+            this.lblInfoControles.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblInfoControles.ForeColor = System.Drawing.Color.Yellow;
+            this.lblInfoControles.Location = new System.Drawing.Point(141, 685);
+            this.lblInfoControles.Name = "lblInfoControles";
+            this.lblInfoControles.Size = new System.Drawing.Size(14, 19);
+            this.lblInfoControles.TabIndex = 73;
+            this.lblInfoControles.Text = "-";
+            this.lblInfoControles.Visible = false;
             // 
             // btnDesconectar
             // 
@@ -152,12 +141,60 @@
             this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(1088, 5);
+            this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
             this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(35, 30);
-            this.btnDesconectar.TabIndex = 49;
+            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
+            this.btnDesconectar.TabIndex = 72;
             this.btnDesconectar.Tag = "";
             this.btnDesconectar.UseVisualStyleBackColor = false;
+            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
+            // 
+            // lblHelloUsuario
+            // 
+            this.lblHelloUsuario.AutoSize = true;
+            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
+            this.lblHelloUsuario.Location = new System.Drawing.Point(794, 5);
+            this.lblHelloUsuario.Name = "lblHelloUsuario";
+            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
+            this.lblHelloUsuario.TabIndex = 71;
+            this.lblHelloUsuario.Text = "Hello Usuário!";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.ok_32x32_tipo2_final;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Location = new System.Drawing.Point(86, 677);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(36, 29);
+            this.btnSalvar.TabIndex = 70;
+            this.btnSalvar.Tag = "";
+            this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.MouseLeave += new System.EventHandler(this.btnSalvar_MouseLeave);
+            this.btnSalvar.MouseEnter += new System.EventHandler(this.btnSalvar_MouseEnter);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.voltar_final_32x32;
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(31, 677);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(33, 34);
+            this.btnVoltar.TabIndex = 69;
+            this.btnVoltar.Tag = "";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.MouseLeave += new System.EventHandler(this.btnVoltar_MouseLeave);
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            this.btnVoltar.MouseEnter += new System.EventHandler(this.btnVoltar_MouseEnter);
             // 
             // telaAlunoResponsavelBusca
             // 
@@ -166,8 +203,10 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblHelloUsuario);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblFoneEmerg);
@@ -178,6 +217,7 @@
             this.Controls.Add(this.pctImagem);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "telaAlunoResponsavelBusca";
@@ -200,8 +240,10 @@
         private System.Windows.Forms.Label lblNomeAluno;
         private System.Windows.Forms.PictureBox pctImagem;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Label lblHelloUsuario;
+        private System.Windows.Forms.Label lblInfoControles;
         private System.Windows.Forms.Button btnDesconectar;
+        private System.Windows.Forms.Label lblHelloUsuario;
+        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

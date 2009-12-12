@@ -7,6 +7,8 @@ namespace GuiWindowsForms
 {
     static class Program
     {
+        public static int ultimaTela = 9;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,6 +18,55 @@ namespace GuiWindowsForms
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new telaLogin());
+        }
+
+        public static void SelecionaForm(int formId)
+        {
+            if (formId == 1)
+            {
+                telaAluno telaalunoaux = telaAluno.getInstancia();
+                telaalunoaux.Show();
+            }
+            else if (formId == 2)
+            {
+                telaAlunoAcademico telaalunoacademicoaux = telaAlunoAcademico.getInstancia();
+                telaalunoacademicoaux.Show();
+            }
+            else if (formId == 3)
+            {
+                telaAlunoMatricula telaalunomatriculaaux = telaAlunoMatricula.getInstancia();
+                telaalunomatriculaaux.Show();
+            }
+            else if (formId == 4)
+            {
+                telaAlunoMatricula telaalunomatriculaaux = telaAlunoMatricula.getInstancia();
+                telaalunomatriculaaux.Show();
+            }
+            else if (formId == 5)
+            {
+                telaAlunoMedicacao telaalunomedicacaoaux = telaAlunoMedicacao.getInstancia();
+                telaalunomedicacaoaux.Show();
+            }
+            else if (formId == 6)
+            {
+                telaAlunoPrincipal telaalunoprincipalaux = telaAlunoPrincipal.getInstancia();
+                telaalunoprincipalaux.Show();
+            }
+            else if (formId == 7)
+            {
+                telaAlunoResponsavel telaalunoresponsavelaux = telaAlunoResponsavel.getInstancia();
+                telaalunoresponsavelaux.Show();
+            }
+            else if (formId == 8)
+            {
+                telaAlunoResponsavelBusca telaalunoresponsavelbuscaaux = telaAlunoResponsavelBusca.getInstancia();
+                telaalunoresponsavelbuscaaux.Show();
+            }
+            else if (formId == 9)
+            {
+                telaLogin telaloginaux = telaLogin.getInstancia();
+                telaloginaux.Show();
+            }
         }
     }
 }

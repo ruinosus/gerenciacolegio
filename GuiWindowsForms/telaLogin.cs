@@ -11,6 +11,7 @@ namespace GuiWindowsForms
 {
     public partial class telaLogin : Form
     {
+
         private static telaLogin telalogin;
 
         private static bool IsShown = false;
@@ -74,8 +75,9 @@ namespace GuiWindowsForms
                     else
                     {
                         this.Hide();
-                        telaAlunoPrincipal telaAlunoPrincipal = telaAlunoPrincipal.getInstancia();
-                        telaAlunoPrincipal.Show();
+                        Program.ultimaTela = 9;
+                        telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+                        telaalunoprincipal.Show();
                     }
                 }
             }

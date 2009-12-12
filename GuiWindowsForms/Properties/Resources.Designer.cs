@@ -67,6 +67,13 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap academico_73x72_disabled {
+            get {
+                object obj = ResourceManager.GetObject("academico_73x72_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap academico_73x72_hover {
             get {
                 object obj = ResourceManager.GetObject("academico_73x72_hover", resourceCulture);
@@ -130,6 +137,13 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap financeiro_73x60_disabled {
+            get {
+                object obj = ResourceManager.GetObject("financeiro_73x60_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap financeiro_73x60_hover {
             get {
                 object obj = ResourceManager.GetObject("financeiro_73x60_hover", resourceCulture);
@@ -172,6 +186,13 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icone_prof_142x113_disabled {
+            get {
+                object obj = ResourceManager.GetObject("icone_prof_142x113_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icone_prof_142x113_hover {
             get {
                 object obj = ResourceManager.GetObject("icone_prof_142x113_hover", resourceCulture);
@@ -186,6 +207,13 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap injecao_73x73_disabled {
+            get {
+                object obj = ResourceManager.GetObject("injecao_73x73_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap injecao_73x73_hover {
             get {
                 object obj = ResourceManager.GetObject("injecao_73x73_hover", resourceCulture);
@@ -196,6 +224,13 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap matricula_68x69 {
             get {
                 object obj = ResourceManager.GetObject("matricula_68x69", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap matricula_68x69_disabled {
+            get {
+                object obj = ResourceManager.GetObject("matricula_68x69_disabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
