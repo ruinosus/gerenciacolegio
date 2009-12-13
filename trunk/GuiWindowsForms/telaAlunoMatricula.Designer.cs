@@ -68,7 +68,7 @@
             this.lblAcademico_menu = new System.Windows.Forms.Label();
             this.lblInfoControles = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnAdicionarImagem = new System.Windows.Forms.Button();
+            this.btnMatriculaAtividade = new System.Windows.Forms.Button();
             this.gpbMatricula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +120,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(103, 225);
@@ -182,6 +183,7 @@
             // 
             // cmbTurma
             // 
+            this.cmbTurma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTurma.FormattingEnabled = true;
             this.cmbTurma.Location = new System.Drawing.Point(291, 115);
@@ -200,6 +202,7 @@
             // 
             // cmbTurno
             // 
+            this.cmbTurno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTurno.FormattingEnabled = true;
             this.cmbTurno.Location = new System.Drawing.Point(103, 115);
@@ -218,6 +221,7 @@
             // 
             // cmbSerie
             // 
+            this.cmbSerie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSerie.FormattingEnabled = true;
             this.cmbSerie.Location = new System.Drawing.Point(103, 79);
@@ -562,20 +566,15 @@
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             this.btnVoltar.MouseEnter += new System.EventHandler(this.btnVoltar_MouseEnter);
             // 
-            // btnAdicionarImagem
+            // btnMatriculaAtividade
             // 
-            this.btnAdicionarImagem.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar_final_32x32;
-            this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
-            this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarImagem.Location = new System.Drawing.Point(290, 152);
-            this.btnAdicionarImagem.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAdicionarImagem.Name = "btnAdicionarImagem";
-            this.btnAdicionarImagem.Size = new System.Drawing.Size(34, 34);
-            this.btnAdicionarImagem.TabIndex = 97;
-            this.btnAdicionarImagem.Tag = "";
-            this.btnAdicionarImagem.UseVisualStyleBackColor = false;
+            this.btnMatriculaAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMatriculaAtividade.Location = new System.Drawing.Point(39, 574);
+            this.btnMatriculaAtividade.Name = "btnMatriculaAtividade";
+            this.btnMatriculaAtividade.Size = new System.Drawing.Size(176, 23);
+            this.btnMatriculaAtividade.TabIndex = 48;
+            this.btnMatriculaAtividade.Text = "Matrícula de Atividade";
+            this.btnMatriculaAtividade.UseVisualStyleBackColor = true;
             // 
             // telaAlunoMatricula
             // 
@@ -584,9 +583,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.btnMatriculaAtividade);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.btnAdicionarImagem);
             this.Controls.Add(this.lblAcademico_menu);
             this.Controls.Add(this.btnAcademico);
             this.Controls.Add(this.lblFinanceiro_menu);
@@ -667,6 +666,6 @@
         private System.Windows.Forms.Label lblAcademico_menu;
         private System.Windows.Forms.Label lblInfoControles;
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Button btnAdicionarImagem;
+        private System.Windows.Forms.Button btnMatriculaAtividade;
     }
 }

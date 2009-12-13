@@ -53,7 +53,12 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
+            this.gpbFinanceiro = new System.Windows.Forms.GroupBox();
+            this.dtgExibirFinanceiro = new System.Windows.Forms.DataGridView();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
+            this.gpbFinanceiro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgExibirFinanceiro)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -396,6 +401,36 @@
             this.btnAdicionarImagem.Tag = "";
             this.btnAdicionarImagem.UseVisualStyleBackColor = false;
             // 
+            // gpbFinanceiro
+            // 
+            this.gpbFinanceiro.BackColor = System.Drawing.Color.Transparent;
+            this.gpbFinanceiro.Controls.Add(this.dtgExibirFinanceiro);
+            this.gpbFinanceiro.Controls.Add(this.btnImprimir);
+            this.gpbFinanceiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbFinanceiro.Location = new System.Drawing.Point(39, 191);
+            this.gpbFinanceiro.Name = "gpbFinanceiro";
+            this.gpbFinanceiro.Size = new System.Drawing.Size(820, 475);
+            this.gpbFinanceiro.TabIndex = 85;
+            this.gpbFinanceiro.TabStop = false;
+            this.gpbFinanceiro.Text = "FINANCEIRO ALUNO";
+            // 
+            // dtgExibirFinanceiro
+            // 
+            this.dtgExibirFinanceiro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgExibirFinanceiro.Location = new System.Drawing.Point(33, 33);
+            this.dtgExibirFinanceiro.Name = "dtgExibirFinanceiro";
+            this.dtgExibirFinanceiro.Size = new System.Drawing.Size(748, 370);
+            this.dtgExibirFinanceiro.TabIndex = 0;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(692, 422);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(89, 33);
+            this.btnImprimir.TabIndex = 86;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            // 
             // telaAlunoFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,6 +438,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.gpbFinanceiro);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.lblMatricula_menu);
             this.Controls.Add(this.btnMatricula);
@@ -435,6 +471,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
+            this.gpbFinanceiro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgExibirFinanceiro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,5 +504,8 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnAdicionarImagem;
+        private System.Windows.Forms.GroupBox gpbFinanceiro;
+        private System.Windows.Forms.DataGridView dtgExibirFinanceiro;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }
