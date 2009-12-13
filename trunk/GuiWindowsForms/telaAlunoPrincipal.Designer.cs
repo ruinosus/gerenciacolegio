@@ -41,6 +41,8 @@
             this.lblConfOculto = new System.Windows.Forms.Label();
             this.btnConfiguracoes = new System.Windows.Forms.Button();
             this.lblErro = new System.Windows.Forms.Label();
+            this.lblFinanceiro = new System.Windows.Forms.Label();
+            this.btnFinanceiro = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -70,14 +72,15 @@
             // btnAluno
             // 
             this.btnAluno.BackColor = System.Drawing.Color.Transparent;
-            this.btnAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_aluno_142x113_hover;
+            this.btnAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_aluno_142x113;
             this.btnAluno.FlatAppearance.BorderSize = 0;
             this.btnAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAluno.Location = new System.Drawing.Point(276, 9);
+            this.btnAluno.Location = new System.Drawing.Point(240, 9);
             this.btnAluno.Name = "btnAluno";
             this.btnAluno.Size = new System.Drawing.Size(142, 113);
             this.btnAluno.TabIndex = 4;
             this.btnAluno.UseVisualStyleBackColor = false;
+            this.btnAluno.Click += new System.EventHandler(this.btnAluno_Click);
             this.btnAluno.Leave += new System.EventHandler(this.btnAluno_Leave);
             this.btnAluno.Enter += new System.EventHandler(this.btnAluno_Enter);
             // 
@@ -87,11 +90,12 @@
             this.btnFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_prof_142x113;
             this.btnFuncionario.FlatAppearance.BorderSize = 0;
             this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuncionario.Location = new System.Drawing.Point(424, 9);
+            this.btnFuncionario.Location = new System.Drawing.Point(365, 9);
             this.btnFuncionario.Name = "btnFuncionario";
             this.btnFuncionario.Size = new System.Drawing.Size(142, 113);
             this.btnFuncionario.TabIndex = 5;
             this.btnFuncionario.UseVisualStyleBackColor = false;
+            this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
             this.btnFuncionario.Leave += new System.EventHandler(this.btnFuncionario_Leave);
             this.btnFuncionario.Enter += new System.EventHandler(this.btnFuncionario_Enter);
             // 
@@ -114,7 +118,7 @@
             this.lblAlunoOculto.BackColor = System.Drawing.Color.Transparent;
             this.lblAlunoOculto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblAlunoOculto.ForeColor = System.Drawing.Color.Yellow;
-            this.lblAlunoOculto.Location = new System.Drawing.Point(311, 119);
+            this.lblAlunoOculto.Location = new System.Drawing.Point(275, 119);
             this.lblAlunoOculto.Name = "lblAlunoOculto";
             this.lblAlunoOculto.Size = new System.Drawing.Size(70, 23);
             this.lblAlunoOculto.TabIndex = 8;
@@ -154,7 +158,7 @@
             this.lblFuncOculto.BackColor = System.Drawing.Color.Transparent;
             this.lblFuncOculto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblFuncOculto.ForeColor = System.Drawing.Color.Yellow;
-            this.lblFuncOculto.Location = new System.Drawing.Point(450, 119);
+            this.lblFuncOculto.Location = new System.Drawing.Point(386, 119);
             this.lblFuncOculto.Name = "lblFuncOculto";
             this.lblFuncOculto.Size = new System.Drawing.Size(125, 23);
             this.lblFuncOculto.TabIndex = 10;
@@ -167,7 +171,7 @@
             this.lblConfOculto.BackColor = System.Drawing.Color.Transparent;
             this.lblConfOculto.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblConfOculto.ForeColor = System.Drawing.Color.Yellow;
-            this.lblConfOculto.Location = new System.Drawing.Point(598, 119);
+            this.lblConfOculto.Location = new System.Drawing.Point(532, 119);
             this.lblConfOculto.Name = "lblConfOculto";
             this.lblConfOculto.Size = new System.Drawing.Size(138, 23);
             this.lblConfOculto.TabIndex = 12;
@@ -180,7 +184,7 @@
             this.btnConfiguracoes.BackgroundImage = global::GuiWindowsForms.Properties.Resources.configuracoes_137x101;
             this.btnConfiguracoes.FlatAppearance.BorderSize = 0;
             this.btnConfiguracoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracoes.Location = new System.Drawing.Point(593, 12);
+            this.btnConfiguracoes.Location = new System.Drawing.Point(526, 12);
             this.btnConfiguracoes.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfiguracoes.Name = "btnConfiguracoes";
             this.btnConfiguracoes.Size = new System.Drawing.Size(137, 101);
@@ -203,6 +207,35 @@
             this.lblErro.Text = "Senha Incorreta!";
             this.lblErro.Visible = false;
             // 
+            // lblFinanceiro
+            // 
+            this.lblFinanceiro.AutoSize = true;
+            this.lblFinanceiro.BackColor = System.Drawing.Color.Transparent;
+            this.lblFinanceiro.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFinanceiro.ForeColor = System.Drawing.Color.Yellow;
+            this.lblFinanceiro.Location = new System.Drawing.Point(690, 122);
+            this.lblFinanceiro.Name = "lblFinanceiro";
+            this.lblFinanceiro.Size = new System.Drawing.Size(104, 23);
+            this.lblFinanceiro.TabIndex = 15;
+            this.lblFinanceiro.Text = "Financeiro";
+            this.lblFinanceiro.Visible = false;
+            // 
+            // btnFinanceiro
+            // 
+            this.btnFinanceiro.BackColor = System.Drawing.Color.Transparent;
+            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_gnd_120x110;
+            this.btnFinanceiro.FlatAppearance.BorderSize = 0;
+            this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinanceiro.Location = new System.Drawing.Point(674, 15);
+            this.btnFinanceiro.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFinanceiro.Name = "btnFinanceiro";
+            this.btnFinanceiro.Size = new System.Drawing.Size(120, 110);
+            this.btnFinanceiro.TabIndex = 14;
+            this.btnFinanceiro.UseVisualStyleBackColor = false;
+            this.btnFinanceiro.Click += new System.EventHandler(this.btnFinanceiro_Click);
+            this.btnFinanceiro.Leave += new System.EventHandler(this.btnFinanceiro_Leave);
+            this.btnFinanceiro.Enter += new System.EventHandler(this.btnFinanceiro_Enter);
+            // 
             // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -210,6 +243,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblFinanceiro);
+            this.Controls.Add(this.btnFinanceiro);
             this.Controls.Add(this.lblErro);
             this.Controls.Add(this.lblConfOculto);
             this.Controls.Add(this.btnConfiguracoes);
@@ -250,5 +285,7 @@
         private System.Windows.Forms.Label lblConfOculto;
         private System.Windows.Forms.Button btnConfiguracoes;
         private System.Windows.Forms.Label lblErro;
+        private System.Windows.Forms.Label lblFinanceiro;
+        private System.Windows.Forms.Button btnFinanceiro;
     }
 }

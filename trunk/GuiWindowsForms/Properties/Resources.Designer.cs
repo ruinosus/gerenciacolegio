@@ -95,9 +95,100 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap conf_acesso_64x80 {
+            get {
+                object obj = ResourceManager.GetObject("conf_acesso_64x80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_acesso_64x80_disabled {
+            get {
+                object obj = ResourceManager.GetObject("conf_acesso_64x80_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_acesso_64x80_hover {
+            get {
+                object obj = ResourceManager.GetObject("conf_acesso_64x80_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_atividades_84x75 {
+            get {
+                object obj = ResourceManager.GetObject("conf_atividades_84x75", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_atividades_84x75_disabled {
+            get {
+                object obj = ResourceManager.GetObject("conf_atividades_84x75_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_atividades_84x75_hover {
+            get {
+                object obj = ResourceManager.GetObject("conf_atividades_84x75_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_desconto_79x80 {
+            get {
+                object obj = ResourceManager.GetObject("conf_desconto_79x80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_desconto_79x80_disabled {
+            get {
+                object obj = ResourceManager.GetObject("conf_desconto_79x80_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_desconto_79x80_hover {
+            get {
+                object obj = ResourceManager.GetObject("conf_desconto_79x80_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_serie_64x70 {
+            get {
+                object obj = ResourceManager.GetObject("conf_serie_64x70", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_serie_64x70_disabled {
+            get {
+                object obj = ResourceManager.GetObject("conf_serie_64x70_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap conf_serie_64x70_hover {
+            get {
+                object obj = ResourceManager.GetObject("conf_serie_64x70_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap configuracoes_137x101 {
             get {
                 object obj = ResourceManager.GetObject("configuracoes_137x101", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap configuracoes_137x101_hover {
+            get {
+                object obj = ResourceManager.GetObject("configuracoes_137x101_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -151,6 +242,20 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap financeiro_gnd_120x110 {
+            get {
+                object obj = ResourceManager.GetObject("financeiro_gnd_120x110", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap financeiro_gnd_120x110_png_hover {
+            get {
+                object obj = ResourceManager.GetObject("financeiro_gnd_120x110_png_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icone_aluno_142x113 {
             get {
                 object obj = ResourceManager.GetObject("icone_aluno_142x113", resourceCulture);
@@ -196,6 +301,41 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap icone_prof_142x113_hover {
             get {
                 object obj = ResourceManager.GetObject("icone_prof_142x113_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icons5488 {
+            get {
+                object obj = ResourceManager.GetObject("icons5488", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icons6927 {
+            get {
+                object obj = ResourceManager.GetObject("icons6927", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icons7018 {
+            get {
+                object obj = ResourceManager.GetObject("icons7018", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icons7021 {
+            get {
+                object obj = ResourceManager.GetObject("icons7021", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icons7780 {
+            get {
+                object obj = ResourceManager.GetObject("icons7780", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
