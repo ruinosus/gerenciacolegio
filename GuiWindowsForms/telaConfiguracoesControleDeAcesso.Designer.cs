@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnDesconectar = new System.Windows.Forms.Button();
-            this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.btnControledeAcesso = new System.Windows.Forms.Button();
-            this.btnSerie = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesControleDeAcesso));
             this.gpbControleDeAcesso = new System.Windows.Forms.GroupBox();
             this.lblDebitos = new System.Windows.Forms.Label();
             this.ckbAlteracaoDebitos = new System.Windows.Forms.CheckBox();
@@ -118,70 +114,20 @@
             this.lblNomeFuncionario = new System.Windows.Forms.Label();
             this.cmbFuncionario = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.lblDesconto = new System.Windows.Forms.Button();
-            this.btnAtividades = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.lblHelloUsuario = new System.Windows.Forms.Label();
+            this.lblInfoControles = new System.Windows.Forms.Label();
+            this.btnDesconectar = new System.Windows.Forms.Button();
+            this.lblDesconto_menu = new System.Windows.Forms.Label();
+            this.lblAtividade_menu = new System.Windows.Forms.Label();
+            this.lblSerie_menu = new System.Windows.Forms.Label();
+            this.btnControledeAcesso = new System.Windows.Forms.Button();
+            this.lblControleAcesso_menu = new System.Windows.Forms.Label();
+            this.btnSerie = new System.Windows.Forms.Button();
+            this.btnDesconto = new System.Windows.Forms.Button();
+            this.btnAtividade = new System.Windows.Forms.Button();
             this.gpbControleDeAcesso.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.voltar_final_32x32;
-            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(31, 677);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(33, 34);
-            this.btnVoltar.TabIndex = 45;
-            this.btnVoltar.Tag = "";
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            // 
-            // btnDesconectar
-            // 
-            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
-            this.btnDesconectar.TabIndex = 51;
-            this.btnDesconectar.Tag = "";
-            this.btnDesconectar.UseVisualStyleBackColor = false;
-            // 
-            // lblHelloUsuario
-            // 
-            this.lblHelloUsuario.AutoSize = true;
-            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(794, 5);
-            this.lblHelloUsuario.Name = "lblHelloUsuario";
-            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
-            this.lblHelloUsuario.TabIndex = 50;
-            this.lblHelloUsuario.Text = "Hello Usuário!";
-            // 
-            // btnControledeAcesso
-            // 
-            this.btnControledeAcesso.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnControledeAcesso.Location = new System.Drawing.Point(12, 191);
-            this.btnControledeAcesso.Name = "btnControledeAcesso";
-            this.btnControledeAcesso.Size = new System.Drawing.Size(135, 23);
-            this.btnControledeAcesso.TabIndex = 52;
-            this.btnControledeAcesso.Text = "Controle de Acesso";
-            this.btnControledeAcesso.UseVisualStyleBackColor = true;
-            // 
-            // btnSerie
-            // 
-            this.btnSerie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSerie.Location = new System.Drawing.Point(847, 190);
-            this.btnSerie.Name = "btnSerie";
-            this.btnSerie.Size = new System.Drawing.Size(135, 23);
-            this.btnSerie.TabIndex = 53;
-            this.btnSerie.Text = "Série";
-            this.btnSerie.UseVisualStyleBackColor = true;
             // 
             // gpbControleDeAcesso
             // 
@@ -1086,33 +1032,189 @@
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(92, 677);
+            this.btnSalvar.Location = new System.Drawing.Point(86, 677);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(36, 29);
-            this.btnSalvar.TabIndex = 83;
+            this.btnSalvar.TabIndex = 119;
             this.btnSalvar.Tag = "";
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.MouseLeave += new System.EventHandler(this.btnSalvar_MouseLeave);
+            this.btnSalvar.MouseEnter += new System.EventHandler(this.btnSalvar_MouseEnter);
             // 
-            // lblDesconto
+            // btnVoltar
             // 
-            this.lblDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDesconto.Location = new System.Drawing.Point(847, 266);
-            this.lblDesconto.Name = "lblDesconto";
-            this.lblDesconto.Size = new System.Drawing.Size(135, 23);
-            this.lblDesconto.TabIndex = 84;
-            this.lblDesconto.Text = "Desconto de Matrículas";
-            this.lblDesconto.UseVisualStyleBackColor = true;
+            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.btnVoltar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.voltar_final_32x32;
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(31, 677);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(33, 34);
+            this.btnVoltar.TabIndex = 113;
+            this.btnVoltar.Tag = "";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.MouseLeave += new System.EventHandler(this.btnVoltar_MouseLeave);
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            this.btnVoltar.MouseEnter += new System.EventHandler(this.btnVoltar_MouseEnter);
             // 
-            // btnAtividades
+            // lblHelloUsuario
             // 
-            this.btnAtividades.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAtividades.Location = new System.Drawing.Point(847, 343);
-            this.btnAtividades.Name = "btnAtividades";
-            this.btnAtividades.Size = new System.Drawing.Size(135, 23);
-            this.btnAtividades.TabIndex = 85;
-            this.btnAtividades.Text = "Atividades";
-            this.btnAtividades.UseVisualStyleBackColor = true;
+            this.lblHelloUsuario.AutoSize = true;
+            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
+            this.lblHelloUsuario.Location = new System.Drawing.Point(794, 5);
+            this.lblHelloUsuario.Name = "lblHelloUsuario";
+            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
+            this.lblHelloUsuario.TabIndex = 108;
+            this.lblHelloUsuario.Text = "Hello Usuário!";
+            // 
+            // lblInfoControles
+            // 
+            this.lblInfoControles.AutoSize = true;
+            this.lblInfoControles.BackColor = System.Drawing.Color.Transparent;
+            this.lblInfoControles.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblInfoControles.ForeColor = System.Drawing.Color.Yellow;
+            this.lblInfoControles.Location = new System.Drawing.Point(141, 685);
+            this.lblInfoControles.Name = "lblInfoControles";
+            this.lblInfoControles.Size = new System.Drawing.Size(14, 19);
+            this.lblInfoControles.TabIndex = 114;
+            this.lblInfoControles.Text = "-";
+            this.lblInfoControles.Visible = false;
+            // 
+            // btnDesconectar
+            // 
+            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
+            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
+            this.btnDesconectar.FlatAppearance.BorderSize = 0;
+            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
+            this.btnDesconectar.Name = "btnDesconectar";
+            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
+            this.btnDesconectar.TabIndex = 110;
+            this.btnDesconectar.Tag = "";
+            this.btnDesconectar.UseVisualStyleBackColor = false;
+            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
+            // 
+            // lblDesconto_menu
+            // 
+            this.lblDesconto_menu.AutoSize = true;
+            this.lblDesconto_menu.BackColor = System.Drawing.Color.Transparent;
+            this.lblDesconto_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.lblDesconto_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblDesconto_menu.Location = new System.Drawing.Point(915, 466);
+            this.lblDesconto_menu.Name = "lblDesconto_menu";
+            this.lblDesconto_menu.Size = new System.Drawing.Size(76, 17);
+            this.lblDesconto_menu.TabIndex = 127;
+            this.lblDesconto_menu.Text = "Descontos";
+            this.lblDesconto_menu.Visible = false;
+            // 
+            // lblAtividade_menu
+            // 
+            this.lblAtividade_menu.AutoSize = true;
+            this.lblAtividade_menu.BackColor = System.Drawing.Color.Transparent;
+            this.lblAtividade_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.lblAtividade_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAtividade_menu.Location = new System.Drawing.Point(911, 364);
+            this.lblAtividade_menu.Name = "lblAtividade_menu";
+            this.lblAtividade_menu.Size = new System.Drawing.Size(76, 17);
+            this.lblAtividade_menu.TabIndex = 126;
+            this.lblAtividade_menu.Text = "Atividades";
+            this.lblAtividade_menu.Visible = false;
+            // 
+            // lblSerie_menu
+            // 
+            this.lblSerie_menu.AutoSize = true;
+            this.lblSerie_menu.BackColor = System.Drawing.Color.Transparent;
+            this.lblSerie_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.lblSerie_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblSerie_menu.Location = new System.Drawing.Point(927, 269);
+            this.lblSerie_menu.Name = "lblSerie_menu";
+            this.lblSerie_menu.Size = new System.Drawing.Size(49, 17);
+            this.lblSerie_menu.TabIndex = 125;
+            this.lblSerie_menu.Text = "Séries";
+            this.lblSerie_menu.Visible = false;
+            // 
+            // btnControledeAcesso
+            // 
+            this.btnControledeAcesso.BackColor = System.Drawing.Color.Transparent;
+            this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80_disabled;
+            this.btnControledeAcesso.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnControledeAcesso.Enabled = false;
+            this.btnControledeAcesso.FlatAppearance.BorderSize = 0;
+            this.btnControledeAcesso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnControledeAcesso.Location = new System.Drawing.Point(15, 190);
+            this.btnControledeAcesso.Margin = new System.Windows.Forms.Padding(0);
+            this.btnControledeAcesso.Name = "btnControledeAcesso";
+            this.btnControledeAcesso.Size = new System.Drawing.Size(64, 80);
+            this.btnControledeAcesso.TabIndex = 120;
+            this.btnControledeAcesso.UseVisualStyleBackColor = false;
+            // 
+            // lblControleAcesso_menu
+            // 
+            this.lblControleAcesso_menu.AutoSize = true;
+            this.lblControleAcesso_menu.BackColor = System.Drawing.Color.Transparent;
+            this.lblControleAcesso_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
+            this.lblControleAcesso_menu.ForeColor = System.Drawing.Color.White;
+            this.lblControleAcesso_menu.Location = new System.Drawing.Point(25, 271);
+            this.lblControleAcesso_menu.Name = "lblControleAcesso_menu";
+            this.lblControleAcesso_menu.Size = new System.Drawing.Size(46, 17);
+            this.lblControleAcesso_menu.TabIndex = 124;
+            this.lblControleAcesso_menu.Text = "Perfis";
+            // 
+            // btnSerie
+            // 
+            this.btnSerie.BackColor = System.Drawing.Color.Transparent;
+            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70;
+            this.btnSerie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSerie.FlatAppearance.BorderSize = 0;
+            this.btnSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSerie.Location = new System.Drawing.Point(920, 190);
+            this.btnSerie.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSerie.Name = "btnSerie";
+            this.btnSerie.Size = new System.Drawing.Size(60, 74);
+            this.btnSerie.TabIndex = 121;
+            this.btnSerie.UseVisualStyleBackColor = false;
+            this.btnSerie.MouseLeave += new System.EventHandler(this.btnSerie_MouseLeave);
+            this.btnSerie.Click += new System.EventHandler(this.btnSerie_Click);
+            this.btnSerie.MouseEnter += new System.EventHandler(this.btnSerie_MouseEnter);
+            // 
+            // btnDesconto
+            // 
+            this.btnDesconto.BackColor = System.Drawing.Color.Transparent;
+            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80;
+            this.btnDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDesconto.FlatAppearance.BorderSize = 0;
+            this.btnDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesconto.Location = new System.Drawing.Point(915, 390);
+            this.btnDesconto.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDesconto.Name = "btnDesconto";
+            this.btnDesconto.Size = new System.Drawing.Size(79, 80);
+            this.btnDesconto.TabIndex = 123;
+            this.btnDesconto.UseVisualStyleBackColor = false;
+            this.btnDesconto.MouseLeave += new System.EventHandler(this.lblDesconto_MouseLeave);
+            this.btnDesconto.Click += new System.EventHandler(this.lblDesconto_Click);
+            this.btnDesconto.MouseEnter += new System.EventHandler(this.lblDesconto_MouseEnter);
+            // 
+            // btnAtividade
+            // 
+            this.btnAtividade.BackColor = System.Drawing.Color.Transparent;
+            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75;
+            this.btnAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAtividade.FlatAppearance.BorderSize = 0;
+            this.btnAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtividade.Location = new System.Drawing.Point(907, 290);
+            this.btnAtividade.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAtividade.Name = "btnAtividade";
+            this.btnAtividade.Size = new System.Drawing.Size(84, 75);
+            this.btnAtividade.TabIndex = 122;
+            this.btnAtividade.UseVisualStyleBackColor = false;
+            this.btnAtividade.MouseLeave += new System.EventHandler(this.btnAtividades_MouseLeave);
+            this.btnAtividade.Click += new System.EventHandler(this.btnAtividades_Click);
+            this.btnAtividade.MouseEnter += new System.EventHandler(this.btnAtividades_MouseEnter);
             // 
             // telaConfiguracoesControleDeAcesso
             // 
@@ -1120,21 +1222,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
-            this.ClientSize = new System.Drawing.Size(994, 716);
-            this.Controls.Add(this.btnAtividades);
-            this.Controls.Add(this.lblDesconto);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.gpbControleDeAcesso);
-            this.Controls.Add(this.btnSerie);
+            this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblDesconto_menu);
+            this.Controls.Add(this.lblAtividade_menu);
+            this.Controls.Add(this.lblSerie_menu);
             this.Controls.Add(this.btnControledeAcesso);
-            this.Controls.Add(this.btnDesconectar);
-            this.Controls.Add(this.lblHelloUsuario);
+            this.Controls.Add(this.lblControleAcesso_menu);
+            this.Controls.Add(this.btnSerie);
+            this.Controls.Add(this.btnDesconto);
+            this.Controls.Add(this.btnAtividade);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.lblHelloUsuario);
+            this.Controls.Add(this.lblInfoControles);
+            this.Controls.Add(this.btnDesconectar);
+            this.Controls.Add(this.gpbControleDeAcesso);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "telaConfiguracoesControleDeAcesso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoesControleDeAcesso_FormClosing);
             this.gpbControleDeAcesso.ResumeLayout(false);
             this.gpbControleDeAcesso.PerformLayout();
             this.ResumeLayout(false);
@@ -1144,11 +1254,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Button btnDesconectar;
-        private System.Windows.Forms.Label lblHelloUsuario;
-        private System.Windows.Forms.Button btnControledeAcesso;
-        private System.Windows.Forms.Button btnSerie;
         private System.Windows.Forms.GroupBox gpbControleDeAcesso;
         private System.Windows.Forms.ComboBox cmbFuncionario;
         private System.Windows.Forms.Label lblNomeFuncionario;
@@ -1234,7 +1339,17 @@
         private System.Windows.Forms.CheckBox ckbAlteracaoDebitos;
         private System.Windows.Forms.CheckBox ckbVisualizacaoDebitos;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button lblDesconto;
-        private System.Windows.Forms.Button btnAtividades;
+        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Label lblHelloUsuario;
+        private System.Windows.Forms.Label lblInfoControles;
+        private System.Windows.Forms.Button btnDesconectar;
+        private System.Windows.Forms.Label lblDesconto_menu;
+        private System.Windows.Forms.Label lblAtividade_menu;
+        private System.Windows.Forms.Label lblSerie_menu;
+        private System.Windows.Forms.Button btnControledeAcesso;
+        private System.Windows.Forms.Label lblControleAcesso_menu;
+        private System.Windows.Forms.Button btnSerie;
+        private System.Windows.Forms.Button btnDesconto;
+        private System.Windows.Forms.Button btnAtividade;
     }
 }

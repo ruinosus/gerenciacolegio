@@ -453,6 +453,66 @@
   <ItemGroup>
     <None Include="Resources\matricula_68x69_disabled.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons7021.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financeiro_gnd_120x110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financeiro_gnd_120x110.png_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\configuracoes_137x101_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons5488.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons6927.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons7018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons7780.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_acesso_64x80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_acesso_64x80_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_acesso_64x80_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_atividades_84x75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_atividades_84x75_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_atividades_84x75_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_desconto_79x80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_desconto_79x80_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_desconto_79x80_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_serie_64x70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_serie_64x70_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_serie_64x70_hover.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

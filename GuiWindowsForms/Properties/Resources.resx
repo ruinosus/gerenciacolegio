@@ -238,4 +238,64 @@
   <data name="matricula_68x69_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\matricula_68x69_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons7021" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons7021.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="financeiro_gnd_120x110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\financeiro_gnd_120x110.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="financeiro_gnd_120x110_png_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\financeiro_gnd_120x110.png_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="configuracoes_137x101_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\configuracoes_137x101_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons5488" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons5488.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons6927" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons6927.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons7018" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons7018.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons7780" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons7780.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_acesso_64x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_acesso_64x80.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_acesso_64x80_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_acesso_64x80_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_acesso_64x80_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_acesso_64x80_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_atividades_84x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_atividades_84x75.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_atividades_84x75_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_atividades_84x75_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_atividades_84x75_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_atividades_84x75_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_desconto_79x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_desconto_79x80.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_desconto_79x80_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_desconto_79x80_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_desconto_79x80_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_desconto_79x80_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_serie_64x70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_serie_64x70.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_serie_64x70_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_serie_64x70_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_serie_64x70_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_serie_64x70_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

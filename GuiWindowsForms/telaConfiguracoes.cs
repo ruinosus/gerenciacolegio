@@ -88,17 +88,187 @@ namespace GuiWindowsForms
             IsShown = false;
             this.Hide();
 
-            if (Program.ultimaTela != 7)
-            {
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-            else
-            {
-                Program.ultimaTela = 6;
-                Program.SelecionaForm(Program.ultimaTela);
-            }
+            Program.ultimaTela = 6;
+            Program.SelecionaForm(Program.ultimaTela);
         }
 
-  
+        #region Controle dos textos e das ações dos botões de ação inferiores
+
+        /// <summary>
+        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnVoltar_MouseEnter(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = true;
+            lblInfoControles.Text = "Voltar";
+        }
+
+        /// <summary>
+        /// Oculta o texto referente ao controle quando o mouse passa sobre ele
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnVoltar_MouseLeave(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = false;
+        }
+
+        /// <summary>
+        /// Retorna para tela anterior ocultando a atual e chamando a instância da última tela acessada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Program.ultimaTela = 6;
+            Program.SelecionaForm(Program.ultimaTela);
+        }
+
+        #endregion
+
+        #region Ações dos botões de navegação
+
+        private void btnControledeAcesso_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 10;
+            telaConfiguracoesControleDeAcesso telaconfacesso = telaConfiguracoesControleDeAcesso.getInstancia();
+            telaconfacesso.Show();
+        }
+
+        private void btnSerie_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 10;
+            telaConfiguracoesSerie telaconfserie = telaConfiguracoesSerie.getInstancia();
+            telaconfserie.Show();
+        }
+
+        private void lblDesconto_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 10;
+            telaConfiguracoesDescontoMatricula telaconfdesconto = telaConfiguracoesDescontoMatricula.getInstancia();
+            telaconfdesconto.Show();
+        }
+
+        private void btnAtividades_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 10;
+            telaConfiguracoesAtividades telaconfatv = telaConfiguracoesAtividades.getInstancia();
+            telaconfatv.Show();
+        }
+
+        #endregion
+
+        #region Controle de mudança das figuras e exibição dos textos das mesmas
+
+        /// <summary>
+        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        
+        private void btnControledeAcesso_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80_hover;
+            lblControleAcesso_menu.Visible = true;
+        }
+
+        /// <summary>
+        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnControledeAcesso_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80;
+            lblControleAcesso_menu.Visible = false;
+        }
+
+        /// <summary>
+        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnSerie_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70_hover;
+            lblSerie_menu.Visible = true;
+        }
+
+        /// <summary>
+        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnSerie_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70;
+            lblSerie_menu.Visible = false;
+        }
+
+        /// <summary>
+        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void lblDesconto_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80_hover;
+            lblDesconto_menu.Visible = true;
+        }
+
+        /// <summary>
+        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void lblDesconto_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80;
+            lblDesconto_menu.Visible = false;
+        }
+
+        /// <summary>
+        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnAtividades_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_hover;
+            lblAtividade_menu.Visible = true;
+        }
+
+        /// <summary>
+        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnAtividades_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75;
+            lblAtividade_menu.Visible = false;
+        }
+
+        #endregion
+
+
     }
 }

@@ -67,6 +67,31 @@ namespace GuiWindowsForms
                 telaLogin telaloginaux = telaLogin.getInstancia();
                 telaloginaux.Show();
             }
+            else if (formId == 10)
+            {
+                telaConfiguracoes telaconfiguracoesaux = telaConfiguracoes.getInstancia();
+                telaconfiguracoesaux.Show();
+            }
+            else if (formId == 11)
+            {
+                telaConfiguracoesAtividades telaconfatividadesaux = telaConfiguracoesAtividades.getInstancia();
+                telaconfatividadesaux.Show();
+            }
+            else if (formId == 12)
+            {
+                telaConfiguracoesControleDeAcesso telaconfacessoaux = telaConfiguracoesControleDeAcesso.getInstancia();
+                telaconfacessoaux.Show();
+            }
+            else if (formId == 13)
+            {
+                telaConfiguracoesDescontoMatricula telaconfdescaux = telaConfiguracoesDescontoMatricula.getInstancia();
+                telaconfdescaux.Show();
+            }
+            else if (formId == 14)
+            {
+                telaConfiguracoesSerie telaconfserieaux = telaConfiguracoesSerie.getInstancia();
+                telaconfserieaux.Show();
+            }
         }
     }
 }
