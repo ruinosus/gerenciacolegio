@@ -91,3 +91,4 @@ C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.t
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaFuncionario.resources
+C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatriculaAtividade.resources

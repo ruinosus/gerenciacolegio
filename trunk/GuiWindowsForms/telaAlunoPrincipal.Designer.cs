@@ -105,7 +105,7 @@
             this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(941, 9);
+            this.btnDesconectar.Location = new System.Drawing.Point(950, 9);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
             this.btnDesconectar.TabIndex = 7;
