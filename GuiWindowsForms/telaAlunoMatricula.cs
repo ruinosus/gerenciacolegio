@@ -383,5 +383,23 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+        private void btnMatriculaAtividade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMatriculaAtividade_MouseEnter(object sender, EventArgs e)
+        {
+            this.btnMatriculaAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_add_atividade_48x48_hover;
+            lblInfoControles.Text = "Matricular aluno em uma atividade.";
+            lblInfoControles.Visible = true;
+        }
+
+        private void btnMatriculaAtividade_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnMatriculaAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_add_atividade_48x48;
+            lblInfoControles.Visible = false;
+        }
     }
 }

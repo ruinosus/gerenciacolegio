@@ -377,7 +377,6 @@
             this.lblMatricula_menu.Size = new System.Drawing.Size(69, 17);
             this.lblMatricula_menu.TabIndex = 66;
             this.lblMatricula_menu.Text = "Matrícula";
-            this.lblMatricula_menu.Visible = false;
             // 
             // btnDados
             // 
@@ -568,13 +567,20 @@
             // 
             // btnMatriculaAtividade
             // 
+            this.btnMatriculaAtividade.BackColor = System.Drawing.Color.Transparent;
+            this.btnMatriculaAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_add_atividade_48x48;
             this.btnMatriculaAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMatriculaAtividade.Location = new System.Drawing.Point(39, 574);
+            this.btnMatriculaAtividade.FlatAppearance.BorderSize = 0;
+            this.btnMatriculaAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMatriculaAtividade.Location = new System.Drawing.Point(39, 560);
+            this.btnMatriculaAtividade.Margin = new System.Windows.Forms.Padding(0);
             this.btnMatriculaAtividade.Name = "btnMatriculaAtividade";
-            this.btnMatriculaAtividade.Size = new System.Drawing.Size(176, 23);
+            this.btnMatriculaAtividade.Size = new System.Drawing.Size(48, 48);
             this.btnMatriculaAtividade.TabIndex = 48;
-            this.btnMatriculaAtividade.Text = "Matrícula de Atividade";
-            this.btnMatriculaAtividade.UseVisualStyleBackColor = true;
+            this.btnMatriculaAtividade.UseVisualStyleBackColor = false;
+            this.btnMatriculaAtividade.MouseLeave += new System.EventHandler(this.btnMatriculaAtividade_MouseLeave);
+            this.btnMatriculaAtividade.Click += new System.EventHandler(this.btnMatriculaAtividade_Click);
+            this.btnMatriculaAtividade.MouseEnter += new System.EventHandler(this.btnMatriculaAtividade_MouseEnter);
             // 
             // telaAlunoMatricula
             // 

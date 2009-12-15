@@ -379,5 +379,19 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+        private void btnImprimir_MouseEnter(object sender, EventArgs e)
+        {
+
+            this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_imprimir_48x48_hover;
+            lblInfoControles.Text = "Abrir Impressões.";
+            lblInfoControles.Visible = true;
+        }
+
+        private void btnImprimir_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_imprimir_48x48;
+            lblInfoControles.Visible = false;
+        }
     }
 }

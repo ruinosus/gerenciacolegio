@@ -223,7 +223,6 @@
             this.lblFinanceiro_menu.Size = new System.Drawing.Size(77, 17);
             this.lblFinanceiro_menu.TabIndex = 80;
             this.lblFinanceiro_menu.Text = "Financeiro";
-            this.lblFinanceiro_menu.Visible = false;
             // 
             // lblMedico_menu
             // 
@@ -424,12 +423,17 @@
             // 
             // btnImprimir
             // 
+            this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_imprimir_48x48;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Location = new System.Drawing.Point(692, 422);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(0);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(89, 33);
+            this.btnImprimir.Size = new System.Drawing.Size(49, 50);
             this.btnImprimir.TabIndex = 86;
-            this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.MouseLeave += new System.EventHandler(this.btnImprimir_MouseLeave);
+            this.btnImprimir.MouseEnter += new System.EventHandler(this.btnImprimir_MouseEnter);
             // 
             // telaAlunoFinanceiro
             // 

@@ -88,6 +88,34 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap btn_add_atividade_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("btn_add_atividade_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_add_atividade_48x48_hover {
+            get {
+                object obj = ResourceManager.GetObject("btn_add_atividade_48x48_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_imprimir_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("btn_imprimir_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_imprimir_48x48_hover {
+            get {
+                object obj = ResourceManager.GetObject("btn_imprimir_48x48_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap btn_ok_cadastrar_110x52 {
             get {
                 object obj = ResourceManager.GetObject("btn_ok_cadastrar_110x52", resourceCulture);

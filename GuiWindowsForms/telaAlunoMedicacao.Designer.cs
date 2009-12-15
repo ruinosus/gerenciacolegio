@@ -493,7 +493,6 @@
             this.lblMedico_menu.Size = new System.Drawing.Size(88, 17);
             this.lblMedico_menu.TabIndex = 79;
             this.lblMedico_menu.Text = "Inf. Médicas";
-            this.lblMedico_menu.Visible = false;
             // 
             // lblResponsavel_menu
             // 
