@@ -296,7 +296,10 @@ namespace GuiWindowsForms
 
         private void btnFinanceiro_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Program.ultimaTela = 6;
+            telaFinanceiro telafinanceiro = telaFinanceiro.getInstancia();
+            telafinanceiro.Show();
         }
 
     }

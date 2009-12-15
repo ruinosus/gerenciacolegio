@@ -92,6 +92,16 @@ namespace GuiWindowsForms
                 telaConfiguracoesSerie telaconfserieaux = telaConfiguracoesSerie.getInstancia();
                 telaconfserieaux.Show();
             }
+            else if (formId == 15)
+            {
+                telaAlunoMatriculaAtividade telaalunomatatvaux = telaAlunoMatriculaAtividade.getInstancia();
+                telaalunomatatvaux.Show();
+            }
+            else if (formId == 16)
+            {
+                telaFinanceiro telafinanceiroaux = telaFinanceiro.getInstancia();
+                telafinanceiroaux.Show();
+            }
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoMatriculaAtividade));
             this.pctImagem = new System.Windows.Forms.PictureBox();
             this.lblNomeAluno = new System.Windows.Forms.Label();
             this.lblMatricula = new System.Windows.Forms.Label();
@@ -49,6 +50,11 @@
             this.btnAcademico = new System.Windows.Forms.Button();
             this.lblAcademico_menu = new System.Windows.Forms.Label();
             this.gpbMatricula = new System.Windows.Forms.GroupBox();
+            this.btnAdicionarImagem = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblDescricao = new System.Windows.Forms.Label();
+            this.txtDesconto = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTotalValor = new System.Windows.Forms.TextBox();
             this.lblTotalValor = new System.Windows.Forms.Label();
             this.lblDesconto = new System.Windows.Forms.Label();
@@ -63,10 +69,6 @@
             this.lblInfoControles = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtDesconto = new System.Windows.Forms.TextBox();
-            this.lblDescricao = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.gpbMatricula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -165,13 +167,13 @@
             this.btnDesconectar.TabIndex = 90;
             this.btnDesconectar.Tag = "Desconectar";
             this.btnDesconectar.UseVisualStyleBackColor = false;
+            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
             // btnMatricula
             // 
             this.btnMatricula.BackColor = System.Drawing.Color.Transparent;
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled;
+            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69;
             this.btnMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMatricula.Enabled = false;
             this.btnMatricula.FlatAppearance.BorderSize = 0;
             this.btnMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMatricula.Location = new System.Drawing.Point(898, 88);
@@ -181,13 +183,16 @@
             this.btnMatricula.TabIndex = 91;
             this.btnMatricula.Tag = "Dados Pessoais";
             this.btnMatricula.UseVisualStyleBackColor = false;
+            this.btnMatricula.MouseLeave += new System.EventHandler(this.btnMatricula_MouseLeave);
+            this.btnMatricula.Click += new System.EventHandler(this.btnMatricula_Click);
+            this.btnMatricula.MouseEnter += new System.EventHandler(this.btnMatricula_MouseEnter);
             // 
             // lblMatricula_menu
             // 
             this.lblMatricula_menu.AutoSize = true;
             this.lblMatricula_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblMatricula_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblMatricula_menu.ForeColor = System.Drawing.Color.White;
+            this.lblMatricula_menu.ForeColor = System.Drawing.Color.Yellow;
             this.lblMatricula_menu.Location = new System.Drawing.Point(900, 166);
             this.lblMatricula_menu.Name = "lblMatricula_menu";
             this.lblMatricula_menu.Size = new System.Drawing.Size(69, 17);
@@ -210,6 +215,9 @@
             this.btnDados.TabIndex = 93;
             this.btnDados.Tag = "";
             this.btnDados.UseVisualStyleBackColor = false;
+            this.btnDados.MouseLeave += new System.EventHandler(this.btnDados_MouseLeave);
+            this.btnDados.Click += new System.EventHandler(this.btnDados_Click);
+            this.btnDados.MouseEnter += new System.EventHandler(this.btnDados_MouseEnter);
             // 
             // lblDados_Menu
             // 
@@ -238,6 +246,9 @@
             this.btnResponsaveis.TabIndex = 95;
             this.btnResponsaveis.Tag = "Responsáveis";
             this.btnResponsaveis.UseVisualStyleBackColor = false;
+            this.btnResponsaveis.MouseLeave += new System.EventHandler(this.btnResponsaveis_MouseLeave);
+            this.btnResponsaveis.Click += new System.EventHandler(this.btnResponsaveis_Click);
+            this.btnResponsaveis.MouseEnter += new System.EventHandler(this.btnResponsaveis_MouseEnter);
             // 
             // lblResponsavel_menu
             // 
@@ -266,6 +277,9 @@
             this.btnInfoMedica.TabIndex = 97;
             this.btnInfoMedica.Tag = "Informações Médicas";
             this.btnInfoMedica.UseVisualStyleBackColor = false;
+            this.btnInfoMedica.MouseLeave += new System.EventHandler(this.btnInfoMedica_MouseLeave);
+            this.btnInfoMedica.Click += new System.EventHandler(this.btnInfoMedica_Click);
+            this.btnInfoMedica.MouseEnter += new System.EventHandler(this.btnInfoMedica_MouseEnter);
             // 
             // lblMedico_menu
             // 
@@ -294,6 +308,9 @@
             this.btnFinanceiro.TabIndex = 99;
             this.btnFinanceiro.Tag = "Informações Financeiras";
             this.btnFinanceiro.UseVisualStyleBackColor = false;
+            this.btnFinanceiro.MouseLeave += new System.EventHandler(this.btnFinanceiro_MouseLeave);
+            this.btnFinanceiro.Click += new System.EventHandler(this.btnFinanceiro_Click);
+            this.btnFinanceiro.MouseEnter += new System.EventHandler(this.btnFinanceiro_MouseEnter);
             // 
             // lblFinanceiro_menu
             // 
@@ -322,6 +339,9 @@
             this.btnAcademico.TabIndex = 101;
             this.btnAcademico.Tag = "Dados Acadêmicos";
             this.btnAcademico.UseVisualStyleBackColor = false;
+            this.btnAcademico.MouseLeave += new System.EventHandler(this.btnAcademico_MouseLeave);
+            this.btnAcademico.Click += new System.EventHandler(this.btnAcademico_Click);
+            this.btnAcademico.MouseEnter += new System.EventHandler(this.btnAcademico_MouseEnter);
             // 
             // lblAcademico_menu
             // 
@@ -339,6 +359,7 @@
             // gpbMatricula
             // 
             this.gpbMatricula.BackColor = System.Drawing.Color.Transparent;
+            this.gpbMatricula.Controls.Add(this.btnAdicionarImagem);
             this.gpbMatricula.Controls.Add(this.textBox2);
             this.gpbMatricula.Controls.Add(this.lblDescricao);
             this.gpbMatricula.Controls.Add(this.txtDesconto);
@@ -360,6 +381,54 @@
             this.gpbMatricula.TabIndex = 103;
             this.gpbMatricula.TabStop = false;
             this.gpbMatricula.Text = "MATRÍCULA DE ATIVIDADE";
+            // 
+            // btnAdicionarImagem
+            // 
+            this.btnAdicionarImagem.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.atividade_mais;
+            this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
+            this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarImagem.Location = new System.Drawing.Point(716, 139);
+            this.btnAdicionarImagem.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAdicionarImagem.Name = "btnAdicionarImagem";
+            this.btnAdicionarImagem.Size = new System.Drawing.Size(35, 34);
+            this.btnAdicionarImagem.TabIndex = 112;
+            this.btnAdicionarImagem.Tag = "";
+            this.btnAdicionarImagem.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(104, 120);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(390, 77);
+            this.textBox2.TabIndex = 111;
+            // 
+            // lblDescricao
+            // 
+            this.lblDescricao.AutoSize = true;
+            this.lblDescricao.Location = new System.Drawing.Point(30, 123);
+            this.lblDescricao.Name = "lblDescricao";
+            this.lblDescricao.Size = new System.Drawing.Size(68, 13);
+            this.lblDescricao.TabIndex = 110;
+            this.lblDescricao.Text = "Descrição:";
+            // 
+            // txtDesconto
+            // 
+            this.txtDesconto.Location = new System.Drawing.Point(103, 261);
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.Size = new System.Drawing.Size(123, 20);
+            this.txtDesconto.TabIndex = 109;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(668, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(126, 80);
+            this.pictureBox1.TabIndex = 108;
+            this.pictureBox1.TabStop = false;
             // 
             // txtTotalValor
             // 
@@ -454,13 +523,20 @@
             // 
             // btnMatriculaSerie
             // 
+            this.btnMatriculaSerie.BackColor = System.Drawing.Color.Transparent;
+            this.btnMatriculaSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.add_matricula_47x49;
             this.btnMatriculaSerie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMatriculaSerie.Location = new System.Drawing.Point(248, 574);
+            this.btnMatriculaSerie.FlatAppearance.BorderSize = 0;
+            this.btnMatriculaSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMatriculaSerie.Location = new System.Drawing.Point(39, 560);
+            this.btnMatriculaSerie.Margin = new System.Windows.Forms.Padding(0);
             this.btnMatriculaSerie.Name = "btnMatriculaSerie";
-            this.btnMatriculaSerie.Size = new System.Drawing.Size(176, 23);
+            this.btnMatriculaSerie.Size = new System.Drawing.Size(47, 49);
             this.btnMatriculaSerie.TabIndex = 104;
-            this.btnMatriculaSerie.Text = "Matrícula do Aluno";
-            this.btnMatriculaSerie.UseVisualStyleBackColor = true;
+            this.btnMatriculaSerie.UseVisualStyleBackColor = false;
+            this.btnMatriculaSerie.MouseLeave += new System.EventHandler(this.btnMatriculaSerie_MouseLeave);
+            this.btnMatriculaSerie.Click += new System.EventHandler(this.btnMatriculaSerie_Click);
+            this.btnMatriculaSerie.MouseEnter += new System.EventHandler(this.btnMatriculaSerie_MouseEnter);
             // 
             // lblInfoControles
             // 
@@ -468,7 +544,7 @@
             this.lblInfoControles.BackColor = System.Drawing.Color.Transparent;
             this.lblInfoControles.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
             this.lblInfoControles.ForeColor = System.Drawing.Color.Yellow;
-            this.lblInfoControles.Location = new System.Drawing.Point(147, 686);
+            this.lblInfoControles.Location = new System.Drawing.Point(141, 685);
             this.lblInfoControles.Name = "lblInfoControles";
             this.lblInfoControles.Size = new System.Drawing.Size(14, 19);
             this.lblInfoControles.TabIndex = 107;
@@ -482,13 +558,16 @@
             this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(37, 678);
+            this.btnVoltar.Location = new System.Drawing.Point(31, 677);
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(33, 34);
             this.btnVoltar.TabIndex = 106;
             this.btnVoltar.Tag = "";
             this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.MouseLeave += new System.EventHandler(this.btnVoltar_MouseLeave);
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            this.btnVoltar.MouseEnter += new System.EventHandler(this.btnVoltar_MouseEnter);
             // 
             // btnSalvar
             // 
@@ -497,46 +576,15 @@
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(92, 678);
+            this.btnSalvar.Location = new System.Drawing.Point(86, 677);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(36, 29);
             this.btnSalvar.TabIndex = 105;
             this.btnSalvar.Tag = "Gravar Dados";
             this.btnSalvar.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(668, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 80);
-            this.pictureBox1.TabIndex = 108;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtDesconto
-            // 
-            this.txtDesconto.Location = new System.Drawing.Point(103, 261);
-            this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(123, 20);
-            this.txtDesconto.TabIndex = 109;
-            // 
-            // lblDescricao
-            // 
-            this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(30, 123);
-            this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(68, 13);
-            this.lblDescricao.TabIndex = 110;
-            this.lblDescricao.Text = "Descrição:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(104, 120);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(390, 77);
-            this.textBox2.TabIndex = 111;
+            this.btnSalvar.MouseLeave += new System.EventHandler(this.btnSalvar_MouseLeave);
+            this.btnSalvar.MouseEnter += new System.EventHandler(this.btnSalvar_MouseEnter);
             // 
             // telaAlunoMatriculaAtividade
             // 
@@ -544,7 +592,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
-            this.ClientSize = new System.Drawing.Size(994, 716);
+            this.ClientSize = new System.Drawing.Size(1000, 722);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnSalvar);
@@ -571,11 +619,13 @@
             this.Controls.Add(this.lblNomeAluno);
             this.Controls.Add(this.pctImagem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "telaAlunoMatriculaAtividade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMatriculaAtividade_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.gpbMatricula.ResumeLayout(false);
             this.gpbMatricula.PerformLayout();
@@ -626,5 +676,6 @@
         private System.Windows.Forms.TextBox txtDesconto;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnAdicionarImagem;
     }
 }
