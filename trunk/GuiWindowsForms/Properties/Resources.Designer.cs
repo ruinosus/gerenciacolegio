@@ -347,6 +347,34 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap func_dados {
+            get {
+                object obj = ResourceManager.GetObject("func_dados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap func_dependentes {
+            get {
+                object obj = ResourceManager.GetObject("func_dependentes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap func_documentos {
+            get {
+                object obj = ResourceManager.GetObject("func_documentos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap func_profissional {
+            get {
+                object obj = ResourceManager.GetObject("func_profissional", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icone_aluno_142x113 {
             get {
                 object obj = ResourceManager.GetObject("icone_aluno_142x113", resourceCulture);
