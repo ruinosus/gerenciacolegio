@@ -211,7 +211,6 @@
             this.lblAcademico_menu.Size = new System.Drawing.Size(81, 17);
             this.lblAcademico_menu.TabIndex = 67;
             this.lblAcademico_menu.Text = "Acadêmico";
-            this.lblAcademico_menu.Visible = false;
             // 
             // btnAcademico
             // 

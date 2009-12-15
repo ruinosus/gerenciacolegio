@@ -147,6 +147,7 @@ namespace GuiWindowsForms
         
         private void btnAluno_Enter(object sender, EventArgs e)
         {
+            lblAlunoOculto.Visible = true;
             this.btnAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_aluno_142x113_hover;
         }
 
