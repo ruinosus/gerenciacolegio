@@ -595,6 +595,18 @@
   <ItemGroup>
     <None Include="Resources\atividade_mais.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_dados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_dependentes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_documentos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_profissional.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

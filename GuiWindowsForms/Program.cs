@@ -102,6 +102,16 @@ namespace GuiWindowsForms
                 telaFinanceiro telafinanceiroaux = telaFinanceiro.getInstancia();
                 telafinanceiroaux.Show();
             }
+            else if (formId == 17)
+            {
+                telaFuncionario telafuncionarioaux = telaFuncionario.getInstancia();
+                telafuncionarioaux.Show();
+            }
+            else if (formId == 18)
+            {
+                telaFuncionarioDocumentosPessoais telafuncdadosaux = telaFuncionarioDocumentosPessoais.getInstancia();
+                telafuncdadosaux.Show();
+            }
         }
     }
 }

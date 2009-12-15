@@ -343,4 +343,16 @@
   <data name="atividade_mais" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\atividade_mais.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="func_dados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\func_dados.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="func_dependentes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\func_dependentes.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="func_documentos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\func_documentos.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="func_profissional" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\func_profissional.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
