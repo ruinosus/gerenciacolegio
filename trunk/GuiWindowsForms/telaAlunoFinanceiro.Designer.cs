@@ -52,7 +52,6 @@
             this.btnDados = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnAdicionarImagem = new System.Windows.Forms.Button();
             this.gpbFinanceiro = new System.Windows.Forms.GroupBox();
             this.dtgExibirFinanceiro = new System.Windows.Forms.DataGridView();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -385,21 +384,6 @@
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             this.btnVoltar.MouseEnter += new System.EventHandler(this.btnVoltar_MouseEnter);
             // 
-            // btnAdicionarImagem
-            // 
-            this.btnAdicionarImagem.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar_final_32x32;
-            this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
-            this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarImagem.Location = new System.Drawing.Point(290, 152);
-            this.btnAdicionarImagem.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAdicionarImagem.Name = "btnAdicionarImagem";
-            this.btnAdicionarImagem.Size = new System.Drawing.Size(34, 34);
-            this.btnAdicionarImagem.TabIndex = 69;
-            this.btnAdicionarImagem.Tag = "";
-            this.btnAdicionarImagem.UseVisualStyleBackColor = false;
-            // 
             // gpbFinanceiro
             // 
             this.gpbFinanceiro.BackColor = System.Drawing.Color.Transparent;
@@ -458,7 +442,6 @@
             this.Controls.Add(this.btnDados);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.btnAdicionarImagem);
             this.Controls.Add(this.lblFoneEmerg);
             this.Controls.Add(this.lblResponsavel);
             this.Controls.Add(this.lblSerie);
@@ -474,6 +457,7 @@
             this.Name = "telaAlunoFinanceiro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoFinanceiro_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.gpbFinanceiro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgExibirFinanceiro)).EndInit();
@@ -507,7 +491,6 @@
         private System.Windows.Forms.Button btnDados;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Button btnAdicionarImagem;
         private System.Windows.Forms.GroupBox gpbFinanceiro;
         private System.Windows.Forms.DataGridView dtgExibirFinanceiro;
         private System.Windows.Forms.Button btnImprimir;

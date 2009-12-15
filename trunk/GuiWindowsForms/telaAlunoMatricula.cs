@@ -92,13 +92,13 @@ namespace GuiWindowsForms
             IsShown = false;
             this.Hide();
 
-            if (Program.ultimaTela != 7)
+            if (Program.ultimaTela != 4)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
             else
             {
-                Program.ultimaTela = 6;
+                Program.ultimaTela = 7;
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
@@ -371,13 +371,13 @@ namespace GuiWindowsForms
         {
             this.Hide();
 
-            if (Program.ultimaTela != 7)
+            if (Program.ultimaTela != 4)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
             else
             {
-                Program.ultimaTela = 6;
+                Program.ultimaTela = 7;
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
@@ -386,7 +386,10 @@ namespace GuiWindowsForms
 
         private void btnMatriculaAtividade_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Program.ultimaTela = 4;
+            telaAlunoMatriculaAtividade telaalunomatriculaatividade = telaAlunoMatriculaAtividade.getInstancia();
+            telaalunomatriculaatividade.Show();
         }
 
         private void btnMatriculaAtividade_MouseEnter(object sender, EventArgs e)

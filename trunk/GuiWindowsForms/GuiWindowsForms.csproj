@@ -377,9 +377,6 @@
     <None Include="Resources\icons7069.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\adicionar.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\adicionar_final_32x32.png" />
   </ItemGroup>
   <ItemGroup>
@@ -564,6 +561,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\btn_imprimir_48x48_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_matricula_73x73.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_matricula_47x49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_matricula_47x49_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\impressora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financeiro_busca_73x75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financeiro_busca_73x75_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financeiro_impressora_51x53.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financeiro_impressora_51x53_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\atividade_mais.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
