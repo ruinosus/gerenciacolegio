@@ -617,6 +617,51 @@
   <ItemGroup>
     <None Include="Resources\func_profissional.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons7070.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_mais.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_menos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_dados_71x62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_dados_71x62_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_dados_71x62_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_dependentes_71x62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_dependentes_71x62_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_dependentes_71x62_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_profissional_64x71.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_profissional_64x71_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_profissional_64x71_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_imprimir_50x50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_imprimir_50x50_hover.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

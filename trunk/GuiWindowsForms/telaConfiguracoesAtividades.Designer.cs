@@ -85,21 +85,26 @@
             // 
             // btnAdicionarImagem
             // 
-            this.btnAdicionarImagem.Location = new System.Drawing.Point(538, 108);
+            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
+            this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarImagem.Location = new System.Drawing.Point(589, 108);
             this.btnAdicionarImagem.Name = "btnAdicionarImagem";
-            this.btnAdicionarImagem.Size = new System.Drawing.Size(126, 23);
+            this.btnAdicionarImagem.Size = new System.Drawing.Size(32, 32);
             this.btnAdicionarImagem.TabIndex = 70;
-            this.btnAdicionarImagem.Text = "Adicionar Imagem";
             this.btnAdicionarImagem.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
+            this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.Location = new System.Drawing.Point(589, 207);
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Location = new System.Drawing.Point(589, 217);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(0);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(31, 11);
             this.btnExcluir.TabIndex = 69;
-            this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // txtValor
