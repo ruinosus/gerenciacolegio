@@ -60,7 +60,6 @@
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.lblInfoControles = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnAdicionarImagem = new System.Windows.Forms.Button();
             this.lblMatricula_menu = new System.Windows.Forms.Label();
             this.btnMatricula = new System.Windows.Forms.Button();
             this.lblAcademico_menu = new System.Windows.Forms.Label();
@@ -410,21 +409,6 @@
             this.btnSalvar.MouseLeave += new System.EventHandler(this.btnSalvar_MouseLeave);
             this.btnSalvar.MouseEnter += new System.EventHandler(this.btnSalvar_MouseEnter);
             // 
-            // btnAdicionarImagem
-            // 
-            this.btnAdicionarImagem.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar_final_32x32;
-            this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
-            this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarImagem.Location = new System.Drawing.Point(290, 152);
-            this.btnAdicionarImagem.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAdicionarImagem.Name = "btnAdicionarImagem";
-            this.btnAdicionarImagem.Size = new System.Drawing.Size(34, 34);
-            this.btnAdicionarImagem.TabIndex = 69;
-            this.btnAdicionarImagem.Tag = "";
-            this.btnAdicionarImagem.UseVisualStyleBackColor = false;
-            // 
             // lblMatricula_menu
             // 
             this.lblMatricula_menu.AutoSize = true;
@@ -629,7 +613,6 @@
             this.Controls.Add(this.btnDados);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnAdicionarImagem);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.gpbDadosPessoais);
@@ -689,7 +672,6 @@
         private System.Windows.Forms.TextBox txtSituacaoEspecial;
         private System.Windows.Forms.Label lblInfoControles;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnAdicionarImagem;
         private System.Windows.Forms.Label lblMatricula_menu;
         private System.Windows.Forms.Button btnMatricula;
         private System.Windows.Forms.Label lblAcademico_menu;
