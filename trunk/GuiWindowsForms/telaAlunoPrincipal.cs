@@ -278,6 +278,8 @@ namespace GuiWindowsForms
 
         private void btnConfiguracoes_Click(object sender, EventArgs e)
         {
+            btnCadastrarAluno.Visible = false;
+            btnCadastrarFuncionario.Visible = false;
             this.Hide();
             Program.ultimaTela = 6;
             telaConfiguracoes telaconfiguracoes = telaConfiguracoes.getInstancia();
@@ -286,23 +288,32 @@ namespace GuiWindowsForms
 
         private void btnAluno_Click(object sender, EventArgs e)
         {
-
+            btnCadastrarFuncionario.Visible = false;
+            btnCadastrarAluno.Visible = true;
         }
 
         private void btnFuncionario_Click(object sender, EventArgs e)
+        {
+            btnCadastrarAluno.Visible = false;
+            btnCadastrarFuncionario.Visible = true;
+        }
+
+        private void btnFinanceiro_Click(object sender, EventArgs e)
+        {
+            btnCadastrarAluno.Visible = false;
+            btnCadastrarFuncionario.Visible = false;
+            this.Hide();
+            Program.ultimaTela = 6;
+            telaFinanceiro telafinanceiro = telaFinanceiro.getInstancia();
+            telafinanceiro.Show();
+        }
+
+        private void btnCadastrarFuncionario_Click(object sender, EventArgs e)
         {
             this.Hide();
             Program.ultimaTela = 6;
             telaFuncionario telafuncionario = telaFuncionario.getInstancia();
             telafuncionario.Show();
-        }
-
-        private void btnFinanceiro_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 6;
-            telaFinanceiro telafinanceiro = telaFinanceiro.getInstancia();
-            telafinanceiro.Show();
         }
 
     }

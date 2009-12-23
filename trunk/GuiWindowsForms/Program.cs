@@ -107,11 +107,6 @@ namespace GuiWindowsForms
                 telaFuncionario telafuncionarioaux = telaFuncionario.getInstancia();
                 telafuncionarioaux.Show();
             }
-            else if (formId == 18)
-            {
-                telaFuncionarioBeneficiario telafuncbeneficiarioaux = telaFuncionarioBeneficiario.getInstancia();
-                telafuncbeneficiarioaux.Show();
-            }
             else if (formId == 19)
             {
                 telaFuncionarioDadosProfissionais telafuncprofissionaisaux = telaFuncionarioDadosProfissionais.getInstancia();

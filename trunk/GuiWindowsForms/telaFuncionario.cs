@@ -180,14 +180,6 @@ namespace GuiWindowsForms
             telaafuncdados.Show();
         }
 
-        private void btnBeneficiario_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 17;
-            telaFuncionarioBeneficiario telaafuncbeneficiario = telaFuncionarioBeneficiario.getInstancia();
-            telaafuncbeneficiario.Show();
-        }
-
         private void btnDadosProfissionais_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -212,27 +204,15 @@ namespace GuiWindowsForms
             lblDados_Menu.Visible = false;
         }
 
-        private void btnBeneficiario_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnBeneficiario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dependentes_71x62_hover;
-            lblBeneficiario_menu.Visible = true;
-        }
-
-        private void btnBeneficiario_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnBeneficiario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dependentes_71x62;
-            lblBeneficiario_menu.Visible = false;
-        }
-
         private void btnDadosProfissionais_MouseEnter(object sender, EventArgs e)
         {
-            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71_hover;
+            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71_disabled_h;
             lblProfissionais_menu.Visible = true;
         }
 
         private void btnDadosProfissionais_MouseLeave(object sender, EventArgs e)
         {
-            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71;
+            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71_disabled;
             lblProfissionais_menu.Visible = false;
         }
 

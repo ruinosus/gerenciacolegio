@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesSerie));
             this.gpbSerie = new System.Windows.Forms.GroupBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
+            this.txtCiclo = new System.Windows.Forms.TextBox();
+            this.lblCiclo = new System.Windows.Forms.Label();
             this.lblTurma = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lblTurno = new System.Windows.Forms.Label();
@@ -53,8 +54,7 @@
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.lblInfoControles = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
-            this.lblCiclo = new System.Windows.Forms.Label();
-            this.txtCiclo = new System.Windows.Forms.TextBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,9 +62,9 @@
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
+            this.gpbSerie.Controls.Add(this.btnExcluir);
             this.gpbSerie.Controls.Add(this.txtCiclo);
             this.gpbSerie.Controls.Add(this.lblCiclo);
-            this.gpbSerie.Controls.Add(this.btnExcluir);
             this.gpbSerie.Controls.Add(this.lblTurma);
             this.gpbSerie.Controls.Add(this.comboBox1);
             this.gpbSerie.Controls.Add(this.lblTurno);
@@ -82,14 +82,22 @@
             this.gpbSerie.TabStop = false;
             this.gpbSerie.Text = "CADASTRO DE SÉRIE";
             // 
-            // btnExcluir
+            // txtCiclo
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(483, 191);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btnExcluir.TabIndex = 10;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.txtCiclo.Location = new System.Drawing.Point(458, 69);
+            this.txtCiclo.MaxLength = 30;
+            this.txtCiclo.Name = "txtCiclo";
+            this.txtCiclo.Size = new System.Drawing.Size(57, 20);
+            this.txtCiclo.TabIndex = 12;
+            // 
+            // lblCiclo
+            // 
+            this.lblCiclo.AutoSize = true;
+            this.lblCiclo.Location = new System.Drawing.Point(399, 72);
+            this.lblCiclo.Name = "lblCiclo";
+            this.lblCiclo.Size = new System.Drawing.Size(39, 13);
+            this.lblCiclo.TabIndex = 11;
+            this.lblCiclo.Text = "Ciclo:";
             // 
             // lblTurma
             // 
@@ -173,7 +181,7 @@
             this.lblDesconto_menu.AutoSize = true;
             this.lblDesconto_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblDesconto_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDesconto_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblDesconto_menu.ForeColor = System.Drawing.Color.White;
             this.lblDesconto_menu.Location = new System.Drawing.Point(915, 466);
             this.lblDesconto_menu.Name = "lblDesconto_menu";
             this.lblDesconto_menu.Size = new System.Drawing.Size(76, 17);
@@ -186,7 +194,7 @@
             this.lblAtividade_menu.AutoSize = true;
             this.lblAtividade_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblAtividade_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblAtividade_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAtividade_menu.ForeColor = System.Drawing.Color.White;
             this.lblAtividade_menu.Location = new System.Drawing.Point(911, 364);
             this.lblAtividade_menu.Name = "lblAtividade_menu";
             this.lblAtividade_menu.Size = new System.Drawing.Size(76, 17);
@@ -199,7 +207,7 @@
             this.lblSerie_menu.AutoSize = true;
             this.lblSerie_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblSerie_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSerie_menu.ForeColor = System.Drawing.Color.White;
+            this.lblSerie_menu.ForeColor = System.Drawing.Color.Yellow;
             this.lblSerie_menu.Location = new System.Drawing.Point(927, 269);
             this.lblSerie_menu.Name = "lblSerie_menu";
             this.lblSerie_menu.Size = new System.Drawing.Size(49, 17);
@@ -228,7 +236,7 @@
             this.lblControleAcesso_menu.AutoSize = true;
             this.lblControleAcesso_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblControleAcesso_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblControleAcesso_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblControleAcesso_menu.ForeColor = System.Drawing.Color.White;
             this.lblControleAcesso_menu.Location = new System.Drawing.Point(25, 271);
             this.lblControleAcesso_menu.Name = "lblControleAcesso_menu";
             this.lblControleAcesso_menu.Size = new System.Drawing.Size(46, 17);
@@ -239,7 +247,7 @@
             // btnSerie
             // 
             this.btnSerie.BackColor = System.Drawing.Color.Transparent;
-            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70_disabled;
+            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70;
             this.btnSerie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSerie.Enabled = false;
             this.btnSerie.FlatAppearance.BorderSize = 0;
@@ -257,7 +265,7 @@
             // btnDesconto
             // 
             this.btnDesconto.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80;
+            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80_disabled;
             this.btnDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesconto.FlatAppearance.BorderSize = 0;
             this.btnDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -274,7 +282,7 @@
             // btnAtividade
             // 
             this.btnAtividade.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75;
+            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled;
             this.btnAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAtividade.FlatAppearance.BorderSize = 0;
             this.btnAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -362,22 +370,19 @@
             this.btnDesconectar.UseVisualStyleBackColor = false;
             this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
-            // lblCiclo
+            // btnExcluir
             // 
-            this.lblCiclo.AutoSize = true;
-            this.lblCiclo.Location = new System.Drawing.Point(399, 72);
-            this.lblCiclo.Name = "lblCiclo";
-            this.lblCiclo.Size = new System.Drawing.Size(39, 13);
-            this.lblCiclo.TabIndex = 11;
-            this.lblCiclo.Text = "Ciclo:";
-            // 
-            // txtCiclo
-            // 
-            this.txtCiclo.Location = new System.Drawing.Point(458, 69);
-            this.txtCiclo.MaxLength = 30;
-            this.txtCiclo.Name = "txtCiclo";
-            this.txtCiclo.Size = new System.Drawing.Size(57, 20);
-            this.txtCiclo.TabIndex = 12;
+            this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Location = new System.Drawing.Point(632, 219);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(32, 11);
+            this.btnExcluir.TabIndex = 70;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.MouseLeave += new System.EventHandler(this.btnExcluir_MouseLeave);
+            this.btnExcluir.MouseEnter += new System.EventHandler(this.btnExcluir_MouseEnter);
             // 
             // telaConfiguracoesSerie
             // 
@@ -428,7 +433,6 @@
         private System.Windows.Forms.TextBox txtTurma;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lblTurma;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Label lblDesconto_menu;
         private System.Windows.Forms.Label lblAtividade_menu;
         private System.Windows.Forms.Label lblSerie_menu;
@@ -444,5 +448,6 @@
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.TextBox txtCiclo;
         private System.Windows.Forms.Label lblCiclo;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

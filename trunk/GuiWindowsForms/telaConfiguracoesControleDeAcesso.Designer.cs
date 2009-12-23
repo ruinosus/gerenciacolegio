@@ -1104,7 +1104,7 @@
             this.lblDesconto_menu.AutoSize = true;
             this.lblDesconto_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblDesconto_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDesconto_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblDesconto_menu.ForeColor = System.Drawing.Color.White;
             this.lblDesconto_menu.Location = new System.Drawing.Point(915, 466);
             this.lblDesconto_menu.Name = "lblDesconto_menu";
             this.lblDesconto_menu.Size = new System.Drawing.Size(76, 17);
@@ -1117,7 +1117,7 @@
             this.lblAtividade_menu.AutoSize = true;
             this.lblAtividade_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblAtividade_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblAtividade_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAtividade_menu.ForeColor = System.Drawing.Color.White;
             this.lblAtividade_menu.Location = new System.Drawing.Point(911, 364);
             this.lblAtividade_menu.Name = "lblAtividade_menu";
             this.lblAtividade_menu.Size = new System.Drawing.Size(76, 17);
@@ -1130,7 +1130,7 @@
             this.lblSerie_menu.AutoSize = true;
             this.lblSerie_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblSerie_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSerie_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblSerie_menu.ForeColor = System.Drawing.Color.White;
             this.lblSerie_menu.Location = new System.Drawing.Point(927, 269);
             this.lblSerie_menu.Name = "lblSerie_menu";
             this.lblSerie_menu.Size = new System.Drawing.Size(49, 17);
@@ -1158,7 +1158,7 @@
             this.lblControleAcesso_menu.AutoSize = true;
             this.lblControleAcesso_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblControleAcesso_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblControleAcesso_menu.ForeColor = System.Drawing.Color.White;
+            this.lblControleAcesso_menu.ForeColor = System.Drawing.Color.Yellow;
             this.lblControleAcesso_menu.Location = new System.Drawing.Point(25, 271);
             this.lblControleAcesso_menu.Name = "lblControleAcesso_menu";
             this.lblControleAcesso_menu.Size = new System.Drawing.Size(46, 17);
@@ -1168,7 +1168,7 @@
             // btnSerie
             // 
             this.btnSerie.BackColor = System.Drawing.Color.Transparent;
-            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70;
+            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70_disabled;
             this.btnSerie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSerie.FlatAppearance.BorderSize = 0;
             this.btnSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1185,7 +1185,7 @@
             // btnDesconto
             // 
             this.btnDesconto.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80;
+            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80_disabled;
             this.btnDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesconto.FlatAppearance.BorderSize = 0;
             this.btnDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1202,7 +1202,7 @@
             // btnAtividade
             // 
             this.btnAtividade.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75;
+            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled;
             this.btnAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAtividade.FlatAppearance.BorderSize = 0;
             this.btnAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

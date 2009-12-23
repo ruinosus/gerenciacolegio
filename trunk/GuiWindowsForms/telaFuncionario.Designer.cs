@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaFuncionario));
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
-            this.pctImagem = new System.Windows.Forms.PictureBox();
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.lblEdificio = new System.Windows.Forms.Label();
             this.txtNomeEdificil = new System.Windows.Forms.TextBox();
@@ -82,11 +81,13 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.lblAtivo = new System.Windows.Forms.Label();
             this.lblFone = new System.Windows.Forms.Label();
             this.lblFuncao = new System.Windows.Forms.Label();
             this.lblNomeFuncionario = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
+            this.pctImagem = new System.Windows.Forms.PictureBox();
             this.gpbDadosPessoais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdicionarImagem
@@ -103,15 +104,6 @@
             this.btnAdicionarImagem.TabIndex = 38;
             this.btnAdicionarImagem.Tag = "Adicionar Foto";
             this.btnAdicionarImagem.UseVisualStyleBackColor = false;
-            // 
-            // pctImagem
-            // 
-            this.pctImagem.BackColor = System.Drawing.Color.Transparent;
-            this.pctImagem.Location = new System.Drawing.Point(250, 12);
-            this.pctImagem.Name = "pctImagem";
-            this.pctImagem.Size = new System.Drawing.Size(127, 134);
-            this.pctImagem.TabIndex = 37;
-            this.pctImagem.TabStop = false;
             // 
             // gpbDadosPessoais
             // 
@@ -568,8 +560,8 @@
             this.lblProfissionais_menu.AutoSize = true;
             this.lblProfissionais_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblProfissionais_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProfissionais_menu.ForeColor = System.Drawing.Color.Yellow;
-            this.lblProfissionais_menu.Location = new System.Drawing.Point(859, 457);
+            this.lblProfissionais_menu.ForeColor = System.Drawing.Color.White;
+            this.lblProfissionais_menu.Location = new System.Drawing.Point(862, 379);
             this.lblProfissionais_menu.Name = "lblProfissionais_menu";
             this.lblProfissionais_menu.Size = new System.Drawing.Size(136, 17);
             this.lblProfissionais_menu.TabIndex = 95;
@@ -581,8 +573,8 @@
             this.lblDados_Menu.AutoSize = true;
             this.lblDados_Menu.BackColor = System.Drawing.Color.Transparent;
             this.lblDados_Menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDados_Menu.ForeColor = System.Drawing.Color.White;
-            this.lblDados_Menu.Location = new System.Drawing.Point(865, 272);
+            this.lblDados_Menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblDados_Menu.Location = new System.Drawing.Point(877, 272);
             this.lblDados_Menu.Name = "lblDados_Menu";
             this.lblDados_Menu.Size = new System.Drawing.Size(110, 17);
             this.lblDados_Menu.TabIndex = 92;
@@ -591,11 +583,11 @@
             // btnDadosProfissionais
             // 
             this.btnDadosProfissionais.BackColor = System.Drawing.Color.Transparent;
-            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71;
+            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71_disabled;
             this.btnDadosProfissionais.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDadosProfissionais.FlatAppearance.BorderSize = 0;
             this.btnDadosProfissionais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDadosProfissionais.Location = new System.Drawing.Point(894, 385);
+            this.btnDadosProfissionais.Location = new System.Drawing.Point(894, 299);
             this.btnDadosProfissionais.Margin = new System.Windows.Forms.Padding(0);
             this.btnDadosProfissionais.Name = "btnDadosProfissionais";
             this.btnDadosProfissionais.Size = new System.Drawing.Size(64, 71);
@@ -610,7 +602,7 @@
             // 
             this.btnDadosPessoais.AccessibleDescription = "";
             this.btnDadosPessoais.BackColor = System.Drawing.Color.Transparent;
-            this.btnDadosPessoais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dados_71x62_disabled;
+            this.btnDadosPessoais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dados_71x62;
             this.btnDadosPessoais.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDadosPessoais.Enabled = false;
             this.btnDadosPessoais.FlatAppearance.BorderSize = 0;
@@ -702,6 +694,18 @@
             this.btnImprimir.MouseLeave += new System.EventHandler(this.btnImprimir_MouseLeave);
             this.btnImprimir.MouseEnter += new System.EventHandler(this.btnImprimir_MouseEnter);
             // 
+            // lblAtivo
+            // 
+            this.lblAtivo.AutoSize = true;
+            this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblAtivo.ForeColor = System.Drawing.Color.Green;
+            this.lblAtivo.Location = new System.Drawing.Point(394, 106);
+            this.lblAtivo.Name = "lblAtivo";
+            this.lblAtivo.Size = new System.Drawing.Size(49, 19);
+            this.lblAtivo.TabIndex = 134;
+            this.lblAtivo.Text = "Ativo";
+            // 
             // lblFone
             // 
             this.lblFone.AutoSize = true;
@@ -711,7 +715,7 @@
             this.lblFone.Location = new System.Drawing.Point(394, 74);
             this.lblFone.Name = "lblFone";
             this.lblFone.Size = new System.Drawing.Size(50, 19);
-            this.lblFone.TabIndex = 100;
+            this.lblFone.TabIndex = 133;
             this.lblFone.Text = "Fone ";
             // 
             // lblFuncao
@@ -723,7 +727,7 @@
             this.lblFuncao.Location = new System.Drawing.Point(394, 45);
             this.lblFuncao.Name = "lblFuncao";
             this.lblFuncao.Size = new System.Drawing.Size(63, 19);
-            this.lblFuncao.TabIndex = 99;
+            this.lblFuncao.TabIndex = 132;
             this.lblFuncao.Text = "Função";
             // 
             // lblNomeFuncionario
@@ -735,8 +739,17 @@
             this.lblNomeFuncionario.Location = new System.Drawing.Point(394, 12);
             this.lblNomeFuncionario.Name = "lblNomeFuncionario";
             this.lblNomeFuncionario.Size = new System.Drawing.Size(169, 19);
-            this.lblNomeFuncionario.TabIndex = 98;
+            this.lblNomeFuncionario.TabIndex = 131;
             this.lblNomeFuncionario.Text = "Nome do Funcionário";
+            // 
+            // pctImagem
+            // 
+            this.pctImagem.BackColor = System.Drawing.Color.Transparent;
+            this.pctImagem.Location = new System.Drawing.Point(250, 12);
+            this.pctImagem.Name = "pctImagem";
+            this.pctImagem.Size = new System.Drawing.Size(127, 134);
+            this.pctImagem.TabIndex = 130;
+            this.pctImagem.TabStop = false;
             // 
             // telaFuncionario
             // 
@@ -745,15 +758,16 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblAtivo);
             this.Controls.Add(this.lblFone);
             this.Controls.Add(this.lblFuncao);
             this.Controls.Add(this.lblNomeFuncionario);
+            this.Controls.Add(this.pctImagem);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.gpbDadosPessoais);
             this.Controls.Add(this.lblProfissionais_menu);
             this.Controls.Add(this.btnAdicionarImagem);
-            this.Controls.Add(this.pctImagem);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblDados_Menu);
             this.Controls.Add(this.btnSalvar);
@@ -769,9 +783,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaFuncionario_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -780,7 +794,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnAdicionarImagem;
-        private System.Windows.Forms.PictureBox pctImagem;
         private System.Windows.Forms.GroupBox gpbDadosPessoais;
         private System.Windows.Forms.TextBox txtFiliacaoPai;
         private System.Windows.Forms.Label lblPai;
@@ -816,9 +829,6 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Label lblFone;
-        private System.Windows.Forms.Label lblFuncao;
-        private System.Windows.Forms.Label lblNomeFuncionario;
         private System.Windows.Forms.Label lblEdificio;
         private System.Windows.Forms.TextBox txtNomeEdificil;
         private System.Windows.Forms.MaskedTextBox mskFoneResidencia;
@@ -835,6 +845,11 @@
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblAtivo;
+        private System.Windows.Forms.Label lblFone;
+        private System.Windows.Forms.Label lblFuncao;
+        private System.Windows.Forms.Label lblNomeFuncionario;
+        private System.Windows.Forms.PictureBox pctImagem;
 
     }
 }

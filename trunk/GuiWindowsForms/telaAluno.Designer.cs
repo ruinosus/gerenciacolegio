@@ -145,12 +145,17 @@
             // 
             // btnVincularResponsavel
             // 
-            this.btnVincularResponsavel.Location = new System.Drawing.Point(125, 340);
+            this.btnVincularResponsavel.BackgroundImage = global::GuiWindowsForms.Properties.Resources.vincular_final;
+            this.btnVincularResponsavel.FlatAppearance.BorderSize = 0;
+            this.btnVincularResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVincularResponsavel.Location = new System.Drawing.Point(128, 332);
+            this.btnVincularResponsavel.Margin = new System.Windows.Forms.Padding(0);
             this.btnVincularResponsavel.Name = "btnVincularResponsavel";
-            this.btnVincularResponsavel.Size = new System.Drawing.Size(177, 23);
+            this.btnVincularResponsavel.Size = new System.Drawing.Size(30, 31);
             this.btnVincularResponsavel.TabIndex = 61;
-            this.btnVincularResponsavel.Text = "Vincular Responsável";
             this.btnVincularResponsavel.UseVisualStyleBackColor = true;
+            this.btnVincularResponsavel.MouseLeave += new System.EventHandler(this.btnVincularResponsavel_MouseLeave);
+            this.btnVincularResponsavel.MouseEnter += new System.EventHandler(this.btnVincularResponsavel_MouseEnter);
             // 
             // lblEdificio
             // 
@@ -523,7 +528,7 @@
             // btnDados
             // 
             this.btnDados.BackColor = System.Drawing.Color.Transparent;
-            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled;
+            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74;
             this.btnDados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDados.Enabled = false;
             this.btnDados.FlatAppearance.BorderSize = 0;
@@ -541,7 +546,7 @@
             // btnResponsaveis
             // 
             this.btnResponsaveis.BackColor = System.Drawing.Color.Transparent;
-            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66;
+            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled;
             this.btnResponsaveis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResponsaveis.FlatAppearance.BorderSize = 0;
             this.btnResponsaveis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -559,7 +564,7 @@
             // btnInfoMedica
             // 
             this.btnInfoMedica.BackColor = System.Drawing.Color.Transparent;
-            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73;
+            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_disabled;
             this.btnInfoMedica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInfoMedica.FlatAppearance.BorderSize = 0;
             this.btnInfoMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -577,7 +582,7 @@
             // btnFinanceiro
             // 
             this.btnFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60;
+            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled;
             this.btnFinanceiro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinanceiro.FlatAppearance.BorderSize = 0;
             this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -595,7 +600,7 @@
             // btnAcademico
             // 
             this.btnAcademico.BackColor = System.Drawing.Color.Transparent;
-            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72;
+            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled;
             this.btnAcademico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAcademico.FlatAppearance.BorderSize = 0;
             this.btnAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -736,7 +741,7 @@
             this.lblAcademico_menu.AutoSize = true;
             this.lblAcademico_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblAcademico_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblAcademico_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAcademico_menu.ForeColor = System.Drawing.Color.White;
             this.lblAcademico_menu.Location = new System.Drawing.Point(895, 646);
             this.lblAcademico_menu.Name = "lblAcademico_menu";
             this.lblAcademico_menu.Size = new System.Drawing.Size(81, 17);
@@ -749,7 +754,7 @@
             this.lblFinanceiro_menu.AutoSize = true;
             this.lblFinanceiro_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblFinanceiro_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblFinanceiro_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblFinanceiro_menu.ForeColor = System.Drawing.Color.White;
             this.lblFinanceiro_menu.Location = new System.Drawing.Point(895, 548);
             this.lblFinanceiro_menu.Name = "lblFinanceiro_menu";
             this.lblFinanceiro_menu.Size = new System.Drawing.Size(77, 17);
@@ -762,7 +767,7 @@
             this.lblMedico_menu.AutoSize = true;
             this.lblMedico_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblMedico_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblMedico_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblMedico_menu.ForeColor = System.Drawing.Color.White;
             this.lblMedico_menu.Location = new System.Drawing.Point(889, 455);
             this.lblMedico_menu.Name = "lblMedico_menu";
             this.lblMedico_menu.Size = new System.Drawing.Size(88, 17);
@@ -775,7 +780,7 @@
             this.lblResponsavel_menu.AutoSize = true;
             this.lblResponsavel_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblResponsavel_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblResponsavel_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblResponsavel_menu.ForeColor = System.Drawing.Color.White;
             this.lblResponsavel_menu.Location = new System.Drawing.Point(885, 353);
             this.lblResponsavel_menu.Name = "lblResponsavel_menu";
             this.lblResponsavel_menu.Size = new System.Drawing.Size(97, 17);
@@ -788,7 +793,7 @@
             this.lblDados_Menu.AutoSize = true;
             this.lblDados_Menu.BackColor = System.Drawing.Color.Transparent;
             this.lblDados_Menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDados_Menu.ForeColor = System.Drawing.Color.White;
+            this.lblDados_Menu.ForeColor = System.Drawing.Color.Yellow;
             this.lblDados_Menu.Location = new System.Drawing.Point(876, 265);
             this.lblDados_Menu.Name = "lblDados_Menu";
             this.lblDados_Menu.Size = new System.Drawing.Size(110, 17);
@@ -809,7 +814,7 @@
             this.lblMatricula_menu.AutoSize = true;
             this.lblMatricula_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblMatricula_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblMatricula_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblMatricula_menu.ForeColor = System.Drawing.Color.White;
             this.lblMatricula_menu.Location = new System.Drawing.Point(900, 166);
             this.lblMatricula_menu.Name = "lblMatricula_menu";
             this.lblMatricula_menu.Size = new System.Drawing.Size(69, 17);
@@ -820,7 +825,7 @@
             // btnMatricula
             // 
             this.btnMatricula.BackColor = System.Drawing.Color.Transparent;
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69;
+            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled;
             this.btnMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMatricula.FlatAppearance.BorderSize = 0;
             this.btnMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -853,7 +858,7 @@
             this.lblAtivo.AutoSize = true;
             this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
             this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblAtivo.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAtivo.ForeColor = System.Drawing.Color.Green;
             this.lblAtivo.Location = new System.Drawing.Point(394, 166);
             this.lblAtivo.Name = "lblAtivo";
             this.lblAtivo.Size = new System.Drawing.Size(49, 19);

@@ -30,6 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ckbTerca));
             this.gpbSerie = new System.Windows.Forms.GroupBox();
+            this.ckbSabado = new System.Windows.Forms.CheckBox();
+            this.ckbSexta = new System.Windows.Forms.CheckBox();
+            this.ckbQuinta = new System.Windows.Forms.CheckBox();
+            this.lblDiaSemana = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.ckbQuarta = new System.Windows.Forms.CheckBox();
+            this.ckbDomingo = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblTurma = new System.Windows.Forms.Label();
+            this.dtpHorarioFim = new System.Windows.Forms.DateTimePicker();
+            this.lblHorarioFim = new System.Windows.Forms.Label();
+            this.dtpHorarioInicio = new System.Windows.Forms.DateTimePicker();
+            this.lblHorarioInicio = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -51,20 +65,6 @@
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnControledeAcesso = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.lblHorarioInicio = new System.Windows.Forms.Label();
-            this.dtpHorarioInicio = new System.Windows.Forms.DateTimePicker();
-            this.dtpHorarioFim = new System.Windows.Forms.DateTimePicker();
-            this.lblHorarioFim = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblTurma = new System.Windows.Forms.Label();
-            this.ckbDomingo = new System.Windows.Forms.CheckBox();
-            this.ckbQuarta = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.lblDiaSemana = new System.Windows.Forms.Label();
-            this.ckbQuinta = new System.Windows.Forms.CheckBox();
-            this.ckbSexta = new System.Windows.Forms.CheckBox();
-            this.ckbSabado = new System.Windows.Forms.CheckBox();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -103,6 +103,136 @@
             this.gpbSerie.TabStop = false;
             this.gpbSerie.Text = "ATIVIDADES";
             // 
+            // ckbSabado
+            // 
+            this.ckbSabado.AutoSize = true;
+            this.ckbSabado.Location = new System.Drawing.Point(574, 220);
+            this.ckbSabado.Name = "ckbSabado";
+            this.ckbSabado.Size = new System.Drawing.Size(69, 17);
+            this.ckbSabado.TabIndex = 86;
+            this.ckbSabado.Text = "Sábado";
+            this.ckbSabado.UseVisualStyleBackColor = true;
+            // 
+            // ckbSexta
+            // 
+            this.ckbSexta.AutoSize = true;
+            this.ckbSexta.Location = new System.Drawing.Point(510, 220);
+            this.ckbSexta.Name = "ckbSexta";
+            this.ckbSexta.Size = new System.Drawing.Size(58, 17);
+            this.ckbSexta.TabIndex = 85;
+            this.ckbSexta.Text = "Sexta";
+            this.ckbSexta.UseVisualStyleBackColor = true;
+            // 
+            // ckbQuinta
+            // 
+            this.ckbQuinta.AutoSize = true;
+            this.ckbQuinta.Location = new System.Drawing.Point(444, 220);
+            this.ckbQuinta.Name = "ckbQuinta";
+            this.ckbQuinta.Size = new System.Drawing.Size(60, 17);
+            this.ckbQuinta.TabIndex = 84;
+            this.ckbQuinta.Text = "Quirta";
+            this.ckbQuinta.UseVisualStyleBackColor = true;
+            // 
+            // lblDiaSemana
+            // 
+            this.lblDiaSemana.AutoSize = true;
+            this.lblDiaSemana.Location = new System.Drawing.Point(21, 215);
+            this.lblDiaSemana.Name = "lblDiaSemana";
+            this.lblDiaSemana.Size = new System.Drawing.Size(97, 13);
+            this.lblDiaSemana.TabIndex = 83;
+            this.lblDiaSemana.Text = "Dia da Semana:";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(302, 220);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(59, 17);
+            this.checkBox1.TabIndex = 82;
+            this.checkBox1.Text = "Terça";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(220, 219);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(76, 17);
+            this.checkBox2.TabIndex = 81;
+            this.checkBox2.Text = "Segunda";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // ckbQuarta
+            // 
+            this.ckbQuarta.AutoSize = true;
+            this.ckbQuarta.Location = new System.Drawing.Point(374, 220);
+            this.ckbQuarta.Name = "ckbQuarta";
+            this.ckbQuarta.Size = new System.Drawing.Size(64, 17);
+            this.ckbQuarta.TabIndex = 80;
+            this.ckbQuarta.Text = "Quarta";
+            this.ckbQuarta.UseVisualStyleBackColor = true;
+            // 
+            // ckbDomingo
+            // 
+            this.ckbDomingo.AutoSize = true;
+            this.ckbDomingo.Location = new System.Drawing.Point(139, 219);
+            this.ckbDomingo.Name = "ckbDomingo";
+            this.ckbDomingo.Size = new System.Drawing.Size(75, 17);
+            this.ckbDomingo.TabIndex = 79;
+            this.ckbDomingo.Text = "Domingo";
+            this.ckbDomingo.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(139, 85);
+            this.textBox1.MaxLength = 10;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(112, 20);
+            this.textBox1.TabIndex = 78;
+            // 
+            // lblTurma
+            // 
+            this.lblTurma.AutoSize = true;
+            this.lblTurma.Location = new System.Drawing.Point(21, 82);
+            this.lblTurma.Name = "lblTurma";
+            this.lblTurma.Size = new System.Drawing.Size(46, 13);
+            this.lblTurma.TabIndex = 77;
+            this.lblTurma.Text = "Turma:";
+            // 
+            // dtpHorarioFim
+            // 
+            this.dtpHorarioFim.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHorarioFim.Location = new System.Drawing.Point(357, 124);
+            this.dtpHorarioFim.Name = "dtpHorarioFim";
+            this.dtpHorarioFim.Size = new System.Drawing.Size(82, 20);
+            this.dtpHorarioFim.TabIndex = 76;
+            // 
+            // lblHorarioFim
+            // 
+            this.lblHorarioFim.AutoSize = true;
+            this.lblHorarioFim.Location = new System.Drawing.Point(276, 124);
+            this.lblHorarioFim.Name = "lblHorarioFim";
+            this.lblHorarioFim.Size = new System.Drawing.Size(75, 13);
+            this.lblHorarioFim.TabIndex = 75;
+            this.lblHorarioFim.Text = "Horário Fim:";
+            // 
+            // dtpHorarioInicio
+            // 
+            this.dtpHorarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHorarioInicio.Location = new System.Drawing.Point(139, 124);
+            this.dtpHorarioInicio.Name = "dtpHorarioInicio";
+            this.dtpHorarioInicio.Size = new System.Drawing.Size(82, 20);
+            this.dtpHorarioInicio.TabIndex = 74;
+            // 
+            // lblHorarioInicio
+            // 
+            this.lblHorarioInicio.AutoSize = true;
+            this.lblHorarioInicio.Location = new System.Drawing.Point(21, 121);
+            this.lblHorarioInicio.Name = "lblHorarioInicio";
+            this.lblHorarioInicio.Size = new System.Drawing.Size(89, 13);
+            this.lblHorarioInicio.TabIndex = 72;
+            this.lblHorarioInicio.Text = "Horário Início:";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(538, 22);
@@ -134,6 +264,8 @@
             this.btnExcluir.Size = new System.Drawing.Size(31, 11);
             this.btnExcluir.TabIndex = 69;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.MouseLeave += new System.EventHandler(this.btnExcluir_MouseLeave);
+            this.btnExcluir.MouseEnter += new System.EventHandler(this.btnExcluir_MouseEnter);
             // 
             // txtValor
             // 
@@ -182,7 +314,7 @@
             this.lblDesconto_menu.AutoSize = true;
             this.lblDesconto_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblDesconto_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDesconto_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblDesconto_menu.ForeColor = System.Drawing.Color.White;
             this.lblDesconto_menu.Location = new System.Drawing.Point(915, 466);
             this.lblDesconto_menu.Name = "lblDesconto_menu";
             this.lblDesconto_menu.Size = new System.Drawing.Size(76, 17);
@@ -195,7 +327,7 @@
             this.lblAtividade_menu.AutoSize = true;
             this.lblAtividade_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblAtividade_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblAtividade_menu.ForeColor = System.Drawing.Color.White;
+            this.lblAtividade_menu.ForeColor = System.Drawing.Color.Yellow;
             this.lblAtividade_menu.Location = new System.Drawing.Point(911, 364);
             this.lblAtividade_menu.Name = "lblAtividade_menu";
             this.lblAtividade_menu.Size = new System.Drawing.Size(76, 17);
@@ -207,7 +339,7 @@
             this.lblSerie_menu.AutoSize = true;
             this.lblSerie_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblSerie_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSerie_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblSerie_menu.ForeColor = System.Drawing.Color.White;
             this.lblSerie_menu.Location = new System.Drawing.Point(927, 269);
             this.lblSerie_menu.Name = "lblSerie_menu";
             this.lblSerie_menu.Size = new System.Drawing.Size(49, 17);
@@ -220,7 +352,7 @@
             this.lblControleAcesso_menu.AutoSize = true;
             this.lblControleAcesso_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblControleAcesso_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblControleAcesso_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblControleAcesso_menu.ForeColor = System.Drawing.Color.White;
             this.lblControleAcesso_menu.Location = new System.Drawing.Point(25, 271);
             this.lblControleAcesso_menu.Name = "lblControleAcesso_menu";
             this.lblControleAcesso_menu.Size = new System.Drawing.Size(46, 17);
@@ -262,7 +394,7 @@
             // btnDesconto
             // 
             this.btnDesconto.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80;
+            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80_disabled;
             this.btnDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesconto.FlatAppearance.BorderSize = 0;
             this.btnDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -279,7 +411,7 @@
             // btnAtividade
             // 
             this.btnAtividade.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled;
+            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75;
             this.btnAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAtividade.Enabled = false;
             this.btnAtividade.FlatAppearance.BorderSize = 0;
@@ -311,7 +443,7 @@
             // btnSerie
             // 
             this.btnSerie.BackColor = System.Drawing.Color.Transparent;
-            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70;
+            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70_disabled;
             this.btnSerie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSerie.FlatAppearance.BorderSize = 0;
             this.btnSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -370,136 +502,6 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.MouseLeave += new System.EventHandler(this.btnSalvar_MouseLeave);
             this.btnSalvar.MouseEnter += new System.EventHandler(this.btnSalvar_MouseEnter);
-            // 
-            // lblHorarioInicio
-            // 
-            this.lblHorarioInicio.AutoSize = true;
-            this.lblHorarioInicio.Location = new System.Drawing.Point(21, 121);
-            this.lblHorarioInicio.Name = "lblHorarioInicio";
-            this.lblHorarioInicio.Size = new System.Drawing.Size(89, 13);
-            this.lblHorarioInicio.TabIndex = 72;
-            this.lblHorarioInicio.Text = "Horário Início:";
-            // 
-            // dtpHorarioInicio
-            // 
-            this.dtpHorarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHorarioInicio.Location = new System.Drawing.Point(139, 124);
-            this.dtpHorarioInicio.Name = "dtpHorarioInicio";
-            this.dtpHorarioInicio.Size = new System.Drawing.Size(82, 20);
-            this.dtpHorarioInicio.TabIndex = 74;
-            // 
-            // dtpHorarioFim
-            // 
-            this.dtpHorarioFim.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHorarioFim.Location = new System.Drawing.Point(357, 124);
-            this.dtpHorarioFim.Name = "dtpHorarioFim";
-            this.dtpHorarioFim.Size = new System.Drawing.Size(82, 20);
-            this.dtpHorarioFim.TabIndex = 76;
-            // 
-            // lblHorarioFim
-            // 
-            this.lblHorarioFim.AutoSize = true;
-            this.lblHorarioFim.Location = new System.Drawing.Point(276, 124);
-            this.lblHorarioFim.Name = "lblHorarioFim";
-            this.lblHorarioFim.Size = new System.Drawing.Size(75, 13);
-            this.lblHorarioFim.TabIndex = 75;
-            this.lblHorarioFim.Text = "Horário Fim:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(139, 85);
-            this.textBox1.MaxLength = 10;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
-            this.textBox1.TabIndex = 78;
-            // 
-            // lblTurma
-            // 
-            this.lblTurma.AutoSize = true;
-            this.lblTurma.Location = new System.Drawing.Point(21, 82);
-            this.lblTurma.Name = "lblTurma";
-            this.lblTurma.Size = new System.Drawing.Size(46, 13);
-            this.lblTurma.TabIndex = 77;
-            this.lblTurma.Text = "Turma:";
-            // 
-            // ckbDomingo
-            // 
-            this.ckbDomingo.AutoSize = true;
-            this.ckbDomingo.Location = new System.Drawing.Point(139, 219);
-            this.ckbDomingo.Name = "ckbDomingo";
-            this.ckbDomingo.Size = new System.Drawing.Size(75, 17);
-            this.ckbDomingo.TabIndex = 79;
-            this.ckbDomingo.Text = "Domingo";
-            this.ckbDomingo.UseVisualStyleBackColor = true;
-            // 
-            // ckbQuarta
-            // 
-            this.ckbQuarta.AutoSize = true;
-            this.ckbQuarta.Location = new System.Drawing.Point(374, 220);
-            this.ckbQuarta.Name = "ckbQuarta";
-            this.ckbQuarta.Size = new System.Drawing.Size(64, 17);
-            this.ckbQuarta.TabIndex = 80;
-            this.ckbQuarta.Text = "Quarta";
-            this.ckbQuarta.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(302, 220);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 17);
-            this.checkBox1.TabIndex = 82;
-            this.checkBox1.Text = "Terça";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(220, 219);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(76, 17);
-            this.checkBox2.TabIndex = 81;
-            this.checkBox2.Text = "Segunda";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // lblDiaSemana
-            // 
-            this.lblDiaSemana.AutoSize = true;
-            this.lblDiaSemana.Location = new System.Drawing.Point(21, 215);
-            this.lblDiaSemana.Name = "lblDiaSemana";
-            this.lblDiaSemana.Size = new System.Drawing.Size(97, 13);
-            this.lblDiaSemana.TabIndex = 83;
-            this.lblDiaSemana.Text = "Dia da Semana:";
-            // 
-            // ckbQuinta
-            // 
-            this.ckbQuinta.AutoSize = true;
-            this.ckbQuinta.Location = new System.Drawing.Point(444, 220);
-            this.ckbQuinta.Name = "ckbQuinta";
-            this.ckbQuinta.Size = new System.Drawing.Size(60, 17);
-            this.ckbQuinta.TabIndex = 84;
-            this.ckbQuinta.Text = "Quirta";
-            this.ckbQuinta.UseVisualStyleBackColor = true;
-            // 
-            // ckbSexta
-            // 
-            this.ckbSexta.AutoSize = true;
-            this.ckbSexta.Location = new System.Drawing.Point(510, 220);
-            this.ckbSexta.Name = "ckbSexta";
-            this.ckbSexta.Size = new System.Drawing.Size(58, 17);
-            this.ckbSexta.TabIndex = 85;
-            this.ckbSexta.Text = "Sexta";
-            this.ckbSexta.UseVisualStyleBackColor = true;
-            // 
-            // ckbSabado
-            // 
-            this.ckbSabado.AutoSize = true;
-            this.ckbSabado.Location = new System.Drawing.Point(574, 220);
-            this.ckbSabado.Name = "ckbSabado";
-            this.ckbSabado.Size = new System.Drawing.Size(69, 17);
-            this.ckbSabado.TabIndex = 86;
-            this.ckbSabado.Text = "Sábado";
-            this.ckbSabado.UseVisualStyleBackColor = true;
             // 
             // ckbTerca
             // 

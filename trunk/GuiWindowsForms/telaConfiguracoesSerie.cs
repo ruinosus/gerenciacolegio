@@ -161,7 +161,7 @@ namespace GuiWindowsForms
 
         private void btnSerie_MouseEnter(object sender, EventArgs e)
         {
-            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70_hover;
+            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70_disabled_h;
             lblSerie_menu.Visible = true;
         }
 
@@ -173,7 +173,7 @@ namespace GuiWindowsForms
 
         private void btnSerie_MouseLeave(object sender, EventArgs e)
         {
-            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70;
+            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70_disabled;
             lblSerie_menu.Visible = false;
         }
 
@@ -185,7 +185,7 @@ namespace GuiWindowsForms
 
         private void lblDesconto_MouseEnter(object sender, EventArgs e)
         {
-            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80_hover;
+            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80_disabled_h;
             lblDesconto_menu.Visible = true;
         }
 
@@ -197,7 +197,7 @@ namespace GuiWindowsForms
 
         private void lblDesconto_MouseLeave(object sender, EventArgs e)
         {
-            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80;
+            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80_disabled;
             lblDesconto_menu.Visible = false;
         }
 
@@ -209,7 +209,7 @@ namespace GuiWindowsForms
 
         private void btnAtividades_MouseEnter(object sender, EventArgs e)
         {
-            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_hover;
+            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled_h;
             lblAtividade_menu.Visible = true;
         }
 
@@ -221,7 +221,7 @@ namespace GuiWindowsForms
 
         private void btnAtividades_MouseLeave(object sender, EventArgs e)
         {
-            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75;
+            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled;
             lblAtividade_menu.Visible = false;
         }
 
@@ -290,6 +290,17 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+        private void btnExcluir_MouseEnter(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = true;
+            lblInfoControles.Text = "Remover Série cadastrada!";
+        }
+
+        private void btnExcluir_MouseLeave(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = false;
+        }
 
 
     }
