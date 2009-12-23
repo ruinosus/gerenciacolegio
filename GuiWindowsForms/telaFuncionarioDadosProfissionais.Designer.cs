@@ -31,6 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaFuncionarioDadosProfissionais));
             this.pctImagem = new System.Windows.Forms.PictureBox();
             this.gpbDadosProfissionais = new System.Windows.Forms.GroupBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.lblCurso = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lbInstituicao = new System.Windows.Forms.Label();
             this.cmbFuncao = new System.Windows.Forms.ComboBox();
             this.lblFuncaoFuncionario = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -74,12 +80,8 @@
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.btnDadosPessoais = new System.Windows.Forms.Button();
-            this.lbInstituicao = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.lblCurso = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.lblAtivo = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.gpbDadosProfissionais.SuspendLayout();
             this.SuspendLayout();
@@ -140,6 +142,65 @@
             this.gpbDadosProfissionais.TabIndex = 40;
             this.gpbDadosProfissionais.TabStop = false;
             this.gpbDadosProfissionais.Text = "DADOS PROFISSIONAIS DO FUNCIONÁRIO";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox11.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.textBox11.Location = new System.Drawing.Point(168, 340);
+            this.textBox11.MaxLength = 30;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(158, 23);
+            this.textBox11.TabIndex = 96;
+            // 
+            // lblCurso
+            // 
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Location = new System.Drawing.Point(51, 340);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(43, 13);
+            this.lblCurso.TabIndex = 92;
+            this.lblCurso.Text = "Curso:";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox10.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.textBox10.Location = new System.Drawing.Point(479, 393);
+            this.textBox10.MaxLength = 30;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(225, 23);
+            this.textBox10.TabIndex = 91;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.MidnightBlue;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.MidnightBlue;
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(168, 393);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(110, 23);
+            this.dateTimePicker1.TabIndex = 90;
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(47, 393);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(97, 13);
+            this.lblData.TabIndex = 89;
+            this.lblData.Text = "Data Formação:";
+            // 
+            // lbInstituicao
+            // 
+            this.lbInstituicao.AutoSize = true;
+            this.lbInstituicao.Location = new System.Drawing.Point(360, 393);
+            this.lbInstituicao.Name = "lbInstituicao";
+            this.lbInstituicao.Size = new System.Drawing.Size(70, 13);
+            this.lbInstituicao.TabIndex = 88;
+            this.lbInstituicao.Text = "Instituição:";
             // 
             // cmbFuncao
             // 
@@ -486,8 +547,8 @@
             this.lblProfissionais_menu.AutoSize = true;
             this.lblProfissionais_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblProfissionais_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProfissionais_menu.ForeColor = System.Drawing.Color.White;
-            this.lblProfissionais_menu.Location = new System.Drawing.Point(859, 457);
+            this.lblProfissionais_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblProfissionais_menu.Location = new System.Drawing.Point(862, 379);
             this.lblProfissionais_menu.Name = "lblProfissionais_menu";
             this.lblProfissionais_menu.Size = new System.Drawing.Size(136, 17);
             this.lblProfissionais_menu.TabIndex = 106;
@@ -516,8 +577,8 @@
             this.lblDados_Menu.AutoSize = true;
             this.lblDados_Menu.BackColor = System.Drawing.Color.Transparent;
             this.lblDados_Menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDados_Menu.ForeColor = System.Drawing.Color.Yellow;
-            this.lblDados_Menu.Location = new System.Drawing.Point(865, 272);
+            this.lblDados_Menu.ForeColor = System.Drawing.Color.White;
+            this.lblDados_Menu.Location = new System.Drawing.Point(877, 272);
             this.lblDados_Menu.Name = "lblDados_Menu";
             this.lblDados_Menu.Size = new System.Drawing.Size(110, 17);
             this.lblDados_Menu.TabIndex = 104;
@@ -544,12 +605,12 @@
             // btnDadosProfissionais
             // 
             this.btnDadosProfissionais.BackColor = System.Drawing.Color.Transparent;
-            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71_disabled;
+            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71;
             this.btnDadosProfissionais.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDadosProfissionais.Enabled = false;
             this.btnDadosProfissionais.FlatAppearance.BorderSize = 0;
             this.btnDadosProfissionais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDadosProfissionais.Location = new System.Drawing.Point(894, 385);
+            this.btnDadosProfissionais.Location = new System.Drawing.Point(894, 299);
             this.btnDadosProfissionais.Margin = new System.Windows.Forms.Padding(0);
             this.btnDadosProfissionais.Name = "btnDadosProfissionais";
             this.btnDadosProfissionais.Size = new System.Drawing.Size(64, 71);
@@ -590,7 +651,7 @@
             // 
             this.btnDadosPessoais.AccessibleDescription = "";
             this.btnDadosPessoais.BackColor = System.Drawing.Color.Transparent;
-            this.btnDadosPessoais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dados_71x62;
+            this.btnDadosPessoais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dados_71x62_disabled;
             this.btnDadosPessoais.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDadosPessoais.FlatAppearance.BorderSize = 0;
             this.btnDadosPessoais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -605,64 +666,32 @@
             this.btnDadosPessoais.Click += new System.EventHandler(this.btnDadosPessoais_Click);
             this.btnDadosPessoais.MouseEnter += new System.EventHandler(this.btnDadosPessoais_MouseEnter);
             // 
-            // lbInstituicao
+            // lblAtivo
             // 
-            this.lbInstituicao.AutoSize = true;
-            this.lbInstituicao.Location = new System.Drawing.Point(360, 393);
-            this.lbInstituicao.Name = "lbInstituicao";
-            this.lbInstituicao.Size = new System.Drawing.Size(70, 13);
-            this.lbInstituicao.TabIndex = 88;
-            this.lbInstituicao.Text = "Instituição:";
+            this.lblAtivo.AutoSize = true;
+            this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblAtivo.ForeColor = System.Drawing.Color.Green;
+            this.lblAtivo.Location = new System.Drawing.Point(394, 106);
+            this.lblAtivo.Name = "lblAtivo";
+            this.lblAtivo.Size = new System.Drawing.Size(49, 19);
+            this.lblAtivo.TabIndex = 129;
+            this.lblAtivo.Text = "Ativo";
             // 
-            // lblData
+            // btnImprimir
             // 
-            this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(47, 393);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(97, 13);
-            this.lblData.TabIndex = 89;
-            this.lblData.Text = "Data Formação:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.MidnightBlue;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.MidnightBlue;
-            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(168, 393);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(110, 23);
-            this.dateTimePicker1.TabIndex = 90;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox10.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox10.Location = new System.Drawing.Point(479, 393);
-            this.textBox10.MaxLength = 30;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(225, 23);
-            this.textBox10.TabIndex = 91;
-            // 
-            // lblCurso
-            // 
-            this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(51, 340);
-            this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(43, 13);
-            this.lblCurso.TabIndex = 92;
-            this.lblCurso.Text = "Curso:";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox11.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox11.Location = new System.Drawing.Point(168, 340);
-            this.textBox11.MaxLength = 30;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(158, 23);
-            this.textBox11.TabIndex = 96;
+            this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
+            this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Location = new System.Drawing.Point(910, 630);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(0);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(50, 50);
+            this.btnImprimir.TabIndex = 130;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.MouseLeave += new System.EventHandler(this.btnImprimir_MouseLeave);
+            this.btnImprimir.MouseEnter += new System.EventHandler(this.btnImprimir_MouseEnter);
             // 
             // telaFuncionarioDadosProfissionais
             // 
@@ -671,6 +700,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.lblAtivo);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.lblProfissionais_menu);
             this.Controls.Add(this.btnVoltar);
@@ -754,5 +785,7 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lbInstituicao;
         private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label lblAtivo;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

@@ -200,12 +200,18 @@
             // 
             // btnPesquisarResponsaveis
             // 
-            this.btnPesquisarResponsaveis.Location = new System.Drawing.Point(758, 162);
+            this.btnPesquisarResponsaveis.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisarResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.Search_32x32_final;
+            this.btnPesquisarResponsaveis.FlatAppearance.BorderSize = 0;
+            this.btnPesquisarResponsaveis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisarResponsaveis.Location = new System.Drawing.Point(913, 156);
+            this.btnPesquisarResponsaveis.Margin = new System.Windows.Forms.Padding(0);
             this.btnPesquisarResponsaveis.Name = "btnPesquisarResponsaveis";
-            this.btnPesquisarResponsaveis.Size = new System.Drawing.Size(187, 23);
+            this.btnPesquisarResponsaveis.Size = new System.Drawing.Size(32, 32);
             this.btnPesquisarResponsaveis.TabIndex = 74;
-            this.btnPesquisarResponsaveis.Text = "Pesquisar Responsáveis";
-            this.btnPesquisarResponsaveis.UseVisualStyleBackColor = true;
+            this.btnPesquisarResponsaveis.UseVisualStyleBackColor = false;
+            this.btnPesquisarResponsaveis.MouseLeave += new System.EventHandler(this.btnPesquisarResponsaveis_MouseLeave);
+            this.btnPesquisarResponsaveis.MouseEnter += new System.EventHandler(this.btnPesquisarResponsaveis_MouseEnter);
             // 
             // lblAtivo
             // 

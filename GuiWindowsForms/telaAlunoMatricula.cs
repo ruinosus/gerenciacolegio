@@ -112,7 +112,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnDados_MouseEnter(object sender, EventArgs e)
         {
-            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_hover;
+            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled_h;
             lblDados_Menu.Visible = true;
         }
 
@@ -123,7 +123,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnDados_MouseLeave(object sender, EventArgs e)
         {
-            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74;
+            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled;
             lblDados_Menu.Visible = false;
         }
 
@@ -134,7 +134,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnResponsaveis_MouseEnter(object sender, EventArgs e)
         {
-            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_hover;
+            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled_h;
             lblResponsavel_menu.Visible = true;
         }
 
@@ -145,7 +145,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnResponsaveis_MouseLeave(object sender, EventArgs e)
         {
-            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66;
+            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled;
             lblResponsavel_menu.Visible = false;
         }
 
@@ -156,7 +156,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnInfoMedica_MouseEnter(object sender, EventArgs e)
         {
-            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_hover;
+            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_disabled_h;
             lblMedico_menu.Visible = true;
         }
 
@@ -167,7 +167,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnInfoMedica_MouseLeave(object sender, EventArgs e)
         {
-            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73;
+            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_disabled;
             lblMedico_menu.Visible = false;
         }
 
@@ -178,7 +178,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnFinanceiro_MouseEnter(object sender, EventArgs e)
         {
-            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_hover;
+            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled_h;
             lblFinanceiro_menu.Visible = true;
         }
 
@@ -189,7 +189,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnFinanceiro_MouseLeave(object sender, EventArgs e)
         {
-            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60;
+            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled;
             lblFinanceiro_menu.Visible = false;
         }
 
@@ -200,7 +200,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnAcademico_MouseEnter(object sender, EventArgs e)
         {
-            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_hover;
+            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled_h;
             lblAcademico_menu.Visible = true;
         }
 
@@ -211,7 +211,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnAcademico_MouseLeave(object sender, EventArgs e)
         {
-            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72;
+            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled;
             lblAcademico_menu.Visible = false;
         }
 
@@ -222,7 +222,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnMatricula_MouseEnter(object sender, EventArgs e)
         {
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_hover;
+            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled_h;
             lblMatricula_menu.Visible = true;
         }
 
@@ -233,7 +233,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnMatricula_MouseLeave(object sender, EventArgs e)
         {
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69;
+            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled;
             lblMatricula_menu.Visible = false;
         }
 

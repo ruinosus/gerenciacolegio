@@ -169,5 +169,16 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+        private void btnPesquisarResponsaveis_MouseEnter(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = true;
+            lblInfoControles.Text = "Pesquisar por Responsáveis!";
+        }
+
+        private void btnPesquisarResponsaveis_MouseLeave(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = false;
+        }
     }
 }

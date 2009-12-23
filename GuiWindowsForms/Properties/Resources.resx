@@ -397,4 +397,52 @@
   <data name="func_imprimir_50x50_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\func_imprimir_50x50_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="academico_73x72_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\academico_73x72_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dados_73x74_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dados_73x74_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="financeiro_73x60_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\financeiro_73x60_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injecao_73x73_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\injecao_73x73_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="matricula_68x69_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\matricula_68x69_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="responsavel_73x66_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\responsavel_73x66_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_ok_cadastrar_145x52" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_ok_cadastrar_145x52.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_32x32_final" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search_32x32_final.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_atividades_84x75_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_atividades_84x75_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_desconto_79x80_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_desconto_79x80_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conf_serie_64x70_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_serie_64x70_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vincular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vincular.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vincular_final" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vincular_final.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="func_dados_71x62_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\func_dados_71x62_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="func_profissional_64x71_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\func_profissional_64x71_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

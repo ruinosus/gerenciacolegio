@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D79963B9-116E-4E56-ABA5-26F9392FD1C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -651,6 +651,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\func_imprimir_50x50_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\academico_73x72_disabled_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dados_73x74_disabled_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\financeiro_73x60_disabled_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\injecao_73x73_disabled_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\matricula_68x69_disabled_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\responsavel_73x66_disabled_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_ok_cadastrar_145x52.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_32x32_final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_atividades_84x75_disabled_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_desconto_79x80_disabled_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_serie_64x70_disabled_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vincular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vincular_final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_dados_71x62_disabled_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\func_profissional_64x71_disabled_h.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

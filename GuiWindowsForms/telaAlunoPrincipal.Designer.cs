@@ -43,6 +43,7 @@
             this.lblErro = new System.Windows.Forms.Label();
             this.lblFinanceiro = new System.Windows.Forms.Label();
             this.btnFinanceiro = new System.Windows.Forms.Button();
+            this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -150,6 +151,7 @@
             this.btnCadastrarAluno.Size = new System.Drawing.Size(110, 52);
             this.btnCadastrarAluno.TabIndex = 6;
             this.btnCadastrarAluno.UseVisualStyleBackColor = false;
+            this.btnCadastrarAluno.Visible = false;
             this.btnCadastrarAluno.Click += new System.EventHandler(this.btnCadastrarAluno_Click);
             // 
             // lblFuncOculto
@@ -236,6 +238,21 @@
             this.btnFinanceiro.Leave += new System.EventHandler(this.btnFinanceiro_Leave);
             this.btnFinanceiro.Enter += new System.EventHandler(this.btnFinanceiro_Enter);
             // 
+            // btnCadastrarFuncionario
+            // 
+            this.btnCadastrarFuncionario.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastrarFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_ok_cadastrar_145x52;
+            this.btnCadastrarFuncionario.FlatAppearance.BorderSize = 0;
+            this.btnCadastrarFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarFuncionario.Location = new System.Drawing.Point(31, 667);
+            this.btnCadastrarFuncionario.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCadastrarFuncionario.Name = "btnCadastrarFuncionario";
+            this.btnCadastrarFuncionario.Size = new System.Drawing.Size(145, 52);
+            this.btnCadastrarFuncionario.TabIndex = 16;
+            this.btnCadastrarFuncionario.UseVisualStyleBackColor = false;
+            this.btnCadastrarFuncionario.Visible = false;
+            this.btnCadastrarFuncionario.Click += new System.EventHandler(this.btnCadastrarFuncionario_Click);
+            // 
             // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -243,6 +260,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.btnCadastrarFuncionario);
             this.Controls.Add(this.lblFinanceiro);
             this.Controls.Add(this.btnFinanceiro);
             this.Controls.Add(this.lblErro);
@@ -287,5 +305,6 @@
         private System.Windows.Forms.Label lblErro;
         private System.Windows.Forms.Label lblFinanceiro;
         private System.Windows.Forms.Button btnFinanceiro;
+        private System.Windows.Forms.Button btnCadastrarFuncionario;
     }
 }
