@@ -1,6 +1,6 @@
 ﻿namespace GuiWindowsForms
 {
-    partial class telaConfiguracoesAtividades
+    partial class ckbTerca
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesAtividades));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ckbTerca));
             this.gpbSerie = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
@@ -51,6 +51,20 @@
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnControledeAcesso = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.lblHorarioInicio = new System.Windows.Forms.Label();
+            this.dtpHorarioInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpHorarioFim = new System.Windows.Forms.DateTimePicker();
+            this.lblHorarioFim = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblTurma = new System.Windows.Forms.Label();
+            this.ckbDomingo = new System.Windows.Forms.CheckBox();
+            this.ckbQuarta = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.lblDiaSemana = new System.Windows.Forms.Label();
+            this.ckbQuinta = new System.Windows.Forms.CheckBox();
+            this.ckbSexta = new System.Windows.Forms.CheckBox();
+            this.ckbSabado = new System.Windows.Forms.CheckBox();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -59,6 +73,20 @@
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
+            this.gpbSerie.Controls.Add(this.ckbSabado);
+            this.gpbSerie.Controls.Add(this.ckbSexta);
+            this.gpbSerie.Controls.Add(this.ckbQuinta);
+            this.gpbSerie.Controls.Add(this.lblDiaSemana);
+            this.gpbSerie.Controls.Add(this.checkBox1);
+            this.gpbSerie.Controls.Add(this.checkBox2);
+            this.gpbSerie.Controls.Add(this.ckbQuarta);
+            this.gpbSerie.Controls.Add(this.ckbDomingo);
+            this.gpbSerie.Controls.Add(this.textBox1);
+            this.gpbSerie.Controls.Add(this.lblTurma);
+            this.gpbSerie.Controls.Add(this.dtpHorarioFim);
+            this.gpbSerie.Controls.Add(this.lblHorarioFim);
+            this.gpbSerie.Controls.Add(this.dtpHorarioInicio);
+            this.gpbSerie.Controls.Add(this.lblHorarioInicio);
             this.gpbSerie.Controls.Add(this.pictureBox1);
             this.gpbSerie.Controls.Add(this.btnAdicionarImagem);
             this.gpbSerie.Controls.Add(this.btnExcluir);
@@ -100,7 +128,7 @@
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(589, 217);
+            this.btnExcluir.Location = new System.Drawing.Point(633, 300);
             this.btnExcluir.Margin = new System.Windows.Forms.Padding(0);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(31, 11);
@@ -109,7 +137,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(92, 134);
+            this.txtValor.Location = new System.Drawing.Point(139, 164);
             this.txtValor.MaxLength = 10;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(112, 20);
@@ -118,7 +146,7 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(21, 137);
+            this.lblValor.Location = new System.Drawing.Point(21, 164);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(68, 13);
             this.lblValor.TabIndex = 3;
@@ -126,7 +154,7 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(92, 69);
+            this.txtDescricao.Location = new System.Drawing.Point(139, 42);
             this.txtDescricao.MaxLength = 50;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(330, 20);
@@ -135,7 +163,7 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(21, 72);
+            this.lblDescricao.Location = new System.Drawing.Point(21, 42);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(68, 13);
             this.lblDescricao.TabIndex = 1;
@@ -144,9 +172,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 236);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 314);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(640, 285);
+            this.dataGridView1.Size = new System.Drawing.Size(640, 207);
             this.dataGridView1.TabIndex = 0;
             // 
             // lblDesconto_menu
@@ -343,7 +371,137 @@
             this.btnSalvar.MouseLeave += new System.EventHandler(this.btnSalvar_MouseLeave);
             this.btnSalvar.MouseEnter += new System.EventHandler(this.btnSalvar_MouseEnter);
             // 
-            // telaConfiguracoesAtividades
+            // lblHorarioInicio
+            // 
+            this.lblHorarioInicio.AutoSize = true;
+            this.lblHorarioInicio.Location = new System.Drawing.Point(21, 121);
+            this.lblHorarioInicio.Name = "lblHorarioInicio";
+            this.lblHorarioInicio.Size = new System.Drawing.Size(89, 13);
+            this.lblHorarioInicio.TabIndex = 72;
+            this.lblHorarioInicio.Text = "Horário Início:";
+            // 
+            // dtpHorarioInicio
+            // 
+            this.dtpHorarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHorarioInicio.Location = new System.Drawing.Point(139, 124);
+            this.dtpHorarioInicio.Name = "dtpHorarioInicio";
+            this.dtpHorarioInicio.Size = new System.Drawing.Size(82, 20);
+            this.dtpHorarioInicio.TabIndex = 74;
+            // 
+            // dtpHorarioFim
+            // 
+            this.dtpHorarioFim.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHorarioFim.Location = new System.Drawing.Point(357, 124);
+            this.dtpHorarioFim.Name = "dtpHorarioFim";
+            this.dtpHorarioFim.Size = new System.Drawing.Size(82, 20);
+            this.dtpHorarioFim.TabIndex = 76;
+            // 
+            // lblHorarioFim
+            // 
+            this.lblHorarioFim.AutoSize = true;
+            this.lblHorarioFim.Location = new System.Drawing.Point(276, 124);
+            this.lblHorarioFim.Name = "lblHorarioFim";
+            this.lblHorarioFim.Size = new System.Drawing.Size(75, 13);
+            this.lblHorarioFim.TabIndex = 75;
+            this.lblHorarioFim.Text = "Horário Fim:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(139, 85);
+            this.textBox1.MaxLength = 10;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(112, 20);
+            this.textBox1.TabIndex = 78;
+            // 
+            // lblTurma
+            // 
+            this.lblTurma.AutoSize = true;
+            this.lblTurma.Location = new System.Drawing.Point(21, 82);
+            this.lblTurma.Name = "lblTurma";
+            this.lblTurma.Size = new System.Drawing.Size(46, 13);
+            this.lblTurma.TabIndex = 77;
+            this.lblTurma.Text = "Turma:";
+            // 
+            // ckbDomingo
+            // 
+            this.ckbDomingo.AutoSize = true;
+            this.ckbDomingo.Location = new System.Drawing.Point(139, 219);
+            this.ckbDomingo.Name = "ckbDomingo";
+            this.ckbDomingo.Size = new System.Drawing.Size(75, 17);
+            this.ckbDomingo.TabIndex = 79;
+            this.ckbDomingo.Text = "Domingo";
+            this.ckbDomingo.UseVisualStyleBackColor = true;
+            // 
+            // ckbQuarta
+            // 
+            this.ckbQuarta.AutoSize = true;
+            this.ckbQuarta.Location = new System.Drawing.Point(374, 220);
+            this.ckbQuarta.Name = "ckbQuarta";
+            this.ckbQuarta.Size = new System.Drawing.Size(64, 17);
+            this.ckbQuarta.TabIndex = 80;
+            this.ckbQuarta.Text = "Quarta";
+            this.ckbQuarta.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(302, 220);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(59, 17);
+            this.checkBox1.TabIndex = 82;
+            this.checkBox1.Text = "Terça";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(220, 219);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(76, 17);
+            this.checkBox2.TabIndex = 81;
+            this.checkBox2.Text = "Segunda";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // lblDiaSemana
+            // 
+            this.lblDiaSemana.AutoSize = true;
+            this.lblDiaSemana.Location = new System.Drawing.Point(21, 215);
+            this.lblDiaSemana.Name = "lblDiaSemana";
+            this.lblDiaSemana.Size = new System.Drawing.Size(97, 13);
+            this.lblDiaSemana.TabIndex = 83;
+            this.lblDiaSemana.Text = "Dia da Semana:";
+            // 
+            // ckbQuinta
+            // 
+            this.ckbQuinta.AutoSize = true;
+            this.ckbQuinta.Location = new System.Drawing.Point(444, 220);
+            this.ckbQuinta.Name = "ckbQuinta";
+            this.ckbQuinta.Size = new System.Drawing.Size(60, 17);
+            this.ckbQuinta.TabIndex = 84;
+            this.ckbQuinta.Text = "Quirta";
+            this.ckbQuinta.UseVisualStyleBackColor = true;
+            // 
+            // ckbSexta
+            // 
+            this.ckbSexta.AutoSize = true;
+            this.ckbSexta.Location = new System.Drawing.Point(510, 220);
+            this.ckbSexta.Name = "ckbSexta";
+            this.ckbSexta.Size = new System.Drawing.Size(58, 17);
+            this.ckbSexta.TabIndex = 85;
+            this.ckbSexta.Text = "Sexta";
+            this.ckbSexta.UseVisualStyleBackColor = true;
+            // 
+            // ckbSabado
+            // 
+            this.ckbSabado.AutoSize = true;
+            this.ckbSabado.Location = new System.Drawing.Point(574, 220);
+            this.ckbSabado.Name = "ckbSabado";
+            this.ckbSabado.Size = new System.Drawing.Size(69, 17);
+            this.ckbSabado.TabIndex = 86;
+            this.ckbSabado.Text = "Sábado";
+            this.ckbSabado.UseVisualStyleBackColor = true;
+            // 
+            // ckbTerca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -367,7 +525,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
-            this.Name = "telaConfiguracoesAtividades";
+            this.Name = "ckbTerca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoesAtividades_FormClosing);
@@ -404,5 +562,19 @@
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.Button btnControledeAcesso;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label lblHorarioInicio;
+        private System.Windows.Forms.DateTimePicker dtpHorarioFim;
+        private System.Windows.Forms.Label lblHorarioFim;
+        private System.Windows.Forms.DateTimePicker dtpHorarioInicio;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblTurma;
+        private System.Windows.Forms.CheckBox ckbQuarta;
+        private System.Windows.Forms.CheckBox ckbDomingo;
+        private System.Windows.Forms.Label lblDiaSemana;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox ckbSabado;
+        private System.Windows.Forms.CheckBox ckbSexta;
+        private System.Windows.Forms.CheckBox ckbQuinta;
     }
 }

@@ -38,7 +38,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
+            this.lblSerie = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblDesconto_menu = new System.Windows.Forms.Label();
             this.lblAtividade_menu = new System.Windows.Forms.Label();
@@ -53,6 +53,8 @@
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.lblInfoControles = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
+            this.lblCiclo = new System.Windows.Forms.Label();
+            this.txtCiclo = new System.Windows.Forms.TextBox();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +62,8 @@
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
+            this.gpbSerie.Controls.Add(this.txtCiclo);
+            this.gpbSerie.Controls.Add(this.lblCiclo);
             this.gpbSerie.Controls.Add(this.btnExcluir);
             this.gpbSerie.Controls.Add(this.lblTurma);
             this.gpbSerie.Controls.Add(this.comboBox1);
@@ -68,7 +72,7 @@
             this.gpbSerie.Controls.Add(this.textBox1);
             this.gpbSerie.Controls.Add(this.lblValor);
             this.gpbSerie.Controls.Add(this.txtNome);
-            this.gpbSerie.Controls.Add(this.lblNome);
+            this.gpbSerie.Controls.Add(this.lblSerie);
             this.gpbSerie.Controls.Add(this.dataGridView1);
             this.gpbSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbSerie.Location = new System.Drawing.Point(153, 129);
@@ -147,14 +151,14 @@
             this.txtNome.Size = new System.Drawing.Size(249, 20);
             this.txtNome.TabIndex = 2;
             // 
-            // lblNome
+            // lblSerie
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(21, 72);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(40, 13);
-            this.lblNome.TabIndex = 1;
-            this.lblNome.Text = "Série:";
+            this.lblSerie.AutoSize = true;
+            this.lblSerie.Location = new System.Drawing.Point(21, 72);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(40, 13);
+            this.lblSerie.TabIndex = 1;
+            this.lblSerie.Text = "Série:";
             // 
             // dataGridView1
             // 
@@ -358,6 +362,23 @@
             this.btnDesconectar.UseVisualStyleBackColor = false;
             this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
+            // lblCiclo
+            // 
+            this.lblCiclo.AutoSize = true;
+            this.lblCiclo.Location = new System.Drawing.Point(399, 72);
+            this.lblCiclo.Name = "lblCiclo";
+            this.lblCiclo.Size = new System.Drawing.Size(39, 13);
+            this.lblCiclo.TabIndex = 11;
+            this.lblCiclo.Text = "Ciclo:";
+            // 
+            // txtCiclo
+            // 
+            this.txtCiclo.Location = new System.Drawing.Point(458, 69);
+            this.txtCiclo.MaxLength = 30;
+            this.txtCiclo.Name = "txtCiclo";
+            this.txtCiclo.Size = new System.Drawing.Size(57, 20);
+            this.txtCiclo.TabIndex = 12;
+            // 
             // telaConfiguracoesSerie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,7 +420,7 @@
 
         private System.Windows.Forms.GroupBox gpbSerie;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox textBox1;
@@ -421,5 +442,7 @@
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.Label lblInfoControles;
         private System.Windows.Forms.Button btnDesconectar;
+        private System.Windows.Forms.TextBox txtCiclo;
+        private System.Windows.Forms.Label lblCiclo;
     }
 }

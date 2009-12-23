@@ -36,6 +36,8 @@
             this.lblNomeAluno = new System.Windows.Forms.Label();
             this.pctImagem = new System.Windows.Forms.PictureBox();
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.lblEdificio = new System.Windows.Forms.Label();
+            this.txtNomeEdificil = new System.Windows.Forms.TextBox();
             this.mskFoneTrabalho = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLocalTrabalho = new System.Windows.Forms.TextBox();
@@ -87,6 +89,7 @@
             this.lblMatricula_menu = new System.Windows.Forms.Label();
             this.btnMatricula = new System.Windows.Forms.Button();
             this.lblInfoControles = new System.Windows.Forms.Label();
+            this.lblAtivo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
@@ -163,6 +166,8 @@
             // gpbDadosPessoais
             // 
             this.gpbDadosPessoais.BackColor = System.Drawing.Color.Transparent;
+            this.gpbDadosPessoais.Controls.Add(this.lblEdificio);
+            this.gpbDadosPessoais.Controls.Add(this.txtNomeEdificil);
             this.gpbDadosPessoais.Controls.Add(this.mskFoneTrabalho);
             this.gpbDadosPessoais.Controls.Add(this.label1);
             this.gpbDadosPessoais.Controls.Add(this.txtLocalTrabalho);
@@ -199,10 +204,29 @@
             this.gpbDadosPessoais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDadosPessoais.Location = new System.Drawing.Point(39, 191);
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
-            this.gpbDadosPessoais.Size = new System.Drawing.Size(820, 350);
+            this.gpbDadosPessoais.Size = new System.Drawing.Size(820, 409);
             this.gpbDadosPessoais.TabIndex = 26;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DADOS DO RESPONSÁVEL";
+            // 
+            // lblEdificio
+            // 
+            this.lblEdificio.AutoSize = true;
+            this.lblEdificio.Location = new System.Drawing.Point(46, 261);
+            this.lblEdificio.Name = "lblEdificio";
+            this.lblEdificio.Size = new System.Drawing.Size(55, 13);
+            this.lblEdificio.TabIndex = 44;
+            this.lblEdificio.Text = "Edifício:";
+            // 
+            // txtNomeEdificil
+            // 
+            this.txtNomeEdificil.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.txtNomeEdificil.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtNomeEdificil.Location = new System.Drawing.Point(126, 261);
+            this.txtNomeEdificil.MaxLength = 30;
+            this.txtNomeEdificil.Name = "txtNomeEdificil";
+            this.txtNomeEdificil.Size = new System.Drawing.Size(200, 23);
+            this.txtNomeEdificil.TabIndex = 43;
             // 
             // mskFoneTrabalho
             // 
@@ -315,7 +339,7 @@
             // 
             this.mskFoneResidencia.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.mskFoneResidencia.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.mskFoneResidencia.Location = new System.Drawing.Point(329, 303);
+            this.mskFoneResidencia.Location = new System.Drawing.Point(327, 349);
             this.mskFoneResidencia.Mask = "(99) 0000-0000";
             this.mskFoneResidencia.Name = "mskFoneResidencia";
             this.mskFoneResidencia.Size = new System.Drawing.Size(111, 23);
@@ -330,7 +354,7 @@
             this.cmbUf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.cmbUf.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cmbUf.FormattingEnabled = true;
-            this.cmbUf.Location = new System.Drawing.Point(400, 260);
+            this.cmbUf.Location = new System.Drawing.Point(398, 306);
             this.cmbUf.MaxLength = 2;
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.Size = new System.Drawing.Size(40, 24);
@@ -360,7 +384,7 @@
             // lblUf
             // 
             this.lblUf.AutoSize = true;
-            this.lblUf.Location = new System.Drawing.Point(367, 260);
+            this.lblUf.Location = new System.Drawing.Point(365, 306);
             this.lblUf.Name = "lblUf";
             this.lblUf.Size = new System.Drawing.Size(27, 13);
             this.lblUf.TabIndex = 20;
@@ -369,7 +393,7 @@
             // lblFoneResidencia
             // 
             this.lblFoneResidencia.AutoSize = true;
-            this.lblFoneResidencia.Location = new System.Drawing.Point(239, 306);
+            this.lblFoneResidencia.Location = new System.Drawing.Point(237, 352);
             this.lblFoneResidencia.Name = "lblFoneResidencia";
             this.lblFoneResidencia.Size = new System.Drawing.Size(75, 13);
             this.lblFoneResidencia.TabIndex = 19;
@@ -379,7 +403,7 @@
             // 
             this.mskCep.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.mskCep.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.mskCep.Location = new System.Drawing.Point(128, 303);
+            this.mskCep.Location = new System.Drawing.Point(126, 349);
             this.mskCep.Mask = "00000-999";
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(72, 23);
@@ -390,7 +414,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 303);
+            this.label4.Location = new System.Drawing.Point(46, 349);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 17;
@@ -400,7 +424,7 @@
             // 
             this.txtCidade.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtCidade.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtCidade.Location = new System.Drawing.Point(604, 260);
+            this.txtCidade.Location = new System.Drawing.Point(602, 306);
             this.txtCidade.MaxLength = 30;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(200, 23);
@@ -411,7 +435,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(505, 263);
+            this.lblCidade.Location = new System.Drawing.Point(503, 309);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(50, 13);
             this.lblCidade.TabIndex = 15;
@@ -421,7 +445,7 @@
             // 
             this.txtBairro.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtBairro.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtBairro.Location = new System.Drawing.Point(128, 260);
+            this.txtBairro.Location = new System.Drawing.Point(126, 306);
             this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(200, 23);
@@ -432,7 +456,7 @@
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(48, 260);
+            this.lblBairro.Location = new System.Drawing.Point(46, 306);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(44, 13);
             this.lblBairro.TabIndex = 13;
@@ -442,7 +466,7 @@
             // 
             this.txtLogradouro.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtLogradouro.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtLogradouro.Location = new System.Drawing.Point(128, 214);
+            this.txtLogradouro.Location = new System.Drawing.Point(126, 213);
             this.txtLogradouro.MaxLength = 60;
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(312, 23);
@@ -827,6 +851,18 @@
             this.lblInfoControles.Text = "-";
             this.lblInfoControles.Visible = false;
             // 
+            // lblAtivo
+            // 
+            this.lblAtivo.AutoSize = true;
+            this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblAtivo.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAtivo.Location = new System.Drawing.Point(393, 166);
+            this.lblAtivo.Name = "lblAtivo";
+            this.lblAtivo.Size = new System.Drawing.Size(49, 19);
+            this.lblAtivo.TabIndex = 71;
+            this.lblAtivo.Text = "Ativo";
+            // 
             // telaAlunoResponsavel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -834,6 +870,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblAtivo);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.lblMatricula_menu);
             this.Controls.Add(this.btnMatricula);
@@ -936,5 +973,8 @@
         private System.Windows.Forms.Label lblMatricula_menu;
         private System.Windows.Forms.Button btnMatricula;
         private System.Windows.Forms.Label lblInfoControles;
+        private System.Windows.Forms.TextBox txtNomeEdificil;
+        private System.Windows.Forms.Label lblEdificio;
+        private System.Windows.Forms.Label lblAtivo;
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoMatricula));
             this.gpbMatricula = new System.Windows.Forms.GroupBox();
+            this.cmbVencimento = new System.Windows.Forms.ComboBox();
+            this.lblVencimento = new System.Windows.Forms.Label();
             this.txtTotalValor = new System.Windows.Forms.TextBox();
             this.lblTotalValor = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -76,6 +78,8 @@
             // gpbMatricula
             // 
             this.gpbMatricula.BackColor = System.Drawing.Color.Transparent;
+            this.gpbMatricula.Controls.Add(this.cmbVencimento);
+            this.gpbMatricula.Controls.Add(this.lblVencimento);
             this.gpbMatricula.Controls.Add(this.txtTotalValor);
             this.gpbMatricula.Controls.Add(this.lblTotalValor);
             this.gpbMatricula.Controls.Add(this.comboBox1);
@@ -98,6 +102,25 @@
             this.gpbMatricula.TabIndex = 78;
             this.gpbMatricula.TabStop = false;
             this.gpbMatricula.Text = "MATRÍCULA DO ALUNO";
+            // 
+            // cmbVencimento
+            // 
+            this.cmbVencimento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbVencimento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVencimento.FormattingEnabled = true;
+            this.cmbVencimento.Location = new System.Drawing.Point(171, 280);
+            this.cmbVencimento.Name = "cmbVencimento";
+            this.cmbVencimento.Size = new System.Drawing.Size(101, 21);
+            this.cmbVencimento.TabIndex = 50;
+            // 
+            // lblVencimento
+            // 
+            this.lblVencimento.AutoSize = true;
+            this.lblVencimento.Location = new System.Drawing.Point(42, 283);
+            this.lblVencimento.Name = "lblVencimento";
+            this.lblVencimento.Size = new System.Drawing.Size(118, 13);
+            this.lblVencimento.TabIndex = 49;
+            this.lblVencimento.Text = "Dia do Vencimento:";
             // 
             // txtTotalValor
             // 
@@ -123,7 +146,7 @@
             this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 225);
+            this.comboBox1.Location = new System.Drawing.Point(171, 226);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 21);
             this.comboBox1.TabIndex = 45;
@@ -131,7 +154,7 @@
             // lblDesconto
             // 
             this.lblDesconto.AutoSize = true;
-            this.lblDesconto.Location = new System.Drawing.Point(29, 228);
+            this.lblDesconto.Location = new System.Drawing.Point(42, 229);
             this.lblDesconto.Name = "lblDesconto";
             this.lblDesconto.Size = new System.Drawing.Size(65, 13);
             this.lblDesconto.TabIndex = 44;
@@ -139,7 +162,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 179);
+            this.textBox1.Location = new System.Drawing.Point(171, 180);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(123, 20);
             this.textBox1.TabIndex = 42;
@@ -175,7 +198,7 @@
             // lblTurma
             // 
             this.lblTurma.AutoSize = true;
-            this.lblTurma.Location = new System.Drawing.Point(241, 118);
+            this.lblTurma.Location = new System.Drawing.Point(372, 119);
             this.lblTurma.Name = "lblTurma";
             this.lblTurma.Size = new System.Drawing.Size(46, 13);
             this.lblTurma.TabIndex = 38;
@@ -186,7 +209,7 @@
             this.cmbTurma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTurma.FormattingEnabled = true;
-            this.cmbTurma.Location = new System.Drawing.Point(291, 115);
+            this.cmbTurma.Location = new System.Drawing.Point(422, 116);
             this.cmbTurma.Name = "cmbTurma";
             this.cmbTurma.Size = new System.Drawing.Size(101, 21);
             this.cmbTurma.TabIndex = 37;
@@ -194,7 +217,7 @@
             // lblTurno
             // 
             this.lblTurno.AutoSize = true;
-            this.lblTurno.Location = new System.Drawing.Point(50, 118);
+            this.lblTurno.Location = new System.Drawing.Point(42, 119);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(44, 13);
             this.lblTurno.TabIndex = 36;
@@ -205,7 +228,7 @@
             this.cmbTurno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTurno.FormattingEnabled = true;
-            this.cmbTurno.Location = new System.Drawing.Point(103, 115);
+            this.cmbTurno.Location = new System.Drawing.Point(171, 116);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(101, 21);
             this.cmbTurno.TabIndex = 35;
@@ -213,7 +236,7 @@
             // lblSerie
             // 
             this.lblSerie.AutoSize = true;
-            this.lblSerie.Location = new System.Drawing.Point(54, 82);
+            this.lblSerie.Location = new System.Drawing.Point(42, 83);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(40, 13);
             this.lblSerie.TabIndex = 34;
@@ -224,7 +247,7 @@
             this.cmbSerie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSerie.FormattingEnabled = true;
-            this.cmbSerie.Location = new System.Drawing.Point(103, 79);
+            this.cmbSerie.Location = new System.Drawing.Point(171, 80);
             this.cmbSerie.Name = "cmbSerie";
             this.cmbSerie.Size = new System.Drawing.Size(163, 21);
             this.cmbSerie.TabIndex = 33;
@@ -232,7 +255,7 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(29, 182);
+            this.lblValor.Location = new System.Drawing.Point(42, 183);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(68, 13);
             this.lblValor.TabIndex = 0;
@@ -673,5 +696,7 @@
         private System.Windows.Forms.Label lblInfoControles;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnMatriculaAtividade;
+        private System.Windows.Forms.Label lblVencimento;
+        private System.Windows.Forms.ComboBox cmbVencimento;
     }
 }

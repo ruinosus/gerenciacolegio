@@ -69,6 +69,7 @@
             this.lblInfoControles = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.lblAtivo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.gpbMatricula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -586,6 +587,18 @@
             this.btnSalvar.MouseLeave += new System.EventHandler(this.btnSalvar_MouseLeave);
             this.btnSalvar.MouseEnter += new System.EventHandler(this.btnSalvar_MouseEnter);
             // 
+            // lblAtivo
+            // 
+            this.lblAtivo.AutoSize = true;
+            this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblAtivo.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAtivo.Location = new System.Drawing.Point(394, 164);
+            this.lblAtivo.Name = "lblAtivo";
+            this.lblAtivo.Size = new System.Drawing.Size(49, 19);
+            this.lblAtivo.TabIndex = 108;
+            this.lblAtivo.Text = "Ativo";
+            // 
             // telaAlunoMatriculaAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,6 +606,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblAtivo);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnSalvar);
@@ -677,5 +691,6 @@
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnAdicionarImagem;
+        private System.Windows.Forms.Label lblAtivo;
     }
 }
