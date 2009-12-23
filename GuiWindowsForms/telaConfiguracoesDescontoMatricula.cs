@@ -121,7 +121,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
             Program.ultimaTela = 10;
-            telaConfiguracoesAtividades telaconfatv = telaConfiguracoesAtividades.getInstancia();
+            ckbTerca telaconfatv = ckbTerca.getInstancia();
             telaconfatv.Show();
         }
 

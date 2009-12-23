@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaFuncionarioDadosProfissionais));
             this.pctImagem = new System.Windows.Forms.PictureBox();
-            this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.txtSalarioInicial = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.gpbDadosProfissionais = new System.Windows.Forms.GroupBox();
             this.cmbFuncao = new System.Windows.Forms.ComboBox();
             this.lblFuncaoFuncionario = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -69,17 +67,21 @@
             this.lblFone = new System.Windows.Forms.Label();
             this.lblInfoControles = new System.Windows.Forms.Label();
             this.lblProfissionais_menu = new System.Windows.Forms.Label();
-            this.lblBeneficiario_menu = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.lblDados_Menu = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnDadosProfissionais = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.btnBeneficiario = new System.Windows.Forms.Button();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.btnDadosPessoais = new System.Windows.Forms.Button();
+            this.lbInstituicao = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.lblCurso = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
-            this.gpbDadosPessoais.SuspendLayout();
+            this.gpbDadosProfissionais.SuspendLayout();
             this.SuspendLayout();
             // 
             // pctImagem
@@ -91,74 +93,60 @@
             this.pctImagem.TabIndex = 38;
             this.pctImagem.TabStop = false;
             // 
-            // gpbDadosPessoais
+            // gpbDadosProfissionais
             // 
-            this.gpbDadosPessoais.BackColor = System.Drawing.Color.Transparent;
-            this.gpbDadosPessoais.Controls.Add(this.txtSalarioInicial);
-            this.gpbDadosPessoais.Controls.Add(this.label6);
-            this.gpbDadosPessoais.Controls.Add(this.cmbFuncao);
-            this.gpbDadosPessoais.Controls.Add(this.lblFuncaoFuncionario);
-            this.gpbDadosPessoais.Controls.Add(this.textBox9);
-            this.gpbDadosPessoais.Controls.Add(this.lblCBO);
-            this.gpbDadosPessoais.Controls.Add(this.dtpNascimento);
-            this.gpbDadosPessoais.Controls.Add(this.lblDataAdmissao);
-            this.gpbDadosPessoais.Controls.Add(this.rdbNao);
-            this.gpbDadosPessoais.Controls.Add(this.rdbSim);
-            this.gpbDadosPessoais.Controls.Add(this.lblPrimeiroEmprego);
-            this.gpbDadosPessoais.Controls.Add(this.comboBox1);
-            this.gpbDadosPessoais.Controls.Add(this.lblCor);
-            this.gpbDadosPessoais.Controls.Add(this.cmbNacionalidade);
-            this.gpbDadosPessoais.Controls.Add(this.lblGrauInstrucao);
-            this.gpbDadosPessoais.Controls.Add(this.textBox8);
-            this.gpbDadosPessoais.Controls.Add(this.lblSerie);
-            this.gpbDadosPessoais.Controls.Add(this.textBox7);
-            this.gpbDadosPessoais.Controls.Add(this.lblCtps);
-            this.gpbDadosPessoais.Controls.Add(this.textBox6);
-            this.gpbDadosPessoais.Controls.Add(this.lblPis);
-            this.gpbDadosPessoais.Controls.Add(this.textBox2);
-            this.gpbDadosPessoais.Controls.Add(this.lblZona);
-            this.gpbDadosPessoais.Controls.Add(this.textBox1);
-            this.gpbDadosPessoais.Controls.Add(this.lblTituloEleitor);
-            this.gpbDadosPessoais.Controls.Add(this.label1);
-            this.gpbDadosPessoais.Controls.Add(this.textBox3);
-            this.gpbDadosPessoais.Controls.Add(this.label2);
-            this.gpbDadosPessoais.Controls.Add(this.textBox4);
-            this.gpbDadosPessoais.Controls.Add(this.maskedTextBox1);
-            this.gpbDadosPessoais.Controls.Add(this.textBox5);
-            this.gpbDadosPessoais.Controls.Add(this.label3);
-            this.gpbDadosPessoais.Controls.Add(this.label4);
-            this.gpbDadosPessoais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbDadosPessoais.Location = new System.Drawing.Point(39, 191);
-            this.gpbDadosPessoais.Name = "gpbDadosPessoais";
-            this.gpbDadosPessoais.Size = new System.Drawing.Size(820, 487);
-            this.gpbDadosPessoais.TabIndex = 40;
-            this.gpbDadosPessoais.TabStop = false;
-            this.gpbDadosPessoais.Text = "DOCUMENTOS PESSOAIS DO FUNCIONÁRIO";
-            // 
-            // txtSalarioInicial
-            // 
-            this.txtSalarioInicial.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtSalarioInicial.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtSalarioInicial.Location = new System.Drawing.Point(582, 444);
-            this.txtSalarioInicial.Name = "txtSalarioInicial";
-            this.txtSalarioInicial.Size = new System.Drawing.Size(96, 23);
-            this.txtSalarioInicial.TabIndex = 89;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(454, 444);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 13);
-            this.label6.TabIndex = 88;
-            this.label6.Text = "Salário Inicial (R$):";
+            this.gpbDadosProfissionais.BackColor = System.Drawing.Color.Transparent;
+            this.gpbDadosProfissionais.Controls.Add(this.textBox11);
+            this.gpbDadosProfissionais.Controls.Add(this.lblCurso);
+            this.gpbDadosProfissionais.Controls.Add(this.textBox10);
+            this.gpbDadosProfissionais.Controls.Add(this.dateTimePicker1);
+            this.gpbDadosProfissionais.Controls.Add(this.lblData);
+            this.gpbDadosProfissionais.Controls.Add(this.lbInstituicao);
+            this.gpbDadosProfissionais.Controls.Add(this.cmbFuncao);
+            this.gpbDadosProfissionais.Controls.Add(this.lblFuncaoFuncionario);
+            this.gpbDadosProfissionais.Controls.Add(this.textBox9);
+            this.gpbDadosProfissionais.Controls.Add(this.lblCBO);
+            this.gpbDadosProfissionais.Controls.Add(this.dtpNascimento);
+            this.gpbDadosProfissionais.Controls.Add(this.lblDataAdmissao);
+            this.gpbDadosProfissionais.Controls.Add(this.rdbNao);
+            this.gpbDadosProfissionais.Controls.Add(this.rdbSim);
+            this.gpbDadosProfissionais.Controls.Add(this.lblPrimeiroEmprego);
+            this.gpbDadosProfissionais.Controls.Add(this.comboBox1);
+            this.gpbDadosProfissionais.Controls.Add(this.lblCor);
+            this.gpbDadosProfissionais.Controls.Add(this.cmbNacionalidade);
+            this.gpbDadosProfissionais.Controls.Add(this.lblGrauInstrucao);
+            this.gpbDadosProfissionais.Controls.Add(this.textBox8);
+            this.gpbDadosProfissionais.Controls.Add(this.lblSerie);
+            this.gpbDadosProfissionais.Controls.Add(this.textBox7);
+            this.gpbDadosProfissionais.Controls.Add(this.lblCtps);
+            this.gpbDadosProfissionais.Controls.Add(this.textBox6);
+            this.gpbDadosProfissionais.Controls.Add(this.lblPis);
+            this.gpbDadosProfissionais.Controls.Add(this.textBox2);
+            this.gpbDadosProfissionais.Controls.Add(this.lblZona);
+            this.gpbDadosProfissionais.Controls.Add(this.textBox1);
+            this.gpbDadosProfissionais.Controls.Add(this.lblTituloEleitor);
+            this.gpbDadosProfissionais.Controls.Add(this.label1);
+            this.gpbDadosProfissionais.Controls.Add(this.textBox3);
+            this.gpbDadosProfissionais.Controls.Add(this.label2);
+            this.gpbDadosProfissionais.Controls.Add(this.textBox4);
+            this.gpbDadosProfissionais.Controls.Add(this.maskedTextBox1);
+            this.gpbDadosProfissionais.Controls.Add(this.textBox5);
+            this.gpbDadosProfissionais.Controls.Add(this.label3);
+            this.gpbDadosProfissionais.Controls.Add(this.label4);
+            this.gpbDadosProfissionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbDadosProfissionais.Location = new System.Drawing.Point(39, 191);
+            this.gpbDadosProfissionais.Name = "gpbDadosProfissionais";
+            this.gpbDadosProfissionais.Size = new System.Drawing.Size(820, 487);
+            this.gpbDadosProfissionais.TabIndex = 40;
+            this.gpbDadosProfissionais.TabStop = false;
+            this.gpbDadosProfissionais.Text = "DADOS PROFISSIONAIS DO FUNCIONÁRIO";
             // 
             // cmbFuncao
             // 
             this.cmbFuncao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbFuncao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFuncao.FormattingEnabled = true;
-            this.cmbFuncao.Location = new System.Drawing.Point(169, 444);
+            this.cmbFuncao.Location = new System.Drawing.Point(478, 439);
             this.cmbFuncao.Name = "cmbFuncao";
             this.cmbFuncao.Size = new System.Drawing.Size(226, 21);
             this.cmbFuncao.TabIndex = 87;
@@ -166,7 +154,7 @@
             // lblFuncaoFuncionario
             // 
             this.lblFuncaoFuncionario.AutoSize = true;
-            this.lblFuncaoFuncionario.Location = new System.Drawing.Point(51, 444);
+            this.lblFuncaoFuncionario.Location = new System.Drawing.Point(360, 439);
             this.lblFuncaoFuncionario.Name = "lblFuncaoFuncionario";
             this.lblFuncaoFuncionario.Size = new System.Drawing.Size(53, 13);
             this.lblFuncaoFuncionario.TabIndex = 86;
@@ -176,7 +164,7 @@
             // 
             this.textBox9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.textBox9.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox9.Location = new System.Drawing.Point(169, 384);
+            this.textBox9.Location = new System.Drawing.Point(594, 40);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(169, 23);
             this.textBox9.TabIndex = 85;
@@ -184,7 +172,7 @@
             // lblCBO
             // 
             this.lblCBO.AutoSize = true;
-            this.lblCBO.Location = new System.Drawing.Point(50, 389);
+            this.lblCBO.Location = new System.Drawing.Point(475, 45);
             this.lblCBO.Name = "lblCBO";
             this.lblCBO.Size = new System.Drawing.Size(58, 13);
             this.lblCBO.TabIndex = 84;
@@ -197,7 +185,7 @@
             this.dtpNascimento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpNascimento.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(168, 333);
+            this.dtpNascimento.Location = new System.Drawing.Point(168, 439);
             this.dtpNascimento.Name = "dtpNascimento";
             this.dtpNascimento.Size = new System.Drawing.Size(110, 23);
             this.dtpNascimento.TabIndex = 83;
@@ -205,7 +193,7 @@
             // lblDataAdmissao
             // 
             this.lblDataAdmissao.AutoSize = true;
-            this.lblDataAdmissao.Location = new System.Drawing.Point(49, 333);
+            this.lblDataAdmissao.Location = new System.Drawing.Point(50, 442);
             this.lblDataAdmissao.Name = "lblDataAdmissao";
             this.lblDataAdmissao.Size = new System.Drawing.Size(95, 13);
             this.lblDataAdmissao.TabIndex = 82;
@@ -236,7 +224,7 @@
             // lblPrimeiroEmprego
             // 
             this.lblPrimeiroEmprego.AutoSize = true;
-            this.lblPrimeiroEmprego.Location = new System.Drawing.Point(47, 288);
+            this.lblPrimeiroEmprego.Location = new System.Drawing.Point(47, 290);
             this.lblPrimeiroEmprego.Name = "lblPrimeiroEmprego";
             this.lblPrimeiroEmprego.Size = new System.Drawing.Size(112, 13);
             this.lblPrimeiroEmprego.TabIndex = 79;
@@ -274,7 +262,7 @@
             // lblGrauInstrucao
             // 
             this.lblGrauInstrucao.AutoSize = true;
-            this.lblGrauInstrucao.Location = new System.Drawing.Point(50, 237);
+            this.lblGrauInstrucao.Location = new System.Drawing.Point(47, 237);
             this.lblGrauInstrucao.Name = "lblGrauInstrucao";
             this.lblGrauInstrucao.Size = new System.Drawing.Size(113, 13);
             this.lblGrauInstrucao.TabIndex = 75;
@@ -329,7 +317,7 @@
             // lblPis
             // 
             this.lblPis.AutoSize = true;
-            this.lblPis.Location = new System.Drawing.Point(51, 188);
+            this.lblPis.Location = new System.Drawing.Point(47, 188);
             this.lblPis.Name = "lblPis";
             this.lblPis.Size = new System.Drawing.Size(31, 13);
             this.lblPis.TabIndex = 69;
@@ -505,19 +493,6 @@
             this.lblProfissionais_menu.TabIndex = 106;
             this.lblProfissionais_menu.Text = "Dados Profissionais";
             // 
-            // lblBeneficiario_menu
-            // 
-            this.lblBeneficiario_menu.AutoSize = true;
-            this.lblBeneficiario_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblBeneficiario_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblBeneficiario_menu.ForeColor = System.Drawing.Color.Yellow;
-            this.lblBeneficiario_menu.Location = new System.Drawing.Point(877, 359);
-            this.lblBeneficiario_menu.Name = "lblBeneficiario_menu";
-            this.lblBeneficiario_menu.Size = new System.Drawing.Size(94, 17);
-            this.lblBeneficiario_menu.TabIndex = 105;
-            this.lblBeneficiario_menu.Text = "Beneficiários";
-            this.lblBeneficiario_menu.Visible = false;
-            // 
             // btnVoltar
             // 
             this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
@@ -597,24 +572,6 @@
             this.lblHelloUsuario.TabIndex = 99;
             this.lblHelloUsuario.Text = "Hello Usuário!";
             // 
-            // btnBeneficiario
-            // 
-            this.btnBeneficiario.BackColor = System.Drawing.Color.Transparent;
-            this.btnBeneficiario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dependentes_71x62;
-            this.btnBeneficiario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBeneficiario.FlatAppearance.BorderSize = 0;
-            this.btnBeneficiario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBeneficiario.Location = new System.Drawing.Point(887, 296);
-            this.btnBeneficiario.Margin = new System.Windows.Forms.Padding(0);
-            this.btnBeneficiario.Name = "btnBeneficiario";
-            this.btnBeneficiario.Size = new System.Drawing.Size(71, 62);
-            this.btnBeneficiario.TabIndex = 102;
-            this.btnBeneficiario.Tag = "";
-            this.btnBeneficiario.UseVisualStyleBackColor = false;
-            this.btnBeneficiario.MouseLeave += new System.EventHandler(this.btnBeneficiario_MouseLeave);
-            this.btnBeneficiario.Click += new System.EventHandler(this.btnBeneficiario_Click);
-            this.btnBeneficiario.MouseEnter += new System.EventHandler(this.btnBeneficiario_MouseEnter);
-            // 
             // btnDesconectar
             // 
             this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
@@ -648,6 +605,65 @@
             this.btnDadosPessoais.Click += new System.EventHandler(this.btnDadosPessoais_Click);
             this.btnDadosPessoais.MouseEnter += new System.EventHandler(this.btnDadosPessoais_MouseEnter);
             // 
+            // lbInstituicao
+            // 
+            this.lbInstituicao.AutoSize = true;
+            this.lbInstituicao.Location = new System.Drawing.Point(360, 393);
+            this.lbInstituicao.Name = "lbInstituicao";
+            this.lbInstituicao.Size = new System.Drawing.Size(70, 13);
+            this.lbInstituicao.TabIndex = 88;
+            this.lbInstituicao.Text = "Instituição:";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(47, 393);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(97, 13);
+            this.lblData.TabIndex = 89;
+            this.lblData.Text = "Data Formação:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.MidnightBlue;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.MidnightBlue;
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(168, 393);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(110, 23);
+            this.dateTimePicker1.TabIndex = 90;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox10.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.textBox10.Location = new System.Drawing.Point(479, 393);
+            this.textBox10.MaxLength = 30;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(225, 23);
+            this.textBox10.TabIndex = 91;
+            // 
+            // lblCurso
+            // 
+            this.lblCurso.AutoSize = true;
+            this.lblCurso.Location = new System.Drawing.Point(51, 340);
+            this.lblCurso.Name = "lblCurso";
+            this.lblCurso.Size = new System.Drawing.Size(43, 13);
+            this.lblCurso.TabIndex = 92;
+            this.lblCurso.Text = "Curso:";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox11.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.textBox11.Location = new System.Drawing.Point(168, 340);
+            this.textBox11.MaxLength = 30;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(158, 23);
+            this.textBox11.TabIndex = 96;
+            // 
             // telaFuncionarioDadosProfissionais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -657,19 +673,17 @@
             this.ClientSize = new System.Drawing.Size(1000, 722);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.lblProfissionais_menu);
-            this.Controls.Add(this.lblBeneficiario_menu);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblDados_Menu);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnDadosProfissionais);
             this.Controls.Add(this.lblHelloUsuario);
-            this.Controls.Add(this.btnBeneficiario);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.btnDadosPessoais);
             this.Controls.Add(this.lblFone);
             this.Controls.Add(this.lblFuncao);
             this.Controls.Add(this.lblNomeFuncionario);
-            this.Controls.Add(this.gpbDadosPessoais);
+            this.Controls.Add(this.gpbDadosProfissionais);
             this.Controls.Add(this.pctImagem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -680,8 +694,8 @@
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaFuncionarioDadosProfissionais_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
-            this.gpbDadosPessoais.ResumeLayout(false);
-            this.gpbDadosPessoais.PerformLayout();
+            this.gpbDadosProfissionais.ResumeLayout(false);
+            this.gpbDadosProfissionais.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,7 +704,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pctImagem;
-        private System.Windows.Forms.GroupBox gpbDadosPessoais;
+        private System.Windows.Forms.GroupBox gpbDadosProfissionais;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
@@ -725,18 +739,20 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label lblFuncaoFuncionario;
         private System.Windows.Forms.ComboBox cmbFuncao;
-        private System.Windows.Forms.TextBox txtSalarioInicial;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblInfoControles;
         private System.Windows.Forms.Label lblProfissionais_menu;
-        private System.Windows.Forms.Label lblBeneficiario_menu;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label lblDados_Menu;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnDadosProfissionais;
         private System.Windows.Forms.Label lblHelloUsuario;
-        private System.Windows.Forms.Button btnBeneficiario;
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Button btnDadosPessoais;
+        private System.Windows.Forms.Label lblCurso;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.Label lbInstituicao;
+        private System.Windows.Forms.TextBox textBox11;
     }
 }

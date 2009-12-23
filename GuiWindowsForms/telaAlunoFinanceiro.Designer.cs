@@ -53,11 +53,22 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.gpbFinanceiro = new System.Windows.Forms.GroupBox();
-            this.dtgExibirFinanceiro = new System.Windows.Forms.DataGridView();
+            this.tabFinanceiro = new System.Windows.Forms.TabControl();
+            this.tabPagamentoMensalidade = new System.Windows.Forms.TabPage();
+            this.tabHistoricoMensalidades = new System.Windows.Forms.TabPage();
+            this.dtgHistoricoMensalidade = new System.Windows.Forms.DataGridView();
+            this.tabPagamentoAtividade = new System.Windows.Forms.TabPage();
+            this.tabHistoricoAtividade = new System.Windows.Forms.TabPage();
+            this.dtgHistoricoAtividade = new System.Windows.Forms.DataGridView();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.lblAtivo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.gpbFinanceiro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgExibirFinanceiro)).BeginInit();
+            this.tabFinanceiro.SuspendLayout();
+            this.tabHistoricoMensalidades.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHistoricoMensalidade)).BeginInit();
+            this.tabHistoricoAtividade.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHistoricoAtividade)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -76,6 +87,7 @@
             // 
             this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
             this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
+            this.btnDesconectar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
@@ -387,7 +399,7 @@
             // gpbFinanceiro
             // 
             this.gpbFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.gpbFinanceiro.Controls.Add(this.dtgExibirFinanceiro);
+            this.gpbFinanceiro.Controls.Add(this.tabFinanceiro);
             this.gpbFinanceiro.Controls.Add(this.btnImprimir);
             this.gpbFinanceiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbFinanceiro.Location = new System.Drawing.Point(39, 191);
@@ -397,20 +409,85 @@
             this.gpbFinanceiro.TabStop = false;
             this.gpbFinanceiro.Text = "FINANCEIRO ALUNO";
             // 
-            // dtgExibirFinanceiro
+            // tabFinanceiro
             // 
-            this.dtgExibirFinanceiro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgExibirFinanceiro.Location = new System.Drawing.Point(33, 33);
-            this.dtgExibirFinanceiro.Name = "dtgExibirFinanceiro";
-            this.dtgExibirFinanceiro.Size = new System.Drawing.Size(748, 370);
-            this.dtgExibirFinanceiro.TabIndex = 0;
+            this.tabFinanceiro.Controls.Add(this.tabPagamentoMensalidade);
+            this.tabFinanceiro.Controls.Add(this.tabHistoricoMensalidades);
+            this.tabFinanceiro.Controls.Add(this.tabPagamentoAtividade);
+            this.tabFinanceiro.Controls.Add(this.tabHistoricoAtividade);
+            this.tabFinanceiro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tabFinanceiro.Location = new System.Drawing.Point(47, 35);
+            this.tabFinanceiro.Name = "tabFinanceiro";
+            this.tabFinanceiro.SelectedIndex = 0;
+            this.tabFinanceiro.Size = new System.Drawing.Size(745, 384);
+            this.tabFinanceiro.TabIndex = 87;
+            this.tabFinanceiro.Tag = "";
+            // 
+            // tabPagamentoMensalidade
+            // 
+            this.tabPagamentoMensalidade.Location = new System.Drawing.Point(4, 22);
+            this.tabPagamentoMensalidade.Name = "tabPagamentoMensalidade";
+            this.tabPagamentoMensalidade.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagamentoMensalidade.Size = new System.Drawing.Size(737, 358);
+            this.tabPagamentoMensalidade.TabIndex = 0;
+            this.tabPagamentoMensalidade.Text = "PAGAMENTO MENSALIDADE";
+            this.tabPagamentoMensalidade.UseVisualStyleBackColor = true;
+            // 
+            // tabHistoricoMensalidades
+            // 
+            this.tabHistoricoMensalidades.Controls.Add(this.dtgHistoricoMensalidade);
+            this.tabHistoricoMensalidades.Location = new System.Drawing.Point(4, 22);
+            this.tabHistoricoMensalidades.Name = "tabHistoricoMensalidades";
+            this.tabHistoricoMensalidades.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHistoricoMensalidades.Size = new System.Drawing.Size(737, 358);
+            this.tabHistoricoMensalidades.TabIndex = 1;
+            this.tabHistoricoMensalidades.Text = "HISTÓRICO MENSALIDADE";
+            this.tabHistoricoMensalidades.UseVisualStyleBackColor = true;
+            // 
+            // dtgHistoricoMensalidade
+            // 
+            this.dtgHistoricoMensalidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgHistoricoMensalidade.Location = new System.Drawing.Point(0, 0);
+            this.dtgHistoricoMensalidade.Name = "dtgHistoricoMensalidade";
+            this.dtgHistoricoMensalidade.Size = new System.Drawing.Size(748, 362);
+            this.dtgHistoricoMensalidade.TabIndex = 0;
+            // 
+            // tabPagamentoAtividade
+            // 
+            this.tabPagamentoAtividade.Location = new System.Drawing.Point(4, 22);
+            this.tabPagamentoAtividade.Name = "tabPagamentoAtividade";
+            this.tabPagamentoAtividade.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagamentoAtividade.Size = new System.Drawing.Size(737, 358);
+            this.tabPagamentoAtividade.TabIndex = 3;
+            this.tabPagamentoAtividade.Text = "PAGAMENTO ATIVIDADE";
+            this.tabPagamentoAtividade.UseVisualStyleBackColor = true;
+            // 
+            // tabHistoricoAtividade
+            // 
+            this.tabHistoricoAtividade.Controls.Add(this.dtgHistoricoAtividade);
+            this.tabHistoricoAtividade.Location = new System.Drawing.Point(4, 22);
+            this.tabHistoricoAtividade.Name = "tabHistoricoAtividade";
+            this.tabHistoricoAtividade.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHistoricoAtividade.Size = new System.Drawing.Size(737, 358);
+            this.tabHistoricoAtividade.TabIndex = 2;
+            this.tabHistoricoAtividade.Text = "HISTÓRICO ATIVIDADE";
+            this.tabHistoricoAtividade.UseVisualStyleBackColor = true;
+            // 
+            // dtgHistoricoAtividade
+            // 
+            this.dtgHistoricoAtividade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgHistoricoAtividade.Location = new System.Drawing.Point(-6, 0);
+            this.dtgHistoricoAtividade.Name = "dtgHistoricoAtividade";
+            this.dtgHistoricoAtividade.Size = new System.Drawing.Size(748, 362);
+            this.dtgHistoricoAtividade.TabIndex = 1;
             // 
             // btnImprimir
             // 
             this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_imprimir_48x48;
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Location = new System.Drawing.Point(692, 422);
+            this.btnImprimir.Location = new System.Drawing.Point(743, 422);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(0);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(49, 50);
@@ -419,6 +496,18 @@
             this.btnImprimir.MouseLeave += new System.EventHandler(this.btnImprimir_MouseLeave);
             this.btnImprimir.MouseEnter += new System.EventHandler(this.btnImprimir_MouseEnter);
             // 
+            // lblAtivo
+            // 
+            this.lblAtivo.AutoSize = true;
+            this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblAtivo.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAtivo.Location = new System.Drawing.Point(394, 166);
+            this.lblAtivo.Name = "lblAtivo";
+            this.lblAtivo.Size = new System.Drawing.Size(49, 19);
+            this.lblAtivo.TabIndex = 86;
+            this.lblAtivo.Text = "Ativo";
+            // 
             // telaAlunoFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,6 +515,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblAtivo);
             this.Controls.Add(this.gpbFinanceiro);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.lblMatricula_menu);
@@ -460,7 +550,11 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoFinanceiro_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.gpbFinanceiro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgExibirFinanceiro)).EndInit();
+            this.tabFinanceiro.ResumeLayout(false);
+            this.tabHistoricoMensalidades.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHistoricoMensalidade)).EndInit();
+            this.tabHistoricoAtividade.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgHistoricoAtividade)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,7 +586,14 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.GroupBox gpbFinanceiro;
-        private System.Windows.Forms.DataGridView dtgExibirFinanceiro;
+        private System.Windows.Forms.DataGridView dtgHistoricoMensalidade;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.TabControl tabFinanceiro;
+        private System.Windows.Forms.TabPage tabPagamentoMensalidade;
+        private System.Windows.Forms.TabPage tabHistoricoMensalidades;
+        private System.Windows.Forms.TabPage tabHistoricoAtividade;
+        private System.Windows.Forms.TabPage tabPagamentoAtividade;
+        private System.Windows.Forms.DataGridView dtgHistoricoAtividade;
+        private System.Windows.Forms.Label lblAtivo;
     }
 }

@@ -72,6 +72,7 @@
             this.btnInfoMedica = new System.Windows.Forms.Button();
             this.btnResponsaveis = new System.Windows.Forms.Button();
             this.btnDados = new System.Windows.Forms.Button();
+            this.lblAtivo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
@@ -592,6 +593,18 @@
             this.btnDados.Click += new System.EventHandler(this.btnDados_Click);
             this.btnDados.MouseEnter += new System.EventHandler(this.btnDados_MouseEnter);
             // 
+            // lblAtivo
+            // 
+            this.lblAtivo.AutoSize = true;
+            this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblAtivo.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAtivo.Location = new System.Drawing.Point(393, 169);
+            this.lblAtivo.Name = "lblAtivo";
+            this.lblAtivo.Size = new System.Drawing.Size(49, 19);
+            this.lblAtivo.TabIndex = 84;
+            this.lblAtivo.Text = "Ativo";
+            // 
             // telaAlunoMedicacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,6 +612,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblAtivo);
             this.Controls.Add(this.lblMatricula_menu);
             this.Controls.Add(this.btnMatricula);
             this.Controls.Add(this.lblAcademico_menu);
@@ -684,5 +698,6 @@
         private System.Windows.Forms.Button btnInfoMedica;
         private System.Windows.Forms.Button btnResponsaveis;
         private System.Windows.Forms.Button btnDados;
+        private System.Windows.Forms.Label lblAtivo;
     }
 }

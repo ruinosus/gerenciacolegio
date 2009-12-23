@@ -41,6 +41,8 @@
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnPesquisarResponsaveis = new System.Windows.Forms.Button();
+            this.lblAtivo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -196,6 +198,27 @@
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             this.btnVoltar.MouseEnter += new System.EventHandler(this.btnVoltar_MouseEnter);
             // 
+            // btnPesquisarResponsaveis
+            // 
+            this.btnPesquisarResponsaveis.Location = new System.Drawing.Point(758, 162);
+            this.btnPesquisarResponsaveis.Name = "btnPesquisarResponsaveis";
+            this.btnPesquisarResponsaveis.Size = new System.Drawing.Size(187, 23);
+            this.btnPesquisarResponsaveis.TabIndex = 74;
+            this.btnPesquisarResponsaveis.Text = "Pesquisar Responsáveis";
+            this.btnPesquisarResponsaveis.UseVisualStyleBackColor = true;
+            // 
+            // lblAtivo
+            // 
+            this.lblAtivo.AutoSize = true;
+            this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
+            this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblAtivo.ForeColor = System.Drawing.Color.Yellow;
+            this.lblAtivo.Location = new System.Drawing.Point(460, 164);
+            this.lblAtivo.Name = "lblAtivo";
+            this.lblAtivo.Size = new System.Drawing.Size(49, 19);
+            this.lblAtivo.TabIndex = 75;
+            this.lblAtivo.Text = "Ativo";
+            // 
             // telaAlunoResponsavelBusca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -203,6 +226,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.lblAtivo);
+            this.Controls.Add(this.btnPesquisarResponsaveis);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblHelloUsuario);
@@ -245,5 +270,7 @@
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnPesquisarResponsaveis;
+        private System.Windows.Forms.Label lblAtivo;
     }
 }

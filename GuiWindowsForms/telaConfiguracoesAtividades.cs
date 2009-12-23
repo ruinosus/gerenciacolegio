@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace GuiWindowsForms
 {
-    public partial class telaConfiguracoesAtividades : Form
+    public partial class ckbTerca : Form
     {
 
         /*
@@ -17,7 +17,7 @@ namespace GuiWindowsForms
          * Atributo para controle de exibição da tela
          * */
 
-        private static telaConfiguracoesAtividades telaconfiguracoesatividades;
+        private static ckbTerca telaconfiguracoesatividades;
 
         private static bool IsShown = false;
 
@@ -26,11 +26,11 @@ namespace GuiWindowsForms
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
 
-        public static telaConfiguracoesAtividades getInstancia()
+        public static ckbTerca getInstancia()
         {
             if (telaconfiguracoesatividades == null)
             {
-                telaconfiguracoesatividades = new telaConfiguracoesAtividades();
+                telaconfiguracoesatividades = new ckbTerca();
             }
             return telaconfiguracoesatividades;
         }
@@ -39,7 +39,7 @@ namespace GuiWindowsForms
         /// Construtor da tela
         /// </summary>
 
-        public telaConfiguracoesAtividades()
+        public ckbTerca()
         {
             InitializeComponent();
         }
@@ -121,7 +121,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
             Program.ultimaTela = 10;
-            telaConfiguracoesAtividades telaconfatv = telaConfiguracoesAtividades.getInstancia();
+            ckbTerca telaconfatv = ckbTerca.getInstancia();
             telaconfatv.Show();
         }
 
