@@ -33,3 +33,8 @@ C:\Users\Dudu\Desktop\Coleg Conhecer\Negocios\bin\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\Coleg Conhecer\Negocios\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dudu\Desktop\Coleg Conhecer\Negocios\obj\Debug\Negocios.dll
 C:\Users\Dudu\Desktop\Coleg Conhecer\Negocios\obj\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\col conhecer\Negocios\bin\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\col conhecer\Negocios\bin\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\col conhecer\Negocios\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dudu\Desktop\col conhecer\Negocios\obj\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\col conhecer\Negocios\obj\Debug\Negocios.pdb
