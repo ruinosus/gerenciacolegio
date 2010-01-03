@@ -675,5 +675,13 @@ namespace GuiWindowsForms
             lblInfoControles.Visible = false;
         }
 
+
+
+
+        private void ucAluno1_EventoCadastrar()
+        {
+            MessageBox.Show("tela de aluno");
+        }
+
     }
 }

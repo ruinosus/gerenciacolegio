@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D79963B9-116E-4E56-ABA5-26F9392FD1C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -188,6 +188,18 @@
       <DependentUpon>telaPrincipal.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucMenuInferior.resx">
+      <DependentUpon>ucMenuInferior.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\uMenuImagem.resx">
+      <DependentUpon>uMenuImagem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\uMenuLateral.resx">
+      <DependentUpon>uMenuLateral.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -273,6 +285,24 @@
     </Compile>
     <Compile Include="telaPrincipal.Designer.cs">
       <DependentUpon>telaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucMenuInferior.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucMenuInferior.Designer.cs">
+      <DependentUpon>ucMenuInferior.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\uMenuImagem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\uMenuImagem.Designer.cs">
+      <DependentUpon>uMenuImagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\uMenuLateral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\uMenuLateral.Designer.cs">
+      <DependentUpon>uMenuLateral.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
