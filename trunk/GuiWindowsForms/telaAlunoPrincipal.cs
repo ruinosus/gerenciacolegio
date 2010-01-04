@@ -17,6 +17,7 @@ namespace GuiWindowsForms
          * Atributo para controle de exibição da tela
          * */
 
+        
         private static telaAlunoPrincipal telaalunoprincipal;
 
         private static bool IsShown = false;
@@ -33,8 +34,10 @@ namespace GuiWindowsForms
                 telaalunoprincipal = new telaAlunoPrincipal();
             }
             return telaalunoprincipal;
-        }
 
+          
+        }
+        
         /// <summary>
         /// Construtor da tela
         /// </summary>

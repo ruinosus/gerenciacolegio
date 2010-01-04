@@ -44,6 +44,7 @@
             this.lblFinanceiro = new System.Windows.Forms.Label();
             this.btnFinanceiro = new System.Windows.Forms.Button();
             this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
+            this.ucMenuInic = new GuiWindowsForms.User_Control.ucMenuInicial();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -253,6 +254,14 @@
             this.btnCadastrarFuncionario.Visible = false;
             this.btnCadastrarFuncionario.Click += new System.EventHandler(this.btnCadastrarFuncionario_Click);
             // 
+            // ucMenuInic
+            // 
+            this.ucMenuInic.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuInic.Location = new System.Drawing.Point(140, 404);
+            this.ucMenuInic.Name = "ucMenuInic";
+            this.ucMenuInic.Size = new System.Drawing.Size(671, 205);
+            this.ucMenuInic.TabIndex = 17;
+            // 
             // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -260,6 +269,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.ucMenuInic);
             this.Controls.Add(this.btnCadastrarFuncionario);
             this.Controls.Add(this.lblFinanceiro);
             this.Controls.Add(this.btnFinanceiro);
@@ -306,5 +316,6 @@
         private System.Windows.Forms.Label lblFinanceiro;
         private System.Windows.Forms.Button btnFinanceiro;
         private System.Windows.Forms.Button btnCadastrarFuncionario;
+        private GuiWindowsForms.User_Control.ucMenuInicial ucMenuInic;
     }
 }
