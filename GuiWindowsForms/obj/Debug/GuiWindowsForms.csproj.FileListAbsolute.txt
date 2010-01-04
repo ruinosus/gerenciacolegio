@@ -132,3 +132,4 @@ C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csp
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.pdb
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.ucMenuInferior.resources
+C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.ucMenuInicial.resources

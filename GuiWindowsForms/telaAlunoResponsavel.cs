@@ -32,6 +32,8 @@ namespace GuiWindowsForms
                 telaalunoresponsavel = new telaAlunoResponsavel();
             }
             return telaalunoresponsavel;
+
+           
         }
 
         /// <summary>
