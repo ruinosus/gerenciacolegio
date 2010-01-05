@@ -39,17 +39,8 @@ namespace GuiWindowsForms
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            this.Hide();
-
-            if (Program.ultimaTela != 7)
-            {
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-            else
-            {
-                Program.ultimaTela = 6;
-                Program.SelecionaForm(Program.ultimaTela);
-            }
+            if (EventoVoltar != null) 
+                EventoVoltar();
         }
 
 
