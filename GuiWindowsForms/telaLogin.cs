@@ -43,7 +43,14 @@ namespace GuiWindowsForms
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-
+            //errorProvider1.SetError(txtLogin, "Informe o login");
+            //errorProvider1.SetError(txtSenha, "Informe a senha");
+            toolTip1.SetToolTip(txtLogin, "mensagem bem gay");
+            toolTip1.BackColor = Color.Beige;
+            toolTip1.ToolTipIcon = ToolTipIcon.Error;
+            toolTip1.ToolTipTitle = "Titulo da mensagem";
+            toolTip1.Active = true;
+            toolTip1.Show("novo textasr",txtLogin);
             #region Validação dos campos de login e senha
 
             try
