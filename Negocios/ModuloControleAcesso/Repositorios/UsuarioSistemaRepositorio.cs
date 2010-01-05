@@ -13,7 +13,7 @@ using Negocios.ModuloAuxiliar.BaseRepositorio;
 using System.Collections.Generic;
 using Negocios.ModuloAuxiliar.BaseFiltro;
 using MySql.Data.MySqlClient;
-using Negocios.ModuloAuxuliar.Enuns;
+using Negocios.ModuloAuxuliar.Enums;
 using Negocios.ModuloControleAcesso.Filtros;
 using Negocios.ModuloControleAcesso.Processos;
 using Negocios.ModuloAuxuliar.VOs;

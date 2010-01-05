@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using Negocios.ModuloAuxuliar.VOs; 
-using Negocios.ModuloAuxuliar.Enuns;
+using Negocios.ModuloAuxuliar.Enums;
 
 
 namespace Negocios.ModuloControleAcesso.VOs

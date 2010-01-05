@@ -53,9 +53,9 @@ namespace Negocios.ModuloControleAcesso.Processos
                 throw new UsuarioSistemaLoginJaInformadoExcecao();
 
             if (!usuarioSistemaVO.IsAdministrador)
-                usuarioSistemaVO.StatusUsuarioSistema = Negocios.ModuloAuxuliar.Enuns.StatusUsuarioSistema.UsuarioPendente;
+                usuarioSistemaVO.StatusUsuarioSistema = Negocios.ModuloAuxuliar.Enums.StatusUsuarioSistema.UsuarioPendente;
             else
-                usuarioSistemaVO.StatusUsuarioSistema = Negocios.ModuloAuxuliar.Enuns.StatusUsuarioSistema.UsuarioAtivo;
+                usuarioSistemaVO.StatusUsuarioSistema = Negocios.ModuloAuxuliar.Enums.StatusUsuarioSistema.UsuarioAtivo;
 
             usuarioSistemaRepositorio.Incluir(usuarioSistemaVO);
         }
