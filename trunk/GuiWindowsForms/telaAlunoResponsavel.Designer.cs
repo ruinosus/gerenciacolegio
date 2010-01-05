@@ -67,20 +67,9 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.btnDados = new System.Windows.Forms.Button();
-            this.btnResponsaveis = new System.Windows.Forms.Button();
-            this.btnInfoMedica = new System.Windows.Forms.Button();
-            this.btnFinanceiro = new System.Windows.Forms.Button();
-            this.btnAcademico = new System.Windows.Forms.Button();
-            this.lblDados_Menu = new System.Windows.Forms.Label();
-            this.lblResponsavel_menu = new System.Windows.Forms.Label();
-            this.lblMedico_menu = new System.Windows.Forms.Label();
-            this.lblFinanceiro_menu = new System.Windows.Forms.Label();
-            this.lblAcademico_menu = new System.Windows.Forms.Label();
-            this.lblMatricula_menu = new System.Windows.Forms.Label();
-            this.btnMatricula = new System.Windows.Forms.Button();
-            this.ucMenuSuper = new GuiWindowsForms.uMenuImagem();
+            this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.ucAluno1 = new GuiWindowsForms.ucMenuInferior();
+            this.ucMenuSuper = new GuiWindowsForms.uMenuImagem();
             this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -523,191 +512,28 @@
             this.lblHelloUsuario.TabIndex = 46;
             this.lblHelloUsuario.Text = "Hello Usuário!";
             // 
-            // btnDados
+            // uMenuLateral1
             // 
-            this.btnDados.AccessibleDescription = "";
-            this.btnDados.BackColor = System.Drawing.Color.Transparent;
-            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled;
-            this.btnDados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDados.FlatAppearance.BorderSize = 0;
-            this.btnDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDados.Location = new System.Drawing.Point(898, 191);
-            this.btnDados.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDados.Name = "btnDados";
-            this.btnDados.Size = new System.Drawing.Size(73, 74);
-            this.btnDados.TabIndex = 48;
-            this.btnDados.Tag = "";
-            this.btnDados.UseVisualStyleBackColor = false;
-            this.btnDados.MouseLeave += new System.EventHandler(this.btnDados_MouseLeave);
-            this.btnDados.Click += new System.EventHandler(this.btnDados_Click);
-            this.btnDados.MouseEnter += new System.EventHandler(this.btnDados_MouseEnter);
+            this.uMenuLateral1.BackColor = System.Drawing.Color.Transparent;
+            this.uMenuLateral1.Location = new System.Drawing.Point(875, 75);
+            this.uMenuLateral1.Name = "uMenuLateral1";
+            this.uMenuLateral1.Size = new System.Drawing.Size(130, 584);
+            this.uMenuLateral1.TabIndex = 132;
+            this.uMenuLateral1.EventoAbrirTelaMedica += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMedica(this.uMenuLateral1_EventoAbrirTelaMedica);
+            this.uMenuLateral1.EventoAbrirTelaResponsavel += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaResponsavel(this.uMenuLateral1_EventoAbrirTelaResponsavel);
+            this.uMenuLateral1.EventoAbrirTelaMatricula += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMatricula(this.uMenuLateral1_EventoAbrirTelaMatricula);
+            this.uMenuLateral1.EventoAbrirTelaFinanceiro += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaFinanceiro(this.uMenuLateral1_EventoAbrirTelaFinanceiro);
+            this.uMenuLateral1.EventoAbrirTelaAcademico += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaAcademico(this.uMenuLateral1_EventoAbrirTelaAcademico);
+            this.uMenuLateral1.EventoAbrirTelaDados += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaDados(this.uMenuLateral1_EventoAbrirTelaDados);
             // 
-            // btnResponsaveis
+            // ucAluno1
             // 
-            this.btnResponsaveis.BackColor = System.Drawing.Color.Transparent;
-            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66;
-            this.btnResponsaveis.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResponsaveis.Enabled = false;
-            this.btnResponsaveis.FlatAppearance.BorderSize = 0;
-            this.btnResponsaveis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResponsaveis.Location = new System.Drawing.Point(898, 283);
-            this.btnResponsaveis.Margin = new System.Windows.Forms.Padding(0);
-            this.btnResponsaveis.Name = "btnResponsaveis";
-            this.btnResponsaveis.Size = new System.Drawing.Size(73, 66);
-            this.btnResponsaveis.TabIndex = 49;
-            this.btnResponsaveis.Tag = "";
-            this.btnResponsaveis.UseVisualStyleBackColor = false;
-            this.btnResponsaveis.MouseLeave += new System.EventHandler(this.btnResponsaveis_MouseLeave);
-            this.btnResponsaveis.MouseEnter += new System.EventHandler(this.btnResponsaveis_MouseEnter);
-            // 
-            // btnInfoMedica
-            // 
-            this.btnInfoMedica.BackColor = System.Drawing.Color.Transparent;
-            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_disabled;
-            this.btnInfoMedica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInfoMedica.FlatAppearance.BorderSize = 0;
-            this.btnInfoMedica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfoMedica.Location = new System.Drawing.Point(898, 379);
-            this.btnInfoMedica.Margin = new System.Windows.Forms.Padding(0);
-            this.btnInfoMedica.Name = "btnInfoMedica";
-            this.btnInfoMedica.Size = new System.Drawing.Size(73, 73);
-            this.btnInfoMedica.TabIndex = 50;
-            this.btnInfoMedica.Tag = "";
-            this.btnInfoMedica.UseVisualStyleBackColor = false;
-            this.btnInfoMedica.MouseLeave += new System.EventHandler(this.btnInfoMedica_MouseLeave);
-            this.btnInfoMedica.Click += new System.EventHandler(this.btnInfoMedica_Click);
-            this.btnInfoMedica.MouseEnter += new System.EventHandler(this.btnInfoMedica_MouseEnter);
-            // 
-            // btnFinanceiro
-            // 
-            this.btnFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled;
-            this.btnFinanceiro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFinanceiro.FlatAppearance.BorderSize = 0;
-            this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinanceiro.Location = new System.Drawing.Point(898, 478);
-            this.btnFinanceiro.Margin = new System.Windows.Forms.Padding(0);
-            this.btnFinanceiro.Name = "btnFinanceiro";
-            this.btnFinanceiro.Size = new System.Drawing.Size(73, 60);
-            this.btnFinanceiro.TabIndex = 51;
-            this.btnFinanceiro.Tag = "";
-            this.btnFinanceiro.UseVisualStyleBackColor = false;
-            this.btnFinanceiro.MouseLeave += new System.EventHandler(this.btnFinanceiro_MouseLeave);
-            this.btnFinanceiro.Click += new System.EventHandler(this.btnFinanceiro_Click);
-            this.btnFinanceiro.MouseEnter += new System.EventHandler(this.btnFinanceiro_MouseEnter);
-            // 
-            // btnAcademico
-            // 
-            this.btnAcademico.BackColor = System.Drawing.Color.Transparent;
-            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled;
-            this.btnAcademico.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAcademico.FlatAppearance.BorderSize = 0;
-            this.btnAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcademico.Location = new System.Drawing.Point(898, 574);
-            this.btnAcademico.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAcademico.Name = "btnAcademico";
-            this.btnAcademico.Size = new System.Drawing.Size(73, 72);
-            this.btnAcademico.TabIndex = 52;
-            this.btnAcademico.Tag = "";
-            this.btnAcademico.UseVisualStyleBackColor = false;
-            this.btnAcademico.MouseLeave += new System.EventHandler(this.btnAcademico_MouseLeave);
-            this.btnAcademico.Click += new System.EventHandler(this.btnAcademico_Click);
-            this.btnAcademico.MouseEnter += new System.EventHandler(this.btnAcademico_MouseEnter);
-            // 
-            // lblDados_Menu
-            // 
-            this.lblDados_Menu.AutoSize = true;
-            this.lblDados_Menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblDados_Menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDados_Menu.ForeColor = System.Drawing.Color.White;
-            this.lblDados_Menu.Location = new System.Drawing.Point(876, 265);
-            this.lblDados_Menu.Name = "lblDados_Menu";
-            this.lblDados_Menu.Size = new System.Drawing.Size(110, 17);
-            this.lblDados_Menu.TabIndex = 53;
-            this.lblDados_Menu.Text = "Dados Pessoais";
-            this.lblDados_Menu.Visible = false;
-            // 
-            // lblResponsavel_menu
-            // 
-            this.lblResponsavel_menu.AutoSize = true;
-            this.lblResponsavel_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblResponsavel_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblResponsavel_menu.ForeColor = System.Drawing.Color.Yellow;
-            this.lblResponsavel_menu.Location = new System.Drawing.Point(885, 353);
-            this.lblResponsavel_menu.Name = "lblResponsavel_menu";
-            this.lblResponsavel_menu.Size = new System.Drawing.Size(97, 17);
-            this.lblResponsavel_menu.TabIndex = 54;
-            this.lblResponsavel_menu.Text = "Responsáveis";
-            // 
-            // lblMedico_menu
-            // 
-            this.lblMedico_menu.AutoSize = true;
-            this.lblMedico_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblMedico_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblMedico_menu.ForeColor = System.Drawing.Color.White;
-            this.lblMedico_menu.Location = new System.Drawing.Point(889, 455);
-            this.lblMedico_menu.Name = "lblMedico_menu";
-            this.lblMedico_menu.Size = new System.Drawing.Size(88, 17);
-            this.lblMedico_menu.TabIndex = 55;
-            this.lblMedico_menu.Text = "Inf. Médicas";
-            this.lblMedico_menu.Visible = false;
-            // 
-            // lblFinanceiro_menu
-            // 
-            this.lblFinanceiro_menu.AutoSize = true;
-            this.lblFinanceiro_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblFinanceiro_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblFinanceiro_menu.ForeColor = System.Drawing.Color.White;
-            this.lblFinanceiro_menu.Location = new System.Drawing.Point(895, 548);
-            this.lblFinanceiro_menu.Name = "lblFinanceiro_menu";
-            this.lblFinanceiro_menu.Size = new System.Drawing.Size(77, 17);
-            this.lblFinanceiro_menu.TabIndex = 56;
-            this.lblFinanceiro_menu.Text = "Financeiro";
-            this.lblFinanceiro_menu.Visible = false;
-            // 
-            // lblAcademico_menu
-            // 
-            this.lblAcademico_menu.AutoSize = true;
-            this.lblAcademico_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblAcademico_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblAcademico_menu.ForeColor = System.Drawing.Color.White;
-            this.lblAcademico_menu.Location = new System.Drawing.Point(895, 646);
-            this.lblAcademico_menu.Name = "lblAcademico_menu";
-            this.lblAcademico_menu.Size = new System.Drawing.Size(81, 17);
-            this.lblAcademico_menu.TabIndex = 57;
-            this.lblAcademico_menu.Text = "Acadêmico";
-            this.lblAcademico_menu.Visible = false;
-            // 
-            // lblMatricula_menu
-            // 
-            this.lblMatricula_menu.AutoSize = true;
-            this.lblMatricula_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblMatricula_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblMatricula_menu.ForeColor = System.Drawing.Color.White;
-            this.lblMatricula_menu.Location = new System.Drawing.Point(900, 166);
-            this.lblMatricula_menu.Name = "lblMatricula_menu";
-            this.lblMatricula_menu.Size = new System.Drawing.Size(69, 17);
-            this.lblMatricula_menu.TabIndex = 67;
-            this.lblMatricula_menu.Text = "Matrícula";
-            this.lblMatricula_menu.Visible = false;
-            // 
-            // btnMatricula
-            // 
-            this.btnMatricula.BackColor = System.Drawing.Color.Transparent;
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled;
-            this.btnMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMatricula.FlatAppearance.BorderSize = 0;
-            this.btnMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMatricula.Location = new System.Drawing.Point(898, 88);
-            this.btnMatricula.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMatricula.Name = "btnMatricula";
-            this.btnMatricula.Size = new System.Drawing.Size(68, 69);
-            this.btnMatricula.TabIndex = 66;
-            this.btnMatricula.Tag = "Dados Pessoais";
-            this.btnMatricula.UseVisualStyleBackColor = false;
-            this.btnMatricula.MouseLeave += new System.EventHandler(this.btnMatricula_MouseLeave);
-            this.btnMatricula.Click += new System.EventHandler(this.btnMatricula_Click);
-            this.btnMatricula.MouseEnter += new System.EventHandler(this.btnMatricula_MouseEnter);
+            this.ucAluno1.BackColor = System.Drawing.Color.Transparent;
+            this.ucAluno1.Location = new System.Drawing.Point(39, 667);
+            this.ucAluno1.Name = "ucAluno1";
+            this.ucAluno1.Size = new System.Drawing.Size(404, 43);
+            this.ucAluno1.TabIndex = 131;
+            this.ucAluno1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
             // ucMenuSuper
             // 
@@ -717,14 +543,6 @@
             this.ucMenuSuper.Size = new System.Drawing.Size(438, 201);
             this.ucMenuSuper.TabIndex = 130;
             // 
-            // ucAluno1
-            // 
-            this.ucAluno1.BackColor = System.Drawing.Color.Transparent;
-            this.ucAluno1.Location = new System.Drawing.Point(39, 667);
-            this.ucAluno1.Name = "ucAluno1";
-            this.ucAluno1.Size = new System.Drawing.Size(404, 43);
-            this.ucAluno1.TabIndex = 131;
-            // 
             // telaAlunoResponsavel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -732,20 +550,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.uMenuLateral1);
             this.Controls.Add(this.ucAluno1);
             this.Controls.Add(this.ucMenuSuper);
-            this.Controls.Add(this.lblMatricula_menu);
-            this.Controls.Add(this.btnMatricula);
-            this.Controls.Add(this.lblAcademico_menu);
-            this.Controls.Add(this.lblFinanceiro_menu);
-            this.Controls.Add(this.lblMedico_menu);
-            this.Controls.Add(this.lblResponsavel_menu);
-            this.Controls.Add(this.lblDados_Menu);
-            this.Controls.Add(this.btnAcademico);
-            this.Controls.Add(this.btnFinanceiro);
-            this.Controls.Add(this.btnInfoMedica);
-            this.Controls.Add(this.btnResponsaveis);
-            this.Controls.Add(this.btnDados);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.gpbDadosPessoais);
@@ -803,21 +610,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblHelloUsuario;
-        private System.Windows.Forms.Button btnDados;
-        private System.Windows.Forms.Button btnResponsaveis;
-        private System.Windows.Forms.Button btnInfoMedica;
-        private System.Windows.Forms.Button btnFinanceiro;
-        private System.Windows.Forms.Button btnAcademico;
-        private System.Windows.Forms.Label lblDados_Menu;
-        private System.Windows.Forms.Label lblResponsavel_menu;
-        private System.Windows.Forms.Label lblMedico_menu;
-        private System.Windows.Forms.Label lblFinanceiro_menu;
-        private System.Windows.Forms.Label lblAcademico_menu;
-        private System.Windows.Forms.Label lblMatricula_menu;
-        private System.Windows.Forms.Button btnMatricula;
         private System.Windows.Forms.TextBox txtNomeEdificil;
         private System.Windows.Forms.Label lblEdificio;
         private uMenuImagem ucMenuSuper;
         private ucMenuInferior ucAluno1;
+        private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
     }
 }
