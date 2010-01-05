@@ -188,6 +188,14 @@
       <DependentUpon>telaPrincipal.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucMenuDireita.resx">
+      <DependentUpon>ucMenuDireita.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucMenuEsquerda.resx">
+      <DependentUpon>ucMenuEsquerda.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Control\ucMenuInferior.resx">
       <DependentUpon>ucMenuInferior.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -288,6 +296,18 @@
     </Compile>
     <Compile Include="telaPrincipal.Designer.cs">
       <DependentUpon>telaPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucMenuDireita.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucMenuDireita.Designer.cs">
+      <DependentUpon>ucMenuDireita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucMenuEsquerda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucMenuEsquerda.Designer.cs">
+      <DependentUpon>ucMenuEsquerda.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\ucMenuInferior.cs">
       <SubType>UserControl</SubType>

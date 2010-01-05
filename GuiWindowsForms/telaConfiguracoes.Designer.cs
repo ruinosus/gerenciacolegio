@@ -41,6 +41,8 @@
             this.lblSerie_menu = new System.Windows.Forms.Label();
             this.lblAtividade_menu = new System.Windows.Forms.Label();
             this.lblDesconto_menu = new System.Windows.Forms.Label();
+            this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
+            this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.SuspendLayout();
             // 
             // btnControledeAcesso
@@ -220,6 +222,22 @@
             this.lblDesconto_menu.Text = "Descontos";
             this.lblDesconto_menu.Visible = false;
             // 
+            // ucMenuDireita1
+            // 
+            this.ucMenuDireita1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuDireita1.Location = new System.Drawing.Point(773, 190);
+            this.ucMenuDireita1.Name = "ucMenuDireita1";
+            this.ucMenuDireita1.Size = new System.Drawing.Size(120, 493);
+            this.ucMenuDireita1.TabIndex = 94;
+            // 
+            // ucMenuConfiguracoesEsquerda1
+            // 
+            this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(98, 190);
+            this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
+            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(120, 493);
+            this.ucMenuConfiguracoesEsquerda1.TabIndex = 95;
+            // 
             // telaConfiguracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +245,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.ucMenuConfiguracoesEsquerda1);
+            this.Controls.Add(this.ucMenuDireita1);
             this.Controls.Add(this.lblDesconto_menu);
             this.Controls.Add(this.lblAtividade_menu);
             this.Controls.Add(this.lblSerie_menu);
@@ -267,5 +287,7 @@
         private System.Windows.Forms.Label lblSerie_menu;
         private System.Windows.Forms.Label lblAtividade_menu;
         private System.Windows.Forms.Label lblDesconto_menu;
+        private GuiWindowsForms.User_Control.ucMenuDireita ucMenuDireita1;
+        private GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda ucMenuConfiguracoesEsquerda1;
     }
 }
