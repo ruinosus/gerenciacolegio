@@ -98,275 +98,13 @@ namespace GuiWindowsForms
             }
         }
 
-        #region Controle de mudança das figuras e exibição dos textos das mesmas
+        #region USER CONTROLS - Controle Inferior - Botões de Navegação
 
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDados_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled_h;
-            lblDados_Menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnDados_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled;
-            lblDados_Menu.Visible = false;
-        }
-
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnResponsaveis_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled_h;
-            lblResponsavel_menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnResponsaveis_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled;
-            lblResponsavel_menu.Visible = false;
-        }
-
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnInfoMedica_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_disabled_h;
-            lblMedico_menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnInfoMedica_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_disabled;
-            lblMedico_menu.Visible = false;
-        }
-
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnFinanceiro_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled_h;
-            lblFinanceiro_menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnFinanceiro_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled;
-            lblFinanceiro_menu.Visible = false;
-        }
-
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAcademico_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled_h;
-            lblAcademico_menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnAcademico_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled;
-            lblAcademico_menu.Visible = false;
-        }
-
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnMatricula_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled_h;
-            lblMatricula_menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnMatricula_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled;
-            lblMatricula_menu.Visible = false;
-        }
-
-        #endregion
-
-        #region Botoes do menu de navegação
-
-        /// <summary>
-        /// Fecha a tela ativa e exibe a tela de dados gerais
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnDados_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 7;
-            telaAluno telaaluno = telaAluno.getInstancia();
-            telaaluno.Show();
-        }
-
-        /// <summary>
-        /// Fecha a tela ativa e exibe a tela de matricula
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnMatricula_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 7;
-            telaAlunoMatricula telaalunomatricula = telaAlunoMatricula.getInstancia();
-            telaalunomatricula.Show();
-        }
-
-        /// <summary>
-        /// Fecha a tela ativa e exibe a tela de dados médicos
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnResponsavel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 7;
-            telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
-            telaalunoresponsavel.Show();
-        }
-
-        /// <summary>
-        /// Fecha a tela ativa e exibe a tela de dados financeiros
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnFinanceiro_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 7;
-            telaAlunoFinanceiro telaalunofinanceiro = telaAlunoFinanceiro.getInstancia();
-            telaalunofinanceiro.Show();
-        }
-
-        /// <summary>
-        /// Fecha a tela ativa e exibe a tela de dados academicos
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnAcademico_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 7;
-            telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
-            telaalunoacademico.Show();
-        }
-
-        #endregion
-
-        #region Controle dos textos e das ações dos botões de ação inferiores
-
-        /// <summary>
-        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnVoltar_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = true;
-            lblInfoControles.Text = "Voltar";
-        }
-
-        /// <summary>
-        /// Oculta o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnVoltar_MouseLeave(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = false;
-        }
-
-        /// <summary>
-        /// Oculta o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnSalvar_MouseLeave(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = false;
-        }
-
-        /// <summary>
-        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnSalvar_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = true;
-            lblInfoControles.Text = "Salvar Informações";
-        }
-
-        /// <summary>
-        /// Retorna para tela anterior ocultando a atual e chamando a instância da última tela acessada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnVoltar_Click(object sender, EventArgs e)
+        private void ucAluno1_EventoVoltar()
         {
             this.Hide();
 
-            if (Program.ultimaTela != 7)
+            if (Program.ultimaTela == 7)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
@@ -375,6 +113,58 @@ namespace GuiWindowsForms
                 Program.ultimaTela = 6;
                 Program.SelecionaForm(Program.ultimaTela);
             }
+        }
+
+        #endregion
+
+        #region USER CONTROLS - Controle Lateral - Botões de Navegação
+
+        private void uMenuLateral1_EventoAbrirTelaResponsavel()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            telaalunoresponsavel.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaMedica()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoMedicacao telaalunomedicacao = telaAlunoMedicacao.getInstancia();
+            telaalunomedicacao.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaMatricula()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoMatricula telaalunomatricula = telaAlunoMatricula.getInstancia();
+            telaalunomatricula.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaFinanceiro()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoFinanceiro telaalunofinanceiro = telaAlunoFinanceiro.getInstancia();
+            telaalunofinanceiro.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaDados()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAluno telaaluno = telaAluno.getInstancia();
+            telaaluno.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaAcademico()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
+            telaalunoacademico.Show();
         }
 
         #endregion

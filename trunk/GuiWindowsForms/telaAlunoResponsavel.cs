@@ -364,6 +364,8 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        #region USER CONTROLS - Controle Inferior - Botões de Navegação
+
         private void ucAluno1_EventoVoltar()
         {
             this.Hide();
@@ -378,6 +380,10 @@ namespace GuiWindowsForms
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
+        
+        #endregion
+
+        #region USER CONTROLS - Controle Lateral - Botões de Navegação
 
         private void uMenuLateral1_EventoAbrirTelaResponsavel()
         {
@@ -426,6 +432,8 @@ namespace GuiWindowsForms
             telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
             telaalunoacademico.Show();
         }
+
+        #endregion
 
 
 
