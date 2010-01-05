@@ -42,3 +42,5 @@ C:\Users\Dudu\Desktop\col conhecer\Negocios\bin\Debug\DbLinq.dll
 C:\Users\Dudu\Desktop\col conhecer\Negocios\bin\Debug\DbLinq.MySql.dll
 C:\Users\Dudu\Desktop\col conhecer\Negocios\bin\Debug\DbLinq.MySql.pdb
 C:\Users\Dudu\Desktop\col conhecer\Negocios\bin\Debug\DbLinq.pdb
+C:\Users\Alexandre Alves\Desktop\Conhecer\Negocios\bin\Debug\DbLinq.MySql.pdb
+C:\Users\Alexandre Alves\Desktop\Conhecer\Negocios\bin\Debug\DbLinq.pdb

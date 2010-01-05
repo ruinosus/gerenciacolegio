@@ -133,3 +133,7 @@ C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.pdb
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.ucMenuInferior.resources
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.ucMenuInicial.resources
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.ucMenuInferior.resources
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.ucMenuInicial.resources
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.uMenuImagem.resources
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
