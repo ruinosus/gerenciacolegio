@@ -115,15 +115,6 @@
     <Compile Include="ContasAPagar\Processos\Interfaces\IContasAPagarProcesso.cs" />
     <Compile Include="ContasAPagar\Repositorios\ContasAPagarRepositorio.cs" />
     <Compile Include="ContasAPagar\Repositorios\Interfaces\IContasAPagarRepositorio.cs" />
-    <Compile Include="ModuloAlunoAtividade\Constantes\AlunoAtividadeConstantes.cs" />
-    <Compile Include="ModuloAlunoAtividade\Excecoes\AlunoAtividadeNaoAlteradoExcecao.cs" />
-    <Compile Include="ModuloAlunoAtividade\Excecoes\AlunoAtividadeNaoExcluidoExcecao.cs" />
-    <Compile Include="ModuloAlunoAtividade\Excecoes\AlunoAtividadeNaoIncluidoExcecao.cs" />
-    <Compile Include="ModuloAlunoAtividade\Fabricas\AlunoAtividadeFabrica.cs" />
-    <Compile Include="ModuloAlunoAtividade\Processos\AlunoAtividadeProcesso.cs" />
-    <Compile Include="ModuloAlunoAtividade\Processos\Interfaces\IAlunoAtividadeProcesso.cs" />
-    <Compile Include="ModuloAlunoAtividade\Repositorios\AlunoAtividadeRepositorio.cs" />
-    <Compile Include="ModuloAlunoAtividade\Repositorios\Interfaces\IAlunoAtividadeRepositorio.cs" />
     <Compile Include="ModuloAluno\Constantes\AlunoConstantes.cs" />
     <Compile Include="ModuloAluno\Excecoes\AlunoNaoAlteradoExcecao.cs" />
     <Compile Include="ModuloAluno\Excecoes\AlunoNaoExcluidoExcecao.cs" />
