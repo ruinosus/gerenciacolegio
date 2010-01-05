@@ -12,7 +12,7 @@ using System.Xml.Linq;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace Negocios.ModuloAuxuliar.Enuns
+namespace Negocios.ModuloAuxuliar.Enums
 {
 
     public enum StatusUsuarioSistema

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Negocios.ModuloAuxuliar.Enuns;
+using Negocios.ModuloAuxuliar.Enums;
 using Negocios.ModuloControleAcesso.VOs;
 
 namespace Negocios.ModuloPostagem.VOs

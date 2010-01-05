@@ -6,6 +6,8 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloAtividadeData.Repositorios;
 using Negocios.ModuloAtividadeData.Processos;
 using Negocios.ModuloAtividadeData.Fabricas;
+using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloAtividadeData.Excecoes;
 
 namespace Negocios.ModuloAtividadeData.Processos
 {
@@ -26,28 +28,36 @@ namespace Negocios.ModuloAtividadeData.Processos
 
         #endregion
 
-
         #region Métodos da Interface
 
         public void Incluir(AtividadeData atividadeData)
         {
+            if (atividadeData == null)
+                throw new AtividadeDataNaoIncluidaExcecao();
+
             this.atividadeDataRepositorio.Incluir(atividadeData);
 
         }
 
         public void Excluir(AtividadeData atividadeData)
         {
+            if (atividadeData == null || atividadeData.ID == 0)
+                throw new AtividadeDataNaoExcluidaExcecao();
+
             this.atividadeDataRepositorio.Excluir(atividadeData);
         }
 
         public void Alterar(AtividadeData atividadeData)
         {
+            if (atividadeData == null || atividadeData.ID == 0)
+                throw new AtividadeDataNaoAlteradaExcecao();
+
             this.atividadeDataRepositorio.Alterar(atividadeData);
         }
 
-        public List<AtividadeData> Consultar(AtividadeData atividadeData)
+        public List<AtividadeData> Consultar(AtividadeData atividadeData, TipoPesquisa tipoPesquisa)
         {
-            List<AtividadeData> atividadeDataList = this.atividadeDataRepositorio.Consultar(atividadeData);           
+            List<AtividadeData> atividadeDataList = this.atividadeDataRepositorio.Consultar(atividadeData, tipoPesquisa);
 
             return atividadeDataList;
         }

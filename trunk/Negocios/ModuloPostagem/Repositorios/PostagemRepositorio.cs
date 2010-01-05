@@ -5,7 +5,7 @@ using System.Web;
 using Negocios.ModuloAuxiliar.BaseRepositorio;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloPostagem.VOs;
-using Negocios.ModuloAuxuliar.Enuns;
+using Negocios.ModuloAuxuliar.Enums;
 using Negocios.ModuloPostagem.Filtros;
 using Negocios.ModuloPostagem.Excecoes;
 using Negocios.ModuloAuxiliar.Excecoes;

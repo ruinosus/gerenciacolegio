@@ -181,6 +181,7 @@
     <Compile Include="ModuloAuxiliar\VOs\RegistroModificacao.cs" />
     <Compile Include="ModuloAuxiliar\VOs\Rg.cs" />
     <Compile Include="ModuloBasico\Constantes\BasicoConstantes.cs" />
+    <Compile Include="ModuloBasico\Enums\Enumeradores.cs" />
     <Compile Include="ModuloBasico\VOs\ColegioDB.cs" />
     <Compile Include="ModuloCheque\Constantes\ChequeConstantes.cs" />
     <Compile Include="ModuloCheque\Excecoes\ChequeNaoAlteradoExcecao.cs" />
@@ -371,7 +372,6 @@
     <Compile Include="SalaPeriodo\Repositorios\SalaPeriodoRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AtividadeData\Repositorios\.svn\entries\" />
     <Folder Include="ModuloAuxiliar\Util\MenuController\" />
     <Folder Include="ModuloBasico\Excecoes\" />
   </ItemGroup>
