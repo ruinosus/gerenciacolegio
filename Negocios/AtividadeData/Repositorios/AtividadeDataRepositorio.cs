@@ -26,8 +26,7 @@ namespace Negocios.ModuloAtividadeData.Repositorios
 
         public List<AtividadeData> Consultar(AtividadeData atividadeData, TipoPesquisa tipoPesquisa)
         {
-            List<AtividadeData> resultado = (from ad in db.AtividadeData
-                                             select ad).ToList();
+            List<AtividadeData> resultado = Consultar();
 
             switch (tipoPesquisa)
             {
