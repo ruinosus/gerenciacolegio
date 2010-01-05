@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaFuncionarioDadosProfissionais));
-            this.pctImagem = new System.Windows.Forms.PictureBox();
             this.gpbDadosProfissionais = new System.Windows.Forms.GroupBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.lblCurso = new System.Windows.Forms.Label();
@@ -68,32 +67,14 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblNomeFuncionario = new System.Windows.Forms.Label();
-            this.lblFuncao = new System.Windows.Forms.Label();
-            this.lblFone = new System.Windows.Forms.Label();
-            this.lblInfoControles = new System.Windows.Forms.Label();
-            this.lblProfissionais_menu = new System.Windows.Forms.Label();
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.lblDados_Menu = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnDadosProfissionais = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
-            this.btnDadosPessoais = new System.Windows.Forms.Button();
-            this.lblAtivo = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
+            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
+            this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
             this.gpbDadosProfissionais.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pctImagem
-            // 
-            this.pctImagem.BackColor = System.Drawing.Color.Transparent;
-            this.pctImagem.Location = new System.Drawing.Point(250, 12);
-            this.pctImagem.Name = "pctImagem";
-            this.pctImagem.Size = new System.Drawing.Size(127, 134);
-            this.pctImagem.TabIndex = 38;
-            this.pctImagem.TabStop = false;
             // 
             // gpbDadosProfissionais
             // 
@@ -493,134 +474,6 @@
             this.label4.TabIndex = 57;
             this.label4.Text = "Identidade:";
             // 
-            // lblNomeFuncionario
-            // 
-            this.lblNomeFuncionario.AutoSize = true;
-            this.lblNomeFuncionario.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeFuncionario.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblNomeFuncionario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblNomeFuncionario.Location = new System.Drawing.Point(394, 12);
-            this.lblNomeFuncionario.Name = "lblNomeFuncionario";
-            this.lblNomeFuncionario.Size = new System.Drawing.Size(169, 19);
-            this.lblNomeFuncionario.TabIndex = 67;
-            this.lblNomeFuncionario.Text = "Nome do Funcionário";
-            // 
-            // lblFuncao
-            // 
-            this.lblFuncao.AutoSize = true;
-            this.lblFuncao.BackColor = System.Drawing.Color.Transparent;
-            this.lblFuncao.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblFuncao.ForeColor = System.Drawing.Color.Yellow;
-            this.lblFuncao.Location = new System.Drawing.Point(394, 45);
-            this.lblFuncao.Name = "lblFuncao";
-            this.lblFuncao.Size = new System.Drawing.Size(63, 19);
-            this.lblFuncao.TabIndex = 68;
-            this.lblFuncao.Text = "Função";
-            // 
-            // lblFone
-            // 
-            this.lblFone.AutoSize = true;
-            this.lblFone.BackColor = System.Drawing.Color.Transparent;
-            this.lblFone.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblFone.ForeColor = System.Drawing.Color.Yellow;
-            this.lblFone.Location = new System.Drawing.Point(394, 74);
-            this.lblFone.Name = "lblFone";
-            this.lblFone.Size = new System.Drawing.Size(50, 19);
-            this.lblFone.TabIndex = 69;
-            this.lblFone.Text = "Fone ";
-            // 
-            // lblInfoControles
-            // 
-            this.lblInfoControles.AutoSize = true;
-            this.lblInfoControles.BackColor = System.Drawing.Color.Transparent;
-            this.lblInfoControles.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblInfoControles.ForeColor = System.Drawing.Color.Yellow;
-            this.lblInfoControles.Location = new System.Drawing.Point(130, 692);
-            this.lblInfoControles.Name = "lblInfoControles";
-            this.lblInfoControles.Size = new System.Drawing.Size(14, 19);
-            this.lblInfoControles.TabIndex = 107;
-            this.lblInfoControles.Text = "-";
-            this.lblInfoControles.Visible = false;
-            // 
-            // lblProfissionais_menu
-            // 
-            this.lblProfissionais_menu.AutoSize = true;
-            this.lblProfissionais_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblProfissionais_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProfissionais_menu.ForeColor = System.Drawing.Color.Yellow;
-            this.lblProfissionais_menu.Location = new System.Drawing.Point(862, 379);
-            this.lblProfissionais_menu.Name = "lblProfissionais_menu";
-            this.lblProfissionais_menu.Size = new System.Drawing.Size(136, 17);
-            this.lblProfissionais_menu.TabIndex = 106;
-            this.lblProfissionais_menu.Text = "Dados Profissionais";
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.voltar_final_32x32;
-            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(20, 684);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(33, 34);
-            this.btnVoltar.TabIndex = 97;
-            this.btnVoltar.Tag = "";
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.MouseLeave += new System.EventHandler(this.btnVoltar_MouseLeave);
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            this.btnVoltar.MouseEnter += new System.EventHandler(this.btnVoltar_MouseEnter);
-            // 
-            // lblDados_Menu
-            // 
-            this.lblDados_Menu.AutoSize = true;
-            this.lblDados_Menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblDados_Menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDados_Menu.ForeColor = System.Drawing.Color.White;
-            this.lblDados_Menu.Location = new System.Drawing.Point(877, 272);
-            this.lblDados_Menu.Name = "lblDados_Menu";
-            this.lblDados_Menu.Size = new System.Drawing.Size(110, 17);
-            this.lblDados_Menu.TabIndex = 104;
-            this.lblDados_Menu.Text = "Dados Pessoais";
-            this.lblDados_Menu.Visible = false;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.ok_32x32_tipo2_final;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(75, 684);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(36, 29);
-            this.btnSalvar.TabIndex = 98;
-            this.btnSalvar.Tag = "";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.MouseLeave += new System.EventHandler(this.btnSalvar_MouseLeave);
-            this.btnSalvar.MouseEnter += new System.EventHandler(this.btnSalvar_MouseEnter);
-            // 
-            // btnDadosProfissionais
-            // 
-            this.btnDadosProfissionais.BackColor = System.Drawing.Color.Transparent;
-            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71;
-            this.btnDadosProfissionais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDadosProfissionais.Enabled = false;
-            this.btnDadosProfissionais.FlatAppearance.BorderSize = 0;
-            this.btnDadosProfissionais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDadosProfissionais.Location = new System.Drawing.Point(894, 299);
-            this.btnDadosProfissionais.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDadosProfissionais.Name = "btnDadosProfissionais";
-            this.btnDadosProfissionais.Size = new System.Drawing.Size(64, 71);
-            this.btnDadosProfissionais.TabIndex = 103;
-            this.btnDadosProfissionais.Tag = "";
-            this.btnDadosProfissionais.UseVisualStyleBackColor = false;
-            this.btnDadosProfissionais.MouseLeave += new System.EventHandler(this.btnDadosProfissionais_MouseLeave);
-            this.btnDadosProfissionais.Click += new System.EventHandler(this.btnDadosProfissionais_Click);
-            this.btnDadosProfissionais.MouseEnter += new System.EventHandler(this.btnDadosProfissionais_MouseEnter);
-            // 
             // lblHelloUsuario
             // 
             this.lblHelloUsuario.AutoSize = true;
@@ -647,37 +500,6 @@
             this.btnDesconectar.UseVisualStyleBackColor = false;
             this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
-            // btnDadosPessoais
-            // 
-            this.btnDadosPessoais.AccessibleDescription = "";
-            this.btnDadosPessoais.BackColor = System.Drawing.Color.Transparent;
-            this.btnDadosPessoais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dados_71x62_disabled;
-            this.btnDadosPessoais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDadosPessoais.FlatAppearance.BorderSize = 0;
-            this.btnDadosPessoais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDadosPessoais.Location = new System.Drawing.Point(887, 203);
-            this.btnDadosPessoais.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDadosPessoais.Name = "btnDadosPessoais";
-            this.btnDadosPessoais.Size = new System.Drawing.Size(71, 62);
-            this.btnDadosPessoais.TabIndex = 101;
-            this.btnDadosPessoais.Tag = "";
-            this.btnDadosPessoais.UseVisualStyleBackColor = false;
-            this.btnDadosPessoais.MouseLeave += new System.EventHandler(this.btnDadosPessoais_MouseLeave);
-            this.btnDadosPessoais.Click += new System.EventHandler(this.btnDadosPessoais_Click);
-            this.btnDadosPessoais.MouseEnter += new System.EventHandler(this.btnDadosPessoais_MouseEnter);
-            // 
-            // lblAtivo
-            // 
-            this.lblAtivo.AutoSize = true;
-            this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
-            this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblAtivo.ForeColor = System.Drawing.Color.Green;
-            this.lblAtivo.Location = new System.Drawing.Point(394, 106);
-            this.lblAtivo.Name = "lblAtivo";
-            this.lblAtivo.Size = new System.Drawing.Size(49, 19);
-            this.lblAtivo.TabIndex = 129;
-            this.lblAtivo.Text = "Ativo";
-            // 
             // btnImprimir
             // 
             this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
@@ -691,7 +513,31 @@
             this.btnImprimir.TabIndex = 130;
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.MouseLeave += new System.EventHandler(this.btnImprimir_MouseLeave);
-            this.btnImprimir.MouseEnter += new System.EventHandler(this.btnImprimir_MouseEnter);
+            // 
+            // ucMenuInferior1
+            // 
+            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 684);
+            this.ucMenuInferior1.Name = "ucMenuInferior1";
+            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
+            this.ucMenuInferior1.TabIndex = 133;
+            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
+            // 
+            // ucMenuLateralFunc1
+            // 
+            this.ucMenuLateralFunc1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuLateralFunc1.Location = new System.Drawing.Point(865, 191);
+            this.ucMenuLateralFunc1.Name = "ucMenuLateralFunc1";
+            this.ucMenuLateralFunc1.Size = new System.Drawing.Size(150, 378);
+            this.ucMenuLateralFunc1.TabIndex = 132;
+            // 
+            // ucMenuImagemFunc1
+            // 
+            this.ucMenuImagemFunc1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuImagemFunc1.Location = new System.Drawing.Point(262, 7);
+            this.ucMenuImagemFunc1.Name = "ucMenuImagemFunc1";
+            this.ucMenuImagemFunc1.Size = new System.Drawing.Size(380, 178);
+            this.ucMenuImagemFunc1.TabIndex = 131;
             // 
             // telaFuncionarioDadosProfissionais
             // 
@@ -700,22 +546,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.ucMenuInferior1);
+            this.Controls.Add(this.ucMenuLateralFunc1);
+            this.Controls.Add(this.ucMenuImagemFunc1);
             this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.lblAtivo);
-            this.Controls.Add(this.lblInfoControles);
-            this.Controls.Add(this.lblProfissionais_menu);
-            this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.lblDados_Menu);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.btnDadosProfissionais);
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.btnDesconectar);
-            this.Controls.Add(this.btnDadosPessoais);
-            this.Controls.Add(this.lblFone);
-            this.Controls.Add(this.lblFuncao);
-            this.Controls.Add(this.lblNomeFuncionario);
             this.Controls.Add(this.gpbDadosProfissionais);
-            this.Controls.Add(this.pctImagem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -724,7 +561,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaFuncionarioDadosProfissionais_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.gpbDadosProfissionais.ResumeLayout(false);
             this.gpbDadosProfissionais.PerformLayout();
             this.ResumeLayout(false);
@@ -734,7 +570,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pctImagem;
         private System.Windows.Forms.GroupBox gpbDadosProfissionais;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox3;
@@ -744,9 +579,6 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblNomeFuncionario;
-        private System.Windows.Forms.Label lblFuncao;
-        private System.Windows.Forms.Label lblFone;
         private System.Windows.Forms.Label lblTituloEleitor;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblZona;
@@ -770,22 +602,17 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label lblFuncaoFuncionario;
         private System.Windows.Forms.ComboBox cmbFuncao;
-        private System.Windows.Forms.Label lblInfoControles;
-        private System.Windows.Forms.Label lblProfissionais_menu;
-        private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.Label lblDados_Menu;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnDadosProfissionais;
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.Button btnDesconectar;
-        private System.Windows.Forms.Button btnDadosPessoais;
         private System.Windows.Forms.Label lblCurso;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lbInstituicao;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label lblAtivo;
         private System.Windows.Forms.Button btnImprimir;
+        private GuiWindowsForms.User_Control.ucMenuImagemFunc ucMenuImagemFunc1;
+        private GuiWindowsForms.User_Control.ucMenuLateralFunc ucMenuLateralFunc1;
+        private ucMenuInferior ucMenuInferior1;
     }
 }

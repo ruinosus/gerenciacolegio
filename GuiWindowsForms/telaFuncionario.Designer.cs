@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaFuncionario));
-            this.btnAdicionarImagem = new System.Windows.Forms.Button();
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.lblEdificio = new System.Windows.Forms.Label();
             this.txtNomeEdificil = new System.Windows.Forms.TextBox();
@@ -71,39 +70,17 @@
             this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
             this.lblNascimento = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.lblInfoControles = new System.Windows.Forms.Label();
             this.lblProfissionais_menu = new System.Windows.Forms.Label();
             this.lblDados_Menu = new System.Windows.Forms.Label();
             this.btnDadosProfissionais = new System.Windows.Forms.Button();
             this.btnDadosPessoais = new System.Windows.Forms.Button();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnVoltar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.lblAtivo = new System.Windows.Forms.Label();
-            this.lblFone = new System.Windows.Forms.Label();
-            this.lblFuncao = new System.Windows.Forms.Label();
-            this.lblNomeFuncionario = new System.Windows.Forms.Label();
-            this.pctImagem = new System.Windows.Forms.PictureBox();
+            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
             this.gpbDadosPessoais.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnAdicionarImagem
-            // 
-            this.btnAdicionarImagem.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar_final_32x32;
-            this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
-            this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarImagem.Location = new System.Drawing.Point(290, 152);
-            this.btnAdicionarImagem.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAdicionarImagem.Name = "btnAdicionarImagem";
-            this.btnAdicionarImagem.Size = new System.Drawing.Size(34, 34);
-            this.btnAdicionarImagem.TabIndex = 38;
-            this.btnAdicionarImagem.Tag = "Adicionar Foto";
-            this.btnAdicionarImagem.UseVisualStyleBackColor = false;
             // 
             // gpbDadosPessoais
             // 
@@ -542,19 +519,6 @@
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
-            // lblInfoControles
-            // 
-            this.lblInfoControles.AutoSize = true;
-            this.lblInfoControles.BackColor = System.Drawing.Color.Transparent;
-            this.lblInfoControles.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblInfoControles.ForeColor = System.Drawing.Color.Yellow;
-            this.lblInfoControles.Location = new System.Drawing.Point(130, 692);
-            this.lblInfoControles.Name = "lblInfoControles";
-            this.lblInfoControles.Size = new System.Drawing.Size(14, 19);
-            this.lblInfoControles.TabIndex = 96;
-            this.lblInfoControles.Text = "-";
-            this.lblInfoControles.Visible = false;
-            // 
             // lblProfissionais_menu
             // 
             this.lblProfissionais_menu.AutoSize = true;
@@ -566,7 +530,6 @@
             this.lblProfissionais_menu.Size = new System.Drawing.Size(136, 17);
             this.lblProfissionais_menu.TabIndex = 95;
             this.lblProfissionais_menu.Text = "Dados Profissionais";
-            this.lblProfissionais_menu.Visible = false;
             // 
             // lblDados_Menu
             // 
@@ -644,41 +607,6 @@
             this.lblHelloUsuario.TabIndex = 86;
             this.lblHelloUsuario.Text = "Hello Usuário!";
             // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalvar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.ok_32x32_tipo2_final;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(75, 684);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(36, 29);
-            this.btnSalvar.TabIndex = 85;
-            this.btnSalvar.Tag = "";
-            this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.MouseLeave += new System.EventHandler(this.btnSalvar_MouseLeave);
-            this.btnSalvar.MouseEnter += new System.EventHandler(this.btnSalvar_MouseEnter);
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.btnVoltar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.voltar_final_32x32;
-            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(20, 684);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(33, 34);
-            this.btnVoltar.TabIndex = 84;
-            this.btnVoltar.Tag = "";
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.MouseLeave += new System.EventHandler(this.btnVoltar_MouseLeave);
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            this.btnVoltar.MouseEnter += new System.EventHandler(this.btnVoltar_MouseEnter);
-            // 
             // btnImprimir
             // 
             this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
@@ -691,65 +619,23 @@
             this.btnImprimir.Size = new System.Drawing.Size(50, 50);
             this.btnImprimir.TabIndex = 97;
             this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.MouseLeave += new System.EventHandler(this.btnImprimir_MouseLeave);
-            this.btnImprimir.MouseEnter += new System.EventHandler(this.btnImprimir_MouseEnter);
             // 
-            // lblAtivo
+            // ucMenuInferior1
             // 
-            this.lblAtivo.AutoSize = true;
-            this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
-            this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblAtivo.ForeColor = System.Drawing.Color.Green;
-            this.lblAtivo.Location = new System.Drawing.Point(394, 106);
-            this.lblAtivo.Name = "lblAtivo";
-            this.lblAtivo.Size = new System.Drawing.Size(49, 19);
-            this.lblAtivo.TabIndex = 134;
-            this.lblAtivo.Text = "Ativo";
+            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 684);
+            this.ucMenuInferior1.Name = "ucMenuInferior1";
+            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
+            this.ucMenuInferior1.TabIndex = 99;
+            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
             // 
-            // lblFone
+            // ucMenuImagemFunc1
             // 
-            this.lblFone.AutoSize = true;
-            this.lblFone.BackColor = System.Drawing.Color.Transparent;
-            this.lblFone.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblFone.ForeColor = System.Drawing.Color.Yellow;
-            this.lblFone.Location = new System.Drawing.Point(394, 74);
-            this.lblFone.Name = "lblFone";
-            this.lblFone.Size = new System.Drawing.Size(50, 19);
-            this.lblFone.TabIndex = 133;
-            this.lblFone.Text = "Fone ";
-            // 
-            // lblFuncao
-            // 
-            this.lblFuncao.AutoSize = true;
-            this.lblFuncao.BackColor = System.Drawing.Color.Transparent;
-            this.lblFuncao.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblFuncao.ForeColor = System.Drawing.Color.Yellow;
-            this.lblFuncao.Location = new System.Drawing.Point(394, 45);
-            this.lblFuncao.Name = "lblFuncao";
-            this.lblFuncao.Size = new System.Drawing.Size(63, 19);
-            this.lblFuncao.TabIndex = 132;
-            this.lblFuncao.Text = "Função";
-            // 
-            // lblNomeFuncionario
-            // 
-            this.lblNomeFuncionario.AutoSize = true;
-            this.lblNomeFuncionario.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeFuncionario.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblNomeFuncionario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblNomeFuncionario.Location = new System.Drawing.Point(394, 12);
-            this.lblNomeFuncionario.Name = "lblNomeFuncionario";
-            this.lblNomeFuncionario.Size = new System.Drawing.Size(169, 19);
-            this.lblNomeFuncionario.TabIndex = 131;
-            this.lblNomeFuncionario.Text = "Nome do Funcionário";
-            // 
-            // pctImagem
-            // 
-            this.pctImagem.BackColor = System.Drawing.Color.Transparent;
-            this.pctImagem.Location = new System.Drawing.Point(250, 12);
-            this.pctImagem.Name = "pctImagem";
-            this.pctImagem.Size = new System.Drawing.Size(127, 134);
-            this.pctImagem.TabIndex = 130;
-            this.pctImagem.TabStop = false;
+            this.ucMenuImagemFunc1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuImagemFunc1.Location = new System.Drawing.Point(262, 7);
+            this.ucMenuImagemFunc1.Name = "ucMenuImagemFunc1";
+            this.ucMenuImagemFunc1.Size = new System.Drawing.Size(380, 178);
+            this.ucMenuImagemFunc1.TabIndex = 98;
             // 
             // telaFuncionario
             // 
@@ -758,19 +644,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(1000, 722);
-            this.Controls.Add(this.lblAtivo);
-            this.Controls.Add(this.lblFone);
-            this.Controls.Add(this.lblFuncao);
-            this.Controls.Add(this.lblNomeFuncionario);
-            this.Controls.Add(this.pctImagem);
+            this.Controls.Add(this.ucMenuInferior1);
+            this.Controls.Add(this.ucMenuImagemFunc1);
             this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.gpbDadosPessoais);
             this.Controls.Add(this.lblProfissionais_menu);
-            this.Controls.Add(this.btnAdicionarImagem);
-            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblDados_Menu);
-            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnDadosProfissionais);
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.btnDesconectar);
@@ -785,7 +664,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaFuncionario_FormClosing);
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -793,7 +671,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnAdicionarImagem;
         private System.Windows.Forms.GroupBox gpbDadosPessoais;
         private System.Windows.Forms.TextBox txtFiliacaoPai;
         private System.Windows.Forms.Label lblPai;
@@ -819,15 +696,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblUfIdentidade;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lblInfoControles;
         private System.Windows.Forms.Label lblProfissionais_menu;
         private System.Windows.Forms.Label lblDados_Menu;
         private System.Windows.Forms.Button btnDadosProfissionais;
         private System.Windows.Forms.Button btnDadosPessoais;
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblHelloUsuario;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label lblEdificio;
         private System.Windows.Forms.TextBox txtNomeEdificil;
@@ -845,11 +719,8 @@
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblAtivo;
-        private System.Windows.Forms.Label lblFone;
-        private System.Windows.Forms.Label lblFuncao;
-        private System.Windows.Forms.Label lblNomeFuncionario;
-        private System.Windows.Forms.PictureBox pctImagem;
+        private GuiWindowsForms.User_Control.ucMenuImagemFunc ucMenuImagemFunc1;
+        private ucMenuInferior ucMenuInferior1;
 
     }
 }

@@ -99,76 +99,76 @@ namespace GuiWindowsForms
             }
         }
 
-        #region Controle dos textos e das ações dos botões de ação inferiores
+        //#region Controle dos textos e das ações dos botões de ação inferiores
 
-        /// <summary>
-        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///// <summary>
+        ///// Exibe o texto referente ao controle quando o mouse passa sobre ele
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
 
-        private void btnVoltar_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = true;
-            lblInfoControles.Text = "Voltar";
-        }
+        //private void btnVoltar_MouseEnter(object sender, EventArgs e)
+        //{
+        //    lblInfoControles.Visible = true;
+        //    lblInfoControles.Text = "Voltar";
+        //}
 
-        /// <summary>
-        /// Oculta o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///// <summary>
+        ///// Oculta o texto referente ao controle quando o mouse passa sobre ele
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
 
-        private void btnVoltar_MouseLeave(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = false;
-        }
+        //private void btnVoltar_MouseLeave(object sender, EventArgs e)
+        //{
+        //    lblInfoControles.Visible = false;
+        //}
 
-        /// <summary>
-        /// Oculta o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///// <summary>
+        ///// Oculta o texto referente ao controle quando o mouse passa sobre ele
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
 
-        private void btnSalvar_MouseLeave(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = false;
-        }
+        //private void btnSalvar_MouseLeave(object sender, EventArgs e)
+        //{
+        //    lblInfoControles.Visible = false;
+        //}
 
-        /// <summary>
-        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///// <summary>
+        ///// Exibe o texto referente ao controle quando o mouse passa sobre ele
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
 
-        private void btnSalvar_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = true;
-            lblInfoControles.Text = "Salvar Informações";
-        }
+        //private void btnSalvar_MouseEnter(object sender, EventArgs e)
+        //{
+        //    lblInfoControles.Visible = true;
+        //    lblInfoControles.Text = "Salvar Informações";
+        //}
 
-        /// <summary>
-        /// Retorna para tela anterior ocultando a atual e chamando a instância da última tela acessada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///// <summary>
+        ///// Retorna para tela anterior ocultando a atual e chamando a instância da última tela acessada
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
 
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+        //private void btnVoltar_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
 
-            if (Program.ultimaTela != 17)
-            {
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-            else
-            {
-                Program.ultimaTela = 6;
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-        }
+        //    if (Program.ultimaTela != 17)
+        //    {
+        //        Program.SelecionaForm(Program.ultimaTela);
+        //    }
+        //    else
+        //    {
+        //        Program.ultimaTela = 6;
+        //        Program.SelecionaForm(Program.ultimaTela);
+        //    }
+        //}
 
-        #endregion
+        //#endregion
 
         #region Controle das ações dos botões de navegação
 
@@ -218,17 +218,32 @@ namespace GuiWindowsForms
 
         #endregion
 
-        private void btnImprimir_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Text = "Abrir impressões.";
-            lblInfoControles.Visible = true;
-            this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50_hover;
-        }
+        //private void btnImprimir_MouseEnter(object sender, EventArgs e)
+        //{
+        //    lblInfoControles.Text = "Abrir impressões.";
+        //    lblInfoControles.Visible = true;
+        //    this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50_hover;
+        //}
 
-        private void btnImprimir_MouseLeave(object sender, EventArgs e)
+        //private void btnImprimir_MouseLeave(object sender, EventArgs e)
+        //{
+        //    lblInfoControles.Visible = false;
+        //    this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50;
+        //}
+
+        private void ucMenuInferior1_EventoVoltar()
         {
-            lblInfoControles.Visible = false;
-            this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50;
+            this.Hide();
+
+            if (Program.ultimaTela != 7)
+            {
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+            else
+            {
+                Program.ultimaTela = 6;
+                Program.SelecionaForm(Program.ultimaTela);
+            }
         }
     }
 }
