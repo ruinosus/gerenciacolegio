@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloResponsavelAluno.Repositorios;
 using Negocios.ModuloResponsavelAluno.Processos;
 using Negocios.ModuloResponsavelAluno.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloResponsavelAluno.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloResponsavelAluno.Processos
             this.responsavelAlunoRepositorio.Alterar(responsavelAluno);
         }
 
-        public List<ResponsavelAluno> Consultar(ResponsavelAluno responsavelAluno)
+        public List<ResponsavelAluno> Consultar(ResponsavelAluno responsavelAluno, TipoPesquisa tipoPesquisa)
         {
-            List<ResponsavelAluno> responsavelAlunoList = this.responsavelAlunoRepositorio.Consultar(responsavelAluno);           
+            List<ResponsavelAluno> responsavelAlunoList = this.responsavelAlunoRepositorio.Consultar(responsavelAluno,tipoPesquisa);           
 
             return responsavelAlunoList;
         }

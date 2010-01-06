@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloResponsavelAluno.Repositorios
 {
@@ -33,8 +34,9 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
         /// Método responsável por consultar Responsaveis do Aluno do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="responsavelAluno">Objeto do tipo responsavelAluno que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todos os Responsaveis do Aluno cadastrados.</returns>
-        List<ResponsavelAluno> Consultar(ResponsavelAluno responsavelAluno);
+        List<ResponsavelAluno> Consultar(ResponsavelAluno responsavelAluno, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todos os Responsaveis do Aluno do sistema.
