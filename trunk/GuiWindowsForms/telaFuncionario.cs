@@ -99,138 +99,6 @@ namespace GuiWindowsForms
             }
         }
 
-        //#region Controle dos textos e das ações dos botões de ação inferiores
-
-        ///// <summary>
-        ///// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-
-        //private void btnVoltar_MouseEnter(object sender, EventArgs e)
-        //{
-        //    lblInfoControles.Visible = true;
-        //    lblInfoControles.Text = "Voltar";
-        //}
-
-        ///// <summary>
-        ///// Oculta o texto referente ao controle quando o mouse passa sobre ele
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-
-        //private void btnVoltar_MouseLeave(object sender, EventArgs e)
-        //{
-        //    lblInfoControles.Visible = false;
-        //}
-
-        ///// <summary>
-        ///// Oculta o texto referente ao controle quando o mouse passa sobre ele
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-
-        //private void btnSalvar_MouseLeave(object sender, EventArgs e)
-        //{
-        //    lblInfoControles.Visible = false;
-        //}
-
-        ///// <summary>
-        ///// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-
-        //private void btnSalvar_MouseEnter(object sender, EventArgs e)
-        //{
-        //    lblInfoControles.Visible = true;
-        //    lblInfoControles.Text = "Salvar Informações";
-        //}
-
-        ///// <summary>
-        ///// Retorna para tela anterior ocultando a atual e chamando a instância da última tela acessada
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-
-        //private void btnVoltar_Click(object sender, EventArgs e)
-        //{
-        //    this.Hide();
-
-        //    if (Program.ultimaTela != 17)
-        //    {
-        //        Program.SelecionaForm(Program.ultimaTela);
-        //    }
-        //    else
-        //    {
-        //        Program.ultimaTela = 6;
-        //        Program.SelecionaForm(Program.ultimaTela);
-        //    }
-        //}
-
-        //#endregion
-
-        #region Controle das ações dos botões de navegação
-
-        private void btnDadosPessoais_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 17;
-            telaFuncionario telaafuncdados = telaFuncionario.getInstancia();
-            telaafuncdados.Show();
-        }
-
-        private void btnDadosProfissionais_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 17;
-            telaFuncionarioDadosProfissionais telaafuncprofissionais = telaFuncionarioDadosProfissionais.getInstancia();
-            telaafuncprofissionais.Show();
-        }
-
-        #endregion
-
-        #region Controle das mudanças de imagens e exibição das labels do menu de navegação
-
-        private void btnDadosPessoais_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnDadosPessoais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dados_71x62_hover;
-            lblDados_Menu.Visible = true;
-        }
-
-        private void btnDadosPessoais_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnDadosPessoais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dados_71x62;
-            lblDados_Menu.Visible = false;
-        }
-
-        private void btnDadosProfissionais_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71_disabled_h;
-            lblProfissionais_menu.Visible = true;
-        }
-
-        private void btnDadosProfissionais_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71_disabled;
-            lblProfissionais_menu.Visible = false;
-        }
-
-        #endregion
-
-        //private void btnImprimir_MouseEnter(object sender, EventArgs e)
-        //{
-        //    lblInfoControles.Text = "Abrir impressões.";
-        //    lblInfoControles.Visible = true;
-        //    this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50_hover;
-        //}
-
-        //private void btnImprimir_MouseLeave(object sender, EventArgs e)
-        //{
-        //    lblInfoControles.Visible = false;
-        //    this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50;
-        //}
-
         private void ucMenuInferior1_EventoVoltar()
         {
             this.Hide();
@@ -244,6 +112,27 @@ namespace GuiWindowsForms
                 Program.ultimaTela = 6;
                 Program.SelecionaForm(Program.ultimaTela);
             }
+        }
+
+        private void ucMenuLateralFunc1_EventoAbrirDadosProfissionais()
+        {
+            this.Hide();
+            Program.ultimaTela = 17;
+            telaFuncionarioDadosProfissionais telaafuncprofissionais = telaFuncionarioDadosProfissionais.getInstancia();
+            telaafuncprofissionais.Show();
+        }
+
+        private void ucMenuLateralFunc1_EventoAbrirDadosPessoais()
+        {
+            this.Hide();
+            Program.ultimaTela = 17;
+            telaFuncionario telaafuncdados = telaFuncionario.getInstancia();
+            telaafuncdados.Show();
+        }
+
+        private void ucMenuLateralFunc1_Load(object sender, EventArgs e)
+        {
+            ucMenuLateralFunc1.verificaTela(teladfunc);
         }
     }
 }

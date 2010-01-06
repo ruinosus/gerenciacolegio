@@ -52,12 +52,13 @@
             this.lblDados_Menu.AutoSize = true;
             this.lblDados_Menu.BackColor = System.Drawing.Color.Transparent;
             this.lblDados_Menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDados_Menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblDados_Menu.ForeColor = System.Drawing.Color.White;
             this.lblDados_Menu.Location = new System.Drawing.Point(24, 78);
             this.lblDados_Menu.Name = "lblDados_Menu";
             this.lblDados_Menu.Size = new System.Drawing.Size(110, 17);
             this.lblDados_Menu.TabIndex = 98;
             this.lblDados_Menu.Text = "Dados Pessoais";
+            this.lblDados_Menu.Visible = false;
             // 
             // btnDadosProfissionais
             // 
@@ -83,7 +84,6 @@
             this.btnDadosPessoais.BackColor = System.Drawing.Color.Transparent;
             this.btnDadosPessoais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dados_71x62;
             this.btnDadosPessoais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDadosPessoais.Enabled = false;
             this.btnDadosPessoais.FlatAppearance.BorderSize = 0;
             this.btnDadosPessoais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDadosPessoais.Location = new System.Drawing.Point(34, 9);

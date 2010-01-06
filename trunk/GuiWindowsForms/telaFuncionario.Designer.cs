@@ -70,15 +70,12 @@
             this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
             this.lblNascimento = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.lblProfissionais_menu = new System.Windows.Forms.Label();
-            this.lblDados_Menu = new System.Windows.Forms.Label();
-            this.btnDadosProfissionais = new System.Windows.Forms.Button();
-            this.btnDadosPessoais = new System.Windows.Forms.Button();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
+            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
             this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -519,68 +516,6 @@
             this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
-            // lblProfissionais_menu
-            // 
-            this.lblProfissionais_menu.AutoSize = true;
-            this.lblProfissionais_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblProfissionais_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblProfissionais_menu.ForeColor = System.Drawing.Color.White;
-            this.lblProfissionais_menu.Location = new System.Drawing.Point(862, 379);
-            this.lblProfissionais_menu.Name = "lblProfissionais_menu";
-            this.lblProfissionais_menu.Size = new System.Drawing.Size(136, 17);
-            this.lblProfissionais_menu.TabIndex = 95;
-            this.lblProfissionais_menu.Text = "Dados Profissionais";
-            // 
-            // lblDados_Menu
-            // 
-            this.lblDados_Menu.AutoSize = true;
-            this.lblDados_Menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblDados_Menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDados_Menu.ForeColor = System.Drawing.Color.Yellow;
-            this.lblDados_Menu.Location = new System.Drawing.Point(877, 272);
-            this.lblDados_Menu.Name = "lblDados_Menu";
-            this.lblDados_Menu.Size = new System.Drawing.Size(110, 17);
-            this.lblDados_Menu.TabIndex = 92;
-            this.lblDados_Menu.Text = "Dados Pessoais";
-            // 
-            // btnDadosProfissionais
-            // 
-            this.btnDadosProfissionais.BackColor = System.Drawing.Color.Transparent;
-            this.btnDadosProfissionais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_profissional_64x71_disabled;
-            this.btnDadosProfissionais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDadosProfissionais.FlatAppearance.BorderSize = 0;
-            this.btnDadosProfissionais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDadosProfissionais.Location = new System.Drawing.Point(894, 299);
-            this.btnDadosProfissionais.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDadosProfissionais.Name = "btnDadosProfissionais";
-            this.btnDadosProfissionais.Size = new System.Drawing.Size(64, 71);
-            this.btnDadosProfissionais.TabIndex = 91;
-            this.btnDadosProfissionais.Tag = "";
-            this.btnDadosProfissionais.UseVisualStyleBackColor = false;
-            this.btnDadosProfissionais.MouseLeave += new System.EventHandler(this.btnDadosProfissionais_MouseLeave);
-            this.btnDadosProfissionais.Click += new System.EventHandler(this.btnDadosProfissionais_Click);
-            this.btnDadosProfissionais.MouseEnter += new System.EventHandler(this.btnDadosProfissionais_MouseEnter);
-            // 
-            // btnDadosPessoais
-            // 
-            this.btnDadosPessoais.AccessibleDescription = "";
-            this.btnDadosPessoais.BackColor = System.Drawing.Color.Transparent;
-            this.btnDadosPessoais.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_dados_71x62;
-            this.btnDadosPessoais.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDadosPessoais.Enabled = false;
-            this.btnDadosPessoais.FlatAppearance.BorderSize = 0;
-            this.btnDadosPessoais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDadosPessoais.Location = new System.Drawing.Point(887, 203);
-            this.btnDadosPessoais.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDadosPessoais.Name = "btnDadosPessoais";
-            this.btnDadosPessoais.Size = new System.Drawing.Size(71, 62);
-            this.btnDadosPessoais.TabIndex = 88;
-            this.btnDadosPessoais.Tag = "";
-            this.btnDadosPessoais.UseVisualStyleBackColor = false;
-            this.btnDadosPessoais.MouseLeave += new System.EventHandler(this.btnDadosPessoais_MouseLeave);
-            this.btnDadosPessoais.Click += new System.EventHandler(this.btnDadosPessoais_Click);
-            this.btnDadosPessoais.MouseEnter += new System.EventHandler(this.btnDadosPessoais_MouseEnter);
-            // 
             // btnDesconectar
             // 
             this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
@@ -620,15 +555,6 @@
             this.btnImprimir.TabIndex = 97;
             this.btnImprimir.UseVisualStyleBackColor = false;
             // 
-            // ucMenuInferior1
-            // 
-            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 684);
-            this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
-            this.ucMenuInferior1.TabIndex = 99;
-            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
-            // 
             // ucMenuImagemFunc1
             // 
             this.ucMenuImagemFunc1.BackColor = System.Drawing.Color.Transparent;
@@ -637,6 +563,26 @@
             this.ucMenuImagemFunc1.Size = new System.Drawing.Size(380, 178);
             this.ucMenuImagemFunc1.TabIndex = 98;
             // 
+            // ucMenuInferior1
+            // 
+            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 676);
+            this.ucMenuInferior1.Name = "ucMenuInferior1";
+            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 41);
+            this.ucMenuInferior1.TabIndex = 99;
+            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
+            // 
+            // ucMenuLateralFunc1
+            // 
+            this.ucMenuLateralFunc1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuLateralFunc1.Location = new System.Drawing.Point(853, 194);
+            this.ucMenuLateralFunc1.Name = "ucMenuLateralFunc1";
+            this.ucMenuLateralFunc1.Size = new System.Drawing.Size(150, 378);
+            this.ucMenuLateralFunc1.TabIndex = 100;
+            this.ucMenuLateralFunc1.EventoAbrirDadosPessoais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosPessoais(this.ucMenuLateralFunc1_EventoAbrirDadosPessoais);
+            this.ucMenuLateralFunc1.Load += new System.EventHandler(this.ucMenuLateralFunc1_Load);
+            this.ucMenuLateralFunc1.EventoAbrirDadosProfissionais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosProfissionais(this.ucMenuLateralFunc1_EventoAbrirDadosProfissionais);
+            // 
             // telaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,16 +590,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(1000, 722);
-            this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.ucMenuImagemFunc1);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.gpbDadosPessoais);
-            this.Controls.Add(this.lblProfissionais_menu);
-            this.Controls.Add(this.lblDados_Menu);
-            this.Controls.Add(this.btnDadosProfissionais);
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.btnDesconectar);
-            this.Controls.Add(this.btnDadosPessoais);
+            this.Controls.Add(this.ucMenuInferior1);
+            this.Controls.Add(this.ucMenuLateralFunc1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -696,10 +639,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblUfIdentidade;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lblProfissionais_menu;
-        private System.Windows.Forms.Label lblDados_Menu;
-        private System.Windows.Forms.Button btnDadosProfissionais;
-        private System.Windows.Forms.Button btnDadosPessoais;
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.Button btnImprimir;
@@ -721,6 +660,7 @@
         private System.Windows.Forms.Label label3;
         private GuiWindowsForms.User_Control.ucMenuImagemFunc ucMenuImagemFunc1;
         private ucMenuInferior ucMenuInferior1;
+        private GuiWindowsForms.User_Control.ucMenuLateralFunc ucMenuLateralFunc1;
 
     }
 }

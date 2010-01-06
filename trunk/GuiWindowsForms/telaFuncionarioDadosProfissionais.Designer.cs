@@ -71,8 +71,8 @@
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
             this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
+            this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
             this.gpbDadosProfissionais.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -523,14 +523,6 @@
             this.ucMenuInferior1.TabIndex = 133;
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
             // 
-            // ucMenuLateralFunc1
-            // 
-            this.ucMenuLateralFunc1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuLateralFunc1.Location = new System.Drawing.Point(865, 191);
-            this.ucMenuLateralFunc1.Name = "ucMenuLateralFunc1";
-            this.ucMenuLateralFunc1.Size = new System.Drawing.Size(150, 378);
-            this.ucMenuLateralFunc1.TabIndex = 132;
-            // 
             // ucMenuImagemFunc1
             // 
             this.ucMenuImagemFunc1.BackColor = System.Drawing.Color.Transparent;
@@ -538,6 +530,17 @@
             this.ucMenuImagemFunc1.Name = "ucMenuImagemFunc1";
             this.ucMenuImagemFunc1.Size = new System.Drawing.Size(380, 178);
             this.ucMenuImagemFunc1.TabIndex = 131;
+            // 
+            // ucMenuLateralFunc1
+            // 
+            this.ucMenuLateralFunc1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuLateralFunc1.Location = new System.Drawing.Point(853, 194);
+            this.ucMenuLateralFunc1.Name = "ucMenuLateralFunc1";
+            this.ucMenuLateralFunc1.Size = new System.Drawing.Size(150, 378);
+            this.ucMenuLateralFunc1.TabIndex = 134;
+            this.ucMenuLateralFunc1.EventoAbrirDadosPessoais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosPessoais(this.ucMenuLateralFunc1_EventoAbrirDadosPessoais);
+            this.ucMenuLateralFunc1.Load += new System.EventHandler(this.ucMenuLateralFunc1_Load);
+            this.ucMenuLateralFunc1.EventoAbrirDadosProfissionais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosProfissionais(this.ucMenuLateralFunc1_EventoAbrirDadosProfissionais);
             // 
             // telaFuncionarioDadosProfissionais
             // 
@@ -547,12 +550,12 @@
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(1000, 722);
             this.Controls.Add(this.ucMenuInferior1);
-            this.Controls.Add(this.ucMenuLateralFunc1);
             this.Controls.Add(this.ucMenuImagemFunc1);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.gpbDadosProfissionais);
+            this.Controls.Add(this.ucMenuLateralFunc1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -612,7 +615,7 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Button btnImprimir;
         private GuiWindowsForms.User_Control.ucMenuImagemFunc ucMenuImagemFunc1;
-        private GuiWindowsForms.User_Control.ucMenuLateralFunc ucMenuLateralFunc1;
         private ucMenuInferior ucMenuInferior1;
+        private GuiWindowsForms.User_Control.ucMenuLateralFunc ucMenuLateralFunc1;
     }
 }
