@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoResponsavel));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.lblEdificio = new System.Windows.Forms.Label();
@@ -67,10 +68,12 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.ucAluno1 = new GuiWindowsForms.ucMenuInferior();
             this.ucMenuSuper = new GuiWindowsForms.uMenuImagem();
             this.gpbDadosPessoais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbDadosPessoais
@@ -267,8 +270,9 @@
             this.cmbUf.Location = new System.Drawing.Point(398, 306);
             this.cmbUf.MaxLength = 2;
             this.cmbUf.Name = "cmbUf";
-            this.cmbUf.Size = new System.Drawing.Size(40, 24);
+            this.cmbUf.Size = new System.Drawing.Size(52, 24);
             this.cmbUf.TabIndex = 23;
+            this.cmbUf.SelectedIndexChanged += new System.EventHandler(this.cmbUf_SelectedIndexChanged);
             // 
             // txtComplemento
             // 
@@ -512,6 +516,10 @@
             this.lblHelloUsuario.TabIndex = 46;
             this.lblHelloUsuario.Text = "Hello Usuário!";
             // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
             // uMenuLateral1
             // 
             this.uMenuLateral1.BackColor = System.Drawing.Color.Transparent;
@@ -534,6 +542,7 @@
             this.ucAluno1.Name = "ucAluno1";
             this.ucAluno1.Size = new System.Drawing.Size(404, 43);
             this.ucAluno1.TabIndex = 131;
+            this.ucAluno1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucAluno1_EventoCadastrar);
             this.ucAluno1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
             // ucMenuSuper
@@ -565,9 +574,11 @@
             this.Name = "telaAlunoResponsavel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.telaAlunoResponsavel_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoResponsavel_FormClosing);
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -616,5 +627,6 @@
         private uMenuImagem ucMenuSuper;
         private ucMenuInferior ucAluno1;
         private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
     }
 }
