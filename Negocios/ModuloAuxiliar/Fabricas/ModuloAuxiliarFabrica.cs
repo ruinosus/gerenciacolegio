@@ -34,7 +34,10 @@ namespace Negocios.ModuloAuxiliar.Fabricas
         /// </summary>
         public static ICidadeEstadoRegiaoRepositorio ICidadeEstadoRegiaoRepositorioInstance
         {
-            get { return new CidadeEstadoRegiaoRepositorio(); }
+            get {
+                iCidadeEstadoRegiaoRepositorioInstance = new CidadeEstadoRegiaoRepositorio();
+                return iCidadeEstadoRegiaoRepositorioInstance;
+            }
         } 
         #endregion
 

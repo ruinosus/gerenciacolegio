@@ -21,7 +21,11 @@ namespace Negocios.ModuloPostagem.Fabricas
         /// </summary>
         public static IPostagemRepositorio IPostagemInstance
         {
-            get { return new PostagemRepositorio(); }
+            get
+            {
+                iPostagemRepositorioInstance = new PostagemRepositorio();
+                return iPostagemRepositorioInstance;
+            }
 
         }
         #endregion

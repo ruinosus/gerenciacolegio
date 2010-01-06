@@ -21,7 +21,11 @@ namespace Negocios.ModuloComentario.Fabricas
         /// </summary>
         public static IComentarioRepositorio IComentarioInstance
         {
-            get { return new ComentarioRepositorio(); }
+            get
+            {
+                iComentarioRepositorioInstance = new ComentarioRepositorio();
+                return iComentarioRepositorioInstance;
+            }
 
         }
         #endregion

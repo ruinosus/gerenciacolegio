@@ -32,7 +32,7 @@ namespace Negocios.ModuloBoletoAtividade.Repositorios
         /// <summary>
         /// Método responsável por consultar boletoAtividades do sistema de acordo com os parametros informados.
         /// </summary>
-        /// <param name="boletoAtividade">Objeto do tipo turma que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="boletoAtividade">Objeto do tipo boletoAtividade que irá ser utilizado como parametro de pesquisa.</param>
         /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todas as boletoAtividades cadastradas.</returns>
         List<BoletoAtividade> Consultar(BoletoAtividade boletoAtividade, TipoPesquisa tipoPesquisa);

@@ -20,7 +20,7 @@ namespace Negocios.ModuloControleAcesso.Fabricas
     {
         #region Atributos
         private static IUsuarioSistemaRepositorio iUsuarioSistemaRepositorioInstance;
-        
+
         #endregion
 
         #region Propriedades
@@ -29,9 +29,13 @@ namespace Negocios.ModuloControleAcesso.Fabricas
         /// </summary>
         public static IUsuarioSistemaRepositorio IUsuarioSistemaRepositorioInstance
         {
-            get { return new UsuarioSistemaRepositorio(); }
+            get
+            {
+                iUsuarioSistemaRepositorioInstance = new UsuarioSistemaRepositorio();
+                return iUsuarioSistemaRepositorioInstance;
+            }
 
-        } 
+        }
         #endregion
     }
 }

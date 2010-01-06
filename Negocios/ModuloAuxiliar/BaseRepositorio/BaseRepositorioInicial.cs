@@ -251,7 +251,7 @@ namespace Negocios.ModuloAuxiliar.BaseRepositorio
                     sqlDataReader = sqlCommand.ExecuteReader();
                 return sqlDataReader;
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 return sqlDataReader;
             }
