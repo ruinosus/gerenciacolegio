@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloContasAPagar.Repositorios
 {
@@ -13,27 +14,28 @@ namespace Negocios.ModuloContasAPagar.Repositorios
         /// <summary>
         /// Método responsável por incluir uma contasAPagar no sistema.
         /// </summary>
-        /// <param name="turma">Objeto do tipo contasAPagar a ser incluido.</param>
+        /// <param name="contasAPagar">Objeto do tipo contasAPagar a ser incluido.</param>
         void Incluir(ContasAPagar contasAPagar);
 
         /// <summary>
         /// Método responsável por excluir uma contasAPagar do sistema.
         /// </summary>
-        /// <param name="turma">Objeto do tipo contasAPagar a ser excluido.</param>
+        /// <param name="contasAPagar">Objeto do tipo contasAPagar a ser excluido.</param>
         void Excluir(ContasAPagar contasAPagar);
 
         /// <summary>
         /// Método reponsável por alterar uma contasAPagar do sistema.
         /// </summary>
-        /// <param name="turma">Objeto do tipo contasAPagar a ser alterado.</param>
+        /// <param name="contasAPagar">Objeto do tipo contasAPagar a ser alterado.</param>
         void Alterar(ContasAPagar contasAPagar);
 
         /// <summary>
         /// Método responsável por consultar contasAPagars do sistema de acordo com os parametros informados.
         /// </summary>
-        /// <param name="turma">Objeto do tipo turma que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="contasAPagar">Objeto do tipo turma que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todas as contasAPagars cadastradas.</returns>
-        List<ContasAPagar> Consultar(ContasAPagar contasAPagar);
+        List<ContasAPagar> Consultar(ContasAPagar contasAPagar, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todas as contasAPagars do sistema.

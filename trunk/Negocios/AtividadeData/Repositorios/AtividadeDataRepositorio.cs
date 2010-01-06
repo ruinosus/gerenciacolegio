@@ -97,7 +97,7 @@ namespace Negocios.ModuloAtividadeData.Repositorios
                     {
                         if (atividadeData.ID != 0)
                         {
-                            resultado.AddRange((from ad in db.AtividadeData
+                            resultado.AddRange((from ad in Consultar()
                                                 where
                                                 ad.ID == atividadeData.ID
                                                 select ad).ToList());
@@ -106,7 +106,7 @@ namespace Negocios.ModuloAtividadeData.Repositorios
 
                         if (atividadeData.AtividadeID.HasValue && atividadeData.AtividadeID.Value != 0)
                         {
-                            resultado.AddRange((from ad in db.AtividadeData
+                            resultado.AddRange((from ad in Consultar()
                                                 where
                                                 ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeData.AtividadeID.Value
                                                 select ad).ToList());
@@ -116,7 +116,7 @@ namespace Negocios.ModuloAtividadeData.Repositorios
 
                         if (atividadeData.DiaSemana.HasValue && atividadeData.DiaSemana.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ad in db.AtividadeData
+                            resultado.AddRange((from ad in Consultar()
                                                 where
                                                 ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeData.DiaSemana.Value
                                                 select ad).ToList());
@@ -125,7 +125,7 @@ namespace Negocios.ModuloAtividadeData.Repositorios
 
                         if (atividadeData.HoraFim.HasValue && atividadeData.HoraFim.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ad in db.AtividadeData
+                            resultado.AddRange((from ad in Consultar()
                                                 where
                                                 ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeData.HoraFim.Value
                                                 select ad).ToList());
@@ -134,7 +134,7 @@ namespace Negocios.ModuloAtividadeData.Repositorios
 
                         if (atividadeData.HoraInicio.HasValue && atividadeData.HoraInicio.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ad in db.AtividadeData
+                            resultado.AddRange((from ad in Consultar()
                                                 where
                                                 ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeData.HoraInicio.Value
                                                 select ad).ToList());
@@ -143,7 +143,7 @@ namespace Negocios.ModuloAtividadeData.Repositorios
 
                         if (atividadeData.Status.HasValue && atividadeData.Status.Value != default(byte))
                         {
-                            resultado.AddRange((from ad in db.AtividadeData
+                            resultado.AddRange((from ad in Consultar()
                                                 where
                                                 ad.Status.HasValue && ad.Status.Value == atividadeData.Status.Value
                                                 select ad).ToList());

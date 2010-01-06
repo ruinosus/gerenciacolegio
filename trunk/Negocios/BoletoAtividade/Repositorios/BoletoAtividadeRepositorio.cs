@@ -30,129 +30,184 @@ namespace Negocios.ModuloBoletoAtividade.Repositorios
 
             switch (tipoPesquisa)
             {
-                //#region Case E
-                //case TipoPesquisa.E:
-                //    {
+                #region Case E
+                case TipoPesquisa.E:
+                    {
 
-                //        if (boletoAtividade.ID != 0)
-                //        {
-                //            resultado.AddRange((from ad in resultado
-                //                                where
-                //                                ad.ID == boletoAtividade.ID
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
+                        if (boletoAtividade.ID != 0)
+                        {
+                            resultado.AddRange((from ba in resultado
+                                                where
+                                                ba.ID == boletoAtividade.ID
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
 
-                //        if (boletoAtividade.DataEmissao.HasValue && boletoAtividade.DataEmissao.Value != default(DateTime))
-                //        {
-                //            resultado.AddRange((from ad in resultado
-                //                                where
-                //                                ad.DataEmissao.HasValue && ad.DataEmissao.Value == boletoAtividade.DataEmissao.Value
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
-
-
-                //        if (boletoAtividade.DiaSemana.HasValue && boletoAtividade.DiaSemana.Value != default(DateTime))
-                //        {
-                //            resultado.AddRange((from ad in resultado
-                //                                where
-                //                                ad.DiaSemana.HasValue && ad.DiaSemana.Value == boletoAtividade.DiaSemana.Value
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
-
-                //        if (boletoAtividade.HoraFim.HasValue && boletoAtividade.HoraFim.Value != default(DateTime))
-                //        {
-                //            resultado.AddRange((from ad in resultado
-                //                                where
-                //                                ad.HoraFim.HasValue && ad.HoraFim.Value == boletoAtividade.HoraFim.Value
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
-
-                //        if (boletoAtividade.HoraInicio.HasValue && boletoAtividade.HoraInicio.Value != default(DateTime))
-                //        {
-                //            resultado.AddRange((from ad in resultado
-                //                                where
-                //                                ad.HoraInicio.HasValue && ad.HoraInicio.Value == boletoAtividade.HoraInicio.Value
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
-
-                //        if (boletoAtividade.Status.HasValue && boletoAtividade.Status.Value != default(byte))
-                //        {
-                //            resultado.AddRange((from ad in resultado
-                //                                where
-                //                                ad.Status.HasValue && ad.Status.Value == boletoAtividade.Status.Value
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
-
-                //        break;
-                //    }
-                //#endregion
-                //#region Case Ou
-                //case TipoPesquisa.Ou:
-                //    {
-                //        if (atividadeData.ID != 0)
-                //        {
-                //            resultado.AddRange((from ad in db.AtividadeData
-                //                                where
-                //                                ad.ID == atividadeData.ID
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
-
-                //        if (atividadeData.AtividadeID.HasValue && atividadeData.AtividadeID.Value != 0)
-                //        {
-                //            resultado.AddRange((from ad in db.AtividadeData
-                //                                where
-                //                                ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeData.AtividadeID.Value
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
+                        if (boletoAtividade.DataEmissao != default(DateTime))
+                        {
+                            resultado.AddRange((from ba in resultado
+                                                where
+                                                ba.DataEmissao == boletoAtividade.DataEmissao
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
 
 
-                //        if (atividadeData.DiaSemana.HasValue && atividadeData.DiaSemana.Value != default(DateTime))
-                //        {
-                //            resultado.AddRange((from ad in db.AtividadeData
-                //                                where
-                //                                ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeData.DiaSemana.Value
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
+                        if (boletoAtividade.DataPagamento.HasValue && boletoAtividade.DataPagamento.Value != default(DateTime))
+                        {
+                            resultado.AddRange((from ba in resultado
+                                                where
+                                                ba.DataPagamento.HasValue && ba.DataPagamento.Value == boletoAtividade.DataPagamento.Value
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
 
-                //        if (atividadeData.HoraFim.HasValue && atividadeData.HoraFim.Value != default(DateTime))
-                //        {
-                //            resultado.AddRange((from ad in db.AtividadeData
-                //                                where
-                //                                ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeData.HoraFim.Value
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
+                        if (boletoAtividade.DataVencimento != default(DateTime))
+                        {
+                            resultado.AddRange((from ba in resultado
+                                                where
+                                                ba.DataVencimento == boletoAtividade.DataVencimento
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
 
-                //        if (atividadeData.HoraInicio.HasValue && atividadeData.HoraInicio.Value != default(DateTime))
-                //        {
-                //            resultado.AddRange((from ad in db.AtividadeData
-                //                                where
-                //                                ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeData.HoraInicio.Value
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
+                        if (boletoAtividade.Desconto.HasValue)
+                        {
+                            resultado.AddRange((from ba in resultado
+                                                where
+                                                ba.Desconto.HasValue && ba.Desconto.Value == boletoAtividade.Desconto.Value
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
 
-                //        if (atividadeData.Status.HasValue && atividadeData.Status.Value != default(byte))
-                //        {
-                //            resultado.AddRange((from ad in db.AtividadeData
-                //                                where
-                //                                ad.Status.HasValue && ad.Status.Value == atividadeData.Status.Value
-                //                                select ad).ToList());
-                //            resultado = resultado.Distinct().ToList();
-                //        }
+                        if (string.IsNullOrEmpty(boletoAtividade.Descricao))
+                        {
+                            resultado.AddRange((from ba in resultado
+                                                where
+                                                ba.Descricao.Contains(boletoAtividade.Descricao)
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
 
-                //        break;
-                //    }
-                //#endregion
+                        if (boletoAtividade.Multa.HasValue)
+                        {
+                            resultado.AddRange((from ba in resultado
+                                                where
+                                                ba.Multa.HasValue && ba.Multa.Value == boletoAtividade.Multa.Value
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (boletoAtividade.Parcela.HasValue)
+                        {
+                            resultado.AddRange((from ba in resultado
+                                                where
+                                                ba.Parcela.HasValue && ba.Parcela.Value == boletoAtividade.Parcela.Value
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (boletoAtividade.Status.HasValue && boletoAtividade.Status.Value != default(byte))
+                        {
+                            resultado.AddRange((from ba in resultado
+                                                where
+                                                ba.Status.HasValue && ba.Status.Value == boletoAtividade.Status.Value
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        break;
+                    }
+                #endregion
+                #region Case Ou
+                case TipoPesquisa.Ou:
+                    {
+
+                        if (boletoAtividade.ID != 0)
+                        {
+                            resultado.AddRange((from ba in Consultar()
+                                                where
+                                                ba.ID == boletoAtividade.ID
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (boletoAtividade.DataEmissao != default(DateTime))
+                        {
+                            resultado.AddRange((from ba in Consultar()
+                                                where
+                                                ba.DataEmissao == boletoAtividade.DataEmissao
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+
+                        if (boletoAtividade.DataPagamento.HasValue && boletoAtividade.DataPagamento.Value != default(DateTime))
+                        {
+                            resultado.AddRange((from ba in Consultar()
+                                                where
+                                                ba.DataPagamento.HasValue && ba.DataPagamento.Value == boletoAtividade.DataPagamento.Value
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (boletoAtividade.DataVencimento != default(DateTime))
+                        {
+                            resultado.AddRange((from ba in Consultar()
+                                                where
+                                                ba.DataVencimento == boletoAtividade.DataVencimento
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (boletoAtividade.Desconto.HasValue)
+                        {
+                            resultado.AddRange((from ba in Consultar()
+                                                where
+                                                ba.Desconto.HasValue && ba.Desconto.Value == boletoAtividade.Desconto.Value
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (string.IsNullOrEmpty(boletoAtividade.Descricao))
+                        {
+                            resultado.AddRange((from ba in Consultar()
+                                                where
+                                                ba.Descricao.Contains(boletoAtividade.Descricao)
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (boletoAtividade.Multa.HasValue)
+                        {
+                            resultado.AddRange((from ba in Consultar()
+                                                where
+                                                ba.Multa.HasValue && ba.Multa.Value == boletoAtividade.Multa.Value
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (boletoAtividade.Parcela.HasValue)
+                        {
+                            resultado.AddRange((from ba in Consultar()
+                                                where
+                                                ba.Parcela.HasValue && ba.Parcela.Value == boletoAtividade.Parcela.Value
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (boletoAtividade.Status.HasValue && boletoAtividade.Status.Value != default(byte))
+                        {
+                            resultado.AddRange((from ba in Consultar()
+                                                where
+                                                ba.Status.HasValue && ba.Status.Value == boletoAtividade.Status.Value
+                                                select ba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        break;
+                    }
+                #endregion
                 default:
                     break;
             }
@@ -160,7 +215,7 @@ namespace Negocios.ModuloBoletoAtividade.Repositorios
             return resultado;
         }
 
-        public void Incluir(BoletoAtividade boletoAtividade)         
+        public void Incluir(BoletoAtividade boletoAtividade)
         {
             try
             {
@@ -177,7 +232,18 @@ namespace Negocios.ModuloBoletoAtividade.Repositorios
         {
             try
             {
-                db.BoletoAtividade.DeleteOnSubmit(boletoAtividade);
+                BoletoAtividade boletoAtividadeAux = new BoletoAtividade();
+                boletoAtividadeAux.ID = boletoAtividade.ID;
+
+                List<BoletoAtividade> resultado = this.Consultar(boletoAtividadeAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new BoletoAtividadeNaoExcluidaExcecao();
+
+                boletoAtividadeAux = resultado[0];
+
+                db.BoletoAtividade.DeleteOnSubmit(boletoAtividadeAux);
+               
             }
             catch (Exception)
             {
@@ -190,7 +256,28 @@ namespace Negocios.ModuloBoletoAtividade.Repositorios
         {
             try
             {
-                db.BoletoAtividade.InsertOnSubmit(boletoAtividade);
+                BoletoAtividade boletoAtividadeAux = new BoletoAtividade();
+                boletoAtividadeAux.ID = boletoAtividade.ID;
+
+                List<BoletoAtividade> resultado = this.Consultar(boletoAtividadeAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new BoletoAtividadeNaoAlteradaExcecao();
+
+                boletoAtividadeAux = resultado[0];
+
+                boletoAtividadeAux.DataEmissao = boletoAtividade.DataEmissao;
+                boletoAtividadeAux.DataPagamento = boletoAtividade.DataPagamento;
+                boletoAtividadeAux.DataVencimento = boletoAtividade.DataVencimento;
+                boletoAtividadeAux.Desconto = boletoAtividade.Desconto;
+                boletoAtividadeAux.Descricao = boletoAtividade.Descricao;
+                boletoAtividadeAux.Matricula = boletoAtividade.Matricula;
+                boletoAtividadeAux.MatriculaID= boletoAtividade.MatriculaID;
+                boletoAtividadeAux.Multa = boletoAtividade.Multa;
+                boletoAtividadeAux.Parcela = boletoAtividade.Parcela;
+                boletoAtividadeAux.Status = boletoAtividade.Status;
+
+                Confirmar();
             }
             catch (Exception)
             {

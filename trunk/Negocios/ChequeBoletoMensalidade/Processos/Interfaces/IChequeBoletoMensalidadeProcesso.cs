@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloChequeBoletoMensalidade.Processos
 {
@@ -32,18 +33,19 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Processos
         /// Método responsável por consultar chequeBoletoMensalidades do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="chequeBoletoMensalidade">Objeto do tipo chequeBoletoMensalidade que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todas as chequeBoletoMensalidades cadastradas.</returns>
-        List<ChequeBoletoMensalidade> Consultar(ChequeBoletoMensalidade chequeBoletoMensalidade);
+        List<ChequeBoletoMensalidade> Consultar(ChequeBoletoMensalidade chequeBoletoMensalidade, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todas as chequeBoletoMensalidades do sistema.
         /// </summary>
         /// <returns>Lista contendo todas as chequeBoletoMensalidades cadastradas.</returns>
         List<ChequeBoletoMensalidade> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }

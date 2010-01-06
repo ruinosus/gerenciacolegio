@@ -6,6 +6,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloBoletoMensalidade.Repositorios;
 using Negocios.ModuloBoletoMensalidade.Processos;
 using Negocios.ModuloBoletoMensalidade.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloBoletoMensalidade.Processos
 {
@@ -45,9 +46,9 @@ namespace Negocios.ModuloBoletoMensalidade.Processos
             this.boletoMensalidadeRepositorio.Alterar(boletoMensalidade);
         }
 
-        public List<BoletoMensalidade> Consultar(BoletoMensalidade boletoMensalidade)
+        public List<BoletoMensalidade> Consultar(BoletoMensalidade boletoMensalidade, TipoPesquisa tipoPesquisa)
         {
-            List<BoletoMensalidade> boletoMensalidadeList = this.boletoMensalidadeRepositorio.Consultar(boletoMensalidade);           
+            List<BoletoMensalidade> boletoMensalidadeList = this.boletoMensalidadeRepositorio.Consultar(boletoMensalidade, tipoPesquisa);           
 
             return boletoMensalidadeList;
         }

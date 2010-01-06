@@ -6,6 +6,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloContasAPagar.Repositorios;
 using Negocios.ModuloContasAPagar.Processos;
 using Negocios.ModuloContasAPagar.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloContasAPagar.Processos
 {
@@ -45,9 +46,9 @@ namespace Negocios.ModuloContasAPagar.Processos
             this.contasAPagarRepositorio.Alterar(contasAPagar);
         }
 
-        public List<ContasAPagar> Consultar(ContasAPagar contasAPagar)
+        public List<ContasAPagar> Consultar(ContasAPagar contasAPagar, TipoPesquisa tipoPesquisa)
         {
-            List<ContasAPagar> contasAPagarList = this.contasAPagarRepositorio.Consultar(contasAPagar);           
+            List<ContasAPagar> contasAPagarList = this.contasAPagarRepositorio.Consultar(contasAPagar,tipoPesquisa);           
 
             return contasAPagarList;
         }

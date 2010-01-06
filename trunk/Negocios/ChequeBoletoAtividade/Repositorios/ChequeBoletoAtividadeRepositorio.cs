@@ -5,6 +5,7 @@ using System.Web;
 using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloChequeBoletoAtividade.Excecoes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
 {
@@ -23,10 +24,66 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
             return db.ChequeBoletoAtividade.ToList();
         }
 
-        public List<ChequeBoletoAtividade> Consultar(ChequeBoletoAtividade chequeBoletoAtividade)
+        public List<ChequeBoletoAtividade> Consultar(ChequeBoletoAtividade chequeBoletoAtividade, TipoPesquisa tipoPesquisa)
         {
-           // return db.ChequeBoletoAtividades.SingleOrDefault(d => d.Id == id);
-			return db.ChequeBoletoAtividade.ToList();
+            List<ChequeBoletoAtividade> resultado = Consultar();
+
+            switch (tipoPesquisa)
+            {
+                #region Case E
+                case TipoPesquisa.E:
+                    {
+                        if (chequeBoletoAtividade.BoletoAtividadeID != 0)
+                        {
+                            resultado.AddRange((from cba in resultado
+                                                where
+                                                cba.BoletoAtividadeID == chequeBoletoAtividade.BoletoAtividadeID
+                                                select cba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (chequeBoletoAtividade.ChequeID != 0)
+                        {
+                            resultado.AddRange((from cba in resultado
+                                                where
+                                                cba.ChequeID == chequeBoletoAtividade.ChequeID
+                                                select cba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        break;
+                    } 
+                #endregion
+                #region Case Ou
+                case TipoPesquisa.Ou:
+                    {
+                        if (chequeBoletoAtividade.BoletoAtividadeID != 0)
+                        {
+                            resultado.AddRange((from cba in Consultar()
+                                                where
+                                                cba.BoletoAtividadeID == chequeBoletoAtividade.BoletoAtividadeID
+                                                select cba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (chequeBoletoAtividade.ChequeID != 0)
+                        {
+                            resultado.AddRange((from cba in Consultar()
+                                                where
+                                                cba.ChequeID == chequeBoletoAtividade.ChequeID
+                                                select cba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        break;
+                    } 
+                #endregion
+                default:
+                    break;
+            }
+
+            return resultado;
+
         }
 
         public void Incluir(ChequeBoletoAtividade chequeBoletoAtividade)
@@ -46,7 +103,19 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
         {
             try
             {
-                db.ChequeBoletoAtividade.DeleteOnSubmit(chequeBoletoAtividade);
+                ChequeBoletoAtividade chequeBoletoAtividadeAux = new ChequeBoletoAtividade();
+                chequeBoletoAtividadeAux.BoletoAtividadeID = chequeBoletoAtividade.BoletoAtividadeID;
+                chequeBoletoAtividadeAux.ChequeID = chequeBoletoAtividade.ChequeID;
+
+                List<ChequeBoletoAtividade> resultado = this.Consultar(chequeBoletoAtividadeAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new ChequeBoletoAtividadeNaoExcluidaExcecao();
+
+                chequeBoletoAtividadeAux = resultado[0];
+
+                db.ChequeBoletoAtividade.DeleteOnSubmit(chequeBoletoAtividadeAux);
+            
             }
             catch (Exception)
             {
@@ -59,7 +128,21 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
         {
             try
             {
-                db.ChequeBoletoAtividade.InsertOnSubmit(chequeBoletoAtividade);
+                ChequeBoletoAtividade chequeBoletoAtividadeAux = new ChequeBoletoAtividade();
+                chequeBoletoAtividadeAux.BoletoAtividadeID = chequeBoletoAtividade.BoletoAtividadeID;
+                chequeBoletoAtividadeAux.ChequeID = chequeBoletoAtividade.ChequeID;
+
+                List<ChequeBoletoAtividade> resultado = this.Consultar(chequeBoletoAtividadeAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new ChequeBoletoAtividadeNaoAlteradaExcecao();
+
+                chequeBoletoAtividadeAux = resultado[0];
+
+                chequeBoletoAtividadeAux.BoletoAtividadeID = chequeBoletoAtividade.BoletoAtividadeID;
+                chequeBoletoAtividadeAux.ChequeID = chequeBoletoAtividade.ChequeID;                
+
+                Confirmar();
             }
             catch (Exception)
             {

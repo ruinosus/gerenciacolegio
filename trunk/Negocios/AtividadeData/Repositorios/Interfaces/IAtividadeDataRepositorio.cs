@@ -32,7 +32,7 @@ namespace Negocios.ModuloAtividadeData.Repositorios
         /// <summary>
         /// Método responsável por consultar atividadeDatas do sistema de acordo com os parametros informados.
         /// </summary>
-        /// <param name="atividadeData">Objeto do tipo turma que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="atividadeData">Objeto do tipo atividadeData que irá ser utilizado como parametro de pesquisa.</param>
         /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todas as atividadeDatas cadastradas.</returns>
         List<AtividadeData> Consultar(AtividadeData atividadeData, TipoPesquisa tipoPesquisa);

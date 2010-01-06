@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloBoletoMensalidade.Processos
 {
@@ -32,18 +33,19 @@ namespace Negocios.ModuloBoletoMensalidade.Processos
         /// Método responsável por consultar boletoMensalidades do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="boletoMensalidade">Objeto do tipo boletoMensalidade que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todas as boletoMensalidades cadastradas.</returns>
-        List<BoletoMensalidade> Consultar(BoletoMensalidade boletoMensalidade);
+        List<BoletoMensalidade> Consultar(BoletoMensalidade boletoMensalidade, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todas as boletoMensalidades do sistema.
         /// </summary>
         /// <returns>Lista contendo todas as boletoMensalidades cadastradas.</returns>
         List<BoletoMensalidade> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }
