@@ -11,7 +11,7 @@ namespace GuiWindowsForms
 {
     public partial class telaAlunoMedicacao : Form
     {
-
+        #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
@@ -20,7 +20,9 @@ namespace GuiWindowsForms
         private static telaAlunoMedicacao telaalunomedicacao;
 
         private static bool IsShown = false;
+        #endregion
 
+        #region INSTANCIA TELA ALUNO RESPONSAVEL
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
         /// </summary>
@@ -34,7 +36,9 @@ namespace GuiWindowsForms
             }
             return telaalunomedicacao;
         }
+        #endregion
 
+        #region CONSTRUTOR
         /// <summary>
         /// Construtor da tela
         /// </summary>
@@ -43,11 +47,12 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region MÉTODO PARA VERIFICAR USO DA TELA
         /// <summary>
         /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
         /// </summary>
-
         public new void Show()
         {
             if (IsShown)
@@ -59,7 +64,9 @@ namespace GuiWindowsForms
             }
 
         }
+        #endregion
 
+        #region BUTTON DESCONECTAR
         /// <summary>
         /// Botão para esconder a tela e voltar para a tela de login
         /// </summary>
@@ -73,9 +80,12 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
 
+        #region MÉTODO PARA FECHAR A TELA
         /// <summary>
-        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
+        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, 
+        /// garantindo a usabilidade da tela
         /// pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
@@ -97,6 +107,7 @@ namespace GuiWindowsForms
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
+        #endregion
 
         #region USER CONTROLS - Controle Inferior - Botões de Navegação
 
@@ -169,10 +180,130 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region USER CONTROLS - Menu Lateral
         private void uMenuLateral1_Load(object sender, EventArgs e)
         {
             uMenuLateral1.verificaTela(telaalunomedicacao);
         }
+        #endregion
 
+        #region EVENTO CADASTRAR
+        private void ucMenuInferior1_EventoCadastrar()
+        {
+
+            try
+            {
+                #region VALIDA - NOME
+
+                if (String.IsNullOrEmpty(txtNome.Text))
+                {
+                    errorProviderTela.SetError(txtNome, "Informe a alergia");
+                    txtNome.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - FATOR RH
+
+                if (rdbPositivo.Checked == false && rdbNegativo.Checked == false)
+                {
+                    errorProviderTela.SetError(rdbNegativo, "Informe o fator rh");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - NOME
+
+                if (String.IsNullOrEmpty(txtNomeMedico.Text))
+                {
+                    errorProviderTela.SetError(txtNomeMedico, "Informe o nome do médico");
+                    txtNomeMedico.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - FONE 
+
+                if (mskFone.MaskCompleted == false)
+                {
+                    errorProviderTela.SetError(mskFone, "Informe o fone");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - HOSPITAL
+
+                if (String.IsNullOrEmpty(txtHospital.Text))
+                {
+                    errorProviderTela.SetError(txtHospital, "Informe o hospital");
+                    txtHospital.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - PLANO DE SAÚDE
+
+                if (String.IsNullOrEmpty(txtPlanoSaude.Text))
+                {
+                    errorProviderTela.SetError(txtPlanoSaude, "Informe o plano de saúde");
+                    txtPlanoSaude.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - DESCRIÇÃO MÉDICA
+
+                if (String.IsNullOrEmpty(txtDescricaoMedica.Text))
+                {
+                    errorProviderTela.SetError(txtDescricaoMedica, "Informe a descrição médica");
+                    txtDescricaoMedica.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - SITUAÇÃO ESPECIAL
+
+                if (String.IsNullOrEmpty(txtSituacaoEspecial.Text))
+                {
+                    errorProviderTela.SetError(txtSituacaoEspecial, "Informe a situação especial");
+                    txtSituacaoEspecial.Clear();
+                    return;
+                }
+
+                #endregion
+                
+            }
+            catch (Exception ex)
+            { 
+            
+            }
+
+        }
+        #endregion
+
+        #region STRING PARA ALIMENTAR COMBOBOX
+
+        string[] gruposanguineo = { "O+", "A+", "AB+", "B+", "O-", "A-", "AB-", "B-" };
+
+        #endregion
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        #region LOAD
+        private void gpbDadosPessoais_Enter(object sender, EventArgs e)
+        {
+            cmbGrupoSanguineo.DataSource = gruposanguineo;
+        }
+        #endregion
     }
 }

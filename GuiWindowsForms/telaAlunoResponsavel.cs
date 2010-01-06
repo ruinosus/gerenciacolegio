@@ -639,7 +639,7 @@ namespace GuiWindowsForms
 
                 if (mskFoneResidencia.MaskCompleted == false)
                 {
-                    errorProviderTela.SetError(mskFoneResidencia, "Informe a cidade");
+                    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone");
                     return;
                 }
 
