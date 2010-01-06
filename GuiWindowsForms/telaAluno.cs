@@ -11,7 +11,7 @@ namespace GuiWindowsForms
 {
     public partial class telaAluno : Form
     {
-
+        #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
@@ -20,7 +20,9 @@ namespace GuiWindowsForms
         private static telaAluno telaaluno;
 
         private static bool IsShown = false;
+        #endregion
 
+        #region INSTANCIA TELA ALUNO RESPONSAVEL
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
         /// </summary>
@@ -34,7 +36,9 @@ namespace GuiWindowsForms
             }
             return telaaluno;
         }
+        #endregion
 
+        #region CONSTRUTOR
         /// <summary>
         /// Construtor da tela
         /// </summary>
@@ -43,7 +47,9 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region MÉTODO PARA VERIFICAR USO DA TELA
         /// <summary>
         /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
         /// </summary>
@@ -60,7 +66,9 @@ namespace GuiWindowsForms
 
             //return SelecionaForm(aux);
         }
+        #endregion
 
+        #region BUTTON DESCONECTAR
         /// <summary>
         /// Botão para esconder a tela e voltar para a tela de login
         /// </summary>
@@ -74,9 +82,12 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
 
+        #region MÉTODO PARA FECHAR A TELA
         /// <summary>
-        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
+        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, 
+        /// garantindo a usabilidade da tela
         /// pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
@@ -98,8 +109,7 @@ namespace GuiWindowsForms
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
-
-       
+        #endregion
 
         #region Mudança de cores das textboxes e outros controles
 
@@ -413,11 +423,6 @@ namespace GuiWindowsForms
             }
         }
 
-        private void ucAluno1_EventoCadastrar()
-        {
-            MessageBox.Show("tela de aluno");
-        }
-
         #endregion
 
         #region USER CONTROLS - Controle Lateral - Botões de Navegação
@@ -472,10 +477,104 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region USER CONTROLS - Menu Lateral
         private void uMenuLateral1_Load(object sender, EventArgs e)
         {
             uMenuLateral1.verificaTela(telaaluno);
         }
+        #endregion
 
+        #region EVENTO CADASTRAR
+
+        private void ucAluno1_EventoCadastrar()
+        {
+            try
+            {
+
+                #region VALIDA - NOME
+
+                if (String.IsNullOrEmpty(txtNome.Text))
+                {
+                    errorProviderTela.SetError(txtNome, "Informe o nome");
+                    txtNome.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - SEXO
+
+                if (rdbMasc.Checked == false && rdbFem.Checked == false)
+                {
+                    errorProviderTela.SetError(rdbFem, "Informe o sexo");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - EMAIL ALUNO
+
+                if (String.IsNullOrEmpty(txtEmail.Text))
+                {
+                    errorProviderTela.SetError(txtEmail, "Informe o email");
+                    return;
+                }
+
+                int validaArroba = 0;
+                /*O FOR pecorre todo o textBox email para validação do campo,
+                 *dentro tem vários IF se o campo possuir as obrigatoriedades
+                 *é incrementado, se não possuir é decrementado ao final a uma
+                 *verificação se o campo for vazio ou não possuir a soma correspondedente
+                 *a todos os campos que deveria incrementar é lançado o exception
+                 */
+                for (int i = 0; i < txtEmail.Text.Length; i++)
+                {
+                    if (txtEmail.Text.Substring(i, 1).Equals("@"))
+                    {
+                        validaArroba++;
+                    }
+                    if (txtEmail.Text.Substring(i, 1).Equals(" "))
+                    {
+                        validaArroba--;
+                    }
+                }
+
+                if (validaArroba != 1 || txtEmail.Text.Equals(""))
+                {
+
+                    errorProviderTela.SetError(txtEmail, "Informe o email corretamente");
+                    return;
+
+                }
+
+                #endregion
+
+                #region VALIDA - FONE DO ALUNO
+
+                if (String.IsNullOrEmpty(mskFoneAluno.Text))
+                {
+                    errorProviderTela.SetError(mskFoneAluno, "Informe o fone do aluno");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - ENDEREÇO
+
+                if (String.IsNullOrEmpty(txtLogradouro.Text))
+                {
+                    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
+                    return;
+                }
+
+                #endregion
+            }
+            catch (Exception ex)
+            { 
+            
+            }
+        }
+
+        #endregion
     }
 }
