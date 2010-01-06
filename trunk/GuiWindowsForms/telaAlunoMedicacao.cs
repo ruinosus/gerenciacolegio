@@ -290,19 +290,66 @@ namespace GuiWindowsForms
 
         #region STRING PARA ALIMENTAR COMBOBOX
 
-        string[] gruposanguineo = { "O+", "A+", "AB+", "B+", "O-", "A-", "AB-", "B-" };
+        string[] gruposanguineo = { "O", "A", "AB", "B" };
 
         #endregion
+        
+        #region LOAD
+        private void gpbDadosPessoais_Enter(object sender, EventArgs e)
+        {
+            cmbGrupoSanguineo.DataSource = gruposanguineo;
+        }
+        #endregion
 
+        #region LIMPAR ERRO PROVIDER
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
             errorProviderTela.Clear();
         }
 
-        #region LOAD
-        private void gpbDadosPessoais_Enter(object sender, EventArgs e)
+        private void cmbGrupoSanguineo_TextChanged(object sender, EventArgs e)
         {
-            cmbGrupoSanguineo.DataSource = gruposanguineo;
+            errorProviderTela.Clear();
+        }
+
+        private void rdbPositivo_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void rdbNegativo_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtNomeMedico_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void mskFone_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtHospital_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtPlanoSaude_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtDescricaoMedica_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtSituacaoEspecial_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
         }
         #endregion
     }

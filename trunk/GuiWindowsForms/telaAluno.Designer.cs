@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAluno));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.btnVincularResponsavel = new System.Windows.Forms.Button();
@@ -77,10 +78,12 @@
             this.lblNomeAluno = new System.Windows.Forms.Label();
             this.cmbSelecionarAluno = new System.Windows.Forms.ComboBox();
             this.lblAtivo = new System.Windows.Forms.Label();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbDadosPessoais
@@ -617,6 +620,10 @@
             this.lblAtivo.TabIndex = 70;
             this.lblAtivo.Text = "Ativo";
             // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
@@ -674,6 +681,7 @@
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -731,6 +739,7 @@
         private System.Windows.Forms.Label lblAtivo;
         private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
         private ucMenuInferior ucMenuInferior1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
 
 
 
