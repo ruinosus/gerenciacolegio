@@ -47,7 +47,7 @@ namespace Negocios.ModuloBoletoAtividade.Processos
 
         public List<BoletoAtividade> Consultar(BoletoAtividade boletoAtividade)
         {
-            List<BoletoAtividade> boletoAtividadeList = this.boletoAtividadeRepositorio.Consultar(boletoAtividade);           
+            List<BoletoAtividade> boletoAtividadeList = this.boletoAtividadeRepositorio.Consultar(boletoAtividade, Negocios.ModuloBasico.Enums.TipoPesquisa.E);           
 
             return boletoAtividadeList;
         }

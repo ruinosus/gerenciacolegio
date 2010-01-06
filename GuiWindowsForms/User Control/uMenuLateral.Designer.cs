@@ -122,12 +122,13 @@
             this.lblResponsavel_menu.AutoSize = true;
             this.lblResponsavel_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblResponsavel_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblResponsavel_menu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblResponsavel_menu.ForeColor = System.Drawing.Color.White;
             this.lblResponsavel_menu.Location = new System.Drawing.Point(9, 277);
             this.lblResponsavel_menu.Name = "lblResponsavel_menu";
             this.lblResponsavel_menu.Size = new System.Drawing.Size(97, 17);
             this.lblResponsavel_menu.TabIndex = 74;
             this.lblResponsavel_menu.Text = "Responsáveis";
+            this.lblResponsavel_menu.Visible = false;
             // 
             // lblDados_Menu
             // 
@@ -199,9 +200,8 @@
             // btnResponsaveis
             // 
             this.btnResponsaveis.BackColor = System.Drawing.Color.Transparent;
-            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66;
+            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled;
             this.btnResponsaveis.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResponsaveis.Enabled = false;
             this.btnResponsaveis.FlatAppearance.BorderSize = 0;
             this.btnResponsaveis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResponsaveis.Location = new System.Drawing.Point(22, 207);
@@ -211,7 +211,7 @@
             this.btnResponsaveis.TabIndex = 69;
             this.btnResponsaveis.Tag = "";
             this.btnResponsaveis.UseVisualStyleBackColor = false;
-            this.btnResponsaveis.MouseLeave += new System.EventHandler(this.btnDados_MouseLeave);
+            this.btnResponsaveis.MouseLeave += new System.EventHandler(this.btnResponsaveis_MouseLeave);
             this.btnResponsaveis.Click += new System.EventHandler(this.btnResponsaveis_Click);
             this.btnResponsaveis.MouseEnter += new System.EventHandler(this.btnResponsaveis_MouseEnter);
             // 
@@ -223,7 +223,7 @@
             this.btnDados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDados.FlatAppearance.BorderSize = 0;
             this.btnDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDados.Location = new System.Drawing.Point(22, 115);
+            this.btnDados.Location = new System.Drawing.Point(22, 112);
             this.btnDados.Margin = new System.Windows.Forms.Padding(0);
             this.btnDados.Name = "btnDados";
             this.btnDados.Size = new System.Drawing.Size(73, 74);
