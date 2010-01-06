@@ -112,26 +112,6 @@ namespace GuiWindowsForms
 
         #endregion
 
-        #region Controle das ações dos botões de navegação
-
-        private void btnDadosPessoais_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 17;
-            telaFuncionario telaafuncdados = telaFuncionario.getInstancia();
-            telaafuncdados.Show();
-        }
-
-        private void btnDadosProfissionais_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 17;
-            telaFuncionarioDadosProfissionais telaafuncprofissionais = telaFuncionarioDadosProfissionais.getInstancia();
-            telaafuncprofissionais.Show();
-        }
-
-        #endregion
-
         //private void btnImprimir_MouseEnter(object sender, EventArgs e)
         //{
         //    lblInfoControles.Text = "Abrir impressões.";
@@ -158,6 +138,27 @@ namespace GuiWindowsForms
                 Program.ultimaTela = 6;
                 Program.SelecionaForm(Program.ultimaTela);
             }
+        }
+
+        private void ucMenuLateralFunc1_EventoAbrirDadosProfissionais()
+        {
+            this.Hide();
+            Program.ultimaTela = 17;
+            telaFuncionarioDadosProfissionais telaafuncprofissionais = telaFuncionarioDadosProfissionais.getInstancia();
+            telaafuncprofissionais.Show();
+        }
+
+        private void ucMenuLateralFunc1_EventoAbrirDadosPessoais()
+        {
+            this.Hide();
+            Program.ultimaTela = 17;
+            telaFuncionario telaafuncdados = telaFuncionario.getInstancia();
+            telaafuncdados.Show();
+        }
+
+        private void ucMenuLateralFunc1_Load(object sender, EventArgs e)
+        {
+            ucMenuLateralFunc1.verificaTela(teladfuncProfissional);
         }
     }
 }
