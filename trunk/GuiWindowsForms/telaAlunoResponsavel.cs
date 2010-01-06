@@ -435,6 +435,11 @@ namespace GuiWindowsForms
 
         #endregion
 
+        private void uMenuLateral1_Load(object sender, EventArgs e)
+        {
+            uMenuLateral1.verificaTela(telaalunoresponsavel);
+        }
+
 
 
     }

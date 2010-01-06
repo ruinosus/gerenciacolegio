@@ -77,8 +77,8 @@
             this.lblNomeAluno = new System.Windows.Forms.Label();
             this.cmbSelecionarAluno = new System.Windows.Forms.ComboBox();
             this.lblAtivo = new System.Windows.Forms.Label();
-            this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.SuspendLayout();
@@ -617,20 +617,6 @@
             this.lblAtivo.TabIndex = 70;
             this.lblAtivo.Text = "Ativo";
             // 
-            // uMenuLateral1
-            // 
-            this.uMenuLateral1.BackColor = System.Drawing.Color.Transparent;
-            this.uMenuLateral1.Location = new System.Drawing.Point(875, 75);
-            this.uMenuLateral1.Name = "uMenuLateral1";
-            this.uMenuLateral1.Size = new System.Drawing.Size(130, 584);
-            this.uMenuLateral1.TabIndex = 71;
-            this.uMenuLateral1.EventoAbrirTelaMedica += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMedica(this.uMenuLateral1_EventoAbrirTelaMedica);
-            this.uMenuLateral1.EventoAbrirTelaResponsavel += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaResponsavel(this.uMenuLateral1_EventoAbrirTelaResponsavel);
-            this.uMenuLateral1.EventoAbrirTelaMatricula += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMatricula(this.uMenuLateral1_EventoAbrirTelaMatricula);
-            this.uMenuLateral1.EventoAbrirTelaFinanceiro += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaFinanceiro(this.uMenuLateral1_EventoAbrirTelaFinanceiro);
-            this.uMenuLateral1.EventoAbrirTelaAcademico += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaAcademico(this.uMenuLateral1_EventoAbrirTelaAcademico);
-            this.uMenuLateral1.EventoAbrirTelaDados += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaDados(this.uMenuLateral1_EventoAbrirTelaDados);
-            // 
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
@@ -640,6 +626,21 @@
             this.ucMenuInferior1.TabIndex = 72;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucAluno1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
+            // 
+            // uMenuLateral1
+            // 
+            this.uMenuLateral1.BackColor = System.Drawing.Color.Transparent;
+            this.uMenuLateral1.Location = new System.Drawing.Point(875, 75);
+            this.uMenuLateral1.Name = "uMenuLateral1";
+            this.uMenuLateral1.Size = new System.Drawing.Size(130, 584);
+            this.uMenuLateral1.TabIndex = 71;
+            this.uMenuLateral1.EventoAbrirTelaMedica += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMedica(this.uMenuLateral1_EventoAbrirTelaMedica);
+            this.uMenuLateral1.Load += new System.EventHandler(this.uMenuLateral1_Load);
+            this.uMenuLateral1.EventoAbrirTelaResponsavel += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaResponsavel(this.uMenuLateral1_EventoAbrirTelaResponsavel);
+            this.uMenuLateral1.EventoAbrirTelaMatricula += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMatricula(this.uMenuLateral1_EventoAbrirTelaMatricula);
+            this.uMenuLateral1.EventoAbrirTelaFinanceiro += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaFinanceiro(this.uMenuLateral1_EventoAbrirTelaFinanceiro);
+            this.uMenuLateral1.EventoAbrirTelaAcademico += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaAcademico(this.uMenuLateral1_EventoAbrirTelaAcademico);
+            this.uMenuLateral1.EventoAbrirTelaDados += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaDados(this.uMenuLateral1_EventoAbrirTelaDados);
             // 
             // telaAluno
             // 

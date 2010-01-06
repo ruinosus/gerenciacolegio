@@ -9,8 +9,11 @@ using System.Windows.Forms;
 
 namespace GuiWindowsForms.User_Control
 {
+
     public partial class uMenuLateral : UserControl
     {
+        public static Form formAux = null;
+
         public uMenuLateral()
         {
             InitializeComponent();
@@ -114,6 +117,54 @@ namespace GuiWindowsForms.User_Control
                 EventoAbrirTelaResponsavel();
         }
 
+        public void verificaTela(Form form)
+        {
+            formAux = form;
+
+            if(formAux.Equals(telaAluno.getInstancia()))
+            {
+                this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74;
+                this.btnDados.Enabled = false;
+                lblDados_Menu.Visible = true;
+                lblDados_Menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else if (formAux.Equals(telaAlunoResponsavel.getInstancia()))
+            {
+                this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66;
+                this.btnResponsaveis.Enabled = false;
+                lblResponsavel_menu.Visible = true;
+                lblResponsavel_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else if (formAux.Equals(telaAlunoMedicacao.getInstancia()))
+            {
+                this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73;
+                this.btnInfoMedica.Enabled = false;
+                lblMedico_menu.Visible = true;
+                lblMedico_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else if (formAux.Equals(telaAlunoFinanceiro.getInstancia()))
+            {
+                this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60;
+                this.btnFinanceiro.Enabled = false;
+                lblFinanceiro_menu.Visible = true;
+                lblFinanceiro_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else if (formAux.Equals(telaAlunoAcademico.getInstancia()))
+            {
+                this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72;
+                this.btnAcademico.Enabled = false;
+                lblAcademico_menu.Visible = true;
+                lblAcademico_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else if (formAux.Equals(telaAlunoMatricula.getInstancia()) || formAux.Equals(telaAlunoMatriculaAtividade.getInstancia()))
+            {
+                this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69;
+                this.btnMatricula.Enabled = false;
+                lblMatricula_menu.Visible = true;
+                lblMatricula_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+        }
+         
         #endregion
 
         #region Controle de mudança das figuras e exibição dos textos das mesmas
@@ -125,8 +176,18 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnDados_MouseEnter(object sender, EventArgs e)
         {
-            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled_h;
-            lblDados_Menu.Visible = true;
+            if (formAux.Equals(telaAluno.getInstancia()))
+            {
+                this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74;
+                this.btnDados.Enabled = false;
+                lblDados_Menu.Visible = true;
+                lblDados_Menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else
+            {
+                this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled_h;
+                lblDados_Menu.Visible = true;
+            }
         }
 
         /// <summary>
@@ -136,8 +197,15 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnDados_MouseLeave(object sender, EventArgs e)
         {
-            this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled;
-            lblDados_Menu.Visible = false;
+            if (formAux.Equals(telaAluno.getInstancia()))
+            {
+                this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_hover;
+            }
+            else
+            {
+                this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74_disabled;
+                lblDados_Menu.Visible = false;
+            }
         }
 
         /// <summary>
@@ -147,8 +215,18 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnResponsaveis_MouseEnter(object sender, EventArgs e)
         {
-            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled_h;
-            lblResponsavel_menu.Visible = true;
+            if (formAux.Equals(telaAlunoResponsavel.getInstancia()))
+            {
+                this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66;
+                this.btnResponsaveis.Enabled = false;
+                lblResponsavel_menu.Visible = true;
+                lblResponsavel_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else
+            {
+                this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled_h;
+                lblResponsavel_menu.Visible = true;
+            }
         }
 
         /// <summary>
@@ -158,8 +236,15 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnResponsaveis_MouseLeave(object sender, EventArgs e)
         {
-            this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled;
-            lblResponsavel_menu.Visible = false;
+            if (formAux.Equals(telaAlunoResponsavel.getInstancia()))
+            {
+                this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_hover;
+            }
+            else
+            {
+                this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66_disabled;
+                lblResponsavel_menu.Visible = false;
+            }
         }
 
         /// <summary>
@@ -169,8 +254,18 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnInfoMedica_MouseEnter(object sender, EventArgs e)
         {
-            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_disabled_h;
-            lblMedico_menu.Visible = true;
+            if (formAux.Equals(telaAlunoMedicacao.getInstancia()))
+            {
+                this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73;
+                this.btnInfoMedica.Enabled = false;
+                lblMedico_menu.Visible = true;
+                lblMedico_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else
+            {
+                this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_disabled_h;
+                lblMedico_menu.Visible = true;
+            }
         }
 
         /// <summary>
@@ -180,8 +275,15 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnInfoMedica_MouseLeave(object sender, EventArgs e)
         {
-            this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_disabled;
-            lblMedico_menu.Visible = false;
+            if (formAux.Equals(telaAlunoMedicacao.getInstancia()))
+            {
+                this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_hover;
+            }
+            else
+            {
+                this.btnInfoMedica.BackgroundImage = global::GuiWindowsForms.Properties.Resources.injecao_73x73_disabled;
+                lblMedico_menu.Visible = false;
+            }
         }
 
         /// <summary>
@@ -191,8 +293,18 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnFinanceiro_MouseEnter(object sender, EventArgs e)
         {
-            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled_h;
-            lblFinanceiro_menu.Visible = true;
+            if (formAux.Equals(telaAlunoFinanceiro.getInstancia()))
+            {
+                this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60;
+                this.btnFinanceiro.Enabled = false;
+                lblFinanceiro_menu.Visible = true;
+                lblFinanceiro_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else
+            {
+                this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled_h;
+                lblFinanceiro_menu.Visible = true;
+            }
         }
 
         /// <summary>
@@ -202,8 +314,15 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnFinanceiro_MouseLeave(object sender, EventArgs e)
         {
-            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled;
-            lblFinanceiro_menu.Visible = false;
+            if (formAux.Equals(telaAlunoFinanceiro.getInstancia()))
+            {
+                this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_hover;
+            }
+            else
+            {
+                this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled;
+                lblFinanceiro_menu.Visible = false;
+            }
         }
 
         /// <summary>
@@ -213,8 +332,18 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnAcademico_MouseEnter(object sender, EventArgs e)
         {
-            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled_h;
-            lblAcademico_menu.Visible = true;
+            if (formAux.Equals(telaAlunoAcademico.getInstancia()))
+            {
+                this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72;
+                this.btnAcademico.Enabled = false;
+                lblAcademico_menu.Visible = true;
+                lblAcademico_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else
+            {
+                this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled_h;
+                lblAcademico_menu.Visible = true;
+            }
         }
 
         /// <summary>
@@ -224,8 +353,15 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnAcademico_MouseLeave(object sender, EventArgs e)
         {
-            this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled;
-            lblAcademico_menu.Visible = false;
+            if (formAux.Equals(telaAlunoAcademico.getInstancia()))
+            {
+                this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_hover;
+            }
+            else
+            {
+                this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled;
+                lblAcademico_menu.Visible = false;
+            }
         }
 
         /// <summary>
@@ -235,8 +371,18 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnMatricula_MouseEnter(object sender, EventArgs e)
         {
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled_h;
-            lblMatricula_menu.Visible = true;
+            if (formAux.Equals(telaAlunoMatricula.getInstancia()) || formAux.Equals(telaAlunoMatriculaAtividade.getInstancia()))
+            {
+                this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69;
+                this.btnMatricula.Enabled = false;
+                lblMatricula_menu.Visible = true;
+                lblMatricula_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else
+            {
+                this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled_h;
+                lblMatricula_menu.Visible = true;
+            }
         }
 
         /// <summary>
@@ -246,11 +392,20 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnMatricula_MouseLeave(object sender, EventArgs e)
         {
-            this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled;
-            lblMatricula_menu.Visible = false;
+            if (formAux.Equals(telaAlunoMatricula.getInstancia()) || formAux.Equals(telaAlunoMatriculaAtividade.getInstancia()))
+            {
+                this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_hover;
+            }
+            else
+            {
+                this.btnMatricula.BackgroundImage = global::GuiWindowsForms.Properties.Resources.matricula_68x69_disabled;
+                lblMatricula_menu.Visible = false;
+            }
         }
 
         #endregion
+
+
 
     }
 }
