@@ -10,7 +10,8 @@ using System.Windows.Forms;
 namespace GuiWindowsForms
 {
     public partial class telaAlunoResponsavel : Form
-    {      
+    {
+        #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
@@ -20,11 +21,14 @@ namespace GuiWindowsForms
 
         private static bool IsShown = false;
 
+        #endregion
+
+        #region INSTANCIA TELA ALUNO RESPONSAVEL
+
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
-
         public static telaAlunoResponsavel getInstancia()
         {
             if (telaalunoresponsavel == null)
@@ -33,9 +37,11 @@ namespace GuiWindowsForms
             }
             return telaalunoresponsavel;
 
-           
-        }
 
+        }
+        #endregion
+
+        #region CONSTRUTOR 
         /// <summary>
         /// Construtor da tela
         /// </summary>
@@ -46,10 +52,14 @@ namespace GuiWindowsForms
 
         }
 
-        /// <summary>
-        /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
-        /// </summary>
+        #endregion
 
+        #region MÉTODO PARA VERIFICAR USO DA TELA
+        /// <summary>
+        /// Método para verificar se a tela já esta sendo exibida ou não, 
+        /// evita que a tela seja descarregada da memória
+        /// </summary>
+        
         public new void Show()
         {
             if (IsShown)
@@ -62,7 +72,9 @@ namespace GuiWindowsForms
 
             //return SelecionaForm(aux);
         }
+        #endregion
 
+        #region BUTTON DESCONECTAR
         /// <summary>
         /// Botão para esconder a tela e voltar para a tela de login
         /// </summary>
@@ -76,9 +88,12 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
-        
+        #endregion
+
+        #region MÉTODO PARA FECHAR A TELA
         /// <summary>
-        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
+        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, 
+        /// garantindo a usabilidade da tela
         /// pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
@@ -100,8 +115,9 @@ namespace GuiWindowsForms
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
+        #endregion
 
-        #region Mudança de cores das textboxes e outros controles
+        #region MUDANÇA DE CORES DAS TEXTVOXES E OUTROS CONTROLES
 
         /// <summary>
         /// Atualiza a cor da textbox ao ser ativada como controle principal
@@ -435,6 +451,15 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region USER CONTROLS - Menu Lateral
+        private void uMenuLateral1_Load(object sender, EventArgs e)
+        {
+            uMenuLateral1.verificaTela(telaalunoresponsavel);
+        }
+        #endregion
+
+        #region EVENTO CADASTRAR
+
         private void ucAluno1_EventoCadastrar()
         {
             try
@@ -444,6 +469,7 @@ namespace GuiWindowsForms
                 if (String.IsNullOrEmpty(txtNome.Text))
                 {
                     errorProviderTela.SetError(txtNome, "Informe o nome");
+                    txtNome.Clear();
                     return;
                 }
               
@@ -452,7 +478,7 @@ namespace GuiWindowsForms
 
                 #region VALIDA - SEXO  
 
-                if (rdbMasc.Checked==false || rdbFem.Checked==false)
+                if (rdbMasc.Checked==false && rdbFem.Checked==false)
                 {
                     errorProviderTela.SetError(rdbFem, "Informe o sexo");
                     return;
@@ -473,7 +499,7 @@ namespace GuiWindowsForms
 
                 #region VALIDA - CPF
 
-                if (String.IsNullOrEmpty(mskCpf.Text))
+                if (mskCpf.MaskCompleted == false)
                 {
                     errorProviderTela.SetError(mskCpf, "Informe o cpf");
                     return;
@@ -503,10 +529,37 @@ namespace GuiWindowsForms
 
                 #region VALIDA - EMAIL
 
-                if (String.IsNullOrEmpty(txtEmail.Text)) 
+                if (String.IsNullOrEmpty(txtEmail.Text))
                 {
                     errorProviderTela.SetError(txtEmail, "Informe o email");
                     return;
+                }
+
+                int validaArroba = 0;
+                /*O FOR pecorre todo o textBox email para validação do campo,
+                 *dentro tem vários IF se o campo possuir as obrigatoriedades
+                 *é incrementado, se não possuir é decrementado ao final a uma
+                 *verificação se o campo for vazio ou não possuir a soma correspondedente
+                 *a todos os campos que deveria incrementar é lançado o exception
+                 */
+                for (int i = 0; i < txtEmail.Text.Length; i++)
+                {
+                    if (txtEmail.Text.Substring(i, 1).Equals("@"))
+                    {
+                        validaArroba++;
+                    }
+                    if (txtEmail.Text.Substring(i, 1).Equals(" "))
+                    {
+                        validaArroba--;
+                    }
+                }
+
+                if (validaArroba != 1 || txtEmail.Text.Equals(""))
+                {
+
+                    errorProviderTela.SetError(txtEmail, "Informe o email corretamente");
+                    return;
+
                 }
 
                 #endregion
@@ -560,6 +613,39 @@ namespace GuiWindowsForms
                 }
 
                 #endregion
+
+                #region VALIDA - CIDADE
+
+                if (String.IsNullOrEmpty(txtCidade.Text))
+                {
+                    errorProviderTela.SetError(txtCidade, "Informe a cidade");
+                    return;
+                }
+
+
+                #endregion
+
+                #region VALIDA - CEP
+
+                if (mskCep.MaskCompleted == false)
+                {
+                    errorProviderTela.SetError(mskCep, "Informe a cep");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - FONE RESIDÊNCIA
+
+                if (mskFoneResidencia.MaskCompleted == false)
+                {
+                    errorProviderTela.SetError(mskFoneResidencia, "Informe a cidade");
+                    return;
+                }
+
+                #endregion
+
+ 
             }
             catch (Exception ex)
             {
@@ -567,35 +653,37 @@ namespace GuiWindowsForms
             }
         }
 
+        #endregion
+
         #region TEXTBOX UF EVENTO SELECTED
         // Quando selecionar a UF o campo CIDADE é selecionado a capital correspondente
         private void cmbUf_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbUf.Text == "") { txtCidade.Text = ""; }
             if (cmbUf.Text == "AC") { txtCidade.Text = "RIO BRANCO"; }
             if (cmbUf.Text == "AL") { txtCidade.Text = "MACEIO"; }
             if (cmbUf.Text == "AM") { txtCidade.Text = "MANAUS"; }
-            if (cmbUf.Text == "AP") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "AP") { txtCidade.Text = "MACAPÁ"; }
             if (cmbUf.Text == "BA") { txtCidade.Text = "SALVADOR"; }
             if (cmbUf.Text == "CE") { txtCidade.Text = "FORTALEZA"; }
-            if (cmbUf.Text == "DF") { txtCidade.Text = ""; }
-            if (cmbUf.Text == "ES") { txtCidade.Text = ""; }
-            if (cmbUf.Text == "GO") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "DF") { txtCidade.Text = "BRASÍLIA"; }
+            if (cmbUf.Text == "ES") { txtCidade.Text = "VITÓRIA"; }
+            if (cmbUf.Text == "GO") { txtCidade.Text = "GOIÂNIA"; }
             if (cmbUf.Text == "MA") { txtCidade.Text = "SÃO LUIZ"; }
             if (cmbUf.Text == "MG") { txtCidade.Text = "BELO HORIZONTE"; }
-            if (cmbUf.Text == "MS") { txtCidade.Text = ""; }
-            if (cmbUf.Text == "MT") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "MS") { txtCidade.Text = "CAMPO GRANDE"; }
+            if (cmbUf.Text == "MT") { txtCidade.Text = "CUIABÁ"; }
             if (cmbUf.Text == "PA") { txtCidade.Text = "BELÉM"; }
             if (cmbUf.Text == "PB") { txtCidade.Text = "JOÃO PESSOA"; }
             if (cmbUf.Text == "PE") { txtCidade.Text = "RECIFE"; }
             if (cmbUf.Text == "PI") { txtCidade.Text = "TEREZINA"; }
-            if (cmbUf.Text == "MT") { txtCidade.Text = ""; }
-            if (cmbUf.Text == "PR") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "PR") { txtCidade.Text = "PARANÁ"; }
             if (cmbUf.Text == "RJ") { txtCidade.Text = "RIO DE JANEIRO"; }
             if (cmbUf.Text == "RN") { txtCidade.Text = "NATAL"; }
-            if (cmbUf.Text == "RO") { txtCidade.Text = ""; }
-            if (cmbUf.Text == "RR") { txtCidade.Text = ""; }
-            if (cmbUf.Text == "RS") { txtCidade.Text = ""; }
-            if (cmbUf.Text == "SC") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "RO") { txtCidade.Text = "PORTO VELHO"; }
+            if (cmbUf.Text == "RR") { txtCidade.Text = "BOA VISTA"; }
+            if (cmbUf.Text == "RS") { txtCidade.Text = "PORTO ALEFRE"; }
+            if (cmbUf.Text == "SC") { txtCidade.Text = "FLORIANÓPOLIS"; }
             if (cmbUf.Text == "SE") { txtCidade.Text = "ARACAJÚ"; }
             if (cmbUf.Text == "SP") { txtCidade.Text = "SÃO PAULO"; }
             if (cmbUf.Text == "TO") { txtCidade.Text = "PALMAS"; }
@@ -605,7 +693,7 @@ namespace GuiWindowsForms
 
         #region STRING PARA ALIMENTAR COMBOBOX
 
-        string[] estados = { "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO" };
+        string[] estados = { "","AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO" };
 
         #endregion
 
@@ -616,10 +704,92 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        private void uMenuLateral1_Load(object sender, EventArgs e)
+        #region LIMPAR ERRO PROVIDER
+        private void txtNome_TextChanged(object sender, EventArgs e)
         {
-            uMenuLateral1.verificaTela(telaalunoresponsavel);
+            errorProviderTela.Clear();
         }
+
+        private void rdbMasc_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void rdbFem_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtRg_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void mskCpf_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtProfissao_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtLocalTrabalho_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void mskFoneTrabalho_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtLogradouro_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtComplemento_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtNomeEdificil_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void cmbUf_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtCidade_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void mskCep_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void mskFoneResidencia_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+        #endregion
 
     }
 }
