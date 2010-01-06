@@ -11,19 +11,42 @@ namespace GuiWindowsForms.User_Control
 {
     public partial class ucMenuConfiguracoesEsquerda : UserControl
     {
+        public static Form formAux2 = null;
+
         public ucMenuConfiguracoesEsquerda()
         {
             InitializeComponent();
         }
 
+        public void verificaTela(Form form)
+        {
+            formAux2 = form;
+
+            if (formAux2.Equals(telaConfiguracoes.getInstancia()))
+            {
+                this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80;
+                this.btnControledeAcesso.Enabled = true;
+                lblControleAcesso_menu.Visible = true;
+                lblControleAcesso_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+            else if (formAux2.Equals(telaConfiguracoesControleDeAcesso.getInstancia()))
+            {
+                this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80_disabled;
+                this.btnControledeAcesso.Enabled = false;
+                lblControleAcesso_menu.Visible = true;
+                lblControleAcesso_menu.ForeColor = System.Drawing.Color.Yellow;
+            }
+        }
+
         #region BUTTON PERFIS
+
+        public delegate void delegateAbrirTelaControleDeAcesso();
+        public event delegateAbrirTelaControleDeAcesso EventoAbrirControleDeAcesso;
 
         private void btnControledeAcesso_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Program.ultimaTela = 10;
-            telaConfiguracoesControleDeAcesso telaconfacesso = telaConfiguracoesControleDeAcesso.getInstancia();
-            telaconfacesso.Show();
+            if (EventoAbrirControleDeAcesso != null)
+                EventoAbrirControleDeAcesso(); 
         }
 
         /// <summary>
@@ -33,8 +56,8 @@ namespace GuiWindowsForms.User_Control
         /// <param name="e"></param>
         private void btnControledeAcesso_MouseEnter(object sender, EventArgs e)
         {
-            this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80_hover;
-            lblControleAcesso_menu.Visible = true;
+                this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80_hover;
+                lblControleAcesso_menu.Visible = true;
         }
 
 

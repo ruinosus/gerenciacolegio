@@ -91,142 +91,6 @@ namespace GuiWindowsForms
             Program.SelecionaForm(Program.ultimaTela);
         }
 
-        #region Ações dos botões de navegação
-
-        private void btnControledeAcesso_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 10;
-            telaConfiguracoesControleDeAcesso telaconfacesso = telaConfiguracoesControleDeAcesso.getInstancia();
-            telaconfacesso.Show();
-        }
-
-        private void btnSerie_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 10;
-            telaConfiguracoesSerie telaconfserie = telaConfiguracoesSerie.getInstancia();
-            telaconfserie.Show();
-        }
-
-        private void lblDesconto_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 10;
-            telaConfiguracoesDescontoMatricula telaconfdesconto = telaConfiguracoesDescontoMatricula.getInstancia();
-            telaconfdesconto.Show();
-        }
-
-        private void btnAtividades_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 10;
-            ckbTerca telaconfatv = ckbTerca.getInstancia();
-            telaconfatv.Show();
-        }
-
-        #endregion
-
-        #region Controle de mudança das figuras e exibição dos textos das mesmas
-
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnControledeAcesso_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80_hover;
-            lblControleAcesso_menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnControledeAcesso_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80;
-            lblControleAcesso_menu.Visible = false;
-        }
-
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnSerie_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70_disabled_h;
-            lblSerie_menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnSerie_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70_disabled;
-            lblSerie_menu.Visible = false;
-        }
-
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void lblDesconto_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80_disabled_h;
-            lblDesconto_menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void lblDesconto_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80_disabled;
-            lblDesconto_menu.Visible = false;
-        }
-
-        /// <summary>
-        /// Quando o mouse entra sobre a área da figura, sua imagem é substituida e a label é exibida
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnAtividades_MouseEnter(object sender, EventArgs e)
-        {
-            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled_h;
-            lblAtividade_menu.Visible = true;
-        }
-
-        /// <summary>
-        /// Quando o mouse sai da área da figura, sua imagem é substituida pela original e a label é ocultada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnAtividades_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled;
-            lblAtividade_menu.Visible = false;
-        }
-
-        #endregion
-
         #region Controle dos textos e das ações dos botões de ação inferiores
 
         /// <summary>
@@ -290,5 +154,47 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+        private void ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso()
+        {
+            this.Hide();
+            Program.ultimaTela = 10;
+            telaConfiguracoesControleDeAcesso telaconfacesso = telaConfiguracoesControleDeAcesso.getInstancia();
+            telaconfacesso.Show();
+        }
+
+        private void ucMenuDireita1_EventoAbrirSerie()
+        {
+            this.Hide();
+            Program.ultimaTela = 10;
+            telaConfiguracoesSerie telaconfserie = telaConfiguracoesSerie.getInstancia();
+            telaconfserie.Show();
+        }
+
+        private void ucMenuDireita1_EventoAbrirAtividade()
+        {
+            this.Hide();
+            Program.ultimaTela = 10;
+            ckbTerca telaconfatv = ckbTerca.getInstancia();
+            telaconfatv.Show();
+        }
+
+        private void ucMenuDireita1_EventoAbrirDesconto()
+        {
+            this.Hide();
+            Program.ultimaTela = 10;
+            telaConfiguracoesDescontoMatricula telaconfdesconto = telaConfiguracoesDescontoMatricula.getInstancia();
+            telaconfdesconto.Show();
+        }
+
+        private void ucMenuConfiguracoesEsquerda1_Load(object sender, EventArgs e)
+        {
+            ucMenuConfiguracoesEsquerda1.verificaTela(telaconfiguracoesacesso);
+        }
+
+        private void ucMenuDireita1_Load(object sender, EventArgs e)
+        {
+            ucMenuDireita1.verificaTela(telaconfiguracoesacesso);
+        }
     }
 }
