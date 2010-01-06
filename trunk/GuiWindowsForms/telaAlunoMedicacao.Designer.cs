@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoMedicacao));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.lblSituacaoEspecial = new System.Windows.Forms.Label();
@@ -38,12 +39,12 @@
             this.lblPlanoSaude = new System.Windows.Forms.Label();
             this.lblHospital = new System.Windows.Forms.Label();
             this.txtHospital = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rdbNegativo = new System.Windows.Forms.RadioButton();
             this.rdbPositivo = new System.Windows.Forms.RadioButton();
             this.cmbGrupoSanguineo = new System.Windows.Forms.ComboBox();
             this.txtNomeMedico = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.mkdFone = new System.Windows.Forms.MaskedTextBox();
+            this.mskFone = new System.Windows.Forms.MaskedTextBox();
             this.lblFone = new System.Windows.Forms.Label();
             this.lblFatorRh = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -58,10 +59,12 @@
             this.lblMatricula = new System.Windows.Forms.Label();
             this.lblNomeAluno = new System.Windows.Forms.Label();
             this.pctImagem = new System.Windows.Forms.PictureBox();
-            this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbDadosPessoais
@@ -75,12 +78,12 @@
             this.gpbDadosPessoais.Controls.Add(this.lblPlanoSaude);
             this.gpbDadosPessoais.Controls.Add(this.lblHospital);
             this.gpbDadosPessoais.Controls.Add(this.txtHospital);
-            this.gpbDadosPessoais.Controls.Add(this.radioButton2);
+            this.gpbDadosPessoais.Controls.Add(this.rdbNegativo);
             this.gpbDadosPessoais.Controls.Add(this.rdbPositivo);
             this.gpbDadosPessoais.Controls.Add(this.cmbGrupoSanguineo);
             this.gpbDadosPessoais.Controls.Add(this.txtNomeMedico);
             this.gpbDadosPessoais.Controls.Add(this.lblEmail);
-            this.gpbDadosPessoais.Controls.Add(this.mkdFone);
+            this.gpbDadosPessoais.Controls.Add(this.mskFone);
             this.gpbDadosPessoais.Controls.Add(this.lblFone);
             this.gpbDadosPessoais.Controls.Add(this.lblFatorRh);
             this.gpbDadosPessoais.Controls.Add(this.txtNome);
@@ -93,6 +96,7 @@
             this.gpbDadosPessoais.TabIndex = 21;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DESCRIÇÕES MÉDICAS DO ALUNO";
+            this.gpbDadosPessoais.Enter += new System.EventHandler(this.gpbDadosPessoais_Enter);
             // 
             // lblSituacaoEspecial
             // 
@@ -164,17 +168,17 @@
             this.txtHospital.Size = new System.Drawing.Size(201, 20);
             this.txtHospital.TabIndex = 38;
             // 
-            // radioButton2
+            // rdbNegativo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton2.Location = new System.Drawing.Point(414, 122);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 17);
-            this.radioButton2.TabIndex = 37;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Negativo";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbNegativo.AutoSize = true;
+            this.rdbNegativo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbNegativo.Location = new System.Drawing.Point(414, 122);
+            this.rdbNegativo.Name = "rdbNegativo";
+            this.rdbNegativo.Size = new System.Drawing.Size(76, 17);
+            this.rdbNegativo.TabIndex = 37;
+            this.rdbNegativo.TabStop = true;
+            this.rdbNegativo.Text = "Negativo";
+            this.rdbNegativo.UseVisualStyleBackColor = true;
             // 
             // rdbPositivo
             // 
@@ -215,13 +219,13 @@
             this.lblEmail.TabIndex = 33;
             this.lblEmail.Text = "Nome do Médico:";
             // 
-            // mkdFone
+            // mskFone
             // 
-            this.mkdFone.Location = new System.Drawing.Point(654, 165);
-            this.mkdFone.Mask = "(99) 0000-0000";
-            this.mkdFone.Name = "mkdFone";
-            this.mkdFone.Size = new System.Drawing.Size(111, 20);
-            this.mkdFone.TabIndex = 26;
+            this.mskFone.Location = new System.Drawing.Point(654, 165);
+            this.mskFone.Mask = "(99) 0000-0000";
+            this.mskFone.Name = "mskFone";
+            this.mskFone.Size = new System.Drawing.Size(111, 20);
+            this.mskFone.TabIndex = 26;
             // 
             // lblFone
             // 
@@ -249,6 +253,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(716, 40);
             this.txtNome.TabIndex = 3;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblGrupoSanguineo
             // 
@@ -375,6 +380,20 @@
             this.pctImagem.TabIndex = 115;
             this.pctImagem.TabStop = false;
             // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
+            // ucMenuInferior1
+            // 
+            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
+            this.ucMenuInferior1.Name = "ucMenuInferior1";
+            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
+            this.ucMenuInferior1.TabIndex = 123;
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
+            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
+            // 
             // uMenuLateral1
             // 
             this.uMenuLateral1.BackColor = System.Drawing.Color.Transparent;
@@ -389,15 +408,6 @@
             this.uMenuLateral1.EventoAbrirTelaFinanceiro += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaFinanceiro(this.uMenuLateral1_EventoAbrirTelaFinanceiro);
             this.uMenuLateral1.EventoAbrirTelaAcademico += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaAcademico(this.uMenuLateral1_EventoAbrirTelaAcademico);
             this.uMenuLateral1.EventoAbrirTelaDados += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaDados(this.uMenuLateral1_EventoAbrirTelaDados);
-            // 
-            // ucMenuInferior1
-            // 
-            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
-            this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
-            this.ucMenuInferior1.TabIndex = 123;
-            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
             // telaAlunoMedicacao
             // 
@@ -429,6 +439,7 @@
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,7 +450,7 @@
         private System.Windows.Forms.GroupBox gpbDadosPessoais;
         private System.Windows.Forms.TextBox txtNomeMedico;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.MaskedTextBox mkdFone;
+        private System.Windows.Forms.MaskedTextBox mskFone;
         private System.Windows.Forms.Label lblFone;
         private System.Windows.Forms.Label lblFatorRh;
         private System.Windows.Forms.TextBox txtNome;
@@ -448,7 +459,7 @@
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.ComboBox cmbGrupoSanguineo;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rdbNegativo;
         private System.Windows.Forms.RadioButton rdbPositivo;
         private System.Windows.Forms.TextBox txtHospital;
         private System.Windows.Forms.Label lblHospital;
@@ -467,5 +478,6 @@
         private System.Windows.Forms.PictureBox pctImagem;
         private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
         private ucMenuInferior ucMenuInferior1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
     }
 }
