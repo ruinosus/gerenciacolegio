@@ -55,7 +55,7 @@ namespace GuiWindowsForms
         {
             if (EventoCadastrar != null)
                 EventoCadastrar();
-            MessageBox.Show("Operação realizada com sucesso.");
+           // MessageBox.Show("Operação realizada com sucesso.");
 
         }
 
