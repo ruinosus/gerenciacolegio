@@ -43,14 +43,12 @@ namespace GuiWindowsForms
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            //errorProvider1.SetError(txtLogin, "Informe o login");
-            //errorProvider1.SetError(txtSenha, "Informe a senha");
-            toolTip1.SetToolTip(txtLogin, "mensagem bem gay");
-            toolTip1.BackColor = Color.Beige;
-            toolTip1.ToolTipIcon = ToolTipIcon.Error;
-            toolTip1.ToolTipTitle = "Titulo da mensagem";
-            toolTip1.Active = true;
-            toolTip1.Show("novo textasr",txtLogin);
+            //toolTip1.SetToolTip(txtLogin, "mensagem bem gay");
+            //toolTip1.BackColor = Color.Beige;
+            //toolTip1.ToolTipIcon = ToolTipIcon.Error;
+            //toolTip1.ToolTipTitle = "Titulo da mensagem";
+            //toolTip1.Active = true;
+            //toolTip1.Show("novo textasr", txtLogin);
             #region Validação dos campos de login e senha
 
             try
@@ -60,11 +58,13 @@ namespace GuiWindowsForms
                 if (String.IsNullOrEmpty(txtLogin.Text))
                 {
                     txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
                     throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
                 }
                 else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
                 {
                     txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
                     throw new Exception("O login deve conter entre 8 e 20 dígitos.");
                 }
                 else
@@ -72,12 +72,14 @@ namespace GuiWindowsForms
                     if(String.IsNullOrEmpty(txtSenha.Text))
                     {
                         txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe a senha");
                         throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
                     }
                     else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
                     {
                         txtSenha.BackColor = System.Drawing.Color.LawnGreen;
-                        throw new Exception("O login deve conter entre 8 e 20 dígitos.");
+                        errorProviderTela.SetError(txtSenha, "Informe o login");
+                        throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
                     }
                     else
                     {
@@ -145,6 +147,16 @@ namespace GuiWindowsForms
         private void telaLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.ExitThread();
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
         }
     }
 }

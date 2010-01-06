@@ -435,12 +435,186 @@ namespace GuiWindowsForms
 
         #endregion
 
-        private void uMenuLateral1_Load(object sender, EventArgs e)
+        private void ucAluno1_EventoCadastrar()
         {
-            uMenuLateral1.verificaTela(telaalunoresponsavel);
+            try
+            {
+                #region VALIDA - NOME
+
+                if (String.IsNullOrEmpty(txtNome.Text))
+                {
+                    errorProviderTela.SetError(txtNome, "Informe o nome");
+                    return;
+                }
+              
+            
+                #endregion
+
+                #region VALIDA - SEXO  
+
+                if (rdbMasc.Checked==false || rdbFem.Checked==false)
+                {
+                    errorProviderTela.SetError(rdbFem, "Informe o sexo");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - IDENTIDADE
+
+                if (String.IsNullOrEmpty(txtRg.Text))
+                {
+                    errorProviderTela.SetError(txtRg, "Informe a Identidade");
+                    return;
+                }
+              
+
+                #endregion
+
+                #region VALIDA - CPF
+
+                if (String.IsNullOrEmpty(mskCpf.Text))
+                {
+                    errorProviderTela.SetError(mskCpf, "Informe o cpf");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - PROFISSÃO
+
+                if (String.IsNullOrEmpty(txtProfissao.Text))
+                {
+                    errorProviderTela.SetError(txtProfissao, "Informe a profissão");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - LOCAL DE TRABALHO
+
+                if (String.IsNullOrEmpty(txtLocalTrabalho.Text))
+                {
+                    errorProviderTela.SetError(txtLocalTrabalho, "Informe o local de trabalho");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - EMAIL
+
+                if (String.IsNullOrEmpty(txtEmail.Text)) 
+                {
+                    errorProviderTela.SetError(txtEmail, "Informe o email");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - FONE DO TRABALHO
+
+                if (String.IsNullOrEmpty(mskFoneTrabalho.Text)) 
+                {
+                    errorProviderTela.SetError(mskFoneTrabalho, "Informe o fone do trabalho");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - ENDEREÇO
+
+                if (String.IsNullOrEmpty(txtLogradouro.Text))
+                {
+                    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - COMPLEMENTO
+
+                if (String.IsNullOrEmpty(txtComplemento.Text))
+                {
+                    errorProviderTela.SetError(txtComplemento, "Informe o endereço");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - EDIFÍCIO
+
+                if (String.IsNullOrEmpty(txtNomeEdificil.Text))
+                {
+                    errorProviderTela.SetError(txtNomeEdificil, "Informe o edifício");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - BAIRRO
+
+                if (String.IsNullOrEmpty(txtBairro.Text))
+                {
+                    errorProviderTela.SetError(txtBairro, "Informe o bairro");
+                    return;
+                }
+
+                #endregion
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
+        #region TEXTBOX UF EVENTO SELECTED
+        // Quando selecionar a UF o campo CIDADE é selecionado a capital correspondente
+        private void cmbUf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbUf.Text == "AC") { txtCidade.Text = "RIO BRANCO"; }
+            if (cmbUf.Text == "AL") { txtCidade.Text = "MACEIO"; }
+            if (cmbUf.Text == "AM") { txtCidade.Text = "MANAUS"; }
+            if (cmbUf.Text == "AP") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "BA") { txtCidade.Text = "SALVADOR"; }
+            if (cmbUf.Text == "CE") { txtCidade.Text = "FORTALEZA"; }
+            if (cmbUf.Text == "DF") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "ES") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "GO") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "MA") { txtCidade.Text = "SÃO LUIZ"; }
+            if (cmbUf.Text == "MG") { txtCidade.Text = "BELO HORIZONTE"; }
+            if (cmbUf.Text == "MS") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "MT") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "PA") { txtCidade.Text = "BELÉM"; }
+            if (cmbUf.Text == "PB") { txtCidade.Text = "JOÃO PESSOA"; }
+            if (cmbUf.Text == "PE") { txtCidade.Text = "RECIFE"; }
+            if (cmbUf.Text == "PI") { txtCidade.Text = "TEREZINA"; }
+            if (cmbUf.Text == "MT") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "PR") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "RJ") { txtCidade.Text = "RIO DE JANEIRO"; }
+            if (cmbUf.Text == "RN") { txtCidade.Text = "NATAL"; }
+            if (cmbUf.Text == "RO") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "RR") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "RS") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "SC") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "SE") { txtCidade.Text = "ARACAJÚ"; }
+            if (cmbUf.Text == "SP") { txtCidade.Text = "SÃO PAULO"; }
+            if (cmbUf.Text == "TO") { txtCidade.Text = "PALMAS"; }
+        }
 
+        #endregion
+
+        #region STRING PARA ALIMENTAR COMBOBOX
+
+        string[] estados = { "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO" };
+
+        #endregion
+
+        #region LOAD
+        private void telaAlunoResponsavel_Load(object sender, EventArgs e)
+        {
+            cmbUf.DataSource = estados;
+        }
+        #endregion
 
     }
 }

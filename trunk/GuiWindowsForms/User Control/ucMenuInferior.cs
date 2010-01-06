@@ -53,9 +53,10 @@ namespace GuiWindowsForms
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("ESCREVER O CODIGO SALVAR AQUI");
             if (EventoCadastrar != null)
                 EventoCadastrar();
+            MessageBox.Show("Operação realizada com sucesso.");
+
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
