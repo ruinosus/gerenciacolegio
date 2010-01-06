@@ -105,7 +105,6 @@
     <Compile Include="ChequeBoletoMensalidade\Processos\Interfaces\IChequeBoletoMensalidadeProcesso.cs" />
     <Compile Include="ChequeBoletoMensalidade\Repositorios\ChequeBoletoMensalidadeRepositorio.cs" />
     <Compile Include="ChequeBoletoMensalidade\Repositorios\Interfaces\IChequeBoletoMensalidadeRepositorio.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ContasAPagar\Constantes\ContasAPagarConstantes.cs" />
     <Compile Include="ContasAPagar\Excecoes\ContasAPagarNaoAlteradaExcecao.cs" />
     <Compile Include="ContasAPagar\Excecoes\ContasAPagarNaoExcluidaExcecao.cs" />

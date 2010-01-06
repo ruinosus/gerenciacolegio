@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloSala.Processos
 {
@@ -33,18 +34,19 @@ namespace Negocios.ModuloSala.Processos
         /// Método responsável por consultar salas do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="sala">Objeto do tipo sala que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>       
         /// <returns>Lista contendo todas as salas cadastradas.</returns>
-        List<Sala> Consultar(Sala sala);
+        List<Sala> Consultar(Sala sala, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todas as salas do sistema.
         /// </summary>
         /// <returns>Lista contendo todas as salas cadastradas.</returns>
         List<Sala> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }

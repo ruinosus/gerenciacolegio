@@ -5,6 +5,7 @@ using System.Web;
 using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloTurma.Excecoes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloTurma.Repositorios
 {
@@ -23,10 +24,84 @@ namespace Negocios.ModuloTurma.Repositorios
             return db.Turma.ToList();
         }
 
-        public List<Turma> Consultar(Turma turma)
+        public List<Turma> Consultar(Turma turma, TipoPesquisa tipoPesquisa)
         {
-            // return db.Turmas.SingleOrDefault(d => d.Id == id);
-            return db.Turma.ToList();
+            List<Turma> resultado = Consultar();
+
+            switch (tipoPesquisa)
+            {
+                #region Case E
+                case TipoPesquisa.E:
+                    {
+                        if (turma.ID != 0)
+                        {
+                            resultado.AddRange((from t in resultado
+                                                where
+                                                t.ID == turma.ID
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(turma.Nome))
+                        {
+                            resultado.AddRange((from t in resultado
+                                                where
+                                                t.Nome.Contains(turma.Nome)
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (turma.Status.HasValue)
+                        {
+                            resultado.AddRange((from t in resultado
+                                                where
+                                                t.Status.HasValue && t.Status.Value == turma.Status.Value
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        break;
+                    }
+                #endregion
+                #region Case Ou
+                case TipoPesquisa.Ou:
+                    {
+                        if (turma.ID != 0)
+                        {
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.ID == turma.ID
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(turma.Nome))
+                        {
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.Nome.Contains(turma.Nome)
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (turma.Status.HasValue)
+                        {
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.Status.HasValue && t.Status.Value == turma.Status.Value
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+
+                        break;
+                    }
+                #endregion
+                default:
+                    break;
+            }
+
+            return resultado;
         }
 
         public void Incluir(Turma turma)
@@ -46,7 +121,17 @@ namespace Negocios.ModuloTurma.Repositorios
         {
             try
             {
-                db.Turma.DeleteOnSubmit(turma);
+                Turma turmaAux = new Turma();
+                turmaAux.ID = turma.ID;
+
+                List<Turma> resultado = this.Consultar(turmaAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new TurmaNaoExcluidaExcecao();
+
+                turmaAux = resultado[0];
+
+                db.Turma.DeleteOnSubmit(turmaAux);
             }
             catch (Exception)
             {
@@ -59,7 +144,20 @@ namespace Negocios.ModuloTurma.Repositorios
         {
             try
             {
-                db.Turma.InsertOnSubmit(turma);
+                Turma turmaAux = new Turma();
+                turmaAux.ID = turma.ID;
+
+                List<Turma> resultado = this.Consultar(turmaAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new TurmaNaoAlteradaExcecao();
+
+                turmaAux = resultado[0];
+                turmaAux.Nome = turma.Nome;
+                turmaAux.Status = turma.Status;
+
+
+                Confirmar();
             }
             catch (Exception)
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloTurno.Repositorios
 {
@@ -30,11 +31,12 @@ namespace Negocios.ModuloTurno.Repositorios
         void Alterar(Turno turno);
 
         /// <summary>
-        /// Método responsável por consultar perfis do sistema de acordo com os parametros informados.
+        /// Método responsável por consultar turnos do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="turno">Objeto do tipo turno que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todos os perfis cadastrados.</returns>
-        List<Turno> Consultar(Turno turno);
+        List<Turno> Consultar(Turno turno, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todos os comentários do sistema.

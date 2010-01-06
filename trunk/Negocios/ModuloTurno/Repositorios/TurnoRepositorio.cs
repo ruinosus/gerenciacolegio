@@ -5,6 +5,7 @@ using System.Web;
 using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloTurno.Excecoes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloTurno.Repositorios
 {
@@ -23,10 +24,84 @@ namespace Negocios.ModuloTurno.Repositorios
             return db.Turno.ToList();
         }
 
-        public List<Turno> Consultar(Turno turno)
+        public List<Turno> Consultar(Turno turno, TipoPesquisa tipoPesquisa)
         {
-            // return db.Turnos.SingleOrDefault(d => d.Id == id);
-            return db.Turno.ToList();
+            List<Turno> resultado = Consultar();
+
+            switch (tipoPesquisa)
+            {
+                #region Case E
+                case TipoPesquisa.E:
+                    {
+                        if (turno.ID != 0)
+                        {
+                            resultado.AddRange((from t in resultado
+                                                where
+                                                t.ID == turno.ID
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(turno.Nome))
+                        {
+                            resultado.AddRange((from t in resultado
+                                                where
+                                                t.Nome.Contains(turno.Nome)
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (turno.Status.HasValue)
+                        {
+                            resultado.AddRange((from t in resultado
+                                                where
+                                                t.Status.HasValue && t.Status.Value == turno.Status.Value
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        break;
+                    }
+                #endregion
+                #region Case Ou
+                case TipoPesquisa.Ou:
+                    {
+                        if (turno.ID != 0)
+                        {
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.ID == turno.ID
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(turno.Nome))
+                        {
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.Nome.Contains(turno.Nome)
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (turno.Status.HasValue)
+                        {
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.Status.HasValue && t.Status.Value == turno.Status.Value
+                                                select t).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+
+                        break;
+                    }
+                #endregion
+                default:
+                    break;
+            }
+
+            return resultado;
         }
 
         public void Incluir(Turno turno)
@@ -46,7 +121,18 @@ namespace Negocios.ModuloTurno.Repositorios
         {
             try
             {
-                db.Turno.DeleteOnSubmit(turno);
+                Turno turnoAux = new Turno();
+                turnoAux.ID = turno.ID;
+
+                List<Turno> resultado = this.Consultar(turnoAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new TurnoNaoExcluidoExcecao();
+
+                turnoAux = resultado[0];
+
+                db.Turno.DeleteOnSubmit(turnoAux);
+               
             }
             catch (Exception)
             {
@@ -59,7 +145,19 @@ namespace Negocios.ModuloTurno.Repositorios
         {
             try
             {
-                db.Turno.InsertOnSubmit(turno);
+                Turno turnoAux = new Turno();
+                turnoAux.ID = turno.ID;
+
+                List<Turno> resultado = this.Consultar(turnoAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new TurnoNaoAlteradoExcecao();
+
+                turnoAux = resultado[0];
+                turnoAux.Nome = turno.Nome;
+                turnoAux.Status = turno.Status;
+
+                Confirmar();
             }
             catch (Exception)
             {

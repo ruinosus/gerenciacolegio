@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloSerie.Repositorios;
 using Negocios.ModuloSerie.Processos;
 using Negocios.ModuloSerie.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloSerie.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloSerie.Processos
             this.serieRepositorio.Alterar(serie);
         }
 
-        public List<Serie> Consultar(Serie serie)
+        public List<Serie> Consultar(Serie serie, TipoPesquisa tipoPesquisa)
         {
-            List<Serie> serieList = this.serieRepositorio.Consultar(serie);           
+            List<Serie> serieList = this.serieRepositorio.Consultar(serie,tipoPesquisa);           
 
             return serieList;
         }

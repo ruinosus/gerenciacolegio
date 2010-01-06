@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloTurno.Repositorios;
 using Negocios.ModuloTurno.Processos;
 using Negocios.ModuloTurno.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloTurno.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloTurno.Processos
             this.turnoRepositorio.Alterar(turno);
         }
 
-        public List<Turno> Consultar(Turno turno)
+        public  List<Turno> Consultar(Turno turno, TipoPesquisa tipoPesquisa)
         {
-            List<Turno> turnoList = this.turnoRepositorio.Consultar(turno);           
+            List<Turno> turnoList = this.turnoRepositorio.Consultar(turno,tipoPesquisa);           
 
             return turnoList;
         }

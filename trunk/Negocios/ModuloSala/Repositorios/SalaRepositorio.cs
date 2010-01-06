@@ -5,6 +5,7 @@ using System.Web;
 using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloSala.Excecoes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloSala.Repositorios
 {
@@ -23,10 +24,122 @@ namespace Negocios.ModuloSala.Repositorios
             return db.Sala.ToList();
         }
 
-        public List<Sala> Consultar(Sala sala)
+        public List<Sala> Consultar(Sala sala, TipoPesquisa tipoPesquisa)
         {
-            // return db.Salas.SingleOrDefault(d => d.Id == id);
-            return db.Sala.ToList();
+            List<Sala> resultado = Consultar();
+
+            switch (tipoPesquisa)
+            {
+                #region Case E
+                case TipoPesquisa.E:
+                    {
+                        if (sala.ID != 0)
+                        {
+                            resultado.AddRange((from s in resultado
+                                                where
+                                                s.ID == sala.ID
+                                                select s).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        
+
+                        if (sala.Status.HasValue)
+                        {
+                            resultado.AddRange((from s in resultado
+                                                where
+                                                s.Status.HasValue && s.Status.Value == sala.Status.Value
+                                                select s).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (sala.SerieID.HasValue)
+                        {
+                            resultado.AddRange((from s in resultado
+                                                where
+                                                s.SerieID.HasValue && s.SerieID.Value == sala.SerieID.Value
+                                                select s).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (sala.TurmaID.HasValue)
+                        {
+                            resultado.AddRange((from s in resultado
+                                                where
+                                                s.TurmaID.HasValue && s.TurmaID.Value == sala.TurmaID.Value
+                                                select s).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (sala.TurnoID.HasValue)
+                        {
+                            resultado.AddRange((from s in resultado
+                                                where
+                                                s.TurnoID.HasValue && s.TurnoID.Value == sala.TurnoID.Value
+                                                select s).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        break;
+                    }
+                #endregion
+                #region Case Ou
+                case TipoPesquisa.Ou:
+                    {
+                        if (sala.ID != 0)
+                        {
+                            resultado.AddRange((from s in Consultar()
+                                                where
+                                                s.ID == sala.ID
+                                                select s).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+
+
+                        if (sala.Status.HasValue)
+                        {
+                            resultado.AddRange((from s in Consultar()
+                                                where
+                                                s.Status.HasValue && s.Status.Value == sala.Status.Value
+                                                select s).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (sala.SerieID.HasValue)
+                        {
+                            resultado.AddRange((from s in Consultar()
+                                                where
+                                                s.SerieID.HasValue && s.SerieID.Value == sala.SerieID.Value
+                                                select s).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (sala.TurmaID.HasValue)
+                        {
+                            resultado.AddRange((from s in Consultar()
+                                                where
+                                                s.TurmaID.HasValue && s.TurmaID.Value == sala.TurmaID.Value
+                                                select s).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (sala.TurnoID.HasValue)
+                        {
+                            resultado.AddRange((from s in Consultar()
+                                                where
+                                                s.TurnoID.HasValue && s.TurnoID.Value == sala.TurnoID.Value
+                                                select s).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+                        break;
+                    }
+                #endregion
+                default:
+                    break;
+            }
+
+            return resultado;
         }
 
         public void Incluir(Sala sala)
@@ -46,7 +159,17 @@ namespace Negocios.ModuloSala.Repositorios
         {
             try
             {
-                db.Sala.DeleteOnSubmit(sala);
+                Sala salaAux = new Sala();
+                salaAux.ID = sala.ID;
+
+                List<Sala> resultado = this.Consultar(salaAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new SalaNaoExcluidaExcecao();
+
+                salaAux = resultado[0];
+
+                db.Sala.DeleteOnSubmit(salaAux);
             }
             catch (Exception)
             {
@@ -59,7 +182,22 @@ namespace Negocios.ModuloSala.Repositorios
         {
             try
             {
-                db.Sala.InsertOnSubmit(sala);
+                Sala salaAux = new Sala();
+                salaAux.ID = sala.ID;
+
+                List<Sala> resultado = this.Consultar(salaAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new SalaNaoAlteradaExcecao();
+
+                salaAux = resultado[0];
+
+                salaAux.SalaPeriodo = sala.SalaPeriodo;
+                salaAux.SerieID = sala.SerieID;
+                salaAux.TurmaID= sala.TurmaID;
+                salaAux.TurnoID = sala.TurnoID;
+
+                Confirmar();
             }
             catch (Exception)
             {

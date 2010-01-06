@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloTurma.Processos
 {
@@ -33,18 +34,19 @@ namespace Negocios.ModuloTurma.Processos
         /// Método responsável por consultar turmas do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="turma">Objeto do tipo turma que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todas as turmas cadastradas.</returns>
-        List<Turma> Consultar(Turma turma);
+        List<Turma> Consultar(Turma turma, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todas as turmas do sistema.
         /// </summary>
         /// <returns>Lista contendo todas as turmas cadastradas.</returns>
         List<Turma> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }
