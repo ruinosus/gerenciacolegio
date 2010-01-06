@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloDependencia.Processos
 {
@@ -30,21 +31,22 @@ namespace Negocios.ModuloDependencia.Processos
         void Alterar(Dependencia dependencia);
 
         /// <summary>
-        /// Método responsável por consultar dependencias do sistema de acordo com os parametros informados.
+        /// Método responsável por consultar salas do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="dependencia">Objeto do tipo dependencia que irá ser utilizado como parametro de pesquisa.</param>
-        /// <returns>Lista contendo todas as dependencias cadastradas.</returns>
-        List<Dependencia> Consultar(Dependencia dependencia);
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
+        /// <returns>Lista contendo todas as salas cadastradas.</returns>
+        List<Dependencia> Consultar(Dependencia dependencia, TipoPesquisa tipoPesquisa);
 
         /// <summary>
-        /// Método responsável por consultar todas as dependencias do sistema.
+        /// Método responsável por consultar todas as salas do sistema.
         /// </summary>
-        /// <returns>Lista contendo todas as dependencias cadastradas.</returns>
+        /// <returns>Lista contendo todas as salas cadastradas.</returns>
         List<Dependencia> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }

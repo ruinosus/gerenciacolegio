@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloDesconto.Repositorios;
 using Negocios.ModuloDesconto.Processos;
 using Negocios.ModuloDesconto.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloDesconto.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloDesconto.Processos
             this.descontoRepositorio.Alterar(desconto);
         }
 
-        public List<Desconto> Consultar(Desconto desconto)
+        public List<Desconto> Consultar(Desconto desconto, TipoPesquisa tipoPesquisa)
         {
-            List<Desconto> descontoList = this.descontoRepositorio.Consultar(desconto);           
+            List<Desconto> descontoList = this.descontoRepositorio.Consultar(desconto, tipoPesquisa);           
 
             return descontoList;
         }

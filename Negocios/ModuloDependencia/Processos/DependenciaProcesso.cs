@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloDependencia.Repositorios;
 using Negocios.ModuloDependencia.Processos;
 using Negocios.ModuloDependencia.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloDependencia.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloDependencia.Processos
             this.dependenciaRepositorio.Alterar(dependencia);
         }
 
-        public List<Dependencia> Consultar(Dependencia dependencia)
+        public List<Dependencia> Consultar(Dependencia dependencia, TipoPesquisa tipoPesquisa)
         {
-            List<Dependencia> dependenciaList = this.dependenciaRepositorio.Consultar(dependencia);           
+            List<Dependencia> dependenciaList = this.dependenciaRepositorio.Consultar(dependencia,tipoPesquisa);           
 
             return dependenciaList;
         }

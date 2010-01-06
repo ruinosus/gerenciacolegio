@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloDependencia.Repositorios
 {
@@ -33,8 +34,9 @@ namespace Negocios.ModuloDependencia.Repositorios
         /// Método responsável por consultar salas do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="dependencia">Objeto do tipo dependencia que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todas as salas cadastradas.</returns>
-        List<Dependencia> Consultar(Dependencia dependencia);
+        List<Dependencia> Consultar(Dependencia dependencia, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todas as salas do sistema.
