@@ -5,6 +5,7 @@ using System.Web;
 using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloResponsavelAluno.Excecoes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloResponsavelAluno.Repositorios
 {
@@ -23,10 +24,141 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
             return db.ResponsavelAluno.ToList();
         }
 
-        public List<ResponsavelAluno> Consultar(ResponsavelAluno responsavelAluno)
+        public List<ResponsavelAluno> Consultar(ResponsavelAluno responsavelAluno, TipoPesquisa tipoPesquisa)
         {
-            // return db.ResponsavelAlunos.SingleOrDefault(d => d.Id == id);
-            return db.ResponsavelAluno.ToList();
+            List<ResponsavelAluno> resultado = Consultar();
+
+            switch (tipoPesquisa)
+            {
+                #region Case E
+                case TipoPesquisa.E:
+                    {
+                        if (responsavelAluno.AlunoID != 0)
+                        {
+                            resultado.AddRange((from ra in resultado
+                                                where
+                                                ra.AlunoID == responsavelAluno.AlunoID
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.ResponsavelID != 0)
+                        {
+                            resultado.AddRange((from ra in resultado
+                                                where
+                                                ra.ResponsavelID == responsavelAluno.ResponsavelID
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.GrauParentescoID != 0)
+                        {
+                            resultado.AddRange((from ra in resultado
+                                                where
+                                                ra.GrauParentescoID == responsavelAluno.GrauParentescoID
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(responsavelAluno.Restricoes))
+                        {
+                            resultado.AddRange((from ra in resultado
+                                                where
+                                                ra.Restricoes.Contains(responsavelAluno.Restricoes)
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.Status.HasValue)
+                        {
+                            resultado.AddRange((from ra in resultado
+                                                where
+                                                ra.Status.HasValue && ra.Status.Value == responsavelAluno.Status.Value
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.ResideCom.HasValue)
+                        {
+                            resultado.AddRange((from ra in resultado
+                                                where
+                                                ra.ResideCom.HasValue && ra.ResideCom.Value == responsavelAluno.ResideCom.Value
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        
+                        break;
+                    }
+                #endregion
+                #region Case Ou
+                case TipoPesquisa.Ou:
+                    {
+                        if (responsavelAluno.AlunoID != 0)
+                        {
+                            resultado.AddRange((from ra in Consultar()
+                                                where
+                                                ra.AlunoID == responsavelAluno.AlunoID
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.ResponsavelID != 0)
+                        {
+                            resultado.AddRange((from ra in Consultar()
+                                                where
+                                                ra.ResponsavelID == responsavelAluno.ResponsavelID
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.GrauParentescoID != 0)
+                        {
+                            resultado.AddRange((from ra in Consultar()
+                                                where
+                                                ra.GrauParentescoID == responsavelAluno.GrauParentescoID
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(responsavelAluno.Restricoes))
+                        {
+                            resultado.AddRange((from ra in Consultar()
+                                                where
+                                                ra.Restricoes.Contains(responsavelAluno.Restricoes)
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.Status.HasValue)
+                        {
+                            resultado.AddRange((from ra in Consultar()
+                                                where
+                                                ra.Status.HasValue && ra.Status.Value == responsavelAluno.Status.Value
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.ResideCom.HasValue)
+                        {
+                            resultado.AddRange((from ra in Consultar()
+                                                where
+                                                ra.ResideCom.HasValue && ra.ResideCom.Value == responsavelAluno.ResideCom.Value
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        
+
+                        break;
+                    }
+                #endregion
+                default:
+                    break;
+            }
+
+            return resultado;
+
         }
 
         public void Incluir(ResponsavelAluno responsavelAluno)
@@ -46,7 +178,18 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
         {
             try
             {
-                db.ResponsavelAluno.DeleteOnSubmit(responsavelAluno);
+                ResponsavelAluno responsavelAlunoAux = new ResponsavelAluno();
+                responsavelAlunoAux.AlunoID = responsavelAluno.AlunoID;
+                responsavelAlunoAux.ResponsavelID = responsavelAluno.ResponsavelID;
+
+                List<ResponsavelAluno> resultado = this.Consultar(responsavelAlunoAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new ResponsavelAlunoNaoExcluidoExcecao();
+
+                responsavelAlunoAux = resultado[0];
+
+                db.ResponsavelAluno.DeleteOnSubmit(responsavelAlunoAux);
             }
             catch (Exception)
             {
@@ -59,7 +202,25 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
         {
             try
             {
-                db.ResponsavelAluno.InsertOnSubmit(responsavelAluno);
+                ResponsavelAluno responsavelAlunoAux = new ResponsavelAluno();
+                responsavelAlunoAux.AlunoID = responsavelAluno.AlunoID;
+                responsavelAlunoAux.ResponsavelID = responsavelAluno.ResponsavelID;
+
+                List<ResponsavelAluno> resultado = this.Consultar(responsavelAlunoAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new ResponsavelAlunoNaoAlteradoExcecao();
+
+                responsavelAlunoAux = resultado[0];
+
+                responsavelAlunoAux.AlunoID = responsavelAluno.AlunoID;
+                responsavelAlunoAux.ResponsavelID = responsavelAluno.ResponsavelID;
+                responsavelAlunoAux.GrauParentescoID = responsavelAluno.GrauParentescoID;
+                responsavelAlunoAux.ResideCom = responsavelAluno.ResideCom;
+                responsavelAlunoAux.ResponsavelID = responsavelAluno.ResponsavelID;
+                responsavelAlunoAux.Restricoes = responsavelAluno.Restricoes;
+                responsavelAlunoAux.Status = responsavelAluno.Status;
+
             }
             catch (Exception)
             {
