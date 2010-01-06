@@ -37,8 +37,8 @@
             this.lblControleAcesso_menu.AutoSize = true;
             this.lblControleAcesso_menu.BackColor = System.Drawing.Color.Transparent;
             this.lblControleAcesso_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblControleAcesso_menu.ForeColor = System.Drawing.Color.Yellow;
-            this.lblControleAcesso_menu.Location = new System.Drawing.Point(34, 92);
+            this.lblControleAcesso_menu.ForeColor = System.Drawing.Color.White;
+            this.lblControleAcesso_menu.Location = new System.Drawing.Point(23, 92);
             this.lblControleAcesso_menu.Name = "lblControleAcesso_menu";
             this.lblControleAcesso_menu.Size = new System.Drawing.Size(46, 17);
             this.lblControleAcesso_menu.TabIndex = 92;
@@ -52,7 +52,7 @@
             this.btnControledeAcesso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnControledeAcesso.FlatAppearance.BorderSize = 0;
             this.btnControledeAcesso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnControledeAcesso.Location = new System.Drawing.Point(27, 13);
+            this.btnControledeAcesso.Location = new System.Drawing.Point(16, 13);
             this.btnControledeAcesso.Margin = new System.Windows.Forms.Padding(0);
             this.btnControledeAcesso.Name = "btnControledeAcesso";
             this.btnControledeAcesso.Size = new System.Drawing.Size(64, 80);
@@ -70,7 +70,7 @@
             this.Controls.Add(this.lblControleAcesso_menu);
             this.Controls.Add(this.btnControledeAcesso);
             this.Name = "ucMenuConfiguracoesEsquerda";
-            this.Size = new System.Drawing.Size(120, 493);
+            this.Size = new System.Drawing.Size(91, 493);
             this.ResumeLayout(false);
             this.PerformLayout();
 

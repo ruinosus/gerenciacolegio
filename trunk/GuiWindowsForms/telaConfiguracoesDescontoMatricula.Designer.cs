@@ -36,19 +36,13 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblDesconto_menu = new System.Windows.Forms.Label();
-            this.lblAtividade_menu = new System.Windows.Forms.Label();
-            this.lblSerie_menu = new System.Windows.Forms.Label();
-            this.btnControledeAcesso = new System.Windows.Forms.Button();
-            this.lblControleAcesso_menu = new System.Windows.Forms.Label();
-            this.btnSerie = new System.Windows.Forms.Button();
-            this.btnDesconto = new System.Windows.Forms.Button();
-            this.btnAtividade = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.lblInfoControles = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
+            this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
+            this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -126,123 +120,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(640, 285);
             this.dataGridView1.TabIndex = 0;
             // 
-            // lblDesconto_menu
-            // 
-            this.lblDesconto_menu.AutoSize = true;
-            this.lblDesconto_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblDesconto_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblDesconto_menu.ForeColor = System.Drawing.Color.Yellow;
-            this.lblDesconto_menu.Location = new System.Drawing.Point(915, 466);
-            this.lblDesconto_menu.Name = "lblDesconto_menu";
-            this.lblDesconto_menu.Size = new System.Drawing.Size(76, 17);
-            this.lblDesconto_menu.TabIndex = 140;
-            this.lblDesconto_menu.Text = "Descontos";
-            // 
-            // lblAtividade_menu
-            // 
-            this.lblAtividade_menu.AutoSize = true;
-            this.lblAtividade_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblAtividade_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblAtividade_menu.ForeColor = System.Drawing.Color.White;
-            this.lblAtividade_menu.Location = new System.Drawing.Point(911, 364);
-            this.lblAtividade_menu.Name = "lblAtividade_menu";
-            this.lblAtividade_menu.Size = new System.Drawing.Size(76, 17);
-            this.lblAtividade_menu.TabIndex = 139;
-            this.lblAtividade_menu.Text = "Atividades";
-            this.lblAtividade_menu.Visible = false;
-            // 
-            // lblSerie_menu
-            // 
-            this.lblSerie_menu.AutoSize = true;
-            this.lblSerie_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblSerie_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSerie_menu.ForeColor = System.Drawing.Color.White;
-            this.lblSerie_menu.Location = new System.Drawing.Point(927, 269);
-            this.lblSerie_menu.Name = "lblSerie_menu";
-            this.lblSerie_menu.Size = new System.Drawing.Size(49, 17);
-            this.lblSerie_menu.TabIndex = 138;
-            this.lblSerie_menu.Text = "Séries";
-            this.lblSerie_menu.Visible = false;
-            // 
-            // btnControledeAcesso
-            // 
-            this.btnControledeAcesso.BackColor = System.Drawing.Color.Transparent;
-            this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80;
-            this.btnControledeAcesso.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnControledeAcesso.FlatAppearance.BorderSize = 0;
-            this.btnControledeAcesso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnControledeAcesso.Location = new System.Drawing.Point(15, 190);
-            this.btnControledeAcesso.Margin = new System.Windows.Forms.Padding(0);
-            this.btnControledeAcesso.Name = "btnControledeAcesso";
-            this.btnControledeAcesso.Size = new System.Drawing.Size(64, 80);
-            this.btnControledeAcesso.TabIndex = 133;
-            this.btnControledeAcesso.UseVisualStyleBackColor = false;
-            this.btnControledeAcesso.MouseLeave += new System.EventHandler(this.btnControledeAcesso_MouseLeave);
-            this.btnControledeAcesso.Click += new System.EventHandler(this.btnControledeAcesso_Click);
-            this.btnControledeAcesso.MouseEnter += new System.EventHandler(this.btnControledeAcesso_MouseEnter);
-            // 
-            // lblControleAcesso_menu
-            // 
-            this.lblControleAcesso_menu.AutoSize = true;
-            this.lblControleAcesso_menu.BackColor = System.Drawing.Color.Transparent;
-            this.lblControleAcesso_menu.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold);
-            this.lblControleAcesso_menu.ForeColor = System.Drawing.Color.White;
-            this.lblControleAcesso_menu.Location = new System.Drawing.Point(25, 271);
-            this.lblControleAcesso_menu.Name = "lblControleAcesso_menu";
-            this.lblControleAcesso_menu.Size = new System.Drawing.Size(46, 17);
-            this.lblControleAcesso_menu.TabIndex = 137;
-            this.lblControleAcesso_menu.Text = "Perfis";
-            this.lblControleAcesso_menu.Visible = false;
-            // 
-            // btnSerie
-            // 
-            this.btnSerie.BackColor = System.Drawing.Color.Transparent;
-            this.btnSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_serie_64x70_disabled;
-            this.btnSerie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSerie.FlatAppearance.BorderSize = 0;
-            this.btnSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSerie.Location = new System.Drawing.Point(920, 190);
-            this.btnSerie.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSerie.Name = "btnSerie";
-            this.btnSerie.Size = new System.Drawing.Size(60, 74);
-            this.btnSerie.TabIndex = 134;
-            this.btnSerie.UseVisualStyleBackColor = false;
-            this.btnSerie.MouseLeave += new System.EventHandler(this.btnSerie_MouseLeave);
-            this.btnSerie.Click += new System.EventHandler(this.btnSerie_Click);
-            this.btnSerie.MouseEnter += new System.EventHandler(this.btnSerie_MouseEnter);
-            // 
-            // btnDesconto
-            // 
-            this.btnDesconto.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_desconto_79x80;
-            this.btnDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDesconto.Enabled = false;
-            this.btnDesconto.FlatAppearance.BorderSize = 0;
-            this.btnDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconto.Location = new System.Drawing.Point(915, 390);
-            this.btnDesconto.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDesconto.Name = "btnDesconto";
-            this.btnDesconto.Size = new System.Drawing.Size(79, 80);
-            this.btnDesconto.TabIndex = 136;
-            this.btnDesconto.UseVisualStyleBackColor = false;
-            // 
-            // btnAtividade
-            // 
-            this.btnAtividade.BackColor = System.Drawing.Color.Transparent;
-            this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled;
-            this.btnAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAtividade.FlatAppearance.BorderSize = 0;
-            this.btnAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtividade.Location = new System.Drawing.Point(907, 290);
-            this.btnAtividade.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAtividade.Name = "btnAtividade";
-            this.btnAtividade.Size = new System.Drawing.Size(84, 75);
-            this.btnAtividade.TabIndex = 135;
-            this.btnAtividade.UseVisualStyleBackColor = false;
-            this.btnAtividade.MouseLeave += new System.EventHandler(this.btnAtividades_MouseLeave);
-            this.btnAtividade.Click += new System.EventHandler(this.btnAtividades_Click);
-            this.btnAtividade.MouseEnter += new System.EventHandler(this.btnAtividades_MouseEnter);
-            // 
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.Transparent;
@@ -317,6 +194,28 @@
             this.btnDesconectar.UseVisualStyleBackColor = false;
             this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
+            // ucMenuDireita1
+            // 
+            this.ucMenuDireita1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuDireita1.Location = new System.Drawing.Point(893, 175);
+            this.ucMenuDireita1.Name = "ucMenuDireita1";
+            this.ucMenuDireita1.Size = new System.Drawing.Size(120, 493);
+            this.ucMenuDireita1.TabIndex = 133;
+            this.ucMenuDireita1.Load += new System.EventHandler(this.ucMenuDireita1_Load);
+            this.ucMenuDireita1.EventoAbrirAtividade += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaAtividade(this.ucMenuDireita1_EventoAbrirAtividade);
+            this.ucMenuDireita1.EventoAbrirDesconto += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaDesconto(this.ucMenuDireita1_EventoAbrirDesconto);
+            this.ucMenuDireita1.EventoAbrirSerie += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaSerie(this.ucMenuDireita1_EventoAbrirSerie);
+            // 
+            // ucMenuConfiguracoesEsquerda1
+            // 
+            this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
+            this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
+            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
+            this.ucMenuConfiguracoesEsquerda1.TabIndex = 134;
+            this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
+            this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
+            // 
             // telaConfiguracoesDescontoMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,14 +223,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
             this.ClientSize = new System.Drawing.Size(1000, 722);
-            this.Controls.Add(this.lblDesconto_menu);
-            this.Controls.Add(this.lblAtividade_menu);
-            this.Controls.Add(this.lblSerie_menu);
-            this.Controls.Add(this.btnControledeAcesso);
-            this.Controls.Add(this.lblControleAcesso_menu);
-            this.Controls.Add(this.btnSerie);
-            this.Controls.Add(this.btnDesconto);
-            this.Controls.Add(this.btnAtividade);
+            this.Controls.Add(this.ucMenuConfiguracoesEsquerda1);
+            this.Controls.Add(this.ucMenuDireita1);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblHelloUsuario);
@@ -363,18 +256,12 @@
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Label lblDesconto_menu;
-        private System.Windows.Forms.Label lblAtividade_menu;
-        private System.Windows.Forms.Label lblSerie_menu;
-        private System.Windows.Forms.Button btnControledeAcesso;
-        private System.Windows.Forms.Label lblControleAcesso_menu;
-        private System.Windows.Forms.Button btnSerie;
-        private System.Windows.Forms.Button btnDesconto;
-        private System.Windows.Forms.Button btnAtividade;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.Label lblInfoControles;
         private System.Windows.Forms.Button btnDesconectar;
+        private GuiWindowsForms.User_Control.ucMenuDireita ucMenuDireita1;
+        private GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda ucMenuConfiguracoesEsquerda1;
     }
 }
