@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloNota.Repositorios;
 using Negocios.ModuloNota.Processos;
 using Negocios.ModuloNota.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloNota.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloNota.Processos
             this.notaRepositorio.Alterar(nota);
         }
 
-        public List<Nota> Consultar(Nota nota)
+        public List<Nota> Consultar(Nota nota, TipoPesquisa tipoPesquisa)
         {
-            List<Nota> notaList = this.notaRepositorio.Consultar(nota);           
+            List<Nota> notaList = this.notaRepositorio.Consultar(nota,tipoPesquisa);           
 
             return notaList;
         }

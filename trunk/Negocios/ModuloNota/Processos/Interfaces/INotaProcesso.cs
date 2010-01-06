@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloNota.Processos
 {
@@ -30,21 +31,22 @@ namespace Negocios.ModuloNota.Processos
         void Alterar(Nota nota);
 
         /// <summary>
-        /// Método responsável por consultar notas do sistema de acordo com os parametros informados.
+        /// Método responsável por consultar salas do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="nota">Objeto do tipo nota que irá ser utilizado como parametro de pesquisa.</param>
-        /// <returns>Lista contendo todas as notas cadastradas.</returns>
-        List<Nota> Consultar(Nota nota);
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
+        /// <returns>Lista contendo todas as salas cadastradas.</returns>
+        List<Nota> Consultar(Nota nota, TipoPesquisa tipoPesquisa);
 
         /// <summary>
-        /// Método responsável por consultar todas as notas do sistema.
+        /// Método responsável por consultar todas as salas do sistema.
         /// </summary>
-        /// <returns>Lista contendo todas as notas cadastradas.</returns>
+        /// <returns>Lista contendo todas as salas cadastradas.</returns>
         List<Nota> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }

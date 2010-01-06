@@ -5,6 +5,7 @@ using System.Web;
 using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloDesconto.Excecoes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloDesconto.Repositorios
 {
@@ -23,10 +24,102 @@ namespace Negocios.ModuloDesconto.Repositorios
             return db.Desconto.ToList();
         }
 
-        public List<Desconto> Consultar(Desconto desconto)
+        public List<Desconto> Consultar(Desconto desconto, TipoPesquisa tipoPesquisa)
         {
-           // return db.Descontos.SingleOrDefault(d => d.Id == id);
-			return db.Desconto.ToList();
+            List<Desconto> resultado = Consultar();
+
+            switch (tipoPesquisa)
+            {
+                #region Case E
+                case TipoPesquisa.E:
+                    {
+                        if (desconto.ID != 0)
+                        {
+                            resultado.AddRange((from d in resultado
+                                                where
+                                                d.ID == desconto.ID
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(desconto.Descricao))
+                        {
+                            resultado.AddRange((from d in resultado
+                                                where
+                                                d.Descricao.Contains(desconto.Descricao)
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (desconto.Status.HasValue)
+                        {
+                            resultado.AddRange((from d in resultado
+                                                where
+                                                d.Status.HasValue && d.Status.Value == desconto.Status.Value
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (desconto.Percentual!= 0)
+                        {
+                            resultado.AddRange((from d in resultado
+                                                where
+                                                 d.Percentual == desconto.Percentual
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        break;
+                    }
+                #endregion
+                #region Case Ou
+                case TipoPesquisa.Ou:
+                    {
+                        if (desconto.ID != 0)
+                        {
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.ID == desconto.ID
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(desconto.Descricao))
+                        {
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Descricao.Contains(desconto.Descricao)
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (desconto.Status.HasValue)
+                        {
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Status.HasValue && d.Status.Value == desconto.Status.Value
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (desconto.Percentual!=0)
+                        {
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                 d.Percentual == desconto.Percentual
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+
+                        break;
+                    }
+                #endregion
+                default:
+                    break;
+            }
+
+            return resultado;
         }
 
         public void Incluir(Desconto desconto)
@@ -46,7 +139,17 @@ namespace Negocios.ModuloDesconto.Repositorios
         {
             try
             {
-                db.Desconto.DeleteOnSubmit(desconto);
+                Desconto descontoAux = new Desconto();
+                descontoAux.ID = desconto.ID;
+
+                List<Desconto> resultado = this.Consultar(descontoAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new DescontoNaoExcluidoExcecao();
+
+                descontoAux = resultado[0];
+
+                db.Desconto.DeleteOnSubmit(descontoAux);
             }
             catch (Exception)
             {
@@ -59,7 +162,20 @@ namespace Negocios.ModuloDesconto.Repositorios
         {
             try
             {
-                db.Desconto.InsertOnSubmit(desconto);
+                Desconto descontoAux = new Desconto();
+                descontoAux.ID = desconto.ID;
+
+                List<Desconto> resultado = this.Consultar(descontoAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new DescontoNaoExcluidoExcecao();
+
+                descontoAux = resultado[0];
+
+                descontoAux.Descricao = desconto.Descricao;
+                descontoAux.Percentual = desconto.Percentual;
+                descontoAux.Status= desconto.Status;
+                Confirmar();
             }
             catch (Exception)
             {

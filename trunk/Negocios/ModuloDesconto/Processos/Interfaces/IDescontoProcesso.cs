@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloDesconto.Processos
 {
@@ -33,18 +34,19 @@ namespace Negocios.ModuloDesconto.Processos
         /// Método responsável por consultar perfis do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="desconto">Objeto do tipo desconto que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todos os perfis cadastrados.</returns>
-        List<Desconto> Consultar(Desconto desconto);
+        List<Desconto> Consultar(Desconto desconto, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todos os comentários do sistema.
         /// </summary>
         /// <returns>Lista contendo todos os descontos cadastrados.</returns>
         List<Desconto> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }
