@@ -6,6 +6,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloProfessorDisciplinaSala.Repositorios;
 using Negocios.ModuloProfessorDisciplinaSala.Processos;
 using Negocios.ModuloProfessorDisciplinaSala.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloProfessorDisciplinaSala.Processos
 {
@@ -45,9 +46,9 @@ namespace Negocios.ModuloProfessorDisciplinaSala.Processos
             this.professorDisciplinaSalaRepositorio.Alterar(professorDisciplinaSala);
         }
 
-        public List<ProfessorDisciplinaSala> Consultar(ProfessorDisciplinaSala professorDisciplinaSala)
+        public List<ProfessorDisciplinaSala> Consultar(ProfessorDisciplinaSala professorDisciplinaSala, TipoPesquisa tipoPesquisa)
         {
-            List<ProfessorDisciplinaSala> professorDisciplinaSalaList = this.professorDisciplinaSalaRepositorio.Consultar(professorDisciplinaSala);           
+            List<ProfessorDisciplinaSala> professorDisciplinaSalaList = this.professorDisciplinaSalaRepositorio.Consultar(professorDisciplinaSala,tipoPesquisa);           
 
             return professorDisciplinaSalaList;
         }

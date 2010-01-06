@@ -6,6 +6,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloSalaPeriodo.Repositorios;
 using Negocios.ModuloSalaPeriodo.Processos;
 using Negocios.ModuloSalaPeriodo.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloSalaPeriodo.Processos
 {
@@ -45,9 +46,9 @@ namespace Negocios.ModuloSalaPeriodo.Processos
             this.salaPeriodoRepositorio.Alterar(salaPeriodo);
         }
 
-        public List<SalaPeriodo> Consultar(SalaPeriodo salaPeriodo)
+        public List<SalaPeriodo> Consultar(SalaPeriodo salaPeriodo, TipoPesquisa tipoPesquisa)
         {
-            List<SalaPeriodo> salaPeriodoList = this.salaPeriodoRepositorio.Consultar(salaPeriodo);           
+            List<SalaPeriodo> salaPeriodoList = this.salaPeriodoRepositorio.Consultar(salaPeriodo, tipoPesquisa);           
 
             return salaPeriodoList;
         }

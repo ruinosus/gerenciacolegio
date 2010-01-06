@@ -5,6 +5,7 @@ using System.Web;
 using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloProfessorDisciplinaSala.Excecoes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloProfessorDisciplinaSala.Repositorios
 {
@@ -23,10 +24,137 @@ namespace Negocios.ModuloProfessorDisciplinaSala.Repositorios
             return db.ProfessorDisciplinaSala.ToList();
         }
 
-        public List<ProfessorDisciplinaSala> Consultar(ProfessorDisciplinaSala professorDisciplinaSala)
+        public List<ProfessorDisciplinaSala> Consultar(ProfessorDisciplinaSala professorDisciplinaSala, TipoPesquisa tipoPesquisa)
         {
-            // return db.ProfessorDisciplinaSalas.SingleOrDefault(d => d.Id == id);
-            return db.ProfessorDisciplinaSala.ToList();
+            List<ProfessorDisciplinaSala> resultado = Consultar();
+
+            switch (tipoPesquisa)
+            {
+                #region Case E
+                case TipoPesquisa.E:
+                    {
+                        if (professorDisciplinaSala.ID != 0)
+                        {
+                            resultado.AddRange((from pds in resultado
+                                                where
+                                                pds.ID == professorDisciplinaSala.ID
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (professorDisciplinaSala.DataPeriodo.HasValue && professorDisciplinaSala.DataPeriodo.Value !=default(DateTime))
+                        {
+                            resultado.AddRange((from pds in resultado
+                                                where
+                                                pds.DataPeriodo.HasValue && pds.DataPeriodo.Value == professorDisciplinaSala.DataPeriodo.Value
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+                        if (professorDisciplinaSala.DisciplinaID.HasValue)
+                        {
+                            resultado.AddRange((from pds in resultado
+                                                where
+                                                pds.DisciplinaID.HasValue && pds.DisciplinaID.Value == professorDisciplinaSala.DisciplinaID.Value
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (professorDisciplinaSala.FuncionarioID.HasValue)
+                        {
+                            resultado.AddRange((from pds in resultado
+                                                where
+                                                pds.FuncionarioID.HasValue && pds.FuncionarioID.Value == professorDisciplinaSala.FuncionarioID.Value
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (professorDisciplinaSala.SalaPeriodoID.HasValue)
+                        {
+                            resultado.AddRange((from pds in resultado
+                                                where
+                                                pds.SalaPeriodoID.HasValue && pds.SalaPeriodoID.Value == professorDisciplinaSala.SalaPeriodoID.Value
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (professorDisciplinaSala.Status.HasValue )
+                        {
+                            resultado.AddRange((from pds in resultado
+                                                where
+                                                pds.Status.HasValue && pds.Status.Value == professorDisciplinaSala.Status.Value
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        break;
+                    }
+                #endregion
+                #region Case Ou
+                case TipoPesquisa.Ou:
+                    {
+                        if (professorDisciplinaSala.ID != 0)
+                        {
+                            resultado.AddRange((from pds in Consultar()
+                                                where
+                                                pds.ID == professorDisciplinaSala.ID
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (professorDisciplinaSala.DataPeriodo.HasValue && professorDisciplinaSala.DataPeriodo.Value != default(DateTime))
+                        {
+                            resultado.AddRange((from pds in Consultar()
+                                                where
+                                                pds.DataPeriodo.HasValue && pds.DataPeriodo.Value == professorDisciplinaSala.DataPeriodo.Value
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+                        if (professorDisciplinaSala.DisciplinaID.HasValue)
+                        {
+                            resultado.AddRange((from pds in Consultar()
+                                                where
+                                                pds.DisciplinaID.HasValue && pds.DisciplinaID.Value == professorDisciplinaSala.DisciplinaID.Value
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (professorDisciplinaSala.FuncionarioID.HasValue)
+                        {
+                            resultado.AddRange((from pds in Consultar()
+                                                where
+                                                pds.FuncionarioID.HasValue && pds.FuncionarioID.Value == professorDisciplinaSala.FuncionarioID.Value
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (professorDisciplinaSala.SalaPeriodoID.HasValue)
+                        {
+                            resultado.AddRange((from pds in Consultar()
+                                                where
+                                                pds.SalaPeriodoID.HasValue && pds.SalaPeriodoID.Value == professorDisciplinaSala.SalaPeriodoID.Value
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (professorDisciplinaSala.Status.HasValue)
+                        {
+                            resultado.AddRange((from pds in Consultar()
+                                                where
+                                                pds.Status.HasValue && pds.Status.Value == professorDisciplinaSala.Status.Value
+                                                select pds).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+
+
+                        break;
+                    }
+                #endregion
+                default:
+                    break;
+            }
+
+            return resultado;
         }
 
         public void Incluir(ProfessorDisciplinaSala professorDisciplinaSala)
@@ -46,7 +174,18 @@ namespace Negocios.ModuloProfessorDisciplinaSala.Repositorios
         {
             try
             {
-                db.ProfessorDisciplinaSala.DeleteOnSubmit(professorDisciplinaSala);
+                ProfessorDisciplinaSala professorDisciplinaSalaAux = new ProfessorDisciplinaSala();
+                professorDisciplinaSalaAux.ID = professorDisciplinaSala.ID;
+
+                List<ProfessorDisciplinaSala> resultado = this.Consultar(professorDisciplinaSalaAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new ProfessorDisciplinaSalaNaoExcluidaExcecao();
+
+                professorDisciplinaSalaAux = resultado[0];
+
+                db.ProfessorDisciplinaSala.DeleteOnSubmit(professorDisciplinaSalaAux);
+               
             }
             catch (Exception)
             {
@@ -59,7 +198,22 @@ namespace Negocios.ModuloProfessorDisciplinaSala.Repositorios
         {
             try
             {
-                db.ProfessorDisciplinaSala.InsertOnSubmit(professorDisciplinaSala);
+                ProfessorDisciplinaSala professorDisciplinaSalaAux = new ProfessorDisciplinaSala();
+                professorDisciplinaSalaAux.ID = professorDisciplinaSala.ID;
+
+                List<ProfessorDisciplinaSala> resultado = this.Consultar(professorDisciplinaSalaAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new ProfessorDisciplinaSalaNaoAlteradaExcecao();
+
+                professorDisciplinaSalaAux = resultado[0];
+
+                professorDisciplinaSalaAux.DataPeriodo = professorDisciplinaSala.DataPeriodo;
+                professorDisciplinaSalaAux.DisciplinaID= professorDisciplinaSala.DisciplinaID;
+                professorDisciplinaSalaAux.FuncionarioID = professorDisciplinaSala.FuncionarioID;
+                professorDisciplinaSalaAux.SalaPeriodoID = professorDisciplinaSala.SalaPeriodoID;
+                professorDisciplinaSalaAux.Status= professorDisciplinaSala.Status;
+                Confirmar();
             }
             catch (Exception)
             {

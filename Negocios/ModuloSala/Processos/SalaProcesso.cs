@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloSala.Repositorios;
 using Negocios.ModuloSala.Processos;
 using Negocios.ModuloSala.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloSala.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloSala.Processos
             this.salaRepositorio.Alterar(sala);
         }
 
-        public List<Sala> Consultar(Sala sala)
+        public List<Sala> Consultar(Sala sala, TipoPesquisa tipoPesquisa)
         {
-            List<Sala> salaList = this.salaRepositorio.Consultar(sala);           
+            List<Sala> salaList = this.salaRepositorio.Consultar(sala, tipoPesquisa);           
 
             return salaList;
         }

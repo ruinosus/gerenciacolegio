@@ -8,6 +8,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloTurma.Repositorios;
 using Negocios.ModuloTurma.Processos;
 using Negocios.ModuloTurma.Fabricas;
+using Negocios.ModuloBasico.Enums;
 namespace Negocios.ModuloTurma.Processos
 {
     /// <summary>
@@ -46,9 +47,9 @@ namespace Negocios.ModuloTurma.Processos
             this.turmaRepositorio.Alterar(turma);
         }
 
-        public List<Turma> Consultar(Turma turma)
+        public List<Turma> Consultar(Turma turma, TipoPesquisa tipoPesquisa)
         {
-            List<Turma> turmaList = this.turmaRepositorio.Consultar(turma);           
+            List<Turma> turmaList = this.turmaRepositorio.Consultar(turma,tipoPesquisa);           
 
             return turmaList;
         }

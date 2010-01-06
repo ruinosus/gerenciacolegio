@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloProfessorDisciplinaSala.Processos
 {
@@ -32,18 +33,19 @@ namespace Negocios.ModuloProfessorDisciplinaSala.Processos
         /// Método responsável por consultar professorDisciplinaSalas do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="professorDisciplinaSala">Objeto do tipo professorDisciplinaSala que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todas as professorDisciplinaSalas cadastradas.</returns>
-        List<ProfessorDisciplinaSala> Consultar(ProfessorDisciplinaSala professorDisciplinaSala);
+        List<ProfessorDisciplinaSala> Consultar(ProfessorDisciplinaSala professorDisciplinaSala, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todas as professorDisciplinaSalas do sistema.
         /// </summary>
         /// <returns>Lista contendo todas as professorDisciplinaSalas cadastradas.</returns>
         List<ProfessorDisciplinaSala> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }
