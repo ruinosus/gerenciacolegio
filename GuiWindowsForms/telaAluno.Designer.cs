@@ -1,4 +1,5 @@
-﻿namespace GuiWindowsForms
+﻿using System.ComponentModel;
+namespace GuiWindowsForms
 {
     partial class telaAluno
     {
@@ -28,6 +29,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.SuspendLayout();
+            
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAluno));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
@@ -74,9 +77,6 @@
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
-            this.gpbDadosPessoais.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
-            this.SuspendLayout();
             // 
             // gpbDadosPessoais
             // 
@@ -148,50 +148,58 @@
             // 
             // txtNomeEdificil
             // 
-            this.txtNomeEdificil.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtNomeEdificil.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtNomeEdificil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtNomeEdificil.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNomeEdificil.Location = new System.Drawing.Point(128, 204);
             this.txtNomeEdificil.MaxLength = 30;
             this.txtNomeEdificil.Name = "txtNomeEdificil";
-            this.txtNomeEdificil.Size = new System.Drawing.Size(200, 23);
+            this.txtNomeEdificil.Size = new System.Drawing.Size(200, 20);
             this.txtNomeEdificil.TabIndex = 10;
             this.txtNomeEdificil.TextChanged += new System.EventHandler(this.txtNomeEdificil_TextChanged);
+            this.txtNomeEdificil.Leave += new System.EventHandler(this.txtNomeEdificil_Leave);
+            this.txtNomeEdificil.Enter += new System.EventHandler(this.txtNomeEdificil_Enter);
             // 
             // mskFoneResidencia
             // 
-            this.mskFoneResidencia.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.mskFoneResidencia.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.mskFoneResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.mskFoneResidencia.ForeColor = System.Drawing.SystemColors.WindowText;
             this.mskFoneResidencia.Location = new System.Drawing.Point(329, 292);
             this.mskFoneResidencia.Mask = "(99) 0000-0000";
             this.mskFoneResidencia.Name = "mskFoneResidencia";
-            this.mskFoneResidencia.Size = new System.Drawing.Size(111, 23);
+            this.mskFoneResidencia.Size = new System.Drawing.Size(111, 20);
             this.mskFoneResidencia.TabIndex = 15;
+            this.mskFoneResidencia.Leave += new System.EventHandler(this.mskFoneResidencia_Leave);
+            this.mskFoneResidencia.Enter += new System.EventHandler(this.mskFoneResidencia_Enter);
             this.mskFoneResidencia.TextChanged += new System.EventHandler(this.mskFoneResidencia_TextChanged);
             // 
             // cmbUf
             // 
             this.cmbUf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.cmbUf.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.cmbUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cmbUf.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbUf.FormattingEnabled = true;
             this.cmbUf.Location = new System.Drawing.Point(400, 249);
             this.cmbUf.MaxLength = 2;
             this.cmbUf.Name = "cmbUf";
-            this.cmbUf.Size = new System.Drawing.Size(40, 24);
+            this.cmbUf.Size = new System.Drawing.Size(40, 21);
             this.cmbUf.TabIndex = 12;
+            this.cmbUf.MouseEnter += new System.EventHandler(this.cmbUf_MouseEnter);
+            this.cmbUf.MouseLeave += new System.EventHandler(this.cmbUf_MouseLeave);
             this.cmbUf.TextChanged += new System.EventHandler(this.cmbUf_TextChanged);
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtComplemento.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtComplemento.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtComplemento.Location = new System.Drawing.Point(606, 157);
             this.txtComplemento.MaxLength = 30;
             this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(200, 23);
+            this.txtComplemento.Size = new System.Drawing.Size(200, 20);
             this.txtComplemento.TabIndex = 9;
             this.txtComplemento.TextChanged += new System.EventHandler(this.txtComplemento_TextChanged);
+            this.txtComplemento.Leave += new System.EventHandler(this.txtComplemento_Leave);
+            this.txtComplemento.Enter += new System.EventHandler(this.txtComplemento_Enter);
             // 
             // lblComplemento
             // 
@@ -222,13 +230,15 @@
             // 
             // mskCep
             // 
-            this.mskCep.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.mskCep.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.mskCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.mskCep.ForeColor = System.Drawing.SystemColors.WindowText;
             this.mskCep.Location = new System.Drawing.Point(128, 292);
             this.mskCep.Mask = "00000-999";
             this.mskCep.Name = "mskCep";
-            this.mskCep.Size = new System.Drawing.Size(72, 23);
+            this.mskCep.Size = new System.Drawing.Size(72, 20);
             this.mskCep.TabIndex = 14;
+            this.mskCep.Leave += new System.EventHandler(this.mskCep_Leave);
+            this.mskCep.Enter += new System.EventHandler(this.mskCep_Enter);
             this.mskCep.TextChanged += new System.EventHandler(this.mskCep_TextChanged);
             // 
             // label4
@@ -242,14 +252,16 @@
             // 
             // txtCidade
             // 
-            this.txtCidade.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtCidade.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCidade.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtCidade.Location = new System.Drawing.Point(604, 249);
             this.txtCidade.MaxLength = 30;
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(200, 23);
+            this.txtCidade.Size = new System.Drawing.Size(200, 20);
             this.txtCidade.TabIndex = 13;
             this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
+            this.txtCidade.Leave += new System.EventHandler(this.txtCidade_Leave);
+            this.txtCidade.Enter += new System.EventHandler(this.txtCidade_Enter);
             // 
             // lblCidade
             // 
@@ -262,14 +274,16 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtBairro.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtBairro.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtBairro.Location = new System.Drawing.Point(128, 249);
             this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(200, 23);
+            this.txtBairro.Size = new System.Drawing.Size(200, 20);
             this.txtBairro.TabIndex = 11;
             this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
+            this.txtBairro.Leave += new System.EventHandler(this.txtBairro_Leave);
+            this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Enter);
             // 
             // lblBairro
             // 
@@ -282,14 +296,16 @@
             // 
             // txtLogradouro
             // 
-            this.txtLogradouro.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtLogradouro.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLogradouro.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtLogradouro.Location = new System.Drawing.Point(128, 156);
             this.txtLogradouro.MaxLength = 60;
             this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(312, 23);
+            this.txtLogradouro.Size = new System.Drawing.Size(312, 20);
             this.txtLogradouro.TabIndex = 8;
             this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
+            this.txtLogradouro.Leave += new System.EventHandler(this.txtComplemento_Leave);
+            this.txtLogradouro.Enter += new System.EventHandler(this.txtLogradouro_Enter);
             // 
             // label3
             // 
@@ -878,7 +894,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAluno_FormClosing);
-            this.gpbDadosPessoais.ResumeLayout(false);
+            this.gpbDadosPessoais.ResumeLayout(true);
             this.gpbDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);

@@ -6,11 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloAluno;
+using Negocios.ModuloAluno.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaAluno : Form
     {
+
+        Aluno aluno = new Aluno();
+        IAlunoProcesso alunoControlador = AlunoProcesso.Instance;
 
         #region SINGLETON DA TELA
         /*
@@ -151,7 +156,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void txtLogradouro_Leave(object sender, EventArgs e)
         {
-            txtLogradouro.BackColor = System.Drawing.Color.White;
+
         }
 
         /// <summary>
@@ -394,6 +399,46 @@ namespace GuiWindowsForms
         {
             mskFoneEmergencia.BackColor = System.Drawing.Color.White;
         }
+
+        /// <summary>
+        /// Atualiza a cor da textbox ao ser ativada como controle principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtNomeEdificil_Enter(object sender, EventArgs e)
+        {
+            txtNomeEdificil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+        }
+
+        /// <summary>
+        /// Altera a cor para a cor original do controle ao perder a seleção
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtNomeEdificil_Leave(object sender, EventArgs e)
+        {
+            txtNomeEdificil.BackColor = System.Drawing.Color.White;
+        }
+
+        /// <summary>
+        /// Atualiza a cor da textbox ao ser ativada como controle principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmbUf_MouseEnter(object sender, EventArgs e)
+        {
+            cmbUf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+        }
+
+        /// <summary>
+        /// Altera a cor para a cor original do controle ao perder a seleção
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cmbUf_MouseLeave(object sender, EventArgs e)
+        {
+            cmbUf.BackColor = System.Drawing.Color.White;
+        }
         #endregion
 
         #region USER CONTROLS - Controle Inferior - Botões de Navegação
@@ -488,6 +533,7 @@ namespace GuiWindowsForms
                     txtNome.Clear();
                     return;
                 }
+                aluno.Nome = txtNome.Text;
 
                 #endregion
 
@@ -497,6 +543,14 @@ namespace GuiWindowsForms
                 {
                     errorProviderTela.SetError(rdbFem, "Informe o sexo");
                     return;
+                }
+                if (rdbMasc.Checked == true)
+                {
+                    aluno.Sexo = 0;
+                }
+                else
+                {
+                    aluno.Sexo = 1;
                 }
 
                 #endregion
@@ -535,6 +589,7 @@ namespace GuiWindowsForms
                     return;
 
                 }
+                aluno.Email = txtEmail.Text;
 
                 #endregion
 
@@ -546,6 +601,7 @@ namespace GuiWindowsForms
                     mskFoneAluno.Clear();
                     return;
                 }
+                aluno.FoneAluno = mskFoneAluno.Text;
 
                 #endregion
 
@@ -557,6 +613,7 @@ namespace GuiWindowsForms
                     txtLogradouro.Clear();
                     return;
                 }
+                aluno.Logradouro = txtLogradouro.Text;
 
                 #endregion
 
@@ -568,17 +625,18 @@ namespace GuiWindowsForms
                     txtComplemento.Clear();
                     return;
                 }
+                aluno.ComplementoEndereco = txtComplemento.Text;
 
                 #endregion
 
                 #region VALIDA - NOME EDIFÍCIL
 
-                if (String.IsNullOrEmpty(txtNomeEdificil.Text))
-                {
-                    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
-                    txtNomeEdificil.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtNomeEdificil.Text))
+                //{
+                //    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
+                //    txtNomeEdificil.Clear();
+                //    return;
+                //}
 
                 #endregion 
 
@@ -590,6 +648,7 @@ namespace GuiWindowsForms
                     txtBairro.Clear();
                     return;
                 }
+                aluno.Bairro = txtBairro.Text;
 
                 #endregion 
 
@@ -601,6 +660,7 @@ namespace GuiWindowsForms
                     txtCidade.Clear();
                     return;
                 }
+                aluno.Cidade = txtCidade.Text;
 
                 #endregion
 
@@ -612,6 +672,7 @@ namespace GuiWindowsForms
                     mskCep.Clear();
                     return;
                 }
+                aluno.Cep = mskCep.Text;
 
                 #endregion
         
@@ -623,16 +684,17 @@ namespace GuiWindowsForms
                     mskFoneResidencia.Clear();
                     return;
                 }
+                aluno.FoneResidencia = mskFoneResidencia.Text;
 
                 #endregion
 
                 #region VALIDA - RESIDE COM
 
-                if (String.IsNullOrEmpty(cmbResidCom.Text))
-                {
-                    errorProviderTela.SetError(cmbResidCom, "Informe com quem o aluno reside");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(cmbResidCom.Text))
+                //{
+                //    errorProviderTela.SetError(cmbResidCom, "Informe com quem o aluno reside");
+                //    return;
+                //}
 
                 #endregion
 
@@ -644,12 +706,28 @@ namespace GuiWindowsForms
                     mskFoneEmergencia.Clear();
                     return;
                 }
+                aluno.FoneEmergencia = mskFoneEmergencia.Text;
 
                 #endregion
+
+                aluno.Nascimento = dtpNascimento.Value;
+                aluno.Nacionalidade = cmbNacionalidade.Text;
+                aluno.Naturalidade = cmbNaturalidade.Text;
+                aluno.Uf = cmbUf.Text;
+                
+                /*
+                 * Perfil temporário para testes, retirar quando for concluida a implementação do perfil
+                 */
+
+                aluno.PerfilID = 1;
+
+                alunoControlador.Incluir(aluno);
+                alunoControlador.Confirmar();
+
             }
             catch (Exception ex)
-            { 
-            
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -791,5 +869,6 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
         #endregion
+
     }
 }
