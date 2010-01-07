@@ -662,7 +662,7 @@ namespace Negocios.ModuloAluno.Repositorios
                 alunoAux = resultado[0];
 
                 db.Aluno.DeleteOnSubmit(alunoAux);
-            
+             
             }
             catch (Exception)
             {
