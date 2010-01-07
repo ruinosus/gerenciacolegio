@@ -590,7 +590,7 @@
             this.MinimizeBox = false;
             this.Name = "telaAlunoResponsavel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "1";
+            this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaAlunoResponsavel_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoResponsavel_FormClosing);
             this.gpbDadosPessoais.ResumeLayout(false);

@@ -33,7 +33,6 @@ namespace Negocios.ModuloAluno.Processos
         public void Incluir(Aluno aluno)
         {
             this.alunoRepositorio.Incluir(aluno);
-
         }
 
         public void Excluir(Aluno aluno)
