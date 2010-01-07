@@ -33,6 +33,15 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
                 #region Case E
                 case TipoPesquisa.E:
                     {
+                        if (chequeBoletoMensalidade.ID != 0)
+                        {
+                            resultado.AddRange((from cbm in resultado
+                                                where
+                                                cbm.ID == chequeBoletoMensalidade.ID
+                                                select cbm).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (chequeBoletoMensalidade.BoletoMensalidadeID != 0)
                         {
                             resultado.AddRange((from cbm in resultado
@@ -48,6 +57,15 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
                                                 where
                                                 cbm.ChequeID == chequeBoletoMensalidade.ChequeID
                                                 select cbm).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.Status.HasValue)
+                        {
+                            resultado.AddRange((from cbm in resultado
+                                                where
+                                                cbm.Status.HasValue && cbm.Status.Value == chequeBoletoMensalidade.Status.Value
+                                                select ra).ToList());
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -57,6 +75,15 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
                 #region Case Ou
                 case TipoPesquisa.Ou:
                     {
+                        if (chequeBoletoMensalidade.ID != 0)
+                        {
+                            resultado.AddRange((from cbm in Consultar()
+                                                where
+                                                cbm.ID == chequeBoletoMensalidade.ID
+                                                select cbm).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (chequeBoletoMensalidade.BoletoMensalidadeID != 0)
                         {
                             resultado.AddRange((from cbm in Consultar()
@@ -72,6 +99,15 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
                                                 where
                                                 cbm.ChequeID == chequeBoletoMensalidade.ChequeID
                                                 select cbm).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.Status.HasValue)
+                        {
+                            resultado.AddRange((from cbm in Consultar()
+                                                where
+                                                cbm.Status.HasValue && cbm.Status.Value == chequeBoletoMensalidade.Status.Value
+                                                select ra).ToList());
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -103,9 +139,7 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
             try
             {
                 ChequeBoletoMensalidade chequeBoletoMensalidadeAux = new ChequeBoletoMensalidade();
-                chequeBoletoMensalidadeAux.BoletoMensalidadeID = chequeBoletoMensalidade.BoletoMensalidadeID;
-                chequeBoletoMensalidadeAux.ChequeID = chequeBoletoMensalidade.ChequeID;
-
+                chequeBoletoMensalidadeAux.ID = chequeBoletoMensalidade.ID;
                 List<ChequeBoletoMensalidade> resultado = this.Consultar(chequeBoletoMensalidadeAux, TipoPesquisa.E);
 
                 if (resultado == null || resultado.Count == 0)
@@ -127,8 +161,8 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
             try
             {
                 ChequeBoletoMensalidade chequeBoletoMensalidadeAux = new ChequeBoletoMensalidade();
-                chequeBoletoMensalidadeAux.BoletoMensalidadeID = chequeBoletoMensalidade.BoletoMensalidadeID;
-                chequeBoletoMensalidadeAux.ChequeID = chequeBoletoMensalidade.ChequeID;
+                chequeBoletoMensalidadeAux.ID = chequeBoletoMensalidade.ID;
+                
 
                 List<ChequeBoletoMensalidade> resultado = this.Consultar(chequeBoletoMensalidadeAux, TipoPesquisa.E);
 
@@ -139,6 +173,7 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
 
                 chequeBoletoMensalidadeAux.BoletoMensalidadeID = chequeBoletoMensalidade.BoletoMensalidadeID;
                 chequeBoletoMensalidadeAux.ChequeID = chequeBoletoMensalidade.ChequeID;
+                chequeBoletoMensalidadeAux.Status= chequeBoletoMensalidade.Status;
 
                 Confirmar();
             }

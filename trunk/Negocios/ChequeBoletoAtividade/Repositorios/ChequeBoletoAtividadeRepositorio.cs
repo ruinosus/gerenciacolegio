@@ -33,6 +33,15 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
                 #region Case E
                 case TipoPesquisa.E:
                     {
+                        if (chequeBoletoAtividade.ID != 0)
+                        {
+                            resultado.AddRange((from cba in resultado
+                                                where
+                                                cba.ID == chequeBoletoAtividade.ID
+                                                select cba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (chequeBoletoAtividade.BoletoAtividadeID != 0)
                         {
                             resultado.AddRange((from cba in resultado
@@ -57,6 +66,16 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
                 #region Case Ou
                 case TipoPesquisa.Ou:
                     {
+
+                        if (chequeBoletoAtividade.ID != 0)
+                        {
+                            resultado.AddRange((from cba in Consultar()
+                                                where
+                                                cba.ID == chequeBoletoAtividade.ID
+                                                select cba).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (chequeBoletoAtividade.BoletoAtividadeID != 0)
                         {
                             resultado.AddRange((from cba in Consultar()
@@ -104,8 +123,7 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
             try
             {
                 ChequeBoletoAtividade chequeBoletoAtividadeAux = new ChequeBoletoAtividade();
-                chequeBoletoAtividadeAux.BoletoAtividadeID = chequeBoletoAtividade.BoletoAtividadeID;
-                chequeBoletoAtividadeAux.ChequeID = chequeBoletoAtividade.ChequeID;
+                chequeBoletoAtividadeAux.ID = chequeBoletoAtividade.ID;
 
                 List<ChequeBoletoAtividade> resultado = this.Consultar(chequeBoletoAtividadeAux, TipoPesquisa.E);
 
@@ -129,8 +147,8 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
             try
             {
                 ChequeBoletoAtividade chequeBoletoAtividadeAux = new ChequeBoletoAtividade();
-                chequeBoletoAtividadeAux.BoletoAtividadeID = chequeBoletoAtividade.BoletoAtividadeID;
-                chequeBoletoAtividadeAux.ChequeID = chequeBoletoAtividade.ChequeID;
+                chequeBoletoAtividadeAux.ID = chequeBoletoAtividade.ID;
+                
 
                 List<ChequeBoletoAtividade> resultado = this.Consultar(chequeBoletoAtividadeAux, TipoPesquisa.E);
 
@@ -140,8 +158,8 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
                 chequeBoletoAtividadeAux = resultado[0];
 
                 chequeBoletoAtividadeAux.BoletoAtividadeID = chequeBoletoAtividade.BoletoAtividadeID;
-                chequeBoletoAtividadeAux.ChequeID = chequeBoletoAtividade.ChequeID;                
-
+                chequeBoletoAtividadeAux.ChequeID = chequeBoletoAtividade.ChequeID;
+                chequeBoletoAtividadeAux.Status = chequeBoletoAtividade.Status;                
                 Confirmar();
             }
             catch (Exception)
