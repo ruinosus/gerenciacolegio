@@ -103,7 +103,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
 
-            if (Program.ultimaTela != 7)
+            if (Program.ultimaTela != 17)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }

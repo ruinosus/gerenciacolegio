@@ -91,81 +91,6 @@ namespace GuiWindowsForms
             Program.SelecionaForm(Program.ultimaTela);
         }
 
-        #region Controle dos textos e das ações dos botões de ação inferiores
-
-        /// <summary>
-        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnVoltar_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = true;
-            lblInfoControles.Text = "Voltar";
-        }
-
-        /// <summary>
-        /// Oculta o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnVoltar_MouseLeave(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = false;
-        }
-
-        /// <summary>
-        /// Retorna para tela anterior ocultando a atual e chamando a instância da última tela acessada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-
-            Program.SelecionaForm(Program.ultimaTela);
-        }
-
-        /// <summary>
-        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-
-        private void btnSalvar_MouseLeave(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = false;
-        }
-
-        /// <summary>
-        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnSalvar_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = true;
-            lblInfoControles.Text = "Salvar Informações";
-        }
-
-        #endregion
-
-        private void btnExcluir_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = true;
-            lblInfoControles.Text = "Remover Série cadastrada!";
-        }
-
-        private void btnExcluir_MouseLeave(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = false;
-        }
-
         private void ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso()
         {
             this.Hide();
@@ -207,6 +132,25 @@ namespace GuiWindowsForms
         {
             ucMenuDireita1.verificaTela(telaconfiguracoesserie);
         }
+
+        #region USER CONTROLS - Controle Inferior - Botões de Navegação
+
+        private void ucAluno1_EventoVoltar()
+        {
+            this.Hide();
+
+            if (Program.ultimaTela == 10)
+            {
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+            else
+            {
+                Program.ultimaTela = 6;
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+        }
+
+        #endregion
 
 
     }
