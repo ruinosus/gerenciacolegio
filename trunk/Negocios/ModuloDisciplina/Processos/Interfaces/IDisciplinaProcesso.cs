@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloDisciplina.Processos
 {
@@ -33,18 +34,19 @@ namespace Negocios.ModuloDisciplina.Processos
         /// Método responsável por consultar disciplinas do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="disciplina">Objeto do tipo disciplina que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todas as disciplinas cadastradas.</returns>
-        List<Disciplina> Consultar(Disciplina disciplina);
+        List<Disciplina> Consultar(Disciplina disciplina, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todas as disciplinas do sistema.
         /// </summary>
         /// <returns>Lista contendo todas as disciplinas cadastradas.</returns>
         List<Disciplina> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }

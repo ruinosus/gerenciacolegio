@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloMatricula.Repositorios
 {
@@ -33,8 +34,9 @@ namespace Negocios.ModuloMatricula.Repositorios
         /// Método responsável por consultar matriculas do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="matricula">Objeto do tipo matricula que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todas as matriculas cadastradas.</returns>
-        List<Matricula> Consultar(Matricula matricula);
+        List<Matricula> Consultar(Matricula matricula, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todas as matriculas do sistema.
