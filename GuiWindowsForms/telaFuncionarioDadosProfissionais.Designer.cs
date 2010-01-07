@@ -119,7 +119,7 @@
             this.gpbDadosProfissionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDadosProfissionais.Location = new System.Drawing.Point(39, 191);
             this.gpbDadosProfissionais.Name = "gpbDadosProfissionais";
-            this.gpbDadosProfissionais.Size = new System.Drawing.Size(820, 487);
+            this.gpbDadosProfissionais.Size = new System.Drawing.Size(820, 467);
             this.gpbDadosProfissionais.TabIndex = 40;
             this.gpbDadosProfissionais.TabStop = false;
             this.gpbDadosProfissionais.Text = "DADOS PROFISSIONAIS DO FUNCIONÁRIO";
@@ -517,7 +517,7 @@
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 684);
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
             this.ucMenuInferior1.TabIndex = 133;
