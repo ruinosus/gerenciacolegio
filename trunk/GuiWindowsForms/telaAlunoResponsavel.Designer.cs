@@ -565,7 +565,7 @@
             // ucMenuSuper
             // 
             this.ucMenuSuper.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuSuper.Location = new System.Drawing.Point(245, -7);
+            this.ucMenuSuper.Location = new System.Drawing.Point(244, 0);
             this.ucMenuSuper.Name = "ucMenuSuper";
             this.ucMenuSuper.Size = new System.Drawing.Size(438, 201);
             this.ucMenuSuper.TabIndex = 130;
@@ -579,10 +579,10 @@
             this.ClientSize = new System.Drawing.Size(1000, 722);
             this.Controls.Add(this.uMenuLateral1);
             this.Controls.Add(this.ucAluno1);
-            this.Controls.Add(this.ucMenuSuper);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.gpbDadosPessoais);
+            this.Controls.Add(this.ucMenuSuper);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

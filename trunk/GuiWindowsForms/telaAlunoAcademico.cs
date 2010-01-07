@@ -89,5 +89,24 @@ namespace GuiWindowsForms
             Program.SelecionaForm(Program.ultimaTela);
         }
 
+        #region USER CONTROLS - Controle Inferior - Botões de Navegação
+
+        private void ucAluno1_EventoVoltar()
+        {
+            this.Hide();
+
+            if (Program.ultimaTela == 7)
+            {
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+            else
+            {
+                Program.ultimaTela = 6;
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+        }
+
+        #endregion
+
     }
 }
