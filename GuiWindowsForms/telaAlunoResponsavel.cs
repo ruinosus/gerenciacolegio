@@ -622,7 +622,6 @@ namespace GuiWindowsForms
                     return;
                 }
 
-
                 #endregion
 
                 #region VALIDA - CEP
@@ -645,7 +644,7 @@ namespace GuiWindowsForms
 
                 #endregion
 
- 
+
             }
             catch (Exception ex)
             {
