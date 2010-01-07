@@ -24,7 +24,8 @@ namespace GuiWindowsForms
 
         #region INSTANCIA TELA MATRICULA
         /// <summary>
-        /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
+        /// Padrão Singleton, verifica se a instância já esta em uso. E
+        /// vita abertura de múltiplas instâncias
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
 

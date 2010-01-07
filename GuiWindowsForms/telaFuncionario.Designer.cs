@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaFuncionario));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.lblEdificio = new System.Windows.Forms.Label();
@@ -76,7 +77,9 @@
             this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpbDadosPessoais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbDadosPessoais
@@ -148,6 +151,7 @@
             this.txtNomeEdificil.Name = "txtNomeEdificil";
             this.txtNomeEdificil.Size = new System.Drawing.Size(200, 23);
             this.txtNomeEdificil.TabIndex = 75;
+            this.txtNomeEdificil.TextChanged += new System.EventHandler(this.txtNomeEdificil_TextChanged);
             // 
             // mskFoneResidencia
             // 
@@ -158,6 +162,7 @@
             this.mskFoneResidencia.Name = "mskFoneResidencia";
             this.mskFoneResidencia.Size = new System.Drawing.Size(111, 23);
             this.mskFoneResidencia.TabIndex = 74;
+            this.mskFoneResidencia.TextChanged += new System.EventHandler(this.mskFoneResidencia_TextChanged);
             // 
             // cmbUf
             // 
@@ -171,6 +176,7 @@
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.Size = new System.Drawing.Size(40, 24);
             this.cmbUf.TabIndex = 73;
+            this.cmbUf.TextChanged += new System.EventHandler(this.cmbUf_TextChanged);
             // 
             // txtComplemento
             // 
@@ -181,6 +187,7 @@
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(200, 23);
             this.txtComplemento.TabIndex = 72;
+            this.txtComplemento.TextChanged += new System.EventHandler(this.txtComplemento_TextChanged);
             // 
             // lblComplemento
             // 
@@ -218,6 +225,7 @@
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(72, 23);
             this.mskCep.TabIndex = 68;
+            this.mskCep.TextChanged += new System.EventHandler(this.mskCep_TextChanged);
             // 
             // label4
             // 
@@ -237,6 +245,7 @@
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(200, 23);
             this.txtCidade.TabIndex = 66;
+            this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
             // 
             // lblCidade
             // 
@@ -256,6 +265,7 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(200, 23);
             this.txtBairro.TabIndex = 64;
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // lblBairro
             // 
@@ -275,6 +285,7 @@
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(312, 23);
             this.txtLogradouro.TabIndex = 62;
+            this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
             // 
             // label3
             // 
@@ -302,6 +313,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(40, 23);
             this.textBox2.TabIndex = 48;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // lblEmissor
             // 
@@ -320,6 +332,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(40, 23);
             this.textBox1.TabIndex = 46;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblEstadoCivil
             // 
@@ -339,6 +352,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(124, 21);
             this.comboBox1.TabIndex = 44;
+            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // cmbNacionalidade
             // 
@@ -349,6 +363,7 @@
             this.cmbNacionalidade.Name = "cmbNacionalidade";
             this.cmbNacionalidade.Size = new System.Drawing.Size(158, 21);
             this.cmbNacionalidade.TabIndex = 41;
+            this.cmbNacionalidade.TextChanged += new System.EventHandler(this.cmbNacionalidade_TextChanged);
             // 
             // lblNacionalidade
             // 
@@ -377,6 +392,7 @@
             this.txtFiliacaoPai.Name = "txtFiliacaoPai";
             this.txtFiliacaoPai.Size = new System.Drawing.Size(222, 23);
             this.txtFiliacaoPai.TabIndex = 38;
+            this.txtFiliacaoPai.TextChanged += new System.EventHandler(this.txtFiliacaoPai_TextChanged);
             // 
             // lblPai
             // 
@@ -396,6 +412,7 @@
             this.mskCpf.Name = "mskCpf";
             this.mskCpf.Size = new System.Drawing.Size(100, 23);
             this.mskCpf.TabIndex = 36;
+            this.mskCpf.TextChanged += new System.EventHandler(this.mskCpf_TextChanged);
             // 
             // txtRg
             // 
@@ -405,6 +422,7 @@
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(158, 23);
             this.txtRg.TabIndex = 35;
+            this.txtRg.TextChanged += new System.EventHandler(this.txtRg_TextChanged);
             // 
             // txtFiliacaoMae
             // 
@@ -415,6 +433,7 @@
             this.txtFiliacaoMae.Name = "txtFiliacaoMae";
             this.txtFiliacaoMae.Size = new System.Drawing.Size(220, 23);
             this.txtFiliacaoMae.TabIndex = 34;
+            this.txtFiliacaoMae.TextChanged += new System.EventHandler(this.txtFiliacaoMae_TextChanged);
             // 
             // lblMae
             // 
@@ -454,6 +473,7 @@
             this.rdbFem.TabStop = true;
             this.rdbFem.Text = "Fem";
             this.rdbFem.UseVisualStyleBackColor = true;
+            this.rdbFem.TextChanged += new System.EventHandler(this.rdbFem_TextChanged);
             // 
             // rdbMasc
             // 
@@ -466,6 +486,7 @@
             this.rdbMasc.TabStop = true;
             this.rdbMasc.Text = "Masc";
             this.rdbMasc.UseVisualStyleBackColor = true;
+            this.rdbMasc.TextChanged += new System.EventHandler(this.rdbMasc_TextChanged);
             // 
             // lblSexo
             // 
@@ -485,6 +506,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(312, 23);
             this.txtNome.TabIndex = 3;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // dtpNascimento
             // 
@@ -570,6 +592,7 @@
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 41);
             this.ucMenuInferior1.TabIndex = 99;
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
             // 
             // ucMenuLateralFunc1
@@ -582,6 +605,10 @@
             this.ucMenuLateralFunc1.EventoAbrirDadosPessoais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosPessoais(this.ucMenuLateralFunc1_EventoAbrirDadosPessoais);
             this.ucMenuLateralFunc1.Load += new System.EventHandler(this.ucMenuLateralFunc1_Load);
             this.ucMenuLateralFunc1.EventoAbrirDadosProfissionais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosProfissionais(this.ucMenuLateralFunc1_EventoAbrirDadosProfissionais);
+            // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
             // 
             // telaFuncionario
             // 
@@ -607,6 +634,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaFuncionario_FormClosing);
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,6 +689,7 @@
         private GuiWindowsForms.User_Control.ucMenuImagemFunc ucMenuImagemFunc1;
         private ucMenuInferior ucMenuInferior1;
         private GuiWindowsForms.User_Control.ucMenuLateralFunc ucMenuLateralFunc1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
 
     }
 }
