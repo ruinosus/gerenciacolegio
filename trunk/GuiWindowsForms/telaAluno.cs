@@ -11,6 +11,7 @@ namespace GuiWindowsForms
 {
     public partial class telaAluno : Form
     {
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
