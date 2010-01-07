@@ -6,6 +6,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloAtividade.Repositorios;
 using Negocios.ModuloAtividade.Processos;
 using Negocios.ModuloAtividade.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloAtividade.Processos
 {
@@ -45,9 +46,9 @@ namespace Negocios.ModuloAtividade.Processos
             this.atividadeRepositorio.Alterar(atividade);
         }
 
-        public List<Atividade> Consultar(Atividade atividade)
+        public List<Atividade> Consultar(Atividade atividade, TipoPesquisa tipoPesquisa)
         {
-            List<Atividade> atividadeList = this.atividadeRepositorio.Consultar(atividade);           
+            List<Atividade> atividadeList = this.atividadeRepositorio.Consultar(atividade,tipoPesquisa);           
 
             return atividadeList;
         }

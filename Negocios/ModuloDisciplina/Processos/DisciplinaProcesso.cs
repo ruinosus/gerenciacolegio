@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloDisciplina.Repositorios;
 using Negocios.ModuloDisciplina.Processos;
 using Negocios.ModuloDisciplina.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloDisciplina.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloDisciplina.Processos
             this.disciplinaRepositorio.Alterar(disciplina);
         }
 
-        public List<Disciplina> Consultar(Disciplina disciplina)
+        public List<Disciplina> Consultar(Disciplina disciplina, TipoPesquisa tipoPesquisa)
         {
-            List<Disciplina> disciplinaList = this.disciplinaRepositorio.Consultar(disciplina);           
+            List<Disciplina> disciplinaList = this.disciplinaRepositorio.Consultar(disciplina, tipoPesquisa);           
 
             return disciplinaList;
         }

@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloCheque.Repositorios;
 using Negocios.ModuloCheque.Processos;
 using Negocios.ModuloCheque.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloCheque.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloCheque.Processos
             this.chequeRepositorio.Alterar(cheque);
         }
 
-        public List<Cheque> Consultar(Cheque cheque)
+        public List<Cheque> Consultar(Cheque cheque, TipoPesquisa tipoPesquisa)
         {
-            List<Cheque> chequeList = this.chequeRepositorio.Consultar(cheque);           
+            List<Cheque> chequeList = this.chequeRepositorio.Consultar(cheque,tipoPesquisa);           
 
             return chequeList;
         }

@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloMatricula.Repositorios;
 using Negocios.ModuloMatricula.Processos;
 using Negocios.ModuloMatricula.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloMatricula.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloMatricula.Processos
             this.matriculaRepositorio.Alterar(matricula);
         }
 
-        public List<Matricula> Consultar(Matricula matricula)
+        public List<Matricula> Consultar(Matricula matricula, TipoPesquisa tipoPesquisa)
         {
-            List<Matricula> matriculaList = this.matriculaRepositorio.Consultar(matricula);           
+            List<Matricula> matriculaList = this.matriculaRepositorio.Consultar(matricula,tipoPesquisa);           
 
             return matriculaList;
         }
