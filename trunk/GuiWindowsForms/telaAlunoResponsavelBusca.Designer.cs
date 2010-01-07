@@ -41,9 +41,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 191);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 191);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(900, 350);
+            this.dataGridView1.Size = new System.Drawing.Size(924, 350);
             this.dataGridView1.TabIndex = 36;
             // 
             // btnDesconectar
@@ -78,7 +78,7 @@
             this.btnPesquisarResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.Search_32x32_final;
             this.btnPesquisarResponsaveis.FlatAppearance.BorderSize = 0;
             this.btnPesquisarResponsaveis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisarResponsaveis.Location = new System.Drawing.Point(913, 156);
+            this.btnPesquisarResponsaveis.Location = new System.Drawing.Point(931, 156);
             this.btnPesquisarResponsaveis.Margin = new System.Windows.Forms.Padding(0);
             this.btnPesquisarResponsaveis.Name = "btnPesquisarResponsaveis";
             this.btnPesquisarResponsaveis.Size = new System.Drawing.Size(32, 32);
@@ -90,7 +90,7 @@
             this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
             this.uMenuImagem1.Location = new System.Drawing.Point(244, 0);
             this.uMenuImagem1.Name = "uMenuImagem1";
-            this.uMenuImagem1.Size = new System.Drawing.Size(438, 201);
+            this.uMenuImagem1.Size = new System.Drawing.Size(375, 201);
             this.uMenuImagem1.TabIndex = 75;
             // 
             // ucMenuInferior1
@@ -98,13 +98,13 @@
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
+            this.ucMenuInferior1.Size = new System.Drawing.Size(346, 43);
             this.ucMenuInferior1.TabIndex = 76;
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
             // telaAlunoResponsavelBusca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
@@ -115,7 +115,7 @@
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.uMenuImagem1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
