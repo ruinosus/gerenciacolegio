@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoMatriculaAtividade));
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.gpbMatricula = new System.Windows.Forms.GroupBox();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDesconto = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTotalValor = new System.Windows.Forms.TextBox();
             this.lblTotalValor = new System.Windows.Forms.Label();
             this.lblDesconto = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.lblNumeroMatricula = new System.Windows.Forms.Label();
             this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
             this.lblDataMatricula = new System.Windows.Forms.Label();
@@ -51,8 +52,10 @@
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpbMatricula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -71,6 +74,7 @@
             // 
             this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
             this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
+            this.btnDesconectar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesconectar.Location = new System.Drawing.Point(941, 9);
@@ -85,14 +89,14 @@
             // 
             this.gpbMatricula.BackColor = System.Drawing.Color.Transparent;
             this.gpbMatricula.Controls.Add(this.btnAdicionarImagem);
-            this.gpbMatricula.Controls.Add(this.textBox2);
+            this.gpbMatricula.Controls.Add(this.txtDescricao);
             this.gpbMatricula.Controls.Add(this.lblDescricao);
             this.gpbMatricula.Controls.Add(this.txtDesconto);
             this.gpbMatricula.Controls.Add(this.pictureBox1);
             this.gpbMatricula.Controls.Add(this.txtTotalValor);
             this.gpbMatricula.Controls.Add(this.lblTotalValor);
             this.gpbMatricula.Controls.Add(this.lblDesconto);
-            this.gpbMatricula.Controls.Add(this.textBox1);
+            this.gpbMatricula.Controls.Add(this.txtValor);
             this.gpbMatricula.Controls.Add(this.lblNumeroMatricula);
             this.gpbMatricula.Controls.Add(this.dtpNascimento);
             this.gpbMatricula.Controls.Add(this.lblDataMatricula);
@@ -121,15 +125,17 @@
             this.btnAdicionarImagem.TabIndex = 112;
             this.btnAdicionarImagem.Tag = "";
             this.btnAdicionarImagem.UseVisualStyleBackColor = false;
+            this.btnAdicionarImagem.TextChanged += new System.EventHandler(this.btnAdicionarImagem_TextChanged);
             // 
-            // textBox2
+            // txtDescricao
             // 
-            this.textBox2.Location = new System.Drawing.Point(104, 120);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(390, 77);
-            this.textBox2.TabIndex = 111;
+            this.txtDescricao.Location = new System.Drawing.Point(104, 120);
+            this.txtDescricao.Multiline = true;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.ReadOnly = true;
+            this.txtDescricao.Size = new System.Drawing.Size(390, 77);
+            this.txtDescricao.TabIndex = 111;
+            this.txtDescricao.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // lblDescricao
             // 
@@ -146,6 +152,7 @@
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(123, 20);
             this.txtDesconto.TabIndex = 109;
+            this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
             // 
             // pictureBox1
             // 
@@ -183,12 +190,13 @@
             this.lblDesconto.TabIndex = 44;
             this.lblDesconto.Text = "Desconto:";
             // 
-            // textBox1
+            // txtValor
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 215);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(123, 20);
-            this.textBox1.TabIndex = 42;
+            this.txtValor.Location = new System.Drawing.Point(103, 215);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(123, 20);
+            this.txtValor.TabIndex = 42;
+            this.txtValor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblNumeroMatricula
             // 
@@ -236,6 +244,7 @@
             this.cmbAtividade.Name = "cmbAtividade";
             this.cmbAtividade.Size = new System.Drawing.Size(250, 21);
             this.cmbAtividade.TabIndex = 33;
+            this.cmbAtividade.TextChanged += new System.EventHandler(this.cmbAtividade_TextChanged);
             // 
             // lblValor
             // 
@@ -285,6 +294,7 @@
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
             this.ucMenuInferior1.TabIndex = 116;
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
             // uMenuImagem1
@@ -294,6 +304,10 @@
             this.uMenuImagem1.Name = "uMenuImagem1";
             this.uMenuImagem1.Size = new System.Drawing.Size(438, 201);
             this.uMenuImagem1.TabIndex = 117;
+            // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
             // 
             // telaAlunoMatriculaAtividade
             // 
@@ -316,10 +330,12 @@
             this.Name = "telaAlunoMatriculaAtividade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.telaAlunoMatriculaAtividade_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMatriculaAtividade_FormClosing);
             this.gpbMatricula.ResumeLayout(false);
             this.gpbMatricula.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,7 +349,7 @@
         private System.Windows.Forms.TextBox txtTotalValor;
         private System.Windows.Forms.Label lblTotalValor;
         private System.Windows.Forms.Label lblDesconto;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblNumeroMatricula;
         private System.Windows.Forms.DateTimePicker dtpNascimento;
         private System.Windows.Forms.Label lblDataMatricula;
@@ -344,10 +360,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtDesconto;
         private System.Windows.Forms.Label lblDescricao;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Button btnAdicionarImagem;
         private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
         private ucMenuInferior ucMenuInferior1;
         private uMenuImagem uMenuImagem1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
     }
 }

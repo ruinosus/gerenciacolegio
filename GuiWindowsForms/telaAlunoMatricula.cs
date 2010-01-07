@@ -117,7 +117,7 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region BUTTON MATRICULA ATIVIDADE
+        #region BUTTON MATRICULA 
         private void btnMatriculaAtividade_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -230,12 +230,114 @@ namespace GuiWindowsForms
         {
             try
             {
+                #region VALIDA - SERIE
 
+                if (String.IsNullOrEmpty(cmbSerie.Text))
+                {
+                    errorProviderTela.SetError(cmbSerie, "Informe a série");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - TURNO
+
+                if (String.IsNullOrEmpty(cmbTurno.Text))
+                {
+                    errorProviderTela.SetError(cmbTurno, "Informe o turno");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - TURMA
+
+                if (String.IsNullOrEmpty(cmbTurma.Text))
+                {
+                    errorProviderTela.SetError(cmbTurma, "Informe a turma");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - DESCONTO
+
+                if (String.IsNullOrEmpty(cmbDesconto.Text))
+                {
+                    errorProviderTela.SetError(cmbDesconto, "Informe o desconto");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - VALOR
+
+                if (String.IsNullOrEmpty(txtValor.Text))
+                {
+                    errorProviderTela.SetError(txtValor, "Informe o valor");
+                    txtValor.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - VALOR TOTAL
+
+                if (String.IsNullOrEmpty(txtTotalValor.Text))
+                {
+                    errorProviderTela.SetError(txtValor, "Informe o valor total");
+                    txtTotalValor.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - VALOR TOTAL
+
+                if (String.IsNullOrEmpty(cmbVencimento.Text))
+                {
+                    errorProviderTela.SetError(cmbVencimento, "Informe o vencimento");
+                    return;
+                }
+
+                #endregion
             }
             catch (Exception ex)
             { 
             
             }
+        }
+        #endregion
+
+        #region LIMPAR ERRO PROVIDER
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void cmbSerie_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void cmbTurno_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void cmbTurma_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void cmbDesconto_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void cmbVencimento_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
         }
         #endregion
     }
