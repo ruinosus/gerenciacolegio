@@ -2087,6 +2087,29 @@ public partial class Cheque : INotifyPropertyChanged
 
     #endregion
 
+    #region byte? Status
+
+    private byte? _status;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_status", Name = "Status", DbType = "tinyint(1)")]
+    public byte? Status
+    {
+        get
+        {
+            return _status;
+        }
+        set
+        {
+            if (value != _status)
+            {
+                _status = value;
+                OnPropertyChanged("Status");
+            }
+        }
+    }
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.chequeboletoatividade")]
@@ -2106,11 +2129,34 @@ public partial class ChequeBoletoAtividade : INotifyPropertyChanged
 
     #endregion
 
+    #region int ID
+
+    private int _id;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
+    {
+        get
+        {
+            return _id;
+        }
+        set
+        {
+            if (value != _id)
+            {
+                _id = value;
+                OnPropertyChanged("ID");
+            }
+        }
+    }
+
+    #endregion
+
     #region int BoletoAtividadeID
 
     private int _boletoAtividadeID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_boletoAtividadeID", Name = "BoletoAtividadeId", DbType = "int", IsPrimaryKey = true, CanBeNull = false)]
+    [Column(Storage = "_boletoAtividadeID", Name = "BoletoAtividadeId", DbType = "int",  CanBeNull = false)]
     public int BoletoAtividadeID
     {
         get
@@ -2133,7 +2179,7 @@ public partial class ChequeBoletoAtividade : INotifyPropertyChanged
 
     private int _chequeID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_chequeID", Name = "ChequeId", DbType = "int", IsPrimaryKey = true, CanBeNull = false)]
+    [Column(Storage = "_chequeID", Name = "ChequeId", DbType = "int",  CanBeNull = false)]
     public int ChequeID
     {
         get
@@ -2146,6 +2192,29 @@ public partial class ChequeBoletoAtividade : INotifyPropertyChanged
             {
                 _chequeID = value;
                 OnPropertyChanged("ChequeID");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? Status
+
+    private byte? _status;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_status", Name = "Status", DbType = "tinyint(1)")]
+    public byte? Status
+    {
+        get
+        {
+            return _status;
+        }
+        set
+        {
+            if (value != _status)
+            {
+                _status = value;
+                OnPropertyChanged("Status");
             }
         }
     }
@@ -2171,11 +2240,34 @@ public partial class ChequeBoletoMensalidade : INotifyPropertyChanged
 
     #endregion
 
+    #region int ID
+
+    private int _id;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
+    {
+        get
+        {
+            return _id;
+        }
+        set
+        {
+            if (value != _id)
+            {
+                _id = value;
+                OnPropertyChanged("ID");
+            }
+        }
+    }
+
+    #endregion
+
     #region int BoletoMensalidadeID
 
     private int _boletoMensalidadeID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_boletoMensalidadeID", Name = "BoletoMensalidadeId", DbType = "int", IsPrimaryKey = true, CanBeNull = false)]
+    [Column(Storage = "_boletoMensalidadeID", Name = "BoletoMensalidadeId", DbType = "int", CanBeNull = false)]
     public int BoletoMensalidadeID
     {
         get
@@ -2198,7 +2290,7 @@ public partial class ChequeBoletoMensalidade : INotifyPropertyChanged
 
     private int _chequeID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_chequeID", Name = "ChequeId", DbType = "int", IsPrimaryKey = true, CanBeNull = false)]
+    [Column(Storage = "_chequeID", Name = "ChequeId", DbType = "int",  CanBeNull = false)]
     public int ChequeID
     {
         get
@@ -2211,6 +2303,29 @@ public partial class ChequeBoletoMensalidade : INotifyPropertyChanged
             {
                 _chequeID = value;
                 OnPropertyChanged("ChequeID");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? Status
+
+    private byte? _status;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_status", Name = "Status", DbType = "tinyint(1)")]
+    public byte? Status
+    {
+        get
+        {
+            return _status;
+        }
+        set
+        {
+            if (value != _status)
+            {
+                _status = value;
+                OnPropertyChanged("Status");
             }
         }
     }
@@ -2640,6 +2755,29 @@ public partial class Dependencia : INotifyPropertyChanged
             {
                 _vp = value;
                 OnPropertyChanged("Vp");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? Status
+
+    private byte? _status;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_status", Name = "Status", DbType = "tinyint(1)")]
+    public byte? Status
+    {
+        get
+        {
+            return _status;
+        }
+        set
+        {
+            if (value != _status)
+            {
+                _status = value;
+                OnPropertyChanged("Status");
             }
         }
     }
@@ -3975,6 +4113,29 @@ public partial class Nota : INotifyPropertyChanged
             {
                 _vp = value;
                 OnPropertyChanged("Vp");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? Status
+
+    private byte? _status;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_status", Name = "Status", DbType = "tinyint(1)")]
+    public byte? Status
+    {
+        get
+        {
+            return _status;
+        }
+        set
+        {
+            if (value != _status)
+            {
+                _status = value;
+                OnPropertyChanged("Status");
             }
         }
     }
@@ -5391,11 +5552,34 @@ public partial class ResponsavelAluno : INotifyPropertyChanged
 
     #endregion
 
+    #region uint ID
+
+    private uint _id;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public uint ID
+    {
+        get
+        {
+            return _id;
+        }
+        set
+        {
+            if (value != _id)
+            {
+                _id = value;
+                OnPropertyChanged("ID");
+            }
+        }
+    }
+
+    #endregion
+
     #region uint AlunoID
 
     private uint _alunoID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_alunoID", Name = "AlunoId", DbType = "int unsigned", IsPrimaryKey = true, CanBeNull = false)]
+    [Column(Storage = "_alunoID", Name = "AlunoId", DbType = "int unsigned",  CanBeNull = false)]
     public uint AlunoID
     {
         get
@@ -5464,7 +5648,7 @@ public partial class ResponsavelAluno : INotifyPropertyChanged
 
     private uint _responsavelID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_responsavelID", Name = "ResponsavelId", DbType = "int unsigned", IsPrimaryKey = true, CanBeNull = false)]
+    [Column(Storage = "_responsavelID", Name = "ResponsavelId", DbType = "int unsigned",  CanBeNull = false)]
     public uint ResponsavelID
     {
         get
@@ -5781,6 +5965,29 @@ public partial class SalaPeriodo : INotifyPropertyChanged
         }
     }
 
+
+    #endregion
+
+    #region byte? Status
+
+    private byte? _status;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_status", Name = "Status", DbType = "tinyint(1)")]
+    public byte? Status
+    {
+        get
+        {
+            return _status;
+        }
+        set
+        {
+            if (value != _status)
+            {
+                _status = value;
+                OnPropertyChanged("Status");
+            }
+        }
+    }
 
     #endregion
 
