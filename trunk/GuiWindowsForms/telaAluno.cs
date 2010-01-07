@@ -22,7 +22,7 @@ namespace GuiWindowsForms
         private static bool IsShown = false;
         #endregion
 
-        #region INSTANCIA TELA ALUNO RESPONSAVEL
+        #region INSTANCIA TELA ALUNO 
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
         /// </summary>
@@ -395,17 +395,6 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        //private void btnVincularResponsavel_MouseEnter(object sender, EventArgs e)
-        //{
-        //    lblInfoControles.Visible = true;
-        //    lblInfoControles.Text = "Vincular responsáveis ao aluno";
-        //}
-
-        //private void btnVincularResponsavel_MouseLeave(object sender, EventArgs e)
-        //{
-        //    lblInfoControles.Visible = false;
-        //}
-
         #region USER CONTROLS - Controle Inferior - Botões de Navegação
 
         private void ucAluno1_EventoVoltar()
@@ -715,5 +704,91 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region LIMPAR ERRO PROVIDER
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void rdbMasc_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void rdbFem_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void cmbNacionalidade_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void cmbNaturalidade_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void mskFoneAluno_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtLogradouro_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtComplemento_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtNomeEdificil_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void cmbUf_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtCidade_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void mskCep_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void mskFoneResidencia_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void cmbResidCom_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void mskFoneEmergencia_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+        #endregion
     }
 }

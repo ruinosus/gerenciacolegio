@@ -134,7 +134,7 @@
             this.btnVincularResponsavel.Margin = new System.Windows.Forms.Padding(0);
             this.btnVincularResponsavel.Name = "btnVincularResponsavel";
             this.btnVincularResponsavel.Size = new System.Drawing.Size(30, 31);
-            this.btnVincularResponsavel.TabIndex = 61;
+            this.btnVincularResponsavel.TabIndex = 16;
             this.btnVincularResponsavel.UseVisualStyleBackColor = true;
             // 
             // lblEdificio
@@ -154,7 +154,8 @@
             this.txtNomeEdificil.MaxLength = 30;
             this.txtNomeEdificil.Name = "txtNomeEdificil";
             this.txtNomeEdificil.Size = new System.Drawing.Size(200, 23);
-            this.txtNomeEdificil.TabIndex = 59;
+            this.txtNomeEdificil.TabIndex = 10;
+            this.txtNomeEdificil.TextChanged += new System.EventHandler(this.txtNomeEdificil_TextChanged);
             // 
             // mskFoneResidencia
             // 
@@ -164,7 +165,8 @@
             this.mskFoneResidencia.Mask = "(99) 0000-0000";
             this.mskFoneResidencia.Name = "mskFoneResidencia";
             this.mskFoneResidencia.Size = new System.Drawing.Size(111, 23);
-            this.mskFoneResidencia.TabIndex = 58;
+            this.mskFoneResidencia.TabIndex = 15;
+            this.mskFoneResidencia.TextChanged += new System.EventHandler(this.mskFoneResidencia_TextChanged);
             // 
             // cmbUf
             // 
@@ -177,7 +179,8 @@
             this.cmbUf.MaxLength = 2;
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.Size = new System.Drawing.Size(40, 24);
-            this.cmbUf.TabIndex = 57;
+            this.cmbUf.TabIndex = 12;
+            this.cmbUf.TextChanged += new System.EventHandler(this.cmbUf_TextChanged);
             // 
             // txtComplemento
             // 
@@ -187,7 +190,8 @@
             this.txtComplemento.MaxLength = 30;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(200, 23);
-            this.txtComplemento.TabIndex = 56;
+            this.txtComplemento.TabIndex = 9;
+            this.txtComplemento.TextChanged += new System.EventHandler(this.txtComplemento_TextChanged);
             // 
             // lblComplemento
             // 
@@ -224,7 +228,8 @@
             this.mskCep.Mask = "00000-999";
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(72, 23);
-            this.mskCep.TabIndex = 52;
+            this.mskCep.TabIndex = 14;
+            this.mskCep.TextChanged += new System.EventHandler(this.mskCep_TextChanged);
             // 
             // label4
             // 
@@ -243,7 +248,8 @@
             this.txtCidade.MaxLength = 30;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(200, 23);
-            this.txtCidade.TabIndex = 50;
+            this.txtCidade.TabIndex = 13;
+            this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
             // 
             // lblCidade
             // 
@@ -262,7 +268,8 @@
             this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(200, 23);
-            this.txtBairro.TabIndex = 48;
+            this.txtBairro.TabIndex = 11;
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // lblBairro
             // 
@@ -281,7 +288,8 @@
             this.txtLogradouro.MaxLength = 60;
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(312, 23);
-            this.txtLogradouro.TabIndex = 46;
+            this.txtLogradouro.TabIndex = 8;
+            this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
             // 
             // label3
             // 
@@ -298,7 +306,8 @@
             this.txtEmail.MaxLength = 40;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(220, 20);
-            this.txtEmail.TabIndex = 34;
+            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
@@ -317,9 +326,10 @@
             this.mskFoneEmergencia.Mask = "(99) 0000-0000";
             this.mskFoneEmergencia.Name = "mskFoneEmergencia";
             this.mskFoneEmergencia.Size = new System.Drawing.Size(111, 20);
-            this.mskFoneEmergencia.TabIndex = 30;
+            this.mskFoneEmergencia.TabIndex = 18;
             this.mskFoneEmergencia.Leave += new System.EventHandler(this.mskFoneEmergencia_Leave);
             this.mskFoneEmergencia.Enter += new System.EventHandler(this.mskFoneEmergencia_Enter);
+            this.mskFoneEmergencia.TextChanged += new System.EventHandler(this.mskFoneEmergencia_TextChanged);
             // 
             // lblFoneEmergencia
             // 
@@ -337,9 +347,10 @@
             this.cmbResidCom.Location = new System.Drawing.Point(128, 382);
             this.cmbResidCom.Name = "cmbResidCom";
             this.cmbResidCom.Size = new System.Drawing.Size(312, 21);
-            this.cmbResidCom.TabIndex = 28;
+            this.cmbResidCom.TabIndex = 17;
             this.cmbResidCom.Leave += new System.EventHandler(this.cmbResidCom_Leave);
             this.cmbResidCom.Enter += new System.EventHandler(this.cmbResidCom_Enter);
+            this.cmbResidCom.TextChanged += new System.EventHandler(this.cmbResidCom_TextChanged);
             // 
             // lblResidCom
             // 
@@ -356,9 +367,10 @@
             this.mskFoneAluno.Mask = "(99) 0000-0000";
             this.mskFoneAluno.Name = "mskFoneAluno";
             this.mskFoneAluno.Size = new System.Drawing.Size(111, 20);
-            this.mskFoneAluno.TabIndex = 26;
+            this.mskFoneAluno.TabIndex = 7;
             this.mskFoneAluno.Leave += new System.EventHandler(this.mskFoneAluno_Leave);
             this.mskFoneAluno.Enter += new System.EventHandler(this.mskFoneAluno_Enter);
+            this.mskFoneAluno.TextChanged += new System.EventHandler(this.mskFoneAluno_TextChanged);
             // 
             // lblFoneAluno
             // 
@@ -405,9 +417,10 @@
             this.cmbNaturalidade.Location = new System.Drawing.Point(646, 70);
             this.cmbNaturalidade.Name = "cmbNaturalidade";
             this.cmbNaturalidade.Size = new System.Drawing.Size(158, 21);
-            this.cmbNaturalidade.TabIndex = 10;
+            this.cmbNaturalidade.TabIndex = 5;
             this.cmbNaturalidade.Leave += new System.EventHandler(this.cmbNaturalidade_Leave);
             this.cmbNaturalidade.Enter += new System.EventHandler(this.cmbNaturalidade_Enter);
+            this.cmbNaturalidade.TextChanged += new System.EventHandler(this.cmbNaturalidade_TextChanged);
             // 
             // label2
             // 
@@ -683,9 +696,10 @@
             this.cmbNacionalidade.Location = new System.Drawing.Point(370, 68);
             this.cmbNacionalidade.Name = "cmbNacionalidade";
             this.cmbNacionalidade.Size = new System.Drawing.Size(158, 21);
-            this.cmbNacionalidade.TabIndex = 8;
+            this.cmbNacionalidade.TabIndex = 4;
             this.cmbNacionalidade.Leave += new System.EventHandler(this.cmbNacionalidade_Leave);
             this.cmbNacionalidade.Enter += new System.EventHandler(this.cmbNacionalidade_Enter);
+            this.cmbNacionalidade.TextChanged += new System.EventHandler(this.cmbNacionalidade_TextChanged);
             // 
             // lblNacionalidade
             // 
@@ -703,10 +717,11 @@
             this.rdbFem.Location = new System.Drawing.Point(569, 32);
             this.rdbFem.Name = "rdbFem";
             this.rdbFem.Size = new System.Drawing.Size(48, 17);
-            this.rdbFem.TabIndex = 6;
+            this.rdbFem.TabIndex = 2;
             this.rdbFem.TabStop = true;
             this.rdbFem.Text = "Fem";
             this.rdbFem.UseVisualStyleBackColor = true;
+            this.rdbFem.TextChanged += new System.EventHandler(this.rdbFem_TextChanged);
             // 
             // rdbMasc
             // 
@@ -715,10 +730,11 @@
             this.rdbMasc.Location = new System.Drawing.Point(508, 32);
             this.rdbMasc.Name = "rdbMasc";
             this.rdbMasc.Size = new System.Drawing.Size(55, 17);
-            this.rdbMasc.TabIndex = 5;
+            this.rdbMasc.TabIndex = 1;
             this.rdbMasc.TabStop = true;
             this.rdbMasc.Text = "Masc";
             this.rdbMasc.UseVisualStyleBackColor = true;
+            this.rdbMasc.TextChanged += new System.EventHandler(this.rdbMasc_TextChanged);
             // 
             // lblSexo
             // 
@@ -735,7 +751,8 @@
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(312, 20);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 0;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             // 
@@ -746,7 +763,7 @@
             this.dtpNascimento.Location = new System.Drawing.Point(128, 70);
             this.dtpNascimento.Name = "dtpNascimento";
             this.dtpNascimento.Size = new System.Drawing.Size(110, 20);
-            this.dtpNascimento.TabIndex = 2;
+            this.dtpNascimento.TabIndex = 3;
             // 
             // label1
             // 
@@ -811,7 +828,7 @@
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
-            this.ucMenuInferior1.TabIndex = 72;
+            this.ucMenuInferior1.TabIndex = 2;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucAluno1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
@@ -821,7 +838,7 @@
             this.uMenuLateral1.Location = new System.Drawing.Point(875, 75);
             this.uMenuLateral1.Name = "uMenuLateral1";
             this.uMenuLateral1.Size = new System.Drawing.Size(130, 584);
-            this.uMenuLateral1.TabIndex = 71;
+            this.uMenuLateral1.TabIndex = 0;
             this.uMenuLateral1.EventoAbrirTelaMedica += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMedica(this.uMenuLateral1_EventoAbrirTelaMedica);
             this.uMenuLateral1.Load += new System.EventHandler(this.uMenuLateral1_Load);
             this.uMenuLateral1.EventoAbrirTelaResponsavel += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaResponsavel(this.uMenuLateral1_EventoAbrirTelaResponsavel);

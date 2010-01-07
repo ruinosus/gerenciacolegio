@@ -86,7 +86,7 @@
             this.gpbDadosPessoais.Location = new System.Drawing.Point(39, 191);
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
             this.gpbDadosPessoais.Size = new System.Drawing.Size(820, 475);
-            this.gpbDadosPessoais.TabIndex = 21;
+            this.gpbDadosPessoais.TabIndex = 0;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DESCRIÇÕES MÉDICAS DO ALUNO";
             this.gpbDadosPessoais.Enter += new System.EventHandler(this.gpbDadosPessoais_Enter);
@@ -107,7 +107,7 @@
             this.txtSituacaoEspecial.Multiline = true;
             this.txtSituacaoEspecial.Name = "txtSituacaoEspecial";
             this.txtSituacaoEspecial.Size = new System.Drawing.Size(716, 76);
-            this.txtSituacaoEspecial.TabIndex = 44;
+            this.txtSituacaoEspecial.TabIndex = 9;
             this.txtSituacaoEspecial.TextChanged += new System.EventHandler(this.txtSituacaoEspecial_TextChanged);
             // 
             // lblDescricaoMedica
@@ -126,7 +126,7 @@
             this.txtDescricaoMedica.Multiline = true;
             this.txtDescricaoMedica.Name = "txtDescricaoMedica";
             this.txtDescricaoMedica.Size = new System.Drawing.Size(716, 76);
-            this.txtDescricaoMedica.TabIndex = 42;
+            this.txtDescricaoMedica.TabIndex = 8;
             this.txtDescricaoMedica.TextChanged += new System.EventHandler(this.txtDescricaoMedica_TextChanged);
             // 
             // txtPlanoSaude
@@ -135,7 +135,7 @@
             this.txtPlanoSaude.MaxLength = 30;
             this.txtPlanoSaude.Name = "txtPlanoSaude";
             this.txtPlanoSaude.Size = new System.Drawing.Size(201, 20);
-            this.txtPlanoSaude.TabIndex = 41;
+            this.txtPlanoSaude.TabIndex = 7;
             this.txtPlanoSaude.TextChanged += new System.EventHandler(this.txtPlanoSaude_TextChanged);
             // 
             // lblPlanoSaude
@@ -162,7 +162,7 @@
             this.txtHospital.MaxLength = 30;
             this.txtHospital.Name = "txtHospital";
             this.txtHospital.Size = new System.Drawing.Size(201, 20);
-            this.txtHospital.TabIndex = 38;
+            this.txtHospital.TabIndex = 6;
             this.txtHospital.TextChanged += new System.EventHandler(this.txtHospital_TextChanged);
             // 
             // rdbNegativo
@@ -172,7 +172,7 @@
             this.rdbNegativo.Location = new System.Drawing.Point(414, 122);
             this.rdbNegativo.Name = "rdbNegativo";
             this.rdbNegativo.Size = new System.Drawing.Size(76, 17);
-            this.rdbNegativo.TabIndex = 37;
+            this.rdbNegativo.TabIndex = 3;
             this.rdbNegativo.TabStop = true;
             this.rdbNegativo.Text = "Negativo";
             this.rdbNegativo.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@
             this.rdbPositivo.Location = new System.Drawing.Point(338, 122);
             this.rdbPositivo.Name = "rdbPositivo";
             this.rdbPositivo.Size = new System.Drawing.Size(70, 17);
-            this.rdbPositivo.TabIndex = 36;
+            this.rdbPositivo.TabIndex = 2;
             this.rdbPositivo.TabStop = true;
             this.rdbPositivo.Text = "Positivo";
             this.rdbPositivo.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             this.cmbGrupoSanguineo.Location = new System.Drawing.Point(163, 119);
             this.cmbGrupoSanguineo.Name = "cmbGrupoSanguineo";
             this.cmbGrupoSanguineo.Size = new System.Drawing.Size(72, 21);
-            this.cmbGrupoSanguineo.TabIndex = 35;
+            this.cmbGrupoSanguineo.TabIndex = 1;
             this.cmbGrupoSanguineo.TextChanged += new System.EventHandler(this.cmbGrupoSanguineo_TextChanged);
             // 
             // txtNomeMedico
@@ -208,7 +208,7 @@
             this.txtNomeMedico.MaxLength = 50;
             this.txtNomeMedico.Name = "txtNomeMedico";
             this.txtNomeMedico.Size = new System.Drawing.Size(366, 20);
-            this.txtNomeMedico.TabIndex = 34;
+            this.txtNomeMedico.TabIndex = 4;
             this.txtNomeMedico.TextChanged += new System.EventHandler(this.txtNomeMedico_TextChanged);
             // 
             // lblEmail
@@ -226,7 +226,7 @@
             this.mskFone.Mask = "(99) 0000-0000";
             this.mskFone.Name = "mskFone";
             this.mskFone.Size = new System.Drawing.Size(111, 20);
-            this.mskFone.TabIndex = 26;
+            this.mskFone.TabIndex = 5;
             this.mskFone.TextChanged += new System.EventHandler(this.mskFone_TextChanged);
             // 
             // lblFone
@@ -254,7 +254,7 @@
             this.txtNome.Multiline = true;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(716, 40);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 0;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblGrupoSanguineo
@@ -311,7 +311,7 @@
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
-            this.ucMenuInferior1.TabIndex = 123;
+            this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
