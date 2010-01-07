@@ -214,7 +214,17 @@ namespace Negocios.ModuloNota.Repositorios
         {
             try
             {
-                db.Nota.DeleteOnSubmit(nota);
+                Nota notaAux = new Nota();
+                notaAux.ID = nota.ID;
+
+                List<Nota> resultado = this.Consultar(notaAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new NotaNaoExcluidaExcecao();
+
+                notaAux = resultado[0];
+
+                db.Nota.DeleteOnSubmit(notaAux);
             }
             catch (Exception)
             {
@@ -227,7 +237,26 @@ namespace Negocios.ModuloNota.Repositorios
         {
             try
             {
-                db.Nota.InsertOnSubmit(nota);
+                Nota notaAux = new Nota();
+                notaAux.ID = nota.ID;
+
+                List<Nota> resultado = this.Consultar(notaAux, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count == 0)
+                    throw new NotaNaoAlteradaExcecao();
+
+                notaAux = resultado[0];
+
+                notaAux.ProfessorDisciplinaSalaID = nota.ProfessorDisciplinaSalaID;
+                notaAux.Aprovado = nota.Aprovado;
+                notaAux.Rec = nota.Rec;
+                notaAux.RecFinal = nota.RecFinal;
+                notaAux.Vc1 = nota.Vc1;
+                notaAux.Vc2 = nota.Vc2;
+                notaAux.Vp = nota.Vp;
+                notaAux.Status = nota.Status;
+                Confirmar();
+
             }
             catch (Exception)
             {

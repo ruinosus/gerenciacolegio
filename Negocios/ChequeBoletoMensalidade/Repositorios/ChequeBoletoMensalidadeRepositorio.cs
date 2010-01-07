@@ -60,12 +60,12 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (responsavelAluno.Status.HasValue)
+                        if (chequeBoletoMensalidade.Status.HasValue)
                         {
                             resultado.AddRange((from cbm in resultado
                                                 where
                                                 cbm.Status.HasValue && cbm.Status.Value == chequeBoletoMensalidade.Status.Value
-                                                select ra).ToList());
+                                                select cbm).ToList());
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -102,12 +102,12 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (responsavelAluno.Status.HasValue)
+                        if (chequeBoletoMensalidade.Status.HasValue)
                         {
                             resultado.AddRange((from cbm in Consultar()
                                                 where
                                                 cbm.Status.HasValue && cbm.Status.Value == chequeBoletoMensalidade.Status.Value
-                                                select ra).ToList());
+                                                select cbm).ToList());
                             resultado = resultado.Distinct().ToList();
                         }
 
