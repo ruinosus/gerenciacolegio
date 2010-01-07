@@ -227,3 +227,9 @@ C:\Users\Dudu\Desktop\New Folder\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_
 C:\Users\Dudu\Desktop\New Folder\GuiWindowsForms\obj\Debug\GuiWindowsForms.uMenuImagem.resources
 C:\Users\Dudu\Desktop\New Folder\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
 C:\Users\Dudu\Desktop\New Folder\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
+C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\bin\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\bin\Debug\DbLinq.dll
+C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.dll
+C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\bin\Debug\DbLinq.pdb
+C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\bin\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.pdb
