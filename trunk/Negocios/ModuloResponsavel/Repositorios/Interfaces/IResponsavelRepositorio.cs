@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloResponsavel.Repositorios
 {
@@ -33,8 +34,9 @@ namespace Negocios.ModuloResponsavel.Repositorios
         /// Método responsável por consultar perfis do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="responsavel">Objeto do tipo responsavel que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todos os perfis cadastrados.</returns>
-        List<Responsavel> Consultar(Responsavel responsavel);
+        List<Responsavel> Consultar(Responsavel responsavel, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todos os comentários do sistema.
