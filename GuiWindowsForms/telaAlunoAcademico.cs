@@ -108,5 +108,62 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region USER CONTROLS - Controle Lateral - Botões de Navegação
+
+        private void uMenuLateral1_EventoAbrirTelaResponsavel()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            telaalunoresponsavel.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaMedica()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoMedicacao telaalunomedicacao = telaAlunoMedicacao.getInstancia();
+            telaalunomedicacao.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaMatricula()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoMatricula telaalunomatricula = telaAlunoMatricula.getInstancia();
+            telaalunomatricula.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaFinanceiro()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoFinanceiro telaalunofinanceiro = telaAlunoFinanceiro.getInstancia();
+            telaalunofinanceiro.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaDados()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAluno telaaluno = telaAluno.getInstancia();
+            telaaluno.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaAcademico()
+        {
+            this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
+            telaalunoacademico.Show();
+        }
+
+        #endregion
+
+        private void uMenuLateral1_Load(object sender, EventArgs e)
+        {
+            uMenuLateral1.verificaTela(telaalunoacademico);
+        }
+
     }
 }
