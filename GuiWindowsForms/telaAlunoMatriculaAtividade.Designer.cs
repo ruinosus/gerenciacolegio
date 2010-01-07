@@ -48,18 +48,11 @@
             this.cmbAtividade = new System.Windows.Forms.ComboBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.btnMatriculaSerie = new System.Windows.Forms.Button();
-            this.lblAtivo = new System.Windows.Forms.Label();
-            this.lblFoneEmerg = new System.Windows.Forms.Label();
-            this.lblResponsavel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblMatricula = new System.Windows.Forms.Label();
-            this.lblNomeAluno = new System.Windows.Forms.Label();
-            this.pctImagem = new System.Windows.Forms.PictureBox();
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             this.gpbMatricula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -270,87 +263,6 @@
             this.btnMatriculaSerie.Click += new System.EventHandler(this.btnMatriculaSerie_Click);
             this.btnMatriculaSerie.MouseEnter += new System.EventHandler(this.btnMatriculaSerie_MouseEnter);
             // 
-            // lblAtivo
-            // 
-            this.lblAtivo.AutoSize = true;
-            this.lblAtivo.BackColor = System.Drawing.Color.Transparent;
-            this.lblAtivo.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblAtivo.ForeColor = System.Drawing.Color.Green;
-            this.lblAtivo.Location = new System.Drawing.Point(394, 166);
-            this.lblAtivo.Name = "lblAtivo";
-            this.lblAtivo.Size = new System.Drawing.Size(49, 19);
-            this.lblAtivo.TabIndex = 114;
-            this.lblAtivo.Text = "Ativo";
-            // 
-            // lblFoneEmerg
-            // 
-            this.lblFoneEmerg.AutoSize = true;
-            this.lblFoneEmerg.BackColor = System.Drawing.Color.Transparent;
-            this.lblFoneEmerg.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblFoneEmerg.ForeColor = System.Drawing.Color.Yellow;
-            this.lblFoneEmerg.Location = new System.Drawing.Point(394, 133);
-            this.lblFoneEmerg.Name = "lblFoneEmerg";
-            this.lblFoneEmerg.Size = new System.Drawing.Size(98, 19);
-            this.lblFoneEmerg.TabIndex = 113;
-            this.lblFoneEmerg.Text = "Fone Emerg";
-            // 
-            // lblResponsavel
-            // 
-            this.lblResponsavel.AutoSize = true;
-            this.lblResponsavel.BackColor = System.Drawing.Color.Transparent;
-            this.lblResponsavel.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblResponsavel.ForeColor = System.Drawing.Color.Yellow;
-            this.lblResponsavel.Location = new System.Drawing.Point(394, 104);
-            this.lblResponsavel.Name = "lblResponsavel";
-            this.lblResponsavel.Size = new System.Drawing.Size(155, 19);
-            this.lblResponsavel.TabIndex = 112;
-            this.lblResponsavel.Text = "Nome Responsável";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(394, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 19);
-            this.label1.TabIndex = 111;
-            this.label1.Text = "Série";
-            // 
-            // lblMatricula
-            // 
-            this.lblMatricula.AutoSize = true;
-            this.lblMatricula.BackColor = System.Drawing.Color.Transparent;
-            this.lblMatricula.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblMatricula.ForeColor = System.Drawing.Color.Yellow;
-            this.lblMatricula.Location = new System.Drawing.Point(394, 45);
-            this.lblMatricula.Name = "lblMatricula";
-            this.lblMatricula.Size = new System.Drawing.Size(80, 19);
-            this.lblMatricula.TabIndex = 110;
-            this.lblMatricula.Text = "Matricula";
-            // 
-            // lblNomeAluno
-            // 
-            this.lblNomeAluno.AutoSize = true;
-            this.lblNomeAluno.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeAluno.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.lblNomeAluno.ForeColor = System.Drawing.Color.Yellow;
-            this.lblNomeAluno.Location = new System.Drawing.Point(394, 12);
-            this.lblNomeAluno.Name = "lblNomeAluno";
-            this.lblNomeAluno.Size = new System.Drawing.Size(124, 19);
-            this.lblNomeAluno.TabIndex = 109;
-            this.lblNomeAluno.Text = "Nome do Aluno";
-            // 
-            // pctImagem
-            // 
-            this.pctImagem.BackColor = System.Drawing.Color.Transparent;
-            this.pctImagem.Location = new System.Drawing.Point(248, 12);
-            this.pctImagem.Name = "pctImagem";
-            this.pctImagem.Size = new System.Drawing.Size(127, 134);
-            this.pctImagem.TabIndex = 108;
-            this.pctImagem.TabStop = false;
-            // 
             // uMenuLateral1
             // 
             this.uMenuLateral1.BackColor = System.Drawing.Color.Transparent;
@@ -375,6 +287,14 @@
             this.ucMenuInferior1.TabIndex = 116;
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
+            // uMenuImagem1
+            // 
+            this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
+            this.uMenuImagem1.Location = new System.Drawing.Point(244, 0);
+            this.uMenuImagem1.Name = "uMenuImagem1";
+            this.uMenuImagem1.Size = new System.Drawing.Size(438, 201);
+            this.uMenuImagem1.TabIndex = 117;
+            // 
             // telaAlunoMatriculaAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,18 +303,12 @@
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
             this.Controls.Add(this.ucMenuInferior1);
-            this.Controls.Add(this.lblAtivo);
-            this.Controls.Add(this.lblFoneEmerg);
-            this.Controls.Add(this.lblResponsavel);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblMatricula);
-            this.Controls.Add(this.lblNomeAluno);
-            this.Controls.Add(this.pctImagem);
             this.Controls.Add(this.btnMatriculaSerie);
             this.Controls.Add(this.gpbMatricula);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.uMenuLateral1);
+            this.Controls.Add(this.uMenuImagem1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -406,7 +320,6 @@
             this.gpbMatricula.ResumeLayout(false);
             this.gpbMatricula.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,14 +346,8 @@
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnAdicionarImagem;
-        private System.Windows.Forms.Label lblAtivo;
-        private System.Windows.Forms.Label lblFoneEmerg;
-        private System.Windows.Forms.Label lblResponsavel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblMatricula;
-        private System.Windows.Forms.Label lblNomeAluno;
-        private System.Windows.Forms.PictureBox pctImagem;
         private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
         private ucMenuInferior ucMenuInferior1;
+        private uMenuImagem uMenuImagem1;
     }
 }

@@ -99,65 +99,13 @@ namespace GuiWindowsForms
             }
         }
 
-        #region Controle dos textos e das ações dos botões de ação inferiores
+        #region USER CONTROLS - Controle Inferior - Botões de Navegação
 
-        /// <summary>
-        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnVoltar_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = true;
-            lblInfoControles.Text = "Voltar";
-        }
-
-        /// <summary>
-        /// Oculta o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnVoltar_MouseLeave(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = false;
-        }
-
-        /// <summary>
-        /// Oculta o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnSalvar_MouseLeave(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = false;
-        }
-
-        /// <summary>
-        /// Exibe o texto referente ao controle quando o mouse passa sobre ele
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnSalvar_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = true;
-            lblInfoControles.Text = "Salvar Informações";
-        }
-
-        /// <summary>
-        /// Retorna para tela anterior ocultando a atual e chamando a instância da última tela acessada
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnVoltar_Click(object sender, EventArgs e)
+        private void ucAluno1_EventoVoltar()
         {
             this.Hide();
 
-            if (Program.ultimaTela != 7)
+            if (Program.ultimaTela == 7)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
@@ -169,16 +117,5 @@ namespace GuiWindowsForms
         }
 
         #endregion
-
-        private void btnPesquisarResponsaveis_MouseEnter(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = true;
-            lblInfoControles.Text = "Pesquisar por Responsáveis!";
-        }
-
-        private void btnPesquisarResponsaveis_MouseLeave(object sender, EventArgs e)
-        {
-            lblInfoControles.Visible = false;
-        }
     }
 }
