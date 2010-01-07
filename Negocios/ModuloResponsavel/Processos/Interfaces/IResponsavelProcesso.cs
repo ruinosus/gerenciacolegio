@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloResponsavel.Processos
 {
@@ -33,18 +34,19 @@ namespace Negocios.ModuloResponsavel.Processos
         /// Método responsável por consultar perfis do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="responsavel">Objeto do tipo responsavel que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todos os perfis cadastrados.</returns>
-        List<Responsavel> Consultar(Responsavel responsavel);
+        List<Responsavel> Consultar(Responsavel responsavel, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todos os comentários do sistema.
         /// </summary>
         /// <returns>Lista contendo todos os responsavels cadastrados.</returns>
         List<Responsavel> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }

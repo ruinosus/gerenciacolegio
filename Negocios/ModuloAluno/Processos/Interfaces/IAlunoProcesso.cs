@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloAluno.Processos
 {
@@ -32,18 +33,19 @@ namespace Negocios.ModuloAluno.Processos
         /// Método responsável por consultar perfis do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="aluno">Objeto do tipo aluno que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todos os perfis cadastrados.</returns>
-        List<Aluno> Consultar(Aluno aluno);
+        List<Aluno> Consultar(Aluno aluno, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todos os comentários do sistema.
         /// </summary>
         /// <returns>Lista contendo todos os alunos cadastrados.</returns>
         List<Aluno> Consultar();
-		
-		/// <summary>
+
+        /// <summary>
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
-		void Confirmar();
+        void Confirmar();
     }
 }
