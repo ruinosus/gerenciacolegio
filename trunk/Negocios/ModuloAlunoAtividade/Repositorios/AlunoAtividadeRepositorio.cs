@@ -212,7 +212,7 @@ namespace Negocios.ModuloAlunoAtividade.Repositorios
             db.SubmitChanges();
         }
 
-        #endregion      
+        #endregion       
 
 
     }

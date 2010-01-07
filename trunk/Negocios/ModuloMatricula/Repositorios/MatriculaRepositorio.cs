@@ -273,5 +273,5 @@ namespace Negocios.ModuloMatricula.Repositorios
         #endregion      
 
 
-    }
+    } 
 }

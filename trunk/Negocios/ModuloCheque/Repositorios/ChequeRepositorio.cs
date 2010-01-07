@@ -326,7 +326,7 @@ namespace Negocios.ModuloCheque.Repositorios
             db.SubmitChanges();
         }
 
-        #endregion      
+        #endregion       
 
 
     }

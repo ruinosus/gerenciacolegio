@@ -74,7 +74,7 @@ namespace Negocios.ModuloFuncionario.Repositorios
         }
 
         #endregion      
-
+ 
 
     }
 }
