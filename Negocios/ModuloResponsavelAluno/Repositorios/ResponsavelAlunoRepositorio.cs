@@ -33,6 +33,15 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                 #region Case E
                 case TipoPesquisa.E:
                     {
+                        if (responsavelAluno.ID != 0)
+                        {
+                            resultado.AddRange((from ra in resultado
+                                                where
+                                                ra.ID == responsavelAluno.ID
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (responsavelAluno.AlunoID != 0)
                         {
                             resultado.AddRange((from ra in resultado
@@ -94,6 +103,16 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                 #region Case Ou
                 case TipoPesquisa.Ou:
                     {
+
+                        if (responsavelAluno.ID != 0)
+                        {
+                            resultado.AddRange((from ra in Consultar()
+                                                where
+                                                ra.ID == responsavelAluno.ID
+                                                select ra).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (responsavelAluno.AlunoID != 0)
                         {
                             resultado.AddRange((from ra in Consultar()
@@ -179,8 +198,8 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
             try
             {
                 ResponsavelAluno responsavelAlunoAux = new ResponsavelAluno();
-                responsavelAlunoAux.AlunoID = responsavelAluno.AlunoID;
-                responsavelAlunoAux.ResponsavelID = responsavelAluno.ResponsavelID;
+                responsavelAlunoAux.ID = responsavelAluno.ID;
+               
 
                 List<ResponsavelAluno> resultado = this.Consultar(responsavelAlunoAux, TipoPesquisa.E);
 
@@ -203,8 +222,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
             try
             {
                 ResponsavelAluno responsavelAlunoAux = new ResponsavelAluno();
-                responsavelAlunoAux.AlunoID = responsavelAluno.AlunoID;
-                responsavelAlunoAux.ResponsavelID = responsavelAluno.ResponsavelID;
+                responsavelAlunoAux.ID = responsavelAluno.ID;
 
                 List<ResponsavelAluno> resultado = this.Consultar(responsavelAlunoAux, TipoPesquisa.E);
 

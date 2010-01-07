@@ -107,6 +107,15 @@ namespace Negocios.ModuloDependencia.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (dependencia.Status.HasValue)
+                        {
+                            resultado.AddRange((from d in resultado
+                                                where
+                                                d.Status.HasValue && d.Rec.Value == dependencia.Status.Value
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         break;
                     }
                 #endregion
@@ -187,6 +196,15 @@ namespace Negocios.ModuloDependencia.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (dependencia.Status.HasValue)
+                        {
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Status.HasValue && d.Rec.Value == dependencia.Status.Value
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         break;
                     }
                 #endregion
@@ -254,6 +272,7 @@ namespace Negocios.ModuloDependencia.Repositorios
                 dependenciaAux.Vc1= dependencia.Vc1;
                 dependenciaAux.Vc2= dependencia.Vc2;
                 dependenciaAux.Vp= dependencia.Vp;
+                dependenciaAux.Status = dependencia.Status;
                 Confirmar();
 
             }
