@@ -80,7 +80,7 @@
             this.gpbMatricula.Location = new System.Drawing.Point(39, 191);
             this.gpbMatricula.Name = "gpbMatricula";
             this.gpbMatricula.Size = new System.Drawing.Size(820, 350);
-            this.gpbMatricula.TabIndex = 78;
+            this.gpbMatricula.TabIndex = 0;
             this.gpbMatricula.TabStop = false;
             this.gpbMatricula.Text = "MATRÍCULA DO ALUNO";
             // 
@@ -92,7 +92,7 @@
             this.cmbVencimento.Location = new System.Drawing.Point(171, 280);
             this.cmbVencimento.Name = "cmbVencimento";
             this.cmbVencimento.Size = new System.Drawing.Size(101, 21);
-            this.cmbVencimento.TabIndex = 50;
+            this.cmbVencimento.TabIndex = 6;
             // 
             // lblVencimento
             // 
@@ -109,7 +109,7 @@
             this.txtTotalValor.Name = "txtTotalValor";
             this.txtTotalValor.ReadOnly = true;
             this.txtTotalValor.Size = new System.Drawing.Size(123, 20);
-            this.txtTotalValor.TabIndex = 47;
+            this.txtTotalValor.TabIndex = 7;
             // 
             // lblTotalValor
             // 
@@ -130,7 +130,7 @@
             this.comboBox1.Location = new System.Drawing.Point(171, 226);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 21);
-            this.comboBox1.TabIndex = 45;
+            this.comboBox1.TabIndex = 5;
             // 
             // lblDesconto
             // 
@@ -146,7 +146,7 @@
             this.textBox1.Location = new System.Drawing.Point(171, 180);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(123, 20);
-            this.textBox1.TabIndex = 42;
+            this.textBox1.TabIndex = 4;
             // 
             // lblNumeroMatricula
             // 
@@ -165,7 +165,7 @@
             this.dtpNascimento.Location = new System.Drawing.Point(500, 21);
             this.dtpNascimento.Name = "dtpNascimento";
             this.dtpNascimento.Size = new System.Drawing.Size(110, 20);
-            this.dtpNascimento.TabIndex = 40;
+            this.dtpNascimento.TabIndex = 0;
             // 
             // lblDataMatricula
             // 
@@ -193,7 +193,7 @@
             this.cmbTurma.Location = new System.Drawing.Point(422, 116);
             this.cmbTurma.Name = "cmbTurma";
             this.cmbTurma.Size = new System.Drawing.Size(101, 21);
-            this.cmbTurma.TabIndex = 37;
+            this.cmbTurma.TabIndex = 3;
             // 
             // lblTurno
             // 
@@ -212,7 +212,7 @@
             this.cmbTurno.Location = new System.Drawing.Point(171, 116);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(101, 21);
-            this.cmbTurno.TabIndex = 35;
+            this.cmbTurno.TabIndex = 2;
             // 
             // lblSerie
             // 
@@ -231,7 +231,7 @@
             this.cmbSerie.Location = new System.Drawing.Point(171, 80);
             this.cmbSerie.Name = "cmbSerie";
             this.cmbSerie.Size = new System.Drawing.Size(163, 21);
-            this.cmbSerie.TabIndex = 33;
+            this.cmbSerie.TabIndex = 1;
             // 
             // lblValor
             // 
@@ -279,7 +279,7 @@
             this.btnMatriculaAtividade.Margin = new System.Windows.Forms.Padding(0);
             this.btnMatriculaAtividade.Name = "btnMatriculaAtividade";
             this.btnMatriculaAtividade.Size = new System.Drawing.Size(48, 48);
-            this.btnMatriculaAtividade.TabIndex = 48;
+            this.btnMatriculaAtividade.TabIndex = 6;
             this.btnMatriculaAtividade.UseVisualStyleBackColor = false;
             this.btnMatriculaAtividade.MouseLeave += new System.EventHandler(this.btnMatriculaAtividade_MouseLeave);
             this.btnMatriculaAtividade.Click += new System.EventHandler(this.btnMatriculaAtividade_Click);
@@ -291,7 +291,7 @@
             this.uMenuLateral1.Location = new System.Drawing.Point(875, 75);
             this.uMenuLateral1.Name = "uMenuLateral1";
             this.uMenuLateral1.Size = new System.Drawing.Size(130, 584);
-            this.uMenuLateral1.TabIndex = 107;
+            this.uMenuLateral1.TabIndex = 5;
             this.uMenuLateral1.EventoAbrirTelaMedica += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMedica(this.uMenuLateral1_EventoAbrirTelaMedica);
             this.uMenuLateral1.Load += new System.EventHandler(this.uMenuLateral1_Load);
             this.uMenuLateral1.EventoAbrirTelaResponsavel += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaResponsavel(this.uMenuLateral1_EventoAbrirTelaResponsavel);
@@ -306,7 +306,8 @@
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
-            this.ucMenuInferior1.TabIndex = 108;
+            this.ucMenuInferior1.TabIndex = 2;
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
             // uMenuImagem1
@@ -339,6 +340,7 @@
             this.Name = "telaAlunoMatricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.telaAlunoMatricula_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMatricula_FormClosing);
             this.gpbMatricula.ResumeLayout(false);
             this.gpbMatricula.PerformLayout();

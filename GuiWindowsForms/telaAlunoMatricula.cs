@@ -11,7 +11,7 @@ namespace GuiWindowsForms
 {
     public partial class telaAlunoMatricula : Form
     {
-
+        #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
@@ -20,7 +20,9 @@ namespace GuiWindowsForms
         private static telaAlunoMatricula telaalunomatricula;
 
         private static bool IsShown = false;
+        #endregion
 
+        #region INSTANCIA TELA MATRICULA
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
         /// </summary>
@@ -34,7 +36,9 @@ namespace GuiWindowsForms
             }
             return telaalunomatricula;
         }
+        #endregion
 
+        #region CONSTRUTOR
         /// <summary>
         /// Construtor da tela
         /// </summary>
@@ -43,13 +47,17 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region MÉTODO PARA VERIFICAR USO DA TELA
         /// <summary>
-        /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
+        /// Método para verificar se a tela já esta sendo exibida ou não, 
+        /// avita que a tela seja descarregada da memória
         /// </summary>
 
         /// <summary>
-        /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
+        /// Método para verificar se a tela já esta sendo exibida ou não,
+        /// avita que a tela seja descarregada da memória
         /// </summary>
 
         public new void Show()
@@ -64,7 +72,9 @@ namespace GuiWindowsForms
 
             //return SelecionaForm(aux);
         }
+        #endregion
 
+        #region BUTTON DESCONECTAR
         /// <summary>
         /// Botão para esconder a tela e voltar para a tela de login
         /// </summary>
@@ -78,9 +88,12 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
 
+        #region MÉTODO PARA FECHAR A TELA
         /// <summary>
-        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
+        /// Evento para o fechamento da tela, não fecha de verdade, 
+        /// só a esconde, garantindo a usabilidade da tela
         /// pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
@@ -102,7 +115,9 @@ namespace GuiWindowsForms
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
+        #endregion
 
+        #region BUTTON MATRICULA ATIVIDADE
         private void btnMatriculaAtividade_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -123,6 +138,7 @@ namespace GuiWindowsForms
             this.btnMatriculaAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_add_atividade_48x48;
             //lblInfoControles.Visible = false;
         }
+        #endregion
 
         #region USER CONTROLS - Controle Inferior - Botões de Navegação
 
@@ -195,9 +211,32 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region USER CONTROLS - Menu Lateral
         private void uMenuLateral1_Load(object sender, EventArgs e)
         {
             uMenuLateral1.verificaTela(telaalunomatricula);
         }
+        #endregion
+
+        #region LOAD
+        private void telaAlunoMatricula_Load(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region EVENTO CADASTRAR
+        private void ucMenuInferior1_EventoCadastrar()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            { 
+            
+            }
+        }
+        #endregion
     }
 }
