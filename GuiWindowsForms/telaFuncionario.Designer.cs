@@ -48,11 +48,10 @@
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblUfIdentidade = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblEmissor = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmissor = new System.Windows.Forms.TextBox();
             this.lblEstadoCivil = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
             this.cmbNacionalidade = new System.Windows.Forms.ComboBox();
             this.lblNacionalidade = new System.Windows.Forms.Label();
             this.lblFiliacao = new System.Windows.Forms.Label();
@@ -74,10 +73,11 @@
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbEmissorUf = new System.Windows.Forms.ComboBox();
             this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
-            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,7 @@
             // gpbDadosPessoais
             // 
             this.gpbDadosPessoais.BackColor = System.Drawing.Color.Transparent;
+            this.gpbDadosPessoais.Controls.Add(this.cmbEmissorUf);
             this.gpbDadosPessoais.Controls.Add(this.lblEdificio);
             this.gpbDadosPessoais.Controls.Add(this.txtNomeEdificil);
             this.gpbDadosPessoais.Controls.Add(this.mskFoneResidencia);
@@ -102,11 +103,10 @@
             this.gpbDadosPessoais.Controls.Add(this.txtLogradouro);
             this.gpbDadosPessoais.Controls.Add(this.label3);
             this.gpbDadosPessoais.Controls.Add(this.lblUfIdentidade);
-            this.gpbDadosPessoais.Controls.Add(this.textBox2);
             this.gpbDadosPessoais.Controls.Add(this.lblEmissor);
-            this.gpbDadosPessoais.Controls.Add(this.textBox1);
+            this.gpbDadosPessoais.Controls.Add(this.txtEmissor);
             this.gpbDadosPessoais.Controls.Add(this.lblEstadoCivil);
-            this.gpbDadosPessoais.Controls.Add(this.comboBox1);
+            this.gpbDadosPessoais.Controls.Add(this.cmbEstadoCivil);
             this.gpbDadosPessoais.Controls.Add(this.cmbNacionalidade);
             this.gpbDadosPessoais.Controls.Add(this.lblNacionalidade);
             this.gpbDadosPessoais.Controls.Add(this.lblFiliacao);
@@ -174,8 +174,9 @@
             this.cmbUf.Location = new System.Drawing.Point(399, 258);
             this.cmbUf.MaxLength = 2;
             this.cmbUf.Name = "cmbUf";
-            this.cmbUf.Size = new System.Drawing.Size(40, 24);
+            this.cmbUf.Size = new System.Drawing.Size(50, 24);
             this.cmbUf.TabIndex = 73;
+            this.cmbUf.SelectedIndexChanged += new System.EventHandler(this.cmbUf_SelectedIndexChanged_1);
             this.cmbUf.TextChanged += new System.EventHandler(this.cmbUf_TextChanged);
             // 
             // txtComplemento
@@ -305,16 +306,6 @@
             this.lblUfIdentidade.TabIndex = 49;
             this.lblUfIdentidade.Text = "UF:";
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox2.Location = new System.Drawing.Point(452, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(40, 23);
-            this.textBox2.TabIndex = 48;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
             // lblEmissor
             // 
             this.lblEmissor.AutoSize = true;
@@ -324,42 +315,307 @@
             this.lblEmissor.TabIndex = 47;
             this.lblEmissor.Text = "Emissor:";
             // 
-            // textBox1
+            // txtEmissor
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox1.Location = new System.Drawing.Point(368, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(40, 23);
-            this.textBox1.TabIndex = 46;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtEmissor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.txtEmissor.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtEmissor.Location = new System.Drawing.Point(368, 114);
+            this.txtEmissor.Name = "txtEmissor";
+            this.txtEmissor.Size = new System.Drawing.Size(40, 23);
+            this.txtEmissor.TabIndex = 46;
+            this.txtEmissor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblEstadoCivil
             // 
             this.lblEstadoCivil.AutoSize = true;
-            this.lblEstadoCivil.Location = new System.Drawing.Point(295, 438);
+            this.lblEstadoCivil.Location = new System.Drawing.Point(46, 442);
             this.lblEstadoCivil.Name = "lblEstadoCivil";
             this.lblEstadoCivil.Size = new System.Drawing.Size(78, 13);
             this.lblEstadoCivil.TabIndex = 45;
             this.lblEstadoCivil.Text = "Estado Civil:";
             // 
-            // comboBox1
+            // cmbEstadoCivil
             // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(376, 435);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(124, 21);
-            this.comboBox1.TabIndex = 44;
-            this.comboBox1.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
+            this.cmbEstadoCivil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstadoCivil.FormattingEnabled = true;
+            this.cmbEstadoCivil.Items.AddRange(new object[] {
+            "",
+            "Solteiro(a) ",
+            "Casado(a)",
+            "Separado(a)",
+            "Divorciado(a) ",
+            "Viúvo(a)"});
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(127, 439);
+            this.cmbEstadoCivil.Name = "cmbEstadoCivil";
+            this.cmbEstadoCivil.Size = new System.Drawing.Size(124, 21);
+            this.cmbEstadoCivil.TabIndex = 44;
+            this.cmbEstadoCivil.TextChanged += new System.EventHandler(this.comboBox1_TextChanged);
             // 
             // cmbNacionalidade
             // 
             this.cmbNacionalidade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbNacionalidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNacionalidade.FormattingEnabled = true;
-            this.cmbNacionalidade.Location = new System.Drawing.Point(618, 435);
+            this.cmbNacionalidade.Items.AddRange(new object[] {
+            "",
+            "Brasil",
+            "Afeganistão",
+            "África do Sul",
+            "Akrotiri",
+            "Albânia",
+            "Alemanha",
+            "Andorra",
+            "Angola",
+            "Anguila",
+            "Antárctida",
+            "Antígua e Barbuda",
+            "Antilhas Neerlandesas",
+            "Arábia Saudita",
+            "Arctic Ocean",
+            "Argélia",
+            "Argentina",
+            "Arménia",
+            "Aruba",
+            "Ashmore and Cartier Islands",
+            "Atlantic Ocean",
+            "Austrália",
+            "Áustria",
+            "Azerbaijão",
+            "Baamas",
+            "Bangladeche",
+            "Barbados",
+            "Barém",
+            "Bélgica",
+            "Belize",
+            "Benim",
+            "Bermudas",
+            "Bielorrússia",
+            "Birmânia",
+            "Bolívia",
+            "Bósnia e Herzegovina",
+            "Botsuana",
+            "Brunei",
+            "Bulgária",
+            "Burquina Faso",
+            "Burúndi",
+            "Butão",
+            "Cabo Verde",
+            "Camarões",
+            "Camboja",
+            "Canadá",
+            "Catar",
+            "Cazaquistão",
+            "Chade",
+            "Chile",
+            "China",
+            "Chipre",
+            "Clipperton Island",
+            "Colômbia",
+            "Comores",
+            "Congo-Brazzaville",
+            "Congo-Kinshasa",
+            "Coral Sea Islands",
+            "Coreia do Norte",
+            "Coreia do Sul",
+            "Costa do Marfim",
+            "Costa Rica",
+            "Croácia",
+            "Cuba",
+            "Dhekelia",
+            "Dinamarca",
+            "Domínica",
+            "Egipto",
+            "Emiratos Árabes Unidos",
+            "Equador",
+            "Eritreia",
+            "Eslováquia",
+            "Eslovénia",
+            "Espanha",
+            "Estados Unidos",
+            "Estónia",
+            "Etiópia",
+            "Faroé",
+            "Fiji",
+            "Filipinas",
+            "Finlândia",
+            "França",
+            "Gabão",
+            "Gâmbia",
+            "Gana",
+            "Gaza Strip",
+            "Geórgia",
+            "Geórgia do Sul e Sandwich do Sul",
+            "Gibraltar",
+            "Granada",
+            "Grécia",
+            "Gronelândia",
+            "Guame",
+            "Guatemala",
+            "Guernsey",
+            "Guiana",
+            "Guiné",
+            "Guiné Equatorial",
+            "Guiné-Bissau",
+            "Haiti",
+            "Honduras",
+            "Hong Kong",
+            "Hungria",
+            "Iémen",
+            "Ilha Bouvet",
+            "Ilha do Natal",
+            "Ilha Norfolk",
+            "Ilhas Caimão",
+            "Ilhas Cook",
+            "Ilhas dos Cocos",
+            "Ilhas Falkland",
+            "Ilhas Heard e McDonald",
+            "Ilhas Marshall",
+            "Ilhas Salomão",
+            "Ilhas Turcas e Caicos",
+            "Ilhas Virgens Americanas",
+            "Ilhas Virgens Britânicas",
+            "Índia",
+            "Indian Ocean",
+            "Indonésia",
+            "Irão",
+            "Iraque",
+            "Irlanda",
+            "Islândia",
+            "Israel",
+            "Itália",
+            "Jamaica",
+            "Jan Mayen",
+            "Japão",
+            "Jersey",
+            "Jibuti",
+            "Jordânia",
+            "Kuwait",
+            "Laos",
+            "Lesoto",
+            "Letónia",
+            "Líbano",
+            "Libéria",
+            "Líbia",
+            "Listenstaine",
+            "Lituânia",
+            "Luxemburgo",
+            "Macau",
+            "Macedónia",
+            "Madagáscar",
+            "Malásia",
+            "Malávi",
+            "Maldivas",
+            "Mali",
+            "Malta",
+            "Man, Isle of",
+            "Marianas do Norte",
+            "Marrocos",
+            "Maurícia",
+            "Mauritânia",
+            "Mayotte",
+            "México",
+            "Micronésia",
+            "Moçambique",
+            "Moldávia",
+            "Mónaco",
+            "Mongólia",
+            "Monserrate",
+            "Montenegro",
+            "Mundo",
+            "Namíbia",
+            "Nauru",
+            "Navassa Island",
+            "Nepal",
+            "Nicarágua",
+            "Níger",
+            "Nigéria",
+            "Niue",
+            "Noruega",
+            "Nova Caledónia",
+            "Nova Zelândia",
+            "Omã",
+            "Pacific Ocean",
+            "Países Baixos",
+            "Palau",
+            "Panamá",
+            "Papua-Nova Guiné",
+            "Paquistão",
+            "Paracel Islands",
+            "Paraguai",
+            "Peru",
+            "Pitcairn",
+            "Polinésia Francesa",
+            "Polónia",
+            "Porto Rico",
+            "Portugal",
+            "Quénia",
+            "Quirguizistão",
+            "Quiribáti",
+            "Reino Unido",
+            "República Centro-Africana",
+            "República Checa",
+            "República Dominicana",
+            "Roménia",
+            "Ruanda",
+            "Rússia",
+            "Salvador",
+            "Samoa",
+            "Samoa Americana",
+            "Santa Helena",
+            "Santa Lúcia",
+            "São Cristóvão e Neves",
+            "São Marinho",
+            "São Pedro e Miquelon",
+            "São Tomé e Príncipe",
+            "São Vicente e Granadinas",
+            "Sara Ocidental",
+            "Seicheles",
+            "Senegal",
+            "Serra Leoa",
+            "Sérvia",
+            "Singapura",
+            "Síria",
+            "Somália",
+            "Southern Ocean",
+            "Spratly Islands",
+            "Sri Lanca",
+            "Suazilândia",
+            "Sudão",
+            "Suécia",
+            "Suíça",
+            "Suriname",
+            "Svalbard e Jan Mayen",
+            "Tailândia",
+            "Taiwan",
+            "Tajiquistão",
+            "Tanzânia",
+            "Território Britânico do Oceano Índico",
+            "Territórios Austrais Franceses",
+            "Timor Leste",
+            "Togo",
+            "Tokelau",
+            "Tonga",
+            "Trindade e Tobago",
+            "Tunísia",
+            "Turquemenistão",
+            "Turquia",
+            "Tuvalu",
+            "Ucrânia",
+            "Uganda",
+            "União Europeia",
+            "Uruguai",
+            "Usbequistão",
+            "Vanuatu",
+            "Vaticano",
+            "Venezuela",
+            "Vietname",
+            "Wake Island",
+            "Wallis e Futuna",
+            "West Bank",
+            "Zâmbia",
+            "Zimbabué "});
+            this.cmbNacionalidade.Location = new System.Drawing.Point(369, 439);
             this.cmbNacionalidade.Name = "cmbNacionalidade";
             this.cmbNacionalidade.Size = new System.Drawing.Size(158, 21);
             this.cmbNacionalidade.TabIndex = 41;
@@ -368,7 +624,7 @@
             // lblNacionalidade
             // 
             this.lblNacionalidade.AutoSize = true;
-            this.lblNacionalidade.Location = new System.Drawing.Point(520, 438);
+            this.lblNacionalidade.Location = new System.Drawing.Point(271, 442);
             this.lblNacionalidade.Name = "lblNacionalidade";
             this.lblNacionalidade.Size = new System.Drawing.Size(92, 13);
             this.lblNacionalidade.TabIndex = 40;
@@ -577,6 +833,52 @@
             this.btnImprimir.TabIndex = 97;
             this.btnImprimir.UseVisualStyleBackColor = false;
             // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
+            // cmbEmissorUf
+            // 
+            this.cmbEmissorUf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbEmissorUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmissorUf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.cmbEmissorUf.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.cmbEmissorUf.FormattingEnabled = true;
+            this.cmbEmissorUf.Items.AddRange(new object[] {
+            "",
+            "AC",
+            "AL",
+            "AM",
+            "AP",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MG",
+            "MS",
+            "MT",
+            "PA",
+            "PB",
+            "PE",
+            "PI",
+            "PR",
+            "RJ",
+            "RN",
+            "RO",
+            "RR",
+            "RS",
+            "SC",
+            "SE",
+            "SP",
+            "TO "});
+            this.cmbEmissorUf.Location = new System.Drawing.Point(452, 114);
+            this.cmbEmissorUf.MaxLength = 2;
+            this.cmbEmissorUf.Name = "cmbEmissorUf";
+            this.cmbEmissorUf.Size = new System.Drawing.Size(50, 24);
+            this.cmbEmissorUf.TabIndex = 77;
+            // 
             // ucMenuImagemFunc1
             // 
             this.ucMenuImagemFunc1.BackColor = System.Drawing.Color.Transparent;
@@ -606,10 +908,6 @@
             this.ucMenuLateralFunc1.Load += new System.EventHandler(this.ucMenuLateralFunc1_Load);
             this.ucMenuLateralFunc1.EventoAbrirDadosProfissionais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosProfissionais(this.ucMenuLateralFunc1_EventoAbrirDadosProfissionais);
             // 
-            // errorProviderTela
-            // 
-            this.errorProviderTela.ContainerControl = this;
-            // 
             // telaFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -631,6 +929,7 @@
             this.Name = "telaFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.telaFuncionario_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaFuncionario_FormClosing);
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
@@ -662,11 +961,10 @@
         private System.Windows.Forms.ComboBox cmbNacionalidade;
         private System.Windows.Forms.Label lblNacionalidade;
         private System.Windows.Forms.Label lblEstadoCivil;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbEstadoCivil;
         private System.Windows.Forms.Label lblEmissor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmissor;
         private System.Windows.Forms.Label lblUfIdentidade;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.Button btnImprimir;
@@ -690,6 +988,7 @@
         private ucMenuInferior ucMenuInferior1;
         private GuiWindowsForms.User_Control.ucMenuLateralFunc ucMenuLateralFunc1;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
+        private System.Windows.Forms.ComboBox cmbEmissorUf;
 
     }
 }
