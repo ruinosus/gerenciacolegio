@@ -47,7 +47,7 @@
             this.mskFone = new System.Windows.Forms.MaskedTextBox();
             this.lblFone = new System.Windows.Forms.Label();
             this.lblFatorRh = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtAlergico = new System.Windows.Forms.TextBox();
             this.lblGrupoSanguineo = new System.Windows.Forms.Label();
             this.lblAlergico = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
@@ -79,7 +79,7 @@
             this.gpbDadosPessoais.Controls.Add(this.mskFone);
             this.gpbDadosPessoais.Controls.Add(this.lblFone);
             this.gpbDadosPessoais.Controls.Add(this.lblFatorRh);
-            this.gpbDadosPessoais.Controls.Add(this.txtNome);
+            this.gpbDadosPessoais.Controls.Add(this.txtAlergico);
             this.gpbDadosPessoais.Controls.Add(this.lblGrupoSanguineo);
             this.gpbDadosPessoais.Controls.Add(this.lblAlergico);
             this.gpbDadosPessoais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,7 +89,6 @@
             this.gpbDadosPessoais.TabIndex = 0;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DESCRIÇÕES MÉDICAS DO ALUNO";
-            this.gpbDadosPessoais.Enter += new System.EventHandler(this.gpbDadosPessoais_Enter);
             // 
             // lblSituacaoEspecial
             // 
@@ -247,15 +246,15 @@
             this.lblFatorRh.TabIndex = 7;
             this.lblFatorRh.Text = "Fator Rh:";
             // 
-            // txtNome
+            // txtAlergico
             // 
-            this.txtNome.Location = new System.Drawing.Point(49, 48);
-            this.txtNome.MaxLength = 50;
-            this.txtNome.Multiline = true;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(716, 40);
-            this.txtNome.TabIndex = 0;
-            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
+            this.txtAlergico.Location = new System.Drawing.Point(49, 48);
+            this.txtAlergico.MaxLength = 50;
+            this.txtAlergico.Multiline = true;
+            this.txtAlergico.Name = "txtAlergico";
+            this.txtAlergico.Size = new System.Drawing.Size(716, 40);
+            this.txtAlergico.TabIndex = 0;
+            this.txtAlergico.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // lblGrupoSanguineo
             // 
@@ -358,6 +357,7 @@
             this.Name = "telaAlunoMedicacao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.telaAlunoMedicacao_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMedicacao_FormClosing);
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
@@ -375,7 +375,7 @@
         private System.Windows.Forms.MaskedTextBox mskFone;
         private System.Windows.Forms.Label lblFone;
         private System.Windows.Forms.Label lblFatorRh;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtAlergico;
         private System.Windows.Forms.Label lblGrupoSanguineo;
         private System.Windows.Forms.Label lblAlergico;
         private System.Windows.Forms.Button btnDesconectar;

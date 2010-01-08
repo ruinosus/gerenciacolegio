@@ -14,7 +14,7 @@ namespace GuiWindowsForms
     public partial class telaAluno : Form
     {
 
-        Aluno aluno = new Aluno();
+        public static Aluno aluno = new Aluno();
         IAlunoProcesso alunoControlador = AlunoProcesso.Instance;
 
         #region SINGLETON DA TELA
@@ -518,7 +518,7 @@ namespace GuiWindowsForms
             uMenuLateral1.verificaTela(telaaluno);
         }
         #endregion
-
+        
         #region EVENTO CADASTRAR
 
         private void ucAluno1_EventoCadastrar()
@@ -780,13 +780,68 @@ namespace GuiWindowsForms
         #region LOAD
         private void uMenuImagem1_Load(object sender, EventArgs e)
         {
+            limparTela();
             cmbUf.DataSource = estados;
-            //aluno.ID = 7;
-            //aluno = alunoControlador.Consultar(aluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
-            //uMenuImagem1.carregaAluno(aluno);
+            aluno.ID = 7;
+            aluno = alunoControlador.Consultar(aluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[6];
+            uMenuImagem1.carregaAluno(aluno);
+            carregarAluno();
         }
 
         #endregion
+
+        /// <summary>
+        /// Método para limpar a tela.
+        /// </summary>
+        private void limparTela()
+        {
+            txtBairro.Clear();
+            txtCidade.Clear();
+            txtComplemento.Clear();
+            txtEmail.Clear();
+            txtLogradouro.Clear();
+            txtNome.Clear();
+            txtNomeEdificil.Clear();
+            cmbNacionalidade.Select();
+            cmbNaturalidade.Select();
+            cmbResidCom.Select();
+            cmbSelecionarAluno.Select();
+            cmbUf.Select();
+            mskCep.Clear();
+            mskFoneAluno.Clear();
+            mskFoneEmergencia.Clear();
+            mskFoneResidencia.Clear();
+            rdbFem.Checked = false;
+            rdbMasc.Checked = false;
+        }
+
+        /// <summary>
+        /// Método para carregar um aluno na tela.
+        /// </summary>
+        public void carregarAluno()
+        {
+            txtBairro.Text = aluno.Bairro;
+            txtCidade.Text = aluno.Cidade;
+            txtComplemento.Text = aluno.ComplementoEndereco;
+            txtEmail.Text = aluno.Email;
+            txtLogradouro.Text = aluno.Logradouro;
+            txtNome.Text = aluno.Nome;
+            cmbNacionalidade.Text = aluno.Nacionalidade;
+            cmbNaturalidade.Text = aluno.Naturalidade;
+            cmbUf.Text = aluno.Uf;
+            mskCep.Text = aluno.Cep;
+            mskFoneAluno.Text = aluno.FoneAluno;
+            mskFoneEmergencia.Text = aluno.FoneEmergencia;
+            mskFoneResidencia.Text = aluno.FoneResidencia;
+            if (aluno.Sexo == 0)
+            {
+                rdbMasc.Select();
+            }
+            else
+            {
+                rdbFem.Select();
+            }     
+        }
 
         #region LIMPAR ERRO PROVIDER
         private void txtNome_TextChanged(object sender, EventArgs e)
