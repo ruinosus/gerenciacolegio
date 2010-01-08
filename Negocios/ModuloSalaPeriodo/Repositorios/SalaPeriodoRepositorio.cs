@@ -27,7 +27,7 @@ namespace Negocios.ModuloSalaPeriodo.Repositorios
         public List<SalaPeriodo> Consultar(SalaPeriodo salaPeriodo, TipoPesquisa tipoPesquisa)
         {
             List<SalaPeriodo> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -35,28 +35,61 @@ namespace Negocios.ModuloSalaPeriodo.Repositorios
                     {
                         if (salaPeriodo.ID != 0)
                         {
-                            resultado.AddRange((from sp in resultado
-                                                where
-                                                sp.ID == salaPeriodo.ID
-                                                select sp).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from sp in resultado
+                                                    where
+                                                    sp.ID == salaPeriodo.ID
+                                                    select sp).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from sp in resultado
+                                                    where
+                                                    sp.ID == salaPeriodo.ID
+                                                    select sp).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (salaPeriodo.Ano.HasValue)
                         {
-                            resultado.AddRange((from sp in resultado
-                                                where
-                                                sp.Ano.HasValue && sp.Ano.Value == salaPeriodo.Ano.Value
-                                                select sp).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from sp in resultado
+                                                    where
+                                                    sp.Ano.HasValue && sp.Ano.Value == salaPeriodo.Ano.Value
+                                                    select sp).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from sp in resultado
+                                                    where
+                                                    sp.Ano.HasValue && sp.Ano.Value == salaPeriodo.Ano.Value
+                                                    select sp).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (salaPeriodo.SalaID.HasValue)
                         {
-                            resultado.AddRange((from sp in resultado
-                                                where
-                                                sp.SalaID.HasValue && sp.SalaID.Value == salaPeriodo.SalaID.Value
-                                                select sp).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from sp in resultado
+                                                    where
+                                                    sp.SalaID.HasValue && sp.SalaID.Value == salaPeriodo.SalaID.Value
+                                                    select sp).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from sp in resultado
+                                                    where
+                                                    sp.SalaID.HasValue && sp.SalaID.Value == salaPeriodo.SalaID.Value
+                                                    select sp).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 

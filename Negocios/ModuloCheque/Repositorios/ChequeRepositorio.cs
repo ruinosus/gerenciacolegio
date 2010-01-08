@@ -27,7 +27,7 @@ namespace Negocios.ModuloCheque.Repositorios
         public List<Cheque> Consultar(Cheque cheque, TipoPesquisa tipoPesquisa)
         {
             List<Cheque> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -35,101 +35,216 @@ namespace Negocios.ModuloCheque.Repositorios
                     {
                         if (cheque.ID != 0)
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.ID == cheque.ID
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.ID == cheque.ID
+                                                    select c).ToList());
+                            }
+                            else {
+                                resultado=((from c in resultado
+                                                    where
+                                                    c.ID == cheque.ID
+                                                    select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (cheque.Parcela.HasValue)
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from c in resultado
+                                                    where
+                                                    c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
+                                                    select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(cheque.Agencia))
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.Agencia.Contains(cheque.Agencia)
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.Agencia.Contains(cheque.Agencia)
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from c in resultado
+                                                    where
+                                                    c.Agencia.Contains(cheque.Agencia)
+                                                    select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(cheque.Banco))
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.Banco.Contains(cheque.Banco)
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.Banco.Contains(cheque.Banco)
+                                                    select c).ToList());
+                            }
+                            else {
+                                resultado=((from c in resultado
+                                                    where
+                                                    c.Banco.Contains(cheque.Banco)
+                                                    select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(cheque.Conta))
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.Conta.Contains(cheque.Conta)
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.Conta.Contains(cheque.Conta)
+                                                    select c).ToList());
+                            }
+                            else {
+                                resultado=((from c in resultado
+                                                    where
+                                                    c.Conta.Contains(cheque.Conta)
+                                                    select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(cheque.Cpf))
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.Cpf.Contains(cheque.Cpf)
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.Cpf.Contains(cheque.Cpf)
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from c in resultado
+                                                    where
+                                                    c.Cpf.Contains(cheque.Cpf)
+                                                    select c).ToList());
+                            } pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (cheque.Tipo!= 0)
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.Tipo==cheque.Tipo
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.Tipo == cheque.Tipo
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from c in resultado
+                                                    where
+                                                    c.Tipo == cheque.Tipo
+                                                    select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (cheque.Parcela.HasValue)
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from c in resultado
+                                                    where
+                                                    c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
+                                                    select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (cheque.NumCheque.HasValue)
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.NumCheque.HasValue && c.NumCheque.Value == cheque.NumCheque.Value
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.NumCheque.HasValue && c.NumCheque.Value == cheque.NumCheque.Value
+                                                    select c).ToList());
+                            }
+                            else {
+                                resultado=((from c in resultado
+                                                    where
+                                                    c.NumCheque.HasValue && c.NumCheque.Value == cheque.NumCheque.Value
+                                                    select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (cheque.Status.HasValue)
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.Status.HasValue && c.Status.Value == cheque.Status.Value
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.Status.HasValue && c.Status.Value == cheque.Status.Value
+                                                    select c).ToList());
+                            }
+                            else {
+                                resultado=((from c in resultado
+                                                    where
+                                                    c.Status.HasValue && c.Status.Value == cheque.Status.Value
+                                                    select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (cheque.Valor.HasValue)
                         {
-                            resultado.AddRange((from c in resultado
-                                                where
-                                                c.Valor.HasValue && c.Valor.Value == cheque.Valor.Value
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in resultado
+                                                    where
+                                                    c.Valor.HasValue && c.Valor.Value == cheque.Valor.Value
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from c in resultado
+                                                    where
+                                                    c.Valor.HasValue && c.Valor.Value == cheque.Valor.Value
+                                                    select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -141,101 +256,221 @@ namespace Negocios.ModuloCheque.Repositorios
                     {
                         if (cheque.ID != 0)
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.ID == cheque.ID
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.ID == cheque.ID
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.ID == cheque.ID
+                                              select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (cheque.Parcela.HasValue)
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
+                                              select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(cheque.Agencia))
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Agencia.Contains(cheque.Agencia)
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.Agencia.Contains(cheque.Agencia)
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.Agencia.Contains(cheque.Agencia)
+                                              select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(cheque.Banco))
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Banco.Contains(cheque.Banco)
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.Banco.Contains(cheque.Banco)
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.Banco.Contains(cheque.Banco)
+                                              select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(cheque.Conta))
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Conta.Contains(cheque.Conta)
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.Conta.Contains(cheque.Conta)
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.Conta.Contains(cheque.Conta)
+                                              select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(cheque.Cpf))
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Cpf.Contains(cheque.Cpf)
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.Cpf.Contains(cheque.Cpf)
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.Cpf.Contains(cheque.Cpf)
+                                              select c).ToList());
+                            } pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (cheque.Tipo != 0)
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Tipo == cheque.Tipo
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.Tipo == cheque.Tipo
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.Tipo == cheque.Tipo
+                                              select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (cheque.Parcela.HasValue)
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.Parcela.HasValue && c.Parcela.Value == cheque.Parcela.Value
+                                              select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (cheque.NumCheque.HasValue)
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.NumCheque.HasValue && c.NumCheque.Value == cheque.NumCheque.Value
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.NumCheque.HasValue && c.NumCheque.Value == cheque.NumCheque.Value
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.NumCheque.HasValue && c.NumCheque.Value == cheque.NumCheque.Value
+                                              select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (cheque.Status.HasValue)
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Status.HasValue && c.Status.Value == cheque.Status.Value
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.Status.HasValue && c.Status.Value == cheque.Status.Value
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.Status.HasValue && c.Status.Value == cheque.Status.Value
+                                              select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (cheque.Valor.HasValue)
                         {
-                            resultado.AddRange((from c in Consultar()
-                                                where
-                                                c.Valor.HasValue && c.Valor.Value == cheque.Valor.Value
-                                                select c).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from c in Consultar()
+                                                    where
+                                                    c.Valor.HasValue && c.Valor.Value == cheque.Valor.Value
+                                                    select c).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from c in Consultar()
+                                              where
+                                              c.Valor.HasValue && c.Valor.Value == cheque.Valor.Value
+                                              select c).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 

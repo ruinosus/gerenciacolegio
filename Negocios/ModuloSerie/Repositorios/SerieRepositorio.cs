@@ -27,7 +27,7 @@ namespace Negocios.ModuloSerie.Repositorios
         public List<Serie> Consultar(Serie serie, TipoPesquisa tipoPesquisa)
         {
             List<Serie> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -35,37 +35,81 @@ namespace Negocios.ModuloSerie.Repositorios
                     {
                         if (serie.ID != 0)
                         {
-                            resultado.AddRange((from s in resultado
-                                                where
-                                                s.ID == serie.ID
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in resultado
+                                                    where
+                                                    s.ID == serie.ID
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from s in resultado
+                                                    where
+                                                    s.ID == serie.ID
+                                                    select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(serie.Nome))
                         {
-                            resultado.AddRange((from s in resultado
-                                                where
-                                                s.Nome.Contains(serie.Nome)
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in resultado
+                                                    where
+                                                    s.Nome.Contains(serie.Nome)
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from s in resultado
+                                                    where
+                                                    s.Nome.Contains(serie.Nome)
+                                                    select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (serie.Status.HasValue)
                         {
-                            resultado.AddRange((from s in resultado
-                                                where
-                                                s.Status.HasValue && s.Status.Value == serie.Status.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in resultado
+                                                    where
+                                                    s.Status.HasValue && s.Status.Value == serie.Status.Value
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from s in resultado
+                                                    where
+                                                    s.Status.HasValue && s.Status.Value == serie.Status.Value
+                                                    select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (serie.Valor.HasValue)
                         {
-                            resultado.AddRange((from s in resultado
-                                                where
-                                                s.Valor.HasValue && s.Valor.Value == serie.Valor.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in resultado
+                                                    where
+                                                    s.Valor.HasValue && s.Valor.Value == serie.Valor.Value
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from s in resultado
+                                                    where
+                                                    s.Valor.HasValue && s.Valor.Value == serie.Valor.Value
+                                                    select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -77,37 +121,81 @@ namespace Negocios.ModuloSerie.Repositorios
                     {
                         if (serie.ID != 0)
                         {
-                            resultado.AddRange((from s in Consultar()
-                                                where
-                                                s.ID == serie.ID
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in Consultar()
+                                                    where
+                                                    s.ID == serie.ID
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from s in Consultar()
+                                              where
+                                              s.ID == serie.ID
+                                              select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(serie.Nome))
                         {
-                            resultado.AddRange((from s in Consultar()
-                                                where
-                                                s.Nome.Contains(serie.Nome)
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in Consultar()
+                                                    where
+                                                    s.Nome.Contains(serie.Nome)
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from s in Consultar()
+                                              where
+                                              s.Nome.Contains(serie.Nome)
+                                              select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (serie.Status.HasValue)
                         {
-                            resultado.AddRange((from s in Consultar()
-                                                where
-                                                s.Status.HasValue && s.Status.Value == serie.Status.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in Consultar()
+                                                    where
+                                                    s.Status.HasValue && s.Status.Value == serie.Status.Value
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from s in Consultar()
+                                              where
+                                              s.Status.HasValue && s.Status.Value == serie.Status.Value
+                                              select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (serie.Valor.HasValue)
                         {
-                            resultado.AddRange((from s in Consultar()
-                                                where
-                                                s.Valor.HasValue && s.Valor.Value == serie.Valor.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in Consultar()
+                                                    where
+                                                    s.Valor.HasValue && s.Valor.Value == serie.Valor.Value
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from s in Consultar()
+                                              where
+                                              s.Valor.HasValue && s.Valor.Value == serie.Valor.Value
+                                              select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 

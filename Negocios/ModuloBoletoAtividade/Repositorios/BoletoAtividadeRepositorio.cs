@@ -27,7 +27,7 @@ namespace Negocios.ModuloBoletoAtividade.Repositorios
         public List<BoletoAtividade> Consultar(BoletoAtividade boletoAtividade, TipoPesquisa tipoPesquisa)
         {
             List<BoletoAtividade> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -36,83 +36,176 @@ namespace Negocios.ModuloBoletoAtividade.Repositorios
 
                         if (boletoAtividade.ID != 0)
                         {
-                            resultado.AddRange((from ba in resultado
-                                                where
-                                                ba.ID == boletoAtividade.ID
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in resultado
+                                                    where
+                                                    ba.ID == boletoAtividade.ID
+                                                    select ba).ToList());
+                            }
+                            else {
+                                resultado=((from ba in resultado
+                                                    where
+                                                    ba.ID == boletoAtividade.ID
+                                                    select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.DataEmissao != default(DateTime))
                         {
-                            resultado.AddRange((from ba in resultado
-                                                where
-                                                ba.DataEmissao == boletoAtividade.DataEmissao
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in resultado
+                                                    where
+                                                    ba.DataEmissao == boletoAtividade.DataEmissao
+                                                    select ba).ToList());
+                            }
+                            else {
+                                resultado=((from ba in resultado
+                                                    where
+                                                    ba.DataEmissao == boletoAtividade.DataEmissao
+                                                    select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (boletoAtividade.DataPagamento.HasValue && boletoAtividade.DataPagamento.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ba in resultado
-                                                where
-                                                ba.DataPagamento.HasValue && ba.DataPagamento.Value == boletoAtividade.DataPagamento.Value
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in resultado
+                                                    where
+                                                    ba.DataPagamento.HasValue && ba.DataPagamento.Value == boletoAtividade.DataPagamento.Value
+                                                    select ba).ToList());
+                            }
+                            else {
+                                resultado=((from ba in resultado
+                                                    where
+                                                    ba.DataPagamento.HasValue && ba.DataPagamento.Value == boletoAtividade.DataPagamento.Value
+                                                    select ba).ToList());
+                            } pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.DataVencimento != default(DateTime))
                         {
-                            resultado.AddRange((from ba in resultado
-                                                where
-                                                ba.DataVencimento == boletoAtividade.DataVencimento
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in resultado
+                                                    where
+                                                    ba.DataVencimento == boletoAtividade.DataVencimento
+                                                    select ba).ToList());
+                            }
+                            else {
+                                resultado=((from ba in resultado
+                                                    where
+                                                    ba.DataVencimento == boletoAtividade.DataVencimento
+                                                    select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.Desconto.HasValue)
                         {
-                            resultado.AddRange((from ba in resultado
-                                                where
-                                                ba.Desconto.HasValue && ba.Desconto.Value == boletoAtividade.Desconto.Value
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in resultado
+                                                    where
+                                                    ba.Desconto.HasValue && ba.Desconto.Value == boletoAtividade.Desconto.Value
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from ba in resultado
+                                                    where
+                                                    ba.Desconto.HasValue && ba.Desconto.Value == boletoAtividade.Desconto.Value
+                                                    select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (string.IsNullOrEmpty(boletoAtividade.Descricao))
                         {
-                            resultado.AddRange((from ba in resultado
-                                                where
-                                                ba.Descricao.Contains(boletoAtividade.Descricao)
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in resultado
+                                                    where
+                                                    ba.Descricao.Contains(boletoAtividade.Descricao)
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from ba in resultado
+                                                    where
+                                                    ba.Descricao.Contains(boletoAtividade.Descricao)
+                                                    select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.Multa.HasValue)
                         {
-                            resultado.AddRange((from ba in resultado
-                                                where
-                                                ba.Multa.HasValue && ba.Multa.Value == boletoAtividade.Multa.Value
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in resultado
+                                                    where
+                                                    ba.Multa.HasValue && ba.Multa.Value == boletoAtividade.Multa.Value
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from ba in resultado
+                                                    where
+                                                    ba.Multa.HasValue && ba.Multa.Value == boletoAtividade.Multa.Value
+                                                    select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.Parcela.HasValue)
                         {
-                            resultado.AddRange((from ba in resultado
-                                                where
-                                                ba.Parcela.HasValue && ba.Parcela.Value == boletoAtividade.Parcela.Value
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in resultado
+                                                    where
+                                                    ba.Parcela.HasValue && ba.Parcela.Value == boletoAtividade.Parcela.Value
+                                                    select ba).ToList());
+                            }
+                            else {
+                                resultado=((from ba in resultado
+                                                    where
+                                                    ba.Parcela.HasValue && ba.Parcela.Value == boletoAtividade.Parcela.Value
+                                                    select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.Status.HasValue && boletoAtividade.Status.Value != default(byte))
                         {
-                            resultado.AddRange((from ba in resultado
-                                                where
-                                                ba.Status.HasValue && ba.Status.Value == boletoAtividade.Status.Value
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in resultado
+                                                    where
+                                                    ba.Status.HasValue && ba.Status.Value == boletoAtividade.Status.Value
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from ba in resultado
+                                                    where
+                                                    ba.Status.HasValue && ba.Status.Value == boletoAtividade.Status.Value
+                                                    select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -125,83 +218,181 @@ namespace Negocios.ModuloBoletoAtividade.Repositorios
 
                         if (boletoAtividade.ID != 0)
                         {
-                            resultado.AddRange((from ba in Consultar()
-                                                where
-                                                ba.ID == boletoAtividade.ID
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in Consultar()
+                                                    where
+                                                    ba.ID == boletoAtividade.ID
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ba in Consultar()
+                                              where
+                                              ba.ID == boletoAtividade.ID
+                                              select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.DataEmissao != default(DateTime))
                         {
-                            resultado.AddRange((from ba in Consultar()
-                                                where
-                                                ba.DataEmissao == boletoAtividade.DataEmissao
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in Consultar()
+                                                    where
+                                                    ba.DataEmissao == boletoAtividade.DataEmissao
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ba in Consultar()
+                                              where
+                                              ba.DataEmissao == boletoAtividade.DataEmissao
+                                              select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (boletoAtividade.DataPagamento.HasValue && boletoAtividade.DataPagamento.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ba in Consultar()
-                                                where
-                                                ba.DataPagamento.HasValue && ba.DataPagamento.Value == boletoAtividade.DataPagamento.Value
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in Consultar()
+                                                    where
+                                                    ba.DataPagamento.HasValue && ba.DataPagamento.Value == boletoAtividade.DataPagamento.Value
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ba in Consultar()
+                                              where
+                                              ba.DataPagamento.HasValue && ba.DataPagamento.Value == boletoAtividade.DataPagamento.Value
+                                              select ba).ToList());
+                            } pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.DataVencimento != default(DateTime))
                         {
-                            resultado.AddRange((from ba in Consultar()
-                                                where
-                                                ba.DataVencimento == boletoAtividade.DataVencimento
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in Consultar()
+                                                    where
+                                                    ba.DataVencimento == boletoAtividade.DataVencimento
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ba in Consultar()
+                                              where
+                                              ba.DataVencimento == boletoAtividade.DataVencimento
+                                              select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.Desconto.HasValue)
                         {
-                            resultado.AddRange((from ba in Consultar()
-                                                where
-                                                ba.Desconto.HasValue && ba.Desconto.Value == boletoAtividade.Desconto.Value
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in Consultar()
+                                                    where
+                                                    ba.Desconto.HasValue && ba.Desconto.Value == boletoAtividade.Desconto.Value
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ba in Consultar()
+                                              where
+                                              ba.Desconto.HasValue && ba.Desconto.Value == boletoAtividade.Desconto.Value
+                                              select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (string.IsNullOrEmpty(boletoAtividade.Descricao))
                         {
-                            resultado.AddRange((from ba in Consultar()
-                                                where
-                                                ba.Descricao.Contains(boletoAtividade.Descricao)
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in Consultar()
+                                                    where
+                                                    ba.Descricao.Contains(boletoAtividade.Descricao)
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ba in Consultar()
+                                              where
+                                              ba.Descricao.Contains(boletoAtividade.Descricao)
+                                              select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.Multa.HasValue)
                         {
-                            resultado.AddRange((from ba in Consultar()
-                                                where
-                                                ba.Multa.HasValue && ba.Multa.Value == boletoAtividade.Multa.Value
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in Consultar()
+                                                    where
+                                                    ba.Multa.HasValue && ba.Multa.Value == boletoAtividade.Multa.Value
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ba in Consultar()
+                                              where
+                                              ba.Multa.HasValue && ba.Multa.Value == boletoAtividade.Multa.Value
+                                              select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.Parcela.HasValue)
                         {
-                            resultado.AddRange((from ba in Consultar()
-                                                where
-                                                ba.Parcela.HasValue && ba.Parcela.Value == boletoAtividade.Parcela.Value
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in Consultar()
+                                                    where
+                                                    ba.Parcela.HasValue && ba.Parcela.Value == boletoAtividade.Parcela.Value
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ba in Consultar()
+                                              where
+                                              ba.Parcela.HasValue && ba.Parcela.Value == boletoAtividade.Parcela.Value
+                                              select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoAtividade.Status.HasValue && boletoAtividade.Status.Value != default(byte))
                         {
-                            resultado.AddRange((from ba in Consultar()
-                                                where
-                                                ba.Status.HasValue && ba.Status.Value == boletoAtividade.Status.Value
-                                                select ba).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ba in Consultar()
+                                                    where
+                                                    ba.Status.HasValue && ba.Status.Value == boletoAtividade.Status.Value
+                                                    select ba).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ba in Consultar()
+                                              where
+                                              ba.Status.HasValue && ba.Status.Value == boletoAtividade.Status.Value
+                                              select ba).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
