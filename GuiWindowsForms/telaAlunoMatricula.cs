@@ -6,11 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloMatricula.Processos;
+using Negocios.ModuloSala.Processos;
+using Negocios.ModuloSalaPeriodo.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaAlunoMatricula : Form
     {
+        Matricula matricula = new Matricula();
+        Sala sala = new Sala();
+        SalaPeriodo salaPeriodo = new SalaPeriodo();
+
+        IMatriculaProcesso matriculaControlador = MatriculaProcesso.Instance;
+        ISalaProcesso salaControlador = SalaProcesso.Instance;
+        ISalaPeriodoProcesso salaPeriodoControlador = SalaPeriodoProcesso.Instance;
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela

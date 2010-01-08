@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloAluno.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaAlunoMedicacao : Form
     {
+        IAlunoProcesso alunoControlador = AlunoProcesso.Instance;
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -190,17 +193,18 @@ namespace GuiWindowsForms
         #region EVENTO CADASTRAR
         private void ucMenuInferior1_EventoCadastrar()
         {
-
             try
             {
                 #region VALIDA - NOME
 
-                if (String.IsNullOrEmpty(txtNome.Text))
+                if (String.IsNullOrEmpty(txtAlergico.Text))
                 {
-                    errorProviderTela.SetError(txtNome, "Informe a alergia");
-                    txtNome.Clear();
+                    errorProviderTela.SetError(txtAlergico, "Informe a alergia");
+                    txtAlergico.Clear();
                     return;
                 }
+                telaAluno.aluno.Alergico = txtAlergico.Text;
+
 
                 #endregion
 
@@ -210,6 +214,14 @@ namespace GuiWindowsForms
                 {
                     errorProviderTela.SetError(rdbNegativo, "Informe o fator rh");
                     return;
+                }
+                if (rdbNegativo.Checked == true)
+                {
+                    telaAluno.aluno.FatorRh = 0;
+                }
+                else
+                {
+                    telaAluno.aluno.FatorRh = 1;
                 }
 
                 #endregion
@@ -222,6 +234,7 @@ namespace GuiWindowsForms
                     txtNomeMedico.Clear();
                     return;
                 }
+                telaAluno.aluno.NomeMedico = txtNomeMedico.Text;
 
                 #endregion
 
@@ -232,6 +245,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(mskFone, "Informe o fone");
                     return;
                 }
+                telaAluno.aluno.FoneMedico = mskFone.Text;
 
                 #endregion
 
@@ -243,6 +257,7 @@ namespace GuiWindowsForms
                     txtHospital.Clear();
                     return;
                 }
+                telaAluno.aluno.Hospital = txtHospital.Text;
 
                 #endregion
 
@@ -254,6 +269,7 @@ namespace GuiWindowsForms
                     txtPlanoSaude.Clear();
                     return;
                 }
+                telaAluno.aluno.PlanoSaude = txtPlanoSaude.Text;
 
                 #endregion
 
@@ -265,6 +281,7 @@ namespace GuiWindowsForms
                     txtDescricaoMedica.Clear();
                     return;
                 }
+                telaAluno.aluno.DescricaoMedica = txtDescricaoMedica.Text;
 
                 #endregion
 
@@ -276,8 +293,14 @@ namespace GuiWindowsForms
                     txtSituacaoEspecial.Clear();
                     return;
                 }
+                telaAluno.aluno.SituacaoEspecial = txtSituacaoEspecial.Text;
 
                 #endregion
+
+                telaAluno.aluno.GrupoSanguineo = cmbGrupoSanguineo.Text;
+
+                alunoControlador.Alterar(telaAluno.aluno);
+                alunoControlador.Confirmar();
                 
             }
             catch (Exception ex)
@@ -292,13 +315,6 @@ namespace GuiWindowsForms
 
         string[] gruposanguineo = { "O", "A", "AB", "B" };
 
-        #endregion
-        
-        #region LOAD
-        private void gpbDadosPessoais_Enter(object sender, EventArgs e)
-        {
-            cmbGrupoSanguineo.DataSource = gruposanguineo;
-        }
         #endregion
 
         #region LIMPAR ERRO PROVIDER
@@ -352,5 +368,56 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
         #endregion
+
+        #region LOAD
+        private void telaAlunoMedicacao_Load(object sender, EventArgs e)
+        {
+            limparTela();
+            cmbGrupoSanguineo.DataSource = gruposanguineo;
+            uMenuImagem1.carregaAluno(telaAluno.aluno);
+            carregarAlunoMedicacao();
+        }
+        #endregion
+
+        /// <summary>
+        /// Carrega os dados de medicação do aluno.
+        /// </summary>
+        public void carregarAlunoMedicacao()
+        {
+            txtAlergico.Text = telaAluno.aluno.Alergico;
+            txtDescricaoMedica.Text = telaAluno.aluno.DescricaoMedica;
+            txtHospital.Text = telaAluno.aluno.Hospital;
+            txtNomeMedico.Text = telaAluno.aluno.NomeMedico;
+            txtPlanoSaude.Text = telaAluno.aluno.PlanoSaude;
+            txtSituacaoEspecial.Text = telaAluno.aluno.SituacaoEspecial;
+            mskFone.Text = telaAluno.aluno.FoneMedico;
+            cmbGrupoSanguineo.Text = telaAluno.aluno.GrupoSanguineo;
+            if (rdbNegativo.Checked == true)
+            {
+                rdbNegativo.Select();
+            }
+            else
+            {
+                rdbPositivo.Select();
+            }
+        }
+
+        /// <summary>
+        /// Limpa os dados da tela de aluno medicação.
+        /// </summary>
+        public void limparTela()
+        {
+            txtAlergico.Clear();
+            txtDescricaoMedica.Clear();
+            txtHospital.Clear();
+            txtNomeMedico.Clear();
+            txtPlanoSaude.Clear();
+            txtSituacaoEspecial.Clear();
+            mskFone.Clear();
+            rdbPositivo.Checked = false;
+            rdbNegativo.Checked = false;
+            cmbGrupoSanguineo.Select();
+        }
+
     }
 }
