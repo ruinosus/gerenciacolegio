@@ -819,6 +819,29 @@ public partial class Aluno : INotifyPropertyChanged
 
     #endregion
 
+    #region string Edificio
+
+    private string _edificio;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_edificio", Name = "Edificio", DbType = "varchar(45)")]
+    public string Edificio
+    {
+        get
+        {
+            return _edificio;
+        }
+        set
+        {
+            if (value != _edificio)
+            {
+                _dificio = value;
+                OnPropertyChanged("Edificio");
+            }
+        }
+    }
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.alunoatividade")]
@@ -3669,6 +3692,29 @@ public partial class Funcionario : INotifyPropertyChanged
 
     #endregion
 
+    #region string Edificio
+
+    private string _edificio;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_edificio", Name = "Edificio", DbType = "varchar(45)")]
+    public string Edificio
+    {
+        get
+        {
+            return _edificio;
+        }
+        set
+        {
+            if (value != _edificio)
+            {
+                _dificio = value;
+                OnPropertyChanged("Edificio");
+            }
+        }
+    }
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.matricula")]
@@ -5527,6 +5573,29 @@ public partial class Responsavel : INotifyPropertyChanged
             {
                 _uf = value;
                 OnPropertyChanged("Uf");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string Edificio
+
+    private string _edificio;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_edificio", Name = "Edificio", DbType = "varchar(45)")]
+    public string Edificio
+    {
+        get
+        {
+            return _edificio;
+        }
+        set
+        {
+            if (value != _edificio)
+            {
+                _dificio = value;
+                OnPropertyChanged("Edificio");
             }
         }
     }
