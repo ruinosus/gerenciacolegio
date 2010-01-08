@@ -27,7 +27,7 @@ namespace Negocios.ModuloPerfil.Repositorios
         public List<Perfil> Consultar(Perfil perfil, TipoPesquisa tipoPesquisa)
         {
             List<Perfil> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -35,28 +35,61 @@ namespace Negocios.ModuloPerfil.Repositorios
                     {
                         if (perfil.ID != 0)
                         {
-                            resultado.AddRange((from p in resultado
-                                                where
-                                                p.ID == perfil.ID
-                                                select p).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from p in resultado
+                                                    where
+                                                    p.ID == perfil.ID
+                                                    select p).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from p in resultado
+                                                    where
+                                                    p.ID == perfil.ID
+                                                    select p).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (perfil.Status.HasValue)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.Status.HasValue && d.Status.Value == perfil.Status.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.Status.HasValue && d.Status.Value == perfil.Status.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.Status.HasValue && d.Status.Value == perfil.Status.Value
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(perfil.Descricao))
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                 d.Descricao.Contains(perfil.Descricao)
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                     d.Descricao.Contains(perfil.Descricao)
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                     d.Descricao.Contains(perfil.Descricao)
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -68,28 +101,61 @@ namespace Negocios.ModuloPerfil.Repositorios
                     {
                         if (perfil.ID != 0)
                         {
-                            resultado.AddRange((from p in Consultar()
-                                                where
-                                                p.ID == perfil.ID
-                                                select p).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from p in Consultar()
+                                                    where
+                                                    p.ID == perfil.ID
+                                                    select p).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from p in Consultar()
+                                              where
+                                              p.ID == perfil.ID
+                                              select p).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (perfil.Status.HasValue)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.Status.HasValue && d.Status.Value == perfil.Status.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.Status.HasValue && d.Status.Value == perfil.Status.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.Status.HasValue && d.Status.Value == perfil.Status.Value
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(perfil.Descricao))
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                 d.Descricao.Contains(perfil.Descricao)
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                     d.Descricao.Contains(perfil.Descricao)
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                               d.Descricao.Contains(perfil.Descricao)
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 

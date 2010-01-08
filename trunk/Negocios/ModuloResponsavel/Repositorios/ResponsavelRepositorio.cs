@@ -28,7 +28,7 @@ namespace Negocios.ModuloResponsavel.Repositorios
         {
 
             List<Responsavel> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -36,91 +36,202 @@ namespace Negocios.ModuloResponsavel.Repositorios
                     {
                         if (responsavel.ID != 0)
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.ID == responsavel.ID
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.ID == responsavel.ID
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from r in resultado
+                                                    where
+                                                    r.ID == responsavel.ID
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (responsavel.Nascimento.HasValue && responsavel.Nascimento.Value != default(DateTime))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento.Value
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento.Value
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento.Value
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.LocalTrabalho))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.LocalTrabalho.Contains(responsavel.LocalTrabalho)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.LocalTrabalho.Contains(responsavel.LocalTrabalho)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.LocalTrabalho.Contains(responsavel.LocalTrabalho)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Cpf))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Cpf.Contains(responsavel.Cpf)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Cpf.Contains(responsavel.Cpf)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Cpf.Contains(responsavel.Cpf)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Bairro))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Bairro.Contains(responsavel.Bairro)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Bairro.Contains(responsavel.Bairro)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in resultado
+                                                    where
+                                                    r.Bairro.Contains(responsavel.Bairro)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Cep))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Cep.Contains(responsavel.Cep)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Cep.Contains(responsavel.Cep)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Cep.Contains(responsavel.Cep)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Cidade))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Cidade.Contains(responsavel.Cidade)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Cidade.Contains(responsavel.Cidade)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Cidade.Contains(responsavel.Cidade)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.ComplementoEndereco))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.ComplementoEndereco.Contains(responsavel.ComplementoEndereco)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.ComplementoEndereco.Contains(responsavel.ComplementoEndereco)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.ComplementoEndereco.Contains(responsavel.ComplementoEndereco)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Profissao))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Profissao.Contains(responsavel.Profissao)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Profissao.Contains(responsavel.Profissao)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in resultado
+                                                    where
+                                                    r.Profissao.Contains(responsavel.Profissao)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Rg))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Rg.Contains(responsavel.Rg)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Rg.Contains(responsavel.Rg)
+                                                    select r).ToList());
+                            }
+                            else {
+
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Rg.Contains(responsavel.Rg)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -128,10 +239,21 @@ namespace Negocios.ModuloResponsavel.Repositorios
 
                         if (!string.IsNullOrEmpty(responsavel.Email))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Email.Contains(responsavel.Email)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Email.Contains(responsavel.Email)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Email.Contains(responsavel.Email)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -139,37 +261,82 @@ namespace Negocios.ModuloResponsavel.Repositorios
 
                         if (!string.IsNullOrEmpty(responsavel.Fone))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Fone.Contains(responsavel.Fone)
-                                                select r).ToList());
+
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Fone.Contains(responsavel.Fone)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Fone.Contains(responsavel.Fone)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.FoneTrabalho))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.FoneTrabalho.Contains(responsavel.FoneTrabalho)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.FoneTrabalho.Contains(responsavel.FoneTrabalho)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.FoneTrabalho.Contains(responsavel.FoneTrabalho)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Login))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Login.Contains(responsavel.Login)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Login.Contains(responsavel.Login)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Login.Contains(responsavel.Login)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Logradouro))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Logradouro.Contains(responsavel.Logradouro)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Logradouro.Contains(responsavel.Logradouro)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from r in resultado
+                                                    where
+                                                    r.Logradouro.Contains(responsavel.Logradouro)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -184,10 +351,21 @@ namespace Negocios.ModuloResponsavel.Repositorios
 
                         if (responsavel.Nascimento.HasValue && responsavel.Nascimento.Value != default(DateTime))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -202,56 +380,122 @@ namespace Negocios.ModuloResponsavel.Repositorios
 
                         if (!string.IsNullOrEmpty(responsavel.Nome))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Nome.Contains(responsavel.Nome)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Nome.Contains(responsavel.Nome)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Nome.Contains(responsavel.Nome)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         
                         if (responsavel.PerfilID != 0)
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.PerfilID == responsavel.PerfilID
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.PerfilID == responsavel.PerfilID
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.PerfilID == responsavel.PerfilID
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                        if (!string.IsNullOrEmpty(responsavel.Senha))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Senha.Contains(responsavel.Senha)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Senha.Contains(responsavel.Senha)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Senha.Contains(responsavel.Senha)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (responsavel.Sexo.HasValue)
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Sexo.HasValue && r.Sexo.Value == responsavel.Sexo.Value
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Sexo.HasValue && r.Sexo.Value == responsavel.Sexo.Value
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Sexo.HasValue && r.Sexo.Value == responsavel.Sexo.Value
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Uf))
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Uf.Contains(responsavel.Uf)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Uf.Contains(responsavel.Uf)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Uf.Contains(responsavel.Uf)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (responsavel.Status.HasValue)
                         {
-                            resultado.AddRange((from r in resultado
-                                                where
-                                                r.Status.HasValue && r.Status.Value == responsavel.Status.Value
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Status.HasValue && r.Status.Value == responsavel.Status.Value
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.Status.HasValue && r.Status.Value == responsavel.Status.Value
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -263,91 +507,203 @@ namespace Negocios.ModuloResponsavel.Repositorios
                     {
                         if (responsavel.ID != 0)
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.ID == responsavel.ID
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.ID == responsavel.ID
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.ID == responsavel.ID
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (responsavel.Nascimento.HasValue && responsavel.Nascimento.Value != default(DateTime))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento.Value
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento.Value
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento.Value
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.LocalTrabalho))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.LocalTrabalho.Contains(responsavel.LocalTrabalho)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.LocalTrabalho.Contains(responsavel.LocalTrabalho)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.LocalTrabalho.Contains(responsavel.LocalTrabalho)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Cpf))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Cpf.Contains(responsavel.Cpf)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Cpf.Contains(responsavel.Cpf)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Cpf.Contains(responsavel.Cpf)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Bairro))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Bairro.Contains(responsavel.Bairro)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Bairro.Contains(responsavel.Bairro)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Bairro.Contains(responsavel.Bairro)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Cep))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Cep.Contains(responsavel.Cep)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Cep.Contains(responsavel.Cep)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Cep.Contains(responsavel.Cep)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Cidade))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Cidade.Contains(responsavel.Cidade)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Cidade.Contains(responsavel.Cidade)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Cidade.Contains(responsavel.Cidade)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.ComplementoEndereco))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.ComplementoEndereco.Contains(responsavel.ComplementoEndereco)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.ComplementoEndereco.Contains(responsavel.ComplementoEndereco)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.ComplementoEndereco.Contains(responsavel.ComplementoEndereco)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Profissao))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Profissao.Contains(responsavel.Profissao)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Profissao.Contains(responsavel.Profissao)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Profissao.Contains(responsavel.Profissao)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Rg))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Rg.Contains(responsavel.Rg)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Rg.Contains(responsavel.Rg)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Rg.Contains(responsavel.Rg)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -355,10 +711,21 @@ namespace Negocios.ModuloResponsavel.Repositorios
 
                         if (!string.IsNullOrEmpty(responsavel.Email))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Email.Contains(responsavel.Email)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Email.Contains(responsavel.Email)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Email.Contains(responsavel.Email)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -366,37 +733,82 @@ namespace Negocios.ModuloResponsavel.Repositorios
 
                         if (!string.IsNullOrEmpty(responsavel.Fone))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Fone.Contains(responsavel.Fone)
-                                                select r).ToList());
+
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Fone.Contains(responsavel.Fone)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Fone.Contains(responsavel.Fone)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.FoneTrabalho))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.FoneTrabalho.Contains(responsavel.FoneTrabalho)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.FoneTrabalho.Contains(responsavel.FoneTrabalho)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.FoneTrabalho.Contains(responsavel.FoneTrabalho)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Login))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Login.Contains(responsavel.Login)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Login.Contains(responsavel.Login)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Login.Contains(responsavel.Login)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Logradouro))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Logradouro.Contains(responsavel.Logradouro)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Logradouro.Contains(responsavel.Logradouro)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Logradouro.Contains(responsavel.Logradouro)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -411,10 +823,21 @@ namespace Negocios.ModuloResponsavel.Repositorios
 
                         if (responsavel.Nascimento.HasValue && responsavel.Nascimento.Value != default(DateTime))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Nascimento.HasValue && r.Nascimento.Value == responsavel.Nascimento
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -429,56 +852,122 @@ namespace Negocios.ModuloResponsavel.Repositorios
 
                         if (!string.IsNullOrEmpty(responsavel.Nome))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Nome.Contains(responsavel.Nome)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Nome.Contains(responsavel.Nome)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Nome.Contains(responsavel.Nome)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (responsavel.PerfilID != 0)
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.PerfilID == responsavel.PerfilID
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.PerfilID == responsavel.PerfilID
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.PerfilID == responsavel.PerfilID
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Senha))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Senha.Contains(responsavel.Senha)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Senha.Contains(responsavel.Senha)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Senha.Contains(responsavel.Senha)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (responsavel.Sexo.HasValue)
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Sexo.HasValue && r.Sexo.Value == responsavel.Sexo.Value
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Sexo.HasValue && r.Sexo.Value == responsavel.Sexo.Value
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Sexo.HasValue && r.Sexo.Value == responsavel.Sexo.Value
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(responsavel.Uf))
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Uf.Contains(responsavel.Uf)
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Uf.Contains(responsavel.Uf)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Uf.Contains(responsavel.Uf)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (responsavel.Status.HasValue)
                         {
-                            resultado.AddRange((from r in Consultar()
-                                                where
-                                                r.Status.HasValue && r.Status.Value == responsavel.Status.Value
-                                                select r).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.Status.HasValue && r.Status.Value == responsavel.Status.Value
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Status.HasValue && r.Status.Value == responsavel.Status.Value
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 

@@ -27,7 +27,7 @@ namespace Negocios.ModuloSala.Repositorios
         public List<Sala> Consultar(Sala sala, TipoPesquisa tipoPesquisa)
         {
             List<Sala> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -35,10 +35,21 @@ namespace Negocios.ModuloSala.Repositorios
                     {
                         if (sala.ID != 0)
                         {
-                            resultado.AddRange((from s in resultado
-                                                where
-                                                s.ID == sala.ID
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in resultado
+                                                    where
+                                                    s.ID == sala.ID
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from s in resultado
+                                                    where
+                                                    s.ID == sala.ID
+                                                    select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -46,37 +57,82 @@ namespace Negocios.ModuloSala.Repositorios
 
                         if (sala.Status.HasValue)
                         {
-                            resultado.AddRange((from s in resultado
-                                                where
-                                                s.Status.HasValue && s.Status.Value == sala.Status.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in resultado
+                                                    where
+                                                    s.Status.HasValue && s.Status.Value == sala.Status.Value
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from s in resultado
+                                                    where
+                                                    s.Status.HasValue && s.Status.Value == sala.Status.Value
+                                                    select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (sala.SerieID.HasValue)
                         {
-                            resultado.AddRange((from s in resultado
-                                                where
-                                                s.SerieID.HasValue && s.SerieID.Value == sala.SerieID.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in resultado
+                                                    where
+                                                    s.SerieID.HasValue && s.SerieID.Value == sala.SerieID.Value
+                                                    select s).ToList());
+
+                            }
+                            else
+                            {
+                                resultado=((from s in resultado
+                                                    where
+                                                    s.SerieID.HasValue && s.SerieID.Value == sala.SerieID.Value
+                                                    select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (sala.TurmaID.HasValue)
                         {
-                            resultado.AddRange((from s in resultado
-                                                where
-                                                s.TurmaID.HasValue && s.TurmaID.Value == sala.TurmaID.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in resultado
+                                                    where
+                                                    s.TurmaID.HasValue && s.TurmaID.Value == sala.TurmaID.Value
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from s in resultado
+                                                    where
+                                                    s.TurmaID.HasValue && s.TurmaID.Value == sala.TurmaID.Value
+                                                    select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (sala.TurnoID.HasValue)
                         {
-                            resultado.AddRange((from s in resultado
-                                                where
-                                                s.TurnoID.HasValue && s.TurnoID.Value == sala.TurnoID.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in resultado
+                                                    where
+                                                    s.TurnoID.HasValue && s.TurnoID.Value == sala.TurnoID.Value
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from s in resultado
+                                                    where
+                                                    s.TurnoID.HasValue && s.TurnoID.Value == sala.TurnoID.Value
+                                                    select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -88,10 +144,21 @@ namespace Negocios.ModuloSala.Repositorios
                     {
                         if (sala.ID != 0)
                         {
-                            resultado.AddRange((from s in Consultar()
-                                                where
-                                                s.ID == sala.ID
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in Consultar()
+                                                    where
+                                                    s.ID == sala.ID
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from s in Consultar()
+                                              where
+                                              s.ID == sala.ID
+                                              select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -99,39 +166,85 @@ namespace Negocios.ModuloSala.Repositorios
 
                         if (sala.Status.HasValue)
                         {
-                            resultado.AddRange((from s in Consultar()
-                                                where
-                                                s.Status.HasValue && s.Status.Value == sala.Status.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in Consultar()
+                                                    where
+                                                    s.Status.HasValue && s.Status.Value == sala.Status.Value
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from s in Consultar()
+                                              where
+                                              s.Status.HasValue && s.Status.Value == sala.Status.Value
+                                              select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (sala.SerieID.HasValue)
                         {
-                            resultado.AddRange((from s in Consultar()
-                                                where
-                                                s.SerieID.HasValue && s.SerieID.Value == sala.SerieID.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in Consultar()
+                                                    where
+                                                    s.SerieID.HasValue && s.SerieID.Value == sala.SerieID.Value
+                                                    select s).ToList());
+
+                            }
+                            else
+                            {
+                                resultado = ((from s in Consultar()
+                                              where
+                                              s.SerieID.HasValue && s.SerieID.Value == sala.SerieID.Value
+                                              select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (sala.TurmaID.HasValue)
                         {
-                            resultado.AddRange((from s in Consultar()
-                                                where
-                                                s.TurmaID.HasValue && s.TurmaID.Value == sala.TurmaID.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in Consultar()
+                                                    where
+                                                    s.TurmaID.HasValue && s.TurmaID.Value == sala.TurmaID.Value
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from s in Consultar()
+                                              where
+                                              s.TurmaID.HasValue && s.TurmaID.Value == sala.TurmaID.Value
+                                              select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (sala.TurnoID.HasValue)
                         {
-                            resultado.AddRange((from s in Consultar()
-                                                where
-                                                s.TurnoID.HasValue && s.TurnoID.Value == sala.TurnoID.Value
-                                                select s).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from s in Consultar()
+                                                    where
+                                                    s.TurnoID.HasValue && s.TurnoID.Value == sala.TurnoID.Value
+                                                    select s).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from s in Consultar()
+                                              where
+                                              s.TurnoID.HasValue && s.TurnoID.Value == sala.TurnoID.Value
+                                              select s).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
+
                         break;
                     }
                 #endregion

@@ -27,7 +27,7 @@ namespace Negocios.ModuloDependencia.Repositorios
         public List<Dependencia> Consultar(Dependencia dependencia, TipoPesquisa tipoPesquisa)
         {
             List<Dependencia> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -35,10 +35,21 @@ namespace Negocios.ModuloDependencia.Repositorios
                     {
                         if (dependencia.ID != 0)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.ID == dependencia.ID
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.ID == dependencia.ID
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.ID == dependencia.ID
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -46,73 +57,158 @@ namespace Negocios.ModuloDependencia.Repositorios
 
                         if (dependencia.Aprovado.HasValue)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.Aprovado.HasValue && d.Aprovado.Value == dependencia.Aprovado.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.Aprovado.HasValue && d.Aprovado.Value == dependencia.Aprovado.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.Aprovado.HasValue && d.Aprovado.Value == dependencia.Aprovado.Value
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.ProfessorDisciplinaSalaID.HasValue)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == dependencia.ProfessorDisciplinaSalaID.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == dependencia.ProfessorDisciplinaSalaID.Value
+                                                    select d).ToList());
+                            }
+                            else {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == dependencia.ProfessorDisciplinaSalaID.Value
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.Rec.HasValue)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.Rec.HasValue && d.Rec.Value == dependencia.Rec.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.Rec.HasValue && d.Rec.Value == dependencia.Rec.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.Rec.HasValue && d.Rec.Value == dependencia.Rec.Value
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.RecFinal.HasValue)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.RecFinal.HasValue && d.RecFinal.Value == dependencia.RecFinal.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.RecFinal.HasValue && d.RecFinal.Value == dependencia.RecFinal.Value
+                                                    select d).ToList());
+                            }
+                            else {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.RecFinal.HasValue && d.RecFinal.Value == dependencia.RecFinal.Value
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.Vp.HasValue)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.Vp.HasValue && d.Vp.Value == dependencia.Vp.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.Vp.HasValue && d.Vp.Value == dependencia.Vp.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.Vp.HasValue && d.Vp.Value == dependencia.Vp.Value
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.Vc1<=0)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.Vc1 == dependencia.Vc1
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.Vc1 == dependencia.Vc1
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.Vc1 == dependencia.Vc1
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.Vc2<= 0)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.Vc2== dependencia.Vc2
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.Vc2 == dependencia.Vc2
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.Vc2 == dependencia.Vc2
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.Status.HasValue)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.Status.HasValue && d.Rec.Value == dependencia.Status.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.Status.HasValue && d.Rec.Value == dependencia.Status.Value
+                                                    select d).ToList());
+                            }
+                            else {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.Status.HasValue && d.Rec.Value == dependencia.Status.Value
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -124,10 +220,21 @@ namespace Negocios.ModuloDependencia.Repositorios
                     {
                         if (dependencia.ID != 0)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.ID == dependencia.ID
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.ID == dependencia.ID
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.ID == dependencia.ID
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -135,73 +242,161 @@ namespace Negocios.ModuloDependencia.Repositorios
 
                         if (dependencia.Aprovado.HasValue)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.Aprovado.HasValue && d.Aprovado.Value == dependencia.Aprovado.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.Aprovado.HasValue && d.Aprovado.Value == dependencia.Aprovado.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.Aprovado.HasValue && d.Aprovado.Value == dependencia.Aprovado.Value
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.ProfessorDisciplinaSalaID.HasValue)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == dependencia.ProfessorDisciplinaSalaID.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == dependencia.ProfessorDisciplinaSalaID.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == dependencia.ProfessorDisciplinaSalaID.Value
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.Rec.HasValue)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.Rec.HasValue && d.Rec.Value == dependencia.Rec.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.Rec.HasValue && d.Rec.Value == dependencia.Rec.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.Rec.HasValue && d.Rec.Value == dependencia.Rec.Value
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.RecFinal.HasValue)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.RecFinal.HasValue && d.RecFinal.Value == dependencia.RecFinal.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.RecFinal.HasValue && d.RecFinal.Value == dependencia.RecFinal.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.RecFinal.HasValue && d.RecFinal.Value == dependencia.RecFinal.Value
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.Vp.HasValue)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.Vp.HasValue && d.Vp.Value == dependencia.Vp.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.Vp.HasValue && d.Vp.Value == dependencia.Vp.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.Vp.HasValue && d.Vp.Value == dependencia.Vp.Value
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.Vc1 <= 0)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.Vc1 == dependencia.Vc1
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.Vc1 == dependencia.Vc1
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.Vc1 == dependencia.Vc1
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.Vc2 <= 0)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.Vc2 == dependencia.Vc2
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.Vc2 == dependencia.Vc2
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.Vc2 == dependencia.Vc2
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (dependencia.Status.HasValue)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.Status.HasValue && d.Rec.Value == dependencia.Status.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.Status.HasValue && d.Rec.Value == dependencia.Status.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.Status.HasValue && d.Rec.Value == dependencia.Status.Value
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 

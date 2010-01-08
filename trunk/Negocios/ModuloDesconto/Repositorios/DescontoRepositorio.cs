@@ -27,7 +27,7 @@ namespace Negocios.ModuloDesconto.Repositorios
         public List<Desconto> Consultar(Desconto desconto, TipoPesquisa tipoPesquisa)
         {
             List<Desconto> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -35,37 +35,81 @@ namespace Negocios.ModuloDesconto.Repositorios
                     {
                         if (desconto.ID != 0)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.ID == desconto.ID
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.ID == desconto.ID
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.ID == desconto.ID
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(desconto.Descricao))
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.Descricao.Contains(desconto.Descricao)
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.Descricao.Contains(desconto.Descricao)
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.Descricao.Contains(desconto.Descricao)
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (desconto.Status.HasValue)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.Status.HasValue && d.Status.Value == desconto.Status.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                    d.Status.HasValue && d.Status.Value == desconto.Status.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                    d.Status.HasValue && d.Status.Value == desconto.Status.Value
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (desconto.Percentual!= 0)
                         {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                 d.Percentual == desconto.Percentual
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in resultado
+                                                    where
+                                                     d.Percentual == desconto.Percentual
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado=((from d in resultado
+                                                    where
+                                                     d.Percentual == desconto.Percentual
+                                                    select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -77,40 +121,83 @@ namespace Negocios.ModuloDesconto.Repositorios
                     {
                         if (desconto.ID != 0)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.ID == desconto.ID
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.ID == desconto.ID
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.ID == desconto.ID
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(desconto.Descricao))
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.Descricao.Contains(desconto.Descricao)
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.Descricao.Contains(desconto.Descricao)
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.Descricao.Contains(desconto.Descricao)
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (desconto.Status.HasValue)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                d.Status.HasValue && d.Status.Value == desconto.Status.Value
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                    d.Status.HasValue && d.Status.Value == desconto.Status.Value
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                              d.Status.HasValue && d.Status.Value == desconto.Status.Value
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (desconto.Percentual!=0)
+                        if (desconto.Percentual != 0)
                         {
-                            resultado.AddRange((from d in Consultar()
-                                                where
-                                                 d.Percentual == desconto.Percentual
-                                                select d).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from d in Consultar()
+                                                    where
+                                                     d.Percentual == desconto.Percentual
+                                                    select d).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from d in Consultar()
+                                              where
+                                               d.Percentual == desconto.Percentual
+                                              select d).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
-
 
                         break;
                     }
