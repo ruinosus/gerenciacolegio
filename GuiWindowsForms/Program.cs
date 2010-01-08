@@ -74,7 +74,7 @@ namespace GuiWindowsForms
             }
             else if (formId == 11)
             {
-                ckbTerca telaconfatividadesaux = ckbTerca.getInstancia();
+                telaConfiguracoesAtividade telaconfatividadesaux = telaConfiguracoesAtividade.getInstancia();
                 telaconfatividadesaux.Show();
             }
             else if (formId == 12)

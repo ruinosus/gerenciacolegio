@@ -115,8 +115,8 @@
             this.cmbFuncionario = new System.Windows.Forms.ComboBox();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
-            this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
+            this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.gpbControleDeAcesso.SuspendLayout();
             this.SuspendLayout();
@@ -909,6 +909,7 @@
             this.ckbAlteracaoSerie.TabIndex = 11;
             this.ckbAlteracaoSerie.Text = "Alteração";
             this.ckbAlteracaoSerie.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoSerie.Click += new System.EventHandler(this.ckbAlteracaoSerie_Click);
             // 
             // ckbVisualizacaoSerie
             // 
@@ -929,6 +930,7 @@
             this.ckbAlteracaoTurma.TabIndex = 9;
             this.ckbAlteracaoTurma.Text = "Alteração";
             this.ckbAlteracaoTurma.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoTurma.Click += new System.EventHandler(this.ckbAlteracaoTurma_Click);
             // 
             // ckbVisualizacaoTurma
             // 
@@ -949,6 +951,7 @@
             this.ckbAlteracaoFuncionario.TabIndex = 7;
             this.ckbAlteracaoFuncionario.Text = "Alteração";
             this.ckbAlteracaoFuncionario.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoFuncionario.Click += new System.EventHandler(this.ckbAlteracaoFuncionario_Click);
             // 
             // ckbVisualizacaoFuncionario
             // 
@@ -978,6 +981,7 @@
             this.ckbAlteracaoAluno.TabIndex = 4;
             this.ckbAlteracaoAluno.Text = "Alteração";
             this.ckbAlteracaoAluno.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoAluno.Click += new System.EventHandler(this.ckbAlteracaoAluno_Click);
             // 
             // ckbVisualizacaoAluno
             // 
@@ -1033,6 +1037,7 @@
             // 
             this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
             this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
+            this.btnDesconectar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
@@ -1042,16 +1047,6 @@
             this.btnDesconectar.Tag = "";
             this.btnDesconectar.UseVisualStyleBackColor = false;
             this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
-            // 
-            // ucMenuConfiguracoesEsquerda1
-            // 
-            this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
-            this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
-            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
-            this.ucMenuConfiguracoesEsquerda1.TabIndex = 120;
-            this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
-            this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
             // 
             // ucMenuDireita1
             // 
@@ -1065,6 +1060,17 @@
             this.ucMenuDireita1.EventoAbrirDesconto += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaDesconto(this.ucMenuDireita1_EventoAbrirDesconto);
             this.ucMenuDireita1.EventoAbrirSerie += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaSerie(this.ucMenuDireita1_EventoAbrirSerie);
             // 
+            // ucMenuConfiguracoesEsquerda1
+            // 
+            this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuConfiguracoesEsquerda1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
+            this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
+            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
+            this.ucMenuConfiguracoesEsquerda1.TabIndex = 120;
+            this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
+            this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
+            // 
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
@@ -1072,6 +1078,7 @@
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
             this.ucMenuInferior1.TabIndex = 122;
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
             // telaConfiguracoesControleDeAcesso
@@ -1094,6 +1101,7 @@
             this.Name = "telaConfiguracoesControleDeAcesso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.telaConfiguracoesControleDeAcesso_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoesControleDeAcesso_FormClosing);
             this.gpbControleDeAcesso.ResumeLayout(false);
             this.gpbControleDeAcesso.PerformLayout();
