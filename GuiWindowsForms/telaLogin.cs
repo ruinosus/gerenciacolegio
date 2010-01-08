@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloAluno.Processos;
 
 namespace GuiWindowsForms
 {
@@ -43,6 +44,13 @@ namespace GuiWindowsForms
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
+            IAlunoProcesso processo = AlunoProcesso.Instance;
+            Aluno a = new Aluno();
+
+            a.ID = 1;
+
+            List<Aluno> alunos = processo.Consultar(a, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
+            
             //toolTip1.SetToolTip(txtLogin, "mensagem bem gay");
             //toolTip1.BackColor = Color.Beige;
             //toolTip1.ToolTipIcon = ToolTipIcon.Error;

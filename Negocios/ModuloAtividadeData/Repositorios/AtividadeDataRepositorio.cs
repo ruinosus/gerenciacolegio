@@ -27,7 +27,7 @@ namespace Negocios.ModuloAtividadeData.Repositorios
         public List<AtividadeData> Consultar(AtividadeData atividadeData, TipoPesquisa tipoPesquisa)
         {
             List<AtividadeData> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -36,56 +36,116 @@ namespace Negocios.ModuloAtividadeData.Repositorios
 
                         if (atividadeData.ID != 0)
                         {
-                            resultado.AddRange((from ad in resultado
-                                                where
-                                                ad.ID == atividadeData.ID
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in resultado
+                                                    where
+                                                    ad.ID == atividadeData.ID
+                                                    select ad).ToList());
+                            }
+                            else {
+                                resultado=((from ad in resultado
+                                                    where
+                                                    ad.ID == atividadeData.ID
+                                                    select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (atividadeData.AtividadeID.HasValue && atividadeData.AtividadeID.Value != 0)
                         {
-                            resultado.AddRange((from ad in resultado
-                                                where
-                                                ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeData.AtividadeID.Value
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in resultado
+                                                    where
+                                                    ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeData.AtividadeID.Value
+                                                    select ad).ToList());
+                            }
+                            else {
+                                resultado=((from ad in resultado
+                                                    where
+                                                    ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeData.AtividadeID.Value
+                                                    select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (atividadeData.DiaSemana.HasValue && atividadeData.DiaSemana.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ad in resultado
-                                                where
-                                                ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeData.DiaSemana.Value
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in resultado
+                                                    where
+                                                    ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeData.DiaSemana.Value
+                                                    select ad).ToList());
+                            }
+                            else {
+                                resultado=((from ad in resultado
+                                                    where
+                                                    ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeData.DiaSemana.Value
+                                                    select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (atividadeData.HoraFim.HasValue && atividadeData.HoraFim.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ad in resultado
-                                                where
-                                                ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeData.HoraFim.Value
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in resultado
+                                                    where
+                                                    ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeData.HoraFim.Value
+                                                    select ad).ToList());
+                            }
+                            else {
+                                resultado=((from ad in resultado
+                                                    where
+                                                    ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeData.HoraFim.Value
+                                                    select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (atividadeData.HoraInicio.HasValue && atividadeData.HoraInicio.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ad in resultado
-                                                where
-                                                ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeData.HoraInicio.Value
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in resultado
+                                                    where
+                                                    ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeData.HoraInicio.Value
+                                                    select ad).ToList());
+                            }
+                            else {
+                                resultado=((from ad in resultado
+                                                    where
+                                                    ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeData.HoraInicio.Value
+                                                    select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (atividadeData.Status.HasValue && atividadeData.Status.Value != default(byte))
                         {
-                            resultado.AddRange((from ad in resultado
-                                                where
-                                                ad.Status.HasValue && ad.Status.Value == atividadeData.Status.Value
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in resultado
+                                                    where
+                                                    ad.Status.HasValue && ad.Status.Value == atividadeData.Status.Value
+                                                    select ad).ToList());
+                            }
+                            else {
+                                resultado=((from ad in resultado
+                                                    where
+                                                    ad.Status.HasValue && ad.Status.Value == atividadeData.Status.Value
+                                                    select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -95,58 +155,125 @@ namespace Negocios.ModuloAtividadeData.Repositorios
                 #region Case Ou
                 case TipoPesquisa.Ou:
                     {
+
                         if (atividadeData.ID != 0)
                         {
-                            resultado.AddRange((from ad in Consultar()
-                                                where
-                                                ad.ID == atividadeData.ID
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in Consultar()
+                                                    where
+                                                    ad.ID == atividadeData.ID
+                                                    select ad).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ad in Consultar()
+                                              where
+                                              ad.ID == atividadeData.ID
+                                              select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (atividadeData.AtividadeID.HasValue && atividadeData.AtividadeID.Value != 0)
                         {
-                            resultado.AddRange((from ad in Consultar()
-                                                where
-                                                ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeData.AtividadeID.Value
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in Consultar()
+                                                    where
+                                                    ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeData.AtividadeID.Value
+                                                    select ad).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ad in Consultar()
+                                              where
+                                              ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeData.AtividadeID.Value
+                                              select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (atividadeData.DiaSemana.HasValue && atividadeData.DiaSemana.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ad in Consultar()
-                                                where
-                                                ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeData.DiaSemana.Value
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in Consultar()
+                                                    where
+                                                    ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeData.DiaSemana.Value
+                                                    select ad).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ad in Consultar()
+                                              where
+                                              ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeData.DiaSemana.Value
+                                              select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (atividadeData.HoraFim.HasValue && atividadeData.HoraFim.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ad in Consultar()
-                                                where
-                                                ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeData.HoraFim.Value
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in Consultar()
+                                                    where
+                                                    ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeData.HoraFim.Value
+                                                    select ad).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ad in Consultar()
+                                              where
+                                              ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeData.HoraFim.Value
+                                              select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (atividadeData.HoraInicio.HasValue && atividadeData.HoraInicio.Value != default(DateTime))
                         {
-                            resultado.AddRange((from ad in Consultar()
-                                                where
-                                                ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeData.HoraInicio.Value
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in Consultar()
+                                                    where
+                                                    ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeData.HoraInicio.Value
+                                                    select ad).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ad in Consultar()
+                                              where
+                                              ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeData.HoraInicio.Value
+                                              select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (atividadeData.Status.HasValue && atividadeData.Status.Value != default(byte))
                         {
-                            resultado.AddRange((from ad in Consultar()
-                                                where
-                                                ad.Status.HasValue && ad.Status.Value == atividadeData.Status.Value
-                                                select ad).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ad in Consultar()
+                                                    where
+                                                    ad.Status.HasValue && ad.Status.Value == atividadeData.Status.Value
+                                                    select ad).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ad in Consultar()
+                                              where
+                                              ad.Status.HasValue && ad.Status.Value == atividadeData.Status.Value
+                                              select ad).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
