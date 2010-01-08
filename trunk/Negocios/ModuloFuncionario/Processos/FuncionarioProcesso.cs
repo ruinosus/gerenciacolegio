@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloFuncionario.Repositorios;
 using Negocios.ModuloFuncionario.Processos;
 using Negocios.ModuloFuncionario.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloFuncionario.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloFuncionario.Processos
             this.funcionarioRepositorio.Alterar(funcionario);
         }
 
-        public List<Funcionario> Consultar(Funcionario funcionario)
+        public List<Funcionario> Consultar(Funcionario funcionario, TipoPesquisa tipoPesquisa)
         {
-            List<Funcionario> funcionarioList = this.funcionarioRepositorio.Consultar(funcionario);           
+            List<Funcionario> funcionarioList = this.funcionarioRepositorio.Consultar(funcionario,tipoPesquisa);           
 
             return funcionarioList;
         }

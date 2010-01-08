@@ -7,6 +7,7 @@ using Negocios.ModuloAuxiliar.Singleton;
 using Negocios.ModuloPerfil.Repositorios;
 using Negocios.ModuloPerfil.Processos;
 using Negocios.ModuloPerfil.Fabricas;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloPerfil.Processos
 {
@@ -46,9 +47,9 @@ namespace Negocios.ModuloPerfil.Processos
             this.perfilRepositorio.Alterar(perfil);
         }
 
-        public List<Perfil> Consultar(Perfil perfil)
+        public List<Perfil> Consultar(Perfil perfil, TipoPesquisa tipoPesquisa)
         {
-            List<Perfil> perfilList = this.perfilRepositorio.Consultar(perfil);           
+            List<Perfil> perfilList = this.perfilRepositorio.Consultar(perfil,tipoPesquisa);           
 
             return perfilList;
         }

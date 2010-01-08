@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloFuncionario.Repositorios
 {
@@ -33,8 +34,9 @@ namespace Negocios.ModuloFuncionario.Repositorios
         /// Método responsável por consultar perfis do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="funcionario">Objeto do tipo funcionario que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todos os perfis cadastrados.</returns>
-        List<Funcionario> Consultar(Funcionario funcionario);
+        List<Funcionario> Consultar(Funcionario funcionario, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todos os comentários do sistema.

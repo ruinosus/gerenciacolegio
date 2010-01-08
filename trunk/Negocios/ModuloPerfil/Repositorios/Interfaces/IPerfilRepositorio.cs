@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloPerfil.Repositorios
 {
@@ -33,8 +34,9 @@ namespace Negocios.ModuloPerfil.Repositorios
         /// Método responsável por consultar perfis do sistema de acordo com os parametros informados.
         /// </summary>
         /// <param name="perfil">Objeto do tipo perfil que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
         /// <returns>Lista contendo todos os perfis cadastrados.</returns>
-        List<Perfil> Consultar(Perfil perfil);
+        List<Perfil> Consultar(Perfil perfil, TipoPesquisa tipoPesquisa);
 
         /// <summary>
         /// Método responsável por consultar todos os comentários do sistema.
