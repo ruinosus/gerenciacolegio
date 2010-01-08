@@ -30,7 +30,8 @@ namespace GuiWindowsForms
         #region INSTANCIA TELA ALUNO RESPONSAVEL
 
         /// <summary>
-        /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
+        /// Padrão Singleton, verifica se a instância já esta em uso.
+        /// Evita abertura de múltiplas instâncias
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
         public static telaAlunoResponsavel getInstancia()
