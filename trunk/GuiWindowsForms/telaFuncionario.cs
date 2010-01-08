@@ -113,7 +113,7 @@ namespace GuiWindowsForms
         }
         #endregion
 
-
+        #region USER CONTROLS - MENU INFERIOR
         private void ucMenuInferior1_EventoVoltar()
         {
             this.Hide();
@@ -128,7 +128,9 @@ namespace GuiWindowsForms
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
+        #endregion
 
+        #region USER CONTROLS - MENU LATERAL
         private void ucMenuLateralFunc1_EventoAbrirDadosProfissionais()
         {
             this.Hide();
@@ -137,6 +139,7 @@ namespace GuiWindowsForms
             telaafuncprofissionais.Show();
         }
 
+
         private void ucMenuLateralFunc1_EventoAbrirDadosPessoais()
         {
             this.Hide();
@@ -144,6 +147,7 @@ namespace GuiWindowsForms
             telaFuncionario telaafuncdados = telaFuncionario.getInstancia();
             telaafuncdados.Show();
         }
+        #endregion
 
         #region LOAD
         private void ucMenuLateralFunc1_Load(object sender, EventArgs e)
@@ -197,9 +201,160 @@ namespace GuiWindowsForms
                     txtRg.Clear();
                     return;
                 }
-
                
                 #endregion
+
+                #region VALIDA - EMISSOR
+
+                if (String.IsNullOrEmpty(txtEmissor.Text))
+                {
+                    errorProviderTela.SetError(txtRg, "Informe o órgão emissor");
+                    txtEmissor.Clear();
+                    return;
+                }
+
+
+                #endregion
+                
+                #region VALIDA - EMISSOR UF
+
+                if (String.IsNullOrEmpty(cmbEmissorUf.Text))
+                {
+                    errorProviderTela.SetError(cmbEmissorUf, "Informe o uf");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - ENDEREÇO
+
+                if (String.IsNullOrEmpty(txtLogradouro.Text))
+                {
+                    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
+                    txtLogradouro.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - COMPLEMENTO
+
+                if (String.IsNullOrEmpty(txtComplemento.Text))
+                {
+                    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
+                    txtComplemento.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - NOME EDIFÍCIL
+
+                if (String.IsNullOrEmpty(txtNomeEdificil.Text))
+                {
+                    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
+                    txtNomeEdificil.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - BAIRRO
+
+                if (String.IsNullOrEmpty(txtBairro.Text))
+                {
+                    errorProviderTela.SetError(txtBairro, "Informe o bairro");
+                    txtBairro.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - UF
+
+                if (String.IsNullOrEmpty(cmbUf.Text))
+                {
+                    errorProviderTela.SetError(cmbUf, "Informe o uf");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - CIDADE
+
+                if (String.IsNullOrEmpty(txtCidade.Text))
+                {
+                    errorProviderTela.SetError(txtCidade, "Informe a cidade");
+                    txtCidade.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - CEP
+
+                if (mskCep.MaskCompleted == false)
+                {
+                    errorProviderTela.SetError(mskCep, "Informe o cep");
+                    mskCep.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - FONE RESIDENCIA
+
+                if (mskFoneResidencia.MaskCompleted == false)
+                {
+                    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
+                    mskFoneResidencia.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - FILIAÇÃO PAI
+
+                if (String.IsNullOrEmpty(txtFiliacaoPai.Text))
+                {
+                    errorProviderTela.SetError(txtFiliacaoPai, "Informe o nome do pai");
+                    txtFiliacaoPai.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - FILIAÇÃO MÃE
+
+                if (String.IsNullOrEmpty(txtFiliacaoMae.Text))
+                {
+                    errorProviderTela.SetError(txtFiliacaoMae, "Informe o nome da mãe");
+                    txtFiliacaoMae.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - ESTADO CIVIL
+
+                if (String.IsNullOrEmpty(cmbEstadoCivil.Text))
+                {
+                    errorProviderTela.SetError(cmbEstadoCivil, "Informe o estado civil");
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - NACIONALIDADE
+
+                if (String.IsNullOrEmpty(cmbNacionalidade.Text))
+                {
+                    errorProviderTela.SetError(cmbNacionalidade, "Informe a nacionalidade");
+                    return;
+                }
+
+                #endregion
+
             }
             catch (Exception ex) 
             { 
@@ -207,6 +362,12 @@ namespace GuiWindowsForms
 
             }
         }
+        #endregion
+
+        #region STRING PARA ALIMENTAR COMBOBOX
+
+        string[] estados = { "", "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO" };
+
         #endregion
 
         #region LIMPAR ERRO PROVIDER
@@ -303,6 +464,48 @@ namespace GuiWindowsForms
         private void cmbNacionalidade_TextChanged(object sender, EventArgs e)
         {
             errorProviderTela.Clear();
+        }
+        #endregion
+
+        #region LOAD
+        private void telaFuncionario_Load(object sender, EventArgs e)
+        {
+            cmbUf.DataSource = estados;
+        }
+        #endregion
+
+        #region TEXTBOX UF EVENTO SELECTED
+        // Quando selecionar a UF o campo CIDADE é selecionado a capital correspondente
+        private void cmbUf_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cmbUf.Text == "") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "AC") { txtCidade.Text = "RIO BRANCO"; }
+            if (cmbUf.Text == "AL") { txtCidade.Text = "MACEIO"; }
+            if (cmbUf.Text == "AM") { txtCidade.Text = "MANAUS"; }
+            if (cmbUf.Text == "AP") { txtCidade.Text = "MACAPÁ"; }
+            if (cmbUf.Text == "BA") { txtCidade.Text = "SALVADOR"; }
+            if (cmbUf.Text == "CE") { txtCidade.Text = "FORTALEZA"; }
+            if (cmbUf.Text == "DF") { txtCidade.Text = "BRASÍLIA"; }
+            if (cmbUf.Text == "ES") { txtCidade.Text = "VITÓRIA"; }
+            if (cmbUf.Text == "GO") { txtCidade.Text = "GOIÂNIA"; }
+            if (cmbUf.Text == "MA") { txtCidade.Text = "SÃO LUIZ"; }
+            if (cmbUf.Text == "MG") { txtCidade.Text = "BELO HORIZONTE"; }
+            if (cmbUf.Text == "MS") { txtCidade.Text = "CAMPO GRANDE"; }
+            if (cmbUf.Text == "MT") { txtCidade.Text = "CUIABÁ"; }
+            if (cmbUf.Text == "PA") { txtCidade.Text = "BELÉM"; }
+            if (cmbUf.Text == "PB") { txtCidade.Text = "JOÃO PESSOA"; }
+            if (cmbUf.Text == "PE") { txtCidade.Text = "RECIFE"; }
+            if (cmbUf.Text == "PI") { txtCidade.Text = "TEREZINA"; }
+            if (cmbUf.Text == "PR") { txtCidade.Text = "PARANÁ"; }
+            if (cmbUf.Text == "RJ") { txtCidade.Text = "RIO DE JANEIRO"; }
+            if (cmbUf.Text == "RN") { txtCidade.Text = "NATAL"; }
+            if (cmbUf.Text == "RO") { txtCidade.Text = "PORTO VELHO"; }
+            if (cmbUf.Text == "RR") { txtCidade.Text = "BOA VISTA"; }
+            if (cmbUf.Text == "RS") { txtCidade.Text = "PORTO ALEFRE"; }
+            if (cmbUf.Text == "SC") { txtCidade.Text = "FLORIANÓPOLIS"; }
+            if (cmbUf.Text == "SE") { txtCidade.Text = "ARACAJÚ"; }
+            if (cmbUf.Text == "SP") { txtCidade.Text = "SÃO PAULO"; }
+            if (cmbUf.Text == "TO") { txtCidade.Text = "PALMAS"; }
         }
         #endregion
     }
