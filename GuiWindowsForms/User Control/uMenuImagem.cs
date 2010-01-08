@@ -25,6 +25,35 @@ namespace GuiWindowsForms
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
+        public void carregaResponsavel(Responsavel responsavel)
+        {
+            lblAtivo.Text = "Ativo - AINDA POR FAZER";
+            lblFoneEmerg.Text = responsavel.Fone;
+            lblMatricula.Text = "xxxx.xxx.xx.xxx - AINDA POR FAZER";
+            lblNomeAluno.Text = responsavel.Nome;
+            lblSerie.Text = "AINDA POR FAZER";
+            if (responsavel.Imagem != null && responsavel.Imagem.Length != 0)
+            {
+                pctImagem.Image = arrayParaImagem(responsavel.Imagem);
+            }
+        }
+
+        public Responsavel retornaResponsavel(Responsavel responsavel)
+        {
+            if (pctImagem.Image != null)
+            {
+                responsavel.Imagem = imagemParaArray(imagemAuxiliar);
+            }
+
+            return responsavel;
+        }
+
+        /// <summary>
+        /// Método para carregar dados do aluno
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         public void carregaAluno(Aluno aluno)
         {
             lblAtivo.Text = "Ativo - AINDA POR FAZER";

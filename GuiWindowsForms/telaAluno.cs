@@ -783,7 +783,7 @@ namespace GuiWindowsForms
             limparTela();
             cmbUf.DataSource = estados;
             aluno.ID = 7;
-            aluno = alunoControlador.Consultar(aluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[6];
+            aluno = alunoControlador.Consultar(aluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
             uMenuImagem1.carregaAluno(aluno);
             carregarAluno();
         }
@@ -833,6 +833,7 @@ namespace GuiWindowsForms
             mskFoneAluno.Text = aluno.FoneAluno;
             mskFoneEmergencia.Text = aluno.FoneEmergencia;
             mskFoneResidencia.Text = aluno.FoneResidencia;
+            dtpNascimento.Value = aluno.Nascimento.Value;
             if (aluno.Sexo == 0)
             {
                 rdbMasc.Select();
