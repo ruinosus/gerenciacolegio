@@ -107,6 +107,15 @@ namespace Negocios.ModuloNota.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (nota.Status.HasValue)
+                        {
+                            resultado.AddRange((from d in resultado
+                                                where
+                                                d.Status.HasValue && d.Status.Value == nota.Status.Value
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         break;
                     }
                 #endregion
@@ -165,6 +174,15 @@ namespace Negocios.ModuloNota.Repositorios
                             resultado.AddRange((from d in Consultar()
                                                 where
                                                 d.Vp.HasValue && d.Vp.Value == nota.Vp.Value
+                                                select d).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (nota.Status.HasValue)
+                        {
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Status.HasValue && d.Status.Value == nota.Status.Value
                                                 select d).ToList());
                             resultado = resultado.Distinct().ToList();
                         }

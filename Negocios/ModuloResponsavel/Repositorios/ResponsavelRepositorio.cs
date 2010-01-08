@@ -61,6 +61,15 @@ namespace Negocios.ModuloResponsavel.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (!string.IsNullOrEmpty(responsavel.Cpf))
+                        {
+                            resultado.AddRange((from r in resultado
+                                                where
+                                                r.Cpf.Contains(responsavel.Cpf)
+                                                select r).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (!string.IsNullOrEmpty(responsavel.Bairro))
                         {
                             resultado.AddRange((from r in resultado
@@ -275,6 +284,15 @@ namespace Negocios.ModuloResponsavel.Repositorios
                             resultado.AddRange((from r in Consultar()
                                                 where
                                                 r.LocalTrabalho.Contains(responsavel.LocalTrabalho)
+                                                select r).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(responsavel.Cpf))
+                        {
+                            resultado.AddRange((from r in Consultar()
+                                                where
+                                                r.Cpf.Contains(responsavel.Cpf)
                                                 select r).ToList());
                             resultado = resultado.Distinct().ToList();
                         }
