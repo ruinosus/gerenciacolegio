@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloResponsavel.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaAlunoResponsavel : Form
     {
+        Responsavel responsavel = new Responsavel();
+        IResponsavelProcesso responsavelControlador = ResponsavelProcesso.Instance;
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -472,6 +476,7 @@ namespace GuiWindowsForms
                     txtNome.Clear();
                     return;
                 }
+                responsavel.Nome = txtNome.Text;
               
             
                 #endregion
@@ -483,6 +488,14 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(rdbFem, "Informe o sexo");
                     return;
                 }
+                if (rdbFem.Checked == true)
+                {
+                    responsavel.Sexo = 0;
+                }
+                else
+                {
+                    responsavel.Sexo = 1;
+                }
 
                 #endregion
 
@@ -493,6 +506,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(txtRg, "Informe a Identidade");
                     return;
                 }
+                responsavel.Rg = txtRg.Text;
               
 
                 #endregion
@@ -504,6 +518,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(mskCpf, "Informe o cpf");
                     return;
                 }
+                responsavel.Cpf = mskCpf.Text;
 
                 #endregion
 
@@ -514,6 +529,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(txtProfissao, "Informe a profissão");
                     return;
                 }
+                responsavel.Profissao = txtProfissao.Text;
 
                 #endregion
 
@@ -524,6 +540,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(txtLocalTrabalho, "Informe o local de trabalho");
                     return;
                 }
+                responsavel.LocalTrabalho = txtLocalTrabalho.Text;
 
                 #endregion
 
@@ -561,6 +578,7 @@ namespace GuiWindowsForms
                     return;
 
                 }
+                responsavel.Email = txtEmail.Text;
 
                 #endregion
 
@@ -571,6 +589,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(mskFoneTrabalho, "Informe o fone do trabalho");
                     return;
                 }
+                responsavel.Fone = mskFoneTrabalho.Text;
 
                 #endregion
 
@@ -581,6 +600,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
                     return;
                 }
+                responsavel.Logradouro = txtLogradouro.Text;
 
                 #endregion
 
@@ -591,6 +611,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(txtComplemento, "Informe o endereço");
                     return;
                 }
+                responsavel.ComplementoEndereco = txtComplemento.Text;
 
                 #endregion
 
@@ -611,6 +632,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(txtBairro, "Informe o bairro");
                     return;
                 }
+                responsavel.Bairro = txtBairro.Text;
 
                 #endregion
 
@@ -621,6 +643,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(txtCidade, "Informe a cidade");
                     return;
                 }
+                responsavel.Cidade = txtCidade.Text;
 
                 #endregion
 
@@ -631,6 +654,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(mskCep, "Informe a cep");
                     return;
                 }
+                responsavel.Cep = mskCep.Text;
 
                 #endregion
 
@@ -641,8 +665,19 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(mskFoneResidencia, "Informe o fone");
                     return;
                 }
+                responsavel.Fone = mskFoneResidencia.Text;
 
                 #endregion
+
+                responsavel.Uf = cmbUf.Text;
+                responsavel.Nascimento = dtpNascimento.Value;
+
+                responsavel.PerfilID = 1;
+
+                responsavel = ucMenuSuper.retornaResponsavel(responsavel);
+
+                responsavelControlador.Incluir(responsavel);
+                responsavelControlador.Confirmar();
 
 
             }
@@ -700,6 +735,10 @@ namespace GuiWindowsForms
         private void telaAlunoResponsavel_Load(object sender, EventArgs e)
         {
             cmbUf.DataSource = estados;
+            //responsavel = responsavelControlador.Consultar(responsavel, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            //ucMenuSuper.carregaResponsavel(responsavel);
+            //carregarAlunoResponsavel();
+
         }
         #endregion
 
@@ -789,6 +828,60 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
         #endregion
+
+        /// <summary>
+        /// Método para limpar a tela.
+        /// </summary>
+        public void limparTela()
+        {
+            txtBairro.Clear();
+            txtCidade.Clear();
+            txtComplemento.Clear();
+            txtEmail.Clear();
+            txtLocalTrabalho.Clear();
+            txtLogradouro.Clear();
+            txtNome.Clear();
+            txtNomeEdificil.Clear();
+            txtProfissao.Clear();
+            txtRg.Clear();
+            mskCep.Clear();
+            mskCpf.Clear();
+            mskFoneResidencia.Clear();
+            mskFoneTrabalho.Clear();
+            cmbUf.Select();
+            rdbFem.Checked = false;
+            rdbMasc.Checked = false;
+        }
+
+        /// <summary>
+        /// Método para carregar os dados do aluno na tela
+        /// </summary>
+        public void carregarAlunoResponsavel()
+        {
+            txtBairro.Text = responsavel.Bairro;
+            txtCidade.Text = responsavel.Cidade;
+            txtComplemento.Text = responsavel.ComplementoEndereco;
+            txtEmail.Text = responsavel.Email;
+            txtLocalTrabalho.Text = responsavel.LocalTrabalho;
+            txtLogradouro.Text = responsavel.Logradouro;
+            txtNome.Text = responsavel.Nome;
+            txtProfissao.Text = responsavel.Profissao;
+            txtRg.Text = responsavel.Rg;
+            mskCep.Text = responsavel.Cep;
+            mskCpf.Text = responsavel.Cpf;
+            mskFoneResidencia.Text = responsavel.Fone;
+            mskFoneTrabalho.Text = responsavel.FoneTrabalho;
+            cmbUf.Text = responsavel.Uf;
+            dtpNascimento.Text = responsavel.Nascimento.ToString();
+            if (responsavel.Sexo == 0)
+            {
+                rdbFem.Select();
+            }
+            else
+            {
+                rdbMasc.Select();
+            }
+        }
 
     }
 }
