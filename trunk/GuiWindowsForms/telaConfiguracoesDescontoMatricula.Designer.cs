@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesDescontoMatricula));
             this.gpbSerie = new System.Windows.Forms.GroupBox();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
@@ -41,15 +42,17 @@
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
             this.gpbSerie.Controls.Add(this.btnExcluir);
-            this.gpbSerie.Controls.Add(this.textBox1);
+            this.gpbSerie.Controls.Add(this.txtValor);
             this.gpbSerie.Controls.Add(this.lblValor);
             this.gpbSerie.Controls.Add(this.txtDescricao);
             this.gpbSerie.Controls.Add(this.lblDescricao);
@@ -74,13 +77,14 @@
             this.btnExcluir.TabIndex = 69;
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtValor
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 134);
-            this.textBox1.MaxLength = 10;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtValor.Location = new System.Drawing.Point(92, 134);
+            this.txtValor.MaxLength = 10;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(112, 20);
+            this.txtValor.TabIndex = 4;
+            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
             // lblValor
             // 
@@ -98,6 +102,7 @@
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(249, 20);
             this.txtDescricao.TabIndex = 2;
+            this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
             // lblDescricao
             // 
@@ -171,7 +176,12 @@
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
             this.ucMenuInferior1.TabIndex = 135;
+            this.ucMenuInferior1.Load += new System.EventHandler(this.ucMenuInferior1_Load);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
+            // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
             // 
             // telaConfiguracoesDescontoMatricula
             // 
@@ -193,10 +203,12 @@
             this.Name = "telaConfiguracoesDescontoMatricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.telaConfiguracoesDescontoMatricula_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoesDescontoMatricula_FormClosing);
             this.gpbSerie.ResumeLayout(false);
             this.gpbSerie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,7 +217,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gpbSerie;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblDescricao;
@@ -216,5 +228,6 @@
         private GuiWindowsForms.User_Control.ucMenuDireita ucMenuDireita1;
         private GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda ucMenuConfiguracoesEsquerda1;
         private ucMenuInferior ucMenuInferior1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
     }
 }

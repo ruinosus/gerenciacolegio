@@ -11,7 +11,7 @@ namespace GuiWindowsForms
 {
     public partial class telaConfiguracoesDescontoMatricula : Form
     {
-
+        #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
@@ -20,7 +20,9 @@ namespace GuiWindowsForms
         private static telaConfiguracoesDescontoMatricula telaconfiguracoesdesconto;
 
         private static bool IsShown = false;
+        #endregion
 
+        #region INSTANCIA TELA CONFIGURAÇÕES MATRICULA
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
         /// </summary>
@@ -34,7 +36,9 @@ namespace GuiWindowsForms
             }
             return telaconfiguracoesdesconto;
         }
+        #endregion
 
+        #region CONSTRUTOR
         /// <summary>
         /// Construtor da tela
         /// </summary>
@@ -43,7 +47,9 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region MÉTODO PARA VERIFICAR USO DA TELA
         /// <summary>
         /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
         /// </summary>
@@ -60,7 +66,9 @@ namespace GuiWindowsForms
 
             //return SelecionaForm(aux);
         }
+        #endregion
 
+        #region  BUTTON DESCONECTAR
         /// <summary>
         /// Botão para esconder a tela e voltar para a tela de login
         /// </summary>
@@ -74,9 +82,12 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
 
+        #region MÉTODO PARA FECHAR A TELA
         /// <summary>
-        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
+        /// Evento para o fechamento da tela, não fecha de verdade, 
+        /// só a esconde, garantindo a usabilidade da tela
         /// pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
@@ -90,7 +101,9 @@ namespace GuiWindowsForms
 
             Program.SelecionaForm(Program.ultimaTela);
         }
+        #endregion
 
+        #region USER CONTROLS - MENU ESQUERDA
         private void ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso()
         {
             this.Hide();
@@ -99,6 +112,13 @@ namespace GuiWindowsForms
             telaconfacesso.Show();
         }
 
+        private void ucMenuConfiguracoesEsquerda1_Load(object sender, EventArgs e)
+        {
+            ucMenuConfiguracoesEsquerda1.verificaTela(telaconfiguracoesdesconto);
+        }
+        #endregion
+
+        #region USER CONTROLS - MENU DIREITA
         private void ucMenuDireita1_EventoAbrirSerie()
         {
 
@@ -108,7 +128,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
             Program.ultimaTela = 10;
-            ckbTerca telaconfatv = ckbTerca.getInstancia();
+            telaConfiguracoesAtividade telaconfatv = telaConfiguracoesAtividade.getInstancia();
             telaconfatv.Show();
         }
 
@@ -120,15 +140,11 @@ namespace GuiWindowsForms
             telaconfdesconto.Show();
         }
 
-        private void ucMenuConfiguracoesEsquerda1_Load(object sender, EventArgs e)
-        {
-            ucMenuConfiguracoesEsquerda1.verificaTela(telaconfiguracoesdesconto);
-        }
-
         private void ucMenuDireita1_Load(object sender, EventArgs e)
         {
             ucMenuDireita1.verificaTela(telaconfiguracoesdesconto);
         }
+        #endregion
 
         #region USER CONTROLS - Controle Inferior - Botões de Navegação
 
@@ -147,6 +163,59 @@ namespace GuiWindowsForms
             }
         }
 
+        #endregion
+
+        #region LOAD
+        private void telaConfiguracoesDescontoMatricula_Load(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region EVENTO CADASTRAR
+        private void ucMenuInferior1_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                #region VALIDA - DESCRIÇÃO
+
+                if (String.IsNullOrEmpty(txtDescricao.Text))
+                {
+                    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                    txtDescricao.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - VALOR
+
+                if (String.IsNullOrEmpty(txtDescricao.Text))
+                {
+                    errorProviderTela.SetError(txtValor, "Informe o valor");
+                    txtValor.Clear();
+                    return;
+                }
+
+                #endregion
+            }
+            catch (Exception ex)
+            { 
+            
+            }
+        }
+        #endregion
+
+        #region ERROR PROVIDER
+        private void txtDescricao_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
         #endregion
     }
 }

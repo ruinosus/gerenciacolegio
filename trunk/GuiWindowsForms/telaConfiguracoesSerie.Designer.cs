@@ -28,42 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesSerie));
             this.gpbSerie = new System.Windows.Forms.GroupBox();
+            this.cmbTurma = new System.Windows.Forms.ComboBox();
+            this.cmbSerie = new System.Windows.Forms.ComboBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.txtCiclo = new System.Windows.Forms.TextBox();
             this.lblCiclo = new System.Windows.Forms.Label();
             this.lblTurma = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.lblTurno = new System.Windows.Forms.Label();
-            this.txtTurma = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
             this.lblSerie = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
-            this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
+            this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
+            this.gpbSerie.Controls.Add(this.cmbTurma);
+            this.gpbSerie.Controls.Add(this.cmbSerie);
             this.gpbSerie.Controls.Add(this.btnExcluir);
             this.gpbSerie.Controls.Add(this.txtCiclo);
             this.gpbSerie.Controls.Add(this.lblCiclo);
             this.gpbSerie.Controls.Add(this.lblTurma);
-            this.gpbSerie.Controls.Add(this.comboBox1);
+            this.gpbSerie.Controls.Add(this.cmbTurno);
             this.gpbSerie.Controls.Add(this.lblTurno);
-            this.gpbSerie.Controls.Add(this.txtTurma);
-            this.gpbSerie.Controls.Add(this.textBox1);
+            this.gpbSerie.Controls.Add(this.txtValor);
             this.gpbSerie.Controls.Add(this.lblValor);
-            this.gpbSerie.Controls.Add(this.txtNome);
             this.gpbSerie.Controls.Add(this.lblSerie);
             this.gpbSerie.Controls.Add(this.dataGridView1);
             this.gpbSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,6 +76,28 @@
             this.gpbSerie.TabIndex = 56;
             this.gpbSerie.TabStop = false;
             this.gpbSerie.Text = "CADASTRO DE SÉRIE";
+            // 
+            // cmbTurma
+            // 
+            this.cmbTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTurma.FormattingEnabled = true;
+            this.cmbTurma.Location = new System.Drawing.Point(319, 116);
+            this.cmbTurma.Name = "cmbTurma";
+            this.cmbTurma.Size = new System.Drawing.Size(121, 21);
+            this.cmbTurma.TabIndex = 72;
+            this.cmbTurma.TextChanged += new System.EventHandler(this.cmbTurma_TextChanged);
+            this.cmbTurma.Click += new System.EventHandler(this.cmbTurma_Click);
+            // 
+            // cmbSerie
+            // 
+            this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSerie.FormattingEnabled = true;
+            this.cmbSerie.Location = new System.Drawing.Point(92, 69);
+            this.cmbSerie.Name = "cmbSerie";
+            this.cmbSerie.Size = new System.Drawing.Size(231, 21);
+            this.cmbSerie.TabIndex = 71;
+            this.cmbSerie.TextChanged += new System.EventHandler(this.cmbSerie_TextChanged);
+            this.cmbSerie.Click += new System.EventHandler(this.cmbSerie_Click);
             // 
             // btnExcluir
             // 
@@ -93,6 +118,7 @@
             this.txtCiclo.Name = "txtCiclo";
             this.txtCiclo.Size = new System.Drawing.Size(57, 20);
             this.txtCiclo.TabIndex = 12;
+            this.txtCiclo.TextChanged += new System.EventHandler(this.txtCiclo_TextChanged);
             // 
             // lblCiclo
             // 
@@ -112,14 +138,16 @@
             this.lblTurma.TabIndex = 8;
             this.lblTurma.Text = "Turma:";
             // 
-            // comboBox1
+            // cmbTurno
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(92, 116);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTurno.FormattingEnabled = true;
+            this.cmbTurno.Location = new System.Drawing.Point(92, 116);
+            this.cmbTurno.Name = "cmbTurno";
+            this.cmbTurno.Size = new System.Drawing.Size(121, 21);
+            this.cmbTurno.TabIndex = 7;
+            this.cmbTurno.TextChanged += new System.EventHandler(this.cmbTurno_TextChanged);
+            this.cmbTurno.Click += new System.EventHandler(this.cmbTurno_Click);
             // 
             // lblTurno
             // 
@@ -130,21 +158,14 @@
             this.lblTurno.TabIndex = 6;
             this.lblTurno.Text = "Turno:";
             // 
-            // txtTurma
+            // txtValor
             // 
-            this.txtTurma.Location = new System.Drawing.Point(332, 116);
-            this.txtTurma.MaxLength = 10;
-            this.txtTurma.Name = "txtTurma";
-            this.txtTurma.Size = new System.Drawing.Size(71, 20);
-            this.txtTurma.TabIndex = 5;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(92, 194);
-            this.textBox1.MaxLength = 10;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtValor.Location = new System.Drawing.Point(92, 194);
+            this.txtValor.MaxLength = 10;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(112, 20);
+            this.txtValor.TabIndex = 4;
+            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
             // lblValor
             // 
@@ -154,14 +175,6 @@
             this.lblValor.Size = new System.Drawing.Size(68, 13);
             this.lblValor.TabIndex = 3;
             this.lblValor.Text = "Valor (R$):";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(92, 69);
-            this.txtNome.MaxLength = 30;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(249, 20);
-            this.txtNome.TabIndex = 2;
             // 
             // lblSerie
             // 
@@ -206,6 +219,20 @@
             this.btnDesconectar.UseVisualStyleBackColor = false;
             this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
+            // ucMenuConfiguracoesEsquerda1
+            // 
+            this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
+            this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
+            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
+            this.ucMenuConfiguracoesEsquerda1.TabIndex = 134;
+            this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
+            this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
+            // 
             // ucMenuDireita1
             // 
             this.ucMenuDireita1.BackColor = System.Drawing.Color.Transparent;
@@ -218,16 +245,6 @@
             this.ucMenuDireita1.EventoAbrirDesconto += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaDesconto(this.ucMenuDireita1_EventoAbrirDesconto);
             this.ucMenuDireita1.EventoAbrirSerie += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaSerie(this.ucMenuDireita1_EventoAbrirSerie);
             // 
-            // ucMenuConfiguracoesEsquerda1
-            // 
-            this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
-            this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
-            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
-            this.ucMenuConfiguracoesEsquerda1.TabIndex = 134;
-            this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
-            this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
-            // 
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
@@ -235,6 +252,7 @@
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
             this.ucMenuInferior1.TabIndex = 135;
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
             // telaConfiguracoesSerie
@@ -258,9 +276,11 @@
             this.Name = "telaConfiguracoesSerie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.telaConfiguracoesSerie_Load);
             this.gpbSerie.ResumeLayout(false);
             this.gpbSerie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,12 +291,10 @@
         private System.Windows.Forms.GroupBox gpbSerie;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblSerie;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label lblValor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblTurno;
-        private System.Windows.Forms.TextBox txtTurma;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTurno;
         private System.Windows.Forms.Label lblTurma;
         private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.Button btnDesconectar;
@@ -286,5 +304,8 @@
         private GuiWindowsForms.User_Control.ucMenuDireita ucMenuDireita1;
         private GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda ucMenuConfiguracoesEsquerda1;
         private ucMenuInferior ucMenuInferior1;
+        private System.Windows.Forms.ComboBox cmbTurma;
+        private System.Windows.Forms.ComboBox cmbSerie;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
     }
 }

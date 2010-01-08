@@ -1,6 +1,6 @@
 ﻿namespace GuiWindowsForms
 {
-    partial class ckbTerca
+    partial class telaConfiguracoesAtividade
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ckbTerca));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesAtividade));
             this.gpbSerie = new System.Windows.Forms.GroupBox();
             this.ckbSabado = new System.Windows.Forms.CheckBox();
             this.ckbSexta = new System.Windows.Forms.CheckBox();
             this.ckbQuinta = new System.Windows.Forms.CheckBox();
             this.lblDiaSemana = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.ckbTerca = new System.Windows.Forms.CheckBox();
+            this.ckbSegunda = new System.Windows.Forms.CheckBox();
             this.ckbQuarta = new System.Windows.Forms.CheckBox();
             this.ckbDomingo = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTurma = new System.Windows.Forms.TextBox();
             this.lblTurma = new System.Windows.Forms.Label();
             this.dtpHorarioFim = new System.Windows.Forms.DateTimePicker();
             this.lblHorarioFim = new System.Windows.Forms.Label();
@@ -54,12 +55,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
+            this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbSerie
@@ -69,11 +72,11 @@
             this.gpbSerie.Controls.Add(this.ckbSexta);
             this.gpbSerie.Controls.Add(this.ckbQuinta);
             this.gpbSerie.Controls.Add(this.lblDiaSemana);
-            this.gpbSerie.Controls.Add(this.checkBox1);
-            this.gpbSerie.Controls.Add(this.checkBox2);
+            this.gpbSerie.Controls.Add(this.ckbTerca);
+            this.gpbSerie.Controls.Add(this.ckbSegunda);
             this.gpbSerie.Controls.Add(this.ckbQuarta);
             this.gpbSerie.Controls.Add(this.ckbDomingo);
-            this.gpbSerie.Controls.Add(this.textBox1);
+            this.gpbSerie.Controls.Add(this.txtTurma);
             this.gpbSerie.Controls.Add(this.lblTurma);
             this.gpbSerie.Controls.Add(this.dtpHorarioFim);
             this.gpbSerie.Controls.Add(this.lblHorarioFim);
@@ -98,32 +101,38 @@
             // ckbSabado
             // 
             this.ckbSabado.AutoSize = true;
+            this.ckbSabado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbSabado.Location = new System.Drawing.Point(574, 220);
             this.ckbSabado.Name = "ckbSabado";
             this.ckbSabado.Size = new System.Drawing.Size(69, 17);
             this.ckbSabado.TabIndex = 86;
             this.ckbSabado.Text = "Sábado";
             this.ckbSabado.UseVisualStyleBackColor = true;
+            this.ckbSabado.TextChanged += new System.EventHandler(this.ckbSabado_TextChanged);
             // 
             // ckbSexta
             // 
             this.ckbSexta.AutoSize = true;
+            this.ckbSexta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbSexta.Location = new System.Drawing.Point(510, 220);
             this.ckbSexta.Name = "ckbSexta";
             this.ckbSexta.Size = new System.Drawing.Size(58, 17);
             this.ckbSexta.TabIndex = 85;
             this.ckbSexta.Text = "Sexta";
             this.ckbSexta.UseVisualStyleBackColor = true;
+            this.ckbSexta.TextChanged += new System.EventHandler(this.ckbSexta_TextChanged);
             // 
             // ckbQuinta
             // 
             this.ckbQuinta.AutoSize = true;
+            this.ckbQuinta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbQuinta.Location = new System.Drawing.Point(444, 220);
             this.ckbQuinta.Name = "ckbQuinta";
             this.ckbQuinta.Size = new System.Drawing.Size(60, 17);
             this.ckbQuinta.TabIndex = 84;
             this.ckbQuinta.Text = "Quirta";
             this.ckbQuinta.UseVisualStyleBackColor = true;
+            this.ckbQuinta.TextChanged += new System.EventHandler(this.ckbQuinta_TextChanged);
             // 
             // lblDiaSemana
             // 
@@ -134,53 +143,62 @@
             this.lblDiaSemana.TabIndex = 83;
             this.lblDiaSemana.Text = "Dia da Semana:";
             // 
-            // checkBox1
+            // ckbTerca
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(302, 220);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 17);
-            this.checkBox1.TabIndex = 82;
-            this.checkBox1.Text = "Terça";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbTerca.AutoSize = true;
+            this.ckbTerca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbTerca.Location = new System.Drawing.Point(302, 220);
+            this.ckbTerca.Name = "ckbTerca";
+            this.ckbTerca.Size = new System.Drawing.Size(59, 17);
+            this.ckbTerca.TabIndex = 82;
+            this.ckbTerca.Text = "Terça";
+            this.ckbTerca.UseVisualStyleBackColor = true;
+            this.ckbTerca.TextChanged += new System.EventHandler(this.checkBox1_TextChanged);
             // 
-            // checkBox2
+            // ckbSegunda
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(220, 219);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(76, 17);
-            this.checkBox2.TabIndex = 81;
-            this.checkBox2.Text = "Segunda";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckbSegunda.AutoSize = true;
+            this.ckbSegunda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbSegunda.Location = new System.Drawing.Point(220, 219);
+            this.ckbSegunda.Name = "ckbSegunda";
+            this.ckbSegunda.Size = new System.Drawing.Size(76, 17);
+            this.ckbSegunda.TabIndex = 81;
+            this.ckbSegunda.Text = "Segunda";
+            this.ckbSegunda.UseVisualStyleBackColor = true;
+            this.ckbSegunda.TextChanged += new System.EventHandler(this.checkBox2_TextChanged);
             // 
             // ckbQuarta
             // 
             this.ckbQuarta.AutoSize = true;
+            this.ckbQuarta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbQuarta.Location = new System.Drawing.Point(374, 220);
             this.ckbQuarta.Name = "ckbQuarta";
             this.ckbQuarta.Size = new System.Drawing.Size(64, 17);
             this.ckbQuarta.TabIndex = 80;
             this.ckbQuarta.Text = "Quarta";
             this.ckbQuarta.UseVisualStyleBackColor = true;
+            this.ckbQuarta.TextChanged += new System.EventHandler(this.ckbQuarta_TextChanged);
             // 
             // ckbDomingo
             // 
             this.ckbDomingo.AutoSize = true;
+            this.ckbDomingo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbDomingo.Location = new System.Drawing.Point(139, 219);
             this.ckbDomingo.Name = "ckbDomingo";
             this.ckbDomingo.Size = new System.Drawing.Size(75, 17);
             this.ckbDomingo.TabIndex = 79;
             this.ckbDomingo.Text = "Domingo";
             this.ckbDomingo.UseVisualStyleBackColor = true;
+            this.ckbDomingo.TextChanged += new System.EventHandler(this.ckbDomingo_TextChanged);
             // 
-            // textBox1
+            // txtTurma
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 85);
-            this.textBox1.MaxLength = 10;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
-            this.textBox1.TabIndex = 78;
+            this.txtTurma.Location = new System.Drawing.Point(139, 85);
+            this.txtTurma.MaxLength = 10;
+            this.txtTurma.Name = "txtTurma";
+            this.txtTurma.Size = new System.Drawing.Size(193, 20);
+            this.txtTurma.TabIndex = 78;
+            this.txtTurma.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblTurma
             // 
@@ -193,6 +211,7 @@
             // 
             // dtpHorarioFim
             // 
+            this.dtpHorarioFim.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpHorarioFim.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHorarioFim.Location = new System.Drawing.Point(357, 124);
             this.dtpHorarioFim.Name = "dtpHorarioFim";
@@ -210,6 +229,7 @@
             // 
             // dtpHorarioInicio
             // 
+            this.dtpHorarioInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpHorarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHorarioInicio.Location = new System.Drawing.Point(139, 124);
             this.dtpHorarioInicio.Name = "dtpHorarioInicio";
@@ -236,6 +256,7 @@
             // btnAdicionarImagem
             // 
             this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
             this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarImagem.Location = new System.Drawing.Point(589, 108);
@@ -264,6 +285,7 @@
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(112, 20);
             this.txtValor.TabIndex = 4;
+            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
             // lblValor
             // 
@@ -281,6 +303,7 @@
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(330, 20);
             this.txtDescricao.TabIndex = 2;
+            this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
             // lblDescricao
             // 
@@ -303,6 +326,7 @@
             // 
             this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
             this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
+            this.btnDesconectar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
@@ -325,9 +349,25 @@
             this.lblHelloUsuario.TabIndex = 95;
             this.lblHelloUsuario.Text = "Hello Usuário!";
             // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
+            // ucMenuConfiguracoesEsquerda1
+            // 
+            this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuConfiguracoesEsquerda1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
+            this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
+            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
+            this.ucMenuConfiguracoesEsquerda1.TabIndex = 108;
+            this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
+            this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
+            // 
             // ucMenuDireita1
             // 
             this.ucMenuDireita1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuDireita1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucMenuDireita1.Location = new System.Drawing.Point(893, 175);
             this.ucMenuDireita1.Name = "ucMenuDireita1";
             this.ucMenuDireita1.Size = new System.Drawing.Size(120, 493);
@@ -337,26 +377,18 @@
             this.ucMenuDireita1.EventoAbrirDesconto += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaDesconto(this.ucMenuDireita1_EventoAbrirDesconto);
             this.ucMenuDireita1.EventoAbrirSerie += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaSerie(this.ucMenuDireita1_EventoAbrirSerie);
             // 
-            // ucMenuConfiguracoesEsquerda1
-            // 
-            this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
-            this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
-            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
-            this.ucMenuConfiguracoesEsquerda1.TabIndex = 108;
-            this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
-            this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
-            // 
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuInferior1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
             this.ucMenuInferior1.TabIndex = 109;
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
-            // ckbTerca
+            // telaConfiguracoesAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -371,15 +403,18 @@
             this.Controls.Add(this.ucMenuInferior1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ckbTerca";
+            this.Name = "telaConfiguracoesAtividade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.ckbTerca_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoesAtividades_FormClosing);
             this.gpbSerie.ResumeLayout(false);
             this.gpbSerie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,18 +437,19 @@
         private System.Windows.Forms.DateTimePicker dtpHorarioFim;
         private System.Windows.Forms.Label lblHorarioFim;
         private System.Windows.Forms.DateTimePicker dtpHorarioInicio;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTurma;
         private System.Windows.Forms.Label lblTurma;
         private System.Windows.Forms.CheckBox ckbQuarta;
         private System.Windows.Forms.CheckBox ckbDomingo;
         private System.Windows.Forms.Label lblDiaSemana;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox ckbTerca;
+        private System.Windows.Forms.CheckBox ckbSegunda;
         private System.Windows.Forms.CheckBox ckbSabado;
         private System.Windows.Forms.CheckBox ckbSexta;
         private System.Windows.Forms.CheckBox ckbQuinta;
         private GuiWindowsForms.User_Control.ucMenuDireita ucMenuDireita1;
         private GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda ucMenuConfiguracoesEsquerda1;
         private ucMenuInferior ucMenuInferior1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
     }
 }
