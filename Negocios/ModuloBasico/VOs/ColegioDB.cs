@@ -834,7 +834,7 @@ public partial class Aluno : INotifyPropertyChanged
         {
             if (value != _edificio)
             {
-                _dificio = value;
+                _edificio = value;
                 OnPropertyChanged("Edificio");
             }
         }
@@ -3707,7 +3707,7 @@ public partial class Funcionario : INotifyPropertyChanged
         {
             if (value != _edificio)
             {
-                _dificio = value;
+                _edificio = value;
                 OnPropertyChanged("Edificio");
             }
         }
@@ -5594,7 +5594,7 @@ public partial class Responsavel : INotifyPropertyChanged
         {
             if (value != _edificio)
             {
-                _dificio = value;
+                _edificio = value;
                 OnPropertyChanged("Edificio");
             }
         }
