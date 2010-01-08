@@ -195,6 +195,9 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        #region SELECIONA O CHECKBOX 
+        //seleciona o checkbox visualização correspondente quando é selecionado
+        //o checkbox alteração
         private void ckbAlteracaoAluno_Click(object sender, EventArgs e)
         {
             ckbVisualizacaoAluno.Checked = true;
@@ -214,5 +217,123 @@ namespace GuiWindowsForms
         {
             ckbAlteracaoSerie.Checked = true;
         }
+
+        private void ckbAlteracaoTurno_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoTurno.Checked = true;
+        }
+
+        private void ckbAlteracaoRemanejamento_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoRemanejamento.Checked = true;
+        }
+
+        private void ckbAlteracaoNotas_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoNotas.Checked = true;
+        }
+
+        private void ckbAlteracaoMensalidades_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoMensalidades.Checked = true;
+        }
+
+        private void ckbAlteracaoAtividades_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoAtividades.Checked = true;
+        }
+
+        private void ckbAlteracaoContasPagar_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoContasPagar.Checked = true;
+        }
+
+        private void ckbAlteracaoFinanceiro_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoFinanceiro.Checked = true;
+        }
+
+        private void ckbAlteracaoBoletim_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoBoletim.Checked = true;
+        }
+
+        private void ckbAlteracaoGre_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoGre.Checked = true;
+        }
+
+        private void ckbAlteracaoDebitos_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoDebitos.Checked = true;
+        }
+
+        private void ckbAlteracaoCheques_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoCheques.Checked = true;
+        }
+
+        private void ckbAlteracaoHistorico_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoHistorico.Checked = true;
+        }
+
+        private void ckbAlteracaoCertificado_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoCertificado.Checked = true;
+        }
+
+        private void ckbAlteracaoAniver_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoAniver.Checked = true;
+        }
+
+        private void ckbAlteracaoDeclaQuitacao_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoDeclaQuitacao.Checked = true;
+        }
+
+        private void ckbAlteracaoFolhaPonto_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoFolhaPonto.Checked = true;
+        }
+
+        private void ckbAlteracaoFreqFuncionario_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoFreqFuncionario.Checked = true;
+        }
+
+        private void ckbAlteracaoEnviarEmail_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoEnviarEmail.Checked = true;
+        }
+
+        private void ckbAlteracaFreqAlunos_Click(object sender, EventArgs e)
+        {
+            ckbVisualizacaoFreqAlunos.Checked = true;
+        }
+
+        private void ckbAlteracaoRankingNotas_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoRankingNotas.Checked = true;
+        }
+
+        private void ckbAlteracaoAdvertAtraso_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoAdvertAtraso.Checked = true;
+        }
+
+        private void ckbAlteracaoAnotacoes_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoAnotacoes.Checked = true;
+        }
+
+        private void ckbAlteracaoFolhaCham_Click(object sender, EventArgs e)
+        {
+            ckbAlteracaoFolhaCham.Checked = true;
+        }
+
+        #endregion
+
     }
 }

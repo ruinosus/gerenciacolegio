@@ -11,7 +11,7 @@ namespace GuiWindowsForms
 {
     public partial class telaConfiguracoes : Form
     {
-
+        #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
@@ -21,6 +21,9 @@ namespace GuiWindowsForms
 
         private static bool IsShown = false;
 
+        #endregion
+
+        #region INSTANCIA TELA CONFIGURAÇÕES 
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
         /// </summary>
@@ -34,7 +37,9 @@ namespace GuiWindowsForms
             }
             return telaconfiguracoes;
         }
+        #endregion
 
+        #region CONSTRUTOR
         /// <summary>
         /// Construtor da tela
         /// </summary>
@@ -43,9 +48,12 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region  MÉTODO PARA VERIFICAR USO DA TELA
         /// <summary>
-        /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
+        /// Método para verificar se a tela já esta sendo exibida ou não, 
+        /// evita que a tela seja descarregada da memória
         /// </summary>
 
         public new void Show()
@@ -60,7 +68,9 @@ namespace GuiWindowsForms
 
             //return SelecionaForm(aux);
         }
+        #endregion
 
+        #region  BUTTON DESCONECTAR
         /// <summary>
         /// Botão para esconder a tela e voltar para a tela de login
         /// </summary>
@@ -74,10 +84,12 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
 
+        #region MÉTODO PARA FECHAR A TELA
         /// <summary>
-        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
-        /// pelo singleton
+        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, 
+        /// garantindo a usabilidade da tela pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
         /// <param name="e">Cancela seu fechamento, permite só que seja ocultada</param>
@@ -91,6 +103,7 @@ namespace GuiWindowsForms
             Program.ultimaTela = 6;
             Program.SelecionaForm(Program.ultimaTela);
         }
+        #endregion
 
         #region Controle dos textos e das ações dos botões de ação inferiores
 
@@ -133,6 +146,7 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region USER CONTROLS - MENU ESQUERDA
         private void ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso()
         {
             this.Hide();
@@ -141,6 +155,13 @@ namespace GuiWindowsForms
             telaconfacesso.Show();
         }
 
+        private void ucMenuConfiguracoesEsquerda1_Load(object sender, EventArgs e)
+        {
+            ucMenuConfiguracoesEsquerda1.verificaTela(telaconfiguracoes);
+        }
+        #endregion
+
+        #region USER CONTROLS - MENU DIREITO
         private void ucMenuDireita1_EventoAbrirSerie()
         {
             this.Hide();
@@ -165,19 +186,18 @@ namespace GuiWindowsForms
             telaconfdesconto.Show();
         }
 
-        private void ucMenuConfiguracoesEsquerda1_Load(object sender, EventArgs e)
-        {
-            ucMenuConfiguracoesEsquerda1.verificaTela(telaconfiguracoes);
-        }
-
         private void ucMenuDireita1_Load(object sender, EventArgs e)
         {
             ucMenuDireita1.verificaTela(telaconfiguracoes);
         }
+        #endregion
 
+        #region LOAD
+        private void telaConfiguracoes_Load(object sender, EventArgs e)
+        {
 
-
-
+        }
+        #endregion
 
 
     }

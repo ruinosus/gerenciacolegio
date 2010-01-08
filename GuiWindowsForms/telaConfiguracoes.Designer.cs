@@ -137,6 +137,7 @@
             this.Name = "telaConfiguracoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.telaConfiguracoes_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoes_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

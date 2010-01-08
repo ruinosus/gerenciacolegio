@@ -11,6 +11,7 @@ namespace GuiWindowsForms
 {
     public partial class telaFinanceiro : Form
     {
+        #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
@@ -19,7 +20,9 @@ namespace GuiWindowsForms
         private static telaFinanceiro telaafinanceiro;
 
         private static bool IsShown = false;
+        #endregion
 
+        #region INSTANCIA TELA FINANCEIRO
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
         /// </summary>
@@ -33,7 +36,9 @@ namespace GuiWindowsForms
             }
             return telaafinanceiro;
         }
+        #endregion
 
+        #region CONSTRUTOR
         /// <summary>
         /// Construtor da tela
         /// </summary>
@@ -42,9 +47,12 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region MÉTODO PARA VERIFICAR USO DA TELA
         /// <summary>
-        /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
+        /// Método para verificar se a tela já esta sendo exibida ou não, 
+        /// evita que a tela seja descarregada da memória
         /// </summary>
 
         public new void Show()
@@ -59,7 +67,9 @@ namespace GuiWindowsForms
 
             //return SelecionaForm(aux);
         }
+        #endregion 
 
+        #region  BUTTON DESCONECTAR
         /// <summary>
         /// Botão para esconder a tela e voltar para a tela de login
         /// </summary>
@@ -73,9 +83,12 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
 
+        #region  MÉTODO PARA FECHAR A TELA
         /// <summary>
-        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
+        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde,
+        /// garantindo a usabilidade da tela
         /// pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
@@ -97,7 +110,9 @@ namespace GuiWindowsForms
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
+        #endregion
 
+        #region BUTTON IMPIRMIR
         private void btnImprimir_MouseEnter(object sender, EventArgs e)
         {
             this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_impressora_51x53_hover;
@@ -107,16 +122,19 @@ namespace GuiWindowsForms
         {
             this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_impressora_51x53;
         }
+        #endregion
 
+        #region BUTTON PESQUISAR
         private void btnPesquisar_MouseEnter(object sender, EventArgs e)
         {
             this.btnPesquisar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_busca_73x75_hover;
         }
-
+       
         private void btnPesquisar_MouseLeave(object sender, EventArgs e)
         {
             this.btnPesquisar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_busca_73x75;
         }
+        #endregion
 
         #region USER CONTROLS - Controle Inferior - Botões de Navegação
 

@@ -11,7 +11,7 @@ namespace GuiWindowsForms
 {
     public partial class telaAlunoPrincipal : Form
     {
-
+        #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
@@ -22,8 +22,12 @@ namespace GuiWindowsForms
 
         private static bool IsShown = false;
 
+        #endregion
+
+        #region INSTANCIA TELA ALUNO RESPONSAVEL
         /// <summary>
-        /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
+        /// Padrão Singleton, verifica se a instância já esta em uso. 
+        /// Evita abertura de múltiplas instâncias
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
 
@@ -35,9 +39,11 @@ namespace GuiWindowsForms
             }
             return telaalunoprincipal;
 
-          
+
         }
-        
+        #endregion
+
+        #region CONSTRUTOR
         /// <summary>
         /// Construtor da tela
         /// </summary>
@@ -46,9 +52,12 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region INSTANCIA TELA ALUNO PRINCIPAL
         /// <summary>
-        /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
+        /// Método para verificar se a tela já esta sendo exibida ou não, 
+        /// evita que a tela seja descarregada da memória
         /// </summary>
 
         public new void Show()
@@ -61,7 +70,9 @@ namespace GuiWindowsForms
                 IsShown = true;
             }
         }
+        #endregion
 
+        #region BUTTON CADASTRAR ALUNO
         /// <summary>
         /// Fecha a tela ativa e exibe a tela de responsáveis
         /// </summary>
@@ -75,9 +86,12 @@ namespace GuiWindowsForms
             telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
             telaalunoresponsavel.Show();
         }
+        #endregion
 
+        #region MÉTODO PARA FECHAR A TELA
         /// <summary>
-        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
+        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, 
+        /// garantindo a usabilidade da tela
         /// pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
@@ -99,6 +113,7 @@ namespace GuiWindowsForms
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
+        #endregion
 
         #region Mudança de cores das textboxes e outros controles
 
@@ -126,6 +141,7 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region BUTTON DESCONECTAR
         /// <summary>
         /// Botão para esconder a tela e voltar para a tela de login
         /// </summary>
@@ -139,6 +155,7 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
 
         #region Controle de mudança das figuras e exibição dos textos das mesmas
 
@@ -244,7 +261,7 @@ namespace GuiWindowsForms
 
         #endregion
 
-        
+        #region BUTTON PESQUISAR
         /// <summary>
         /// Conforme o botão clidado, será realizada uma pesquisa específica a ser exibida em um datagrid
         /// algumas validações serão exigidas para tal
@@ -278,7 +295,9 @@ namespace GuiWindowsForms
                 lblErro.Text = ex.Message;
             }
         }
+        #endregion
 
+        #region BUTTON CONFIGURAÇÕES
         private void btnConfiguracoes_Click(object sender, EventArgs e)
         {
             btnCadastrarAluno.Visible = false;
@@ -288,19 +307,25 @@ namespace GuiWindowsForms
             telaConfiguracoes telaconfiguracoes = telaConfiguracoes.getInstancia();
             telaconfiguracoes.Show();
         }
+        #endregion
 
+        #region BUTTON ALUNO
         private void btnAluno_Click(object sender, EventArgs e)
         {
             btnCadastrarFuncionario.Visible = false;
             btnCadastrarAluno.Visible = true;
         }
+        #endregion
 
+        #region BUTTON FUNCIONARIO
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
             btnCadastrarAluno.Visible = false;
             btnCadastrarFuncionario.Visible = true;
         }
+        #endregion
 
+        #region BUTTON FINANCEIRO
         private void btnFinanceiro_Click(object sender, EventArgs e)
         {
             btnCadastrarAluno.Visible = false;
@@ -310,7 +335,9 @@ namespace GuiWindowsForms
             telaFinanceiro telafinanceiro = telaFinanceiro.getInstancia();
             telafinanceiro.Show();
         }
+        #endregion
 
+        #region BUTTON CADASTRAR FUNCIONARIO
         private void btnCadastrarFuncionario_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -318,6 +345,7 @@ namespace GuiWindowsForms
             telaFuncionario telafuncionario = telaFuncionario.getInstancia();
             telafuncionario.Show();
         }
+        #endregion
 
     }
 }

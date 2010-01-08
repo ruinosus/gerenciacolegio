@@ -233,6 +233,7 @@
             this.ckbAlteracaoDebitos.TabIndex = 81;
             this.ckbAlteracaoDebitos.Text = "Alteração";
             this.ckbAlteracaoDebitos.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoDebitos.Click += new System.EventHandler(this.ckbAlteracaoDebitos_Click);
             // 
             // ckbVisualizacaoDebitos
             // 
@@ -271,6 +272,7 @@
             this.ckbAlteracaoFolhaCham.TabIndex = 77;
             this.ckbAlteracaoFolhaCham.Text = "Alteração";
             this.ckbAlteracaoFolhaCham.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoFolhaCham.Click += new System.EventHandler(this.ckbAlteracaoFolhaCham_Click);
             // 
             // ckbVisualizacaoFolhaCham
             // 
@@ -291,6 +293,7 @@
             this.ckbAlteracaoAnotacoes.TabIndex = 75;
             this.ckbAlteracaoAnotacoes.Text = "Alteração";
             this.ckbAlteracaoAnotacoes.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoAnotacoes.Click += new System.EventHandler(this.ckbAlteracaoAnotacoes_Click);
             // 
             // ckbVisualizacaoAnotacoes
             // 
@@ -329,6 +332,7 @@
             this.ckbAlteracaoGre.TabIndex = 71;
             this.ckbAlteracaoGre.Text = "Alteração";
             this.ckbAlteracaoGre.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoGre.Click += new System.EventHandler(this.ckbAlteracaoGre_Click);
             // 
             // ckbVisualizacaoGre
             // 
@@ -349,6 +353,7 @@
             this.ckbAlteracaoBoletim.TabIndex = 69;
             this.ckbAlteracaoBoletim.Text = "Alteração";
             this.ckbAlteracaoBoletim.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoBoletim.Click += new System.EventHandler(this.ckbAlteracaoBoletim_Click);
             // 
             // ckbVisualizacaoBoletim
             // 
@@ -387,6 +392,7 @@
             this.ckbAlteracaoAdvertAtraso.TabIndex = 65;
             this.ckbAlteracaoAdvertAtraso.Text = "Alteração";
             this.ckbAlteracaoAdvertAtraso.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoAdvertAtraso.Click += new System.EventHandler(this.ckbAlteracaoAdvertAtraso_Click);
             // 
             // ckbVisualizacaoAdvertAtraso
             // 
@@ -407,6 +413,7 @@
             this.ckbAlteracaoRankingNotas.TabIndex = 63;
             this.ckbAlteracaoRankingNotas.Text = "Alteração";
             this.ckbAlteracaoRankingNotas.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoRankingNotas.Click += new System.EventHandler(this.ckbAlteracaoRankingNotas_Click);
             // 
             // ckbVisualizacaoRankingNotas
             // 
@@ -427,6 +434,7 @@
             this.ckbAlteracaFreqAlunos.TabIndex = 61;
             this.ckbAlteracaFreqAlunos.Text = "Alteração";
             this.ckbAlteracaFreqAlunos.UseVisualStyleBackColor = true;
+            this.ckbAlteracaFreqAlunos.Click += new System.EventHandler(this.ckbAlteracaFreqAlunos_Click);
             // 
             // ckbVisualizacaoFreqAlunos
             // 
@@ -510,6 +518,7 @@
             this.ckbAlteracaoEnviarEmail.TabIndex = 52;
             this.ckbAlteracaoEnviarEmail.Text = "Alteração";
             this.ckbAlteracaoEnviarEmail.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoEnviarEmail.Click += new System.EventHandler(this.ckbAlteracaoEnviarEmail_Click);
             // 
             // ckbVisualizacaoEnviarEmail
             // 
@@ -530,6 +539,7 @@
             this.ckbAlteracaoFreqFuncionario.TabIndex = 50;
             this.ckbAlteracaoFreqFuncionario.Text = "Alteração";
             this.ckbAlteracaoFreqFuncionario.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoFreqFuncionario.Click += new System.EventHandler(this.ckbAlteracaoFreqFuncionario_Click);
             // 
             // ckbVisualizacaoFreqFuncionario
             // 
@@ -550,6 +560,7 @@
             this.ckbAlteracaoFolhaPonto.TabIndex = 48;
             this.ckbAlteracaoFolhaPonto.Text = "Alteração";
             this.ckbAlteracaoFolhaPonto.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoFolhaPonto.Click += new System.EventHandler(this.ckbAlteracaoFolhaPonto_Click);
             // 
             // ckbVisualizacaoFolhaPonto
             // 
@@ -570,6 +581,7 @@
             this.ckbAlteracaoDeclaQuitacao.TabIndex = 46;
             this.ckbAlteracaoDeclaQuitacao.Text = "Alteração";
             this.ckbAlteracaoDeclaQuitacao.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoDeclaQuitacao.Click += new System.EventHandler(this.ckbAlteracaoDeclaQuitacao_Click);
             // 
             // ckbVisuaDeclaQuitacao
             // 
@@ -590,6 +602,7 @@
             this.ckbAlteracaoAniver.TabIndex = 44;
             this.ckbAlteracaoAniver.Text = "Alteração";
             this.ckbAlteracaoAniver.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoAniver.Click += new System.EventHandler(this.ckbAlteracaoAniver_Click);
             // 
             // ckbVisualizacaoAniver
             // 
@@ -610,6 +623,7 @@
             this.ckbAlteracaoCertificado.TabIndex = 42;
             this.ckbAlteracaoCertificado.Text = "Alteração";
             this.ckbAlteracaoCertificado.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoCertificado.Click += new System.EventHandler(this.ckbAlteracaoCertificado_Click);
             // 
             // ckbVisualizacaoCertificado
             // 
@@ -630,6 +644,7 @@
             this.ckbAlteracaoHistorico.TabIndex = 40;
             this.ckbAlteracaoHistorico.Text = "Alteração";
             this.ckbAlteracaoHistorico.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoHistorico.Click += new System.EventHandler(this.ckbAlteracaoHistorico_Click);
             // 
             // ckbVisualizacaoHistorico
             // 
@@ -659,6 +674,7 @@
             this.ckbAlteracaoCheques.TabIndex = 37;
             this.ckbAlteracaoCheques.Text = "Alteração";
             this.ckbAlteracaoCheques.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoCheques.Click += new System.EventHandler(this.ckbAlteracaoCheques_Click);
             // 
             // ckbVisualizacaoCheques
             // 
@@ -706,6 +722,7 @@
             this.ckbAlteracaoFinanceiro.TabIndex = 32;
             this.ckbAlteracaoFinanceiro.Text = "Alteração";
             this.ckbAlteracaoFinanceiro.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoFinanceiro.Click += new System.EventHandler(this.ckbAlteracaoFinanceiro_Click);
             // 
             // ckbVisualizacaoFinanceiro
             // 
@@ -726,6 +743,7 @@
             this.ckbAlteracaoContasPagar.TabIndex = 30;
             this.ckbAlteracaoContasPagar.Text = "Alteração";
             this.ckbAlteracaoContasPagar.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoContasPagar.Click += new System.EventHandler(this.ckbAlteracaoContasPagar_Click);
             // 
             // ckbVisualizacaoContasPagar
             // 
@@ -746,6 +764,7 @@
             this.ckbAlteracaoAtividades.TabIndex = 28;
             this.ckbAlteracaoAtividades.Text = "Alteração";
             this.ckbAlteracaoAtividades.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoAtividades.Click += new System.EventHandler(this.ckbAlteracaoAtividades_Click);
             // 
             // ckbVisualizacaoAtividades
             // 
@@ -829,6 +848,7 @@
             this.ckbAlteracaoMensalidades.TabIndex = 19;
             this.ckbAlteracaoMensalidades.Text = "Alteração";
             this.ckbAlteracaoMensalidades.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoMensalidades.Click += new System.EventHandler(this.ckbAlteracaoMensalidades_Click);
             // 
             // ckbVisualizacaoMensalidades
             // 
@@ -849,6 +869,7 @@
             this.ckbAlteracaoNotas.TabIndex = 17;
             this.ckbAlteracaoNotas.Text = "Alteração";
             this.ckbAlteracaoNotas.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoNotas.Click += new System.EventHandler(this.ckbAlteracaoNotas_Click);
             // 
             // ckbVisualizacaoNotas
             // 
@@ -869,6 +890,7 @@
             this.ckbAlteracaoRemanejamento.TabIndex = 15;
             this.ckbAlteracaoRemanejamento.Text = "Alteração";
             this.ckbAlteracaoRemanejamento.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoRemanejamento.Click += new System.EventHandler(this.ckbAlteracaoRemanejamento_Click);
             // 
             // ckbVisualizacaoRemanejamento
             // 
@@ -889,6 +911,7 @@
             this.ckbAlteracaoTurno.TabIndex = 13;
             this.ckbAlteracaoTurno.Text = "Alteração";
             this.ckbAlteracaoTurno.UseVisualStyleBackColor = true;
+            this.ckbAlteracaoTurno.Click += new System.EventHandler(this.ckbAlteracaoTurno_Click);
             // 
             // ckbVisualizacaoTurno
             // 
