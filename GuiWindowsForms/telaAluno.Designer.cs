@@ -29,8 +29,6 @@ namespace GuiWindowsForms
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAluno));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
@@ -77,6 +75,9 @@ namespace GuiWindowsForms
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
+            this.gpbDadosPessoais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
+            this.SuspendLayout();
             // 
             // gpbDadosPessoais
             // 
@@ -304,7 +305,7 @@ namespace GuiWindowsForms
             this.txtLogradouro.Size = new System.Drawing.Size(312, 20);
             this.txtLogradouro.TabIndex = 8;
             this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
-            this.txtLogradouro.Leave += new System.EventHandler(this.txtComplemento_Leave);
+            this.txtLogradouro.Leave += new System.EventHandler(this.txtLogradouro_Leave);
             this.txtLogradouro.Enter += new System.EventHandler(this.txtLogradouro_Enter);
             // 
             // label3
@@ -894,7 +895,7 @@ namespace GuiWindowsForms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAluno_FormClosing);
-            this.gpbDadosPessoais.ResumeLayout(true);
+            this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);

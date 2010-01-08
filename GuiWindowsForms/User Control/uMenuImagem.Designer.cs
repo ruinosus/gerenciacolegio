@@ -31,11 +31,12 @@
             this.lblAtivo = new System.Windows.Forms.Label();
             this.lblFoneEmerg = new System.Windows.Forms.Label();
             this.lblResponsavel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblSerie = new System.Windows.Forms.Label();
             this.lblMatricula = new System.Windows.Forms.Label();
             this.lblNomeAluno = new System.Windows.Forms.Label();
             this.pctImagem = new System.Windows.Forms.PictureBox();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,17 +76,17 @@
             this.lblResponsavel.TabIndex = 134;
             this.lblResponsavel.Text = "Nome Responsável";
             // 
-            // label2
+            // lblSerie
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Yellow;
-            this.label2.Location = new System.Drawing.Point(149, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 19);
-            this.label2.TabIndex = 133;
-            this.label2.Text = "Série";
+            this.lblSerie.AutoSize = true;
+            this.lblSerie.BackColor = System.Drawing.Color.Transparent;
+            this.lblSerie.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
+            this.lblSerie.ForeColor = System.Drawing.Color.Yellow;
+            this.lblSerie.Location = new System.Drawing.Point(149, 75);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(48, 19);
+            this.lblSerie.TabIndex = 133;
+            this.lblSerie.Text = "Série";
             // 
             // lblMatricula
             // 
@@ -136,6 +137,10 @@
             this.btnAdicionarImagem.UseVisualStyleBackColor = false;
             this.btnAdicionarImagem.Click += new System.EventHandler(this.btnAdicionarImagem_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // uMenuImagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,7 +149,7 @@
             this.Controls.Add(this.lblAtivo);
             this.Controls.Add(this.lblFoneEmerg);
             this.Controls.Add(this.lblResponsavel);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSerie);
             this.Controls.Add(this.lblMatricula);
             this.Controls.Add(this.lblNomeAluno);
             this.Controls.Add(this.pctImagem);
@@ -162,10 +167,11 @@
         private System.Windows.Forms.Label lblAtivo;
         private System.Windows.Forms.Label lblFoneEmerg;
         private System.Windows.Forms.Label lblResponsavel;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.Label lblMatricula;
         private System.Windows.Forms.Label lblNomeAluno;
         private System.Windows.Forms.PictureBox pctImagem;
         private System.Windows.Forms.Button btnAdicionarImagem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
