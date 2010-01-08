@@ -27,7 +27,7 @@ namespace Negocios.ModuloAlunoAtividade.Repositorios
         public List<AlunoAtividade> Consultar(AlunoAtividade alunoAtividade, TipoPesquisa tipoPesquisa)
         {
             List<AlunoAtividade> resultado = Consultar();
-
+            bool pesquisa = false;
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -35,46 +35,97 @@ namespace Negocios.ModuloAlunoAtividade.Repositorios
                     {
                         if (alunoAtividade.ID != 0)
                         {
-                            resultado.AddRange((from aa in resultado
-                                                where
-                                                aa.ID == alunoAtividade.ID
-                                                select aa).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from aa in resultado
+                                                    where
+                                                    aa.ID == alunoAtividade.ID
+                                                    select aa).ToList());
+                            }
+                            else {
+                                resultado=((from aa in resultado
+                                                    where
+                                                    aa.ID == alunoAtividade.ID
+                                                    select aa).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (alunoAtividade.AlunoID!= 0)
                         {
-                            resultado.AddRange((from aa in resultado
-                                                where
-                                                aa.AlunoID == alunoAtividade.AlunoID
-                                                select aa).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from aa in resultado
+                                                    where
+                                                    aa.AlunoID == alunoAtividade.AlunoID
+                                                    select aa).ToList());
+                            }
+                            else {
+                                resultado=((from aa in resultado
+                                                    where
+                                                    aa.AlunoID == alunoAtividade.AlunoID
+                                                    select aa).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (alunoAtividade.AtividadeID != 0)
                         {
-                            resultado.AddRange((from aa in resultado
-                                                where
-                                                aa.AtividadeID == alunoAtividade.AtividadeID
-                                                select aa).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from aa in resultado
+                                                    where
+                                                    aa.AtividadeID == alunoAtividade.AtividadeID
+                                                    select aa).ToList());
+                            }
+                            else {
+                                resultado=((from aa in resultado
+                                                    where
+                                                    aa.AtividadeID == alunoAtividade.AtividadeID
+                                                    select aa).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (alunoAtividade.DescontoID != 0)
                         {
-                            resultado.AddRange((from aa in resultado
-                                                where
-                                                aa.DescontoID == alunoAtividade.DescontoID
-                                                select aa).ToList());
+
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from aa in resultado
+                                                    where
+                                                    aa.DescontoID == alunoAtividade.DescontoID
+                                                    select aa).ToList());
+                            }
+                            else {
+                                resultado=((from aa in resultado
+                                                    where
+                                                    aa.DescontoID == alunoAtividade.DescontoID
+                                                    select aa).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (alunoAtividade.Status.HasValue)
                         {
-                            resultado.AddRange((from aa in resultado
-                                                where
-                                                aa.Status.HasValue && aa.Status.Value == alunoAtividade.Status.Value
-                                                select aa).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from aa in resultado
+                                                    where
+                                                    aa.Status.HasValue && aa.Status.Value == alunoAtividade.Status.Value
+                                                    select aa).ToList());
+                            }
+                            else {
+                                resultado=((from aa in resultado
+                                                    where
+                                                    aa.Status.HasValue && aa.Status.Value == alunoAtividade.Status.Value
+                                                    select aa).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -87,48 +138,105 @@ namespace Negocios.ModuloAlunoAtividade.Repositorios
                     {
                         if (alunoAtividade.ID != 0)
                         {
-                            resultado.AddRange((from aa in Consultar()
-                                                where
-                                                aa.ID == alunoAtividade.ID
-                                                select aa).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from aa in Consultar()
+                                                    where
+                                                    aa.ID == alunoAtividade.ID
+                                                    select aa).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from aa in Consultar()
+                                              where
+                                              aa.ID == alunoAtividade.ID
+                                              select aa).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (alunoAtividade.AlunoID != 0)
                         {
-                            resultado.AddRange((from aa in Consultar()
-                                                where
-                                                aa.AlunoID == alunoAtividade.AlunoID
-                                                select aa).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from aa in Consultar()
+                                                    where
+                                                    aa.AlunoID == alunoAtividade.AlunoID
+                                                    select aa).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from aa in Consultar()
+                                              where
+                                              aa.AlunoID == alunoAtividade.AlunoID
+                                              select aa).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (alunoAtividade.AtividadeID != 0)
                         {
-                            resultado.AddRange((from aa in Consultar()
-                                                where
-                                                aa.AtividadeID == alunoAtividade.AtividadeID
-                                                select aa).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from aa in Consultar()
+                                                    where
+                                                    aa.AtividadeID == alunoAtividade.AtividadeID
+                                                    select aa).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from aa in Consultar()
+                                              where
+                                              aa.AtividadeID == alunoAtividade.AtividadeID
+                                              select aa).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (alunoAtividade.DescontoID != 0)
                         {
-                            resultado.AddRange((from aa in Consultar()
-                                                where
-                                                aa.DescontoID == alunoAtividade.DescontoID
-                                                select aa).ToList());
+
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from aa in Consultar()
+                                                    where
+                                                    aa.DescontoID == alunoAtividade.DescontoID
+                                                    select aa).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from aa in Consultar()
+                                              where
+                                              aa.DescontoID == alunoAtividade.DescontoID
+                                              select aa).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (alunoAtividade.Status.HasValue)
                         {
-                            resultado.AddRange((from aa in Consultar()
-                                                where
-                                                aa.Status.HasValue && aa.Status.Value == alunoAtividade.Status.Value
-                                                select aa).ToList());
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from aa in Consultar()
+                                                    where
+                                                    aa.Status.HasValue && aa.Status.Value == alunoAtividade.Status.Value
+                                                    select aa).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from aa in Consultar()
+                                              where
+                                              aa.Status.HasValue && aa.Status.Value == alunoAtividade.Status.Value
+                                              select aa).ToList());
+                            }
+                            pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
+
 
                         break;
                     }
