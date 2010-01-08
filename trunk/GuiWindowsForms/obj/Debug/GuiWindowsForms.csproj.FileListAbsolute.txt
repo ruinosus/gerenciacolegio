@@ -233,3 +233,9 @@ C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.dll
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\bin\Debug\DbLinq.pdb
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\bin\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.pdb
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\Negocios.dll
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\DbLinq.dll
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.dll
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\DbLinq.pdb
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\Negocios.pdb
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.pdb

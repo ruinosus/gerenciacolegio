@@ -721,6 +721,8 @@ namespace GuiWindowsForms
 
                 aluno.PerfilID = 1;
 
+                aluno = uMenuImagem1.retornaAluno(aluno);
+
                 alunoControlador.Incluir(aluno);
                 alunoControlador.Confirmar();
 
@@ -779,6 +781,9 @@ namespace GuiWindowsForms
         private void uMenuImagem1_Load(object sender, EventArgs e)
         {
             cmbUf.DataSource = estados;
+            //aluno.ID = 7;
+            //aluno = alunoControlador.Consultar(aluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            //uMenuImagem1.carregaAluno(aluno);
         }
 
         #endregion
@@ -869,6 +874,8 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
         #endregion
+
+
 
     }
 }
