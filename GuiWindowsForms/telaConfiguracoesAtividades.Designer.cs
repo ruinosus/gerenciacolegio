@@ -59,6 +59,8 @@
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.lblNomeFuncionario = new System.Windows.Forms.Label();
+            this.cmbFuncionario = new System.Windows.Forms.ComboBox();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,7 +70,9 @@
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
+            this.gpbSerie.Controls.Add(this.lblNomeFuncionario);
             this.gpbSerie.Controls.Add(this.ckbSabado);
+            this.gpbSerie.Controls.Add(this.cmbFuncionario);
             this.gpbSerie.Controls.Add(this.ckbSexta);
             this.gpbSerie.Controls.Add(this.ckbQuinta);
             this.gpbSerie.Controls.Add(this.lblDiaSemana);
@@ -102,7 +106,7 @@
             // 
             this.ckbSabado.AutoSize = true;
             this.ckbSabado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbSabado.Location = new System.Drawing.Point(574, 220);
+            this.ckbSabado.Location = new System.Drawing.Point(574, 253);
             this.ckbSabado.Name = "ckbSabado";
             this.ckbSabado.Size = new System.Drawing.Size(69, 17);
             this.ckbSabado.TabIndex = 86;
@@ -114,7 +118,7 @@
             // 
             this.ckbSexta.AutoSize = true;
             this.ckbSexta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbSexta.Location = new System.Drawing.Point(510, 220);
+            this.ckbSexta.Location = new System.Drawing.Point(510, 253);
             this.ckbSexta.Name = "ckbSexta";
             this.ckbSexta.Size = new System.Drawing.Size(58, 17);
             this.ckbSexta.TabIndex = 85;
@@ -126,7 +130,7 @@
             // 
             this.ckbQuinta.AutoSize = true;
             this.ckbQuinta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbQuinta.Location = new System.Drawing.Point(444, 220);
+            this.ckbQuinta.Location = new System.Drawing.Point(444, 253);
             this.ckbQuinta.Name = "ckbQuinta";
             this.ckbQuinta.Size = new System.Drawing.Size(60, 17);
             this.ckbQuinta.TabIndex = 84;
@@ -137,7 +141,7 @@
             // lblDiaSemana
             // 
             this.lblDiaSemana.AutoSize = true;
-            this.lblDiaSemana.Location = new System.Drawing.Point(21, 215);
+            this.lblDiaSemana.Location = new System.Drawing.Point(21, 252);
             this.lblDiaSemana.Name = "lblDiaSemana";
             this.lblDiaSemana.Size = new System.Drawing.Size(97, 13);
             this.lblDiaSemana.TabIndex = 83;
@@ -147,7 +151,7 @@
             // 
             this.ckbTerca.AutoSize = true;
             this.ckbTerca.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbTerca.Location = new System.Drawing.Point(302, 220);
+            this.ckbTerca.Location = new System.Drawing.Point(302, 253);
             this.ckbTerca.Name = "ckbTerca";
             this.ckbTerca.Size = new System.Drawing.Size(59, 17);
             this.ckbTerca.TabIndex = 82;
@@ -159,7 +163,7 @@
             // 
             this.ckbSegunda.AutoSize = true;
             this.ckbSegunda.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbSegunda.Location = new System.Drawing.Point(220, 219);
+            this.ckbSegunda.Location = new System.Drawing.Point(220, 252);
             this.ckbSegunda.Name = "ckbSegunda";
             this.ckbSegunda.Size = new System.Drawing.Size(76, 17);
             this.ckbSegunda.TabIndex = 81;
@@ -171,7 +175,7 @@
             // 
             this.ckbQuarta.AutoSize = true;
             this.ckbQuarta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbQuarta.Location = new System.Drawing.Point(374, 220);
+            this.ckbQuarta.Location = new System.Drawing.Point(374, 253);
             this.ckbQuarta.Name = "ckbQuarta";
             this.ckbQuarta.Size = new System.Drawing.Size(64, 17);
             this.ckbQuarta.TabIndex = 80;
@@ -183,7 +187,7 @@
             // 
             this.ckbDomingo.AutoSize = true;
             this.ckbDomingo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckbDomingo.Location = new System.Drawing.Point(139, 219);
+            this.ckbDomingo.Location = new System.Drawing.Point(139, 252);
             this.ckbDomingo.Name = "ckbDomingo";
             this.ckbDomingo.Size = new System.Drawing.Size(75, 17);
             this.ckbDomingo.TabIndex = 79;
@@ -193,7 +197,7 @@
             // 
             // txtTurma
             // 
-            this.txtTurma.Location = new System.Drawing.Point(139, 85);
+            this.txtTurma.Location = new System.Drawing.Point(139, 128);
             this.txtTurma.MaxLength = 10;
             this.txtTurma.Name = "txtTurma";
             this.txtTurma.Size = new System.Drawing.Size(193, 20);
@@ -203,7 +207,7 @@
             // lblTurma
             // 
             this.lblTurma.AutoSize = true;
-            this.lblTurma.Location = new System.Drawing.Point(21, 82);
+            this.lblTurma.Location = new System.Drawing.Point(21, 125);
             this.lblTurma.Name = "lblTurma";
             this.lblTurma.Size = new System.Drawing.Size(46, 13);
             this.lblTurma.TabIndex = 77;
@@ -213,7 +217,7 @@
             // 
             this.dtpHorarioFim.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpHorarioFim.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHorarioFim.Location = new System.Drawing.Point(357, 124);
+            this.dtpHorarioFim.Location = new System.Drawing.Point(357, 167);
             this.dtpHorarioFim.Name = "dtpHorarioFim";
             this.dtpHorarioFim.Size = new System.Drawing.Size(82, 20);
             this.dtpHorarioFim.TabIndex = 76;
@@ -221,7 +225,7 @@
             // lblHorarioFim
             // 
             this.lblHorarioFim.AutoSize = true;
-            this.lblHorarioFim.Location = new System.Drawing.Point(276, 124);
+            this.lblHorarioFim.Location = new System.Drawing.Point(276, 167);
             this.lblHorarioFim.Name = "lblHorarioFim";
             this.lblHorarioFim.Size = new System.Drawing.Size(75, 13);
             this.lblHorarioFim.TabIndex = 75;
@@ -231,7 +235,7 @@
             // 
             this.dtpHorarioInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpHorarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHorarioInicio.Location = new System.Drawing.Point(139, 124);
+            this.dtpHorarioInicio.Location = new System.Drawing.Point(139, 167);
             this.dtpHorarioInicio.Name = "dtpHorarioInicio";
             this.dtpHorarioInicio.Size = new System.Drawing.Size(82, 20);
             this.dtpHorarioInicio.TabIndex = 74;
@@ -239,7 +243,7 @@
             // lblHorarioInicio
             // 
             this.lblHorarioInicio.AutoSize = true;
-            this.lblHorarioInicio.Location = new System.Drawing.Point(21, 121);
+            this.lblHorarioInicio.Location = new System.Drawing.Point(21, 164);
             this.lblHorarioInicio.Name = "lblHorarioInicio";
             this.lblHorarioInicio.Size = new System.Drawing.Size(89, 13);
             this.lblHorarioInicio.TabIndex = 72;
@@ -247,7 +251,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(538, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(538, 85);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(126, 80);
             this.pictureBox1.TabIndex = 71;
@@ -259,7 +263,7 @@
             this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
             this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarImagem.Location = new System.Drawing.Point(589, 108);
+            this.btnAdicionarImagem.Location = new System.Drawing.Point(589, 171);
             this.btnAdicionarImagem.Name = "btnAdicionarImagem";
             this.btnAdicionarImagem.Size = new System.Drawing.Size(32, 32);
             this.btnAdicionarImagem.TabIndex = 70;
@@ -280,7 +284,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(139, 164);
+            this.txtValor.Location = new System.Drawing.Point(139, 207);
             this.txtValor.MaxLength = 10;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(112, 20);
@@ -290,7 +294,7 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(21, 164);
+            this.lblValor.Location = new System.Drawing.Point(21, 207);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(68, 13);
             this.lblValor.TabIndex = 3;
@@ -298,7 +302,7 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(139, 42);
+            this.txtDescricao.Location = new System.Drawing.Point(139, 85);
             this.txtDescricao.MaxLength = 50;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(330, 20);
@@ -308,7 +312,7 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(21, 42);
+            this.lblDescricao.Location = new System.Drawing.Point(21, 85);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(68, 13);
             this.lblDescricao.TabIndex = 1;
@@ -388,6 +392,25 @@
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
+            // lblNomeFuncionario
+            // 
+            this.lblNomeFuncionario.AutoSize = true;
+            this.lblNomeFuncionario.Location = new System.Drawing.Point(200, 21);
+            this.lblNomeFuncionario.Name = "lblNomeFuncionario";
+            this.lblNomeFuncionario.Size = new System.Drawing.Size(77, 13);
+            this.lblNomeFuncionario.TabIndex = 111;
+            this.lblNomeFuncionario.Text = "Funcionário:";
+            // 
+            // cmbFuncionario
+            // 
+            this.cmbFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFuncionario.FormattingEnabled = true;
+            this.cmbFuncionario.Location = new System.Drawing.Point(280, 19);
+            this.cmbFuncionario.Name = "cmbFuncionario";
+            this.cmbFuncionario.Size = new System.Drawing.Size(384, 21);
+            this.cmbFuncionario.TabIndex = 110;
+            // 
             // telaConfiguracoesAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,5 +474,7 @@
         private GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda ucMenuConfiguracoesEsquerda1;
         private ucMenuInferior ucMenuInferior1;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
+        private System.Windows.Forms.Label lblNomeFuncionario;
+        private System.Windows.Forms.ComboBox cmbFuncionario;
     }
 }

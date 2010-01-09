@@ -60,18 +60,10 @@
             this.lblZona = new System.Windows.Forms.Label();
             this.txtTituloEleitor = new System.Windows.Forms.TextBox();
             this.lblTituloEleitor = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtEmissor = new System.Windows.Forms.TextBox();
-            this.mskCpf = new System.Windows.Forms.MaskedTextBox();
-            this.txtRg = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cmbEmissorUf = new System.Windows.Forms.ComboBox();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
             this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
@@ -82,7 +74,6 @@
             // gpbDadosProfissionais
             // 
             this.gpbDadosProfissionais.BackColor = System.Drawing.Color.Transparent;
-            this.gpbDadosProfissionais.Controls.Add(this.cmbEmissorUf);
             this.gpbDadosProfissionais.Controls.Add(this.txtCurso);
             this.gpbDadosProfissionais.Controls.Add(this.lblCurso);
             this.gpbDadosProfissionais.Controls.Add(this.txtInstituicao);
@@ -112,13 +103,6 @@
             this.gpbDadosProfissionais.Controls.Add(this.lblZona);
             this.gpbDadosProfissionais.Controls.Add(this.txtTituloEleitor);
             this.gpbDadosProfissionais.Controls.Add(this.lblTituloEleitor);
-            this.gpbDadosProfissionais.Controls.Add(this.label1);
-            this.gpbDadosProfissionais.Controls.Add(this.label2);
-            this.gpbDadosProfissionais.Controls.Add(this.txtEmissor);
-            this.gpbDadosProfissionais.Controls.Add(this.mskCpf);
-            this.gpbDadosProfissionais.Controls.Add(this.txtRg);
-            this.gpbDadosProfissionais.Controls.Add(this.label3);
-            this.gpbDadosProfissionais.Controls.Add(this.label4);
             this.gpbDadosProfissionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDadosProfissionais.Location = new System.Drawing.Point(39, 191);
             this.gpbDadosProfissionais.Name = "gpbDadosProfissionais";
@@ -131,7 +115,7 @@
             // 
             this.txtCurso.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtCurso.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtCurso.Location = new System.Drawing.Point(168, 340);
+            this.txtCurso.Location = new System.Drawing.Point(172, 299);
             this.txtCurso.MaxLength = 30;
             this.txtCurso.Name = "txtCurso";
             this.txtCurso.Size = new System.Drawing.Size(227, 23);
@@ -141,7 +125,7 @@
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(51, 340);
+            this.lblCurso.Location = new System.Drawing.Point(55, 299);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(43, 13);
             this.lblCurso.TabIndex = 92;
@@ -151,7 +135,7 @@
             // 
             this.txtInstituicao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtInstituicao.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtInstituicao.Location = new System.Drawing.Point(479, 393);
+            this.txtInstituicao.Location = new System.Drawing.Point(483, 352);
             this.txtInstituicao.MaxLength = 30;
             this.txtInstituicao.Name = "txtInstituicao";
             this.txtInstituicao.Size = new System.Drawing.Size(225, 23);
@@ -165,7 +149,7 @@
             this.dtpDataFormacao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpDataFormacao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.dtpDataFormacao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataFormacao.Location = new System.Drawing.Point(168, 393);
+            this.dtpDataFormacao.Location = new System.Drawing.Point(172, 352);
             this.dtpDataFormacao.Name = "dtpDataFormacao";
             this.dtpDataFormacao.Size = new System.Drawing.Size(110, 23);
             this.dtpDataFormacao.TabIndex = 90;
@@ -173,7 +157,7 @@
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(47, 393);
+            this.lblData.Location = new System.Drawing.Point(51, 352);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(97, 13);
             this.lblData.TabIndex = 89;
@@ -182,7 +166,7 @@
             // lbInstituicao
             // 
             this.lbInstituicao.AutoSize = true;
-            this.lbInstituicao.Location = new System.Drawing.Point(360, 393);
+            this.lbInstituicao.Location = new System.Drawing.Point(364, 352);
             this.lbInstituicao.Name = "lbInstituicao";
             this.lbInstituicao.Size = new System.Drawing.Size(70, 13);
             this.lbInstituicao.TabIndex = 88;
@@ -193,7 +177,17 @@
             this.cmbFuncao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbFuncao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFuncao.FormattingEnabled = true;
-            this.cmbFuncao.Location = new System.Drawing.Point(478, 439);
+            this.cmbFuncao.Items.AddRange(new object[] {
+            "Auxiliar",
+            "Auxiliar de Coordenação",
+            "Coordenador(a)",
+            "Professor(a)",
+            "Recepcionista",
+            "Secretário(a)",
+            "Segurança",
+            "Supervisor(a)",
+            "Tesoureiro(a)"});
+            this.cmbFuncao.Location = new System.Drawing.Point(482, 398);
             this.cmbFuncao.Name = "cmbFuncao";
             this.cmbFuncao.Size = new System.Drawing.Size(226, 21);
             this.cmbFuncao.TabIndex = 87;
@@ -202,7 +196,7 @@
             // lblFuncaoFuncionario
             // 
             this.lblFuncaoFuncionario.AutoSize = true;
-            this.lblFuncaoFuncionario.Location = new System.Drawing.Point(360, 439);
+            this.lblFuncaoFuncionario.Location = new System.Drawing.Point(364, 398);
             this.lblFuncaoFuncionario.Name = "lblFuncaoFuncionario";
             this.lblFuncaoFuncionario.Size = new System.Drawing.Size(53, 13);
             this.lblFuncaoFuncionario.TabIndex = 86;
@@ -212,7 +206,7 @@
             // 
             this.txtCBO.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtCBO.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtCBO.Location = new System.Drawing.Point(594, 40);
+            this.txtCBO.Location = new System.Drawing.Point(170, 46);
             this.txtCBO.Name = "txtCBO";
             this.txtCBO.Size = new System.Drawing.Size(169, 23);
             this.txtCBO.TabIndex = 85;
@@ -221,7 +215,7 @@
             // lblCBO
             // 
             this.lblCBO.AutoSize = true;
-            this.lblCBO.Location = new System.Drawing.Point(475, 45);
+            this.lblCBO.Location = new System.Drawing.Point(51, 51);
             this.lblCBO.Name = "lblCBO";
             this.lblCBO.Size = new System.Drawing.Size(58, 13);
             this.lblCBO.TabIndex = 84;
@@ -234,7 +228,7 @@
             this.dtpDataAdmissao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpDataAdmissao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.dtpDataAdmissao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataAdmissao.Location = new System.Drawing.Point(168, 439);
+            this.dtpDataAdmissao.Location = new System.Drawing.Point(172, 398);
             this.dtpDataAdmissao.Name = "dtpDataAdmissao";
             this.dtpDataAdmissao.Size = new System.Drawing.Size(110, 23);
             this.dtpDataAdmissao.TabIndex = 83;
@@ -242,7 +236,7 @@
             // lblDataAdmissao
             // 
             this.lblDataAdmissao.AutoSize = true;
-            this.lblDataAdmissao.Location = new System.Drawing.Point(50, 442);
+            this.lblDataAdmissao.Location = new System.Drawing.Point(54, 401);
             this.lblDataAdmissao.Name = "lblDataAdmissao";
             this.lblDataAdmissao.Size = new System.Drawing.Size(95, 13);
             this.lblDataAdmissao.TabIndex = 82;
@@ -251,7 +245,7 @@
             // rdbNao
             // 
             this.rdbNao.AutoSize = true;
-            this.rdbNao.Location = new System.Drawing.Point(230, 286);
+            this.rdbNao.Location = new System.Drawing.Point(234, 245);
             this.rdbNao.Name = "rdbNao";
             this.rdbNao.Size = new System.Drawing.Size(48, 17);
             this.rdbNao.TabIndex = 81;
@@ -263,7 +257,7 @@
             // rdbSim
             // 
             this.rdbSim.AutoSize = true;
-            this.rdbSim.Location = new System.Drawing.Point(170, 286);
+            this.rdbSim.Location = new System.Drawing.Point(174, 245);
             this.rdbSim.Name = "rdbSim";
             this.rdbSim.Size = new System.Drawing.Size(45, 17);
             this.rdbSim.TabIndex = 80;
@@ -275,7 +269,7 @@
             // lblPrimeiroEmprego
             // 
             this.lblPrimeiroEmprego.AutoSize = true;
-            this.lblPrimeiroEmprego.Location = new System.Drawing.Point(47, 290);
+            this.lblPrimeiroEmprego.Location = new System.Drawing.Point(51, 249);
             this.lblPrimeiroEmprego.Name = "lblPrimeiroEmprego";
             this.lblPrimeiroEmprego.Size = new System.Drawing.Size(112, 13);
             this.lblPrimeiroEmprego.TabIndex = 79;
@@ -293,7 +287,7 @@
             "parda",
             "indígena",
             "amarela"});
-            this.cmbCor.Location = new System.Drawing.Point(478, 234);
+            this.cmbCor.Location = new System.Drawing.Point(482, 193);
             this.cmbCor.Name = "cmbCor";
             this.cmbCor.Size = new System.Drawing.Size(133, 21);
             this.cmbCor.TabIndex = 78;
@@ -302,7 +296,7 @@
             // lblCor
             // 
             this.lblCor.AutoSize = true;
-            this.lblCor.Location = new System.Drawing.Point(429, 237);
+            this.lblCor.Location = new System.Drawing.Point(433, 196);
             this.lblCor.Name = "lblCor";
             this.lblCor.Size = new System.Drawing.Size(30, 13);
             this.lblCor.TabIndex = 77;
@@ -328,7 +322,7 @@
             "Pós-graduação",
             "Mestrado",
             "Doutorado"});
-            this.cmbGrau.Location = new System.Drawing.Point(169, 234);
+            this.cmbGrau.Location = new System.Drawing.Point(173, 193);
             this.cmbGrau.Name = "cmbGrau";
             this.cmbGrau.Size = new System.Drawing.Size(226, 21);
             this.cmbGrau.TabIndex = 76;
@@ -337,7 +331,7 @@
             // lblGrauInstrucao
             // 
             this.lblGrauInstrucao.AutoSize = true;
-            this.lblGrauInstrucao.Location = new System.Drawing.Point(47, 237);
+            this.lblGrauInstrucao.Location = new System.Drawing.Point(51, 196);
             this.lblGrauInstrucao.Name = "lblGrauInstrucao";
             this.lblGrauInstrucao.Size = new System.Drawing.Size(113, 13);
             this.lblGrauInstrucao.TabIndex = 75;
@@ -347,7 +341,7 @@
             // 
             this.txtSerie.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtSerie.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtSerie.Location = new System.Drawing.Point(679, 188);
+            this.txtSerie.Location = new System.Drawing.Point(683, 147);
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(133, 23);
             this.txtSerie.TabIndex = 74;
@@ -356,7 +350,7 @@
             // lblSerie
             // 
             this.lblSerie.AutoSize = true;
-            this.lblSerie.Location = new System.Drawing.Point(630, 188);
+            this.lblSerie.Location = new System.Drawing.Point(634, 147);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(48, 13);
             this.lblSerie.TabIndex = 73;
@@ -366,7 +360,7 @@
             // 
             this.txtCtps.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtCtps.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtCtps.Location = new System.Drawing.Point(479, 188);
+            this.txtCtps.Location = new System.Drawing.Point(483, 147);
             this.txtCtps.Name = "txtCtps";
             this.txtCtps.Size = new System.Drawing.Size(133, 23);
             this.txtCtps.TabIndex = 72;
@@ -375,7 +369,7 @@
             // lblCtps
             // 
             this.lblCtps.AutoSize = true;
-            this.lblCtps.Location = new System.Drawing.Point(430, 188);
+            this.lblCtps.Location = new System.Drawing.Point(434, 147);
             this.lblCtps.Name = "lblCtps";
             this.lblCtps.Size = new System.Drawing.Size(43, 13);
             this.lblCtps.TabIndex = 71;
@@ -385,7 +379,7 @@
             // 
             this.txtPis.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtPis.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtPis.Location = new System.Drawing.Point(169, 188);
+            this.txtPis.Location = new System.Drawing.Point(173, 147);
             this.txtPis.MaxLength = 40;
             this.txtPis.Name = "txtPis";
             this.txtPis.Size = new System.Drawing.Size(227, 23);
@@ -395,7 +389,7 @@
             // lblPis
             // 
             this.lblPis.AutoSize = true;
-            this.lblPis.Location = new System.Drawing.Point(47, 188);
+            this.lblPis.Location = new System.Drawing.Point(51, 147);
             this.lblPis.Name = "lblPis";
             this.lblPis.Size = new System.Drawing.Size(31, 13);
             this.lblPis.TabIndex = 69;
@@ -405,7 +399,7 @@
             // 
             this.txtZona.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtZona.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtZona.Location = new System.Drawing.Point(411, 137);
+            this.txtZona.Location = new System.Drawing.Point(415, 96);
             this.txtZona.Name = "txtZona";
             this.txtZona.Size = new System.Drawing.Size(124, 23);
             this.txtZona.TabIndex = 68;
@@ -414,7 +408,7 @@
             // lblZona
             // 
             this.lblZona.AutoSize = true;
-            this.lblZona.Location = new System.Drawing.Point(355, 142);
+            this.lblZona.Location = new System.Drawing.Point(359, 101);
             this.lblZona.Name = "lblZona";
             this.lblZona.Size = new System.Drawing.Size(40, 13);
             this.lblZona.TabIndex = 67;
@@ -424,7 +418,7 @@
             // 
             this.txtTituloEleitor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtTituloEleitor.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtTituloEleitor.Location = new System.Drawing.Point(168, 137);
+            this.txtTituloEleitor.Location = new System.Drawing.Point(172, 96);
             this.txtTituloEleitor.Name = "txtTituloEleitor";
             this.txtTituloEleitor.Size = new System.Drawing.Size(158, 23);
             this.txtTituloEleitor.TabIndex = 66;
@@ -433,78 +427,11 @@
             // lblTituloEleitor
             // 
             this.lblTituloEleitor.AutoSize = true;
-            this.lblTituloEleitor.Location = new System.Drawing.Point(47, 142);
+            this.lblTituloEleitor.Location = new System.Drawing.Point(51, 101);
             this.lblTituloEleitor.Name = "lblTituloEleitor";
             this.lblTituloEleitor.Size = new System.Drawing.Size(103, 13);
             this.lblTituloEleitor.TabIndex = 65;
             this.lblTituloEleitor.Text = "Título de Eleitor:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(460, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
-            this.label1.TabIndex = 64;
-            this.label1.Text = "UF:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(353, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "Emissor:";
-            // 
-            // txtEmissor
-            // 
-            this.txtEmissor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtEmissor.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtEmissor.Location = new System.Drawing.Point(409, 93);
-            this.txtEmissor.Name = "txtEmissor";
-            this.txtEmissor.Size = new System.Drawing.Size(40, 23);
-            this.txtEmissor.TabIndex = 61;
-            this.txtEmissor.TextChanged += new System.EventHandler(this.txtEmissor_TextChanged);
-            // 
-            // mskCpf
-            // 
-            this.mskCpf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.mskCpf.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.mskCpf.Location = new System.Drawing.Point(168, 45);
-            this.mskCpf.Mask = "000.000.000-99";
-            this.mskCpf.Name = "mskCpf";
-            this.mskCpf.Size = new System.Drawing.Size(100, 23);
-            this.mskCpf.TabIndex = 60;
-            this.mskCpf.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
-            // 
-            // txtRg
-            // 
-            this.txtRg.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtRg.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtRg.Location = new System.Drawing.Point(168, 93);
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(158, 23);
-            this.txtRg.TabIndex = 59;
-            this.txtRg.TextChanged += new System.EventHandler(this.txtRg_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 13);
-            this.label3.TabIndex = 58;
-            this.label3.Text = "CPF:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 93);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
-            this.label4.TabIndex = 57;
-            this.label4.Text = "Identidade:";
             // 
             // lblHelloUsuario
             // 
@@ -549,48 +476,6 @@
             // errorProviderTela
             // 
             this.errorProviderTela.ContainerControl = this;
-            // 
-            // cmbEmissorUf
-            // 
-            this.cmbEmissorUf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbEmissorUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEmissorUf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.cmbEmissorUf.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.cmbEmissorUf.FormattingEnabled = true;
-            this.cmbEmissorUf.Items.AddRange(new object[] {
-            "",
-            "AC",
-            "AL",
-            "AM",
-            "AP",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MG",
-            "MS",
-            "MT",
-            "PA",
-            "PB",
-            "PE",
-            "PI",
-            "PR",
-            "RJ",
-            "RN",
-            "RO",
-            "RR",
-            "RS",
-            "SC",
-            "SE",
-            "SP",
-            "TO "});
-            this.cmbEmissorUf.Location = new System.Drawing.Point(493, 92);
-            this.cmbEmissorUf.MaxLength = 2;
-            this.cmbEmissorUf.Name = "cmbEmissorUf";
-            this.cmbEmissorUf.Size = new System.Drawing.Size(50, 24);
-            this.cmbEmissorUf.TabIndex = 97;
             // 
             // ucMenuInferior1
             // 
@@ -655,13 +540,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gpbDadosProfissionais;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtEmissor;
-        private System.Windows.Forms.MaskedTextBox mskCpf;
-        private System.Windows.Forms.TextBox txtRg;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTituloEleitor;
         private System.Windows.Forms.TextBox txtTituloEleitor;
         private System.Windows.Forms.Label lblZona;
@@ -698,6 +576,5 @@
         private ucMenuInferior ucMenuInferior1;
         private GuiWindowsForms.User_Control.ucMenuLateralFunc ucMenuLateralFunc1;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
-        private System.Windows.Forms.ComboBox cmbEmissorUf;
     }
 }

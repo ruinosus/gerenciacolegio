@@ -201,7 +201,6 @@ namespace GuiWindowsForms
             listaTurno = turnoControlador.Consultar();
             cmbTurno.DataSource = listaTurno;
             cmbTurno.DisplayMember = "Nome";
-
         }
         #endregion
 
@@ -218,6 +217,7 @@ namespace GuiWindowsForms
                     return;
                 }
                 sala.SerieID =((Serie)cmbSerie.SelectedItem).ID;
+                serie = ((Serie)cmbSerie.SelectedItem);
 
 
                 #endregion
@@ -229,7 +229,8 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(txtCiclo, "Informe o ciclo");
                     return;
                 }
-
+                serie.Ciclo = txtCiclo.Text;
+                    
                 #endregion
 
                 #region VALIDA - TURNO
@@ -265,11 +266,16 @@ namespace GuiWindowsForms
 
                 #endregion
 
-                
+                salaControlador.Incluir(sala);
+                salaControlador.Confirmar();
+
+                serieControlador.Alterar(serie);
+                serieControlador.Confirmar();
+
             }
             catch (Exception ex)
-            { 
-            
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -317,7 +323,6 @@ namespace GuiWindowsForms
         }
 
         #endregion
-
 
 
     }

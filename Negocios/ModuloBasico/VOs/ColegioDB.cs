@@ -3602,23 +3602,23 @@ public partial class Funcionario : INotifyPropertyChanged
 
     #endregion
 
-    #region string Filiacao
+    #region string FiliacaoPai
 
-    private string _filiacao;
+    private string _filiacaoPai;
     [DebuggerNonUserCode]
-    [Column(Storage = "_filiacao", Name = "Filiacao", DbType = "varchar(50)")]
-    public string Filiacao
+    [Column(Storage = "_filiacaoPai", Name = "FiliacaoPai", DbType = "varchar(50)")]
+    public string FiliacaoPai
     {
         get
         {
-            return _filiacao;
+            return _filiacaoPai;
         }
         set
         {
-            if (value != _filiacao)
+            if (value != _filiacaoPai)
             {
-                _filiacao = value;
-                OnPropertyChanged("Filiacao");
+                _filiacaoPai = value;
+                OnPropertyChanged("FiliacaoPai");
             }
         }
     }
@@ -3987,6 +3987,328 @@ public partial class Funcionario : INotifyPropertyChanged
             {
                 _edificio = value;
                 OnPropertyChanged("Edificio");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string Rg
+
+    private string _rg;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_rg", Name = "Rg", DbType = "varchar(25)")]
+    public string Rg
+    {
+        get
+        {
+            return _rg;
+        }
+        set
+        {
+            if (value != _rg)
+            {
+                _rg = value;
+                OnPropertyChanged("Rg");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string FiliacaoMae
+
+    private string _filiacaoMae;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_filiacaoMae", Name = "FiliacaoMae", DbType = "varchar(50)")]
+    public string FiliacaoMae
+    {
+        get
+        {
+            return _filiacaoMae;
+        }
+        set
+        {
+            if (value != _filiacaoMae)
+            {
+                _filiacaoMae = value;
+                OnPropertyChanged("FiliacaoMae");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string EmissorUf
+
+    private string _emissorUf;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_emissorUf", Name = "EmissorUf", DbType = "varchar(2)")]
+    public string EmissorUf
+    {
+        get
+        {
+            return _emissorUf;
+        }
+        set
+        {
+            if (value != _emissorUf)
+            {
+                _emissorUf = value;
+                OnPropertyChanged("EmissorUf");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string EstadoCivil
+
+    private string _estadoCivil;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_estadoCivil", Name = "EstadoCivil", DbType = "varchar(45)")]
+    public string EstadoCivil
+    {
+        get
+        {
+            return _estadoCivil;
+        }
+        set
+        {
+            if (value != _estadoCivil)
+            {
+                _estadoCivil = value;
+                OnPropertyChanged("EstadoCivil");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string Nacionalidade
+
+    private string _nacionalidade;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_nacionalidade", Name = "Nacionalidade", DbType = "varchar(45)")]
+    public string Nacionalidade
+    {
+        get
+        {
+            return _nacionalidade;
+        }
+        set
+        {
+            if (value != _nacionalidade)
+            {
+                _nacionalidade = value;
+                OnPropertyChanged("Nacionalidade");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string Cbo
+
+    private string _cbo;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_nacionalidade", Name = "Cbo", DbType = "varchar(20)")]
+    public string Cbo
+    {
+        get
+        {
+            return _cbo;
+        }
+        set
+        {
+            if (value != _cbo)
+            {
+                _cbo = value;
+                OnPropertyChanged("Cbo");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string TituloEleitor
+
+    private string _tituloEleitor;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_tituloEleitor", Name = "TituloEleitor", DbType = "varchar(20)")]
+    public string TituloEleitor
+    {
+        get
+        {
+            return _tituloEleitor;
+        }
+        set
+        {
+            if (value != _tituloEleitor)
+            {
+                _tituloEleitor = value;
+                OnPropertyChanged("TituloEleitor");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string Zona
+
+    private string _zona;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_zona", Name = "Zona", DbType = "varchar(20)")]
+    public string Zona
+    {
+        get
+        {
+            return _zona;
+        }
+        set
+        {
+            if (value != _zona)
+            {
+                _zona = value;
+                OnPropertyChanged("Zona");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string Cor
+
+    private string _cor;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_cor", Name = "Cor", DbType = "varchar(20)")]
+    public string Cor
+    {
+        get
+        {
+            return _cor;
+        }
+        set
+        {
+            if (value != _cor)
+            {
+                _cor = value;
+                OnPropertyChanged("Cor");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? PrimeiroEmprego
+
+    private byte? _primeiroEmprego;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_primeiroEmprego", Name = "PrimeiroEmprego", DbType = "tinyint(1)")]
+    public byte? PrimeiroEmprego
+    {
+        get
+        {
+            return _primeiroEmprego;
+        }
+        set
+        {
+            if (value != _primeiroEmprego)
+            {
+                _primeiroEmprego = value;
+                OnPropertyChanged("PrimeiroEmprego");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string Curso
+
+    private string _curso;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_curso", Name = "Curso", DbType = "varchar(45)")]
+    public string Curso
+    {
+        get
+        {
+            return _curso;
+        }
+        set
+        {
+            if (value != _curso)
+            {
+                _curso = value;
+                OnPropertyChanged("Curso");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string Instituicao
+
+    private string _instituicao;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_instituicao", Name = "Instituicao", DbType = "varchar(45)")]
+    public string Instituicao
+    {
+        get
+        {
+            return _instituicao;
+        }
+        set
+        {
+            if (value != _instituicao)
+            {
+                _instituicao = value;
+                OnPropertyChanged("Instituicao");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string GrauInstrucao
+
+    private string _grauInstrucao;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_grauInstrucao", Name = "GrauInstrucao", DbType = "varchar(45)")]
+    public string GrauInstrucao
+    {
+        get
+        {
+            return _grauInstrucao;
+        }
+        set
+        {
+            if (value != _grauInstrucao)
+            {
+                _grauInstrucao = value;
+                OnPropertyChanged("GrauInstrucao");
+            }
+        }
+    }
+
+    #endregion
+
+    #region System.DateTime? DataFormacao
+
+    private System.DateTime? _dataFormacao;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_dataFormacao", Name = "DataFormacao", DbType = "datetime")]
+    public System.DateTime? DataFormacao
+    {
+        get
+        {
+            return _dataFormacao;
+        }
+        set
+        {
+            if (value != _dataFormacao)
+            {
+                _dataFormacao = value;
+                OnPropertyChanged("DataFormacao");
             }
         }
     }

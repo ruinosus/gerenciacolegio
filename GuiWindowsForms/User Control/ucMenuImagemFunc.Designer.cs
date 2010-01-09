@@ -34,6 +34,7 @@
             this.lblNomeFuncionario = new System.Windows.Forms.Label();
             this.pctImagem = new System.Windows.Forms.PictureBox();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,6 +111,10 @@
             this.btnAdicionarImagem.UseVisualStyleBackColor = false;
             this.btnAdicionarImagem.Click += new System.EventHandler(this.btnAdicionarImagem_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // ucMenuImagemFunc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,5 +142,6 @@
         private System.Windows.Forms.Label lblNomeFuncionario;
         private System.Windows.Forms.PictureBox pctImagem;
         private System.Windows.Forms.Button btnAdicionarImagem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
