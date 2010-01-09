@@ -215,97 +215,97 @@ namespace GuiWindowsForms
 
         private void ckbAlteracaoSerie_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoSerie.Checked = true;
+            ckbVisualizacaoSerie.Checked = true;
         }
 
         private void ckbAlteracaoTurno_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoTurno.Checked = true;
+            ckbVisualizacaoTurno.Checked = true;
         }
 
         private void ckbAlteracaoRemanejamento_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoRemanejamento.Checked = true;
+            ckbVisualizacaoRemanejamento.Checked = true;
         }
 
         private void ckbAlteracaoNotas_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoNotas.Checked = true;
+            ckbVisualizacaoNotas.Checked = true;
         }
 
         private void ckbAlteracaoMensalidades_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoMensalidades.Checked = true;
+            ckbVisualizacaoMensalidades.Checked = true;
         }
 
         private void ckbAlteracaoAtividades_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoAtividades.Checked = true;
+            ckbVisualizacaoAtividades.Checked = true;
         }
 
         private void ckbAlteracaoContasPagar_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoContasPagar.Checked = true;
+            ckbVisualizacaoContasPagar.Checked = true;
         }
 
         private void ckbAlteracaoFinanceiro_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoFinanceiro.Checked = true;
+            ckbVisualizacaoFinanceiro.Checked = true;
         }
 
         private void ckbAlteracaoBoletim_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoBoletim.Checked = true;
+            ckbVisualizacaoBoletim.Checked = true;
         }
 
         private void ckbAlteracaoGre_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoGre.Checked = true;
+            ckbVisualizacaoGre.Checked = true;
         }
 
         private void ckbAlteracaoDebitos_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoDebitos.Checked = true;
+            ckbVisualizacaoDebitos.Checked = true;
         }
 
         private void ckbAlteracaoCheques_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoCheques.Checked = true;
+            ckbVisualizacaoCheques.Checked = true;
         }
 
         private void ckbAlteracaoHistorico_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoHistorico.Checked = true;
+            ckbVisualizacaoHistorico.Checked = true;
         }
 
         private void ckbAlteracaoCertificado_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoCertificado.Checked = true;
+            ckbVisualizacaoCertificado.Checked = true;
         }
 
         private void ckbAlteracaoAniver_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoAniver.Checked = true;
+            ckbVisualizacaoAniver.Checked = true;
         }
 
         private void ckbAlteracaoDeclaQuitacao_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoDeclaQuitacao.Checked = true;
+            ckbVisualizacaoDeclaQuitacao.Checked = true;
         }
 
         private void ckbAlteracaoFolhaPonto_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoFolhaPonto.Checked = true;
+            ckbVisualizacaoFolhaPonto.Checked = true;
         }
 
         private void ckbAlteracaoFreqFuncionario_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoFreqFuncionario.Checked = true;
+            ckbVisualizacaoFreqFuncionario.Checked = true;
         }
 
         private void ckbAlteracaoEnviarEmail_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoEnviarEmail.Checked = true;
+            ckbVisualizacaoEnviarEmail.Checked = true;
         }
 
         private void ckbAlteracaFreqAlunos_Click(object sender, EventArgs e)
@@ -315,22 +315,22 @@ namespace GuiWindowsForms
 
         private void ckbAlteracaoRankingNotas_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoRankingNotas.Checked = true;
+            ckbVisualizacaoRankingNotas.Checked = true;
         }
 
         private void ckbAlteracaoAdvertAtraso_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoAdvertAtraso.Checked = true;
+            ckbVisualizacaoAdvertAtraso.Checked = true;
         }
 
         private void ckbAlteracaoAnotacoes_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoAnotacoes.Checked = true;
+            ckbVisualizacaoAnotacoes.Checked = true;
         }
 
         private void ckbAlteracaoFolhaCham_Click(object sender, EventArgs e)
         {
-            ckbAlteracaoFolhaCham.Checked = true;
+            ckbVisualizacaoFolhaCham.Checked = true;
         }
 
         #endregion
