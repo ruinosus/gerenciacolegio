@@ -69,6 +69,10 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 [Table(Name = "colegiodb.aluno")]
 public partial class Aluno : INotifyPropertyChanged
 {
+    public override string ToString()
+    {
+        return this.Nome;
+    }
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -1078,6 +1082,10 @@ public partial class AlunoAtividade : INotifyPropertyChanged
 [Table(Name = "colegiodb.atividade")]
 public partial class Atividade : INotifyPropertyChanged
 {
+    public override string ToString()
+    {
+        return this.Descricao;
+    }
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -3060,6 +3068,11 @@ public partial class Dependencia : INotifyPropertyChanged
 [Table(Name = "colegiodb.desconto")]
 public partial class Desconto : INotifyPropertyChanged
 {
+    public override string ToString()
+    {
+        return this.Descricao;
+    }
+
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -3190,6 +3203,11 @@ public partial class Desconto : INotifyPropertyChanged
 [Table(Name = "colegiodb.disciplina")]
 public partial class Disciplina : INotifyPropertyChanged
 {
+
+    public override string ToString()
+    {
+        return this.Nome;
+    }
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -3312,6 +3330,11 @@ public partial class Disciplina : INotifyPropertyChanged
 [Table(Name = "colegiodb.funcionario")]
 public partial class Funcionario : INotifyPropertyChanged
 {
+    public override string ToString()
+    {
+        return this.Nome;
+    }
+
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -4884,6 +4907,11 @@ public partial class Nota : INotifyPropertyChanged
 [Table(Name = "colegiodb.perfil")]
 public partial class Perfil : INotifyPropertyChanged
 {
+    public override string ToString()
+    {
+        return this.Descricao;
+    }
+    
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -5839,6 +5867,11 @@ public partial class ProfessorDisciplinaSala : INotifyPropertyChanged
 [Table(Name = "colegiodb.responsavel")]
 public partial class Responsavel : INotifyPropertyChanged
 {
+    public override string ToString()
+    {
+        return this.Nome;
+    }
+
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -6635,6 +6668,11 @@ public partial class ResponsavelAluno : INotifyPropertyChanged
 [Table(Name = "colegiodb.sala")]
 public partial class Sala : INotifyPropertyChanged
 {
+    public override string ToString()
+    {
+        return this.Serie.Nome + " " + this.Turma.Nome + " "+ this.Turno.Nome ;
+    }
+
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -6983,6 +7021,11 @@ public partial class SalaPeriodo : INotifyPropertyChanged
 [Table(Name = "colegiodb.serie")]
 public partial class Serie : INotifyPropertyChanged
 {
+    public override string ToString()
+    {
+        return this.Nome;
+    }
+
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -7129,6 +7172,12 @@ public partial class Serie : INotifyPropertyChanged
 [Table(Name = "colegiodb.turma")]
 public partial class Turma : INotifyPropertyChanged
 {
+
+    public override string ToString()
+    {
+        return this.Nome;
+    }
+
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -7230,6 +7279,11 @@ public partial class Turma : INotifyPropertyChanged
 [Table(Name = "colegiodb.turno")]
 public partial class Turno : INotifyPropertyChanged
 {
+    public override string ToString()
+    {
+        return this.Nome;
+    }
+
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
