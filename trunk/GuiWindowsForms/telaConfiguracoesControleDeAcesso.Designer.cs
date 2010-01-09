@@ -67,7 +67,7 @@
             this.ckbAlteracaoFolhaPonto = new System.Windows.Forms.CheckBox();
             this.ckbVisualizacaoFolhaPonto = new System.Windows.Forms.CheckBox();
             this.ckbAlteracaoDeclaQuitacao = new System.Windows.Forms.CheckBox();
-            this.ckbVisuaDeclaQuitacao = new System.Windows.Forms.CheckBox();
+            this.ckbVisualizacaoDeclaQuitacao = new System.Windows.Forms.CheckBox();
             this.ckbAlteracaoAniver = new System.Windows.Forms.CheckBox();
             this.ckbVisualizacaoAniver = new System.Windows.Forms.CheckBox();
             this.ckbAlteracaoCertificado = new System.Windows.Forms.CheckBox();
@@ -161,7 +161,7 @@
             this.gpbControleDeAcesso.Controls.Add(this.ckbAlteracaoFolhaPonto);
             this.gpbControleDeAcesso.Controls.Add(this.ckbVisualizacaoFolhaPonto);
             this.gpbControleDeAcesso.Controls.Add(this.ckbAlteracaoDeclaQuitacao);
-            this.gpbControleDeAcesso.Controls.Add(this.ckbVisuaDeclaQuitacao);
+            this.gpbControleDeAcesso.Controls.Add(this.ckbVisualizacaoDeclaQuitacao);
             this.gpbControleDeAcesso.Controls.Add(this.ckbAlteracaoAniver);
             this.gpbControleDeAcesso.Controls.Add(this.ckbVisualizacaoAniver);
             this.gpbControleDeAcesso.Controls.Add(this.ckbAlteracaoCertificado);
@@ -583,15 +583,15 @@
             this.ckbAlteracaoDeclaQuitacao.UseVisualStyleBackColor = true;
             this.ckbAlteracaoDeclaQuitacao.Click += new System.EventHandler(this.ckbAlteracaoDeclaQuitacao_Click);
             // 
-            // ckbVisuaDeclaQuitacao
+            // ckbVisualizacaoDeclaQuitacao
             // 
-            this.ckbVisuaDeclaQuitacao.AutoSize = true;
-            this.ckbVisuaDeclaQuitacao.Location = new System.Drawing.Point(496, 213);
-            this.ckbVisuaDeclaQuitacao.Name = "ckbVisuaDeclaQuitacao";
-            this.ckbVisuaDeclaQuitacao.Size = new System.Drawing.Size(97, 17);
-            this.ckbVisuaDeclaQuitacao.TabIndex = 45;
-            this.ckbVisuaDeclaQuitacao.Text = "Visualização";
-            this.ckbVisuaDeclaQuitacao.UseVisualStyleBackColor = true;
+            this.ckbVisualizacaoDeclaQuitacao.AutoSize = true;
+            this.ckbVisualizacaoDeclaQuitacao.Location = new System.Drawing.Point(496, 213);
+            this.ckbVisualizacaoDeclaQuitacao.Name = "ckbVisualizacaoDeclaQuitacao";
+            this.ckbVisualizacaoDeclaQuitacao.Size = new System.Drawing.Size(97, 17);
+            this.ckbVisualizacaoDeclaQuitacao.TabIndex = 45;
+            this.ckbVisualizacaoDeclaQuitacao.Text = "Visualização";
+            this.ckbVisualizacaoDeclaQuitacao.UseVisualStyleBackColor = true;
             // 
             // ckbAlteracaoAniver
             // 
@@ -1193,7 +1193,7 @@
         private System.Windows.Forms.CheckBox ckbAlteracaoFolhaPonto;
         private System.Windows.Forms.CheckBox ckbVisualizacaoFolhaPonto;
         private System.Windows.Forms.CheckBox ckbAlteracaoDeclaQuitacao;
-        private System.Windows.Forms.CheckBox ckbVisuaDeclaQuitacao;
+        private System.Windows.Forms.CheckBox ckbVisualizacaoDeclaQuitacao;
         private System.Windows.Forms.CheckBox ckbAlteracaoAniver;
         private System.Windows.Forms.CheckBox ckbVisualizacaoAniver;
         private System.Windows.Forms.CheckBox ckbAlteracaoCertificado;
