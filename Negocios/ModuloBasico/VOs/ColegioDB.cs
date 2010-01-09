@@ -842,6 +842,26 @@ public partial class Aluno : INotifyPropertyChanged
 
     #endregion
 
+    #region Parents
+
+    private System.Data.Linq.EntityRef<Perfil> _perfil;
+    [Association(Storage = "_perfil", ThisKey = "PerfilID", Name = "fk_Aluno_Perfil", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Perfil Perfil
+    {
+        get
+        {
+            return _perfil.Entity;
+        }
+        set
+        {
+            _perfil.Entity = value;
+        }
+    }
+
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.alunoatividade")]
@@ -971,6 +991,56 @@ public partial class AlunoAtividade : INotifyPropertyChanged
                 _status = value;
                 OnPropertyChanged("Status");
             }
+        }
+    }
+
+    #endregion
+
+    #region Parents
+
+    private System.Data.Linq.EntityRef<Aluno> _aluno;
+    [Association(Storage = "_aluno", ThisKey = "AlunoID", Name = "fk_AlunoAtividade_Aluno", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Aluno Aluno
+    {
+        get
+        {
+            return _aluno.Entity;
+        }
+        set
+        {
+            _aluno.Entity = value;
+        }
+    }
+
+
+    private System.Data.Linq.EntityRef<Atividade> _atividade;
+    [Association(Storage = "_atividade", ThisKey = "AtividadeID", Name = "fk_AlunoAtividade_Atividade", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Atividade Atividade
+    {
+        get
+        {
+            return _atividade.Entity;
+        }
+        set
+        {
+            _atividade.Entity = value;
+        }
+    }
+
+    private System.Data.Linq.EntityRef<Desconto> _desconto;
+    [Association(Storage = "_desconto", ThisKey = "DescontoID", Name = "fk_AlunoAtividade_Desconto", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Desconto Desconto
+    {
+        get
+        {
+            return _desconto.Entity;
+        }
+        set
+        {
+            _desconto.Entity = value;
         }
     }
 
@@ -4897,6 +4967,18 @@ public partial class Perfil : INotifyPropertyChanged
 
     #endregion
 
+    #region Children
+
+  
+    [Association(Storage = null, OtherKey = "PerfilID", Name = "fk_Aluno_Perfil")]
+    [DebuggerNonUserCode]
+    public EntitySet<Aluno> Aluno
+    {
+        get;
+        set;
+    }
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.professordisciplinasala")]
@@ -6171,6 +6253,28 @@ public partial class Serie : INotifyPropertyChanged
 
     #endregion
 
+    #region string Ciclo
+
+    private string _ciclo;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_ciclo", Name = "Ciclo", DbType = "varchar(45)")]
+    public string Ciclo
+    {
+        get
+        {
+            return _ciclo;
+        }
+        set
+        {
+            if (value != _ciclo)
+            {
+                _ciclo = value;
+                OnPropertyChanged("Ciclo");
+            }
+        }
+    }
+
+    #endregion
 }
 
 [Table(Name = "colegiodb.turma")]
