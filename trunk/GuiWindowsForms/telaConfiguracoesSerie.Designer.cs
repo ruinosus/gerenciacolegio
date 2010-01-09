@@ -46,6 +46,11 @@
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.serieCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turmaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cicloCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
@@ -113,17 +118,17 @@
             // 
             // txtCiclo
             // 
-            this.txtCiclo.Location = new System.Drawing.Point(458, 69);
+            this.txtCiclo.Location = new System.Drawing.Point(405, 69);
             this.txtCiclo.MaxLength = 30;
             this.txtCiclo.Name = "txtCiclo";
-            this.txtCiclo.Size = new System.Drawing.Size(57, 20);
+            this.txtCiclo.Size = new System.Drawing.Size(259, 20);
             this.txtCiclo.TabIndex = 12;
             this.txtCiclo.TextChanged += new System.EventHandler(this.txtCiclo_TextChanged);
             // 
             // lblCiclo
             // 
             this.lblCiclo.AutoSize = true;
-            this.lblCiclo.Location = new System.Drawing.Point(399, 72);
+            this.lblCiclo.Location = new System.Drawing.Point(360, 72);
             this.lblCiclo.Name = "lblCiclo";
             this.lblCiclo.Size = new System.Drawing.Size(39, 13);
             this.lblCiclo.TabIndex = 11;
@@ -188,6 +193,12 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.serieCol,
+            this.turmaCol,
+            this.turnoCol,
+            this.cicloCol,
+            this.valorCol});
             this.dataGridView1.Location = new System.Drawing.Point(24, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(640, 285);
@@ -222,6 +233,31 @@
             // errorProviderTela
             // 
             this.errorProviderTela.ContainerControl = this;
+            // 
+            // serieCol
+            // 
+            this.serieCol.HeaderText = "Série";
+            this.serieCol.Name = "serieCol";
+            // 
+            // turmaCol
+            // 
+            this.turmaCol.HeaderText = "Turma";
+            this.turmaCol.Name = "turmaCol";
+            // 
+            // turnoCol
+            // 
+            this.turnoCol.HeaderText = "Turno";
+            this.turnoCol.Name = "turnoCol";
+            // 
+            // cicloCol
+            // 
+            this.cicloCol.HeaderText = "Ciclo";
+            this.cicloCol.Name = "cicloCol";
+            // 
+            // valorCol
+            // 
+            this.valorCol.HeaderText = "Valor";
+            this.valorCol.Name = "valorCol";
             // 
             // ucMenuConfiguracoesEsquerda1
             // 
@@ -307,5 +343,10 @@
         private System.Windows.Forms.ComboBox cmbTurma;
         private System.Windows.Forms.ComboBox cmbSerie;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serieCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn turmaCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn turnoCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cicloCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorCol;
     }
 }

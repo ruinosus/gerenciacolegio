@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloFuncionario.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaFuncionarioDadosProfissionais : Form
     {
+        Funcionario funcionario = new Funcionario();
+        IFuncionarioProcesso funcionarioControlador = FuncionarioProcesso.Instance;
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -183,7 +187,10 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaFuncionarioDadosProfissionais_Load(object sender, EventArgs e)
         {
-
+            funcionario = Program.funcionarioAux;
+            if(funcionario!=null)
+            ucMenuImagemFunc1.carregaFuncionario(funcionario);
+            carregarCampos();
         }
         #endregion
 
@@ -193,14 +200,6 @@ namespace GuiWindowsForms
 
             try
             {
-                #region VALIDA - CPF
-                if (mskCpf.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskCpf, "Informe o cpf");
-                    mskCpf.Clear();
-                    return;
-                }
-                #endregion
 
                 #region VALIDA - CBO
 
@@ -210,39 +209,7 @@ namespace GuiWindowsForms
                     txtCBO.Clear();
                     return;
                 }
-
-                #endregion
-
-                #region VALIDA - IDENTIDADE
-
-                if (String.IsNullOrEmpty(txtRg.Text))
-                {
-                    errorProviderTela.SetError(txtRg, "Informe a identidade");
-                    txtRg.Clear();
-                    return;
-                }
-
-                #endregion
-
-                #region VALIDA - EMISSOR
-
-                if (String.IsNullOrEmpty(txtEmissor.Text))
-                {
-                    errorProviderTela.SetError(txtRg, "Informe o órgão emissor");
-                    txtEmissor.Clear();
-                    return;
-                }
-
-
-                #endregion
-
-                #region VALIDA - EMISSOR UF
-
-                if (String.IsNullOrEmpty(cmbEmissorUf.Text))
-                {
-                    errorProviderTela.SetError(cmbEmissorUf, "Informe o uf");
-                    return;
-                }
+                funcionario.Cbo = txtCBO.Text;
 
                 #endregion
 
@@ -254,6 +221,7 @@ namespace GuiWindowsForms
                     txtTituloEleitor.Clear();
                     return;
                 }
+                funcionario.TituloEleitor = txtTituloEleitor.Text;
 
                 #endregion            
 
@@ -265,6 +233,7 @@ namespace GuiWindowsForms
                     txtZona.Clear();
                     return;
                 }
+                funcionario.Zona = txtZona.Text;
 
                 #endregion
 
@@ -276,6 +245,7 @@ namespace GuiWindowsForms
                     txtPis.Clear();
                     return;
                 }
+                funcionario.Pis = txtPis.Text;
 
                 #endregion
 
@@ -287,6 +257,7 @@ namespace GuiWindowsForms
                     txtCtps.Clear();
                     return;
                 }
+                funcionario.Ctps = txtCtps.Text;
 
                 #endregion
 
@@ -298,16 +269,18 @@ namespace GuiWindowsForms
                     txtSerie.Clear();
                     return;
                 }
+                funcionario.Serie = txtSerie.Text;
 
                 #endregion
 
-                #region VALIDA - NACIONALIDADE
+                #region VALIDA - GRAU DE INSTRUÇÃO
 
                 if (String.IsNullOrEmpty(cmbGrau.Text))
                 {
                     errorProviderTela.SetError(cmbGrau, "Informe a nacionalidade");
                     return;
                 }
+                funcionario.GrauInstrucao = cmbGrau.Text;
 
                 #endregion
 
@@ -318,6 +291,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbCor, "Informe a cor");
                     return;
                 }
+                funcionario.Cor = cmbCor.Text;
 
                 #endregion
 
@@ -327,6 +301,14 @@ namespace GuiWindowsForms
                 {
                     errorProviderTela.SetError(rdbNao, "Informe o primeiro emprego");
                     return;
+                }
+                if (rdbSim.Checked == true)
+                {
+                    funcionario.PrimeiroEmprego = 0;
+                }
+                else
+                {
+                    funcionario.PrimeiroEmprego = 1;
                 }
 
                 #endregion
@@ -339,6 +321,7 @@ namespace GuiWindowsForms
                     txtCurso.Clear();
                     return;
                 }
+                funcionario.Curso = txtCurso.Text;
 
                 #endregion
 
@@ -350,6 +333,7 @@ namespace GuiWindowsForms
                     txtInstituicao.Clear();
                     return;
                 }
+                funcionario.Instituicao = txtInstituicao.Text;
 
                 #endregion
 
@@ -360,13 +344,20 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbFuncao, "Informe a função");
                     return;
                 }
+                funcionario.Cargo = cmbFuncao.Text;
 
                 #endregion
 
+                funcionario.DataEfetivacao = dtpDataAdmissao.Value;
+                funcionario.DataFormacao = dtpDataFormacao.Value;
+
+                funcionarioControlador.Alterar(funcionario);
+                funcionarioControlador.Confirmar();
+
             }
             catch (Exception ex)
-            { 
-            
+            {
+                MessageBox.Show(ex.Message);
             }
            
         }
@@ -458,6 +449,48 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
 #endregion
+
+        public void limparCamposTela()
+        {
+            txtCBO.Clear();
+            txtCtps.Clear();
+            txtCurso.Clear();
+            txtInstituicao.Clear();
+            txtPis.Clear();
+            txtSerie.Clear();
+            txtTituloEleitor.Clear();
+            txtZona.Clear();
+            cmbCor.Select();
+            cmbFuncao.Select();
+            cmbGrau.Select();
+            dtpDataAdmissao.Value = DateTime.Today;
+            dtpDataFormacao.Value = DateTime.Today;
+            rdbNao.Checked = false;
+            rdbSim.Checked = false;
+        }
+
+        public void carregarCampos()
+        {
+            txtCBO.Text = funcionario.Cbo;
+            txtCtps.Text = funcionario.Ctps;
+            txtCurso.Text = funcionario.Curso;
+            txtInstituicao.Text = funcionario.Instituicao;
+            txtPis.Text = funcionario.Pis;
+            txtSerie.Text = funcionario.Serie;
+            txtTituloEleitor.Text = funcionario.TituloEleitor;
+            txtZona.Text = funcionario.Zona;
+            cmbCor.Text = funcionario.Cor;
+            cmbFuncao.Text = funcionario.Cargo;
+            cmbGrau.Text = funcionario.GrauInstrucao;
+            if (funcionario.PrimeiroEmprego == 0)
+            {
+                rdbSim.Select();
+            }
+            else
+            {
+                rdbNao.Select();
+            }
+        }
 
     }
 }

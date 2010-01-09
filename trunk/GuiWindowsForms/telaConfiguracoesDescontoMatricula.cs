@@ -6,11 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloDesconto.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaConfiguracoesDescontoMatricula : Form
     {
+        Desconto desconto = new Desconto();
+
+        IDescontoProcesso descontoControlador = DescontoProcesso.Instance; 
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -168,7 +173,8 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaConfiguracoesDescontoMatricula_Load(object sender, EventArgs e)
         {
-
+            txtValor.Clear();
+            txtDescricao.Clear();
         }
         #endregion
 
@@ -185,6 +191,7 @@ namespace GuiWindowsForms
                     txtDescricao.Clear();
                     return;
                 }
+                desconto.Descricao = txtDescricao.Text;
 
                 #endregion
 
@@ -196,8 +203,12 @@ namespace GuiWindowsForms
                     txtValor.Clear();
                     return;
                 }
+                desconto.Percentual = Convert.ToDouble(txtValor.Text);
 
                 #endregion
+
+                descontoControlador.Incluir(desconto);
+                descontoControlador.Confirmar();
             }
             catch (Exception ex)
             { 

@@ -100,7 +100,7 @@ namespace GuiWindowsForms
         {
             Bitmap imagem = null;
 
-            openFileDialog1.ShowDialog();
+            //openFileDialog1.ShowDialog();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try

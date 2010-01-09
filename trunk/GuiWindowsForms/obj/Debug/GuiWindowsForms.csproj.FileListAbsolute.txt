@@ -239,3 +239,4 @@ C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
 C:\Users\Dudu\Desktop\New Folder\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.config

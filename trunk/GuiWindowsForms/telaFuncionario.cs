@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloFuncionario.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaFuncionario : Form
     {
+        Funcionario funcionario = new Funcionario();
+        IFuncionarioProcesso funcionarioControlador = FuncionarioProcesso.Instance; 
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -169,6 +173,7 @@ namespace GuiWindowsForms
                     txtNome.Clear();
                     return;
                 }
+                funcionario.Nome = txtNome.Text;
 
                 #endregion
 
@@ -178,6 +183,14 @@ namespace GuiWindowsForms
                 {
                     errorProviderTela.SetError(rdbFem, "Informe o sexo");
                     return;
+                }
+                if (rdbFem.Checked == true)
+                {
+                    funcionario.Sexo = 0;
+                }
+                else
+                {
+                    funcionario.Sexo = 1;
                 }
 
                 #endregion
@@ -190,6 +203,7 @@ namespace GuiWindowsForms
                     mskCpf.Clear();
                     return;
                 }
+                funcionario.Cpf = mskCpf.Text;
 
                 #endregion
 
@@ -201,6 +215,7 @@ namespace GuiWindowsForms
                     txtRg.Clear();
                     return;
                 }
+                funcionario.Rg = txtRg.Text;
                
                 #endregion
 
@@ -208,10 +223,11 @@ namespace GuiWindowsForms
 
                 if (String.IsNullOrEmpty(txtEmissor.Text))
                 {
-                    errorProviderTela.SetError(txtRg, "Informe o órgão emissor");
+                    errorProviderTela.SetError(txtEmissor, "Informe o órgão emissor");
                     txtEmissor.Clear();
                     return;
                 }
+                funcionario.Emisor = txtEmissor.Text;
 
 
                 #endregion
@@ -223,6 +239,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbEmissorUf, "Informe o uf");
                     return;
                 }
+                funcionario.EmissorUf = cmbEmissorUf.Text;
 
                 #endregion
 
@@ -234,9 +251,10 @@ namespace GuiWindowsForms
                     txtLogradouro.Clear();
                     return;
                 }
+                funcionario.Logradouro = txtLogradouro.Text;
 
                 #endregion
-
+      
                 #region VALIDA - COMPLEMENTO
 
                 if (String.IsNullOrEmpty(txtComplemento.Text))
@@ -245,6 +263,7 @@ namespace GuiWindowsForms
                     txtComplemento.Clear();
                     return;
                 }
+                funcionario.ComplementoEndereco = txtComplemento.Text;
 
                 #endregion
 
@@ -256,6 +275,7 @@ namespace GuiWindowsForms
                     txtNomeEdificil.Clear();
                     return;
                 }
+                funcionario.Edificio = txtNomeEdificil.Text;
 
                 #endregion
 
@@ -267,6 +287,7 @@ namespace GuiWindowsForms
                     txtBairro.Clear();
                     return;
                 }
+                funcionario.Bairro = txtBairro.Text;
 
                 #endregion
 
@@ -277,6 +298,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbUf, "Informe o uf");
                     return;
                 }
+                funcionario.Uf = cmbUf.Text;
 
                 #endregion
 
@@ -288,6 +310,7 @@ namespace GuiWindowsForms
                     txtCidade.Clear();
                     return;
                 }
+                funcionario.Cidade = txtCidade.Text;
 
                 #endregion
 
@@ -299,6 +322,7 @@ namespace GuiWindowsForms
                     mskCep.Clear();
                     return;
                 }
+                funcionario.Cep = mskCep.Text;
 
                 #endregion
 
@@ -310,6 +334,7 @@ namespace GuiWindowsForms
                     mskFoneResidencia.Clear();
                     return;
                 }
+                funcionario.FoneEmergencia = mskFoneResidencia.Text;
 
                 #endregion
 
@@ -321,6 +346,7 @@ namespace GuiWindowsForms
                     txtFiliacaoPai.Clear();
                     return;
                 }
+                funcionario.FiliacaoPai = txtFiliacaoPai.Text;
 
                 #endregion
 
@@ -332,6 +358,7 @@ namespace GuiWindowsForms
                     txtFiliacaoMae.Clear();
                     return;
                 }
+                funcionario.FiliacaoMae = txtFiliacaoMae.Text;
 
                 #endregion
 
@@ -342,6 +369,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbEstadoCivil, "Informe o estado civil");
                     return;
                 }
+                funcionario.EstadoCivil = cmbEstadoCivil.Text;
 
                 #endregion
 
@@ -352,14 +380,22 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbNacionalidade, "Informe a nacionalidade");
                     return;
                 }
+                funcionario.Nacionalidade = cmbNacionalidade.Text;
 
                 #endregion
 
+                funcionario.Nascimento = dtpNascimento.Value;
+
+                ucMenuImagemFunc1.retornaFuncionario(funcionario);
+                funcionario.PerfilID = 1;
+
+                funcionarioControlador.Incluir(funcionario);
+                funcionarioControlador.Confirmar();
+
             }
             catch (Exception ex) 
-            { 
-            
-
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         #endregion
@@ -471,6 +507,11 @@ namespace GuiWindowsForms
         private void telaFuncionario_Load(object sender, EventArgs e)
         {
             cmbUf.DataSource = estados;
+            funcionario.PerfilID = 1;
+            funcionario = funcionarioControlador.Consultar(funcionario, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            carregarFuncionario();
+            ucMenuImagemFunc1.carregaFuncionario(funcionario);
+            Program.funcionarioAux = funcionario;
         }
         #endregion
 
@@ -508,5 +549,59 @@ namespace GuiWindowsForms
             if (cmbUf.Text == "TO") { txtCidade.Text = "PALMAS"; }
         }
         #endregion
+
+        public void limparFuncionario()
+        {
+            txtBairro.Clear();
+            txtCidade.Clear();
+            txtComplemento.Clear();
+            txtEmissor.Clear();
+            txtFiliacaoMae.Clear();
+            txtFiliacaoPai.Clear();
+            txtLogradouro.Clear();
+            txtNome.Clear();
+            txtNomeEdificil.Clear();
+            txtRg.Clear();
+            mskCep.Clear();
+            mskCpf.Clear();
+            mskFoneResidencia.Clear();
+            dtpNascimento.Value = DateTime.Today;
+            cmbEmissorUf.Select();
+            cmbEstadoCivil.Select();
+            cmbNacionalidade.Select();
+            cmbUf.Select();
+            rdbMasc.Checked = false;
+            rdbFem.Checked = false;
+        }
+
+        public void carregarFuncionario()
+        {
+            txtBairro.Text = funcionario.Bairro;
+            txtCidade.Text = funcionario.Cidade;
+            txtComplemento.Text = funcionario.ComplementoEndereco;
+            txtEmissor.Text = funcionario.Emisor;
+            txtFiliacaoMae.Text = funcionario.FiliacaoMae;
+            txtFiliacaoPai.Text = funcionario.FiliacaoPai;
+            txtLogradouro.Text = funcionario.Logradouro;
+            txtNome.Text = funcionario.Nome;
+            txtNomeEdificil.Text = funcionario.Edificio;
+            txtRg.Text = funcionario.Rg;
+            mskCep.Text = funcionario.Cep;
+            mskCpf.Text = funcionario.Cpf;
+            mskFoneResidencia.Text = funcionario.FoneEmergencia;
+            cmbEmissorUf.Text = funcionario.Uf;
+            cmbEstadoCivil.Text = funcionario.EstadoCivil;
+            cmbNacionalidade.Text = funcionario.Nacionalidade;
+            cmbUf.Text = funcionario.Uf;
+            dtpNascimento.Value = funcionario.Nascimento.Value;
+            if (funcionario.Sexo == 0)
+            {
+                rdbFem.Select();
+            }
+            else
+            {
+                rdbMasc.Select();
+            }
+        }
     }
 }

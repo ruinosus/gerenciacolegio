@@ -367,6 +367,90 @@ namespace Negocios.ModuloFuncionario.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (!string.IsNullOrEmpty(funcionario.Nacionalidade))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from f in resultado
+                                                    where
+                                                    f.Nacionalidade.Contains(funcionario.Nacionalidade)
+                                                    select f).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from f in resultado
+                                              where
+                                              f.Nacionalidade.Contains(funcionario.Nacionalidade)
+                                              select f).ToList());
+                            }
+                            pesquisa = true;
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(funcionario.Rg))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from f in resultado
+                                                    where
+                                                    f.Rg.Contains(funcionario.Rg)
+                                                    select f).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from f in resultado
+                                              where
+                                              f.Rg.Contains(funcionario.Rg)
+                                              select f).ToList());
+                            }
+                            pesquisa = true;
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(funcionario.EmissorUf))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from f in resultado
+                                                    where
+                                                    f.EmissorUf.Contains(funcionario.EmissorUf)
+                                                    select f).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from f in resultado
+                                              where
+                                              f.EmissorUf.Contains(funcionario.EmissorUf)
+                                              select f).ToList());
+                            }
+                            pesquisa = true;
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(funcionario.EstadoCivil))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from f in resultado
+                                                    where
+                                                    f.EstadoCivil.Contains(funcionario.EstadoCivil)
+                                                    select f).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from f in resultado
+                                              where
+                                              f.EstadoCivil.Contains(funcionario.EstadoCivil)
+                                              select f).ToList());
+                            }
+                            pesquisa = true;
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (!string.IsNullOrEmpty(funcionario.Nome))
                         {
                             if (pesquisa)
@@ -507,21 +591,41 @@ namespace Negocios.ModuloFuncionario.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(funcionario.Filiacao))
+                        if (!string.IsNullOrEmpty(funcionario.FiliacaoPai))
                         {
                             if (pesquisa)
                             {
                                 resultado.AddRange((from f in resultado
                                                     where
-                                                    f.Filiacao.Contains(funcionario.Filiacao)
+                                                    f.FiliacaoPai.Contains(funcionario.FiliacaoPai)
                                                     select f).ToList());
                             }
                             else
                             {
                                 resultado=((from f in resultado
                                                     where
-                                                    f.Filiacao.Contains(funcionario.Filiacao)
+                                                    f.FiliacaoPai.Contains(funcionario.FiliacaoPai)
                                                     select f).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(funcionario.FiliacaoMae))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from f in resultado
+                                                    where
+                                                    f.FiliacaoMae.Contains(funcionario.FiliacaoMae)
+                                                    select f).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from f in resultado
+                                              where
+                                              f.FiliacaoMae.Contains(funcionario.FiliacaoMae)
+                                              select f).ToList());
                             }
                             pesquisa = true;
                             resultado = resultado.Distinct().ToList();
@@ -927,6 +1031,90 @@ namespace Negocios.ModuloFuncionario.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (!string.IsNullOrEmpty(funcionario.Nacionalidade))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from f in Consultar()
+                                                    where
+                                                    f.Nacionalidade.Contains(funcionario.Nacionalidade)
+                                                    select f).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from f in Consultar()
+                                              where
+                                              f.Nacionalidade.Contains(funcionario.Nacionalidade)
+                                              select f).ToList());
+                            }
+                            pesquisa = true;
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(funcionario.Rg))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from f in Consultar()
+                                                    where
+                                                    f.Rg.Contains(funcionario.Rg)
+                                                    select f).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from f in Consultar()
+                                              where
+                                              f.Rg.Contains(funcionario.Rg)
+                                              select f).ToList());
+                            }
+                            pesquisa = true;
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(funcionario.EmissorUf))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from f in Consultar()
+                                                    where
+                                                    f.EmissorUf.Contains(funcionario.EmissorUf)
+                                                    select f).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from f in Consultar()
+                                              where
+                                              f.EmissorUf.Contains(funcionario.EmissorUf)
+                                              select f).ToList());
+                            }
+                            pesquisa = true;
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(funcionario.EstadoCivil))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from f in Consultar()
+                                                    where
+                                                    f.EstadoCivil.Contains(funcionario.EstadoCivil)
+                                                    select f).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from f in Consultar()
+                                              where
+                                              f.EstadoCivil.Contains(funcionario.EstadoCivil)
+                                              select f).ToList());
+                            }
+                            pesquisa = true;
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (!string.IsNullOrEmpty(funcionario.Nome))
                         {
                             if (pesquisa)
@@ -1068,20 +1256,40 @@ namespace Negocios.ModuloFuncionario.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(funcionario.Filiacao))
+                        if (!string.IsNullOrEmpty(funcionario.FiliacaoPai))
                         {
                             if (pesquisa)
                             {
                                 resultado.AddRange((from f in Consultar()
                                                     where
-                                                    f.Filiacao.Contains(funcionario.Filiacao)
+                                                    f.FiliacaoPai.Contains(funcionario.FiliacaoPai)
                                                     select f).ToList());
                             }
                             else
                             {
                                 resultado = ((from f in Consultar()
                                               where
-                                              f.Filiacao.Contains(funcionario.Filiacao)
+                                              f.FiliacaoPai.Contains(funcionario.FiliacaoPai)
+                                              select f).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(funcionario.FiliacaoMae))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from f in Consultar()
+                                                    where
+                                                    f.FiliacaoMae.Contains(funcionario.FiliacaoMae)
+                                                    select f).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from f in Consultar()
+                                              where
+                                              f.FiliacaoMae.Contains(funcionario.FiliacaoMae)
                                               select f).ToList());
                             }
                             pesquisa = true;
@@ -1224,7 +1432,8 @@ namespace Negocios.ModuloFuncionario.Repositorios
                 funcionarioAux.DataEfetivacao= funcionario.DataEfetivacao;
                 funcionarioAux.Email= funcionario.Email;
                 funcionarioAux.Emisor = funcionario.Emisor;
-                funcionarioAux.Filiacao = funcionario.Filiacao;
+                funcionarioAux.FiliacaoPai = funcionario.FiliacaoPai;
+                funcionarioAux.FiliacaoMae = funcionario.FiliacaoMae;
                 funcionarioAux.FoneEmergencia = funcionario.FoneEmergencia;
                 funcionarioAux.Imagem= funcionario.Imagem;
                 funcionarioAux.Login= funcionario.Login;
@@ -1239,6 +1448,10 @@ namespace Negocios.ModuloFuncionario.Repositorios
                 funcionarioAux.Sexo = funcionario.Sexo;
                 funcionarioAux.Status = funcionario.Status;
                 funcionarioAux.Uf = funcionario.Uf;
+                funcionarioAux.Nacionalidade = funcionario.Nacionalidade;
+                funcionarioAux.EstadoCivil = funcionario.EstadoCivil;
+                funcionarioAux.EmissorUf = funcionario.EmissorUf;
+                funcionarioAux.Rg = funcionario.Rg;
 
                 Confirmar();
             }
