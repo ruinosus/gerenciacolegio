@@ -862,6 +862,33 @@ public partial class Aluno : INotifyPropertyChanged
 
     #endregion
 
+    #region Children
+
+    [Association(Storage = null, OtherKey = "AlunoID", Name = "fk_AlunoAtividade_Aluno")]
+    [DebuggerNonUserCode]
+    public EntitySet<AlunoAtividade> AlunoAtividade
+    {
+        get;
+        set;
+    }
+
+    [Association(Storage = null, OtherKey = "AlunoID", Name = "fk_ResponsavelAluno_Aluno")]
+    [DebuggerNonUserCode]
+    public EntitySet<ResponsavelAluno> ResponsavelAluno
+    {
+        get;
+        set;
+    }
+
+    [Association(Storage = null, OtherKey = "AlunoID", Name = "fk_Matricula_Aluno")]
+    [DebuggerNonUserCode]
+    public EntitySet<Matricula> Matricula
+    {
+        get;
+        set;
+    }
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.alunoatividade")]
@@ -1226,6 +1253,24 @@ public partial class Atividade : INotifyPropertyChanged
 
     #endregion
 
+    #region Parents
+
+    private System.Data.Linq.EntityRef<Funcionario> _funcionario;
+    [Association(Storage = "_funcionario", ThisKey = "FuncionarioID", Name = "fk_Atividade_Funcionario", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Funcionario Funcionario
+    {
+        get
+        {
+            return _funcionario.Entity;
+        }
+        set
+        {
+            _funcionario.Entity = value;
+        }
+    }
+    #endregion
+
     #region Children
 
     [Association(Storage = null, OtherKey = "AtividadeID", Name = "fk_AtividadeData_Atividade")]
@@ -1236,6 +1281,13 @@ public partial class Atividade : INotifyPropertyChanged
         set;
     }
 
+    [Association(Storage = null, OtherKey = "AtividadeID", Name = "fk_AlunoAtividade_Atividade")]
+    [DebuggerNonUserCode]
+    public EntitySet<AlunoAtividade> AlunoAtividade
+    {
+        get;
+        set;
+    }
 
     #endregion
 
@@ -1685,6 +1737,17 @@ public partial class BoletoAtividade : INotifyPropertyChanged
 
     #endregion
 
+    #region Children
+
+    [Association(Storage = null, OtherKey = "BoletoAtividadeID", Name = "fk_BoletoAtividade_has_Cheque_BoletoAtividade")]
+    [DebuggerNonUserCode]
+    public EntitySet<ChequeBoletoAtividade> ChequeBoletoAtividade
+    {
+        get;
+        set;
+    }
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.boletomensalidade")]
@@ -1954,6 +2017,17 @@ public partial class BoletoMensalidade : INotifyPropertyChanged
 
     #endregion
 
+    #region Children
+
+    [Association(Storage = null, OtherKey = "BoletoMensalidadeID", Name = "fk_BoletoAtividade_has_Cheque_Cheque")]
+    [DebuggerNonUserCode]
+    public EntitySet<ChequeBoletoMensalidade> ChequeBoletoMensalidade
+    {
+        get;
+        set;
+    }
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.cheque")]
@@ -2203,6 +2277,24 @@ public partial class Cheque : INotifyPropertyChanged
 
     #endregion
 
+    #region Children
+
+    [Association(Storage = null, OtherKey = "ChequeID", Name = "fk_BoletoAtividade_has_Cheque_Cheque")]
+    [DebuggerNonUserCode]
+    public EntitySet<ChequeBoletoAtividade> ChequeBoletoAtividade
+    {
+        get;
+        set;
+    }
+    [Association(Storage = null, OtherKey = "ChequeID", Name = "fk_Cheque_has_BoletoMensalidade_Cheque")]
+    [DebuggerNonUserCode]
+    public EntitySet<ChequeBoletoMensalidade> ChequeBoletoMensalidade
+    {
+        get;
+        set;
+    }
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.chequeboletoatividade")]
@@ -2314,6 +2406,39 @@ public partial class ChequeBoletoAtividade : INotifyPropertyChanged
 
     #endregion
 
+    #region Parents
+
+    private System.Data.Linq.EntityRef<BoletoAtividade> _boletoAtividade;
+    [Association(Storage = "_boletoAtividade", ThisKey = "BoletoAtividadeID", Name = "fk_BoletoAtividade_has_Cheque_BoletoAtividade", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public BoletoAtividade BoletoAtividade
+    {
+        get
+        {
+            return _boletoAtividade.Entity;
+        }
+        set
+        {
+            _boletoAtividade.Entity = value;
+        }
+    }
+
+    private System.Data.Linq.EntityRef<Cheque> _cheque;
+    [Association(Storage = "_cheque", ThisKey = "ChequeID", Name = "fk_BoletoAtividade_has_Cheque_Cheque", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Cheque Cheque
+    {
+        get
+        {
+            return _cheque.Entity;
+        }
+        set
+        {
+            _cheque.Entity = value;
+        }
+    }
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.chequeboletomensalidade")]
@@ -2423,6 +2548,39 @@ public partial class ChequeBoletoMensalidade : INotifyPropertyChanged
         }
     }
 
+    #endregion
+
+    #region Parents
+
+    private System.Data.Linq.EntityRef<BoletoMensalidade> _boletoMensalidade;
+    [Association(Storage = "_boletoMensalidade", ThisKey = "BoletoMensalidadeID", Name = "fk_Cheque_has_BoletoMensalidade_BoletoMensalidade", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public BoletoMensalidade BoletoMensalidade
+    {
+        get
+        {
+            return _boletoMensalidade.Entity;
+        }
+        set
+        {
+            _boletoMensalidade.Entity = value;
+        }
+    }
+
+    private System.Data.Linq.EntityRef<Cheque> _cheque;
+    [Association(Storage = "_cheque", ThisKey = "ChequeID", Name = "fk_Cheque_has_BoletoMensalidade_Cheque", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Cheque Cheque
+    {
+        get
+        {
+            return _cheque.Entity;
+        }
+        set
+        {
+            _cheque.Entity = value;
+        }
+    }
     #endregion
 
 }
@@ -2877,6 +3035,26 @@ public partial class Dependencia : INotifyPropertyChanged
 
     #endregion
 
+    #region Parents
+
+    private System.Data.Linq.EntityRef<ProfessorDisciplinaSala> _professorDisciplinaSala;
+    [Association(Storage = "_professorDisciplinaSala", ThisKey = "ProfessorDisciplinaSalaID", Name = "fk_Dependencia_ProfessorDisciplinaSala", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public ProfessorDisciplinaSala ProfessorDisciplinaSala
+    {
+        get
+        {
+            return _professorDisciplinaSala.Entity;
+        }
+        set
+        {
+            _professorDisciplinaSala.Entity = value;
+        }
+    }
+
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.desconto")]
@@ -2988,6 +3166,25 @@ public partial class Desconto : INotifyPropertyChanged
 
     #endregion
 
+    #region Children
+
+    [Association(Storage = null, OtherKey = "DescontoID", Name = "fk_AtividadeData_Desconto")]
+    [DebuggerNonUserCode]
+    public EntitySet<AlunoAtividade> AlunoAtividade
+    {
+        get;
+        set;
+    }
+
+    [Association(Storage = null, OtherKey = "DescontoID", Name = "fk_Matricula_Desconto")]
+    [DebuggerNonUserCode]
+    public EntitySet<Matricula> Matricula
+    {
+        get;
+        set;
+    }
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.disciplina")]
@@ -3097,6 +3294,17 @@ public partial class Disciplina : INotifyPropertyChanged
         }
     }
 
+    #endregion
+
+    #region Children
+
+    [Association(Storage = null, OtherKey = "DisciplinaID", Name = "fk_ProfessorDisciplinaSala_Disciplina")]
+    [DebuggerNonUserCode]
+    public EntitySet<ProfessorDisciplinaSala> ProfessorDisciplinaSala
+    {
+        get;
+        set;
+    }
     #endregion
 
 }
@@ -3785,6 +3993,46 @@ public partial class Funcionario : INotifyPropertyChanged
 
     #endregion
 
+    #region Children
+
+    [Association(Storage = null, OtherKey = "FuncionarioID", Name = "fk_Atividade_Funcionario")]
+    [DebuggerNonUserCode]
+    public EntitySet<Atividade> Atividade
+    {
+        get;
+        set;
+    }
+
+    [Association(Storage = null, OtherKey = "FuncionarioID", Name = "fk_ProfessorDisciplinaSala_Funcionario")]
+    [DebuggerNonUserCode]
+    public EntitySet<ProfessorDisciplinaSala> ProfessorDisciplinaSala
+    {
+        get;
+        set;
+    }
+
+   #endregion
+
+    #region Parents
+
+    private System.Data.Linq.EntityRef<Perfil> _perfil;
+    [Association(Storage = "_perfil", ThisKey = "PerfilID", Name = "fk_Funcionario_Perfil", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Perfil Perfil
+    {
+        get
+        {
+            return _perfil.Entity;
+        }
+        set
+        {
+            _perfil.Entity = value;
+        }
+    }
+
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.matricula")]
@@ -4008,6 +4256,57 @@ public partial class Matricula : INotifyPropertyChanged
 
 
     #endregion
+
+    #region Parents
+    
+
+    private System.Data.Linq.EntityRef<Aluno> _aluno;
+    [Association(Storage = "_aluno", ThisKey = "AlunoID", Name = "fk_Matricula_Aluno", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Aluno Aluno
+    {
+        get
+        {
+            return _aluno.Entity;
+        }
+        set
+        {
+            _aluno.Entity = value;
+        }
+    }
+
+    private System.Data.Linq.EntityRef<SalaPeriodo> _salaPeriodo;
+    [Association(Storage = "_salaPeriodo", ThisKey = "SalaPeriodoID", Name = "fk_Matricula_SalaPeriodo", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public SalaPeriodo SalaPeriodo
+    {
+        get
+        {
+            return _salaPeriodo.Entity;
+        }
+        set
+        {
+            _salaPeriodo.Entity = value;
+        }
+    }
+
+    private System.Data.Linq.EntityRef<Desconto> _desconto;
+    [Association(Storage = "_desconto", ThisKey = "DescontoID", Name = "fk_Matricula_Desconto", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Desconto Desconto
+    {
+        get
+        {
+            return _desconto.Entity;
+        }
+        set
+        {
+            _desconto.Entity = value;
+        }
+    }
+
+    #endregion
+
 
 }
 
@@ -4977,6 +5276,22 @@ public partial class Perfil : INotifyPropertyChanged
         get;
         set;
     }
+    [Association(Storage = null, OtherKey = "PerfilID", Name = "fk_Funcionario_Perfil")]
+    [DebuggerNonUserCode]
+    public EntitySet<Funcionario> Funcionario
+    {
+        get;
+        set;
+    }
+
+    [Association(Storage = null, OtherKey = "PerfilID", Name = "fk_Responsavel_Perfil")]
+    [DebuggerNonUserCode]
+    public EntitySet<Responsavel> Responsavel
+    {
+        get;
+        set;
+    }
+    
     #endregion
 
 }
@@ -5133,6 +5448,67 @@ public partial class ProfessorDisciplinaSala : INotifyPropertyChanged
             }
         }
     }
+
+    #endregion
+
+    #region Children
+
+    [Association(Storage = null, OtherKey = "ProfessorDisciplinaSalaID", Name = "fk_Dependencia_ProfessorDisciplinaSala")]
+    [DebuggerNonUserCode]
+    public EntitySet<Dependencia> Dependencia
+    {
+        get;
+        set;
+    }
+    #endregion
+
+    #region Parents
+
+    private System.Data.Linq.EntityRef<Disciplina> _disciplina;
+    [Association(Storage = "_disciplina", ThisKey = "DisciplinaID", Name = "fk_ProfessorDisciplinaSala_Disciplina", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Disciplina Disciplina
+    {
+        get
+        {
+            return _disciplina.Entity;
+        }
+        set
+        {
+            _disciplina.Entity = value;
+        }
+    }
+
+    private System.Data.Linq.EntityRef<Funcionario> _funcionario;
+    [Association(Storage = "_funcionario", ThisKey = "FuncionarioID", Name = "fk_ProfessorDisciplinaSala_Funcionario", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Funcionario Funcionario
+    {
+        get
+        {
+            return _funcionario.Entity;
+        }
+        set
+        {
+            _funcionario.Entity = value;
+        }
+    }
+
+    private System.Data.Linq.EntityRef<SalaPeriodo> _salaPeriodo;
+    [Association(Storage = "_salaPeriodo", ThisKey = "SalaPeriodoID", Name = "fk_ProfessorDisciplinaSala_SalaPeriodo", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public SalaPeriodo SalaPeriodo
+    {
+        get
+        {
+            return _salaPeriodo.Entity;
+        }
+        set
+        {
+            _salaPeriodo.Entity = value;
+        }
+    }
+
 
     #endregion
 
@@ -5684,6 +6060,39 @@ public partial class Responsavel : INotifyPropertyChanged
 
     #endregion
 
+    #region Parents
+
+    private System.Data.Linq.EntityRef<Perfil> _perfil;
+    [Association(Storage = "_perfil", ThisKey = "PerfilID", Name = "fk_Responsavel_Perfil", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Perfil Perfil
+    {
+        get
+        {
+            return _perfil.Entity;
+        }
+        set
+        {
+            _perfil.Entity = value;
+        }
+    }
+
+
+    #endregion
+
+    #region Children
+
+    [Association(Storage = null, OtherKey = "ResponsavelID", Name = "fk_ResponsavelAluno_Responsavel")]
+    [DebuggerNonUserCode]
+    public EntitySet<ResponsavelAluno> ResponsavelAluno
+    {
+        get;
+        set;
+    }
+
+    
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.responsavelaluno")]
@@ -5864,6 +6273,41 @@ public partial class ResponsavelAluno : INotifyPropertyChanged
 
     #endregion
 
+    #region Parents
+
+    private System.Data.Linq.EntityRef<Aluno> _aluno;
+    [Association(Storage = "_aluno", ThisKey = "AlunoID", Name = "fk_ResponsavelAluno_Aluno", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Aluno Aluno
+    {
+        get
+        {
+            return _aluno.Entity;
+        }
+        set
+        {
+            _aluno.Entity = value;
+        }
+    }
+
+    private System.Data.Linq.EntityRef<Responsavel> _responsavel;
+    [Association(Storage = "_responsavel", ThisKey = "ResponsavelID", Name = "fk_ResponsavelAluno_Responsavel", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Responsavel Responsavel
+    {
+        get
+        {
+            return _responsavel.Entity;
+        }
+        set
+        {
+            _responsavel.Entity = value;
+        }
+    }
+
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.sala")]
@@ -6011,6 +6455,57 @@ public partial class Sala : INotifyPropertyChanged
 
     #endregion
 
+    #region Parents
+
+    private System.Data.Linq.EntityRef<Serie> _serie;
+    [Association(Storage = "_serie", ThisKey = "SerieID", Name = "fk_Sala_Serie", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Serie Serie
+    {
+        get
+        {
+            return _serie.Entity;
+        }
+        set
+        {
+            _serie.Entity = value;
+        }
+    }
+
+    private System.Data.Linq.EntityRef<Turma> _turma;
+    [Association(Storage = "_turma", ThisKey = "TurmaID", Name = "fk_Sala_Turma", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Turma Turma
+    {
+        get
+        {
+            return _turma.Entity;
+        }
+        set
+        {
+            _turma.Entity = value;
+        }
+    }
+
+
+    private System.Data.Linq.EntityRef<Turno> _turno;
+    [Association(Storage = "_turno", ThisKey = "TurnoID", Name = "fk_Sala_Turno", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Turno Turno
+    {
+        get
+        {
+            return _turno.Entity;
+        }
+        set
+        {
+            _turno.Entity = value;
+        }
+    }
+
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.salaperiodo")]
@@ -6142,6 +6637,25 @@ public partial class SalaPeriodo : INotifyPropertyChanged
 
     #endregion
 
+
+    #region Children
+
+    [Association(Storage = null, OtherKey = "SalaPeriodoID", Name = "fk_ProfessorDisciplinaSala_SalaPeriodo")]
+    [DebuggerNonUserCode]
+    public EntitySet<ProfessorDisciplinaSala> ProfessorDisciplinaSala
+    {
+        get;
+        set;
+    }
+
+    [Association(Storage = null, OtherKey = "SalaPeriodoID", Name = "fk_Matricula_SalaPeriodo")]
+    [DebuggerNonUserCode]
+    public EntitySet<Matricula> Matricula
+    {
+        get;
+        set;
+    }
+    #endregion
 }
 
 [Table(Name = "colegiodb.serie")]
@@ -6275,6 +6789,19 @@ public partial class Serie : INotifyPropertyChanged
     }
 
     #endregion
+
+    #region Children
+
+    [Association(Storage = null, OtherKey = "SerieID", Name = "fk_Sala_Serie")]
+    [DebuggerNonUserCode]
+    public EntitySet<Sala> Sala
+    {
+        get;
+        set;
+    }
+
+
+    #endregion
 }
 
 [Table(Name = "colegiodb.turma")]
@@ -6363,6 +6890,19 @@ public partial class Turma : INotifyPropertyChanged
 
     #endregion
 
+    #region Children
+
+    [Association(Storage = null, OtherKey = "TurmaID", Name = "fk_Sala_Turma")]
+    [DebuggerNonUserCode]
+    public EntitySet<Sala> Sala
+    {
+        get;
+        set;
+    }
+
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.turno")]
@@ -6448,6 +6988,19 @@ public partial class Turno : INotifyPropertyChanged
             }
         }
     }
+
+    #endregion
+
+    #region Children
+
+    [Association(Storage = null, OtherKey = "TurnoID", Name = "fk_Sala_Turno")]
+    [DebuggerNonUserCode]
+    public EntitySet<Sala> Sala
+    {
+        get;
+        set;
+    }
+
 
     #endregion
 
