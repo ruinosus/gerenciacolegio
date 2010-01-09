@@ -123,7 +123,6 @@ C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsFo
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavel.resources
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelBusca.resources
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoes.resources
-C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.ckbTerca.resources
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesControleDeAcesso.resources
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesDescontoMatricula.resources
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesSerie.resources
@@ -239,3 +238,4 @@ C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\Negocios.pdb
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.pdb
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
 C:\Users\Dudu\Desktop\New Folder\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources

@@ -6,11 +6,25 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloSerie.Processos;
+using Negocios.ModuloTurno.Processos;
+using Negocios.ModuloTurma.Processos;
+using Negocios.ModuloSala.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaConfiguracoesSerie : Form
     {
+        Serie serie = new Serie();
+        Turno turno = new Turno();
+        Turma turma = new Turma();
+        Sala sala = new Sala();
+        
+        ISerieProcesso serieControlador = SerieProcesso.Instance;
+        ITurnoProcesso turnoControlador = TurnoProcesso.Instance;
+        ITurmaProcesso turmaControlador = TurmaProcesso.Instance;
+        ISalaProcesso salaControlador = SalaProcesso.Instance;
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -173,7 +187,20 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaConfiguracoesSerie_Load(object sender, EventArgs e)
         {
+            List<Serie> listaSerie = new List<Serie>();
+            listaSerie = serieControlador.Consultar();
+            cmbSerie.DataSource = listaSerie;
+            cmbSerie.DisplayMember = "Nome";
 
+            List<Turma> listaTurma = new List<Turma>();
+            listaTurma = turmaControlador.Consultar();
+            cmbTurma.DataSource = listaTurma;
+            cmbTurma.DisplayMember = "Nome";
+
+            List<Turno> listaTurno = new List<Turno>();
+            listaTurno = turnoControlador.Consultar();
+            cmbTurno.DataSource = listaTurno;
+            cmbTurno.DisplayMember = "Nome";
 
         }
         #endregion
@@ -190,6 +217,8 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbSerie, "Informe a serie");
                     return;
                 }
+                sala.SerieID =((Serie)cmbSerie.SelectedItem).ID;
+
 
                 #endregion
 
@@ -210,6 +239,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbTurno, "Informe o turno");
                     return;
                 }
+                sala.TurnoID = ((Turno)cmbTurno.SelectedItem).ID;
 
                 #endregion
 
@@ -220,6 +250,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbTurma, "Informe a turma");
                     return;
                 }
+                sala.TurmaID = ((Turma)cmbTurma.SelectedItem).ID;
 
                 #endregion
 
@@ -230,6 +261,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(txtValor, "Informe o valor");
                     return;
                 }
+                serie.Valor = Convert.ToDouble(txtValor.Text);
 
                 #endregion
 
