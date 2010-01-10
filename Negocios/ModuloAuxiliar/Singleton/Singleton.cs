@@ -15,7 +15,8 @@ namespace Negocios.ModuloAuxiliar.Singleton
         {
             get
             {
-                return SingletonCreator.instance;
+               // return SingletonCreator.instance;
+                return  new T();;
             }
         }
 

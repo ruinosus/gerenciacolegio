@@ -93,25 +93,6 @@ namespace Negocios.ModuloSerie.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (serie.Valor.HasValue)
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from s in resultado
-                                                    where
-                                                    s.Valor.HasValue && s.Valor.Value == serie.Valor.Value
-                                                    select s).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from s in resultado
-                                                    where
-                                                    s.Valor.HasValue && s.Valor.Value == serie.Valor.Value
-                                                    select s).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         break;
                     }
@@ -179,25 +160,7 @@ namespace Negocios.ModuloSerie.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (serie.Valor.HasValue)
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from s in Consultar()
-                                                    where
-                                                    s.Valor.HasValue && s.Valor.Value == serie.Valor.Value
-                                                    select s).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from s in Consultar()
-                                              where
-                                              s.Valor.HasValue && s.Valor.Value == serie.Valor.Value
-                                              select s).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
+                    
 
                         break;
                     }
@@ -260,8 +223,6 @@ namespace Negocios.ModuloSerie.Repositorios
                 serieAux = resultado[0];
                 serieAux.Nome = serie.Nome;
                 serieAux.Status = serie.Status;
-                serieAux.Valor = serie.Valor;
-
                 Confirmar();
             }
             catch (Exception)

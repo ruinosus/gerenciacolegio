@@ -15,11 +15,16 @@ namespace GuiWindowsForms
 {
     public partial class telaConfiguracoesSerie : Form
     {
+        int linhaSelecionadaGrid = -1;
+
+        List<ClasseGrid> listaGrid = null;
+        List<Sala> listaSala = null;
+
         Serie serie = new Serie();
         Turno turno = new Turno();
         Turma turma = new Turma();
         Sala sala = new Sala();
-        
+
         ISerieProcesso serieControlador = SerieProcesso.Instance;
         ITurnoProcesso turnoControlador = TurnoProcesso.Instance;
         ITurmaProcesso turmaControlador = TurmaProcesso.Instance;
@@ -201,6 +206,9 @@ namespace GuiWindowsForms
             listaTurno = turnoControlador.Consultar();
             cmbTurno.DataSource = listaTurno;
             cmbTurno.DisplayMember = "Nome";
+
+            carregaForm();
+
         }
         #endregion
 
@@ -209,6 +217,9 @@ namespace GuiWindowsForms
         {
             try
             {
+
+                salaControlador = SalaProcesso.Instance;
+
                 #region VALIDA - SERIE
 
                 if (String.IsNullOrEmpty(cmbSerie.Text))
@@ -216,7 +227,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbSerie, "Informe a serie");
                     return;
                 }
-                sala.SerieID =((Serie)cmbSerie.SelectedItem).ID;
+                sala.SerieID = ((Serie)cmbSerie.SelectedItem).ID;
                 serie = ((Serie)cmbSerie.SelectedItem);
 
 
@@ -224,13 +235,13 @@ namespace GuiWindowsForms
 
                 #region VALIDA - CICLO
 
-                if (String.IsNullOrEmpty(txtCiclo.Text))
+                if (String.IsNullOrEmpty(cmbCiclo.Text))
                 {
-                    errorProviderTela.SetError(txtCiclo, "Informe o ciclo");
+                    errorProviderTela.SetError(cmbCiclo, "Informe o ciclo");
                     return;
                 }
-                serie.Ciclo = txtCiclo.Text;
-                    
+                sala.Ciclo = cmbCiclo.Text;
+
                 #endregion
 
                 #region VALIDA - TURNO
@@ -262,22 +273,41 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(txtValor, "Informe o valor");
                     return;
                 }
-                serie.Valor = Convert.ToDouble(txtValor.Text);
+                sala.Valor = Convert.ToDouble(txtValor.Text);
 
                 #endregion
 
-                salaControlador.Incluir(sala);
-                salaControlador.Confirmar();
+                Sala salaAux = null;
 
-                serieControlador.Alterar(serie);
-                serieControlador.Confirmar();
+                if (salaControlador.Consultar(sala, Negocios.ModuloBasico.Enums.TipoPesquisa.E).Count > 0)
+                {
+                    salaAux = salaControlador.Consultar(sala, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+                }
+
+                //if (sala != null && sala.Equals(salaAux) == false)
+                if (linhaSelecionadaGrid== -1)
+                {
+                    sala.Status =0 ;
+                    salaControlador.Incluir(sala);
+                    salaControlador.Confirmar();
+
+                    
+                    
+                }
+                else
+                {
+                    sala.ID = listaSala[linhaSelecionadaGrid].ID;
+                    salaControlador.Alterar(sala);
+                    carregaForm();
+  
+                }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
+            carregaForm();
         }
         #endregion
 
@@ -324,6 +354,119 @@ namespace GuiWindowsForms
 
         #endregion
 
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            salaControlador.Excluir(listaSala[linhaSelecionadaGrid]);
+            salaControlador.Confirmar();
+            carregaForm();
+        }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
+            txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
+            cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
+            cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
+            cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
+            txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
+            cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
+            cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
+            cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+        }
+
+        private void carregaForm()
+        {
+            salaControlador = SalaProcesso.Instance;
+            listaSala = new List<Sala>();
+            listaGrid = new List<ClasseGrid>();
+
+            listaSala = salaControlador.Consultar();
+
+            foreach (Sala a in listaSala)
+            {
+                ClasseGrid classeGridAux = new ClasseGrid();
+
+                classeGridAux.SerieAux = a.Serie.Nome;
+                classeGridAux.TurmaAux = a.Turma.Nome;
+                classeGridAux.TurnoAux = a.Turno.Nome;
+                classeGridAux.ValorAux = Convert.ToDouble(a.Valor.ToString());
+                classeGridAux.CicloAux = a.Ciclo;
+
+                listaGrid.Add(classeGridAux);
+            }
+
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listaGrid;
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
+            txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
+            cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
+            cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
+            cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
+            txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
+            cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
+            cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
+            cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+        }
     }
+
+    public class ClasseGrid
+    {
+        string serieAux;
+
+        public string SerieAux
+        {
+            get { return serieAux; }
+            set { serieAux = value; }
+        }
+        string turmaAux;
+
+        public string TurmaAux
+        {
+            get { return turmaAux; }
+            set { turmaAux = value; }
+        }
+        string turnoAux;
+
+        public string TurnoAux
+        {
+            get { return turnoAux; }
+            set { turnoAux = value; }
+        }
+        string cicloAux;
+
+        public string CicloAux
+        {
+            get { return cicloAux; }
+            set { cicloAux = value; }
+        }
+        double valorAux;
+
+        public double ValorAux
+        {
+            get { return valorAux; }
+            set { valorAux = value; }
+        }
+    }
+
+
 }
