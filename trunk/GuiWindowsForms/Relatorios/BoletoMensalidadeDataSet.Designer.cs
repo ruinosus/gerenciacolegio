@@ -262,7 +262,7 @@ namespace GuiWindowsForms.Relatorios {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class BoletoMensalidadeDataTableDataTable : global::System.Data.TypedTableBase<BoletoMensalidadeDataTableRow> {
             
-            private global::System.Data.DataColumn columnAluno;
+            private global::System.Data.DataColumn columnNomeAluno;
             
             private global::System.Data.DataColumn columnSerieAluno;
             
@@ -311,9 +311,9 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn AlunoColumn {
+            public global::System.Data.DataColumn NomeAlunoColumn {
                 get {
-                    return this.columnAluno;
+                    return this.columnNomeAluno;
                 }
             }
             
@@ -402,10 +402,10 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public BoletoMensalidadeDataTableRow AddBoletoMensalidadeDataTableRow(string Aluno, string SerieAluno, string TurmaAluno, string TurnoAluno, System.DateTime VencimentoAluno, System.DateTime Pagamento, double Valor, double Multa, int Parcela) {
+            public BoletoMensalidadeDataTableRow AddBoletoMensalidadeDataTableRow(string NomeAluno, string SerieAluno, string TurmaAluno, string TurnoAluno, System.DateTime VencimentoAluno, System.DateTime Pagamento, double Valor, double Multa, int Parcela) {
                 BoletoMensalidadeDataTableRow rowBoletoMensalidadeDataTableRow = ((BoletoMensalidadeDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Aluno,
+                        NomeAluno,
                         SerieAluno,
                         TurmaAluno,
                         TurnoAluno,
@@ -433,7 +433,7 @@ namespace GuiWindowsForms.Relatorios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal void InitVars() {
-                this.columnAluno = base.Columns["Aluno"];
+                this.columnNomeAluno = base.Columns["NomeAluno"];
                 this.columnSerieAluno = base.Columns["SerieAluno"];
                 this.columnTurmaAluno = base.Columns["TurmaAluno"];
                 this.columnTurnoAluno = base.Columns["TurnoAluno"];
@@ -446,8 +446,8 @@ namespace GuiWindowsForms.Relatorios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             private void InitClass() {
-                this.columnAluno = new global::System.Data.DataColumn("Aluno", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAluno);
+                this.columnNomeAluno = new global::System.Data.DataColumn("NomeAluno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomeAluno);
                 this.columnSerieAluno = new global::System.Data.DataColumn("SerieAluno", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSerieAluno);
                 this.columnTurmaAluno = new global::System.Data.DataColumn("TurmaAluno", typeof(string), null, global::System.Data.MappingType.Element);
@@ -464,9 +464,9 @@ namespace GuiWindowsForms.Relatorios {
                 base.Columns.Add(this.columnMulta);
                 this.columnParcela = new global::System.Data.DataColumn("Parcela", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnParcela);
-                this.columnAluno.AllowDBNull = false;
-                this.columnAluno.Caption = "ALUNO";
-                this.columnAluno.MaxLength = 50;
+                this.columnNomeAluno.AllowDBNull = false;
+                this.columnNomeAluno.Caption = "ALUNO";
+                this.columnNomeAluno.MaxLength = 50;
                 this.columnSerieAluno.Caption = "serieAluno";
                 this.columnSerieAluno.MaxLength = 30;
                 this.columnTurmaAluno.Caption = "TURMAALUNO";
@@ -610,12 +610,12 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string Aluno {
+            public string NomeAluno {
                 get {
-                    return ((string)(this[this.tableBoletoMensalidadeDataTable.AlunoColumn]));
+                    return ((string)(this[this.tableBoletoMensalidadeDataTable.NomeAlunoColumn]));
                 }
                 set {
-                    this[this.tableBoletoMensalidadeDataTable.AlunoColumn] = value;
+                    this[this.tableBoletoMensalidadeDataTable.NomeAlunoColumn] = value;
                 }
             }
             
@@ -959,7 +959,7 @@ namespace GuiWindowsForms.Relatorios.BoletoMensalidadeDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "BoletoMensalidadeDataTable";
-            tableMapping.ColumnMappings.Add("ALUNO", "Aluno");
+            tableMapping.ColumnMappings.Add("ALUNO", "NomeAluno");
             tableMapping.ColumnMappings.Add("serieAluno", "SerieAluno");
             tableMapping.ColumnMappings.Add("TURMAALUNO", "TurmaAluno");
             tableMapping.ColumnMappings.Add("TURNOALUNO", "TurnoAluno");
@@ -993,17 +993,25 @@ FROM            aluno A INNER JOIN
                          serie S ON S.Id = SA.SerieId INNER JOIN
  turma TU ON TU.Id = SA.TurmaId INNER JOIN
                          turno T ON T.Id = SA.TurnoId 
-
+where a.id = @ID
 
 ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Id";
+            this._commandCollection[0].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable dataTable) {
+        public virtual int Fill(BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable dataTable, int ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1014,8 +1022,9 @@ FROM            aluno A INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable GetData() {
+        public virtual BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable GetData(int ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
             BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable dataTable = new BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

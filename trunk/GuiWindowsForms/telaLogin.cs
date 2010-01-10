@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloAluno.Processos;
+using GuiWindowsForms.Relatorios.BoletoMensalidadeDataSetTableAdapters;
+using GuiWindowsForms.Relatorios;
 
 namespace GuiWindowsForms
 {
@@ -44,12 +46,24 @@ namespace GuiWindowsForms
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            IAlunoProcesso processo = AlunoProcesso.Instance;
-            Aluno a = new Aluno();
+            //IAlunoProcesso processo = AlunoProcesso.Instance;
+            //Aluno a = new Aluno();
+            
+    //        BoletoMensalidadeDataSet dataSet = new BoletoMensalidadeDataSet();
+         
+    //        BoletoMensalidadeRelatorio relatorio = new BoletoMensalidadeRelatorio();
 
-            a.ID = 1;
 
-            List<Aluno> alunos = processo.Consultar(a, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
+    //relatorio.SetDataSource(dataSet);
+
+    //relatorio.RecordSelectionFormula = "{ID} = " + 1;
+    //relatorio.Refresh();
+
+
+            
+            //a.ID = 1;
+
+            //List<Aluno> alunos = processo.Consultar(a, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
             
             //toolTip1.SetToolTip(txtLogin, "mensagem bem gay");
             //toolTip1.BackColor = Color.Beige;
@@ -165,6 +179,12 @@ namespace GuiWindowsForms
         private void txtSenha_TextChanged(object sender, EventArgs e)
         {
             errorProviderTela.Clear();
+        }
+
+        private void telaLogin_Load(object sender, EventArgs e)
+        {
+
+            
         }
     }
 }
