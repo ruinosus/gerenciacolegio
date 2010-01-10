@@ -176,6 +176,7 @@
             this.btnImprimir.TabIndex = 86;
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.MouseLeave += new System.EventHandler(this.btnImprimir_MouseLeave);
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             this.btnImprimir.MouseEnter += new System.EventHandler(this.btnImprimir_MouseEnter);
             // 
             // uMenuLateral1

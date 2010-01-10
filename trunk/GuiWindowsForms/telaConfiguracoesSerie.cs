@@ -395,6 +395,8 @@ namespace GuiWindowsForms
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
             if (linhaSelecionadaGrid >= 0)
             {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
                 cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
                 txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
                 cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
@@ -409,10 +411,12 @@ namespace GuiWindowsForms
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
             if (linhaSelecionadaGrid >= 0)
             {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
                 cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
                 txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
                 cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
@@ -430,6 +434,8 @@ namespace GuiWindowsForms
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
             if (linhaSelecionadaGrid >= 0)
             {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
                 cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
                 txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
                 cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
@@ -444,9 +450,14 @@ namespace GuiWindowsForms
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
+
+            
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+         
             if (linhaSelecionadaGrid >= 0)
             {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+                
                 cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
                 txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
                 cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
@@ -594,15 +605,12 @@ namespace GuiWindowsForms
                 
                 if (verificaSeJaInserido(sala)==false)
                 {
-                    if (linhaSelecionadaGrid == -1)
-                    {
                         sala.Status = 0;
                         salaControlador.Incluir(sala);
                         salaControlador.Confirmar();
                         linhaSelecionadaGrid = -1;
 
                         MessageBox.Show(SerieConstantes.SERIE_INCLUIDA, "Colégio Conhecer - Inserir Série");
-                    }
                 }
                 else
                 {

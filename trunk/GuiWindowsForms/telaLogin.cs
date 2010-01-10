@@ -47,34 +47,7 @@ namespace GuiWindowsForms
 
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            //IAlunoProcesso processo = AlunoProcesso.Instance;
-            //Aluno a = new Aluno();
-            
-    //        BoletoMensalidadeDataSet dataSet = new BoletoMensalidadeDataSet();
-         
-    //        BoletoMensalidadeRelatorio relatorio = new BoletoMensalidadeRelatorio();
 
-
-    //relatorio.SetDataSource(dataSet);
-
-    //relatorio.RecordSelectionFormula = "{ID} = " + 1;
-    //relatorio.Refresh();
-            BoletoMensalidadeDataTableTableAdapter ta = new BoletoMensalidadeDataTableTableAdapter();
-            GuiWindowsForms.Relatorios.BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable dataTable = ta.GetData(1);
-            BoletoMensalidadeRelatorio1.SetDataSource((DataTable)dataTable);
-            BoletoMensalidadeRelatorio1.Refresh();
-            //crystalReportViewer1.
-            
-            //a.ID = 1;
-
-            //List<Aluno> alunos = processo.Consultar(a, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
-            
-            //toolTip1.SetToolTip(txtLogin, "mensagem bem gay");
-            //toolTip1.BackColor = Color.Beige;
-            //toolTip1.ToolTipIcon = ToolTipIcon.Error;
-            //toolTip1.ToolTipTitle = "Titulo da mensagem";
-            //toolTip1.Active = true;
-            //toolTip1.Show("novo textasr", txtLogin);
             #region Validação dos campos de login e senha
 
             try
@@ -187,10 +160,8 @@ namespace GuiWindowsForms
 
         private void telaLogin_Load(object sender, EventArgs e)
         {
-            //BoletoMensalidadeDataTableTableAdapter ta = new BoletoMensalidadeDataTableTableAdapter();
-            //GuiWindowsForms.Relatorios.BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable dataTable = ta.GetData(1);
-            //BoletoMensalidadeRelatorio1.SetDataSource((DataTable)dataTable);
-            //BoletoMensalidadeRelatorio1.Refresh();
+            
+          
         }
     }
 }
