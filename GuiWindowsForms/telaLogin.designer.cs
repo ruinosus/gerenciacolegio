@@ -39,6 +39,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.BoletoMensalidadeRelatorio1 = new GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio();
+            this.BoletoMensalidadeRelatorio2 = new GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
@@ -110,9 +111,9 @@
             // 
             this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(-112, 57);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(380, 86);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.BoletoMensalidadeRelatorio1;
+            this.crystalReportViewer1.ReportSource = this.BoletoMensalidadeRelatorio2;
             this.crystalReportViewer1.Size = new System.Drawing.Size(568, 277);
             this.crystalReportViewer1.TabIndex = 4;
             // 
@@ -151,6 +152,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio BoletoMensalidadeRelatorio1;
+        private GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio BoletoMensalidadeRelatorio2;
     }
 }
 

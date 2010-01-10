@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloAluno.Processos;
-using GuiWindowsForms.Relatorios.BoletoMensalidadeDataSetTableAdapters;
+
 using GuiWindowsForms.Relatorios;
+using GuiWindowsForms.Relatorios.BoletoMensalidadeDataSetTableAdapters;
 
 namespace GuiWindowsForms
 {
@@ -58,8 +59,11 @@ namespace GuiWindowsForms
 
     //relatorio.RecordSelectionFormula = "{ID} = " + 1;
     //relatorio.Refresh();
-
-
+            BoletoMensalidadeDataTableTableAdapter ta = new BoletoMensalidadeDataTableTableAdapter();
+            GuiWindowsForms.Relatorios.BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable dataTable = ta.GetData(1);
+            BoletoMensalidadeRelatorio1.SetDataSource((DataTable)dataTable);
+            BoletoMensalidadeRelatorio1.Refresh();
+            //crystalReportViewer1.
             
             //a.ID = 1;
 
@@ -183,8 +187,10 @@ namespace GuiWindowsForms
 
         private void telaLogin_Load(object sender, EventArgs e)
         {
-
-            
+            //BoletoMensalidadeDataTableTableAdapter ta = new BoletoMensalidadeDataTableTableAdapter();
+            //GuiWindowsForms.Relatorios.BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable dataTable = ta.GetData(1);
+            //BoletoMensalidadeRelatorio1.SetDataSource((DataTable)dataTable);
+            //BoletoMensalidadeRelatorio1.Refresh();
         }
     }
 }
