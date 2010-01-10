@@ -91,7 +91,7 @@
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblInfoControles);
             this.Name = "ucMenuInferior";
-            this.Size = new System.Drawing.Size(404, 43);
+            this.Size = new System.Drawing.Size(650, 43);
             this.ResumeLayout(false);
             this.PerformLayout();
 
