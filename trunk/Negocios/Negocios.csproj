@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{E035BBFD-00D4-461F-9AF9-D57B45582B93}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -252,7 +252,7 @@
     <Compile Include="ModuloFuncionario\Excecoes\FuncionarioNaoAlteradoExcecao.cs" />
     <Compile Include="ModuloFuncionario\Excecoes\FuncionarioNaoExcluidoExcecao.cs" />
     <Compile Include="ModuloFuncionario\Excecoes\FuncionarioNaoIncluidoExcecao.cs" />
-    <Compile Include="ModuloFuncionario\Processos\Fabricas\FuncionarioFabrica.cs" />
+    <Compile Include="ModuloFuncionario\Fabricas\FuncionarioFabrica.cs" />
     <Compile Include="ModuloFuncionario\Processos\FuncionarioProcesso.cs" />
     <Compile Include="ModuloFuncionario\Processos\Interfaces\IFuncionarioProcesso.cs" />
     <Compile Include="ModuloFuncionario\Repositorios\FuncionarioRepositorio.cs" />
@@ -371,8 +371,19 @@
     <Compile Include="ModuloSalaPeriodo\Repositorios\SalaPeriodoRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ModuloFuncionario\Fabricas\.svn\all-wcprops" />
+    <None Include="ModuloFuncionario\Fabricas\.svn\entries" />
+    <None Include="ModuloFuncionario\Fabricas\.svn\format" />
+    <None Include="ModuloFuncionario\Fabricas\.svn\text-base\FuncionarioFabrica.cs.svn-base" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="ModuloAuxiliar\Util\MenuController\" />
     <Folder Include="ModuloBasico\Excecoes\" />
+    <Folder Include="ModuloFuncionario\Fabricas\.svn\prop-base\" />
+    <Folder Include="ModuloFuncionario\Fabricas\.svn\props\" />
+    <Folder Include="ModuloFuncionario\Fabricas\.svn\tmp\prop-base\" />
+    <Folder Include="ModuloFuncionario\Fabricas\.svn\tmp\props\" />
+    <Folder Include="ModuloFuncionario\Fabricas\.svn\tmp\text-base\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

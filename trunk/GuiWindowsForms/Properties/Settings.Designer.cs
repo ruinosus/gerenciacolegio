@@ -33,5 +33,15 @@ namespace GuiWindowsForms.Properties {
                 return ((string)(this["colegiodbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;database=ColegioDB")]
+        public string ColegioDBConnectionString1 {
+            get {
+                return ((string)(this["ColegioDBConnectionString1"]));
+            }
+        }
     }
 }
