@@ -371,19 +371,8 @@
     <Compile Include="ModuloSalaPeriodo\Repositorios\SalaPeriodoRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ModuloFuncionario\Fabricas\.svn\all-wcprops" />
-    <None Include="ModuloFuncionario\Fabricas\.svn\entries" />
-    <None Include="ModuloFuncionario\Fabricas\.svn\format" />
-    <None Include="ModuloFuncionario\Fabricas\.svn\text-base\FuncionarioFabrica.cs.svn-base" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="ModuloAuxiliar\Util\MenuController\" />
     <Folder Include="ModuloBasico\Excecoes\" />
-    <Folder Include="ModuloFuncionario\Fabricas\.svn\prop-base\" />
-    <Folder Include="ModuloFuncionario\Fabricas\.svn\props\" />
-    <Folder Include="ModuloFuncionario\Fabricas\.svn\tmp\prop-base\" />
-    <Folder Include="ModuloFuncionario\Fabricas\.svn\tmp\props\" />
-    <Folder Include="ModuloFuncionario\Fabricas\.svn\tmp\text-base\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
