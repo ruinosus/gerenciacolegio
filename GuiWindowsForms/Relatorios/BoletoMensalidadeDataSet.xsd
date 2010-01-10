@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BoletoMensalidadeDataSet" targetNamespace="http://tempuri.org/BoletoMensalidadeDataSet.xsd" xmlns:mstns="http://tempuri.org/BoletoMensalidadeDataSet.xsd" xmlns="http://tempuri.org/BoletoMensalidadeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ColegioDBConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ColegioDBConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GuiWindowsForms.Properties.Settings.GlobalReference.Default.ColegioDBConnectionString1" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="colegiodbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="colegiodbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.GuiWindowsForms.Properties.Settings.GlobalReference.Default.colegiodbConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BoletoMensalidadeDataTableTableAdapter" GeneratorDataComponentClassName="BoletoMensalidadeDataTableTableAdapter" Name="BoletoMensalidadeDataTable" UserDataComponentName="BoletoMensalidadeDataTableTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ColegioDBConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        a.Nome AS ALUNO, S.NOME AS serieAluno,TU.NOME AS TURMAALUNO, T.NOME AS TURNOALUNO, B.DataVencimento AS VENCIMENTO, B.DataPagamento AS PAGAMENTO, M.Valor, B.Multa AS MULTA, 
+                         B.Parcela AS PARCELA
+FROM            aluno A INNER JOIN
+                         matricula M ON M.AlunoId = A.Id INNER JOIN
+                         boletomensalidade B ON B.MatriculaId = M.Id INNER JOIN
+                        
+                         salaperiodo SP ON SP.Id = M.SalaPeriodoId INNER JOIN
+                         sala SA ON SA.Id = SP.SalaId INNER JOIN
+                         serie S ON S.Id = SA.SerieId INNER JOIN
+ turma TU ON TU.Id = SA.TurmaId INNER JOIN
+                         turno T ON T.Id = SA.TurnoId 
+
+
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ALUNO" DataSetColumn="Aluno" />
+              <Mapping SourceColumn="serieAluno" DataSetColumn="SerieAluno" />
+              <Mapping SourceColumn="TURMAALUNO" DataSetColumn="TurmaAluno" />
+              <Mapping SourceColumn="TURNOALUNO" DataSetColumn="TurnoAluno" />
+              <Mapping SourceColumn="VENCIMENTO" DataSetColumn="VencimentoAluno" />
+              <Mapping SourceColumn="PAGAMENTO" DataSetColumn="Pagamento" />
+              <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
+              <Mapping SourceColumn="MULTA" DataSetColumn="Multa" />
+              <Mapping SourceColumn="PARCELA" DataSetColumn="Parcela" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BoletoMensalidadeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="BoletoMensalidadeDataSet" msprop:Generator_DataSetName="BoletoMensalidadeDataSet" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BoletoMensalidadeDataTable" msprop:Generator_UserTableName="BoletoMensalidadeDataTable" msprop:Generator_RowDeletedName="BoletoMensalidadeDataTableRowDeleted" msprop:Generator_RowChangedName="BoletoMensalidadeDataTableRowChanged" msprop:Generator_RowClassName="BoletoMensalidadeDataTableRow" msprop:Generator_RowChangingName="BoletoMensalidadeDataTableRowChanging" msprop:Generator_RowEvArgName="BoletoMensalidadeDataTableRowChangeEvent" msprop:Generator_RowEvHandlerName="BoletoMensalidadeDataTableRowChangeEventHandler" msprop:Generator_TableClassName="BoletoMensalidadeDataTableDataTable" msprop:Generator_TableVarName="tableBoletoMensalidadeDataTable" msprop:Generator_RowDeletingName="BoletoMensalidadeDataTableRowDeleting" msprop:Generator_TablePropName="BoletoMensalidadeDataTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Aluno" msdata:Caption="ALUNO" msprop:Generator_UserColumnName="Aluno" msprop:Generator_ColumnVarNameInTable="columnAluno" msprop:Generator_ColumnPropNameInRow="Aluno" msprop:Generator_ColumnPropNameInTable="AlunoColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SerieAluno" msdata:Caption="serieAluno" msprop:Generator_UserColumnName="SerieAluno" msprop:Generator_ColumnVarNameInTable="columnSerieAluno" msprop:Generator_ColumnPropNameInRow="SerieAluno" msprop:Generator_ColumnPropNameInTable="SerieAlunoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TurmaAluno" msdata:Caption="TURMAALUNO" msprop:Generator_UserColumnName="TurmaAluno" msprop:Generator_ColumnVarNameInTable="columnTurmaAluno" msprop:Generator_ColumnPropNameInRow="TurmaAluno" msprop:Generator_ColumnPropNameInTable="TurmaAlunoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TurnoAluno" msdata:Caption="TURNOALUNO" msprop:Generator_UserColumnName="TurnoAluno" msprop:Generator_ColumnVarNameInTable="columnTurnoAluno" msprop:Generator_ColumnPropNameInRow="TurnoAluno" msprop:Generator_ColumnPropNameInTable="TurnoAlunoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VencimentoAluno" msdata:Caption="VENCIMENTO" msprop:Generator_UserColumnName="VencimentoAluno" msprop:Generator_ColumnVarNameInTable="columnVencimentoAluno" msprop:Generator_ColumnPropNameInRow="VencimentoAluno" msprop:Generator_ColumnPropNameInTable="VencimentoAlunoColumn" type="xs:dateTime" />
+              <xs:element name="Pagamento" msdata:Caption="PAGAMENTO" msprop:Generator_UserColumnName="Pagamento" msprop:Generator_ColumnVarNameInTable="columnPagamento" msprop:Generator_ColumnPropNameInRow="Pagamento" msprop:Generator_ColumnPropNameInTable="PagamentoColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Valor" msprop:Generator_UserColumnName="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Multa" msdata:Caption="MULTA" msprop:Generator_UserColumnName="Multa" msprop:Generator_ColumnVarNameInTable="columnMulta" msprop:Generator_ColumnPropNameInRow="Multa" msprop:Generator_ColumnPropNameInTable="MultaColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Parcela" msdata:Caption="PARCELA" msprop:Generator_UserColumnName="Parcela" msprop:Generator_ColumnVarNameInTable="columnParcela" msprop:Generator_ColumnPropNameInRow="Parcela" msprop:Generator_ColumnPropNameInTable="ParcelaColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

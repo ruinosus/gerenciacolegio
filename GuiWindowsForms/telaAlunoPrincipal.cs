@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloAluno.Processos;
 
 namespace GuiWindowsForms
 {
@@ -346,6 +347,21 @@ namespace GuiWindowsForms
             telafuncionario.Show();
         }
         #endregion
+
+        private void telaAlunoPrincipal_Load(object sender, EventArgs e)
+        {
+            IAlunoProcesso processo = AlunoProcesso.Instance;
+            dataGridView1.AutoGenerateColumns = true;
+            
+            //DataGridViewColumn coluna = new DataGridViewColumn();
+            //coluna.DataPropertyName = "Perfil.ID";
+            //coluna.Name = ""
+            //dataGridView1.Columns.Add(coluna);
+
+            dataGridView1.DataSource = processo.Consultar();
+
+            
+        }
 
     }
 }

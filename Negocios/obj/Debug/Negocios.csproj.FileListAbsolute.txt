@@ -60,3 +60,10 @@ C:\Users\Dudu\Desktop\New Folder\Negocios\bin\Debug\Negocios.dll
 C:\Users\Dudu\Desktop\New Folder\Negocios\bin\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\New Folder\Negocios\bin\Debug\DbLinq.MySql.pdb
 C:\Users\Dudu\Desktop\New Folder\Negocios\bin\Debug\DbLinq.pdb
+C:\Users\Dudu\Desktop\Gerencia Colegio\Negocios\bin\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Gerencia Colegio\Negocios\bin\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\Gerencia Colegio\Negocios\bin\Debug\DbLinq.MySql.pdb
+C:\Users\Dudu\Desktop\Gerencia Colegio\Negocios\bin\Debug\DbLinq.pdb
+C:\Users\Dudu\Desktop\Gerencia Colegio\Negocios\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dudu\Desktop\Gerencia Colegio\Negocios\obj\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Gerencia Colegio\Negocios\obj\Debug\Negocios.pdb
