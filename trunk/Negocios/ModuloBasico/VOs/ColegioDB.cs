@@ -6673,6 +6673,52 @@ public partial class Sala : INotifyPropertyChanged
         return this.Serie.Nome + " " + this.Turma.Nome + " "+ this.Turno.Nome ;
     }
 
+    #region double? Valor
+
+    private double? _valor;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_valor", Name = "Valor", DbType = "double")]
+    public double? Valor
+    {
+        get
+        {
+            return _valor;
+        }
+        set
+        {
+            if (value != _valor)
+            {
+                _valor = value;
+                OnPropertyChanged("Valor");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string Ciclo
+
+    private string _ciclo;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_ciclo", Name = "Ciclo", DbType = "varchar(45)")]
+    public string Ciclo
+    {
+        get
+        {
+            return _ciclo;
+        }
+        set
+        {
+            if (value != _ciclo)
+            {
+                _ciclo = value;
+                OnPropertyChanged("Ciclo");
+            }
+        }
+    }
+
+    #endregion
+
     #region INotifyPropertyChanged handling
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -7109,51 +7155,7 @@ public partial class Serie : INotifyPropertyChanged
 
     #endregion
 
-    #region double? Valor
 
-    private double? _valor;
-    [DebuggerNonUserCode]
-    [Column(Storage = "_valor", Name = "Valor", DbType = "double")]
-    public double? Valor
-    {
-        get
-        {
-            return _valor;
-        }
-        set
-        {
-            if (value != _valor)
-            {
-                _valor = value;
-                OnPropertyChanged("Valor");
-            }
-        }
-    }
-
-    #endregion
-
-    #region string Ciclo
-
-    private string _ciclo;
-    [DebuggerNonUserCode]
-    [Column(Storage = "_ciclo", Name = "Ciclo", DbType = "varchar(45)")]
-    public string Ciclo
-    {
-        get
-        {
-            return _ciclo;
-        }
-        set
-        {
-            if (value != _ciclo)
-            {
-                _ciclo = value;
-                OnPropertyChanged("Ciclo");
-            }
-        }
-    }
-
-    #endregion
 
     #region Children
 

@@ -6,11 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloFuncionario.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaConfiguracoesAtividade : Form
     {
+        Funcionario funcionario = new Funcionario();
+
+        IFuncionarioProcesso funcionarioControlador = FuncionarioProcesso.Instance; 
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -173,7 +178,10 @@ namespace GuiWindowsForms
         #region LOAD
         private void ckbTerca_Load(object sender, EventArgs e)
         {
-
+            List<Funcionario> listaFuncionario = new List<Funcionario>();
+            listaFuncionario = funcionarioControlador.Consultar();
+            cmbFuncionario.DataSource = listaFuncionario;
+            cmbFuncionario.DisplayMember = "Nome";
         }
         #endregion
 

@@ -309,8 +309,12 @@ namespace Negocios.ModuloSala.Repositorios
                 salaAux.SerieID = sala.SerieID;
                 salaAux.TurmaID= sala.TurmaID;
                 salaAux.TurnoID = sala.TurnoID;
+                salaAux.Ciclo = sala.Ciclo;
+                salaAux.Valor = sala.Valor;
+
 
                 Confirmar();
+
             }
             catch (Exception)
             {
