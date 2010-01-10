@@ -37,6 +37,8 @@
             this.lblErro = new System.Windows.Forms.Label();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.BoletoMensalidadeRelatorio1 = new GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
@@ -51,9 +53,6 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(229, 26);
             this.txtLogin.TabIndex = 0;
-            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
-            this.txtLogin.Leave += new System.EventHandler(this.txtLogin_Leave);
-            this.txtLogin.Enter += new System.EventHandler(this.txtLogin_Enter);
             // 
             // txtSenha
             // 
@@ -64,9 +63,6 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(229, 26);
             this.txtSenha.TabIndex = 1;
-            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
-            this.txtSenha.Leave += new System.EventHandler(this.txtSenha_Leave);
-            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
             // 
             // btnLogar
             // 
@@ -110,6 +106,16 @@
             // 
             this.errorProviderTela.ContainerControl = this;
             // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = 0;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(-112, 57);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ReportSource = this.BoletoMensalidadeRelatorio1;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(568, 277);
+            this.crystalReportViewer1.TabIndex = 4;
+            // 
             // telaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,6 +123,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.pnlLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -125,7 +132,7 @@
             this.Name = "telaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaLogin_FormClosing);
+            this.Load += new System.EventHandler(this.telaLogin_Load);
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
@@ -142,6 +149,8 @@
         private System.Windows.Forms.Label lblErro;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
         private System.Windows.Forms.ToolTip toolTip1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio BoletoMensalidadeRelatorio1;
     }
 }
 
