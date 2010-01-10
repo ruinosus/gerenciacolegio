@@ -59,6 +59,17 @@ namespace GuiWindowsForms
 
         }
 
+        public void exibirMensagem(String texto)
+        {
+            lblInfoControles.Visible = true;
+            lblInfoControles.Text = texto;
+        }
+
+        public void ocultarMensagem()
+        {
+            lblInfoControles.Visible = false;
+        }
+
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             lblInfoControles.Visible = true;

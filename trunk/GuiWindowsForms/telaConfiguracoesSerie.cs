@@ -10,6 +10,7 @@ using Negocios.ModuloSerie.Processos;
 using Negocios.ModuloTurno.Processos;
 using Negocios.ModuloTurma.Processos;
 using Negocios.ModuloSala.Processos;
+using Negocios.ModuloSerie.Constantes;
 
 namespace GuiWindowsForms
 {
@@ -20,10 +21,10 @@ namespace GuiWindowsForms
         List<ClasseGrid> listaGrid = null;
         List<Sala> listaSala = null;
 
-        Serie serie = new Serie();
-        Turno turno = new Turno();
-        Turma turma = new Turma();
-        Sala sala = new Sala();
+        Serie serie = null;
+        Turno turno = null;
+        Turma turma = null;
+        Sala sala = null;
 
         ISerieProcesso serieControlador = SerieProcesso.Instance;
         ITurnoProcesso turnoControlador = TurnoProcesso.Instance;
@@ -192,6 +193,7 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaConfiguracoesSerie_Load(object sender, EventArgs e)
         {
+
             List<Serie> listaSerie = new List<Serie>();
             listaSerie = serieControlador.Consultar();
             cmbSerie.DataSource = listaSerie;
@@ -217,7 +219,8 @@ namespace GuiWindowsForms
         {
             try
             {
-
+                sala = new Sala();
+                serie = new Serie();
                 salaControlador = SalaProcesso.Instance;
 
                 #region VALIDA - SERIE
@@ -277,37 +280,26 @@ namespace GuiWindowsForms
 
                 #endregion
 
-                Sala salaAux = null;
-
-                if (salaControlador.Consultar(sala, Negocios.ModuloBasico.Enums.TipoPesquisa.E).Count > 0)
-                {
-                    salaAux = salaControlador.Consultar(sala, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
-                }
-
-                //if (sala != null && sala.Equals(salaAux) == false)
-                if (linhaSelecionadaGrid== -1)
-                {
-                    sala.Status =0 ;
-                    salaControlador.Incluir(sala);
-                    salaControlador.Confirmar();
-
-                    
-                    
-                }
-                else
+                if (linhaSelecionadaGrid != -1)
                 {
                     sala.ID = listaSala[linhaSelecionadaGrid].ID;
                     salaControlador.Alterar(sala);
                     carregaForm();
-  
-                }
+                    linhaSelecionadaGrid = -1;
 
+                    MessageBox.Show(SerieConstantes.SERIE_ALTERADA,"Colégio Conhecer - Alterar Série");
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +","Colégio Conhecer - Alterar Série");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             carregaForm();
+            limparTela();
         }
         #endregion
 
@@ -352,38 +344,127 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
 
+        private void txtValor_Click(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+            txtValor.SelectionStart = txtValor.Text.Length + 1;
+        }
         #endregion
 
+        #region BUTTON EXCLUIR
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            salaControlador.Excluir(listaSala[linhaSelecionadaGrid]);
-            salaControlador.Confirmar();
-            carregaForm();
+            if (MessageBox.Show("Tem certeza que deseja excluir a série ?", "Colégio Conhecer - Excluir Série", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                if (linhaSelecionadaGrid != -1)
+                {
+                    salaControlador.Excluir(listaSala[linhaSelecionadaGrid]);
+                    salaControlador.Confirmar();
+                    carregaForm();
+                    linhaSelecionadaGrid = -1;
+                }
+                else
+                {
+                    MessageBox.Show("Selecione uma opção na tabela abaixo para exclusão, então pressione excluir.", "Colégio Conhecer - Excluir Série");
+                }
+            }
         }
+        #endregion
+
+        #region EVENTOS DO GRID
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-            cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
-            txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
-            cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
-            cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
-            cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+            if (linhaSelecionadaGrid >= 0)
+            {
+                cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
+                txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
+                cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
+                cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
+                cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-            cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
-            txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
-            cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
-            cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
-            cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+            if (linhaSelecionadaGrid >= 0)
+            {
+                cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
+                txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
+                cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
+                cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
+                cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
+                txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
+                cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
+                cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
+                cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
+                txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
+                cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
+                cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
+                cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
+                txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
+                cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
+                cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
+                cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        #endregion
 
         private void carregaForm()
         {
             salaControlador = SalaProcesso.Instance;
+
             listaSala = new List<Sala>();
             listaGrid = new List<ClasseGrid>();
 
@@ -408,26 +489,167 @@ namespace GuiWindowsForms
 
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        #region EVENTOS PARA EXIBIÇÃO DE MENSAGENS DA TELA
+
+        private void btnExcluir_MouseEnter(object sender, EventArgs e)
         {
-            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-            cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
-            txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
-            cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
-            cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
-            cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+            ucMenuInferior1.exibirMensagem("Excluir uma sala/série do registro");
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnExcluir_MouseLeave(object sender, EventArgs e)
         {
-            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-            cmbCiclo.Text = listaGrid[linhaSelecionadaGrid].CicloAux;
-            txtValor.Text = listaGrid[linhaSelecionadaGrid].ValorAux.ToString();
-            cmbSerie.Text = listaGrid[linhaSelecionadaGrid].SerieAux;
-            cmbTurma.Text = listaGrid[linhaSelecionadaGrid].TurmaAux;
-            cmbTurno.Text = listaGrid[linhaSelecionadaGrid].TurnoAux;
+            ucMenuInferior1.ocultarMensagem();
         }
+
+        private void dataGridView1_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Selecione um registro para alterar ou excluir");
+        }
+
+        private void dataGridView1_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
+        private void btnAdicionarSerie_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Incluir uma nova sala ao registro");
+        }
+
+        private void btnAdicionarSerie_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
+        #endregion
+
+        #region BUTTON ADICIONAR SERIE
+
+        private void btnAdicionarSerie_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                sala = new Sala();
+                serie = new Serie();
+                salaControlador = SalaProcesso.Instance;
+
+                #region VALIDA - SERIE
+
+                if (String.IsNullOrEmpty(cmbSerie.Text))
+                {
+                    errorProviderTela.SetError(cmbSerie, "Informe a serie");
+                    return;
+                }
+                sala.SerieID = ((Serie)cmbSerie.SelectedItem).ID;
+                serie = ((Serie)cmbSerie.SelectedItem);
+
+
+                #endregion
+
+                #region VALIDA - CICLO
+
+                if (String.IsNullOrEmpty(cmbCiclo.Text))
+                {
+                    errorProviderTela.SetError(cmbCiclo, "Informe o ciclo");
+                    return;
+                }
+                sala.Ciclo = cmbCiclo.Text;
+
+                #endregion
+
+                #region VALIDA - TURNO
+
+                if (String.IsNullOrEmpty(cmbTurno.Text))
+                {
+                    errorProviderTela.SetError(cmbTurno, "Informe o turno");
+                    return;
+                }
+                sala.TurnoID = ((Turno)cmbTurno.SelectedItem).ID;
+
+                #endregion
+
+                #region VALIDA - TURMA
+
+                if (String.IsNullOrEmpty(cmbTurma.Text))
+                {
+                    errorProviderTela.SetError(cmbTurma, "Informe a turma");
+                    return;
+                }
+                sala.TurmaID = ((Turma)cmbTurma.SelectedItem).ID;
+
+                #endregion
+
+                #region VALIDA - VALOR
+
+                if (String.IsNullOrEmpty(txtValor.Text))
+                {
+                    errorProviderTela.SetError(txtValor, "Informe o valor");
+                    return;
+                }
+                sala.Valor = Convert.ToDouble(txtValor.Text);
+
+                #endregion
+
+                
+                if (verificaSeJaInserido(sala)==false)
+                {
+                    if (linhaSelecionadaGrid == -1)
+                    {
+                        sala.Status = 0;
+                        salaControlador.Incluir(sala);
+                        salaControlador.Confirmar();
+                        linhaSelecionadaGrid = -1;
+
+                        MessageBox.Show(SerieConstantes.SERIE_INCLUIDA, "Colégio Conhecer - Inserir Série");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("A Série já existe na base de dados", "Colégio Conhecer - Inserir Série");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            carregaForm();
+            limparTela();
+        }
+
+        #endregion
+
+        public void limparTela()
+        {
+            txtValor.Clear();
+            cmbCiclo.SelectedIndex = 0;
+            cmbSerie.SelectedIndex = 0;
+            cmbTurma.SelectedIndex = 0;
+            cmbTurno.SelectedIndex = 0;
+        }
+
+        public bool verificaSeJaInserido(Sala sala)
+        {
+            salaControlador = SalaProcesso.Instance;
+
+            List<Sala> listaAuxiliar = new List<Sala>();
+            listaAuxiliar = salaControlador.Consultar();
+
+            bool testa = false;
+
+            foreach (Sala b in listaAuxiliar)
+            {
+                if ((b.TurmaID == sala.TurmaID) && (b.TurnoID == sala.TurnoID) && (b.SerieID == sala.SerieID) && (b.Ciclo == sala.Ciclo) && (b.Valor == sala.Valor))
+                {
+                    testa = true;
+                }
+            }
+            return testa;
+        }
+
     }
+
+    #region CLASSE AUXILIAR PARA USO NO DATAGRID
 
     public class ClasseGrid
     {
@@ -467,6 +689,8 @@ namespace GuiWindowsForms
             set { valorAux = value; }
         }
     }
+
+    #endregion
 
 
 }
