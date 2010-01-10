@@ -189,5 +189,11 @@ namespace GuiWindowsForms
         {
             uMenuLateral1.verificaTela(telaAlunofinanceiro);
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            telaRelatorioBoletoMensalidade telaBoleto = new telaRelatorioBoletoMensalidade();
+            telaBoleto.ShowDialog();
+        }
     }
 }

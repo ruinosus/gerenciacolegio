@@ -37,9 +37,8 @@
             this.lblErro = new System.Windows.Forms.Label();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.BoletoMensalidadeRelatorio1 = new GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio();
             this.BoletoMensalidadeRelatorio2 = new GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio();
+            this.BoletoMensalidadeRelatorio1 = new GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
@@ -107,16 +106,6 @@
             // 
             this.errorProviderTela.ContainerControl = this;
             // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(380, 86);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.BoletoMensalidadeRelatorio2;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(568, 277);
-            this.crystalReportViewer1.TabIndex = 4;
-            // 
             // telaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,7 +113,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1000, 722);
-            this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.pnlLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -150,7 +138,6 @@
         private System.Windows.Forms.Label lblErro;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
         private System.Windows.Forms.ToolTip toolTip1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio BoletoMensalidadeRelatorio1;
         private GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio BoletoMensalidadeRelatorio2;
     }
