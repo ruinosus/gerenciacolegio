@@ -73,25 +73,6 @@ namespace Negocios.ModuloAtividade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (atividade.FuncionarioID.HasValue)
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from a in resultado
-                                                    where
-                                                    a.FuncionarioID.HasValue && a.FuncionarioID.Value == atividade.FuncionarioID.Value
-                                                    select a).ToList());
-                            }
-                            else {
-                                resultado=((from a in resultado
-                                                    where
-                                                    a.FuncionarioID.HasValue && a.FuncionarioID.Value == atividade.FuncionarioID.Value
-                                                    select a).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
                         if (!string.IsNullOrEmpty(atividade.Descricao))
                         {
 
@@ -173,26 +154,6 @@ namespace Negocios.ModuloAtividade.Repositorios
                                 resultado = ((from a in Consultar()
                                               where
                                               a.Nome.Contains(atividade.Nome)
-                                              select a).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (atividade.FuncionarioID.HasValue)
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from a in Consultar()
-                                                    where
-                                                    a.FuncionarioID.HasValue && a.FuncionarioID.Value == atividade.FuncionarioID.Value
-                                                    select a).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from a in Consultar()
-                                              where
-                                              a.FuncionarioID.HasValue && a.FuncionarioID.Value == atividade.FuncionarioID.Value
                                               select a).ToList());
                             }
                             pesquisa = true;
@@ -304,7 +265,6 @@ namespace Negocios.ModuloAtividade.Repositorios
                 atividadeAux = resultado[0];
                 atividadeAux.AtividadeTurma = atividade.AtividadeTurma;
                 atividadeAux.Descricao = atividade.Descricao;
-                atividadeAux.FuncionarioID = atividade.FuncionarioID;
                 atividadeAux.Imagem= atividade.Imagem;
                 atividadeAux.Nome= atividade.Nome;
                 atividadeAux.Status= atividade.Status;
