@@ -183,8 +183,27 @@ namespace GuiWindowsForms
         {
             descontoControlador = DescontoProcesso.Instance;
 
+         
+        }
+        #endregion
+
+        #region ERROR PROVIDER
+        private void txtDescricao_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+        #endregion
+
+        private void ucMenuInferior1_EventoCadastrar()
+        {
             try
             {
+                descontoControlador = DescontoProcesso.Instance;
                 #region VALIDA - DESCRIÇÃO
 
                 if (String.IsNullOrEmpty(txtDescricao.Text))
@@ -213,22 +232,9 @@ namespace GuiWindowsForms
                 descontoControlador.Confirmar();
             }
             catch (Exception ex)
-            { 
-            
+            {
+
             }
         }
-        #endregion
-
-        #region ERROR PROVIDER
-        private void txtDescricao_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
-        }
-
-        private void txtValor_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
-        }
-        #endregion
     }
 }
