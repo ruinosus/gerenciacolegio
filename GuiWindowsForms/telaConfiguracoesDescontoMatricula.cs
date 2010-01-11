@@ -382,6 +382,8 @@ namespace GuiWindowsForms
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
             if (linhaSelecionadaGrid >= 0)
             {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
                 txtDescricao.Text = listaDesconto[linhaSelecionadaGrid].Descricao;
                 txtValor.Text = listaDesconto[linhaSelecionadaGrid].Percentual.ToString();
             }
@@ -396,6 +398,8 @@ namespace GuiWindowsForms
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
             if (linhaSelecionadaGrid >= 0)
             {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
                 txtDescricao.Text = listaDesconto[linhaSelecionadaGrid].Descricao;
                 txtValor.Text = listaDesconto[linhaSelecionadaGrid].Percentual.ToString();
             }
@@ -410,6 +414,8 @@ namespace GuiWindowsForms
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
             if (linhaSelecionadaGrid >= 0)
             {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
                 txtDescricao.Text = listaDesconto[linhaSelecionadaGrid].Descricao;
                 txtValor.Text = listaDesconto[linhaSelecionadaGrid].Percentual.ToString();
             }
@@ -424,6 +430,8 @@ namespace GuiWindowsForms
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
             if (linhaSelecionadaGrid >= 0)
             {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
                 txtDescricao.Text = listaDesconto[linhaSelecionadaGrid].Descricao;
                 txtValor.Text = listaDesconto[linhaSelecionadaGrid].Percentual.ToString();
             }
@@ -438,6 +446,8 @@ namespace GuiWindowsForms
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
             if (linhaSelecionadaGrid >= 0)
             {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
                 txtDescricao.Text = listaDesconto[linhaSelecionadaGrid].Descricao;
                 txtValor.Text = listaDesconto[linhaSelecionadaGrid].Percentual.ToString();
             }

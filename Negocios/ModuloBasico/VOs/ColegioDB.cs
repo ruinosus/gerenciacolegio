@@ -958,29 +958,6 @@ public partial class AlunoAtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? FuncionarioID
-
-    private uint? _funcionarioID;
-    [DebuggerNonUserCode]
-    [Column(Storage = "_funcionarioID", Name = "FuncionarioId", DbType = "int unsigned")]
-    public uint? FuncionarioID
-    {
-        get
-        {
-            return _funcionarioID;
-        }
-        set
-        {
-            if (value != _funcionarioID)
-            {
-                _funcionarioID = value;
-                OnPropertyChanged("FuncionarioID");
-            }
-        }
-    }
-
-    #endregion
-
     #region uint? DescontoID
 
     private uint? _descontoID;
@@ -1095,21 +1072,6 @@ public partial class AlunoAtividadeTurma : INotifyPropertyChanged
         set
         {
             _desconto.Entity = value;
-        }
-    }
-
-    private System.Data.Linq.EntityRef<Funcionario> _funcionario;
-    [Association(Storage = "_funcionario", ThisKey = "FuncionarioID", Name = "fk_AtividadeTurma_Funcionario", IsForeignKey = true)]
-    [DebuggerNonUserCode]
-    public Funcionario Funcionario
-    {
-        get
-        {
-            return _funcionario.Entity;
-        }
-        set
-        {
-            _funcionario.Entity = value;
         }
     }
 
@@ -1456,26 +1418,6 @@ public partial class AtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region Parents
-
-    private System.Data.Linq.EntityRef<Atividade> _atIvIDade;
-    [Association(Storage = "_atIvIDade", ThisKey = "AtividadeID", Name = "fk_AtividadeTurma_Atividade", IsForeignKey = true)]
-    [DebuggerNonUserCode]
-    public Atividade Atividade
-    {
-        get
-        {
-            return _atIvIDade.Entity;
-        }
-        set
-        {
-            _atIvIDade.Entity = value;
-        }
-    }
-
-
-    #endregion
-
     #region string Turma
 
     private string _turma;
@@ -1521,7 +1463,6 @@ public partial class AtividadeTurma : INotifyPropertyChanged
     }
 
     #endregion
-
 
     #region byte? Segunda
 
@@ -1661,6 +1602,29 @@ public partial class AtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
+    #region uint? FuncionarioID
+
+    private uint? _funcionarioID;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_funcionarioID", Name = "FuncionarioId", DbType = "int unsigned")]
+    public uint? FuncionarioID
+    {
+        get
+        {
+            return _funcionarioID;
+        }
+        set
+        {
+            if (value != _funcionarioID)
+            {
+                _funcionarioID = value;
+                OnPropertyChanged("FuncionarioID");
+            }
+        }
+    }
+
+    #endregion
+
     #region Children
 
     [Association(Storage = null, OtherKey = "AtividadeTurmaID", Name = "fk_AlunoAtividadeTurma_AtividadeTurma")]
@@ -1670,6 +1634,41 @@ public partial class AtividadeTurma : INotifyPropertyChanged
         get;
         set;
     }
+    #endregion
+
+    #region Parents
+
+    private System.Data.Linq.EntityRef<Atividade> _atividade;
+    [Association(Storage = "_atividade", ThisKey = "AtividadeID", Name = "fk_AtividadeTurma_Atividade", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Atividade Atividade
+    {
+        get
+        {
+            return _atividade.Entity;
+        }
+        set
+        {
+            _atividade.Entity = value;
+        }
+    }
+
+
+    private System.Data.Linq.EntityRef<Funcionario> _funcionario;
+    [Association(Storage = "_funcionario", ThisKey = "FuncionarioID", Name = "fk_AtividadeTurma_Funcionario", IsForeignKey = true)]
+    [DebuggerNonUserCode]
+    public Funcionario Funcionario
+    {
+        get
+        {
+            return _funcionario.Entity;
+        }
+        set
+        {
+            _funcionario.Entity = value;
+        }
+    }
+
     #endregion
 }
 

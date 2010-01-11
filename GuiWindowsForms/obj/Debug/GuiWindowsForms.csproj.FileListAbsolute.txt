@@ -237,7 +237,6 @@ C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\Negocios.pdb
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.pdb
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
 C:\Users\Dudu\Desktop\New Folder\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
-C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.config
 C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe
 C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\bin\Debug\GuiWindowsForms.pdb
@@ -339,3 +338,4 @@ C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.Us
 C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.uMenuImagem.resources
 C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
 C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.txtNomeAtividade.resources

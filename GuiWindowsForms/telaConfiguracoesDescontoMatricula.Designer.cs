@@ -31,21 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesDescontoMatricula));
             this.gpbSerie = new System.Windows.Forms.GroupBox();
+            this.btnAdicionarDesconto = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Percentual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnAdicionarDesconto = new System.Windows.Forms.Button();
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Percentual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
@@ -68,6 +68,21 @@
             this.gpbSerie.TabIndex = 65;
             this.gpbSerie.TabStop = false;
             this.gpbSerie.Text = "DESCONTO MATRICULA";
+            // 
+            // btnAdicionarDesconto
+            // 
+            this.btnAdicionarDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnAdicionarDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionarDesconto.FlatAppearance.BorderSize = 0;
+            this.btnAdicionarDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarDesconto.Location = new System.Drawing.Point(579, 198);
+            this.btnAdicionarDesconto.Name = "btnAdicionarDesconto";
+            this.btnAdicionarDesconto.Size = new System.Drawing.Size(32, 32);
+            this.btnAdicionarDesconto.TabIndex = 70;
+            this.btnAdicionarDesconto.UseVisualStyleBackColor = true;
+            this.btnAdicionarDesconto.MouseLeave += new System.EventHandler(this.btnAdicionarDesconto_MouseLeave);
+            this.btnAdicionarDesconto.Click += new System.EventHandler(this.btnAdicionarDesconto_Click);
+            this.btnAdicionarDesconto.MouseEnter += new System.EventHandler(this.btnAdicionarDesconto_MouseEnter);
             // 
             // btnExcluir
             // 
@@ -122,13 +137,17 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Descricao,
             this.Percentual});
             this.dataGridView1.Location = new System.Drawing.Point(24, 236);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(640, 285);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
@@ -136,6 +155,21 @@
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 250;
+            // 
+            // Percentual
+            // 
+            this.Percentual.DataPropertyName = "Percentual";
+            this.Percentual.HeaderText = "Percentual";
+            this.Percentual.Name = "Percentual";
+            this.Percentual.ReadOnly = true;
             // 
             // lblHelloUsuario
             // 
@@ -166,21 +200,6 @@
             // errorProviderTela
             // 
             this.errorProviderTela.ContainerControl = this;
-            // 
-            // btnAdicionarDesconto
-            // 
-            this.btnAdicionarDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
-            this.btnAdicionarDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarDesconto.FlatAppearance.BorderSize = 0;
-            this.btnAdicionarDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarDesconto.Location = new System.Drawing.Point(579, 198);
-            this.btnAdicionarDesconto.Name = "btnAdicionarDesconto";
-            this.btnAdicionarDesconto.Size = new System.Drawing.Size(32, 32);
-            this.btnAdicionarDesconto.TabIndex = 70;
-            this.btnAdicionarDesconto.UseVisualStyleBackColor = true;
-            this.btnAdicionarDesconto.MouseLeave += new System.EventHandler(this.btnAdicionarDesconto_MouseLeave);
-            this.btnAdicionarDesconto.Click += new System.EventHandler(this.btnAdicionarDesconto_Click);
-            this.btnAdicionarDesconto.MouseEnter += new System.EventHandler(this.btnAdicionarDesconto_MouseEnter);
             // 
             // ucMenuConfiguracoesEsquerda1
             // 
@@ -213,19 +232,6 @@
             this.ucMenuInferior1.TabIndex = 135;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.Width = 250;
-            // 
-            // Percentual
-            // 
-            this.Percentual.DataPropertyName = "Percentual";
-            this.Percentual.HeaderText = "Percentual";
-            this.Percentual.Name = "Percentual";
             // 
             // telaConfiguracoesDescontoMatricula
             // 

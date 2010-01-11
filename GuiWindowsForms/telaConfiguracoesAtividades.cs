@@ -191,9 +191,9 @@ namespace GuiWindowsForms
         {
             try
             {
-                atividadeControlador = AtividadeProcesso.Instance;
+                //atividadeControlador = AtividadeProcesso.Instance;
 
-                if (pagCadastrarAtividade.Select()) 
+               // if (pagCadastrarAtividade.Select()) 
                 {
                     #region VALIDA - NOME
 
@@ -324,7 +324,7 @@ namespace GuiWindowsForms
 
         private void carregaForm() 
         {
-            atividadeControlador = AtividadeProcesso.Instance;
+            //atividadeControlador = AtividadeProcesso.Instance;
 
 
         }
