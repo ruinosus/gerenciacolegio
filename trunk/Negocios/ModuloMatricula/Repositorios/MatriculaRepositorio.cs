@@ -432,6 +432,7 @@ namespace Negocios.ModuloMatricula.Repositorios
                 matriculaAux.BoletoMensalidade = matricula.BoletoMensalidade;
                 matriculaAux.DataMatricula = matricula.DataMatricula;
                 matriculaAux.DescontoID = matricula.DescontoID;
+                matriculaAux.DiaVencimento = matricula.DiaVencimento;
                 Confirmar();
 
             }

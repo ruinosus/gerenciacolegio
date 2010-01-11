@@ -39,9 +39,9 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
     }
 
     public DbLinq.Data.Linq.Table<Aluno> Aluno { get { return GetTable<Aluno>(); } }
-    public DbLinq.Data.Linq.Table<AlunoAtividade> AlunoAtividade { get { return GetTable<AlunoAtividade>(); } }
+    public DbLinq.Data.Linq.Table<AlunoAtividadeTurma> AlunoAtividadeTurma { get { return GetTable<AlunoAtividadeTurma>(); } }
     public DbLinq.Data.Linq.Table<Atividade> Atividade { get { return GetTable<Atividade>(); } }
-    public DbLinq.Data.Linq.Table<AtividadeData> AtividadeData { get { return GetTable<AtividadeData>(); } }
+    public DbLinq.Data.Linq.Table<AtividadeTurma> AtividadeTurma { get { return GetTable<AtividadeTurma>(); } }
     public DbLinq.Data.Linq.Table<BoletoAtividade> BoletoAtividade { get { return GetTable<BoletoAtividade>(); } }
     public DbLinq.Data.Linq.Table<BoletoMensalidade> BoletoMensalidade { get { return GetTable<BoletoMensalidade>(); } }
     public DbLinq.Data.Linq.Table<Cheque> Cheque { get { return GetTable<Cheque>(); } }
@@ -868,9 +868,9 @@ public partial class Aluno : INotifyPropertyChanged
 
     #region Children
 
-    [Association(Storage = null, OtherKey = "AlunoID", Name = "fk_AlunoAtividade_Aluno")]
+    [Association(Storage = null, OtherKey = "AlunoID", Name = "fk_AlunoAtividadeTurma_Aluno")]
     [DebuggerNonUserCode]
-    public EntitySet<AlunoAtividade> AlunoAtividade
+    public EntitySet<AlunoAtividadeTurma> AlunoAtividadeTurma
     {
         get;
         set;
@@ -895,8 +895,8 @@ public partial class Aluno : INotifyPropertyChanged
 
 }
 
-[Table(Name = "colegiodb.alunoatividade")]
-public partial class AlunoAtividade : INotifyPropertyChanged
+[Table(Name = "colegiodb.alunoatividadeturma")]
+public partial class AlunoAtividadeTurma : INotifyPropertyChanged
 {
     #region INotifyPropertyChanged handling
 
@@ -1030,7 +1030,7 @@ public partial class AlunoAtividade : INotifyPropertyChanged
     #region Parents
 
     private System.Data.Linq.EntityRef<Aluno> _aluno;
-    [Association(Storage = "_aluno", ThisKey = "AlunoID", Name = "fk_AlunoAtividade_Aluno", IsForeignKey = true)]
+    [Association(Storage = "_aluno", ThisKey = "AlunoID", Name = "fk_AlunoAtividadeTurma_Aluno", IsForeignKey = true)]
     [DebuggerNonUserCode]
     public Aluno Aluno
     {
@@ -1045,23 +1045,23 @@ public partial class AlunoAtividade : INotifyPropertyChanged
     }
 
 
-    private System.Data.Linq.EntityRef<Atividade> _atividade;
-    [Association(Storage = "_atividade", ThisKey = "AtividadeID", Name = "fk_AlunoAtividade_Atividade", IsForeignKey = true)]
+    private System.Data.Linq.EntityRef<AtividadeTurma> _atividadeTurma;
+    [Association(Storage = "_atividadeTurma", ThisKey = "AtividadeTurmaID", Name = "fk_AlunoAtividadeTurma_AtividadeTurma", IsForeignKey = true)]
     [DebuggerNonUserCode]
-    public Atividade Atividade
+    public AtividadeTurma AtividadeTurma
     {
         get
         {
-            return _atividade.Entity;
+            return _atividadeTurma.Entity;
         }
         set
         {
-            _atividade.Entity = value;
+            _atividadeTurma.Entity = value;
         }
     }
 
     private System.Data.Linq.EntityRef<Desconto> _desconto;
-    [Association(Storage = "_desconto", ThisKey = "DescontoID", Name = "fk_AlunoAtividade_Desconto", IsForeignKey = true)]
+    [Association(Storage = "_desconto", ThisKey = "DescontoID", Name = "fk_AlunoAtividadeTurma_Desconto", IsForeignKey = true)]
     [DebuggerNonUserCode]
     public Desconto Desconto
     {
@@ -1238,28 +1238,7 @@ public partial class Atividade : INotifyPropertyChanged
 
     #endregion
 
-    #region double? Valor
-
-    private double? _valor;
-    [DebuggerNonUserCode]
-    [Column(Storage = "_valor", Name = "Valor", DbType = "double")]
-    public double? Valor
-    {
-        get
-        {
-            return _valor;
-        }
-        set
-        {
-            if (value != _valor)
-            {
-                _valor = value;
-                OnPropertyChanged("Valor");
-            }
-        }
-    }
-
-    #endregion
+    
 
     #region Parents
 
@@ -1281,28 +1260,20 @@ public partial class Atividade : INotifyPropertyChanged
 
     #region Children
 
-    [Association(Storage = null, OtherKey = "AtividadeID", Name = "fk_AtividadeData_Atividade")]
+    [Association(Storage = null, OtherKey = "AtividadeID", Name = "fk_AtividadeTurma_Atividade")]
     [DebuggerNonUserCode]
-    public EntitySet<AtividadeData> AtividadeData
+    public EntitySet<AtividadeTurma> AtividadeTurma
     {
         get;
         set;
     }
 
-    [Association(Storage = null, OtherKey = "AtividadeID", Name = "fk_AlunoAtividade_Atividade")]
-    [DebuggerNonUserCode]
-    public EntitySet<AlunoAtividade> AlunoAtividade
-    {
-        get;
-        set;
-    }
-
-    #endregion
+   #endregion
 
 }
 
-[Table(Name = "colegiodb.atividadedata")]
-public partial class AtividadeData : INotifyPropertyChanged
+[Table(Name = "colegiodb.atividadeturma")]
+public partial class AtividadeTurma : INotifyPropertyChanged
 {
     #region INotifyPropertyChanged handling
 
@@ -1456,10 +1427,33 @@ public partial class AtividadeData : INotifyPropertyChanged
 
     #endregion
 
+    #region double? Valor
+
+    private double? _valor;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_valor", Name = "Valor", DbType = "double")]
+    public double? Valor
+    {
+        get
+        {
+            return _valor;
+        }
+        set
+        {
+            if (value != _valor)
+            {
+                _valor = value;
+                OnPropertyChanged("Valor");
+            }
+        }
+    }
+
+    #endregion
+
     #region Parents
 
     private System.Data.Linq.EntityRef<Atividade> _atIvIDade;
-    [Association(Storage = "_atIvIDade", ThisKey = "AtividadeID", Name = "fk_AtividadeData_Atividade", IsForeignKey = true)]
+    [Association(Storage = "_atIvIDade", ThisKey = "AtividadeID", Name = "fk_AtividadeTurma_Atividade", IsForeignKey = true)]
     [DebuggerNonUserCode]
     public Atividade Atividade
     {
@@ -1476,6 +1470,201 @@ public partial class AtividadeData : INotifyPropertyChanged
 
     #endregion
 
+    #region string Turma
+
+    private string _turma;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_turma", Name = "Turma", DbType = "varchar(45)", CanBeNull = false)]
+    public string Turma
+    {
+        get
+        {
+            return _turma;
+        }
+        set
+        {
+            if (value != _turma)
+            {
+                _turma = value;
+                OnPropertyChanged("Turma");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? Domingo
+
+    private byte? _domingo;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_domingo", Name = "Domingo", DbType = "tinyint(1)")]
+    public byte? Domingo
+    {
+        get
+        {
+            return _domingo;
+        }
+        set
+        {
+            if (value != _domingo)
+            {
+                _domingo = value;
+                OnPropertyChanged("Domingo");
+            }
+        }
+    }
+
+    #endregion
+
+
+    #region byte? Segunda
+
+    private byte? _segunda;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_segunda", Name = "Segunda", DbType = "tinyint(1)")]
+    public byte? Segunda
+    {
+        get
+        {
+            return _segunda;
+        }
+        set
+        {
+            if (value != _segunda)
+            {
+                _segunda = value;
+                OnPropertyChanged("Segunda");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? Terca
+
+    private byte? _terca;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_terca", Name = "Terca", DbType = "tinyint(1)")]
+    public byte? Terca
+    {
+        get
+        {
+            return _terca;
+        }
+        set
+        {
+            if (value != _terca)
+            {
+                _terca = value;
+                OnPropertyChanged("Terca");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? Quarta
+
+    private byte? _quarta;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_quarta", Name = "Quarta", DbType = "tinyint(1)")]
+    public byte? Quarta
+    {
+        get
+        {
+            return _quarta;
+        }
+        set
+        {
+            if (value != _quarta)
+            {
+                _quarta = value;
+                OnPropertyChanged("Quarta");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? Quinta
+
+    private byte? _quinta;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_quinta", Name = "Quinta", DbType = "tinyint(1)")]
+    public byte? Quinta
+    {
+        get
+        {
+            return _quinta;
+        }
+        set
+        {
+            if (value != _quinta)
+            {
+                _quinta = value;
+                OnPropertyChanged("Quinta");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? Sexta
+
+    private byte? _sexta;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_sexta", Name = "Sexta", DbType = "tinyint(1)")]
+    public byte? Sexta
+    {
+        get
+        {
+            return _sexta;
+        }
+        set
+        {
+            if (value != _sexta)
+            {
+                _sexta = value;
+                OnPropertyChanged("Sexta");
+            }
+        }
+    }
+
+    #endregion
+
+    #region byte? Sabado
+
+    private byte? _sabado;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_sabado", Name = "Sabado", DbType = "tinyint(1)")]
+    public byte? Sabado
+    {
+        get
+        {
+            return _sabado;
+        }
+        set
+        {
+            if (value != _sabado)
+            {
+                _sabado = value;
+                OnPropertyChanged("Sabado");
+            }
+        }
+    }
+
+    #endregion
+
+    #region Children
+
+    [Association(Storage = null, OtherKey = "AtividadeTurmaID", Name = "fk_AlunoAtividadeTurma_AtividadeTurma")]
+    [DebuggerNonUserCode]
+    public EntitySet<AlunoAtividadeTurma> AlunoAtividadeTurma
+    {
+        get;
+        set;
+    }
+    #endregion
 }
 
 [Table(Name = "colegiodb.boletoatividade")]
@@ -1756,6 +1945,29 @@ public partial class BoletoAtividade : INotifyPropertyChanged
     }
     #endregion
 
+    #region double? Valor
+
+    private double? _valor;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_valor", Name = "Valor", DbType = "double")]
+    public double? Valor
+    {
+        get
+        {
+            return _valor;
+        }
+        set
+        {
+            if (value != _valor)
+            {
+                _valor = value;
+                OnPropertyChanged("Valor");
+            }
+        }
+    }
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.boletomensalidade")]
@@ -2034,6 +2246,29 @@ public partial class BoletoMensalidade : INotifyPropertyChanged
         get;
         set;
     }
+    #endregion
+
+    #region double? Valor
+
+    private double? _valor;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_valor", Name = "Valor", DbType = "double")]
+    public double? Valor
+    {
+        get
+        {
+            return _valor;
+        }
+        set
+        {
+            if (value != _valor)
+            {
+                _valor = value;
+                OnPropertyChanged("Valor");
+            }
+        }
+    }
+
     #endregion
 
 }
@@ -3181,9 +3416,9 @@ public partial class Desconto : INotifyPropertyChanged
 
     #region Children
 
-    [Association(Storage = null, OtherKey = "DescontoID", Name = "fk_AtividadeData_Desconto")]
+    [Association(Storage = null, OtherKey = "DescontoID", Name = "fk_AtividadeTurma_Desconto")]
     [DebuggerNonUserCode]
-    public EntitySet<AlunoAtividade> AlunoAtividade
+    public EntitySet<AlunoAtividadeTurma> AlunoAtividadeTurma
     {
         get;
         set;
@@ -4652,7 +4887,28 @@ public partial class Matricula : INotifyPropertyChanged
 
     #endregion
 
+    #region int? DiaVencimento
 
+    private int? _diaVencimento;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_diaVencimento", Name = "DiaVencimento", DbType = "int")]
+    public int? DiaVencimento
+    {
+        get
+        {
+            return _diaVencimento;
+        }
+        set
+        {
+            if (value != _diaVencimento)
+            {
+                _diaVencimento = value;
+                OnPropertyChanged("DiaVencimento");
+            }
+        }
+    }
+
+    #endregion
 }
 
 [Table(Name = "colegiodb.nota")]

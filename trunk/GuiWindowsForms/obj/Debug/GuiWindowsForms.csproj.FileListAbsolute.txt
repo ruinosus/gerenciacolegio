@@ -297,3 +297,4 @@ C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.U
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.uMenuImagem.resources
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaRelatorioBoletoMensalidade.resources
+C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaRelatorioBoletoMensalidade.resources
