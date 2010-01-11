@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloDesconto.Processos;
+using Negocios.ModuloDesconto.Constantes;
 
 namespace GuiWindowsForms
 {
     public partial class telaConfiguracoesDescontoMatricula : Form
     {
-        Desconto desconto = new Desconto();
+        int linhaSelecionadaGrid = -1;
+        Desconto desconto = null;
+
+        List<Desconto> listaDesconto = null;
 
         IDescontoProcesso descontoControlador = null;
 
@@ -175,17 +179,12 @@ namespace GuiWindowsForms
         {
             txtValor.Clear();
             txtDescricao.Clear();
+
+            carregaForm();
+            limparTela();
         }
         #endregion
 
-        #region EVENTO CADASTRAR
-        private void ucMenuInferior1_Load(object sender, EventArgs e)
-        {
-            descontoControlador = DescontoProcesso.Instance;
-
-         
-        }
-        #endregion
 
         #region ERROR PROVIDER
         private void txtDescricao_TextChanged(object sender, EventArgs e)
@@ -199,11 +198,15 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        private void ucMenuInferior1_EventoCadastrar()
+        #region EVENTO INSERIR
+        private void btnAdicionarDesconto_Click(object sender, EventArgs e)
         {
+            desconto = new Desconto();
+
             try
             {
                 descontoControlador = DescontoProcesso.Instance;
+
                 #region VALIDA - DESCRIÇÃO
 
                 if (String.IsNullOrEmpty(txtDescricao.Text))
@@ -228,13 +231,246 @@ namespace GuiWindowsForms
 
                 #endregion
 
-                descontoControlador.Incluir(desconto);
-                descontoControlador.Confirmar();
+
+                if (verificaSeJaInserido(desconto) == false)
+                {
+                    desconto.Status = 0;
+                    descontoControlador.Incluir(desconto);
+                    descontoControlador.Confirmar();
+                    linhaSelecionadaGrid = -1;
+
+                    MessageBox.Show(DescontoConstantes.DESCONTO_INCLUIDO, "Colégio Conhecer - Inserir Desconto");
+                }
+                else
+                {
+                    MessageBox.Show("O Desconto já existe na base de dados", "Colégio Conhecer - Inserir Desconto");
+                }
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+            carregaForm();
+            limparTela();
+        }
+        #endregion
 
+        #region EVENTO ALTERAR
+        private void ucMenuInferior1_EventoCadastrar()
+        {
+            desconto = new Desconto();
+
+            try
+            {
+                descontoControlador = DescontoProcesso.Instance;
+
+                #region VALIDA - DESCRIÇÃO
+
+                if (String.IsNullOrEmpty(txtDescricao.Text))
+                {
+                    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                    txtDescricao.Clear();
+                    return;
+                }
+                desconto.Descricao = txtDescricao.Text;
+
+                #endregion
+
+                #region VALIDA - VALOR
+
+                if (String.IsNullOrEmpty(txtDescricao.Text))
+                {
+                    errorProviderTela.SetError(txtValor, "Informe o valor");
+                    txtValor.Clear();
+                    return;
+                }
+                desconto.Percentual = Convert.ToDouble(txtValor.Text);
+
+                #endregion
+
+                if (linhaSelecionadaGrid != -1)
+                {
+                    descontoControlador.Alterar(desconto);
+                    descontoControlador.Confirmar();
+                    linhaSelecionadaGrid = -1;
+
+                    MessageBox.Show(DescontoConstantes.DESCONTO_ALTERADO, "Colégio Conhecer - Alterar Desconto");
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer - Alterar Desconto");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            carregaForm();
+            limparTela();
+        }
+        #endregion
+
+        #region EVENTO EXCLUIR
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza que deseja excluir o desconto ?", "Colégio Conhecer - Excluir Desconto", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                if (linhaSelecionadaGrid != -1)
+                {
+                    descontoControlador.Excluir(listaDesconto[linhaSelecionadaGrid]);
+                    descontoControlador.Confirmar();
+                    carregaForm();
+                    linhaSelecionadaGrid = -1;
+                }
+                else
+                {
+                    MessageBox.Show("Selecione uma opção na tabela abaixo para exclusão, então pressione excluir.", "Colégio Conhecer - Excluir Desconto");
+                }
             }
         }
-    }
+        #endregion
+
+
+        #region Função para verificar se o desconto já esta cadastrado
+        public bool verificaSeJaInserido(Desconto desconto)
+        {
+            descontoControlador = DescontoProcesso.Instance;
+
+            List<Desconto> listaAuxiliar = new List<Desconto>();
+            listaAuxiliar = descontoControlador.Consultar();
+
+            bool testa = false;
+
+            foreach (Desconto b in listaAuxiliar)
+            {
+                if ((b.Descricao == desconto.Descricao) && (b.Percentual == desconto.Percentual))
+                {
+                    testa = true;
+                }
+            }
+            return testa;
+        }
+        #endregion
+
+        #region Evento para limpar os campos da tela
+        public void limparTela()
+        {
+            txtDescricao.Clear();
+            txtValor.Clear();
+        }
+        #endregion
+
+        #region EVENTO PARA ALIMENTAR E ATUALIZAR O DATAGRID
+        private void carregaForm()
+        {
+            descontoControlador = DescontoProcesso.Instance;
+
+            listaDesconto = new List<Desconto>();
+
+            listaDesconto = descontoControlador.Consultar();
+
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listaDesconto;
+        }
+        #endregion
+
+        #region EVENTOS DO GRID
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                txtDescricao.Text = listaDesconto[linhaSelecionadaGrid].Descricao;
+                txtValor.Text = listaDesconto[linhaSelecionadaGrid].Percentual.ToString();
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                txtDescricao.Text = listaDesconto[linhaSelecionadaGrid].Descricao;
+                txtValor.Text = listaDesconto[linhaSelecionadaGrid].Percentual.ToString();
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                txtDescricao.Text = listaDesconto[linhaSelecionadaGrid].Descricao;
+                txtValor.Text = listaDesconto[linhaSelecionadaGrid].Percentual.ToString();
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                txtDescricao.Text = listaDesconto[linhaSelecionadaGrid].Descricao;
+                txtValor.Text = listaDesconto[linhaSelecionadaGrid].Percentual.ToString();
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                txtDescricao.Text = listaDesconto[linhaSelecionadaGrid].Descricao;
+                txtValor.Text = listaDesconto[linhaSelecionadaGrid].Percentual.ToString();
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        #endregion
+
+
+        #region Mensagens dos botões
+        private void btnExcluir_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Excluir um desconto");
+        }
+
+        private void btnExcluir_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
+        private void btnAdicionarDesconto_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Adicionar um desconto");
+        }
+
+        private void btnAdicionarDesconto_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+        #endregion
+
+    }        
 }

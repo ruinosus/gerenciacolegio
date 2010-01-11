@@ -39,10 +39,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
-            this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
-            this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
-            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnAdicionarDesconto = new System.Windows.Forms.Button();
+            this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
+            this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
+            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Percentual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
@@ -51,6 +54,7 @@
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
+            this.gpbSerie.Controls.Add(this.btnAdicionarDesconto);
             this.gpbSerie.Controls.Add(this.btnExcluir);
             this.gpbSerie.Controls.Add(this.txtValor);
             this.gpbSerie.Controls.Add(this.lblValor);
@@ -76,6 +80,9 @@
             this.btnExcluir.Size = new System.Drawing.Size(32, 11);
             this.btnExcluir.TabIndex = 69;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.MouseLeave += new System.EventHandler(this.btnExcluir_MouseLeave);
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnExcluir.MouseEnter += new System.EventHandler(this.btnExcluir_MouseEnter);
             // 
             // txtValor
             // 
@@ -115,11 +122,20 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Descricao,
+            this.Percentual});
             this.dataGridView1.Location = new System.Drawing.Point(24, 236);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(640, 285);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // lblHelloUsuario
             // 
@@ -147,6 +163,35 @@
             this.btnDesconectar.UseVisualStyleBackColor = false;
             this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
+            // btnAdicionarDesconto
+            // 
+            this.btnAdicionarDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnAdicionarDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionarDesconto.FlatAppearance.BorderSize = 0;
+            this.btnAdicionarDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarDesconto.Location = new System.Drawing.Point(579, 198);
+            this.btnAdicionarDesconto.Name = "btnAdicionarDesconto";
+            this.btnAdicionarDesconto.Size = new System.Drawing.Size(32, 32);
+            this.btnAdicionarDesconto.TabIndex = 70;
+            this.btnAdicionarDesconto.UseVisualStyleBackColor = true;
+            this.btnAdicionarDesconto.MouseLeave += new System.EventHandler(this.btnAdicionarDesconto_MouseLeave);
+            this.btnAdicionarDesconto.Click += new System.EventHandler(this.btnAdicionarDesconto_Click);
+            this.btnAdicionarDesconto.MouseEnter += new System.EventHandler(this.btnAdicionarDesconto_MouseEnter);
+            // 
+            // ucMenuConfiguracoesEsquerda1
+            // 
+            this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
+            this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
+            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
+            this.ucMenuConfiguracoesEsquerda1.TabIndex = 134;
+            this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
+            this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
+            // 
             // ucMenuDireita1
             // 
             this.ucMenuDireita1.BackColor = System.Drawing.Color.Transparent;
@@ -159,16 +204,6 @@
             this.ucMenuDireita1.EventoAbrirDesconto += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaDesconto(this.ucMenuDireita1_EventoAbrirDesconto);
             this.ucMenuDireita1.EventoAbrirSerie += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaSerie(this.ucMenuDireita1_EventoAbrirSerie);
             // 
-            // ucMenuConfiguracoesEsquerda1
-            // 
-            this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
-            this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
-            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
-            this.ucMenuConfiguracoesEsquerda1.TabIndex = 134;
-            this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
-            this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
-            // 
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
@@ -176,13 +211,21 @@
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
             this.ucMenuInferior1.TabIndex = 135;
-            this.ucMenuInferior1.Load += new System.EventHandler(this.ucMenuInferior1_Load);
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
-            // errorProviderTela
+            // Descricao
             // 
-            this.errorProviderTela.ContainerControl = this;
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.Width = 250;
+            // 
+            // Percentual
+            // 
+            this.Percentual.DataPropertyName = "Percentual";
+            this.Percentual.HeaderText = "Percentual";
+            this.Percentual.Name = "Percentual";
             // 
             // telaConfiguracoesDescontoMatricula
             // 
@@ -230,5 +273,8 @@
         private GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda ucMenuConfiguracoesEsquerda1;
         private ucMenuInferior ucMenuInferior1;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
+        private System.Windows.Forms.Button btnAdicionarDesconto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Percentual;
     }
 }
