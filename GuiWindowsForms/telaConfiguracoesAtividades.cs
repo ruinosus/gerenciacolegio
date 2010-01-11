@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloFuncionario.Processos;
+using Negocios.ModuloAtividade.Processos;
 
 namespace GuiWindowsForms
 {
-    public partial class telaConfiguracoesAtividade : Form
+    public partial class txtNomeAtividade : Form
     {
         Funcionario funcionario = new Funcionario();
 
@@ -22,7 +23,7 @@ namespace GuiWindowsForms
          * Atributo para controle de exibição da tela
          * */
 
-        private static telaConfiguracoesAtividade telaconfiguracoesatividades;
+        private static txtNomeAtividade telaconfiguracoesatividades;
 
         private static bool IsShown = false;
         #endregion
@@ -34,11 +35,11 @@ namespace GuiWindowsForms
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
 
-        public static telaConfiguracoesAtividade getInstancia()
+        public static txtNomeAtividade getInstancia()
         {
             if (telaconfiguracoesatividades == null)
             {
-                telaconfiguracoesatividades = new telaConfiguracoesAtividade();
+                telaconfiguracoesatividades = new txtNomeAtividade();
             }
             return telaconfiguracoesatividades;
         }
@@ -49,7 +50,7 @@ namespace GuiWindowsForms
         /// Construtor da tela
         /// </summary>
 
-        public telaConfiguracoesAtividade()
+        public txtNomeAtividade()
         {
             InitializeComponent();
         }
@@ -138,7 +139,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
             Program.ultimaTela = 10;
-            telaConfiguracoesAtividade telaconfatv = telaConfiguracoesAtividade.getInstancia();
+            txtNomeAtividade telaconfatv = txtNomeAtividade.getInstancia();
             telaconfatv.Show();
         }
 
@@ -188,47 +189,84 @@ namespace GuiWindowsForms
         #region EVENTRO CADASTRAR
         private void ucMenuInferior1_EventoCadastrar()
         {
-            #region VALIDA - CONFIGURAÇÕES ATIVIDADES
-
-            if (String.IsNullOrEmpty(txtDescricao.Text))
+            try
             {
-                errorProviderTela.SetError(txtDescricao, "Informe a configuração de atividades");
-                txtDescricao.Clear();
-                return;
+                atividadeControlador = AtividadeProcesso.Instance;
+
+                if (pagCadastrarAtividade.Select()) 
+                {
+                    #region VALIDA - NOME
+
+                    if (String.IsNullOrEmpty(txtNome.Text))
+                    {
+                        errorProviderTela.SetError(txtNome, "Informe o nome");
+                        txtNome.Clear();
+                        return;
+                    }
+
+                    #endregion
+
+                    #region VALIDA - DESCRIÇÃO
+
+                    if (String.IsNullOrEmpty(txtDescricao.Text))
+                    {
+                        errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                        txtDescricao.Clear();
+                        return;
+                    }
+
+                    #endregion
+                
+                }
+
+                #region VALIDA - CONFIGURAÇÕES ATIVIDADES
+
+                if (String.IsNullOrEmpty(txtDescricao.Text))
+                {
+                    errorProviderTela.SetError(txtDescricao, "Informe a configuração de atividades");
+                    txtDescricao.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - TURMA
+
+                if (String.IsNullOrEmpty(txtTurma.Text))
+                {
+                    errorProviderTela.SetError(txtTurma, "Informe a turma");
+                    txtTurma.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - VALOR
+
+                if (String.IsNullOrEmpty(txtValor.Text))
+                {
+                    errorProviderTela.SetError(txtValor, "Informe o valor");
+                    txtValor.Clear();
+                    return;
+                }
+
+                #endregion
+
+                #region VALIDA - DIA DA SEMANA
+                if (ckbDomingo.Checked == false && ckbSegunda.Checked == false && ckbTerca.Checked == false &&
+                    ckbQuarta.Checked == false && ckbQuinta.Checked == false && ckbSexta.Checked == false && ckbSabado.Checked == false)
+                {
+                    errorProviderTela.SetError(txtValor, "Informe o dia da semana");
+                    return;
+                }
+                #endregion
+
             }
-
-            #endregion
-
-            #region VALIDA - TURMA
-
-            if (String.IsNullOrEmpty(txtTurma.Text))
+            catch (Exception ex) 
             {
-                errorProviderTela.SetError(txtTurma, "Informe a turma");
-                txtTurma.Clear();
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            #endregion
-
-            #region VALIDA - VALOR
-
-            if (String.IsNullOrEmpty(txtValor.Text))
-            {
-                errorProviderTela.SetError(txtValor, "Informe o valor");
-                txtValor.Clear();
-                return;
-            }
-
-            #endregion
-
-            #region VALIDA - DIA DA SEMANA
-            if (ckbDomingo.Checked == false && ckbSegunda.Checked == false && ckbTerca.Checked == false &&
-                ckbQuarta.Checked == false && ckbQuinta.Checked == false && ckbSexta.Checked == false && ckbSabado.Checked == false) 
-            {
-                errorProviderTela.SetError(txtValor, "Informe o dia da semana");
-                return;
-            }
-            #endregion
+            carregaForm();
         }
         #endregion
 
@@ -283,6 +321,13 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
         #endregion
+
+        private void carregaForm() 
+        {
+            atividadeControlador = AtividadeProcesso.Instance;
+
+
+        }
 
     }
 }
