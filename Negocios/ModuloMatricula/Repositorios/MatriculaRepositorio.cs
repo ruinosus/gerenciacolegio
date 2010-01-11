@@ -428,7 +428,6 @@ namespace Negocios.ModuloMatricula.Repositorios
                 matriculaAux.Status = matricula.Status;
                 matriculaAux.Valor= matricula.Valor;
                 matriculaAux.AlunoID= matricula.AlunoID;
-                matriculaAux.BoletoAtividade= matricula.BoletoAtividade;
                 matriculaAux.BoletoMensalidade = matricula.BoletoMensalidade;
                 matriculaAux.DataMatricula = matricula.DataMatricula;
                 matriculaAux.DescontoID = matricula.DescontoID;

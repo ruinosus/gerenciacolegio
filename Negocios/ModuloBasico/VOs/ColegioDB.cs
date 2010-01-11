@@ -1077,6 +1077,17 @@ public partial class AlunoAtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
+    #region Children
+
+    [Association(Storage = null, OtherKey = "AlunoAtividadeTurmaID", Name = "fk_BoletoAtividade_AlunoAtividadeTurma")]
+    [DebuggerNonUserCode]
+    public EntitySet<BoletoAtividade> BoletoAtividade
+    {
+        get;
+        set;
+    }
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.atividade")]
@@ -1822,23 +1833,23 @@ public partial class BoletoAtividade : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? MatriculaID
+    #region uint? AlunoAtividadeTurmaID
 
-    private uint? _matriculaID;
+    private uint? _alunoAtividadeTurmaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_matriculaID", Name = "MatriculaId", DbType = "int unsigned")]
-    public uint? MatriculaID
+    [Column(Storage = "_matriculaID", Name = "AlunoAtividadeTurmaID", DbType = "int unsigned")]
+    public uint? AlunoAtividadeTurmaID
     {
         get
         {
-            return _matriculaID;
+            return _alunoAtividadeTurmaID;
         }
         set
         {
-            if (value != _matriculaID)
+            if (value != _alunoAtividadeTurmaID)
             {
-                _matriculaID = value;
-                OnPropertyChanged("MatriculaID");
+                _alunoAtividadeTurmaID = value;
+                OnPropertyChanged("AlunoAtividadeTurmaID");
             }
         }
     }
@@ -1916,18 +1927,18 @@ public partial class BoletoAtividade : INotifyPropertyChanged
 
     #region Parents
 
-    private System.Data.Linq.EntityRef<Matricula> _matRiCuLa;
-    [Association(Storage = "_matRiCuLa", ThisKey = "MatriculaID", Name = "fk_BoletoAtividade_Matricula", IsForeignKey = true)]
+    private System.Data.Linq.EntityRef<AlunoAtividadeTurma> _alunoAtividadeTurma;
+    [Association(Storage = "_matRiCuLa", ThisKey = "AlunoAtividadeTurmaID", Name = "fk_BoletoAtividade_AlunoAtividadeTurma", IsForeignKey = true)]
     [DebuggerNonUserCode]
-    public Matricula Matricula
+    public AlunoAtividadeTurma AlunoAtividadeTurma
     {
         get
         {
-            return _matRiCuLa.Entity;
+            return _alunoAtividadeTurma.Entity;
         }
         set
         {
-            _matRiCuLa.Entity = value;
+            _alunoAtividadeTurma.Entity = value;
         }
     }
 
@@ -4817,14 +4828,6 @@ public partial class Matricula : INotifyPropertyChanged
     #endregion
 
     #region Children
-
-    [Association(Storage = null, OtherKey = "MatriculaID", Name = "fk_BoletoAtividade_Matricula")]
-    [DebuggerNonUserCode]
-    public EntitySet<BoletoAtividade> BoletoAtividade
-    {
-        get;
-        set;
-    }
 
     [Association(Storage = null, OtherKey = "MatriculaID", Name = "fk_BoletoMensalidade_Matricula")]
     [DebuggerNonUserCode]
