@@ -41,10 +41,6 @@
             this.lblNumeroMatricula = new System.Windows.Forms.Label();
             this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
             this.lblDataMatricula = new System.Windows.Forms.Label();
-            this.lblTurma = new System.Windows.Forms.Label();
-            this.cmbTurma = new System.Windows.Forms.ComboBox();
-            this.lblTurno = new System.Windows.Forms.Label();
-            this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.lblSerie = new System.Windows.Forms.Label();
             this.cmbSerie = new System.Windows.Forms.ComboBox();
             this.lblValor = new System.Windows.Forms.Label();
@@ -72,10 +68,6 @@
             this.gpbMatricula.Controls.Add(this.lblNumeroMatricula);
             this.gpbMatricula.Controls.Add(this.dtpNascimento);
             this.gpbMatricula.Controls.Add(this.lblDataMatricula);
-            this.gpbMatricula.Controls.Add(this.lblTurma);
-            this.gpbMatricula.Controls.Add(this.cmbTurma);
-            this.gpbMatricula.Controls.Add(this.lblTurno);
-            this.gpbMatricula.Controls.Add(this.cmbTurno);
             this.gpbMatricula.Controls.Add(this.lblSerie);
             this.gpbMatricula.Controls.Add(this.cmbSerie);
             this.gpbMatricula.Controls.Add(this.lblValor);
@@ -200,7 +192,7 @@
             // 
             this.dtpNascimento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(500, 21);
+            this.dtpNascimento.Location = new System.Drawing.Point(171, 130);
             this.dtpNascimento.Name = "dtpNascimento";
             this.dtpNascimento.Size = new System.Drawing.Size(110, 20);
             this.dtpNascimento.TabIndex = 0;
@@ -208,51 +200,11 @@
             // lblDataMatricula
             // 
             this.lblDataMatricula.AutoSize = true;
-            this.lblDataMatricula.Location = new System.Drawing.Point(380, 27);
+            this.lblDataMatricula.Location = new System.Drawing.Point(42, 136);
             this.lblDataMatricula.Name = "lblDataMatricula";
             this.lblDataMatricula.Size = new System.Drawing.Size(114, 13);
             this.lblDataMatricula.TabIndex = 39;
             this.lblDataMatricula.Text = "Data da Matrícula:";
-            // 
-            // lblTurma
-            // 
-            this.lblTurma.AutoSize = true;
-            this.lblTurma.Location = new System.Drawing.Point(372, 119);
-            this.lblTurma.Name = "lblTurma";
-            this.lblTurma.Size = new System.Drawing.Size(46, 13);
-            this.lblTurma.TabIndex = 38;
-            this.lblTurma.Text = "Turma:";
-            // 
-            // cmbTurma
-            // 
-            this.cmbTurma.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTurma.FormattingEnabled = true;
-            this.cmbTurma.Location = new System.Drawing.Point(422, 116);
-            this.cmbTurma.Name = "cmbTurma";
-            this.cmbTurma.Size = new System.Drawing.Size(101, 21);
-            this.cmbTurma.TabIndex = 3;
-            this.cmbTurma.TextChanged += new System.EventHandler(this.cmbTurma_TextChanged);
-            // 
-            // lblTurno
-            // 
-            this.lblTurno.AutoSize = true;
-            this.lblTurno.Location = new System.Drawing.Point(42, 119);
-            this.lblTurno.Name = "lblTurno";
-            this.lblTurno.Size = new System.Drawing.Size(44, 13);
-            this.lblTurno.TabIndex = 36;
-            this.lblTurno.Text = "Turno:";
-            // 
-            // cmbTurno
-            // 
-            this.cmbTurno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTurno.FormattingEnabled = true;
-            this.cmbTurno.Location = new System.Drawing.Point(171, 116);
-            this.cmbTurno.Name = "cmbTurno";
-            this.cmbTurno.Size = new System.Drawing.Size(101, 21);
-            this.cmbTurno.TabIndex = 2;
-            this.cmbTurno.TextChanged += new System.EventHandler(this.cmbTurno_TextChanged);
             // 
             // lblSerie
             // 
@@ -404,10 +356,6 @@
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.ComboBox cmbSerie;
         private System.Windows.Forms.Label lblSerie;
-        private System.Windows.Forms.Label lblTurno;
-        private System.Windows.Forms.ComboBox cmbTurno;
-        private System.Windows.Forms.Label lblTurma;
-        private System.Windows.Forms.ComboBox cmbTurma;
         private System.Windows.Forms.DateTimePicker dtpNascimento;
         private System.Windows.Forms.Label lblDataMatricula;
         private System.Windows.Forms.Label lblNumeroMatricula;

@@ -91,9 +91,9 @@
             this.lblValor.AutoSize = true;
             this.lblValor.Location = new System.Drawing.Point(21, 137);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(68, 13);
+            this.lblValor.Size = new System.Drawing.Size(61, 13);
             this.lblValor.TabIndex = 3;
-            this.lblValor.Text = "Valor (R$):";
+            this.lblValor.Text = "Valor (%):";
             // 
             // txtDescricao
             // 
