@@ -14,7 +14,7 @@ namespace GuiWindowsForms
     {
         Desconto desconto = new Desconto();
 
-        IDescontoProcesso descontoControlador = DescontoProcesso.Instance; 
+        IDescontoProcesso descontoControlador = null;
 
         #region SINGLETON DA TELA
         /*
@@ -181,6 +181,8 @@ namespace GuiWindowsForms
         #region EVENTO CADASTRAR
         private void ucMenuInferior1_Load(object sender, EventArgs e)
         {
+            descontoControlador = DescontoProcesso.Instance;
+
             try
             {
                 #region VALIDA - DESCRIÇÃO

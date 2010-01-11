@@ -9,18 +9,21 @@ using System.Windows.Forms;
 using Negocios.ModuloMatricula.Processos;
 using Negocios.ModuloSala.Processos;
 using Negocios.ModuloSalaPeriodo.Processos;
+using Negocios.ModuloDesconto.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaAlunoMatricula : Form
     {
         Matricula matricula = new Matricula();
-        Sala sala = new Sala();
-        SalaPeriodo salaPeriodo = new SalaPeriodo();
 
         IMatriculaProcesso matriculaControlador = MatriculaProcesso.Instance;
-        ISalaProcesso salaControlador = SalaProcesso.Instance;
-        ISalaPeriodoProcesso salaPeriodoControlador = SalaPeriodoProcesso.Instance;
+        ISalaProcesso salaControlador = null;
+        IDescontoProcesso descontoControlador = null; 
+
+        List<SalaAuxiliar> listaSalaAuxiliar = null;
+        List<Sala> listaSala = null;
+        List<Desconto> listaDescontoAux = null;
 
         #region SINGLETON DA TELA
         /*
@@ -232,6 +235,16 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaAlunoMatricula_Load(object sender, EventArgs e)
         {
+            descontoControlador = DescontoProcesso.Instance;
+            carregaForm();
+            
+            cmbSerie.DataSource = listaSalaAuxiliar;
+
+            listaDescontoAux = new List<Desconto>();
+
+            //listaDescontoAux = descontoControlador.Consultar();
+            cmbDesconto.DataSource = listaDescontoAux;
+            cmbDesconto.DisplayMember = "Descricao";
 
         }
         #endregion
@@ -248,26 +261,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbSerie, "Informe a série");
                     return;
                 }
-
-                #endregion
-
-                #region VALIDA - TURNO
-
-                if (String.IsNullOrEmpty(cmbTurno.Text))
-                {
-                    errorProviderTela.SetError(cmbTurno, "Informe o turno");
-                    return;
-                }
-
-                #endregion
-
-                #region VALIDA - TURMA
-
-                if (String.IsNullOrEmpty(cmbTurma.Text))
-                {
-                    errorProviderTela.SetError(cmbTurma, "Informe a turma");
-                    return;
-                }
+                matricula.SalaPeriodo.Sala.ID = ((Sala)cmbSerie.SelectedItem).ID;
 
                 #endregion
 
@@ -278,6 +272,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbDesconto, "Informe o desconto");
                     return;
                 }
+                matricula.DescontoID = ((Desconto)cmbDesconto.SelectedItem).ID;
 
                 #endregion
 
@@ -300,16 +295,22 @@ namespace GuiWindowsForms
                     txtTotalValor.Clear();
                     return;
                 }
+                double valorAux = Convert.ToDouble(txtValor.Text);
+                double descontoAux = Convert.ToDouble(cmbDesconto.Text);
+
+                matricula.Valor = (valorAux * descontoAux) / 100;
 
                 #endregion
 
-                #region VALIDA - VALOR TOTAL
+                #region VALIDA - VENCIMENTO
 
                 if (String.IsNullOrEmpty(cmbVencimento.Text))
                 {
                     errorProviderTela.SetError(cmbVencimento, "Informe o vencimento");
                     return;
                 }
+
+                dtpNascimento.Value = DateTime.Today;
 
                 #endregion
             }
@@ -351,5 +352,60 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
         #endregion
+
+        private void carregaForm()
+        {
+            salaControlador = SalaProcesso.Instance;
+
+            listaSala = new List<Sala>();
+            listaSalaAuxiliar = new List<SalaAuxiliar>();
+
+            listaSala = salaControlador.Consultar();
+
+            foreach (Sala a in listaSala)
+            {
+                SalaAuxiliar classeSalaAux = new SalaAuxiliar();
+
+                classeSalaAux.SerieAux = a.Serie.Nome;
+                classeSalaAux.TurmaAux = a.Turma.Nome;
+                classeSalaAux.TurnoAux = a.Turno.Nome;
+
+                listaSalaAuxiliar.Add(classeSalaAux);
+            }
+        }
     }
+
+    #region CLASSE AUXILIAR PARA USO PARA EXIBIR A SALA
+
+    public class SalaAuxiliar
+    {
+        string serieAux;
+
+        public string SerieAux
+        {
+            get { return serieAux; }
+            set { serieAux = value; }
+        }
+        string turmaAux;
+
+        public string TurmaAux
+        {
+            get { return turmaAux; }
+            set { turmaAux = value; }
+        }
+        string turnoAux;
+
+        public string TurnoAux
+        {
+            get { return turnoAux; }
+            set { turnoAux = value; }
+        }
+
+        public override string ToString()
+        {
+            return serieAux + "-" + turmaAux + "-" + turnoAux;
+        }
+    }
+
+    #endregion
 }
