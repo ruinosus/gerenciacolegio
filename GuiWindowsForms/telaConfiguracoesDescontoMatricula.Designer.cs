@@ -177,6 +177,7 @@
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
             this.ucMenuInferior1.TabIndex = 135;
             this.ucMenuInferior1.Load += new System.EventHandler(this.ucMenuInferior1_Load);
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
             // errorProviderTela

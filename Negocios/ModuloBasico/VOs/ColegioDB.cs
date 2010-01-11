@@ -935,23 +935,23 @@ public partial class AlunoAtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? AtividadeID
+    #region uint? AtividadeTurmaID
 
-    private uint? _atividadeID;
+    private uint? _atividadeTurmaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_atividadeID", Name = "AtividadeId", DbType = "int unsigned")]
-    public uint? AtividadeID
+    [Column(Storage = "_atividadeTurmaID", Name = "AtividadeTurmaID", DbType = "int unsigned")]
+    public uint? AtividadeTurmaID
     {
         get
         {
-            return _atividadeID;
+            return _atividadeTurmaID;
         }
         set
         {
-            if (value != _atividadeID)
+            if (value != _atividadeTurmaID)
             {
-                _atividadeID = value;
-                OnPropertyChanged("AtividadeID");
+                _atividadeTurmaID = value;
+                OnPropertyChanged("AtividadeTurmaID");
             }
         }
     }
@@ -3305,7 +3305,7 @@ public partial class Desconto : INotifyPropertyChanged
 {
     public override string ToString()
     {
-        return this.Descricao;
+        return this.Descricao + " - "+ this.Percentual;
     }
 
     #region INotifyPropertyChanged handling
@@ -3416,7 +3416,7 @@ public partial class Desconto : INotifyPropertyChanged
 
     #region Children
 
-    [Association(Storage = null, OtherKey = "DescontoID", Name = "fk_AtividadeTurma_Desconto")]
+    [Association(Storage = null, OtherKey = "DescontoID", Name = "fk_AlunoAtividadeTurma_Desconto")]
     [DebuggerNonUserCode]
     public EntitySet<AlunoAtividadeTurma> AlunoAtividadeTurma
     {
