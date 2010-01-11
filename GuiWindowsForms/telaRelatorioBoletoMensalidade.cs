@@ -19,11 +19,13 @@ namespace GuiWindowsForms
 
         private void telaRelatorioBoletoMensalidade_Load(object sender, EventArgs e)
         {
+           
             BoletoMensalidadeDataTableTableAdapter ta = new BoletoMensalidadeDataTableTableAdapter();
             GuiWindowsForms.Relatorios.BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable dataTable = ta.GetData(1);
             BoletoMensalidadeRelatorio1.SetDataSource((DataTable)dataTable);
             crystalReportViewer1.ReportSource = BoletoMensalidadeRelatorio1;
             BoletoMensalidadeRelatorio1.Refresh();
+            crystalReportViewer1.Zoom(1);
         }
     }
 }
