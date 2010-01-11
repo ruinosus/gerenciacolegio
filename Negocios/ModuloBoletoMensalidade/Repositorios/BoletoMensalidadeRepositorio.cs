@@ -468,6 +468,8 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
                 boletoMensalidadeAux.Multa = boletoMensalidade.Multa;
                 boletoMensalidadeAux.Parcela = boletoMensalidade.Parcela;
                 boletoMensalidadeAux.Status = boletoMensalidade.Status;
+                boletoMensalidadeAux.Valor = boletoMensalidade.Valor;
+
 
                 Confirmar();
             }

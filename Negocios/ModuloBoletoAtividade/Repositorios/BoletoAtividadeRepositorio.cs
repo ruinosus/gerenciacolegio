@@ -467,6 +467,7 @@ namespace Negocios.ModuloBoletoAtividade.Repositorios
                 boletoAtividadeAux.Multa = boletoAtividade.Multa;
                 boletoAtividadeAux.Parcela = boletoAtividade.Parcela;
                 boletoAtividadeAux.Status = boletoAtividade.Status;
+                boletoAtividadeAux.Valor = boletoAtividade.Valor;
 
                 Confirmar();
             }

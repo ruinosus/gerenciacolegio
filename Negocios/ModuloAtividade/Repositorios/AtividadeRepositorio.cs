@@ -53,25 +53,7 @@ namespace Negocios.ModuloAtividade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (atividade.Valor.HasValue)
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from a in resultado
-                                                    where
-                                                    a.Valor.HasValue && a.Valor.Value == atividade.Valor.Value
-                                                    select a).ToList());
-                            }
-                            else {
-                                resultado=((from a in resultado
-                                                    where
-                                                    a.Valor.HasValue && a.Valor.Value == atividade.Valor.Value
-                                                    select a).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
+                        
                         if (!string.IsNullOrEmpty(atividade.Nome))
                         {
                             if (pesquisa)
@@ -149,25 +131,7 @@ namespace Negocios.ModuloAtividade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (atividade.Valor.HasValue)
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from a in resultado
-                                                    where
-                                                    a.Valor.HasValue && a.Valor.Value == atividade.Valor.Value
-                                                    select a).ToList());
-                            }
-                            else {
-                                resultado=((from a in resultado
-                                                    where
-                                                    a.Valor.HasValue && a.Valor.Value == atividade.Valor.Value
-                                                    select a).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
+                        
                         break;
                     }
                 #endregion
@@ -194,26 +158,7 @@ namespace Negocios.ModuloAtividade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (atividade.Valor.HasValue)
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from a in Consultar()
-                                                    where
-                                                    a.Valor.HasValue && a.Valor.Value == atividade.Valor.Value
-                                                    select a).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from a in Consultar()
-                                              where
-                                              a.Valor.HasValue && a.Valor.Value == atividade.Valor.Value
-                                              select a).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
+                        
                         if (!string.IsNullOrEmpty(atividade.Nome))
                         {
                             if (pesquisa)
@@ -295,26 +240,7 @@ namespace Negocios.ModuloAtividade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (atividade.Valor.HasValue)
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from a in Consultar()
-                                                    where
-                                                    a.Valor.HasValue && a.Valor.Value == atividade.Valor.Value
-                                                    select a).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from a in Consultar()
-                                              where
-                                              a.Valor.HasValue && a.Valor.Value == atividade.Valor.Value
-                                              select a).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
+                        
                         break;
                     }
                 #endregion
@@ -376,14 +302,13 @@ namespace Negocios.ModuloAtividade.Repositorios
                     throw new AtividadeNaoExcluidaExcecao();
 
                 atividadeAux = resultado[0];
-                atividadeAux.AtividadeData = atividade.AtividadeData;
+                atividadeAux.AtividadeTurma = atividade.AtividadeTurma;
                 atividadeAux.Descricao = atividade.Descricao;
                 atividadeAux.FuncionarioID = atividade.FuncionarioID;
                 atividadeAux.Imagem= atividade.Imagem;
                 atividadeAux.Nome= atividade.Nome;
                 atividadeAux.Status= atividade.Status;
-                atividadeAux.Valor= atividade.Valor;
-
+                
                 Confirmar();
             }
             catch (Exception)
