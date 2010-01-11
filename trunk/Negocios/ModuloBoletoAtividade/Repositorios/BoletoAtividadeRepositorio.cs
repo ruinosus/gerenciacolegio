@@ -462,8 +462,8 @@ namespace Negocios.ModuloBoletoAtividade.Repositorios
                 boletoAtividadeAux.DataVencimento = boletoAtividade.DataVencimento;
                 boletoAtividadeAux.Desconto = boletoAtividade.Desconto;
                 boletoAtividadeAux.Descricao = boletoAtividade.Descricao;
-                boletoAtividadeAux.Matricula = boletoAtividade.Matricula;
-                boletoAtividadeAux.MatriculaID= boletoAtividade.MatriculaID;
+                boletoAtividadeAux.AlunoAtividadeTurma = boletoAtividade.AlunoAtividadeTurma;
+                boletoAtividadeAux.AlunoAtividadeTurmaID= boletoAtividade.AlunoAtividadeTurmaID;
                 boletoAtividadeAux.Multa = boletoAtividade.Multa;
                 boletoAtividadeAux.Parcela = boletoAtividade.Parcela;
                 boletoAtividadeAux.Status = boletoAtividade.Status;
