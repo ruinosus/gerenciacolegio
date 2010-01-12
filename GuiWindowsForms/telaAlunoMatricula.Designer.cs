@@ -159,6 +159,7 @@
             this.cmbDesconto.Name = "cmbDesconto";
             this.cmbDesconto.Size = new System.Drawing.Size(163, 21);
             this.cmbDesconto.TabIndex = 5;
+            this.cmbDesconto.SelectedIndexChanged += new System.EventHandler(this.cmbDesconto_SelectedIndexChanged);
             this.cmbDesconto.TextChanged += new System.EventHandler(this.cmbDesconto_TextChanged);
             // 
             // lblDesconto
@@ -224,6 +225,7 @@
             this.cmbSerie.Name = "cmbSerie";
             this.cmbSerie.Size = new System.Drawing.Size(163, 21);
             this.cmbSerie.TabIndex = 1;
+            this.cmbSerie.SelectedIndexChanged += new System.EventHandler(this.cmbSerie_SelectedIndexChanged);
             this.cmbSerie.TextChanged += new System.EventHandler(this.cmbSerie_TextChanged);
             // 
             // lblValor
