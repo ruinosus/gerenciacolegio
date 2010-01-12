@@ -64,7 +64,6 @@ namespace GuiWindowsForms.User_Control
         {
             Bitmap imagem = null;
 
-            //openFileDialog1.ShowDialog();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
