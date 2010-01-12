@@ -1408,6 +1408,7 @@ namespace Negocios.ModuloAluno.Repositorios
                 alunoAux.Status = aluno.Status;
                 alunoAux.Uf = aluno.Uf;
                 alunoAux.SerieAtual = aluno.SerieAtual;
+                alunoAux.Edificio = aluno.Edificio;
 
                 Confirmar();
             }
