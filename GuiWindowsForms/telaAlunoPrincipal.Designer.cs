@@ -303,40 +303,44 @@
             this.colunaNomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colunaNomeAluno.DataPropertyName = "NomeAluno";
             this.colunaNomeAluno.HeaderText = "Nome do Aluno";
+            this.colunaNomeAluno.MaxInputLength = 40;
             this.colunaNomeAluno.Name = "colunaNomeAluno";
             this.colunaNomeAluno.ReadOnly = true;
             this.colunaNomeAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colunaNomeAluno.Width = 150;
+            this.colunaNomeAluno.Width = 233;
             // 
             // TelefoneAluno
             // 
             this.TelefoneAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.TelefoneAluno.DataPropertyName = "TelefoneAluno";
             this.TelefoneAluno.HeaderText = "Telefone do Aluno";
+            this.TelefoneAluno.MaxInputLength = 15;
             this.TelefoneAluno.Name = "TelefoneAluno";
             this.TelefoneAluno.ReadOnly = true;
             this.TelefoneAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.TelefoneAluno.Width = 150;
+            this.TelefoneAluno.Width = 130;
             // 
             // SerieAluno
             // 
             this.SerieAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.SerieAluno.DataPropertyName = "SerieAluno";
-            this.SerieAluno.HeaderText = "Serie do Aluno";
+            this.SerieAluno.HeaderText = "Ano do Aluno";
+            this.SerieAluno.MaxInputLength = 20;
             this.SerieAluno.Name = "SerieAluno";
             this.SerieAluno.ReadOnly = true;
             this.SerieAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.SerieAluno.Width = 150;
+            this.SerieAluno.Width = 116;
             // 
             // ValorMatricula
             // 
             this.ValorMatricula.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ValorMatricula.DataPropertyName = "Valor";
             this.ValorMatricula.HeaderText = "Valor da Matrícula";
+            this.ValorMatricula.MaxInputLength = 10;
             this.ValorMatricula.Name = "ValorMatricula";
             this.ValorMatricula.ReadOnly = true;
             this.ValorMatricula.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ValorMatricula.Width = 150;
+            this.ValorMatricula.Width = 126;
             // 
             // telaAlunoPrincipal
             // 
