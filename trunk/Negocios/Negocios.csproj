@@ -69,6 +69,8 @@
     <Compile Include="ModuloAtividadeTurma\Processos\Interfaces\IAtividadeTurmaProcesso.cs" />
     <Compile Include="ModuloAtividadeTurma\Repositorios\AtividadeTurmaRepositorio.cs" />
     <Compile Include="ModuloAtividadeTurma\Repositorios\Interfaces\IAtividadeTurmaRepositorio.cs" />
+    <Compile Include="ModuloBasico\VOs\Singleton.cs" />
+    <Compile Include="ModuloBasico\VOs\Memoria.cs" />
     <Compile Include="ModuloBoletoAtividade\Constantes\BoletoAtividadeConstantes.cs" />
     <Compile Include="ModuloBoletoAtividade\Excecoes\BoletoAtividadeNaoAlteradaExcecao.cs" />
     <Compile Include="ModuloBoletoAtividade\Excecoes\BoletoAtividadeNaoExcluidaExcecao.cs" />

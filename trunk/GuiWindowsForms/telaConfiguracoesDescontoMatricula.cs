@@ -330,7 +330,6 @@ namespace GuiWindowsForms
         }
         #endregion
 
-
         #region Função para verificar se o desconto já esta cadastrado
         public bool verificaSeJaInserido(Desconto desconto)
         {
@@ -458,7 +457,6 @@ namespace GuiWindowsForms
         }
 
         #endregion
-
 
         #region Mensagens dos botões
         private void btnExcluir_MouseEnter(object sender, EventArgs e)

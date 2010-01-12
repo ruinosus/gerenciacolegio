@@ -44,11 +44,14 @@
             this.lblFinanceiro = new System.Windows.Forms.Label();
             this.btnFinanceiro = new System.Windows.Forms.Button();
             this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAluno = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.colunaNomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefoneAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SerieAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -258,37 +261,82 @@
             this.btnCadastrarFuncionario.Visible = false;
             this.btnCadastrarFuncionario.Click += new System.EventHandler(this.btnCadastrarFuncionario_Click);
             // 
-            // dataGridView1
+            // dgvAluno
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(163, 307);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(674, 150);
-            this.dataGridView1.TabIndex = 17;
+            this.dgvAluno.AllowUserToAddRows = false;
+            this.dgvAluno.AllowUserToDeleteRows = false;
+            this.dgvAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colunaNomeAluno,
+            this.TelefoneAluno,
+            this.SerieAluno,
+            this.ValorMatricula});
+            this.dgvAluno.Location = new System.Drawing.Point(163, 365);
+            this.dgvAluno.MultiSelect = false;
+            this.dgvAluno.Name = "dgvAluno";
+            this.dgvAluno.ReadOnly = true;
+            this.dgvAluno.Size = new System.Drawing.Size(674, 150);
+            this.dgvAluno.TabIndex = 17;
+            this.dgvAluno.DoubleClick += new System.EventHandler(this.dgvAluno_DoubleClick);
+            this.dgvAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellClick);
+            this.dgvAluno.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellEnter);
             // 
             // Column3
             // 
             this.Column3.Name = "Column3";
             // 
-            // Column1
+            // colunaNomeAluno
             // 
-            this.Column1.DataPropertyName = "Nome";
-            this.Column1.HeaderText = "Nome";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.colunaNomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colunaNomeAluno.DataPropertyName = "NomeAluno";
+            this.colunaNomeAluno.HeaderText = "Nome do Aluno";
+            this.colunaNomeAluno.Name = "colunaNomeAluno";
+            this.colunaNomeAluno.ReadOnly = true;
+            this.colunaNomeAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colunaNomeAluno.Width = 89;
             // 
-            // Column2
+            // TelefoneAluno
             // 
-            this.Column2.DataPropertyName = "Perfil.Teste";
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.TelefoneAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TelefoneAluno.DataPropertyName = "TelefoneAluno";
+            this.TelefoneAluno.HeaderText = "Telefone do Aluno";
+            this.TelefoneAluno.Name = "TelefoneAluno";
+            this.TelefoneAluno.ReadOnly = true;
+            this.TelefoneAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.TelefoneAluno.Width = 77;
+            // 
+            // SerieAluno
+            // 
+            this.SerieAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SerieAluno.DataPropertyName = "SerieAluno";
+            this.SerieAluno.HeaderText = "Serie do Aluno";
+            this.SerieAluno.Name = "SerieAluno";
+            this.SerieAluno.ReadOnly = true;
+            this.SerieAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SerieAluno.Width = 87;
+            // 
+            // ValorMatricula
+            // 
+            this.ValorMatricula.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ValorMatricula.DataPropertyName = "Valor";
+            this.ValorMatricula.HeaderText = "Valor da Matrícula";
+            this.ValorMatricula.Name = "ValorMatricula";
+            this.ValorMatricula.ReadOnly = true;
+            this.ValorMatricula.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ValorMatricula.Width = 106;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Location = new System.Drawing.Point(806, 348);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(32, 11);
+            this.btnExcluir.TabIndex = 70;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // telaAlunoPrincipal
             // 
@@ -297,7 +345,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
             this.ClientSize = new System.Drawing.Size(1000, 722);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.dgvAluno);
             this.Controls.Add(this.btnCadastrarFuncionario);
             this.Controls.Add(this.lblFinanceiro);
             this.Controls.Add(this.btnFinanceiro);
@@ -322,8 +371,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaAlunoPrincipal_Load);
+            this.Activated += new System.EventHandler(this.telaAlunoPrincipal_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoPrincipal_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,9 +396,12 @@
         private System.Windows.Forms.Label lblFinanceiro;
         private System.Windows.Forms.Button btnFinanceiro;
         private System.Windows.Forms.Button btnCadastrarFuncionario;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaNomeAluno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TelefoneAluno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SerieAluno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorMatricula;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

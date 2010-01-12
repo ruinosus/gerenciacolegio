@@ -7,18 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloAluno.Processos;
+using Negocios.ModuloFuncionario.Processos;
+using Negocios.ModuloMatricula.Processos;
+using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms
 {
     public partial class telaAlunoPrincipal : Form
     {
+        enum TelaSelecionada
+        {
+
+            Aluno,
+            Funcionario
+        }
+        List<MatriculaAuxiliar> matriculasAxiliarLista;
+        int linhaSelecionadaGrid = -1;
+
+        TelaSelecionada tela = TelaSelecionada.Aluno;
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
          * */
 
-        
+
         private static telaAlunoPrincipal telaalunoprincipal;
 
         private static bool IsShown = false;
@@ -123,7 +137,7 @@ namespace GuiWindowsForms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+
         private void txtLogin_Enter(object sender, EventArgs e)
         {
             txtBusca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -148,7 +162,7 @@ namespace GuiWindowsForms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-    
+
         private void btnDesconectar_Click(object sender, EventArgs e)
         {
             Program.ultimaTela = 9;
@@ -165,7 +179,7 @@ namespace GuiWindowsForms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+
         private void btnAluno_Enter(object sender, EventArgs e)
         {
             lblAlunoOculto.Visible = true;
@@ -270,25 +284,28 @@ namespace GuiWindowsForms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             try
             {
+                lblErro.Visible = false;
+                #region Validações
                 if (String.IsNullOrEmpty(txtBusca.Text))
                 {
                     txtBusca.BackColor = System.Drawing.Color.LawnGreen;
                     throw new Exception("Digite algum critério para a pesquisa.");
                 }
-                else if (txtBusca.Text.Length < 4)
+
+                if (txtBusca.Text.Length < 4)
                 {
                     txtBusca.BackColor = System.Drawing.Color.LawnGreen;
                     throw new Exception("Digite argumentos para pesquisa maiores que 3 caracteres.");
                 }
-                else
-                {
-                    lblErro.Visible = false;
-                }
+                #endregion
+                CarregarGrid();
+
+
             }
             catch (Exception ex)
             {
@@ -313,6 +330,7 @@ namespace GuiWindowsForms
         #region BUTTON ALUNO
         private void btnAluno_Click(object sender, EventArgs e)
         {
+            tela = TelaSelecionada.Aluno;
             btnCadastrarFuncionario.Visible = false;
             btnCadastrarAluno.Visible = true;
         }
@@ -321,6 +339,7 @@ namespace GuiWindowsForms
         #region BUTTON FUNCIONARIO
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
+            tela = TelaSelecionada.Funcionario;
             btnCadastrarAluno.Visible = false;
             btnCadastrarFuncionario.Visible = true;
         }
@@ -350,18 +369,140 @@ namespace GuiWindowsForms
 
         private void telaAlunoPrincipal_Load(object sender, EventArgs e)
         {
-            IAlunoProcesso processo = AlunoProcesso.Instance;
-            dataGridView1.AutoGenerateColumns = true;
-            
-            //DataGridViewColumn coluna = new DataGridViewColumn();
-            //coluna.DataPropertyName = "Perfil.ID";
-            //coluna.Name = ""
-            //dataGridView1.Columns.Add(coluna);
+            CarregarGrid();
 
-            dataGridView1.DataSource = processo.Consultar();
 
-            
+        }
+       
+        #region EVENTOS DO GRID
+
+        private void CarregarGrid()
+        {
+            dgvAluno.AutoGenerateColumns = false;
+            switch (tela)
+            {
+                case TelaSelecionada.Aluno:
+                    {
+
+                        IMatriculaProcesso processo = MatriculaProcesso.Instance;
+                        Matricula m = new Matricula();
+                        Aluno a = new Aluno();
+                        a.Nome = txtBusca.Text;
+                        m.Aluno = a;
+                        List<Matricula> matriculasLista = processo.Consultar(m, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
+                        matriculasAxiliarLista = new List<MatriculaAuxiliar>();
+
+                        foreach (Matricula matricula in matriculasLista)
+                        {
+                            matriculasAxiliarLista.Add(
+                                new MatriculaAuxiliar(matricula.Aluno.Nome,
+                                                      matricula.SalaPeriodo.Sala.Serie.ToString(),
+                                                      matricula.Aluno.FoneAluno, matricula.Valor.Value, matricula)
+                                                      );
+
+                        }
+                        dgvAluno.DataSource = matriculasAxiliarLista;
+                        break;
+                    }
+                case TelaSelecionada.Funcionario:
+                    {
+                        IFuncionarioProcesso processo = FuncionarioProcesso.Instance;
+                        dgvAluno.DataSource = processo.Consultar();
+                        break;
+                    }
+                default:
+                    break;
+            }
         }
 
+        private void dgvAluno_DoubleClick(object sender, EventArgs e)
+        {
+            if (linhaSelecionadaGrid != -1)
+            {
+                Matricula matricula = (matriculasAxiliarLista[linhaSelecionadaGrid]).Matricula;
+                
+                Memoria memoria = Memoria.Instance;
+                memoria.Aluno = matricula.Aluno;
+              
+
+                this.Hide();
+                Program.ultimaTela = 6;
+                telaAluno tAluno = telaAluno.getInstancia();
+                tAluno.Show();
+            }
+
+        }
+
+        private void dgvAluno_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+
+            if (linhaSelecionadaGrid != -1)
+                dgvAluno.Rows[linhaSelecionadaGrid].Selected = true;
+
+
+        }        
+
+        private void dgvAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+
+            if (linhaSelecionadaGrid != -1)
+                dgvAluno.Rows[linhaSelecionadaGrid].Selected = true;
+
+        }
+
+        #endregion
+
+        #region MÉTODO EXCLUIR
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (linhaSelecionadaGrid==-1)
+                {
+                    throw new Exception();
+                }
+                IAlunoProcesso processo = AlunoProcesso.Instance;
+                Matricula matricula = (matriculasAxiliarLista[linhaSelecionadaGrid]).Matricula;
+                processo.Excluir(matricula.Aluno);
+                processo.Confirmar();
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
+        } 
+        #endregion
+        
+        #region Classe Auxiliar
+        class MatriculaAuxiliar
+        {
+            public string NomeAluno { get; set; }
+            public string NomeSerie { get; set; }
+            public string TelefoneAluno { get; set; }
+            public double Valor { get; set; }
+            public Matricula Matricula { get; set; }
+            public MatriculaAuxiliar(string nomeAluno, string nomeSerie,
+                                     string telefoneAluno, double valor, Matricula matricula)
+            {
+                this.NomeAluno = nomeAluno;
+                this.NomeSerie = nomeSerie;
+                this.TelefoneAluno = telefoneAluno;
+                this.Valor = valor;
+                this.Matricula = matricula;
+            }
+        }
+        #endregion
+
+        private void telaAlunoPrincipal_Activated(object sender, EventArgs e)
+        {
+
+            CarregarGrid();
+        }
     }
+
+
 }

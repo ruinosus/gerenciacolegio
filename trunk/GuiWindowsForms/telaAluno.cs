@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloAluno;
 using Negocios.ModuloAluno.Processos;
+using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms
 {
@@ -102,8 +103,10 @@ namespace GuiWindowsForms
 
         private void telaAluno_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Memoria memoria = Memoria.Instance;
             e.Cancel = true;
             IsShown = false;
+            memoria.Aluno = null;
             this.Hide();
 
             if (Program.ultimaTela != 7)
@@ -723,9 +726,16 @@ namespace GuiWindowsForms
                 aluno.PerfilID = 1;
 
                 aluno = uMenuImagem1.retornaAluno(aluno);
-
-                alunoControlador.Incluir(aluno);
-                alunoControlador.Confirmar();
+                Memoria memoria = Memoria.Instance;
+                if (memoria.Aluno == null)
+                {
+                    alunoControlador.Incluir(aluno);
+                    alunoControlador.Confirmar();
+                }
+                else
+                {
+                    alunoControlador.Alterar(aluno);
+                }
 
             }
             catch (Exception ex)
@@ -783,10 +793,10 @@ namespace GuiWindowsForms
         {
             limparTela();
             cmbUf.DataSource = estados;
-            aluno.ID = 7;
-            aluno = alunoControlador.Consultar(aluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
-            uMenuImagem1.carregaAluno(aluno);
-            carregarAluno();
+            //aluno.ID = 7;
+            //aluno = alunoControlador.Consultar(aluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            //uMenuImagem1.carregaAluno(aluno);
+            //carregarAluno();
         }
 
         #endregion
@@ -834,7 +844,7 @@ namespace GuiWindowsForms
             mskFoneAluno.Text = aluno.FoneAluno;
             mskFoneEmergencia.Text = aluno.FoneEmergencia;
             mskFoneResidencia.Text = aluno.FoneResidencia;
-            dtpNascimento.Value = aluno.Nascimento.Value;
+            //dtpNascimento.Value = aluno.Nascimento.Value;
             if (aluno.Sexo == 0)
             {
                 rdbMasc.Select();
@@ -931,6 +941,20 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
         #endregion
+
+        private void telaAluno_Activated(object sender, EventArgs e)
+        {
+            Memoria memoria = Memoria.Instance;
+            if (memoria.Aluno != null)
+            {
+                aluno = memoria.Aluno;
+                uMenuImagem1.carregaAluno(aluno);
+                carregarAluno();
+            }
+        }
+
+        
+        
 
 
 
