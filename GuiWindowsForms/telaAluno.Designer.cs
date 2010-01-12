@@ -894,6 +894,7 @@ namespace GuiWindowsForms
             this.Name = "telaAluno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Activated += new System.EventHandler(this.telaAluno_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAluno_FormClosing);
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();

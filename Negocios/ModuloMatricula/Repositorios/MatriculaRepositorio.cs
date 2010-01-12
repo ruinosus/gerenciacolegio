@@ -93,6 +93,26 @@ namespace Negocios.ModuloMatricula.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (matricula.Aluno!= null)
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from m in resultado
+                                                    where
+                                                    m.Aluno.Nome.Contains(matricula.Aluno.Nome)
+                                                    select m).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from m in resultado
+                                              where
+                                              m.Aluno.Nome.ToLower().Contains(matricula.Aluno.Nome.ToLower())
+                                              select m).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (matricula.DescontoID.HasValue)
                         {
                             if (pesquisa)
@@ -240,6 +260,26 @@ namespace Negocios.ModuloMatricula.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (matricula.Aluno != null)
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from m in Consultar()
+                                                    where
+                                                    m.Aluno.Nome.Contains(matricula.Aluno.Nome)
+                                                    select m).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from m in Consultar()
+                                              where
+                                              m.Aluno.Nome.ToLower().Contains(matricula.Aluno.Nome.ToLower())
+                                              select m).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        } 
+                        
                         if (matricula.AlunoID.HasValue)
                         {
                             if (pesquisa)
