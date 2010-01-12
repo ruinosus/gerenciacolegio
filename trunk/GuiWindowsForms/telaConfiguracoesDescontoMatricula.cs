@@ -478,6 +478,17 @@ namespace GuiWindowsForms
         {
             ucMenuInferior1.ocultarMensagem();
         }
+
+        private void dataGridView1_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Selecione um registro para alterar ou excluir");
+        }
+
+        private void dataGridView1_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
         #endregion
 
     }        
