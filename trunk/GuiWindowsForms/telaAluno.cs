@@ -561,38 +561,38 @@ namespace GuiWindowsForms
 
                 #region VALIDA - EMAIL ALUNO
 
-                if (String.IsNullOrEmpty(txtEmail.Text))
-                {
-                    errorProviderTela.SetError(txtEmail, "Informe o email");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtEmail.Text))
+                //{
+                //    errorProviderTela.SetError(txtEmail, "Informe o email");
+                //    return;
+                //}
 
-                int validaArroba = 0;
-                /*O FOR pecorre todo o textBox email para validação do campo,
-                 *dentro tem vários IF se o campo possuir as obrigatoriedades
-                 *é incrementado, se não possuir é decrementado ao final a uma
-                 *verificação se o campo for vazio ou não possuir a soma correspondedente
-                 *a todos os campos que deveria incrementar é lançado o exception
-                 */
-                for (int i = 0; i < txtEmail.Text.Length; i++)
-                {
-                    if (txtEmail.Text.Substring(i, 1).Equals("@"))
-                    {
-                        validaArroba++;
-                    }
-                    if (txtEmail.Text.Substring(i, 1).Equals(" "))
-                    {
-                        validaArroba--;
-                    }
-                }
+                //int validaArroba = 0;
+                ///*O FOR pecorre todo o textBox email para validação do campo,
+                // *dentro tem vários IF se o campo possuir as obrigatoriedades
+                // *é incrementado, se não possuir é decrementado ao final a uma
+                // *verificação se o campo for vazio ou não possuir a soma correspondedente
+                // *a todos os campos que deveria incrementar é lançado o exception
+                // */
+                //for (int i = 0; i < txtEmail.Text.Length; i++)
+                //{
+                //    if (txtEmail.Text.Substring(i, 1).Equals("@"))
+                //    {
+                //        validaArroba++;
+                //    }
+                //    if (txtEmail.Text.Substring(i, 1).Equals(" "))
+                //    {
+                //        validaArroba--;
+                //    }
+                //}
 
-                if (validaArroba != 1 || txtEmail.Text.Equals(""))
-                {
+                //if (validaArroba != 1 || txtEmail.Text.Equals(""))
+                //{
 
-                    errorProviderTela.SetError(txtEmail, "Informe o email corretamente");
-                    return;
+                //    errorProviderTela.SetError(txtEmail, "Informe o email corretamente");
+                //    return;
 
-                }
+                //}
                 aluno.Email = txtEmail.Text;
 
                 #endregion
@@ -670,12 +670,12 @@ namespace GuiWindowsForms
 
                 #region VALIDA - CEP
 
-                if (mskCep.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskCep, "Informe o cep");
-                    mskCep.Clear();
-                    return;
-                }
+                //if (mskCep.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskCep, "Informe o cep");
+                //    mskCep.Clear();
+                //    return;
+                //}
                 aluno.Cep = mskCep.Text;
 
                 #endregion
