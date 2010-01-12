@@ -18,11 +18,11 @@ namespace GuiWindowsForms
         Matricula matricula = new Matricula();
 
         IMatriculaProcesso matriculaControlador = MatriculaProcesso.Instance;
-        ISalaProcesso salaControlador = null;
+        ISalaPeriodoProcesso salaPeriodoControlador = null;
         IDescontoProcesso descontoControlador = null; 
 
         List<SalaAuxiliar> listaSalaAuxiliar = null;
-        List<Sala> listaSala = null;
+        List<SalaPeriodo> listaSalaPeriodo = null;
         List<Desconto> listaDescontoAux = null;
 
         #region SINGLETON DA TELA
@@ -236,15 +236,17 @@ namespace GuiWindowsForms
         private void telaAlunoMatricula_Load(object sender, EventArgs e)
         {
             descontoControlador = DescontoProcesso.Instance;
-            carregaForm();
+            carregaComboSerie();
             
             cmbSerie.DataSource = listaSalaAuxiliar;
 
             listaDescontoAux = new List<Desconto>();
 
-            //listaDescontoAux = descontoControlador.Consultar();
+            listaDescontoAux = descontoControlador.Consultar();
             cmbDesconto.DataSource = listaDescontoAux;
             cmbDesconto.DisplayMember = "Descricao";
+
+            carregarValorTotal();
 
         }
         #endregion
@@ -261,7 +263,7 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbSerie, "Informe a série");
                     return;
                 }
-                matricula.SalaPeriodo.Sala.ID = ((Sala)cmbSerie.SelectedItem).ID;
+                matricula.SalaPeriodo.ID = ((SalaPeriodo)cmbSerie.SelectedItem).ID;
 
                 #endregion
 
@@ -295,14 +297,11 @@ namespace GuiWindowsForms
                     txtTotalValor.Clear();
                     return;
                 }
-                double valorAux = Convert.ToDouble(txtValor.Text);
-                double descontoAux = Convert.ToDouble(cmbDesconto.Text);
-
-                matricula.Valor = (valorAux * descontoAux) / 100;
+                matricula.Valor = Convert.ToDouble(txtTotalValor.Text);
 
                 #endregion
 
-                #region VALIDA - VENCIMENTO
+                #region VALIDA - DIA VENCIMENTO
 
                 if (String.IsNullOrEmpty(cmbVencimento.Text))
                 {
@@ -310,7 +309,7 @@ namespace GuiWindowsForms
                     return;
                 }
 
-                dtpNascimento.Value = DateTime.Today;
+                matricula.DiaVencimento = Int32.Parse(cmbDesconto.Text);
 
                 #endregion
             }
@@ -353,25 +352,60 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        private void carregaForm()
+        #region Método para carregar as séries do Ano Corrente no Combo
+        private void carregaComboSerie()
         {
-            salaControlador = SalaProcesso.Instance;
+            salaPeriodoControlador = SalaPeriodoProcesso.Instance;
 
-            listaSala = new List<Sala>();
+            listaSalaPeriodo = new List<SalaPeriodo>();
             listaSalaAuxiliar = new List<SalaAuxiliar>();
 
-            listaSala = salaControlador.Consultar();
+            listaSalaPeriodo = salaPeriodoControlador.Consultar();
 
-            foreach (Sala a in listaSala)
+            foreach (SalaPeriodo a in listaSalaPeriodo)
             {
                 SalaAuxiliar classeSalaAux = new SalaAuxiliar();
 
-                classeSalaAux.SerieAux = a.Serie.Nome;
-                classeSalaAux.TurmaAux = a.Turma.Nome;
-                classeSalaAux.TurnoAux = a.Turno.Nome;
+                if (a.Ano == DateTime.Now.Year)
+                {
+                    classeSalaAux.IdSalaAux = a.ID;
+                    classeSalaAux.SerieAux = a.Sala.Serie.Nome;
+                    classeSalaAux.TurmaAux = a.Sala.Turma.Nome;
+                    classeSalaAux.TurnoAux = a.Sala.Turno.Nome;
 
-                listaSalaAuxiliar.Add(classeSalaAux);
+                    listaSalaAuxiliar.Add(classeSalaAux);
+                }
             }
+        }
+        #endregion
+
+        #region Evento para alimentar a caixa de valor com o valor da Série selecionada
+        private void cmbSerie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SalaAuxiliar salaAuxiliarAux = new SalaAuxiliar();
+            SalaPeriodo salaPeriodoAux = new SalaPeriodo();
+
+            salaAuxiliarAux.IdSalaAux = ((SalaAuxiliar)cmbSerie.SelectedItem).IdSalaAux;
+            salaPeriodoAux.ID = salaAuxiliarAux.IdSalaAux;
+            salaPeriodoAux = salaPeriodoControlador.Consultar(salaPeriodoAux, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            txtValor.Text = salaPeriodoAux.Sala.Valor.ToString();
+        }
+        #endregion
+
+        #region Função para carregar o valor total no campo
+        public void carregarValorTotal()
+        {
+            double valorAux = Convert.ToDouble(txtValor.Text);
+            double descontoAux = ((Desconto)cmbDesconto.SelectedItem).Percentual;
+            double resultado = valorAux - (valorAux * descontoAux/100);
+
+            txtTotalValor.Text = resultado.ToString();
+        }
+        #endregion
+
+        private void cmbDesconto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            carregarValorTotal();
         }
     }
 
@@ -399,6 +433,14 @@ namespace GuiWindowsForms
         {
             get { return turnoAux; }
             set { turnoAux = value; }
+        }
+
+        int idSalaAux;
+
+        public int IdSalaAux
+        {
+            get { return idSalaAux; }
+            set { idSalaAux = value; }
         }
 
         public override string ToString()

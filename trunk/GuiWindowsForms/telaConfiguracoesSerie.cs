@@ -11,6 +11,7 @@ using Negocios.ModuloTurno.Processos;
 using Negocios.ModuloTurma.Processos;
 using Negocios.ModuloSala.Processos;
 using Negocios.ModuloSerie.Constantes;
+using Negocios.ModuloSalaPeriodo.Processos;
 
 namespace GuiWindowsForms
 {
@@ -25,11 +26,13 @@ namespace GuiWindowsForms
         Turno turno = null;
         Turma turma = null;
         Sala sala = null;
+        SalaPeriodo salaPeriodo = null;
 
         ISerieProcesso serieControlador = SerieProcesso.Instance;
         ITurnoProcesso turnoControlador = TurnoProcesso.Instance;
         ITurmaProcesso turmaControlador = TurmaProcesso.Instance;
         ISalaProcesso salaControlador = SalaProcesso.Instance;
+        ISalaPeriodoProcesso salaPeriodoControlador = SalaPeriodoProcesso.Instance;
 
         #region SINGLETON DA TELA
         /*
@@ -543,7 +546,10 @@ namespace GuiWindowsForms
             {
                 sala = new Sala();
                 serie = new Serie();
+                salaPeriodo = new SalaPeriodo();
+
                 salaControlador = SalaProcesso.Instance;
+                salaPeriodoControlador = SalaPeriodoProcesso.Instance;
 
                 #region VALIDA - SERIE
 
@@ -608,6 +614,14 @@ namespace GuiWindowsForms
                         sala.Status = 0;
                         salaControlador.Incluir(sala);
                         salaControlador.Confirmar();
+
+                        salaPeriodo.Ano = DateTime.Now.Year;
+                        salaPeriodo.SalaID = sala.ID;
+                        salaPeriodo.Status = 1;
+
+                        salaPeriodoControlador.Incluir(salaPeriodo);
+                        salaPeriodoControlador.Confirmar();
+                        
                         linhaSelecionadaGrid = -1;
 
                         MessageBox.Show(SerieConstantes.SERIE_INCLUIDA, "Colégio Conhecer - Inserir Série");

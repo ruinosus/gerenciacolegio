@@ -8,14 +8,21 @@ using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloFuncionario.Processos;
 using Negocios.ModuloAtividade.Processos;
+using Negocios.ModuloAtividade.Constantes;
 
 namespace GuiWindowsForms
 {
     public partial class txtNomeAtividade : Form
     {
-        Funcionario funcionario = new Funcionario();
+        Funcionario funcionario = null;
+        Atividade atividade = null;
 
-        IFuncionarioProcesso funcionarioControlador = FuncionarioProcesso.Instance; 
+        int linhaSelecionadaGrid = -1;
+
+        List<Atividade> listaAtividade = null;
+
+        IFuncionarioProcesso funcionarioControlador = null;
+        IAtividadeProcesso atividadeControlador = null;
 
         #region SINGLETON DA TELA
         /*
@@ -157,7 +164,7 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region USER CONTROLS MENU CONTROLE INFERIOR 
+        #region USER CONTROLS MENU CONTROLE INFERIOR
 
         private void ucAluno1_EventoVoltar()
         {
@@ -179,94 +186,21 @@ namespace GuiWindowsForms
         #region LOAD
         private void ckbTerca_Load(object sender, EventArgs e)
         {
-            List<Funcionario> listaFuncionario = new List<Funcionario>();
-            listaFuncionario = funcionarioControlador.Consultar();
-            cmbFuncionario.DataSource = listaFuncionario;
+            funcionarioControlador = FuncionarioProcesso.Instance;
+            atividadeControlador = AtividadeProcesso.Instance;
+
+            List<Funcionario> listaFuncionarioCmb = new List<Funcionario>();
+            listaFuncionarioCmb = funcionarioControlador.Consultar();
+            cmbFuncionario.DataSource = listaFuncionarioCmb;
             cmbFuncionario.DisplayMember = "Nome";
-        }
-        #endregion
 
-        #region EVENTRO CADASTRAR
-        private void ucMenuInferior1_EventoCadastrar()
-        {
-            try
-            {
-                //atividadeControlador = AtividadeProcesso.Instance;
+            List<Atividade> listaAtividadeCmb = new List<Atividade>();
+            listaAtividadeCmb = atividadeControlador.Consultar();
+            cmbAtividadeTurma.DataSource = listaAtividadeCmb;
+            cmbAtividadeTurma.DisplayMember = "Nome";
 
-               // if (pagCadastrarAtividade.Select()) 
-                {
-                    #region VALIDA - NOME
-
-                    if (String.IsNullOrEmpty(txtNome.Text))
-                    {
-                        errorProviderTela.SetError(txtNome, "Informe o nome");
-                        txtNome.Clear();
-                        return;
-                    }
-
-                    #endregion
-
-                    #region VALIDA - DESCRIÇÃO
-
-                    if (String.IsNullOrEmpty(txtDescricao.Text))
-                    {
-                        errorProviderTela.SetError(txtDescricao, "Informe a descrição");
-                        txtDescricao.Clear();
-                        return;
-                    }
-
-                    #endregion
-                
-                }
-
-                #region VALIDA - CONFIGURAÇÕES ATIVIDADES
-
-                if (String.IsNullOrEmpty(txtDescricao.Text))
-                {
-                    errorProviderTela.SetError(txtDescricao, "Informe a configuração de atividades");
-                    txtDescricao.Clear();
-                    return;
-                }
-
-                #endregion
-
-                #region VALIDA - TURMA
-
-                if (String.IsNullOrEmpty(txtTurma.Text))
-                {
-                    errorProviderTela.SetError(txtTurma, "Informe a turma");
-                    txtTurma.Clear();
-                    return;
-                }
-
-                #endregion
-
-                #region VALIDA - VALOR
-
-                if (String.IsNullOrEmpty(txtValor.Text))
-                {
-                    errorProviderTela.SetError(txtValor, "Informe o valor");
-                    txtValor.Clear();
-                    return;
-                }
-
-                #endregion
-
-                #region VALIDA - DIA DA SEMANA
-                if (ckbDomingo.Checked == false && ckbSegunda.Checked == false && ckbTerca.Checked == false &&
-                    ckbQuarta.Checked == false && ckbQuinta.Checked == false && ckbSexta.Checked == false && ckbSabado.Checked == false)
-                {
-                    errorProviderTela.SetError(txtValor, "Informe o dia da semana");
-                    return;
-                }
-                #endregion
-
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.Message);
-            }
             carregaForm();
+
         }
         #endregion
 
@@ -322,12 +256,287 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        private void carregaForm() 
+
+        #region INCLUIR ATIVIDADE
+        private void btnAdicionarAtividade_Click(object sender, EventArgs e)
         {
-            //atividadeControlador = AtividadeProcesso.Instance;
+            atividadeControlador = AtividadeProcesso.Instance;
+            funcionarioControlador = FuncionarioProcesso.Instance;
+
+            funcionario = new Funcionario();
+            atividade = new Atividade();
+
+            try
+            {
+
+                #region VALIDA - NOME
+
+                if (String.IsNullOrEmpty(txtNome.Text))
+                {
+                    errorProviderTela.SetError(txtNome, "Informe o nome");
+                    txtNome.Clear();
+                    return;
+                }
+                atividade.Nome = txtNome.Text;
+
+                #endregion
+
+                #region VALIDA - DESCRIÇÃO
+
+                if (String.IsNullOrEmpty(txtDescricao.Text))
+                {
+                    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                    txtDescricao.Clear();
+                    return;
+                }
+                atividade.Descricao = txtDescricao.Text;
+
+                #endregion
+
+                if (verificaSeJaInserido(atividade) == false)
+                {
+                    atividade.Status = 0;
+                    atividadeControlador.Incluir(atividade);
+                    atividadeControlador.Confirmar();
+                    linhaSelecionadaGrid = -1;
+
+                    MessageBox.Show(AtividadeConstantes.ATIVIDADE_INCLUIDA, "Colégio Conhecer - Inserir Atividade");
+                }
+                else
+                {
+                    MessageBox.Show("A atividade já existe na base de dados", "Colégio Conhecer - Inserir Atividade");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            carregaForm();
+            limparTela();
+        }
+        #endregion
+
+        #region ALTERAR ATIVIDADE/TURMA
+        private void ucMenuInferior1_EventoCadastrar()
+        {
+            try
+            {
+                atividadeControlador = AtividadeProcesso.Instance;
+
+                if (pagCadastrarAtividade.Focused == true)
+                {
+                    #region VALIDA - NOME
+
+                    if (String.IsNullOrEmpty(txtNome.Text))
+                    {
+                        errorProviderTela.SetError(txtNome, "Informe o nome");
+                        txtNome.Clear();
+                        return;
+                    }
+
+                    #endregion
+
+                    #region VALIDA - DESCRIÇÃO
+
+                    if (String.IsNullOrEmpty(txtDescricao.Text))
+                    {
+                        errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                        txtDescricao.Clear();
+                        return;
+                    }
+
+                    #endregion
+                }
+                else
+                {
+                    #region VALIDA - FUNCIONARIO
+
+                    if (String.IsNullOrEmpty(cmbFuncionario.Text))
+                    {
+                        errorProviderTela.SetError(cmbFuncionario, "Informe a configuração de atividades");
+                        return;
+                    }
+
+                    #endregion
+
+                    #region VALIDA - TURMA
+
+                    if (String.IsNullOrEmpty(txtTurma.Text))
+                    {
+                        errorProviderTela.SetError(txtTurma, "Informe a turma");
+                        txtTurma.Clear();
+                        return;
+                    }
+
+                    #endregion
+
+                    #region VALIDA - VALOR
+
+                    if (String.IsNullOrEmpty(txtValor.Text))
+                    {
+                        errorProviderTela.SetError(txtValor, "Informe o valor");
+                        txtValor.Clear();
+                        return;
+                    }
+
+                    #endregion
+
+                    #region VALIDA - DIA DA SEMANA
+                    if (ckbDomingo.Checked == false && ckbSegunda.Checked == false && ckbTerca.Checked == false &&
+                        ckbQuarta.Checked == false && ckbQuinta.Checked == false && ckbSexta.Checked == false && ckbSabado.Checked == false)
+                    {
+                        errorProviderTela.SetError(txtValor, "Informe o dia da semana");
+                        return;
+                    }
+                    #endregion
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            carregaForm();
+        }
+        #endregion
 
 
+        #region Evento para limpar os campos da tela
+        public void limparTela()
+        {
+            txtDescricao.Clear();
+            txtNome.Clear();
+            txtTurma.Clear();
+            txtValor.Clear();
+            dtpHorarioFim.Value = DateTime.Now;
+            dtpHorarioInicio.Value = DateTime.Now;
+            ckbDomingo.Checked = false;
+            ckbQuarta.Checked = false;
+            ckbQuinta.Checked = false;
+            ckbSabado.Checked = false;
+            ckbSegunda.Checked = false;
+            ckbSexta.Checked = false;
+            ckbTerca.Checked = false;
+        }
+        #endregion
+
+        #region Função para verificar se a atividade já esta cadastrado
+        public bool verificaSeJaInserido(Atividade atividade)
+        {
+            atividadeControlador = AtividadeProcesso.Instance;
+
+            List<Atividade> listaAuxiliar = new List<Atividade>();
+            listaAuxiliar = atividadeControlador.Consultar();
+
+            bool testa = false;
+
+            foreach (Atividade b in listaAuxiliar)
+            {
+                if ((b.Descricao == atividade.Descricao) && (b.Nome == atividade.Nome))
+                {
+                    testa = true;
+                }
+            }
+            return testa;
+        }
+        #endregion
+
+        #region EVENTO PARA ALIMENTAR E ATUALIZAR O DATAGRID
+        private void carregaForm()
+        {
+            atividadeControlador = AtividadeProcesso.Instance;
+
+            listaAtividade = new List<Atividade>();
+
+            listaAtividade = atividadeControlador.Consultar();
+
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listaAtividade;
+        }
+        #endregion
+
+        #region EVENTOS DO GRID
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
+                txtDescricao.Text = listaAtividade[linhaSelecionadaGrid].Descricao;
+                txtValor.Text = listaAtividade[linhaSelecionadaGrid].Nome;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
         }
 
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
+                txtDescricao.Text = listaAtividade[linhaSelecionadaGrid].Descricao;
+                txtValor.Text = listaAtividade[linhaSelecionadaGrid].Nome;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
+                txtDescricao.Text = listaAtividade[linhaSelecionadaGrid].Descricao;
+                txtValor.Text = listaAtividade[linhaSelecionadaGrid].Nome;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
+                txtDescricao.Text = listaAtividade[linhaSelecionadaGrid].Descricao;
+                txtValor.Text = listaAtividade[linhaSelecionadaGrid].Nome;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                dataGridView1.Rows[e.RowIndex].Selected = true;
+
+                txtDescricao.Text = listaAtividade[linhaSelecionadaGrid].Descricao;
+                txtValor.Text = listaAtividade[linhaSelecionadaGrid].Nome;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
+        }
+
+        #endregion
     }
 }
