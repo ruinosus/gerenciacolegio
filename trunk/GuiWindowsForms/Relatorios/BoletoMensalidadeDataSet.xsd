@@ -39,10 +39,10 @@ WHERE        (A.Id = @ID)</CommandText>
               <Mapping SourceColumn="VENCIMENTO" DataSetColumn="VencimentoAluno" />
               <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
               <Mapping SourceColumn="MULTA" DataSetColumn="Multa" />
-              <Mapping SourceColumn="PARCELA" DataSetColumn="Parcela" />
               <Mapping SourceColumn="Descricao" DataSetColumn="Descricao" />
               <Mapping SourceColumn="MATRICULA" DataSetColumn="Matricula" />
               <Mapping SourceColumn="ANO" DataSetColumn="Ano" />
+              <Mapping SourceColumn="PARCELA" DataSetColumn="PARCELA" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -104,6 +104,13 @@ WHERE        (A.Id = @ID)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Ano" msdata:Caption="ANO" msprop:Generator_UserColumnName="Ano" msprop:Generator_ColumnPropNameInRow="Ano" msprop:Generator_ColumnVarNameInTable="columnAno" msprop:Generator_ColumnPropNameInTable="AnoColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="PARCELA" msprop:Generator_UserColumnName="PARCELA" msprop:Generator_ColumnPropNameInRow="PARCELA" msprop:Generator_ColumnVarNameInTable="columnPARCELA" msprop:Generator_ColumnPropNameInTable="PARCELAColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

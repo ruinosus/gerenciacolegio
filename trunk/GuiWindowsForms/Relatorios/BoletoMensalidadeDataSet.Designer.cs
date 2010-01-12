@@ -284,6 +284,8 @@ namespace GuiWindowsForms.Relatorios {
             
             private global::System.Data.DataColumn columnAno;
             
+            private global::System.Data.DataColumn columnPARCELA;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public BoletoMensalidadeDataTableDataTable() {
                 this.TableName = "BoletoMensalidadeDataTable";
@@ -392,6 +394,13 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn PARCELAColumn {
+                get {
+                    return this.columnPARCELA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -420,7 +429,7 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public BoletoMensalidadeDataTableRow AddBoletoMensalidadeDataTableRow(string NomeAluno, string SerieAluno, string TurmaAluno, string TurnoAluno, System.DateTime VencimentoAluno, double Valor, double Multa, int Parcela, string Descricao, string Matricula, int Ano) {
+            public BoletoMensalidadeDataTableRow AddBoletoMensalidadeDataTableRow(string NomeAluno, string SerieAluno, string TurmaAluno, string TurnoAluno, System.DateTime VencimentoAluno, double Valor, double Multa, int Parcela, string Descricao, string Matricula, int Ano, string PARCELA1) {
                 BoletoMensalidadeDataTableRow rowBoletoMensalidadeDataTableRow = ((BoletoMensalidadeDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NomeAluno,
@@ -433,7 +442,8 @@ namespace GuiWindowsForms.Relatorios {
                         Parcela,
                         Descricao,
                         Matricula,
-                        Ano};
+                        Ano,
+                        PARCELA1};
                 rowBoletoMensalidadeDataTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBoletoMensalidadeDataTableRow);
                 return rowBoletoMensalidadeDataTableRow;
@@ -464,6 +474,7 @@ namespace GuiWindowsForms.Relatorios {
                 this.columnDescricao = base.Columns["Descricao"];
                 this.columnMatricula = base.Columns["Matricula"];
                 this.columnAno = base.Columns["Ano"];
+                this.columnPARCELA = base.Columns["PARCELA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -490,6 +501,8 @@ namespace GuiWindowsForms.Relatorios {
                 base.Columns.Add(this.columnMatricula);
                 this.columnAno = new global::System.Data.DataColumn("Ano", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAno);
+                this.columnPARCELA = new global::System.Data.DataColumn("PARCELA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPARCELA);
                 this.columnNomeAluno.AllowDBNull = false;
                 this.columnNomeAluno.Caption = "ALUNO";
                 this.columnNomeAluno.MaxLength = 50;
@@ -509,6 +522,7 @@ namespace GuiWindowsForms.Relatorios {
                 this.columnMatricula.Caption = "MATRICULA";
                 this.columnMatricula.MaxLength = 30;
                 this.columnAno.Caption = "ANO";
+                this.columnPARCELA.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -789,6 +803,21 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string PARCELA {
+                get {
+                    try {
+                        return ((string)(this[this.tableBoletoMensalidadeDataTable.PARCELAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PARCELA\' in table \'BoletoMensalidadeDataTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBoletoMensalidadeDataTable.PARCELAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsSerieAlunoNull() {
                 return this.IsNull(this.tableBoletoMensalidadeDataTable.SerieAlunoColumn);
             }
@@ -856,6 +885,16 @@ namespace GuiWindowsForms.Relatorios {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetAnoNull() {
                 this[this.tableBoletoMensalidadeDataTable.AnoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsPARCELANull() {
+                return this.IsNull(this.tableBoletoMensalidadeDataTable.PARCELAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetPARCELANull() {
+                this[this.tableBoletoMensalidadeDataTable.PARCELAColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1016,10 +1055,10 @@ namespace GuiWindowsForms.Relatorios.BoletoMensalidadeDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("VENCIMENTO", "VencimentoAluno");
             tableMapping.ColumnMappings.Add("Valor", "Valor");
             tableMapping.ColumnMappings.Add("MULTA", "Multa");
-            tableMapping.ColumnMappings.Add("PARCELA", "Parcela");
             tableMapping.ColumnMappings.Add("Descricao", "Descricao");
             tableMapping.ColumnMappings.Add("MATRICULA", "Matricula");
             tableMapping.ColumnMappings.Add("ANO", "Ano");
+            tableMapping.ColumnMappings.Add("PARCELA", "PARCELA");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
