@@ -93,25 +93,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (responsavelAluno.GrauParentescoID != 0)
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ra in resultado
-                                                    where
-                                                    ra.GrauParentescoID == responsavelAluno.GrauParentescoID
-                                                    select ra).ToList());
-                            }
-                            else
-                            {
-                                resultado =((from ra in resultado
-                                                    where
-                                                    ra.GrauParentescoID == responsavelAluno.GrauParentescoID
-                                                    select ra).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
+                     
 
                         if (!string.IsNullOrEmpty(responsavelAluno.Restricoes))
                         {
@@ -240,25 +222,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (responsavelAluno.GrauParentescoID != 0)
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ra in Consultar()
-                                                    where
-                                                    ra.GrauParentescoID == responsavelAluno.GrauParentescoID
-                                                    select ra).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from ra in Consultar()
-                                              where
-                                              ra.GrauParentescoID == responsavelAluno.GrauParentescoID
-                                              select ra).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
+                       
 
                         if (!string.IsNullOrEmpty(responsavelAluno.Restricoes))
                         {
@@ -385,7 +349,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
 
                 responsavelAlunoAux.AlunoID = responsavelAluno.AlunoID;
                 responsavelAlunoAux.ResponsavelID = responsavelAluno.ResponsavelID;
-                responsavelAlunoAux.GrauParentescoID = responsavelAluno.GrauParentescoID;
+                responsavelAlunoAux.GrauParentesco = responsavelAluno.GrauParentesco;
                 responsavelAlunoAux.ResideCom = responsavelAluno.ResideCom;
                 responsavelAlunoAux.ResponsavelID = responsavelAluno.ResponsavelID;
                 responsavelAlunoAux.Restricoes = responsavelAluno.Restricoes;

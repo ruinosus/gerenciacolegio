@@ -266,6 +266,7 @@ namespace Negocios.ModuloAlunoAtividadeTurma.Repositorios
                 alunoAtividadeTurmaAux.AtividadeTurmaID = alunoAtividadeTurma.AtividadeTurmaID;
                 alunoAtividadeTurmaAux.DescontoID = alunoAtividadeTurma.DescontoID;
                 alunoAtividadeTurmaAux.Status= alunoAtividadeTurma.Status;
+                alunoAtividadeTurmaAux.Ano = alunoAtividadeTurma.Ano;
 
                 alunoAtividadeTurmaAux = resultado[0];
 

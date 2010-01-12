@@ -272,13 +272,17 @@ namespace GuiWindowsForms.Relatorios {
             
             private global::System.Data.DataColumn columnVencimentoAluno;
             
-            private global::System.Data.DataColumn columnPagamento;
-            
             private global::System.Data.DataColumn columnValor;
             
             private global::System.Data.DataColumn columnMulta;
             
             private global::System.Data.DataColumn columnParcela;
+            
+            private global::System.Data.DataColumn columnDescricao;
+            
+            private global::System.Data.DataColumn columnMatricula;
+            
+            private global::System.Data.DataColumn columnAno;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public BoletoMensalidadeDataTableDataTable() {
@@ -346,13 +350,6 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn PagamentoColumn {
-                get {
-                    return this.columnPagamento;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public global::System.Data.DataColumn ValorColumn {
                 get {
                     return this.columnValor;
@@ -370,6 +367,27 @@ namespace GuiWindowsForms.Relatorios {
             public global::System.Data.DataColumn ParcelaColumn {
                 get {
                     return this.columnParcela;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn DescricaoColumn {
+                get {
+                    return this.columnDescricao;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn MatriculaColumn {
+                get {
+                    return this.columnMatricula;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn AnoColumn {
+                get {
+                    return this.columnAno;
                 }
             }
             
@@ -402,7 +420,7 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public BoletoMensalidadeDataTableRow AddBoletoMensalidadeDataTableRow(string NomeAluno, string SerieAluno, string TurmaAluno, string TurnoAluno, System.DateTime VencimentoAluno, System.DateTime Pagamento, double Valor, double Multa, int Parcela) {
+            public BoletoMensalidadeDataTableRow AddBoletoMensalidadeDataTableRow(string NomeAluno, string SerieAluno, string TurmaAluno, string TurnoAluno, System.DateTime VencimentoAluno, double Valor, double Multa, int Parcela, string Descricao, string Matricula, int Ano) {
                 BoletoMensalidadeDataTableRow rowBoletoMensalidadeDataTableRow = ((BoletoMensalidadeDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NomeAluno,
@@ -410,10 +428,12 @@ namespace GuiWindowsForms.Relatorios {
                         TurmaAluno,
                         TurnoAluno,
                         VencimentoAluno,
-                        Pagamento,
                         Valor,
                         Multa,
-                        Parcela};
+                        Parcela,
+                        Descricao,
+                        Matricula,
+                        Ano};
                 rowBoletoMensalidadeDataTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBoletoMensalidadeDataTableRow);
                 return rowBoletoMensalidadeDataTableRow;
@@ -438,10 +458,12 @@ namespace GuiWindowsForms.Relatorios {
                 this.columnTurmaAluno = base.Columns["TurmaAluno"];
                 this.columnTurnoAluno = base.Columns["TurnoAluno"];
                 this.columnVencimentoAluno = base.Columns["VencimentoAluno"];
-                this.columnPagamento = base.Columns["Pagamento"];
                 this.columnValor = base.Columns["Valor"];
                 this.columnMulta = base.Columns["Multa"];
                 this.columnParcela = base.Columns["Parcela"];
+                this.columnDescricao = base.Columns["Descricao"];
+                this.columnMatricula = base.Columns["Matricula"];
+                this.columnAno = base.Columns["Ano"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -456,14 +478,18 @@ namespace GuiWindowsForms.Relatorios {
                 base.Columns.Add(this.columnTurnoAluno);
                 this.columnVencimentoAluno = new global::System.Data.DataColumn("VencimentoAluno", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVencimentoAluno);
-                this.columnPagamento = new global::System.Data.DataColumn("Pagamento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPagamento);
                 this.columnValor = new global::System.Data.DataColumn("Valor", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValor);
                 this.columnMulta = new global::System.Data.DataColumn("Multa", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMulta);
                 this.columnParcela = new global::System.Data.DataColumn("Parcela", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnParcela);
+                this.columnDescricao = new global::System.Data.DataColumn("Descricao", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescricao);
+                this.columnMatricula = new global::System.Data.DataColumn("Matricula", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMatricula);
+                this.columnAno = new global::System.Data.DataColumn("Ano", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAno);
                 this.columnNomeAluno.AllowDBNull = false;
                 this.columnNomeAluno.Caption = "ALUNO";
                 this.columnNomeAluno.MaxLength = 50;
@@ -475,9 +501,14 @@ namespace GuiWindowsForms.Relatorios {
                 this.columnTurnoAluno.MaxLength = 30;
                 this.columnVencimentoAluno.AllowDBNull = false;
                 this.columnVencimentoAluno.Caption = "VENCIMENTO";
-                this.columnPagamento.Caption = "PAGAMENTO";
                 this.columnMulta.Caption = "MULTA";
                 this.columnParcela.Caption = "PARCELA";
+                this.columnDescricao.AllowDBNull = false;
+                this.columnDescricao.MaxLength = 45;
+                this.columnMatricula.AllowDBNull = false;
+                this.columnMatricula.Caption = "MATRICULA";
+                this.columnMatricula.MaxLength = 30;
+                this.columnAno.Caption = "ANO";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -678,22 +709,6 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public System.DateTime Pagamento {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableBoletoMensalidadeDataTable.PagamentoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Pagamento\' in table \'BoletoMensalidadeDataTable\' is DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tableBoletoMensalidadeDataTable.PagamentoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public double Valor {
                 get {
                     try {
@@ -739,6 +754,41 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string Descricao {
+                get {
+                    return ((string)(this[this.tableBoletoMensalidadeDataTable.DescricaoColumn]));
+                }
+                set {
+                    this[this.tableBoletoMensalidadeDataTable.DescricaoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string Matricula {
+                get {
+                    return ((string)(this[this.tableBoletoMensalidadeDataTable.MatriculaColumn]));
+                }
+                set {
+                    this[this.tableBoletoMensalidadeDataTable.MatriculaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public int Ano {
+                get {
+                    try {
+                        return ((int)(this[this.tableBoletoMensalidadeDataTable.AnoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ano\' in table \'BoletoMensalidadeDataTable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBoletoMensalidadeDataTable.AnoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsSerieAlunoNull() {
                 return this.IsNull(this.tableBoletoMensalidadeDataTable.SerieAlunoColumn);
             }
@@ -769,16 +819,6 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsPagamentoNull() {
-                return this.IsNull(this.tableBoletoMensalidadeDataTable.PagamentoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetPagamentoNull() {
-                this[this.tableBoletoMensalidadeDataTable.PagamentoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool IsValorNull() {
                 return this.IsNull(this.tableBoletoMensalidadeDataTable.ValorColumn);
             }
@@ -806,6 +846,16 @@ namespace GuiWindowsForms.Relatorios {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void SetParcelaNull() {
                 this[this.tableBoletoMensalidadeDataTable.ParcelaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsAnoNull() {
+                return this.IsNull(this.tableBoletoMensalidadeDataTable.AnoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetAnoNull() {
+                this[this.tableBoletoMensalidadeDataTable.AnoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -964,10 +1014,12 @@ namespace GuiWindowsForms.Relatorios.BoletoMensalidadeDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("TURMAALUNO", "TurmaAluno");
             tableMapping.ColumnMappings.Add("TURNOALUNO", "TurnoAluno");
             tableMapping.ColumnMappings.Add("VENCIMENTO", "VencimentoAluno");
-            tableMapping.ColumnMappings.Add("PAGAMENTO", "Pagamento");
             tableMapping.ColumnMappings.Add("Valor", "Valor");
             tableMapping.ColumnMappings.Add("MULTA", "Multa");
             tableMapping.ColumnMappings.Add("PARCELA", "Parcela");
+            tableMapping.ColumnMappings.Add("Descricao", "Descricao");
+            tableMapping.ColumnMappings.Add("MATRICULA", "Matricula");
+            tableMapping.ColumnMappings.Add("ANO", "Ano");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -982,20 +1034,17 @@ namespace GuiWindowsForms.Relatorios.BoletoMensalidadeDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        a.Nome AS ALUNO, S.NOME AS serieAluno,TU.NOME AS TURMAALUNO, T.NOME AS TURNOALUNO, B.DataVencimento AS VENCIMENTO, B.DataPagamento AS PAGAMENTO, M.Valor, B.Multa AS MULTA, 
-                         B.Parcela AS PARCELA
+            this._commandCollection[0].CommandText = @"SELECT        A.Nome AS ALUNO, S.Nome AS serieAluno, TU.Nome AS TURMAALUNO, T.Nome AS TURNOALUNO, B.DataVencimento AS VENCIMENTO, B.Descricao, 
+                         M.NumMatricula AS MATRICULA, M.Ano AS ANO, M.Valor, B.Multa AS MULTA, B.Parcela AS PARCELA
 FROM            aluno A INNER JOIN
                          matricula M ON M.AlunoId = A.Id INNER JOIN
                          boletomensalidade B ON B.MatriculaId = M.Id INNER JOIN
-                        
                          salaperiodo SP ON SP.Id = M.SalaPeriodoId INNER JOIN
                          sala SA ON SA.Id = SP.SalaId INNER JOIN
                          serie S ON S.Id = SA.SerieId INNER JOIN
- turma TU ON TU.Id = SA.TurmaId INNER JOIN
-                         turno T ON T.Id = SA.TurnoId 
-where a.id = @ID
-
-";
+                         turma TU ON TU.Id = SA.TurmaId INNER JOIN
+                         turno T ON T.Id = SA.TurnoId
+WHERE        (A.Id = @ID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@ID";

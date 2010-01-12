@@ -258,7 +258,6 @@ C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms
 C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavel.resources
 C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelBusca.resources
 C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoes.resources
-C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
 C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesControleDeAcesso.resources
 C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesDescontoMatricula.resources
 C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesSerie.resources
@@ -339,3 +338,4 @@ C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.uM
 C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
 C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.txtNomeAtividade.resources
+C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.txtNomeAtividade.resources

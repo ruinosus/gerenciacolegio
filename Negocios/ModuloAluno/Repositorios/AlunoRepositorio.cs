@@ -1407,6 +1407,7 @@ namespace Negocios.ModuloAluno.Repositorios
                 alunoAux.SituacaoEspecial = aluno.SituacaoEspecial;
                 alunoAux.Status = aluno.Status;
                 alunoAux.Uf = aluno.Uf;
+                alunoAux.SerieAtual = aluno.SerieAtual;
 
                 Confirmar();
             }
