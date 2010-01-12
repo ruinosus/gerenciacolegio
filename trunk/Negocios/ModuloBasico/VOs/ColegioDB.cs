@@ -893,6 +893,29 @@ public partial class Aluno : INotifyPropertyChanged
     }
     #endregion
 
+    #region string SerieAtual
+
+    private string _serieAtual;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_serieAtual", Name = "SerieAtual", DbType = "varchar(100)")]
+    public string SerieAtual
+    {
+        get
+        {
+            return _serieAtual;
+        }
+        set
+        {
+            if (value != _serieAtual)
+            {
+                _serieAtual = value;
+                OnPropertyChanged("SerieAtual");
+            }
+        }
+    }
+
+    #endregion
+
 }
 
 [Table(Name = "colegiodb.alunoatividadeturma")]
@@ -1086,6 +1109,29 @@ public partial class AlunoAtividadeTurma : INotifyPropertyChanged
         get;
         set;
     }
+    #endregion
+
+    #region int? Ano
+
+    private int? _ano;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_ano", Name = "Ano", DbType = "int")]
+    public int? Ano
+    {
+        get
+        {
+            return _ano;
+        }
+        set
+        {
+            if (value != _ano)
+            {
+                _ano = value;
+                OnPropertyChanged("Ano");
+            }
+        }
+    }
+
     #endregion
 
 }
@@ -1873,12 +1919,12 @@ public partial class BoletoAtividade : INotifyPropertyChanged
 
     #endregion
 
-    #region int? Parcela
+    #region string Parcela
 
-    private int? _parcela;
+    private string _parcela;
     [DebuggerNonUserCode]
-    [Column(Storage = "_parcela", Name = "Parcela", DbType = "int")]
-    public int? Parcela
+    [Column(Storage = "_parcela", Name = "Parcela", DbType = "varchar(45)")]
+    public string Parcela
     {
         get
         {
@@ -2176,29 +2222,6 @@ public partial class BoletoMensalidade : INotifyPropertyChanged
 
     #endregion
 
-    #region int? Parcela
-
-    private int? _parcela;
-    [DebuggerNonUserCode]
-    [Column(Storage = "_parcela", Name = "Parcela", DbType = "int")]
-    public int? Parcela
-    {
-        get
-        {
-            return _parcela;
-        }
-        set
-        {
-            if (value != _parcela)
-            {
-                _parcela = value;
-                OnPropertyChanged("Parcela");
-            }
-        }
-    }
-
-    #endregion
-
     #region byte? Status
 
     private byte? _status;
@@ -2270,6 +2293,29 @@ public partial class BoletoMensalidade : INotifyPropertyChanged
             {
                 _valor = value;
                 OnPropertyChanged("Valor");
+            }
+        }
+    }
+
+    #endregion
+
+    #region string Parcela
+
+    private string _parcela;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_parcela", Name = "Parcela", DbType = "varchar(45)")]
+    public string Parcela
+    {
+        get
+        {
+            return _parcela;
+        }
+        set
+        {
+            if (value != _parcela)
+            {
+                _parcela = value;
+                OnPropertyChanged("Parcela");
             }
         }
     }
@@ -4906,6 +4952,29 @@ public partial class Matricula : INotifyPropertyChanged
     }
 
     #endregion
+
+    #region int? Ano
+
+    private int? _ano;
+    [DebuggerNonUserCode]
+    [Column(Storage = "_ano", Name = "Ano", DbType = "int")]
+    public int? Ano
+    {
+        get
+        {
+            return _ano;
+        }
+        set
+        {
+            if (value != _ano)
+            {
+                _ano = value;
+                OnPropertyChanged("Ano");
+            }
+        }
+    }
+
+    #endregion
 }
 
 [Table(Name = "colegiodb.nota")]
@@ -6766,22 +6835,22 @@ public partial class ResponsavelAluno : INotifyPropertyChanged
 
     #endregion
 
-    #region uint GrauParentescoID
+    #region string GrauParentesco
 
-    private uint _grauParentescoID;
+    private string _grauParentesco;
     [DebuggerNonUserCode]
-    [Column(Storage = "_grauParentescoID", Name = "GrauParentescoId", DbType = "int unsigned", CanBeNull = false)]
-    public uint GrauParentescoID
+    [Column(Storage = "_grauParentesco", Name = "GrauParentesco", DbType = "VARCHAR(30)", CanBeNull = false)]
+    public string GrauParentesco
     {
         get
         {
-            return _grauParentescoID;
+            return _grauParentesco;
         }
         set
         {
-            if (value != _grauParentescoID)
+            if (value != _grauParentesco)
             {
-                _grauParentescoID = value;
+                _grauParentesco = value;
                 OnPropertyChanged("GrauParentescoID");
             }
         }
