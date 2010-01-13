@@ -213,7 +213,7 @@
             this.mskCpf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.mskCpf.ForeColor = System.Drawing.Color.MidnightBlue;
             this.mskCpf.Location = new System.Drawing.Point(615, 70);
-            this.mskCpf.Mask = "000.000.000-99";
+            this.mskCpf.Mask = "000,000,000-00";
             this.mskCpf.Name = "mskCpf";
             this.mskCpf.Size = new System.Drawing.Size(100, 23);
             this.mskCpf.TabIndex = 15;

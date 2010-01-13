@@ -324,7 +324,6 @@ namespace GuiWindowsForms
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(220, 20);
             this.txtEmail.TabIndex = 6;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
