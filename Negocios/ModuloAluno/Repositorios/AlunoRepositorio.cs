@@ -600,7 +600,25 @@ namespace Negocios.ModuloAluno.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-
+                        if (!string.IsNullOrEmpty(aluno.Contato))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from a in resultado
+                                                    where
+                                                    a.Contato.Contains(aluno.Contato)
+                                                    select a).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from a in resultado
+                                              where
+                                              a.Contato.Contains(aluno.Contato)
+                                              select a).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
 
 
                         if (aluno.Status.HasValue)
@@ -1214,7 +1232,25 @@ namespace Negocios.ModuloAluno.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-
+                        if (!string.IsNullOrEmpty(aluno.Contato))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from a in Consultar()
+                                                    where
+                                                    a.Contato.Contains(aluno.Contato)
+                                                    select a).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from a in Consultar()
+                                              where
+                                              a.Contato.Contains(aluno.Contato)
+                                              select a).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
 
 
                         if (aluno.Status.HasValue)
@@ -1301,7 +1337,7 @@ namespace Negocios.ModuloAluno.Repositorios
 
                 alunoAux = resultado[0];
                 alunoAux.Alergico= aluno.Alergico;
-                alunoAux.Bairro= aluno.Bairro;
+                alunoAux.Bairro = aluno.Bairro;
                 alunoAux.Cep = aluno.Cep;
                 alunoAux.Cidade = aluno.Cidade;
                 alunoAux.ComplementoEndereco= aluno.ComplementoEndereco;
