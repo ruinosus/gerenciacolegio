@@ -38,7 +38,7 @@ namespace Negocios.ModuloAtividade.Processos
 
         public void Excluir(Atividade atividade)
         {
-            this.atividadeRepositorio.Excluir(atividade);
+            //this.atividadeRepositorio.Excluir(atividade);
         }
 
         public void Alterar(Atividade atividade)

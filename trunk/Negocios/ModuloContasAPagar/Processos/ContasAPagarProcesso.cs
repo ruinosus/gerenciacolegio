@@ -38,7 +38,7 @@ namespace Negocios.ModuloContasAPagar.Processos
 
         public void Excluir(ContasAPagar contasAPagar)
         {
-            this.contasAPagarRepositorio.Excluir(contasAPagar);
+            //this.contasAPagarRepositorio.Excluir(contasAPagar);
         }
 
         public void Alterar(ContasAPagar contasAPagar)

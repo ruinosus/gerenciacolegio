@@ -39,7 +39,7 @@ namespace Negocios.ModuloPerfil.Processos
 
         public void Excluir(Perfil perfil)
         {
-            this.perfilRepositorio.Excluir(perfil);
+            //this.perfilRepositorio.Excluir(perfil);
         }
 
         public void Alterar(Perfil perfil)

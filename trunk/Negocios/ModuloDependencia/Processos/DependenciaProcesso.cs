@@ -39,7 +39,7 @@ namespace Negocios.ModuloDependencia.Processos
 
         public void Excluir(Dependencia dependencia)
         {
-            this.dependenciaRepositorio.Excluir(dependencia);
+            //this.dependenciaRepositorio.Excluir(dependencia);
         }
 
         public void Alterar(Dependencia dependencia)

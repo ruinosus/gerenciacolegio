@@ -39,7 +39,7 @@ namespace Negocios.ModuloSerie.Processos
 
         public void Excluir(Serie serie)
         {
-            this.serieRepositorio.Excluir(serie);
+            //this.serieRepositorio.Excluir(serie);
         }
 
         public void Alterar(Serie serie)

@@ -39,7 +39,7 @@ namespace Negocios.ModuloTurno.Processos
 
         public void Excluir(Turno turno)
         {
-            this.turnoRepositorio.Excluir(turno);
+            //this.turnoRepositorio.Excluir(turno);
         }
 
         public void Alterar(Turno turno)

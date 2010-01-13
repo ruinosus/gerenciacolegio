@@ -38,7 +38,7 @@ namespace Negocios.ModuloSalaPeriodo.Processos
 
         public void Excluir(SalaPeriodo salaPeriodo)
         {
-            this.salaPeriodoRepositorio.Excluir(salaPeriodo);
+            //this.salaPeriodoRepositorio.Excluir(salaPeriodo);
         }
 
         public void Alterar(SalaPeriodo salaPeriodo)

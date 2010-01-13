@@ -38,7 +38,7 @@ namespace Negocios.ModuloBoletoMensalidade.Processos
 
         public void Excluir(BoletoMensalidade boletoMensalidade)
         {
-            this.boletoMensalidadeRepositorio.Excluir(boletoMensalidade);
+            //this.boletoMensalidadeRepositorio.Excluir(boletoMensalidade);
         }
 
         public void Alterar(BoletoMensalidade boletoMensalidade)

@@ -39,7 +39,7 @@ namespace Negocios.ModuloMatricula.Processos
 
         public void Excluir(Matricula matricula)
         {
-            this.matriculaRepositorio.Excluir(matricula);
+            //this.matriculaRepositorio.Excluir(matricula);
         }
 
         public void Alterar(Matricula matricula)

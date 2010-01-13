@@ -73,7 +73,7 @@ namespace Negocios.ModuloMatricula.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (matricula.AlunoID.HasValue)
+                        if (matricula.AlunoID.HasValue && matricula.AlunoID.Value !=0)
                         {
                             if (pesquisa)
                             {

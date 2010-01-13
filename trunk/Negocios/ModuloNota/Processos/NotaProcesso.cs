@@ -39,7 +39,7 @@ namespace Negocios.ModuloNota.Processos
 
         public void Excluir(Nota nota)
         {
-            this.notaRepositorio.Excluir(nota);
+            //this.notaRepositorio.Excluir(nota);
         }
 
         public void Alterar(Nota nota)

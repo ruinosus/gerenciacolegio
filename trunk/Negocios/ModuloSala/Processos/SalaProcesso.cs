@@ -39,7 +39,7 @@ namespace Negocios.ModuloSala.Processos
 
         public void Excluir(Sala sala)
         {
-            this.salaRepositorio.Excluir(sala);
+            //this.salaRepositorio.Excluir(sala);
         }
 
         public void Alterar(Sala sala)

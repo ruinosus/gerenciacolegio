@@ -39,7 +39,7 @@ namespace Negocios.ModuloCheque.Processos
 
         public void Excluir(Cheque cheque)
         {
-            this.chequeRepositorio.Excluir(cheque);
+            //this.chequeRepositorio.Excluir(cheque);
         }
 
         public void Alterar(Cheque cheque)
