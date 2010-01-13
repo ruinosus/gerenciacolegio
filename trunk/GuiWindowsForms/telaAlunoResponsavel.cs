@@ -502,11 +502,11 @@ namespace GuiWindowsForms
 
                 #region VALIDA - IDENTIDADE
 
-                if (String.IsNullOrEmpty(txtRg.Text))
-                {
-                    errorProviderTela.SetError(txtRg, "Informe a Identidade");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtRg.Text))
+                //{
+                //    errorProviderTela.SetError(txtRg, "Informe a Identidade");
+                //    return;
+                //}
                 responsavel.Rg = txtRg.Text;
               
 
@@ -514,82 +514,82 @@ namespace GuiWindowsForms
 
                 #region VALIDA - CPF
 
-                if (mskCpf.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskCpf, "Informe o cpf");
-                    return;
-                }
+                //if (mskCpf.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskCpf, "Informe o cpf");
+                //    return;
+                //}
                 responsavel.Cpf = mskCpf.Text;
 
                 #endregion
 
                 #region VALIDA - PROFISSÃO
 
-                if (String.IsNullOrEmpty(txtProfissao.Text))
-                {
-                    errorProviderTela.SetError(txtProfissao, "Informe a profissão");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtProfissao.Text))
+                //{
+                //    errorProviderTela.SetError(txtProfissao, "Informe a profissão");
+                //    return;
+                //}
                 responsavel.Profissao = txtProfissao.Text;
 
                 #endregion
 
                 #region VALIDA - LOCAL DE TRABALHO
 
-                if (String.IsNullOrEmpty(txtLocalTrabalho.Text))
-                {
-                    errorProviderTela.SetError(txtLocalTrabalho, "Informe o local de trabalho");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtLocalTrabalho.Text))
+                //{
+                //    errorProviderTela.SetError(txtLocalTrabalho, "Informe o local de trabalho");
+                //    return;
+                //}
                 responsavel.LocalTrabalho = txtLocalTrabalho.Text;
 
                 #endregion
 
                 #region VALIDA - EMAIL
 
-                if (String.IsNullOrEmpty(txtEmail.Text))
-                {
-                    errorProviderTela.SetError(txtEmail, "Informe o email");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtEmail.Text))
+                //{
+                //    errorProviderTela.SetError(txtEmail, "Informe o email");
+                //    return;
+                //}
 
-                int validaArroba = 0;
-                /*O FOR pecorre todo o textBox email para validação do campo,
-                 *dentro tem vários IF se o campo possuir as obrigatoriedades
-                 *é incrementado, se não possuir é decrementado ao final a uma
-                 *verificação se o campo for vazio ou não possuir a soma correspondedente
-                 *a todos os campos que deveria incrementar é lançado o exception
-                 */
-                for (int i = 0; i < txtEmail.Text.Length; i++)
-                {
-                    if (txtEmail.Text.Substring(i, 1).Equals("@"))
-                    {
-                        validaArroba++;
-                    }
-                    if (txtEmail.Text.Substring(i, 1).Equals(" "))
-                    {
-                        validaArroba--;
-                    }
-                }
+                //int validaArroba = 0;
+                ///*O FOR pecorre todo o textBox email para validação do campo,
+                // *dentro tem vários IF se o campo possuir as obrigatoriedades
+                // *é incrementado, se não possuir é decrementado ao final a uma
+                // *verificação se o campo for vazio ou não possuir a soma correspondedente
+                // *a todos os campos que deveria incrementar é lançado o exception
+                // */
+                //for (int i = 0; i < txtEmail.Text.Length; i++)
+                //{
+                //    if (txtEmail.Text.Substring(i, 1).Equals("@"))
+                //    {
+                //        validaArroba++;
+                //    }
+                //    if (txtEmail.Text.Substring(i, 1).Equals(" "))
+                //    {
+                //        validaArroba--;
+                //    }
+                //}
 
-                if (validaArroba != 1 || txtEmail.Text.Equals(""))
-                {
+                //if (validaArroba != 1 || txtEmail.Text.Equals(""))
+                //{
 
-                    errorProviderTela.SetError(txtEmail, "Informe o email corretamente");
-                    return;
+                //    errorProviderTela.SetError(txtEmail, "Informe o email corretamente");
+                //    return;
 
-                }
+                //}
                 responsavel.Email = txtEmail.Text;
 
                 #endregion
 
                 #region VALIDA - FONE DO TRABALHO
 
-                if (String.IsNullOrEmpty(mskFoneTrabalho.Text)) 
-                {
-                    errorProviderTela.SetError(mskFoneTrabalho, "Informe o fone do trabalho");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(mskFoneTrabalho.Text)) 
+                //{
+                //    errorProviderTela.SetError(mskFoneTrabalho, "Informe o fone do trabalho");
+                //    return;
+                //}
                 responsavel.Fone = mskFoneTrabalho.Text;
 
                 #endregion
@@ -607,65 +607,65 @@ namespace GuiWindowsForms
 
                 #region VALIDA - COMPLEMENTO
 
-                if (String.IsNullOrEmpty(txtComplemento.Text))
-                {
-                    errorProviderTela.SetError(txtComplemento, "Informe o endereço");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtComplemento.Text))
+                //{
+                //    errorProviderTela.SetError(txtComplemento, "Informe o endereço");
+                //    return;
+                //}
                 responsavel.ComplementoEndereco = txtComplemento.Text;
 
                 #endregion
 
                 #region VALIDA - EDIFÍCIO
 
-                if (String.IsNullOrEmpty(txtNomeEdificil.Text))
-                {
-                    errorProviderTela.SetError(txtNomeEdificil, "Informe o edifício");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtNomeEdificil.Text))
+                //{
+                //    errorProviderTela.SetError(txtNomeEdificil, "Informe o edifício");
+                //    return;
+                //}
 
                 #endregion
 
                 #region VALIDA - BAIRRO
 
-                if (String.IsNullOrEmpty(txtBairro.Text))
-                {
-                    errorProviderTela.SetError(txtBairro, "Informe o bairro");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtBairro.Text))
+                //{
+                //    errorProviderTela.SetError(txtBairro, "Informe o bairro");
+                //    return;
+                //}
                 responsavel.Bairro = txtBairro.Text;
 
                 #endregion
 
                 #region VALIDA - CIDADE
 
-                if (String.IsNullOrEmpty(txtCidade.Text))
-                {
-                    errorProviderTela.SetError(txtCidade, "Informe a cidade");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtCidade.Text))
+                //{
+                //    errorProviderTela.SetError(txtCidade, "Informe a cidade");
+                //    return;
+                //}
                 responsavel.Cidade = txtCidade.Text;
 
                 #endregion
 
                 #region VALIDA - CEP
 
-                if (mskCep.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskCep, "Informe a cep");
-                    return;
-                }
+                //if (mskCep.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskCep, "Informe a cep");
+                //    return;
+                //}
                 responsavel.Cep = mskCep.Text;
 
                 #endregion
 
                 #region VALIDA - FONE RESIDÊNCIA
 
-                if (mskFoneResidencia.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone");
-                    return;
-                }
+                //if (mskFoneResidencia.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone");
+                //    return;
+                //}
                 responsavel.Fone = mskFoneResidencia.Text;
 
                 #endregion
@@ -883,6 +883,7 @@ namespace GuiWindowsForms
                 rdbMasc.Select();
             }
         }
+
 
     }
 }

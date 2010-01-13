@@ -45,12 +45,12 @@
             this.btnFinanceiro = new System.Windows.Forms.Button();
             this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.dgvAluno = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.colunaNomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TelefoneAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerieAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValorMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             this.SuspendLayout();
             // 
@@ -275,28 +275,11 @@
             this.dgvAluno.MultiSelect = false;
             this.dgvAluno.Name = "dgvAluno";
             this.dgvAluno.ReadOnly = true;
-            this.dgvAluno.Size = new System.Drawing.Size(648, 150);
+            this.dgvAluno.Size = new System.Drawing.Size(648, 266);
             this.dgvAluno.TabIndex = 17;
             this.dgvAluno.DoubleClick += new System.EventHandler(this.dgvAluno_DoubleClick);
             this.dgvAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellClick);
             this.dgvAluno.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellEnter);
-            // 
-            // Column3
-            // 
-            this.Column3.Name = "Column3";
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(779, 348);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(32, 11);
-            this.btnExcluir.TabIndex = 70;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // colunaNomeAluno
             // 
@@ -341,6 +324,23 @@
             this.ValorMatricula.ReadOnly = true;
             this.ValorMatricula.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.ValorMatricula.Width = 126;
+            // 
+            // Column3
+            // 
+            this.Column3.Name = "Column3";
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Location = new System.Drawing.Point(779, 348);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(32, 11);
+            this.btnExcluir.TabIndex = 70;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // telaAlunoPrincipal
             // 
