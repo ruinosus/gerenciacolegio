@@ -23,11 +23,12 @@ namespace Negocios.ModuloAluno.Repositorios
         {
             return db.Aluno.ToList();
         }
-
+     
         public List<Aluno> Consultar(Aluno aluno, TipoPesquisa tipoPesquisa)
         {
             List<Aluno> resultado = Consultar();
             bool pesquisa = false;
+            
             switch (tipoPesquisa)
             {
                 #region Case E
