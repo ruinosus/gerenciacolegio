@@ -265,6 +265,7 @@
             // 
             this.dgvAluno.AllowUserToAddRows = false;
             this.dgvAluno.AllowUserToDeleteRows = false;
+            this.dgvAluno.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colunaNomeAluno,

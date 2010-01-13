@@ -128,6 +128,7 @@
             // 
             // dtgHistoricoMensalidade
             // 
+            this.dtgHistoricoMensalidade.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgHistoricoMensalidade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHistoricoMensalidade.Location = new System.Drawing.Point(0, 0);
             this.dtgHistoricoMensalidade.Name = "dtgHistoricoMensalidade";
@@ -157,6 +158,7 @@
             // 
             // dtgHistoricoAtividade
             // 
+            this.dtgHistoricoAtividade.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dtgHistoricoAtividade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHistoricoAtividade.Location = new System.Drawing.Point(-6, 0);
             this.dtgHistoricoAtividade.Name = "dtgHistoricoAtividade";

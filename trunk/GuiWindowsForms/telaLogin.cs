@@ -45,6 +45,7 @@ namespace GuiWindowsForms
             InitializeComponent();
         }
 
+        #region EVENTOS
         private void btnLogar_Click(object sender, EventArgs e)
         {
 
@@ -99,13 +100,9 @@ namespace GuiWindowsForms
         }
 
 
-        #region Métodos que controlam a mudança de cor dos campos quando selecionados ou não
-
-        /// <summary>
+        
+        ///  Métodos que controlam a mudança de cor dos campos quando selecionados ou não
         /// Atualiza a cor da textbox ao ser ativada como controle principal
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void txtLogin_Enter(object sender, EventArgs e)
         {
             txtLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -141,8 +138,6 @@ namespace GuiWindowsForms
             txtSenha.BackColor = System.Drawing.Color.White;
         }
 
-        #endregion
-
         private void telaLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.ExitThread();
@@ -163,5 +158,163 @@ namespace GuiWindowsForms
             
           
         }
+
+        private void btnLogar_Enter(object sender, EventArgs e)
+        {
+            #region Validação dos campos de login e senha
+
+            try
+            {
+                lblErro.Visible = false;
+
+                if (String.IsNullOrEmpty(txtLogin.Text))
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
+                    throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
+                }
+                else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
+                    throw new Exception("O login deve conter entre 8 e 20 dígitos.");
+                }
+                else
+                {
+                    if (String.IsNullOrEmpty(txtSenha.Text))
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe a senha");
+                        throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
+                    }
+                    else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe o login");
+                        throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
+                    }
+                    else
+                    {
+                        this.Hide();
+                        Program.ultimaTela = 9;
+                        telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+                        telaalunoprincipal.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblErro.Visible = true;
+                lblErro.Text = ex.Message;
+            }
+
+            #endregion
+        }
+
+        //private void txtLogin_Enter_1(object sender, EventArgs e)
+        //{
+        //    #region Validação dos campos de login e senha
+
+        //    try
+        //    {
+        //        lblErro.Visible = false;
+
+        //        if (String.IsNullOrEmpty(txtLogin.Text))
+        //        {
+        //            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+        //            errorProviderTela.SetError(txtLogin, "Informe o login");
+        //            throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
+        //        }
+        //        else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
+        //        {
+        //            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+        //            errorProviderTela.SetError(txtLogin, "Informe o login");
+        //            throw new Exception("O login deve conter entre 8 e 20 dígitos.");
+        //        }
+        //        else
+        //        {
+        //            if (String.IsNullOrEmpty(txtSenha.Text))
+        //            {
+        //                txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+        //                errorProviderTela.SetError(txtSenha, "Informe a senha");
+        //                throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
+        //            }
+        //            else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
+        //            {
+        //                txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+        //                errorProviderTela.SetError(txtSenha, "Informe o login");
+        //                throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
+        //            }
+        //            else
+        //            {
+        //                this.Hide();
+        //                Program.ultimaTela = 9;
+        //                telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+        //                telaalunoprincipal.Show();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        lblErro.Visible = true;
+        //        lblErro.Text = ex.Message;
+        //    }
+
+        //    #endregion
+        //}
+
+        //private void txtSenha_Click(object sender, EventArgs e)
+        //{
+        //    #region Validação dos campos de login e senha
+
+        //    try
+        //    {
+        //        lblErro.Visible = false;
+
+        //        if (String.IsNullOrEmpty(txtLogin.Text))
+        //        {
+        //            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+        //            errorProviderTela.SetError(txtLogin, "Informe o login");
+        //            throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
+        //        }
+        //        else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
+        //        {
+        //            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+        //            errorProviderTela.SetError(txtLogin, "Informe o login");
+        //            throw new Exception("O login deve conter entre 8 e 20 dígitos.");
+        //        }
+        //        else
+        //        {
+        //            if (String.IsNullOrEmpty(txtSenha.Text))
+        //            {
+        //                txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+        //                errorProviderTela.SetError(txtSenha, "Informe a senha");
+        //                throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
+        //            }
+        //            else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
+        //            {
+        //                txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+        //                errorProviderTela.SetError(txtSenha, "Informe o login");
+        //                throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
+        //            }
+        //            else
+        //            {
+        //                this.Hide();
+        //                Program.ultimaTela = 9;
+        //                telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+        //                telaalunoprincipal.Show();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        lblErro.Visible = true;
+        //        lblErro.Text = ex.Message;
+        //    }
+
+        //    #endregion
+        //}
+
+        #endregion
     }
 }
