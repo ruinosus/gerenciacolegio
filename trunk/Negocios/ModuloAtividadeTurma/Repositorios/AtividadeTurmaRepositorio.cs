@@ -43,11 +43,12 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
                                                     ad.ID == atividadeTurma.ID
                                                     select ad).ToList());
                             }
-                            else {
-                                resultado=((from ad in resultado
-                                                    where
-                                                    ad.ID == atividadeTurma.ID
-                                                    select ad).ToList());
+                            else
+                            {
+                                resultado = ((from ad in resultado
+                                              where
+                                              ad.ID == atividadeTurma.ID
+                                              select ad).ToList());
                             }
                             pesquisa = true;
                             resultado = resultado.Distinct().ToList();
@@ -62,73 +63,19 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
                                                     ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeTurma.AtividadeID.Value
                                                     select ad).ToList());
                             }
-                            else {
-                                resultado=((from ad in resultado
-                                                    where
-                                                    ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeTurma.AtividadeID.Value
-                                                    select ad).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-
-                        if (atividadeTurma.DiaSemana.HasValue && atividadeTurma.DiaSemana.Value != default(DateTime))
-                        {
-                            if (pesquisa)
+                            else
                             {
-                                resultado.AddRange((from ad in resultado
-                                                    where
-                                                    ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeTurma.DiaSemana.Value
-                                                    select ad).ToList());
-                            }
-                            else {
-                                resultado=((from ad in resultado
-                                                    where
-                                                    ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeTurma.DiaSemana.Value
-                                                    select ad).ToList());
+                                resultado = ((from ad in resultado
+                                              where
+                                              ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeTurma.AtividadeID.Value
+                                              select ad).ToList());
                             }
                             pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (atividadeTurma.HoraFim.HasValue && atividadeTurma.HoraFim.Value != default(DateTime))
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in resultado
-                                                    where
-                                                    ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeTurma.HoraFim.Value
-                                                    select ad).ToList());
-                            }
-                            else {
-                                resultado=((from ad in resultado
-                                                    where
-                                                    ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeTurma.HoraFim.Value
-                                                    select ad).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
 
-                        if (atividadeTurma.HoraInicio.HasValue && atividadeTurma.HoraInicio.Value != default(DateTime))
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in resultado
-                                                    where
-                                                    ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeTurma.HoraInicio.Value
-                                                    select ad).ToList());
-                            }
-                            else {
-                                resultado=((from ad in resultado
-                                                    where
-                                                    ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeTurma.HoraInicio.Value
-                                                    select ad).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
+
 
                         if (atividadeTurma.Status.HasValue && atividadeTurma.Status.Value != default(byte))
                         {
@@ -139,11 +86,12 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
                                                     ad.Status.HasValue && ad.Status.Value == atividadeTurma.Status.Value
                                                     select ad).ToList());
                             }
-                            else {
-                                resultado=((from ad in resultado
-                                                    where
-                                                    ad.Status.HasValue && ad.Status.Value == atividadeTurma.Status.Value
-                                                    select ad).ToList());
+                            else
+                            {
+                                resultado = ((from ad in resultado
+                                              where
+                                              ad.Status.HasValue && ad.Status.Value == atividadeTurma.Status.Value
+                                              select ad).ToList());
                             }
                             pesquisa = true;
                             resultado = resultado.Distinct().ToList();
@@ -197,65 +145,7 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
                         }
 
 
-                        if (atividadeTurma.DiaSemana.HasValue && atividadeTurma.DiaSemana.Value != default(DateTime))
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in Consultar()
-                                                    where
-                                                    ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeTurma.DiaSemana.Value
-                                                    select ad).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from ad in Consultar()
-                                              where
-                                              ad.DiaSemana.HasValue && ad.DiaSemana.Value == atividadeTurma.DiaSemana.Value
-                                              select ad).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (atividadeTurma.HoraFim.HasValue && atividadeTurma.HoraFim.Value != default(DateTime))
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in Consultar()
-                                                    where
-                                                    ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeTurma.HoraFim.Value
-                                                    select ad).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from ad in Consultar()
-                                              where
-                                              ad.HoraFim.HasValue && ad.HoraFim.Value == atividadeTurma.HoraFim.Value
-                                              select ad).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (atividadeTurma.HoraInicio.HasValue && atividadeTurma.HoraInicio.Value != default(DateTime))
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in Consultar()
-                                                    where
-                                                    ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeTurma.HoraInicio.Value
-                                                    select ad).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from ad in Consultar()
-                                              where
-                                              ad.HoraInicio.HasValue && ad.HoraInicio.Value == atividadeTurma.HoraInicio.Value
-                                              select ad).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
+                        
 
                         if (atividadeTurma.Status.HasValue && atividadeTurma.Status.Value != default(byte))
                         {
@@ -339,7 +229,6 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
 
                 atividadeTurmaAux.AtividadeID = atividadeTurma.AtividadeID;
                 atividadeTurmaAux.Atividade = atividadeTurma.Atividade;
-                atividadeTurmaAux.DiaSemana = atividadeTurma.DiaSemana;
                 atividadeTurmaAux.HoraFim = atividadeTurma.HoraFim;
                 atividadeTurmaAux.HoraInicio = atividadeTurma.HoraInicio;
                 atividadeTurmaAux.Status = atividadeTurma.Status;
@@ -347,9 +236,9 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
                 atividadeTurmaAux.Domingo = atividadeTurma.Domingo;
                 atividadeTurmaAux.Segunda = atividadeTurma.Segunda;
                 atividadeTurmaAux.Terca = atividadeTurma.Terca;
-                atividadeTurmaAux.Quarta= atividadeTurma.Quarta;
+                atividadeTurmaAux.Quarta = atividadeTurma.Quarta;
                 atividadeTurmaAux.Quinta = atividadeTurma.Quinta;
-                atividadeTurmaAux.Sexta= atividadeTurma.Sexta;
+                atividadeTurmaAux.Sexta = atividadeTurma.Sexta;
                 atividadeTurmaAux.Sabado = atividadeTurma.Sabado;
 
 
