@@ -669,6 +669,7 @@ namespace GuiWindowsForms
             return testa;
         }
 
+
     }
 
     #region CLASSE AUXILIAR PARA USO NO DATAGRID

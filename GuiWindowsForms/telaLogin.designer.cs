@@ -36,9 +36,6 @@
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.lblErro = new System.Windows.Forms.Label();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.BoletoMensalidadeRelatorio2 = new GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio();
-            this.BoletoMensalidadeRelatorio1 = new GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +74,7 @@
             this.btnLogar.TabIndex = 2;
             this.btnLogar.UseVisualStyleBackColor = false;
             this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
+            this.btnLogar.Enter += new System.EventHandler(this.btnLogar_Enter);
             // 
             // pnlLogin
             // 
@@ -137,9 +135,6 @@
         private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Label lblErro;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio BoletoMensalidadeRelatorio1;
-        private GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio BoletoMensalidadeRelatorio2;
     }
 }
 
