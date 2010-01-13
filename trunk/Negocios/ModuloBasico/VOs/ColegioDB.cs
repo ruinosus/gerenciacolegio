@@ -354,52 +354,26 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 
 		#endregion
 
-		#region string ContatoNome
+		#region string Contato
 
-		private string _contatoNome;
+		private string _contato;
 		[DebuggerNonUserCode]
-		[Column(Storage = "_contatoNome", Name = "ContatoNome", DbType = "varchar(45)", AutoSync = AutoSync.Never)]
-		public string ContatoNome
+		[Column(Storage = "_contato", Name = "Contato", DbType = "varchar(300)", AutoSync = AutoSync.Never)]
+		public string Contato
 		{
 			get
 			{
-				return _contatoNome;
+				return _contato;
 			}
 			set
 			{
-				if (value != _contatoNome)
+				if (value != _contato)
 				{
 					OnContatoNomeChanging(value);
 					SendPropertyChanging();
-					_contatoNome = value;
-					SendPropertyChanged("ContatoNome");
+					_contato = value;
+					SendPropertyChanged("Contato");
 					OnContatoNomeChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region string ContatoTelefone
-
-		private string _contatoTelefone;
-		[DebuggerNonUserCode]
-		[Column(Storage = "_contatoTelefone", Name = "ContatoTelefone", DbType = "varchar(45)", AutoSync = AutoSync.Never)]
-		public string ContatoTelefone
-		{
-			get
-			{
-				return _contatoTelefone;
-			}
-			set
-			{
-				if (value != _contatoTelefone)
-				{
-					OnContatoTelefoneChanging(value);
-					SendPropertyChanging();
-					_contatoTelefone = value;
-					SendPropertyChanged("ContatoTelefone");
-					OnContatoTelefoneChanged();
 				}
 			}
 		}

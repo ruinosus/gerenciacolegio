@@ -173,46 +173,7 @@ namespace Negocios.ModuloAluno.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(aluno.ContatoNome))
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from a in resultado
-                                                    where
-                                                    a.ContatoNome.Contains(aluno.ContatoNome)
-                                                    select a).ToList());
-                            }
-                            else 
-                            {
-                                resultado = ((from a in resultado
-                                                    where
-                                                    a.ContatoNome.Contains(aluno.ContatoNome)
-                                                    select a).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(aluno.ContatoTelefone))
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from a in resultado
-                                                    where
-                                                    a.ContatoTelefone.Contains(aluno.ContatoTelefone)
-                                                    select a).ToList());
-                            }
-                            else 
-                            {
-                                resultado = ((from a in resultado
-                                                    where
-                                                    a.ContatoTelefone.Contains(aluno.ContatoTelefone)
-                                                    select a).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
+                                              
                         if (!string.IsNullOrEmpty(aluno.DescricaoMedica))
                         {
                             if (pesquisa)
@@ -808,46 +769,8 @@ namespace Negocios.ModuloAluno.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (!string.IsNullOrEmpty(aluno.ContatoNome))
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from a in Consultar()
-                                                    where
-                                                    a.ContatoNome.Contains(aluno.ContatoNome)
-                                                    select a).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from a in Consultar()
-                                              where
-                                              a.ContatoNome.Contains(aluno.ContatoNome)
-                                              select a).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
-                        if (!string.IsNullOrEmpty(aluno.ContatoTelefone))
-                        {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from a in Consultar()
-                                                    where
-                                                    a.ContatoTelefone.Contains(aluno.ContatoTelefone)
-                                                    select a).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from a in Consultar()
-                                              where
-                                              a.ContatoTelefone.Contains(aluno.ContatoTelefone)
-                                              select a).ToList());
-                            }
-                            pesquisa = true;
-                            resultado = resultado.Distinct().ToList();
-                        }
-
+                       
+                       
                         if (!string.IsNullOrEmpty(aluno.DescricaoMedica))
                         {
                             if (pesquisa)
@@ -1381,8 +1304,8 @@ namespace Negocios.ModuloAluno.Repositorios
                 alunoAux.Cep = aluno.Cep;
                 alunoAux.Cidade = aluno.Cidade;
                 alunoAux.ComplementoEndereco= aluno.ComplementoEndereco;
-                alunoAux.ContatoNome = aluno.ContatoNome;
-                alunoAux.ContatoTelefone = aluno.ContatoTelefone;
+                alunoAux.Contato = aluno.Contato;
+                
                 alunoAux.DescricaoMedica = aluno.DescricaoMedica;
                 alunoAux.Email= aluno.Email;
                 alunoAux.FatorRh = aluno.FatorRh;
