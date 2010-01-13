@@ -267,7 +267,7 @@ namespace GuiWindowsForms
         #endregion
 
 
-        #region INCLUIR ATIVIDADE
+        #region EVENTO INCLUIR ATIVIDADE
         private void btnAdicionarAtividade_Click(object sender, EventArgs e)
         {
             atividadeControlador = AtividadeProcesso.Instance;
@@ -328,7 +328,7 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region ALTERAR ATIVIDADE/TURMA
+        #region EVENTO ALTERAR ATIVIDADE/TURMA
         private void ucMenuInferior1_EventoCadastrar()
         {
                 atividadeControlador = AtividadeProcesso.Instance;
@@ -547,7 +547,7 @@ namespace GuiWindowsForms
                         errorProviderTela.SetError(cmbFuncionario, "Informe o funcionário da atividade");
                         return;
                     }
-                    atividadeTurma.FuncionarioID = ((Funcionario)cmbFuncionario.SelectedItem).ID;
+                    atividadeTurma.FuncionarioID = uint.Parse(((Funcionario)cmbFuncionario.SelectedItem).ID.ToString());
 
 
                     #endregion
@@ -559,7 +559,7 @@ namespace GuiWindowsForms
                         errorProviderTela.SetError(cmbAtividadeTurma, "Informe a atividade a ser configurada");
                         return;
                     }
-                    atividadeTurma.AtividadeID = ((Atividade)cmbAtividadeTurma.SelectedItem).ID;
+                    atividadeTurma.AtividadeID = uint.Parse(((Atividade)cmbAtividadeTurma.SelectedItem).ID.ToString());
 
 
                     #endregion

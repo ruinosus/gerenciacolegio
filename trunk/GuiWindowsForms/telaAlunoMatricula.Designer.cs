@@ -39,7 +39,7 @@
             this.lblDesconto = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lblNumeroMatricula = new System.Windows.Forms.Label();
-            this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataMatricula = new System.Windows.Forms.DateTimePicker();
             this.lblDataMatricula = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
             this.cmbSerie = new System.Windows.Forms.ComboBox();
@@ -66,7 +66,7 @@
             this.gpbMatricula.Controls.Add(this.lblDesconto);
             this.gpbMatricula.Controls.Add(this.txtValor);
             this.gpbMatricula.Controls.Add(this.lblNumeroMatricula);
-            this.gpbMatricula.Controls.Add(this.dtpNascimento);
+            this.gpbMatricula.Controls.Add(this.dtpDataMatricula);
             this.gpbMatricula.Controls.Add(this.lblDataMatricula);
             this.gpbMatricula.Controls.Add(this.lblSerie);
             this.gpbMatricula.Controls.Add(this.cmbSerie);
@@ -189,14 +189,14 @@
             this.lblNumeroMatricula.TabIndex = 41;
             this.lblNumeroMatricula.Text = "Número da Matrícula";
             // 
-            // dtpNascimento
+            // dtpDataMatricula
             // 
-            this.dtpNascimento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(171, 130);
-            this.dtpNascimento.Name = "dtpNascimento";
-            this.dtpNascimento.Size = new System.Drawing.Size(110, 20);
-            this.dtpNascimento.TabIndex = 0;
+            this.dtpDataMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpDataMatricula.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataMatricula.Location = new System.Drawing.Point(171, 130);
+            this.dtpDataMatricula.Name = "dtpDataMatricula";
+            this.dtpDataMatricula.Size = new System.Drawing.Size(110, 20);
+            this.dtpDataMatricula.TabIndex = 0;
             // 
             // lblDataMatricula
             // 
@@ -341,6 +341,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaAlunoMatricula_Load);
+            this.Activated += new System.EventHandler(this.telaAlunoMatricula_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMatricula_FormClosing);
             this.gpbMatricula.ResumeLayout(false);
             this.gpbMatricula.PerformLayout();
@@ -358,7 +359,7 @@
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.ComboBox cmbSerie;
         private System.Windows.Forms.Label lblSerie;
-        private System.Windows.Forms.DateTimePicker dtpNascimento;
+        private System.Windows.Forms.DateTimePicker dtpDataMatricula;
         private System.Windows.Forms.Label lblDataMatricula;
         private System.Windows.Forms.Label lblNumeroMatricula;
         private System.Windows.Forms.TextBox txtValor;
