@@ -298,6 +298,18 @@ namespace GuiWindowsForms
 
                 #endregion
 
+                #region VALIDA - CONTATO
+
+                //if (String.IsNullOrEmpty(txtContato.Text))
+                //{
+                //    errorProviderTela.SetError(txtContato, "Informe o contato");
+                //    txtContato.Clear();
+                //    return;
+                //}
+                telaAluno.aluno.Contato = txtContato.Text;
+
+                #endregion
+
                 telaAluno.aluno.GrupoSanguineo = cmbGrupoSanguineo.Text;
 
                 alunoControlador.Alterar(telaAluno.aluno);
@@ -307,8 +319,8 @@ namespace GuiWindowsForms
                 
             }
             catch (Exception ex)
-            { 
-            
+            {
+               
             }
 
         }
@@ -395,6 +407,7 @@ namespace GuiWindowsForms
             txtSituacaoEspecial.Text = telaAluno.aluno.SituacaoEspecial;
             mskFone.Text = telaAluno.aluno.FoneMedico;
             cmbGrupoSanguineo.Text = telaAluno.aluno.GrupoSanguineo;
+            txtContato.Text = telaAluno.aluno.Contato;
             if (rdbNegativo.Checked == true)
             {
                 rdbNegativo.Select();
@@ -419,6 +432,7 @@ namespace GuiWindowsForms
             mskFone.Clear();
             rdbPositivo.Checked = false;
             rdbNegativo.Checked = false;
+            txtContato.Clear();
             cmbGrupoSanguineo.Select();
         }
 
