@@ -2033,7 +2033,7 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 
 		private int _id;
 		[DebuggerNonUserCode]
-		[Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, AutoSync = AutoSync.Never, CanBeNull = false)]
+        [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, AutoSync = AutoSync.Never, IsDbGenerated = true, CanBeNull = false)]
 		public int ID
 		{
 			get
