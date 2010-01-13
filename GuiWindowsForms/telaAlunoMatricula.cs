@@ -12,6 +12,7 @@ using Negocios.ModuloSalaPeriodo.Processos;
 using Negocios.ModuloDesconto.Processos;
 using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloMatricula.Constantes;
+using Negocios.ModuloBoletoMensalidade.Processos;
 
 namespace GuiWindowsForms
 {
@@ -19,10 +20,12 @@ namespace GuiWindowsForms
     {
         Aluno alunoMatriculaAux = new Aluno();
         Matricula matricula = new Matricula();
+        BoletoMensalidade boletoMensalidade = new BoletoMensalidade();
 
         IMatriculaProcesso matriculaControlador = MatriculaProcesso.Instance;
         ISalaPeriodoProcesso salaPeriodoControlador = null;
-        IDescontoProcesso descontoControlador = null; 
+        IDescontoProcesso descontoControlador = null;
+        IBoletoMensalidadeProcesso boletoMensalidadeControlador = null; 
 
         List<SalaAuxiliar> listaSalaAuxiliar = null;
         List<SalaPeriodo> listaSalaPeriodo = null;
@@ -258,6 +261,7 @@ namespace GuiWindowsForms
         private void ucMenuInferior1_EventoCadastrar()
         {
             matriculaControlador = MatriculaProcesso.Instance;
+
             matricula = new Matricula();
 
             try
@@ -330,6 +334,39 @@ namespace GuiWindowsForms
                 {
                     matriculaControlador.Incluir(matricula);
                     matriculaControlador.Confirmar();
+
+                    for (int i = 1; i < 13; i++)
+                    {
+                        boletoMensalidadeControlador = BoletoMensalidadeProcesso.Instance;
+                        boletoMensalidade = new BoletoMensalidade();
+
+                        boletoMensalidade.Descricao = "BOLETO";
+                        if (i > 1)
+                        {
+                            boletoMensalidade.DataVencimento = DateTime.Now.AddMonths(i);
+                        }
+                        else
+                        {
+                            boletoMensalidade.DataVencimento = DateTime.Now;
+                        }
+                        boletoMensalidade.Status = 1;
+                        boletoMensalidade.Desconto = ((Desconto)cmbDesconto.SelectedItem).Percentual;
+                        if (i == 1)
+                        {
+                            boletoMensalidade.Parcela = DateTime.Now.Month.ToString();
+                        }
+                        else
+                        {
+                            boletoMensalidade.Parcela = DateTime.Now.AddMonths(i).Month.ToString();
+                        }
+                        boletoMensalidade.MatriculaID = matricula.ID;
+                        boletoMensalidade.DataEmissao = DateTime.Now;
+                        boletoMensalidade.Valor = matricula.Valor;
+
+                        boletoMensalidadeControlador.Incluir(boletoMensalidade);
+                        boletoMensalidadeControlador.Confirmar();
+
+                    }
 
                     MessageBox.Show(MatriculaConstantes.MATRICULA_INCLUIDA, "Colégio Conhecer - Inserir Matrícula");
                 }
