@@ -369,26 +369,6 @@ namespace GuiWindowsForms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void cmbResidCom_Enter(object sender, EventArgs e)
-        {
-            cmbResidCom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-        }
-
-        /// <summary>
-        /// Altera a cor para a cor original do controle ao perder a seleção
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void cmbResidCom_Leave(object sender, EventArgs e)
-        {
-            cmbResidCom.BackColor = System.Drawing.Color.White;
-        }
-
-        /// <summary>
-        /// Atualiza a cor da textbox ao ser ativada como controle principal
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void mskFoneEmergencia_Enter(object sender, EventArgs e)
         {
             mskFoneEmergencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -567,36 +547,36 @@ namespace GuiWindowsForms
 
                 #region VALIDA - FONE DO ALUNO
 
-                if (mskFoneAluno.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskFoneAluno, "Informe o fone do aluno");
-                    mskFoneAluno.Clear();
-                    return;
-                }
+                //if (mskFoneAluno.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskFoneAluno, "Informe o fone do aluno");
+                //    mskFoneAluno.Clear();
+                //    return;
+                //}
                 aluno.FoneAluno = mskFoneAluno.Text;
 
                 #endregion
 
                 #region VALIDA - ENDEREÇO
 
-                if (String.IsNullOrEmpty(txtLogradouro.Text))
-                {
-                    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
-                    txtLogradouro.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtLogradouro.Text))
+                //{
+                //    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
+                //    txtLogradouro.Clear();
+                //    return;
+                //}
                 aluno.Logradouro = txtLogradouro.Text;
 
                 #endregion
 
                 #region VALIDA - COMPLEMENTO
 
-                if (String.IsNullOrEmpty(txtComplemento.Text))
-                {
-                    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
-                    txtComplemento.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtComplemento.Text))
+                //{
+                //    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
+                //    txtComplemento.Clear();
+                //    return;
+                //}
                 aluno.ComplementoEndereco = txtComplemento.Text;
 
                 #endregion
@@ -614,24 +594,24 @@ namespace GuiWindowsForms
 
                 #region VALIDA - BAIRRO
 
-                if (String.IsNullOrEmpty(txtBairro.Text))
-                {
-                    errorProviderTela.SetError(txtBairro, "Informe o bairro");
-                    txtBairro.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtBairro.Text))
+                //{
+                //    errorProviderTela.SetError(txtBairro, "Informe o bairro");
+                //    txtBairro.Clear();
+                //    return;
+                //}
                 aluno.Bairro = txtBairro.Text;
 
                 #endregion 
 
                 #region VALIDA - CIDADE
 
-                if (String.IsNullOrEmpty(txtCidade.Text))
-                {
-                    errorProviderTela.SetError(txtCidade, "Informe a cidade");
-                    txtCidade.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtCidade.Text))
+                //{
+                //    errorProviderTela.SetError(txtCidade, "Informe a cidade");
+                //    txtCidade.Clear();
+                //    return;
+                //}
                 aluno.Cidade = txtCidade.Text;
 
                 #endregion
@@ -650,12 +630,12 @@ namespace GuiWindowsForms
         
                 #region VALIDA - FONE RESIDENCIA
 
-                if (mskFoneResidencia.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
-                    mskFoneResidencia.Clear();
-                    return;
-                }
+                //if (mskFoneResidencia.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
+                //    mskFoneResidencia.Clear();
+                //    return;
+                //}
                 aluno.FoneResidencia = mskFoneResidencia.Text;
 
                 #endregion
@@ -672,12 +652,12 @@ namespace GuiWindowsForms
 
                 #region VALIDA - FONE EMERGENCIA
 
-                if (mskFoneEmergencia.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskFoneEmergencia, "Informe o fone de emergência");
-                    mskFoneEmergencia.Clear();
-                    return;
-                }
+                //if (mskFoneEmergencia.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskFoneEmergencia, "Informe o fone de emergência");
+                //    mskFoneEmergencia.Clear();
+                //    return;
+                //}
                 aluno.FoneEmergencia = mskFoneEmergencia.Text;
 
                 #endregion
@@ -783,7 +763,6 @@ namespace GuiWindowsForms
             txtNomeEdificil.Clear();
             cmbNacionalidade.Select();
             cmbNaturalidade.Select();
-            cmbResidCom.Select();
             cmbSelecionarAluno.Select();
             cmbUf.Select();
             mskCep.Clear();
@@ -903,6 +882,16 @@ namespace GuiWindowsForms
         {
             errorProviderTela.Clear();
         }
+        private void rdbFem_Click(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void rdbMasc_Click(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
         #endregion
 
         private void telaAluno_Activated(object sender, EventArgs e)
@@ -915,6 +904,39 @@ namespace GuiWindowsForms
                 carregarAluno();
             }
         }
+
+        private void cmbUf_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cmbUf.Text == "") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "AC") { txtCidade.Text = "RIO BRANCO"; }
+            if (cmbUf.Text == "AL") { txtCidade.Text = "MACEIO"; }
+            if (cmbUf.Text == "AM") { txtCidade.Text = "MANAUS"; }
+            if (cmbUf.Text == "AP") { txtCidade.Text = "MACAPÁ"; }
+            if (cmbUf.Text == "BA") { txtCidade.Text = "SALVADOR"; }
+            if (cmbUf.Text == "CE") { txtCidade.Text = "FORTALEZA"; }
+            if (cmbUf.Text == "DF") { txtCidade.Text = "BRASÍLIA"; }
+            if (cmbUf.Text == "ES") { txtCidade.Text = "VITÓRIA"; }
+            if (cmbUf.Text == "GO") { txtCidade.Text = "GOIÂNIA"; }
+            if (cmbUf.Text == "MA") { txtCidade.Text = "SÃO LUIZ"; }
+            if (cmbUf.Text == "MG") { txtCidade.Text = "BELO HORIZONTE"; }
+            if (cmbUf.Text == "MS") { txtCidade.Text = "CAMPO GRANDE"; }
+            if (cmbUf.Text == "MT") { txtCidade.Text = "CUIABÁ"; }
+            if (cmbUf.Text == "PA") { txtCidade.Text = "BELÉM"; }
+            if (cmbUf.Text == "PB") { txtCidade.Text = "JOÃO PESSOA"; }
+            if (cmbUf.Text == "PE") { txtCidade.Text = "RECIFE"; }
+            if (cmbUf.Text == "PI") { txtCidade.Text = "TEREZINA"; }
+            if (cmbUf.Text == "PR") { txtCidade.Text = "PARANÁ"; }
+            if (cmbUf.Text == "RJ") { txtCidade.Text = "RIO DE JANEIRO"; }
+            if (cmbUf.Text == "RN") { txtCidade.Text = "NATAL"; }
+            if (cmbUf.Text == "RO") { txtCidade.Text = "PORTO VELHO"; }
+            if (cmbUf.Text == "RR") { txtCidade.Text = "BOA VISTA"; }
+            if (cmbUf.Text == "RS") { txtCidade.Text = "PORTO ALEFRE"; }
+            if (cmbUf.Text == "SC") { txtCidade.Text = "FLORIANÓPOLIS"; }
+            if (cmbUf.Text == "SE") { txtCidade.Text = "ARACAJÚ"; }
+            if (cmbUf.Text == "SP") { txtCidade.Text = "SÃO PAULO"; }
+            if (cmbUf.Text == "TO") { txtCidade.Text = "PALMAS"; }
+        }
+
 
         
         

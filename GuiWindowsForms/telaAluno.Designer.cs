@@ -53,8 +53,6 @@ namespace GuiWindowsForms
             this.lblEmail = new System.Windows.Forms.Label();
             this.mskFoneEmergencia = new System.Windows.Forms.MaskedTextBox();
             this.lblFoneEmergencia = new System.Windows.Forms.Label();
-            this.cmbResidCom = new System.Windows.Forms.ComboBox();
-            this.lblResidCom = new System.Windows.Forms.Label();
             this.mskFoneAluno = new System.Windows.Forms.MaskedTextBox();
             this.lblFoneAluno = new System.Windows.Forms.Label();
             this.cmbNaturalidade = new System.Windows.Forms.ComboBox();
@@ -103,8 +101,6 @@ namespace GuiWindowsForms
             this.gpbDadosPessoais.Controls.Add(this.lblEmail);
             this.gpbDadosPessoais.Controls.Add(this.mskFoneEmergencia);
             this.gpbDadosPessoais.Controls.Add(this.lblFoneEmergencia);
-            this.gpbDadosPessoais.Controls.Add(this.cmbResidCom);
-            this.gpbDadosPessoais.Controls.Add(this.lblResidCom);
             this.gpbDadosPessoais.Controls.Add(this.mskFoneAluno);
             this.gpbDadosPessoais.Controls.Add(this.lblFoneAluno);
             this.gpbDadosPessoais.Controls.Add(this.cmbNaturalidade);
@@ -185,6 +181,7 @@ namespace GuiWindowsForms
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.Size = new System.Drawing.Size(40, 21);
             this.cmbUf.TabIndex = 12;
+            this.cmbUf.SelectedIndexChanged += new System.EventHandler(this.cmbUf_SelectedIndexChanged_1);
             this.cmbUf.MouseEnter += new System.EventHandler(this.cmbUf_MouseEnter);
             this.cmbUf.MouseLeave += new System.EventHandler(this.cmbUf_MouseLeave);
             this.cmbUf.TextChanged += new System.EventHandler(this.cmbUf_TextChanged);
@@ -205,7 +202,7 @@ namespace GuiWindowsForms
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(507, 157);
+            this.lblComplemento.Location = new System.Drawing.Point(505, 159);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(86, 13);
             this.lblComplemento.TabIndex = 55;
@@ -267,7 +264,7 @@ namespace GuiWindowsForms
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(505, 252);
+            this.lblCidade.Location = new System.Drawing.Point(505, 256);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(50, 13);
             this.lblCidade.TabIndex = 49;
@@ -338,7 +335,7 @@ namespace GuiWindowsForms
             // 
             // mskFoneEmergencia
             // 
-            this.mskFoneEmergencia.Location = new System.Drawing.Point(604, 382);
+            this.mskFoneEmergencia.Location = new System.Drawing.Point(604, 292);
             this.mskFoneEmergencia.Mask = "(99) 0000-0000";
             this.mskFoneEmergencia.Name = "mskFoneEmergencia";
             this.mskFoneEmergencia.Size = new System.Drawing.Size(111, 20);
@@ -350,32 +347,11 @@ namespace GuiWindowsForms
             // lblFoneEmergencia
             // 
             this.lblFoneEmergencia.AutoSize = true;
-            this.lblFoneEmergencia.Location = new System.Drawing.Point(505, 382);
+            this.lblFoneEmergencia.Location = new System.Drawing.Point(507, 295);
             this.lblFoneEmergencia.Name = "lblFoneEmergencia";
             this.lblFoneEmergencia.Size = new System.Drawing.Size(78, 13);
             this.lblFoneEmergencia.TabIndex = 29;
             this.lblFoneEmergencia.Text = "Fone Emerg:";
-            // 
-            // cmbResidCom
-            // 
-            this.cmbResidCom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbResidCom.FormattingEnabled = true;
-            this.cmbResidCom.Location = new System.Drawing.Point(128, 382);
-            this.cmbResidCom.Name = "cmbResidCom";
-            this.cmbResidCom.Size = new System.Drawing.Size(312, 21);
-            this.cmbResidCom.TabIndex = 17;
-            this.cmbResidCom.Leave += new System.EventHandler(this.cmbResidCom_Leave);
-            this.cmbResidCom.Enter += new System.EventHandler(this.cmbResidCom_Enter);
-            this.cmbResidCom.TextChanged += new System.EventHandler(this.cmbResidCom_TextChanged);
-            // 
-            // lblResidCom
-            // 
-            this.lblResidCom.AutoSize = true;
-            this.lblResidCom.Location = new System.Drawing.Point(48, 385);
-            this.lblResidCom.Name = "lblResidCom";
-            this.lblResidCom.Size = new System.Drawing.Size(70, 13);
-            this.lblResidCom.TabIndex = 27;
-            this.lblResidCom.Text = "Resid com:";
             // 
             // mskFoneAluno
             // 
@@ -738,6 +714,7 @@ namespace GuiWindowsForms
             this.rdbFem.Text = "Fem";
             this.rdbFem.UseVisualStyleBackColor = true;
             this.rdbFem.TextChanged += new System.EventHandler(this.rdbFem_TextChanged);
+            this.rdbFem.Click += new System.EventHandler(this.rdbFem_Click);
             // 
             // rdbMasc
             // 
@@ -751,6 +728,7 @@ namespace GuiWindowsForms
             this.rdbMasc.Text = "Masc";
             this.rdbMasc.UseVisualStyleBackColor = true;
             this.rdbMasc.TextChanged += new System.EventHandler(this.rdbMasc_TextChanged);
+            this.rdbMasc.Click += new System.EventHandler(this.rdbMasc_Click);
             // 
             // lblSexo
             // 
@@ -919,8 +897,6 @@ namespace GuiWindowsForms
         private System.Windows.Forms.ComboBox cmbNaturalidade;
         private System.Windows.Forms.MaskedTextBox mskFoneAluno;
         private System.Windows.Forms.Label lblFoneAluno;
-        private System.Windows.Forms.Label lblResidCom;
-        private System.Windows.Forms.ComboBox cmbResidCom;
         private System.Windows.Forms.MaskedTextBox mskFoneEmergencia;
         private System.Windows.Forms.Label lblFoneEmergencia;
         private System.Windows.Forms.Label lblEmail;
