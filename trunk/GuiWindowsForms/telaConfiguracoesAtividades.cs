@@ -15,7 +15,7 @@ using Negocios.ModuloAtividadeTurma.Constantes;
 
 namespace GuiWindowsForms
 {
-    public partial class txtNomeAtividade : Form
+    public partial class telaConfiguracoesAtividades : Form
     {
         Funcionario funcionario = null;
         Atividade atividade = null;
@@ -28,6 +28,7 @@ namespace GuiWindowsForms
 
         List<Atividade> listaAtividade = new List<Atividade>();
         List<AtividadeTurma> listaTurmaAtividade = new List<AtividadeTurma>();
+        List<classeAuxiliarAtividadeTurma> listaTurmaAtividadeGrid = null;
 
         IFuncionarioProcesso funcionarioControlador = null;
         IAtividadeProcesso atividadeControlador = null;
@@ -39,7 +40,7 @@ namespace GuiWindowsForms
          * Atributo para controle de exibição da tela
          * */
 
-        private static txtNomeAtividade telaconfiguracoesatividades;
+        private static telaConfiguracoesAtividades telaconfiguracoesatividades;
 
         private static bool IsShown = false;
         #endregion
@@ -51,11 +52,11 @@ namespace GuiWindowsForms
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
 
-        public static txtNomeAtividade getInstancia()
+        public static telaConfiguracoesAtividades getInstancia()
         {
             if (telaconfiguracoesatividades == null)
             {
-                telaconfiguracoesatividades = new txtNomeAtividade();
+                telaconfiguracoesatividades = new telaConfiguracoesAtividades();
             }
             return telaconfiguracoesatividades;
         }
@@ -66,7 +67,7 @@ namespace GuiWindowsForms
         /// Construtor da tela
         /// </summary>
 
-        public txtNomeAtividade()
+        public telaConfiguracoesAtividades()
         {
             InitializeComponent();
         }
@@ -155,7 +156,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
             Program.ultimaTela = 10;
-            txtNomeAtividade telaconfatv = txtNomeAtividade.getInstancia();
+            telaConfiguracoesAtividades telaconfatv = telaConfiguracoesAtividades.getInstancia();
             telaconfatv.Show();
         }
 
@@ -203,10 +204,7 @@ namespace GuiWindowsForms
             cmbFuncionario.DataSource = listaFuncionarioCmb;
             cmbFuncionario.DisplayMember = "Nome";
 
-            List<Atividade> listaAtividadeCmb = new List<Atividade>();
-            listaAtividadeCmb = atividadeControlador.Consultar();
-            cmbAtividadeTurma.DataSource = listaAtividadeCmb;
-            cmbAtividadeTurma.DisplayMember = "Nome";
+            carregarComboAtividade();
 
             carregaForm();
             carregaForm2();
@@ -312,6 +310,8 @@ namespace GuiWindowsForms
                     atividadeControlador.Confirmar();
                     linhaSelecionadaGrid = -1;
 
+                    carregarComboAtividade();
+
                     MessageBox.Show(AtividadeConstantes.ATIVIDADE_INCLUIDA, "Colégio Conhecer - Inserir Atividade");
                 }
                 else
@@ -372,6 +372,8 @@ namespace GuiWindowsForms
                             atividadeControlador.Alterar(atividade);
                             atividadeControlador.Confirmar();
                             linhaSelecionadaGrid = -1;
+
+                            carregarComboAtividade();
 
                             MessageBox.Show(AtividadeConstantes.ATIVIDADE_ALTERADA, "Colégio Conhecer - Alterar Atividade");
                         }
@@ -596,24 +598,24 @@ namespace GuiWindowsForms
                         return;
                     }
                     if (ckbDomingo.Checked == true)
-                        atividadeTurma.Domingo = 0;
+                        atividadeTurma.Domingo = 1;
                     if (ckbQuarta.Checked == true)
-                        atividadeTurma.Quarta = 0;
+                        atividadeTurma.Quarta = 1;
                     if (ckbQuinta.Checked == true)
-                        atividadeTurma.Quinta = 0;
+                        atividadeTurma.Quinta = 1;
                     if (ckbSabado.Checked == true)
-                        atividadeTurma.Sabado = 0;
+                        atividadeTurma.Sabado = 1;
                     if (ckbSegunda.Checked == true)
-                        atividadeTurma.Segunda = 0;
+                        atividadeTurma.Segunda = 1;
                     if (ckbSexta.Checked == true)
-                        atividadeTurma.Sexta = 0;
+                        atividadeTurma.Sexta = 1;
                     if (ckbTerca.Checked == true)
-                        atividadeTurma.Terca = 0;
+                        atividadeTurma.Terca = 1;
 
                     #endregion
 
-                    atividadeTurma.HoraInicio = dtpHorarioInicio.ToString();
-                    atividadeTurma.HoraFim = dtpHorarioFim.ToString();
+                    atividadeTurma.HoraInicio = dtpHorarioInicio.Value.ToString();
+                    atividadeTurma.HoraFim = dtpHorarioFim.Value.ToString();
 
                     atividadeTurma.Status = 0;
 
@@ -681,7 +683,6 @@ namespace GuiWindowsForms
             return testa;
         }
 
-
         public bool verificaSeJaInserido2(AtividadeTurma atividadeTurma)
         {
             atividadeTurmaControlador = AtividadeTurmaProcesso.Instance;
@@ -693,7 +694,7 @@ namespace GuiWindowsForms
 
             foreach (AtividadeTurma b in listaTurmaAuxiliar2)
             {
-                if ((b.AtividadeID == atividadeTurma.AtividadeID) && (b.FuncionarioID == atividadeTurma.FuncionarioID))
+                if ((b.AtividadeID == atividadeTurma.AtividadeID) && (b.FuncionarioID == atividadeTurma.FuncionarioID) && (b.Valor == atividadeTurma.Valor) && (b.Turma == atividadeTurma.Turma))
                 {
                     testa = true;
                 }
@@ -720,10 +721,31 @@ namespace GuiWindowsForms
             atividadeTurmaControlador = AtividadeTurmaProcesso.Instance;
 
             listaTurmaAtividade = atividadeTurmaControlador.Consultar();
+            listaTurmaAtividadeGrid = new List<classeAuxiliarAtividadeTurma>();
+
+            foreach (AtividadeTurma a in listaTurmaAtividade)
+            {
+                classeAuxiliarAtividadeTurma classeAtvTurma = new classeAuxiliarAtividadeTurma();
+
+                classeAtvTurma.AtividadeAuxTurma = a.Turma;
+                classeAtvTurma.FuncionarioAuxTurma = a.Funcionario.Nome;
+                classeAtvTurma.HoraInicioAuxTurma = a.HoraInicio;
+                classeAtvTurma.HoraFimAuxTurma = a.HoraFim;
+                classeAtvTurma.ValorAuxTurma = a.Valor.ToString();
+                classeAtvTurma.SegundaAuxTurma = Convert.ToBoolean(a.Segunda);
+                classeAtvTurma.TercaAuxTurma = Convert.ToBoolean(a.Terca);
+                classeAtvTurma.QuartaAuxTurma = Convert.ToBoolean(a.Quarta);
+                classeAtvTurma.QuintaAuxTurma = Convert.ToBoolean(a.Quinta);
+                classeAtvTurma.SextaAuxTurma = Convert.ToBoolean(a.Sexta);
+                classeAtvTurma.SabadoAuxTurma = Convert.ToBoolean(a.Sabado);
+                classeAtvTurma.DomingoAuxTurma = Convert.ToBoolean(a.Domingo);
+
+                listaTurmaAtividadeGrid.Add(classeAtvTurma);
+            }
 
             dataGridView2.AutoGenerateColumns = false;
             dataGridView2.DataSource = null;
-            dataGridView2.DataSource = listaTurmaAtividade;
+            dataGridView2.DataSource = listaTurmaAtividadeGrid;
         }
         #endregion
 
@@ -840,21 +862,63 @@ namespace GuiWindowsForms
                 txtValor.Text = listaTurmaAtividade[linhaSelecionadaGrid].Valor.ToString();
                 dtpHorarioInicio.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.ToString());
                 dtpHorarioFim.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.ToString());
-                
+
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Segunda == 0)
+                {
                     ckbSegunda.Checked = true;
+                }
+                else
+                {
+                    ckbSegunda.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Terca == 0)
+                {
                     ckbTerca.Checked = true;
+                }
+                else
+                {
+                    ckbTerca.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Quarta == 0)
+                {
                     ckbQuarta.Checked = true;
+                }
+                else
+                {
+                    ckbQuarta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Quinta == 0)
+                {
                     ckbQuinta.Checked = true;
+                }
+                else
+                {
+                    ckbQuinta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Sexta == 0)
+                {
                     ckbSexta.Checked = true;
+                }
+                else
+                {
+                    ckbSexta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Sabado == 0)
+                {
                     ckbSabado.Checked = true;
+                }
+                else
+                {
+                    ckbSabado.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Domingo == 0)
+                {
                     ckbDomingo.Checked = true;
+                }
+                else
+                {
+                    ckbDomingo.Checked = false;
+                }
 
             }
             else
@@ -878,19 +942,61 @@ namespace GuiWindowsForms
                 dtpHorarioFim.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.ToString());
 
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Segunda == 0)
+                {
                     ckbSegunda.Checked = true;
+                }
+                else
+                {
+                    ckbSegunda.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Terca == 0)
+                {
                     ckbTerca.Checked = true;
+                }
+                else
+                {
+                    ckbTerca.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Quarta == 0)
+                {
                     ckbQuarta.Checked = true;
+                }
+                else
+                {
+                    ckbQuarta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Quinta == 0)
+                {
                     ckbQuinta.Checked = true;
+                }
+                else
+                {
+                    ckbQuinta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Sexta == 0)
+                {
                     ckbSexta.Checked = true;
+                }
+                else
+                {
+                    ckbSexta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Sabado == 0)
+                {
                     ckbSabado.Checked = true;
+                }
+                else
+                {
+                    ckbSabado.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Domingo == 0)
+                {
                     ckbDomingo.Checked = true;
+                }
+                else
+                {
+                    ckbDomingo.Checked = false;
+                }
             }
             else
             {
@@ -913,19 +1019,61 @@ namespace GuiWindowsForms
                 dtpHorarioFim.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.ToString());
 
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Segunda == 0)
+                {
                     ckbSegunda.Checked = true;
+                }
+                else
+                {
+                    ckbSegunda.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Terca == 0)
+                {
                     ckbTerca.Checked = true;
+                }
+                else
+                {
+                    ckbTerca.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Quarta == 0)
+                {
                     ckbQuarta.Checked = true;
+                }
+                else
+                {
+                    ckbQuarta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Quinta == 0)
+                {
                     ckbQuinta.Checked = true;
+                }
+                else
+                {
+                    ckbQuinta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Sexta == 0)
+                {
                     ckbSexta.Checked = true;
+                }
+                else
+                {
+                    ckbSexta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Sabado == 0)
+                {
                     ckbSabado.Checked = true;
+                }
+                else
+                {
+                    ckbSabado.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Domingo == 0)
+                {
                     ckbDomingo.Checked = true;
+                }
+                else
+                {
+                    ckbDomingo.Checked = false;
+                }
             }
             else
             {
@@ -948,19 +1096,61 @@ namespace GuiWindowsForms
                 dtpHorarioFim.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.ToString());
 
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Segunda == 0)
+                {
                     ckbSegunda.Checked = true;
+                }
+                else
+                {
+                    ckbSegunda.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Terca == 0)
+                {
                     ckbTerca.Checked = true;
+                }
+                else
+                {
+                    ckbTerca.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Quarta == 0)
+                {
                     ckbQuarta.Checked = true;
+                }
+                else
+                {
+                    ckbQuarta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Quinta == 0)
+                {
                     ckbQuinta.Checked = true;
+                }
+                else
+                {
+                    ckbQuinta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Sexta == 0)
+                {
                     ckbSexta.Checked = true;
+                }
+                else
+                {
+                    ckbSexta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Sabado == 0)
+                {
                     ckbSabado.Checked = true;
+                }
+                else
+                {
+                    ckbSabado.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Domingo == 0)
+                {
                     ckbDomingo.Checked = true;
+                }
+                else
+                {
+                    ckbDomingo.Checked = false;
+                }
             }
             else
             {
@@ -981,21 +1171,63 @@ namespace GuiWindowsForms
                 txtValor.Text = listaTurmaAtividade[linhaSelecionadaGrid].Valor.ToString();
                 dtpHorarioInicio.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.ToString());
                 dtpHorarioFim.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.ToString());
-                
+
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Segunda == 0)
+                {
                     ckbSegunda.Checked = true;
+                }
+                else
+                {
+                    ckbSegunda.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Terca == 0)
+                {
                     ckbTerca.Checked = true;
+                }
+                else
+                {
+                    ckbTerca.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Quarta == 0)
+                {
                     ckbQuarta.Checked = true;
+                }
+                else
+                {
+                    ckbQuarta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Quinta == 0)
+                {
                     ckbQuinta.Checked = true;
+                }
+                else
+                {
+                    ckbQuinta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Sexta == 0)
+                {
                     ckbSexta.Checked = true;
+                }
+                else
+                {
+                    ckbSexta.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Sabado == 0)
+                {
                     ckbSabado.Checked = true;
+                }
+                else
+                {
+                    ckbSabado.Checked = false;
+                }
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Domingo == 0)
+                {
                     ckbDomingo.Checked = true;
+                }
+                else
+                {
+                    ckbDomingo.Checked = false;
+                }
             }
             else
             {
@@ -1114,5 +1346,112 @@ namespace GuiWindowsForms
 
         #endregion
 
+        public void carregarComboAtividade()
+        {
+            List<Atividade> listaAtividadeCmb = new List<Atividade>();
+            listaAtividadeCmb = atividadeControlador.Consultar();
+            cmbAtividadeTurma.DataSource = null;
+            cmbAtividadeTurma.DataSource = listaAtividadeCmb;
+            cmbAtividadeTurma.DisplayMember = "Nome";
+        }
+
+    }
+
+    public class classeAuxiliarAtividadeTurma
+    {
+        string atividadeAuxTurma;
+
+        public string AtividadeAuxTurma
+        {
+            get { return atividadeAuxTurma; }
+            set { atividadeAuxTurma = value; }
+        }
+        string funcionarioAuxTurma;
+
+        public string FuncionarioAuxTurma
+        {
+            get { return funcionarioAuxTurma; }
+            set { funcionarioAuxTurma = value; }
+        }
+        string turmaAuxTurma;
+
+        public string TurmaAuxTurma
+        {
+            get { return turmaAuxTurma; }
+            set { turmaAuxTurma = value; }
+        }
+        string valorAuxTurma;
+
+        public string ValorAuxTurma
+        {
+            get { return valorAuxTurma; }
+            set { valorAuxTurma = value; }
+        }
+        string horaFimAuxTurma;
+
+        public string HoraFimAuxTurma
+        {
+            get { return horaFimAuxTurma; }
+            set { horaFimAuxTurma = value; }
+        }
+        string horaInicioAuxTurma;
+
+        public string HoraInicioAuxTurma
+        {
+            get { return horaInicioAuxTurma; }
+            set { horaInicioAuxTurma = value; }
+        }
+        bool segundaAuxTurma;
+
+        public bool SegundaAuxTurma
+        {
+            get { return segundaAuxTurma; }
+            set { segundaAuxTurma = value; }
+        }
+        bool tercaAuxTurma;
+
+        public bool TercaAuxTurma
+        {
+            get { return tercaAuxTurma; }
+            set { tercaAuxTurma = value; }
+        }
+        bool quartaAuxTurma;
+
+        public bool QuartaAuxTurma
+        {
+            get { return quartaAuxTurma; }
+            set { quartaAuxTurma = value; }
+        }
+        bool quintaAuxTurma;
+
+        public bool QuintaAuxTurma
+        {
+            get { return quintaAuxTurma; }
+            set { quintaAuxTurma = value; }
+        }
+        bool sextaAuxTurma;
+
+        public bool SextaAuxTurma
+        {
+            get { return sextaAuxTurma; }
+            set { sextaAuxTurma = value; }
+        }
+        bool sabadoAuxTurma;
+
+        public bool SabadoAuxTurma
+        {
+            get { return sabadoAuxTurma; }
+            set { sabadoAuxTurma = value; }
+        }
+        bool domingoAuxTurma;
+
+        public bool DomingoAuxTurma
+        {
+            get { return domingoAuxTurma; }
+            set { domingoAuxTurma = value; }
+        }
+
     }
 }
+
+
