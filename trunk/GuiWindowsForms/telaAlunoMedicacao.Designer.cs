@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoMedicacao));
-            this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.gpbContato = new System.Windows.Forms.GroupBox();
+            this.txtContato = new System.Windows.Forms.TextBox();
             this.lblSituacaoEspecial = new System.Windows.Forms.Label();
+            this.lblSituacaoEspeci = new System.Windows.Forms.Label();
             this.txtSituacaoEspecial = new System.Windows.Forms.TextBox();
             this.lblDescricaoMedica = new System.Windows.Forms.Label();
             this.txtDescricaoMedica = new System.Windows.Forms.TextBox();
@@ -56,63 +58,84 @@
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
-            this.gpbDadosPessoais.SuspendLayout();
+            this.gpbContato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
-            // gpbDadosPessoais
+            // gpbContato
             // 
-            this.gpbDadosPessoais.BackColor = System.Drawing.Color.Transparent;
-            this.gpbDadosPessoais.Controls.Add(this.lblSituacaoEspecial);
-            this.gpbDadosPessoais.Controls.Add(this.txtSituacaoEspecial);
-            this.gpbDadosPessoais.Controls.Add(this.lblDescricaoMedica);
-            this.gpbDadosPessoais.Controls.Add(this.txtDescricaoMedica);
-            this.gpbDadosPessoais.Controls.Add(this.txtPlanoSaude);
-            this.gpbDadosPessoais.Controls.Add(this.lblPlanoSaude);
-            this.gpbDadosPessoais.Controls.Add(this.lblHospital);
-            this.gpbDadosPessoais.Controls.Add(this.txtHospital);
-            this.gpbDadosPessoais.Controls.Add(this.rdbNegativo);
-            this.gpbDadosPessoais.Controls.Add(this.rdbPositivo);
-            this.gpbDadosPessoais.Controls.Add(this.cmbGrupoSanguineo);
-            this.gpbDadosPessoais.Controls.Add(this.txtNomeMedico);
-            this.gpbDadosPessoais.Controls.Add(this.lblEmail);
-            this.gpbDadosPessoais.Controls.Add(this.mskFone);
-            this.gpbDadosPessoais.Controls.Add(this.lblFone);
-            this.gpbDadosPessoais.Controls.Add(this.lblFatorRh);
-            this.gpbDadosPessoais.Controls.Add(this.txtAlergico);
-            this.gpbDadosPessoais.Controls.Add(this.lblGrupoSanguineo);
-            this.gpbDadosPessoais.Controls.Add(this.lblAlergico);
-            this.gpbDadosPessoais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbDadosPessoais.Location = new System.Drawing.Point(39, 191);
-            this.gpbDadosPessoais.Name = "gpbDadosPessoais";
-            this.gpbDadosPessoais.Size = new System.Drawing.Size(820, 475);
-            this.gpbDadosPessoais.TabIndex = 0;
-            this.gpbDadosPessoais.TabStop = false;
-            this.gpbDadosPessoais.Text = "DESCRIÇÕES MÉDICAS DO ALUNO";
+            this.gpbContato.BackColor = System.Drawing.Color.Transparent;
+            this.gpbContato.Controls.Add(this.txtContato);
+            this.gpbContato.Controls.Add(this.lblSituacaoEspecial);
+            this.gpbContato.Controls.Add(this.lblSituacaoEspeci);
+            this.gpbContato.Controls.Add(this.txtSituacaoEspecial);
+            this.gpbContato.Controls.Add(this.lblDescricaoMedica);
+            this.gpbContato.Controls.Add(this.txtDescricaoMedica);
+            this.gpbContato.Controls.Add(this.txtPlanoSaude);
+            this.gpbContato.Controls.Add(this.lblPlanoSaude);
+            this.gpbContato.Controls.Add(this.lblHospital);
+            this.gpbContato.Controls.Add(this.txtHospital);
+            this.gpbContato.Controls.Add(this.rdbNegativo);
+            this.gpbContato.Controls.Add(this.rdbPositivo);
+            this.gpbContato.Controls.Add(this.cmbGrupoSanguineo);
+            this.gpbContato.Controls.Add(this.txtNomeMedico);
+            this.gpbContato.Controls.Add(this.lblEmail);
+            this.gpbContato.Controls.Add(this.mskFone);
+            this.gpbContato.Controls.Add(this.lblFone);
+            this.gpbContato.Controls.Add(this.lblFatorRh);
+            this.gpbContato.Controls.Add(this.txtAlergico);
+            this.gpbContato.Controls.Add(this.lblGrupoSanguineo);
+            this.gpbContato.Controls.Add(this.lblAlergico);
+            this.gpbContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbContato.Location = new System.Drawing.Point(39, 191);
+            this.gpbContato.Name = "gpbContato";
+            this.gpbContato.Size = new System.Drawing.Size(820, 475);
+            this.gpbContato.TabIndex = 0;
+            this.gpbContato.TabStop = false;
+            this.gpbContato.Text = "DESCRIÇÕES MÉDICAS DO ALUNO";
+            // 
+            // txtContato
+            // 
+            this.txtContato.Location = new System.Drawing.Point(51, 412);
+            this.txtContato.MaxLength = 300;
+            this.txtContato.Multiline = true;
+            this.txtContato.Name = "txtContato";
+            this.txtContato.Size = new System.Drawing.Size(716, 56);
+            this.txtContato.TabIndex = 48;
             // 
             // lblSituacaoEspecial
             // 
             this.lblSituacaoEspecial.AutoSize = true;
-            this.lblSituacaoEspecial.Location = new System.Drawing.Point(46, 363);
+            this.lblSituacaoEspecial.Location = new System.Drawing.Point(48, 306);
             this.lblSituacaoEspecial.Name = "lblSituacaoEspecial";
             this.lblSituacaoEspecial.Size = new System.Drawing.Size(113, 13);
-            this.lblSituacaoEspecial.TabIndex = 45;
+            this.lblSituacaoEspecial.TabIndex = 47;
             this.lblSituacaoEspecial.Text = "Situação Especial:";
+            // 
+            // lblSituacaoEspeci
+            // 
+            this.lblSituacaoEspeci.AutoSize = true;
+            this.lblSituacaoEspeci.Location = new System.Drawing.Point(46, 396);
+            this.lblSituacaoEspeci.Name = "lblSituacaoEspeci";
+            this.lblSituacaoEspeci.Size = new System.Drawing.Size(580, 13);
+            this.lblSituacaoEspeci.TabIndex = 45;
+            this.lblSituacaoEspeci.Text = "Na impossibilidade de contactar pais e/ou responsãveis, falar com ( especificar g" +
+                "rau de parentesco):";
             // 
             // txtSituacaoEspecial
             // 
-            this.txtSituacaoEspecial.Location = new System.Drawing.Point(49, 379);
+            this.txtSituacaoEspecial.Location = new System.Drawing.Point(51, 322);
             this.txtSituacaoEspecial.MaxLength = 300;
             this.txtSituacaoEspecial.Multiline = true;
             this.txtSituacaoEspecial.Name = "txtSituacaoEspecial";
-            this.txtSituacaoEspecial.Size = new System.Drawing.Size(716, 76);
+            this.txtSituacaoEspecial.Size = new System.Drawing.Size(716, 56);
             this.txtSituacaoEspecial.TabIndex = 9;
             this.txtSituacaoEspecial.TextChanged += new System.EventHandler(this.txtSituacaoEspecial_TextChanged);
             // 
             // lblDescricaoMedica
             // 
             this.lblDescricaoMedica.AutoSize = true;
-            this.lblDescricaoMedica.Location = new System.Drawing.Point(46, 255);
+            this.lblDescricaoMedica.Location = new System.Drawing.Point(46, 221);
             this.lblDescricaoMedica.Name = "lblDescricaoMedica";
             this.lblDescricaoMedica.Size = new System.Drawing.Size(436, 13);
             this.lblDescricaoMedica.TabIndex = 43;
@@ -120,17 +143,17 @@
             // 
             // txtDescricaoMedica
             // 
-            this.txtDescricaoMedica.Location = new System.Drawing.Point(49, 271);
+            this.txtDescricaoMedica.Location = new System.Drawing.Point(49, 237);
             this.txtDescricaoMedica.MaxLength = 300;
             this.txtDescricaoMedica.Multiline = true;
             this.txtDescricaoMedica.Name = "txtDescricaoMedica";
-            this.txtDescricaoMedica.Size = new System.Drawing.Size(716, 76);
+            this.txtDescricaoMedica.Size = new System.Drawing.Size(716, 56);
             this.txtDescricaoMedica.TabIndex = 8;
             this.txtDescricaoMedica.TextChanged += new System.EventHandler(this.txtDescricaoMedica_TextChanged);
             // 
             // txtPlanoSaude
             // 
-            this.txtPlanoSaude.Location = new System.Drawing.Point(564, 205);
+            this.txtPlanoSaude.Location = new System.Drawing.Point(566, 180);
             this.txtPlanoSaude.MaxLength = 30;
             this.txtPlanoSaude.Name = "txtPlanoSaude";
             this.txtPlanoSaude.Size = new System.Drawing.Size(201, 20);
@@ -140,7 +163,7 @@
             // lblPlanoSaude
             // 
             this.lblPlanoSaude.AutoSize = true;
-            this.lblPlanoSaude.Location = new System.Drawing.Point(446, 205);
+            this.lblPlanoSaude.Location = new System.Drawing.Point(448, 180);
             this.lblPlanoSaude.Name = "lblPlanoSaude";
             this.lblPlanoSaude.Size = new System.Drawing.Size(101, 13);
             this.lblPlanoSaude.TabIndex = 40;
@@ -149,7 +172,7 @@
             // lblHospital
             // 
             this.lblHospital.AutoSize = true;
-            this.lblHospital.Location = new System.Drawing.Point(46, 208);
+            this.lblHospital.Location = new System.Drawing.Point(48, 183);
             this.lblHospital.Name = "lblHospital";
             this.lblHospital.Size = new System.Drawing.Size(57, 13);
             this.lblHospital.TabIndex = 39;
@@ -157,7 +180,7 @@
             // 
             // txtHospital
             // 
-            this.txtHospital.Location = new System.Drawing.Point(163, 205);
+            this.txtHospital.Location = new System.Drawing.Point(165, 180);
             this.txtHospital.MaxLength = 30;
             this.txtHospital.Name = "txtHospital";
             this.txtHospital.Size = new System.Drawing.Size(201, 20);
@@ -168,7 +191,7 @@
             // 
             this.rdbNegativo.AutoSize = true;
             this.rdbNegativo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbNegativo.Location = new System.Drawing.Point(414, 122);
+            this.rdbNegativo.Location = new System.Drawing.Point(416, 103);
             this.rdbNegativo.Name = "rdbNegativo";
             this.rdbNegativo.Size = new System.Drawing.Size(76, 17);
             this.rdbNegativo.TabIndex = 3;
@@ -181,7 +204,7 @@
             // 
             this.rdbPositivo.AutoSize = true;
             this.rdbPositivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbPositivo.Location = new System.Drawing.Point(338, 122);
+            this.rdbPositivo.Location = new System.Drawing.Point(340, 103);
             this.rdbPositivo.Name = "rdbPositivo";
             this.rdbPositivo.Size = new System.Drawing.Size(70, 17);
             this.rdbPositivo.TabIndex = 2;
@@ -195,7 +218,7 @@
             this.cmbGrupoSanguineo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbGrupoSanguineo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGrupoSanguineo.FormattingEnabled = true;
-            this.cmbGrupoSanguineo.Location = new System.Drawing.Point(163, 119);
+            this.cmbGrupoSanguineo.Location = new System.Drawing.Point(165, 100);
             this.cmbGrupoSanguineo.Name = "cmbGrupoSanguineo";
             this.cmbGrupoSanguineo.Size = new System.Drawing.Size(72, 21);
             this.cmbGrupoSanguineo.TabIndex = 1;
@@ -203,7 +226,7 @@
             // 
             // txtNomeMedico
             // 
-            this.txtNomeMedico.Location = new System.Drawing.Point(163, 165);
+            this.txtNomeMedico.Location = new System.Drawing.Point(165, 140);
             this.txtNomeMedico.MaxLength = 50;
             this.txtNomeMedico.Name = "txtNomeMedico";
             this.txtNomeMedico.Size = new System.Drawing.Size(366, 20);
@@ -213,7 +236,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(46, 165);
+            this.lblEmail.Location = new System.Drawing.Point(48, 140);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(106, 13);
             this.lblEmail.TabIndex = 33;
@@ -221,7 +244,7 @@
             // 
             // mskFone
             // 
-            this.mskFone.Location = new System.Drawing.Point(654, 165);
+            this.mskFone.Location = new System.Drawing.Point(656, 140);
             this.mskFone.Mask = "(99) 0000-0000";
             this.mskFone.Name = "mskFone";
             this.mskFone.Size = new System.Drawing.Size(111, 20);
@@ -231,7 +254,7 @@
             // lblFone
             // 
             this.lblFone.AutoSize = true;
-            this.lblFone.Location = new System.Drawing.Point(600, 165);
+            this.lblFone.Location = new System.Drawing.Point(602, 140);
             this.lblFone.Name = "lblFone";
             this.lblFone.Size = new System.Drawing.Size(39, 13);
             this.lblFone.TabIndex = 25;
@@ -240,7 +263,7 @@
             // lblFatorRh
             // 
             this.lblFatorRh.AutoSize = true;
-            this.lblFatorRh.Location = new System.Drawing.Point(272, 122);
+            this.lblFatorRh.Location = new System.Drawing.Point(274, 103);
             this.lblFatorRh.Name = "lblFatorRh";
             this.lblFatorRh.Size = new System.Drawing.Size(60, 13);
             this.lblFatorRh.TabIndex = 7;
@@ -248,7 +271,7 @@
             // 
             // txtAlergico
             // 
-            this.txtAlergico.Location = new System.Drawing.Point(49, 48);
+            this.txtAlergico.Location = new System.Drawing.Point(51, 38);
             this.txtAlergico.MaxLength = 50;
             this.txtAlergico.Multiline = true;
             this.txtAlergico.Name = "txtAlergico";
@@ -259,7 +282,7 @@
             // lblGrupoSanguineo
             // 
             this.lblGrupoSanguineo.AutoSize = true;
-            this.lblGrupoSanguineo.Location = new System.Drawing.Point(46, 122);
+            this.lblGrupoSanguineo.Location = new System.Drawing.Point(48, 103);
             this.lblGrupoSanguineo.Name = "lblGrupoSanguineo";
             this.lblGrupoSanguineo.Size = new System.Drawing.Size(111, 13);
             this.lblGrupoSanguineo.TabIndex = 1;
@@ -268,7 +291,7 @@
             // lblAlergico
             // 
             this.lblAlergico.AutoSize = true;
-            this.lblAlergico.Location = new System.Drawing.Point(46, 32);
+            this.lblAlergico.Location = new System.Drawing.Point(48, 22);
             this.lblAlergico.Name = "lblAlergico";
             this.lblAlergico.Size = new System.Drawing.Size(57, 13);
             this.lblAlergico.TabIndex = 0;
@@ -347,7 +370,7 @@
             this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.lblHelloUsuario);
-            this.Controls.Add(this.gpbDadosPessoais);
+            this.Controls.Add(this.gpbContato);
             this.Controls.Add(this.uMenuLateral1);
             this.Controls.Add(this.uMenuImagem1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -359,8 +382,8 @@
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaAlunoMedicacao_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMedicacao_FormClosing);
-            this.gpbDadosPessoais.ResumeLayout(false);
-            this.gpbDadosPessoais.PerformLayout();
+            this.gpbContato.ResumeLayout(false);
+            this.gpbContato.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -369,7 +392,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox gpbDadosPessoais;
+        private System.Windows.Forms.GroupBox gpbContato;
         private System.Windows.Forms.TextBox txtNomeMedico;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.MaskedTextBox mskFone;
@@ -389,11 +412,13 @@
         private System.Windows.Forms.Label lblPlanoSaude;
         private System.Windows.Forms.TextBox txtDescricaoMedica;
         private System.Windows.Forms.Label lblDescricaoMedica;
-        private System.Windows.Forms.Label lblSituacaoEspecial;
+        private System.Windows.Forms.Label lblSituacaoEspeci;
         private System.Windows.Forms.TextBox txtSituacaoEspecial;
         private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
         private ucMenuInferior ucMenuInferior1;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
         private uMenuImagem uMenuImagem1;
+        private System.Windows.Forms.Label lblSituacaoEspecial;
+        private System.Windows.Forms.TextBox txtContato;
     }
 }

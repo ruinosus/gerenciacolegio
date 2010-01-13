@@ -53,3 +53,8 @@ C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWebSite\bin\GuiWebSite.pdb
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWebSite\obj\Debug\GuiWebSite.dll
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWebSite\obj\Debug\GuiWebSite.pdb
+C:\Users\Dudu\Desktop\ColegConhecer\GuiWebSite\bin\GuiWebSite.dll
+C:\Users\Dudu\Desktop\ColegConhecer\GuiWebSite\bin\GuiWebSite.pdb
+C:\Users\Dudu\Desktop\ColegConhecer\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dudu\Desktop\ColegConhecer\GuiWebSite\obj\Debug\GuiWebSite.dll
+C:\Users\Dudu\Desktop\ColegConhecer\GuiWebSite\obj\Debug\GuiWebSite.pdb

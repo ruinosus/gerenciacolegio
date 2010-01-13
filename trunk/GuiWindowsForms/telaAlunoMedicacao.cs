@@ -197,12 +197,12 @@ namespace GuiWindowsForms
             {
                 #region VALIDA - NOME
 
-                if (String.IsNullOrEmpty(txtAlergico.Text))
-                {
-                    errorProviderTela.SetError(txtAlergico, "Informe a alergia");
-                    txtAlergico.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtAlergico.Text))
+                //{
+                //    errorProviderTela.SetError(txtAlergico, "Informe a alergia");
+                //    txtAlergico.Clear();
+                //    return;
+                //}
                 telaAluno.aluno.Alergico = txtAlergico.Text;
 
 
@@ -228,71 +228,71 @@ namespace GuiWindowsForms
 
                 #region VALIDA - NOME
 
-                if (String.IsNullOrEmpty(txtNomeMedico.Text))
-                {
-                    errorProviderTela.SetError(txtNomeMedico, "Informe o nome do médico");
-                    txtNomeMedico.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtNomeMedico.Text))
+                //{
+                //    errorProviderTela.SetError(txtNomeMedico, "Informe o nome do médico");
+                //    txtNomeMedico.Clear();
+                //    return;
+                //}
                 telaAluno.aluno.NomeMedico = txtNomeMedico.Text;
 
                 #endregion
 
                 #region VALIDA - FONE 
 
-                if (mskFone.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskFone, "Informe o fone");
-                    return;
-                }
+                //if (mskFone.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskFone, "Informe o fone");
+                //    return;
+                //}
                 telaAluno.aluno.FoneMedico = mskFone.Text;
 
                 #endregion
 
                 #region VALIDA - HOSPITAL
 
-                if (String.IsNullOrEmpty(txtHospital.Text))
-                {
-                    errorProviderTela.SetError(txtHospital, "Informe o hospital");
-                    txtHospital.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtHospital.Text))
+                //{
+                //    errorProviderTela.SetError(txtHospital, "Informe o hospital");
+                //    txtHospital.Clear();
+                //    return;
+                //}
                 telaAluno.aluno.Hospital = txtHospital.Text;
 
                 #endregion
 
                 #region VALIDA - PLANO DE SAÚDE
 
-                if (String.IsNullOrEmpty(txtPlanoSaude.Text))
-                {
-                    errorProviderTela.SetError(txtPlanoSaude, "Informe o plano de saúde");
-                    txtPlanoSaude.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtPlanoSaude.Text))
+                //{
+                //    errorProviderTela.SetError(txtPlanoSaude, "Informe o plano de saúde");
+                //    txtPlanoSaude.Clear();
+                //    return;
+                //}
                 telaAluno.aluno.PlanoSaude = txtPlanoSaude.Text;
 
                 #endregion
 
                 #region VALIDA - DESCRIÇÃO MÉDICA
 
-                if (String.IsNullOrEmpty(txtDescricaoMedica.Text))
-                {
-                    errorProviderTela.SetError(txtDescricaoMedica, "Informe a descrição médica");
-                    txtDescricaoMedica.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtDescricaoMedica.Text))
+                //{
+                //    errorProviderTela.SetError(txtDescricaoMedica, "Informe a descrição médica");
+                //    txtDescricaoMedica.Clear();
+                //    return;
+                //}
                 telaAluno.aluno.DescricaoMedica = txtDescricaoMedica.Text;
 
                 #endregion
 
                 #region VALIDA - SITUAÇÃO ESPECIAL
 
-                if (String.IsNullOrEmpty(txtSituacaoEspecial.Text))
-                {
-                    errorProviderTela.SetError(txtSituacaoEspecial, "Informe a situação especial");
-                    txtSituacaoEspecial.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtSituacaoEspecial.Text))
+                //{
+                //    errorProviderTela.SetError(txtSituacaoEspecial, "Informe a situação especial");
+                //    txtSituacaoEspecial.Clear();
+                //    return;
+                //}
                 telaAluno.aluno.SituacaoEspecial = txtSituacaoEspecial.Text;
 
                 #endregion
