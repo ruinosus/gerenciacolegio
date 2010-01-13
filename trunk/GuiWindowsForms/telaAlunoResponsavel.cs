@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloResponsavel.Processos;
+using Negocios.ModuloResponsavel.Constantes;
 
 namespace GuiWindowsForms
 {
@@ -680,6 +681,7 @@ namespace GuiWindowsForms
                 responsavelControlador.Incluir(responsavel);
                 responsavelControlador.Confirmar();
 
+                MessageBox.Show(ResponsavelConstantes.RESPONSAVEL_INCLUIDO, "Colégio Conhecer");
 
             }
             catch (Exception ex)

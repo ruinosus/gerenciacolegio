@@ -291,12 +291,12 @@ namespace GuiWindowsForms
 
                 #region VALIDA - DESCRIÇÃO
 
-                if (String.IsNullOrEmpty(txtDescricao.Text))
-                {
-                    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
-                    txtDescricao.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtDescricao.Text))
+                //{
+                //    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                //    txtDescricao.Clear();
+                //    return;
+                //}
                 atividade.Descricao = txtDescricao.Text;
 
                 #endregion
@@ -355,12 +355,12 @@ namespace GuiWindowsForms
 
                         #region VALIDA - DESCRIÇÃO
 
-                        if (String.IsNullOrEmpty(txtDescricao.Text))
-                        {
-                            errorProviderTela.SetError(txtDescricao, "Informe a descrição");
-                            txtDescricao.Clear();
-                            return;
-                        }
+                        //if (String.IsNullOrEmpty(txtDescricao.Text))
+                        //{
+                        //    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                        //    txtDescricao.Clear();
+                        //    return;
+                        //}
                         atividade.Descricao = txtDescricao.Text;
 
                         #endregion
@@ -544,11 +544,11 @@ namespace GuiWindowsForms
                 {
                     #region VALIDA - FUNCIONARIO
 
-                    if (String.IsNullOrEmpty(cmbFuncionario.Text))
-                    {
-                        errorProviderTela.SetError(cmbFuncionario, "Informe o funcionário da atividade");
-                        return;
-                    }
+                    //if (String.IsNullOrEmpty(cmbFuncionario.Text))
+                    //{
+                    //    errorProviderTela.SetError(cmbFuncionario, "Informe o funcionário da atividade");
+                    //    return;
+                    //}
                     atividadeTurma.FuncionarioID = ((Funcionario)cmbFuncionario.SelectedItem).ID;
 
 
@@ -568,12 +568,12 @@ namespace GuiWindowsForms
 
                     #region VALIDA - TURMA
 
-                    if (String.IsNullOrEmpty(txtTurma.Text))
-                    {
-                        errorProviderTela.SetError(txtTurma, "Informe a turma");
-                        txtTurma.Clear();
-                        return;
-                    }
+                    //if (String.IsNullOrEmpty(txtTurma.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtTurma, "Informe a turma");
+                    //    txtTurma.Clear();
+                    //    return;
+                    //}
                     atividadeTurma.Turma = txtTurma.Text;
 
                     #endregion
@@ -1346,6 +1346,7 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region CARREGAR COMBO ATIVIDADE
         public void carregarComboAtividade()
         {
             List<Atividade> listaAtividadeCmb = new List<Atividade>();
@@ -1354,9 +1355,11 @@ namespace GuiWindowsForms
             cmbAtividadeTurma.DataSource = listaAtividadeCmb;
             cmbAtividadeTurma.DisplayMember = "Nome";
         }
+        #endregion
 
     }
 
+    #region CLASSE AUXILIAR
     public class classeAuxiliarAtividadeTurma
     {
         string atividadeAuxTurma;
@@ -1450,7 +1453,7 @@ namespace GuiWindowsForms
             get { return domingoAuxTurma; }
             set { domingoAuxTurma = value; }
         }
-
+    #endregion
     }
 }
 

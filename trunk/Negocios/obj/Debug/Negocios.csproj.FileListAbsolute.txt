@@ -80,3 +80,10 @@ C:\Users\Dudu\Desktop\Coleg Conhecer\Negocios\obj\Debug\Negocios.dll
 C:\Users\Dudu\Desktop\Coleg Conhecer\Negocios\obj\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\Gerencia Colegio\Negocios\bin\Debug\DbLinq.dll
 C:\Users\Dudu\Desktop\Gerencia Colegio\Negocios\bin\Debug\DbLinq.MySql.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\Negocios\bin\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\Negocios\bin\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\Negocios\bin\Debug\DbLinq.MySql.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\Negocios\bin\Debug\DbLinq.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\Negocios\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\Negocios\obj\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\Negocios\obj\Debug\Negocios.pdb

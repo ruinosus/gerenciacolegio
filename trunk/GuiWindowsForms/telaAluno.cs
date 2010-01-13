@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Negocios.ModuloAluno;
 using Negocios.ModuloAluno.Processos;
 using Negocios.ModuloBasico.VOs;
+using Negocios.ModuloAluno.Constantes;
 
 namespace GuiWindowsForms
 {
@@ -679,10 +680,14 @@ namespace GuiWindowsForms
                 {
                     alunoControlador.Incluir(aluno);
                     alunoControlador.Confirmar();
+
+                    MessageBox.Show(AlunoConstantes.ALUNO_INCLUIDO, "Colégio Conhecer - Cadastrar Aluno");
                 }
                 else
                 {
                     alunoControlador.Alterar(aluno);
+
+                    MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer - Alterar Aluno");
                 }
 
             }
@@ -749,6 +754,7 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region LIMPAR TELA
         /// <summary>
         /// Método para limpar a tela.
         /// </summary>
@@ -772,7 +778,9 @@ namespace GuiWindowsForms
             rdbFem.Checked = false;
             rdbMasc.Checked = false;
         }
+        #endregion
 
+        #region CARREGAR ALUNO NA TELA
         /// <summary>
         /// Método para carregar um aluno na tela.
         /// </summary>
@@ -799,8 +807,9 @@ namespace GuiWindowsForms
             else
             {
                 rdbFem.Select();
-            }     
+            }
         }
+        #endregion
 
         #region LIMPAR ERRO PROVIDER
         private void txtNome_TextChanged(object sender, EventArgs e)
@@ -905,6 +914,7 @@ namespace GuiWindowsForms
             }
         }
 
+        #region SELECIONA CIDADE
         private void cmbUf_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cmbUf.Text == "") { txtCidade.Text = ""; }
@@ -936,10 +946,10 @@ namespace GuiWindowsForms
             if (cmbUf.Text == "SP") { txtCidade.Text = "SÃO PAULO"; }
             if (cmbUf.Text == "TO") { txtCidade.Text = "PALMAS"; }
         }
+        #endregion
 
 
-        
-        
+
 
 
 

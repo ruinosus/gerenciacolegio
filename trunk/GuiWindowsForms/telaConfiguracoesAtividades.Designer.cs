@@ -36,8 +36,6 @@
             this.tbcAtividade = new System.Windows.Forms.TabControl();
             this.pagCadastrarAtividade = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdicionarAtividade = new System.Windows.Forms.Button();
             this.btnExcluirAtividade = new System.Windows.Forms.Button();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
@@ -52,6 +50,19 @@
             this.btnAdicionarTurma = new System.Windows.Forms.Button();
             this.btnExcluirTurma = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.AtividadeAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionarioAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraInicioAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraFimAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TurmaAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SegundaAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.TercaAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.QuartaAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.QuintaAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SextaAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SabadoAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DomingoAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lblNomeFuncionario = new System.Windows.Forms.Label();
             this.ckbSabado = new System.Windows.Forms.CheckBox();
             this.cmbFuncionario = new System.Windows.Forms.ComboBox();
@@ -82,19 +93,8 @@
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.AtividadeAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionarioAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoraInicioAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoraFimAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TurmaAuxTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SegundaAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.TercaAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.QuartaAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.QuintaAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.SextaAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.SabadoAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DomingoAuxTurma = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.tbcAtividade.SuspendLayout();
             this.pagCadastrarAtividade.SuspendLayout();
@@ -177,6 +177,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.Descricao});
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.Location = new System.Drawing.Point(22, 289);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -190,22 +191,6 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 200;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 250;
             // 
             // btnAdicionarAtividade
             // 
@@ -409,6 +394,111 @@
             this.dataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // AtividadeAuxTurma
+            // 
+            this.AtividadeAuxTurma.DataPropertyName = "AtividadeAuxTurma";
+            this.AtividadeAuxTurma.HeaderText = "Atividade";
+            this.AtividadeAuxTurma.Name = "AtividadeAuxTurma";
+            this.AtividadeAuxTurma.ReadOnly = true;
+            // 
+            // FuncionarioAuxTurma
+            // 
+            this.FuncionarioAuxTurma.DataPropertyName = "FuncionarioAuxTurma";
+            this.FuncionarioAuxTurma.HeaderText = "Funcionario";
+            this.FuncionarioAuxTurma.Name = "FuncionarioAuxTurma";
+            this.FuncionarioAuxTurma.ReadOnly = true;
+            // 
+            // HoraInicioAuxTurma
+            // 
+            this.HoraInicioAuxTurma.DataPropertyName = "HoraInicioAuxTurma";
+            this.HoraInicioAuxTurma.HeaderText = "Hora Inicio";
+            this.HoraInicioAuxTurma.Name = "HoraInicioAuxTurma";
+            this.HoraInicioAuxTurma.ReadOnly = true;
+            // 
+            // HoraFimAuxTurma
+            // 
+            this.HoraFimAuxTurma.DataPropertyName = "HoraFimAuxTurma";
+            this.HoraFimAuxTurma.HeaderText = "Hora Fim";
+            this.HoraFimAuxTurma.Name = "HoraFimAuxTurma";
+            this.HoraFimAuxTurma.ReadOnly = true;
+            // 
+            // ValorAuxTurma
+            // 
+            this.ValorAuxTurma.DataPropertyName = "ValorAuxTurma";
+            this.ValorAuxTurma.HeaderText = "Valor";
+            this.ValorAuxTurma.Name = "ValorAuxTurma";
+            this.ValorAuxTurma.ReadOnly = true;
+            // 
+            // TurmaAuxTurma
+            // 
+            this.TurmaAuxTurma.DataPropertyName = "TurmaAuxTurma";
+            this.TurmaAuxTurma.HeaderText = "Turma";
+            this.TurmaAuxTurma.Name = "TurmaAuxTurma";
+            this.TurmaAuxTurma.ReadOnly = true;
+            // 
+            // SegundaAuxTurma
+            // 
+            this.SegundaAuxTurma.DataPropertyName = "SegundaAuxTurma";
+            this.SegundaAuxTurma.HeaderText = "Seg";
+            this.SegundaAuxTurma.Name = "SegundaAuxTurma";
+            this.SegundaAuxTurma.ReadOnly = true;
+            this.SegundaAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SegundaAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // TercaAuxTurma
+            // 
+            this.TercaAuxTurma.DataPropertyName = "TercaAuxTurma";
+            this.TercaAuxTurma.HeaderText = "Ter";
+            this.TercaAuxTurma.Name = "TercaAuxTurma";
+            this.TercaAuxTurma.ReadOnly = true;
+            this.TercaAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TercaAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // QuartaAuxTurma
+            // 
+            this.QuartaAuxTurma.DataPropertyName = "QuartaAuxTurma";
+            this.QuartaAuxTurma.HeaderText = "Qua";
+            this.QuartaAuxTurma.Name = "QuartaAuxTurma";
+            this.QuartaAuxTurma.ReadOnly = true;
+            this.QuartaAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QuartaAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // QuintaAuxTurma
+            // 
+            this.QuintaAuxTurma.DataPropertyName = "QuintaAuxTurma";
+            this.QuintaAuxTurma.HeaderText = "Qui";
+            this.QuintaAuxTurma.Name = "QuintaAuxTurma";
+            this.QuintaAuxTurma.ReadOnly = true;
+            this.QuintaAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.QuintaAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // SextaAuxTurma
+            // 
+            this.SextaAuxTurma.DataPropertyName = "SextaAuxTurma";
+            this.SextaAuxTurma.HeaderText = "Sex";
+            this.SextaAuxTurma.Name = "SextaAuxTurma";
+            this.SextaAuxTurma.ReadOnly = true;
+            this.SextaAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SextaAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // SabadoAuxTurma
+            // 
+            this.SabadoAuxTurma.DataPropertyName = "SabadoAuxTurma";
+            this.SabadoAuxTurma.HeaderText = "Sab";
+            this.SabadoAuxTurma.Name = "SabadoAuxTurma";
+            this.SabadoAuxTurma.ReadOnly = true;
+            this.SabadoAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SabadoAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // DomingoAuxTurma
+            // 
+            this.DomingoAuxTurma.DataPropertyName = "DomingoAuxTurma";
+            this.DomingoAuxTurma.HeaderText = "Dom";
+            this.DomingoAuxTurma.Name = "DomingoAuxTurma";
+            this.DomingoAuxTurma.ReadOnly = true;
+            this.DomingoAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DomingoAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // lblNomeFuncionario
             // 
@@ -719,110 +809,23 @@
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
-            // AtividadeAuxTurma
+            // Nome
             // 
-            this.AtividadeAuxTurma.DataPropertyName = "AtividadeAuxTurma";
-            this.AtividadeAuxTurma.HeaderText = "Atividade";
-            this.AtividadeAuxTurma.Name = "AtividadeAuxTurma";
-            this.AtividadeAuxTurma.ReadOnly = true;
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MaxInputLength = 30;
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 230;
             // 
-            // FuncionarioAuxTurma
+            // Descricao
             // 
-            this.FuncionarioAuxTurma.DataPropertyName = "FuncionarioAuxTurma";
-            this.FuncionarioAuxTurma.HeaderText = "Funcionario";
-            this.FuncionarioAuxTurma.Name = "FuncionarioAuxTurma";
-            this.FuncionarioAuxTurma.ReadOnly = true;
-            // 
-            // HoraInicioAuxTurma
-            // 
-            this.HoraInicioAuxTurma.DataPropertyName = "HoraInicioAuxTurma";
-            this.HoraInicioAuxTurma.HeaderText = "Hora Inicio";
-            this.HoraInicioAuxTurma.Name = "HoraInicioAuxTurma";
-            this.HoraInicioAuxTurma.ReadOnly = true;
-            // 
-            // HoraFimAuxTurma
-            // 
-            this.HoraFimAuxTurma.DataPropertyName = "HoraFimAuxTurma";
-            this.HoraFimAuxTurma.HeaderText = "Hora Fim";
-            this.HoraFimAuxTurma.Name = "HoraFimAuxTurma";
-            this.HoraFimAuxTurma.ReadOnly = true;
-            // 
-            // ValorAuxTurma
-            // 
-            this.ValorAuxTurma.DataPropertyName = "ValorAuxTurma";
-            this.ValorAuxTurma.HeaderText = "Valor";
-            this.ValorAuxTurma.Name = "ValorAuxTurma";
-            this.ValorAuxTurma.ReadOnly = true;
-            // 
-            // TurmaAuxTurma
-            // 
-            this.TurmaAuxTurma.DataPropertyName = "TurmaAuxTurma";
-            this.TurmaAuxTurma.HeaderText = "Turma";
-            this.TurmaAuxTurma.Name = "TurmaAuxTurma";
-            this.TurmaAuxTurma.ReadOnly = true;
-            // 
-            // SegundaAuxTurma
-            // 
-            this.SegundaAuxTurma.DataPropertyName = "SegundaAuxTurma";
-            this.SegundaAuxTurma.HeaderText = "Seg";
-            this.SegundaAuxTurma.Name = "SegundaAuxTurma";
-            this.SegundaAuxTurma.ReadOnly = true;
-            this.SegundaAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SegundaAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // TercaAuxTurma
-            // 
-            this.TercaAuxTurma.DataPropertyName = "TercaAuxTurma";
-            this.TercaAuxTurma.HeaderText = "Ter";
-            this.TercaAuxTurma.Name = "TercaAuxTurma";
-            this.TercaAuxTurma.ReadOnly = true;
-            this.TercaAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TercaAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // QuartaAuxTurma
-            // 
-            this.QuartaAuxTurma.DataPropertyName = "QuartaAuxTurma";
-            this.QuartaAuxTurma.HeaderText = "Qua";
-            this.QuartaAuxTurma.Name = "QuartaAuxTurma";
-            this.QuartaAuxTurma.ReadOnly = true;
-            this.QuartaAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.QuartaAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // QuintaAuxTurma
-            // 
-            this.QuintaAuxTurma.DataPropertyName = "QuintaAuxTurma";
-            this.QuintaAuxTurma.HeaderText = "Qui";
-            this.QuintaAuxTurma.Name = "QuintaAuxTurma";
-            this.QuintaAuxTurma.ReadOnly = true;
-            this.QuintaAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.QuintaAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // SextaAuxTurma
-            // 
-            this.SextaAuxTurma.DataPropertyName = "SextaAuxTurma";
-            this.SextaAuxTurma.HeaderText = "Sex";
-            this.SextaAuxTurma.Name = "SextaAuxTurma";
-            this.SextaAuxTurma.ReadOnly = true;
-            this.SextaAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SextaAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // SabadoAuxTurma
-            // 
-            this.SabadoAuxTurma.DataPropertyName = "SabadoAuxTurma";
-            this.SabadoAuxTurma.HeaderText = "Sab";
-            this.SabadoAuxTurma.Name = "SabadoAuxTurma";
-            this.SabadoAuxTurma.ReadOnly = true;
-            this.SabadoAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SabadoAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // DomingoAuxTurma
-            // 
-            this.DomingoAuxTurma.DataPropertyName = "DomingoAuxTurma";
-            this.DomingoAuxTurma.HeaderText = "Dom";
-            this.DomingoAuxTurma.Name = "DomingoAuxTurma";
-            this.DomingoAuxTurma.ReadOnly = true;
-            this.DomingoAuxTurma.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DomingoAuxTurma.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MaxInputLength = 100;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 366;
             // 
             // telaConfiguracoesAtividades
             // 
@@ -913,8 +916,6 @@
         private System.Windows.Forms.Button btnAdicionarTurma;
         private System.Windows.Forms.Label lblAtividadeTurma;
         private System.Windows.Forms.ComboBox cmbAtividadeTurma;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn AtividadeAuxTurma;
         private System.Windows.Forms.DataGridViewTextBoxColumn FuncionarioAuxTurma;
@@ -929,5 +930,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn SextaAuxTurma;
         private System.Windows.Forms.DataGridViewCheckBoxColumn SabadoAuxTurma;
         private System.Windows.Forms.DataGridViewCheckBoxColumn DomingoAuxTurma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
     }
 }

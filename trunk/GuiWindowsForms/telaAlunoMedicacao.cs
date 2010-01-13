@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloAluno.Processos;
+using Negocios.ModuloAluno.Constantes;
 
 namespace GuiWindowsForms
 {
@@ -301,6 +302,8 @@ namespace GuiWindowsForms
 
                 alunoControlador.Alterar(telaAluno.aluno);
                 alunoControlador.Confirmar();
+
+                MessageBox.Show(AlunoConstantes.ALUNO_MEDICACAO_ALTERADA, "Colégio Conhecer");
                 
             }
             catch (Exception ex)
