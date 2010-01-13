@@ -10,11 +10,14 @@ using Negocios.ModuloMatricula.Processos;
 using Negocios.ModuloSala.Processos;
 using Negocios.ModuloSalaPeriodo.Processos;
 using Negocios.ModuloDesconto.Processos;
+using Negocios.ModuloBasico.VOs;
+using Negocios.ModuloMatricula.Constantes;
 
 namespace GuiWindowsForms
 {
     public partial class telaAlunoMatricula : Form
     {
+        Aluno alunoMatriculaAux = new Aluno();
         Matricula matricula = new Matricula();
 
         IMatriculaProcesso matriculaControlador = MatriculaProcesso.Instance;
@@ -237,7 +240,7 @@ namespace GuiWindowsForms
         {
             descontoControlador = DescontoProcesso.Instance;
             carregaComboSerie();
-            
+
             cmbSerie.DataSource = listaSalaAuxiliar;
 
             listaDescontoAux = new List<Desconto>();
@@ -247,13 +250,16 @@ namespace GuiWindowsForms
             cmbDesconto.DisplayMember = "Descricao";
 
             carregarValorTotal();
-
+            
         }
         #endregion
 
         #region EVENTO CADASTRAR
         private void ucMenuInferior1_EventoCadastrar()
         {
+            matriculaControlador = MatriculaProcesso.Instance;
+            matricula = new Matricula();
+
             try
             {
                 #region VALIDA - SERIE
@@ -263,8 +269,9 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbSerie, "Informe a série");
                     return;
                 }
-                matricula.SalaPeriodo.ID = ((SalaPeriodo)cmbSerie.SelectedItem).ID;
-
+                int salaPeriodoIdAux = ((SalaAuxiliar)cmbSerie.SelectedItem).IdSalaAux;
+                matricula.SalaPeriodoID = salaPeriodoIdAux;
+                
                 #endregion
 
                 #region VALIDA - DESCONTO
@@ -309,14 +316,69 @@ namespace GuiWindowsForms
                     return;
                 }
 
-                matricula.DiaVencimento = Int32.Parse(cmbDesconto.Text);
+                matricula.DiaVencimento = Convert.ToInt32(cmbVencimento.Text);
 
                 #endregion
+
+                matricula.DataMatricula = dtpDataMatricula.Value;
+                matricula.Ano = DateTime.Now.Year;
+                matricula.NumMatricula = lblNumeroMatricula.Text;
+                matricula.Status = 1;
+                matricula.AlunoID = alunoMatriculaAux.ID;
+
+                if (verificaSeJaInserido(matricula) == false)
+                {
+                    matriculaControlador.Incluir(matricula);
+                    matriculaControlador.Confirmar();
+
+                    MessageBox.Show(MatriculaConstantes.MATRICULA_INCLUIDA, "Colégio Conhecer - Inserir Matrícula");
+                }
+                else
+                {
+                    MessageBox.Show("A Matrícula já existe na base de dados", "Colégio Conhecer - Inserir Matrícula");
+                }
             }
             catch (Exception ex)
-            { 
-            
+            {
+                MessageBox.Show(ex.Message);
             }
+            limparTela();
+        }
+        #endregion
+
+        #region Função para verificar se amatricula já esta cadastrada
+        public bool verificaSeJaInserido(Matricula matricula)
+        {
+            matriculaControlador = MatriculaProcesso.Instance;
+
+            List<Matricula> listaAuxiliar = new List<Matricula>();
+            listaAuxiliar = matriculaControlador.Consultar();
+
+            bool testa = false;
+
+            foreach (Matricula b in listaAuxiliar)
+            {
+                if ((b.AlunoID == matricula.AlunoID) && (b.Ano == matricula.Ano) && (b.DataMatricula == matricula.DataMatricula) && (b.SalaPeriodoID==matricula.SalaPeriodoID))
+                {
+                    testa = true;
+                }
+            }
+            return testa;
+        }
+        #endregion
+
+        #region Evento para limpar os campos da tela
+        public void limparTela()
+        {
+            txtTotalValor.Clear();
+            txtValor.Clear();
+            if(cmbDesconto.Items.Count>0)
+            cmbDesconto.SelectedIndex = 0;
+            if (cmbSerie.Items.Count > 0)
+            cmbSerie.SelectedIndex = 0;
+            if (cmbVencimento.Items.Count > 0)
+            cmbVencimento.SelectedIndex = 0;
+            dtpDataMatricula.Value = DateTime.Now;
         }
         #endregion
 
@@ -403,9 +465,33 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        private void geraNumeroMatricula(int id)
+        {
+            if(id>0 && id<10)
+                lblNumeroMatricula.Text = DateTime.Now.Year.ToString() + ".000" + id.ToString();
+            if (id > 9 && id < 100)
+                lblNumeroMatricula.Text = DateTime.Now.Year.ToString() + ".00" + id.ToString();
+            if (id > 99 && id < 1000)
+                lblNumeroMatricula.Text = DateTime.Now.Year.ToString() + ".0" + id.ToString();
+            if (id > 999 && id < 10000)
+                lblNumeroMatricula.Text = DateTime.Now.Year.ToString() + "." + id.ToString();
+        }
+
         private void cmbDesconto_SelectedIndexChanged(object sender, EventArgs e)
         {
             carregarValorTotal();
+        }
+
+        private void telaAlunoMatricula_Activated(object sender, EventArgs e)
+        {
+            Memoria memoria = Memoria.Instance;
+            if (memoria.Aluno != null)
+            {
+                alunoMatriculaAux = memoria.Aluno;
+                uMenuImagem1.carregaAluno(alunoMatriculaAux);
+            }
+
+            geraNumeroMatricula(Convert.ToInt32(alunoMatriculaAux.ID));
         }
     }
 
