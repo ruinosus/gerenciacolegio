@@ -463,8 +463,8 @@ namespace GuiWindowsForms
 
                         #endregion
 
-                        atividadeTurma.HoraInicio = dtpHorarioFim.Value;
-                        atividadeTurma.HoraFim = dtpHorarioFim.Value;
+                        atividadeTurma.HoraInicio = dtpHorarioFim.ToString();
+                        atividadeTurma.HoraFim = dtpHorarioFim.ToString();
 
                         atividadeTurma.Status = 0;
 
@@ -547,7 +547,7 @@ namespace GuiWindowsForms
                         errorProviderTela.SetError(cmbFuncionario, "Informe o funcionário da atividade");
                         return;
                     }
-                    atividadeTurma.FuncionarioID = uint.Parse(((Funcionario)cmbFuncionario.SelectedItem).ID.ToString());
+                    atividadeTurma.FuncionarioID = ((Funcionario)cmbFuncionario.SelectedItem).ID;
 
 
                     #endregion
@@ -559,7 +559,7 @@ namespace GuiWindowsForms
                         errorProviderTela.SetError(cmbAtividadeTurma, "Informe a atividade a ser configurada");
                         return;
                     }
-                    atividadeTurma.AtividadeID = uint.Parse(((Atividade)cmbAtividadeTurma.SelectedItem).ID.ToString());
+                    atividadeTurma.AtividadeID = ((Atividade)cmbAtividadeTurma.SelectedItem).ID;
 
 
                     #endregion
@@ -612,8 +612,8 @@ namespace GuiWindowsForms
 
                     #endregion
 
-                    atividadeTurma.HoraInicio = dtpHorarioInicio.Value;
-                    atividadeTurma.HoraFim = dtpHorarioFim.Value;
+                    atividadeTurma.HoraInicio = dtpHorarioInicio.ToString();
+                    atividadeTurma.HoraFim = dtpHorarioFim.ToString();
 
                     atividadeTurma.Status = 0;
 
@@ -838,8 +838,8 @@ namespace GuiWindowsForms
                 cmbFuncionario.Text = listaTurmaAtividade[linhaSelecionadaGrid].Funcionario.Nome;
                 txtTurma.Text = listaTurmaAtividade[linhaSelecionadaGrid].Turma;
                 txtValor.Text = listaTurmaAtividade[linhaSelecionadaGrid].Valor.ToString();
-                dtpHorarioInicio.Value = listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.Value;
-                dtpHorarioFim.Value = listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.Value;
+                dtpHorarioInicio.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.ToString());
+                dtpHorarioFim.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.ToString());
                 
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Segunda == 0)
                     ckbSegunda.Checked = true;
@@ -874,8 +874,8 @@ namespace GuiWindowsForms
                 cmbFuncionario.Text = listaTurmaAtividade[linhaSelecionadaGrid].Funcionario.Nome;
                 txtTurma.Text = listaTurmaAtividade[linhaSelecionadaGrid].Turma;
                 txtValor.Text = listaTurmaAtividade[linhaSelecionadaGrid].Valor.ToString();
-                dtpHorarioInicio.Value = listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.Value;
-                dtpHorarioFim.Value = listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.Value;
+                dtpHorarioInicio.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.ToString());
+                dtpHorarioFim.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.ToString());
 
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Segunda == 0)
                     ckbSegunda.Checked = true;
@@ -909,8 +909,8 @@ namespace GuiWindowsForms
                 cmbFuncionario.Text = listaTurmaAtividade[linhaSelecionadaGrid].Funcionario.Nome;
                 txtTurma.Text = listaTurmaAtividade[linhaSelecionadaGrid].Turma;
                 txtValor.Text = listaTurmaAtividade[linhaSelecionadaGrid].Valor.ToString();
-                dtpHorarioInicio.Value = listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.Value;
-                dtpHorarioFim.Value = listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.Value;
+                dtpHorarioInicio.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.ToString());
+                dtpHorarioFim.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.ToString());
 
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Segunda == 0)
                     ckbSegunda.Checked = true;
@@ -935,7 +935,37 @@ namespace GuiWindowsForms
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid >= 0)
+            {
+                dataGridView2.Rows[e.RowIndex].Selected = true;
 
+                cmbAtividadeTurma.Text = listaTurmaAtividade[linhaSelecionadaGrid].Atividade.Nome;
+                cmbFuncionario.Text = listaTurmaAtividade[linhaSelecionadaGrid].Funcionario.Nome;
+                txtTurma.Text = listaTurmaAtividade[linhaSelecionadaGrid].Turma;
+                txtValor.Text = listaTurmaAtividade[linhaSelecionadaGrid].Valor.ToString();
+                dtpHorarioInicio.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.ToString());
+                dtpHorarioFim.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.ToString());
+
+                if (listaTurmaAtividade[linhaSelecionadaGrid].Segunda == 0)
+                    ckbSegunda.Checked = true;
+                if (listaTurmaAtividade[linhaSelecionadaGrid].Terca == 0)
+                    ckbTerca.Checked = true;
+                if (listaTurmaAtividade[linhaSelecionadaGrid].Quarta == 0)
+                    ckbQuarta.Checked = true;
+                if (listaTurmaAtividade[linhaSelecionadaGrid].Quinta == 0)
+                    ckbQuinta.Checked = true;
+                if (listaTurmaAtividade[linhaSelecionadaGrid].Sexta == 0)
+                    ckbSexta.Checked = true;
+                if (listaTurmaAtividade[linhaSelecionadaGrid].Sabado == 0)
+                    ckbSabado.Checked = true;
+                if (listaTurmaAtividade[linhaSelecionadaGrid].Domingo == 0)
+                    ckbDomingo.Checked = true;
+            }
+            else
+            {
+                linhaSelecionadaGrid = -1;
+            }
         }
 
         private void dataGridView2_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -949,8 +979,8 @@ namespace GuiWindowsForms
                 cmbFuncionario.Text = listaTurmaAtividade[linhaSelecionadaGrid].Funcionario.Nome;
                 txtTurma.Text = listaTurmaAtividade[linhaSelecionadaGrid].Turma;
                 txtValor.Text = listaTurmaAtividade[linhaSelecionadaGrid].Valor.ToString();
-                dtpHorarioInicio.Value = listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.Value;
-                dtpHorarioFim.Value = listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.Value;
+                dtpHorarioInicio.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraInicio.ToString());
+                dtpHorarioFim.Value = Convert.ToDateTime(listaTurmaAtividade[linhaSelecionadaGrid].HoraFim.ToString());
                 
                 if (listaTurmaAtividade[linhaSelecionadaGrid].Segunda == 0)
                     ckbSegunda.Checked = true;
