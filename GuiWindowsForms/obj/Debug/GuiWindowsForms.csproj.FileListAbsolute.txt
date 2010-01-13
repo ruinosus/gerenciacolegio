@@ -296,7 +296,6 @@ C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.Us
 C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.uMenuImagem.resources
 C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
 C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
-C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.txtNomeAtividade.resources
 C:\Users\Dudu\Desktop\Gerencia Colegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.txtNomeAtividade.resources
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.config
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe
@@ -340,3 +339,4 @@ C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.c
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe
 C:\Users\Dudu\Desktop\Coleg Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.pdb
 C:\Users\Dudu\Desktop\ColegConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.txtNomeAtividade.resources
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividades.resources
