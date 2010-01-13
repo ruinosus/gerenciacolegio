@@ -44,7 +44,7 @@ namespace Negocios.ModuloAtividadeTurma.Processos
             if (atividadeTurma == null || atividadeTurma.ID == 0)
                 throw new AtividadeTurmaNaoExcluidaExcecao();
 
-            this.atividadeTurmaRepositorio.Excluir(atividadeTurma);
+            //this.atividadeTurmaRepositorio.Excluir(atividadeTurma);
         }
 
         public void Alterar(AtividadeTurma atividadeTurma)

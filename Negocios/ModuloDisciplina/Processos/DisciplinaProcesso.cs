@@ -39,7 +39,7 @@ namespace Negocios.ModuloDisciplina.Processos
 
         public void Excluir(Disciplina disciplina)
         {
-            this.disciplinaRepositorio.Excluir(disciplina);
+            //this.disciplinaRepositorio.Excluir(disciplina);
         }
 
         public void Alterar(Disciplina disciplina)

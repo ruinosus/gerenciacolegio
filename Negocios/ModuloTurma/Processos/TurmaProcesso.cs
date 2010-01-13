@@ -39,7 +39,7 @@ namespace Negocios.ModuloTurma.Processos
 
         public void Excluir(Turma turma)
         {
-            this.turmaRepositorio.Excluir(turma);
+            //this.turmaRepositorio.Excluir(turma);
         }
 
         public void Alterar(Turma turma)

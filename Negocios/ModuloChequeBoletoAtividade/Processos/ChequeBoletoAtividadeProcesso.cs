@@ -38,7 +38,7 @@ namespace Negocios.ModuloChequeBoletoAtividade.Processos
 
         public void Excluir(ChequeBoletoAtividade chequeBoletoAtividade)
         {
-            this.chequeBoletoAtividadeRepositorio.Excluir(chequeBoletoAtividade);
+            //this.chequeBoletoAtividadeRepositorio.Excluir(chequeBoletoAtividade);
         }
 
         public void Alterar(ChequeBoletoAtividade chequeBoletoAtividade)

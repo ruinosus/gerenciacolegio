@@ -38,7 +38,7 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Processos
 
         public void Excluir(ChequeBoletoMensalidade chequeBoletoMensalidade)
         {
-            this.chequeBoletoMensalidadeRepositorio.Excluir(chequeBoletoMensalidade);
+            //this.chequeBoletoMensalidadeRepositorio.Excluir(chequeBoletoMensalidade);
         }
 
         public void Alterar(ChequeBoletoMensalidade chequeBoletoMensalidade)

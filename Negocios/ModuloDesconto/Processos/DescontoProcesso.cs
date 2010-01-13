@@ -39,7 +39,7 @@ namespace Negocios.ModuloDesconto.Processos
 
         public void Excluir(Desconto desconto)
         {
-            this.descontoRepositorio.Excluir(desconto);
+            //this.descontoRepositorio.Excluir(desconto);
         }
 
         public void Alterar(Desconto desconto)

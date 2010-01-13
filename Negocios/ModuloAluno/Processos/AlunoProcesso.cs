@@ -44,7 +44,7 @@ namespace Negocios.ModuloAluno.Processos
 
         public void Excluir(Aluno aluno)
         {
-            this.alunoRepositorio.Excluir(aluno);
+            //this.alunoRepositorio.Excluir(aluno);
         }
 
         public void Alterar(Aluno aluno)

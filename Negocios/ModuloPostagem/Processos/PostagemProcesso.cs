@@ -40,7 +40,7 @@ namespace Negocios.ModuloPostagem.Processos
 
         public void Excluir(PostagemVO postagemVO)
         {
-            this.postagemRepositorio.Excluir(postagemVO);
+            //this.postagemRepositorio.Excluir(postagemVO);
         }
 
         public void Alterar(PostagemVO postagemVO)

@@ -33,11 +33,11 @@
   <ItemGroup>
     <Reference Include="DbLinq, Version=0.19.0.0, Culture=neutral, PublicKeyToken=61e015a67077348b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DbLinq-0.19\DbLinq-0.19\DbLinq.dll</HintPath>
+      <HintPath>..\..\DbLinq-0.19-src\DbLinq-0.19\build.dbg\DbLinq.dll</HintPath>
     </Reference>
     <Reference Include="DbLinq.MySql, Version=0.19.0.0, Culture=neutral, PublicKeyToken=61e015a67077348b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DbLinq-0.19\DbLinq-0.19\DbLinq.MySql.dll</HintPath>
+      <HintPath>..\..\DbLinq-0.19-src\DbLinq-0.19\build.dbg\DbLinq.MySql.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=5.2.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />

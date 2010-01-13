@@ -39,7 +39,7 @@ namespace Negocios.ModuloResponsavelAluno.Processos
 
         public void Excluir(ResponsavelAluno responsavelAluno)
         {
-            this.responsavelAlunoRepositorio.Excluir(responsavelAluno);
+            //this.responsavelAlunoRepositorio.Excluir(responsavelAluno);
         }
 
         public void Alterar(ResponsavelAluno responsavelAluno)

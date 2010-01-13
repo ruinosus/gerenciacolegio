@@ -62,7 +62,7 @@ namespace Negocios.ModuloControleAcesso.Processos
 
         public void Excluir(UsuarioSistemaVO usuarioSistemaVO)
         {
-            this.usuarioSistemaRepositorio.Excluir(usuarioSistemaVO);
+            //this.usuarioSistemaRepositorio.Excluir(usuarioSistemaVO);
         }
 
         public void Alterar(UsuarioSistemaVO usuarioSistemaVO)

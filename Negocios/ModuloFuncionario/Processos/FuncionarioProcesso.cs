@@ -39,7 +39,7 @@ namespace Negocios.ModuloFuncionario.Processos
 
         public void Excluir(Funcionario funcionario)
         {
-            this.funcionarioRepositorio.Excluir(funcionario);
+            //this.funcionarioRepositorio.Excluir(funcionario);
         }
 
         public void Alterar(Funcionario funcionario)

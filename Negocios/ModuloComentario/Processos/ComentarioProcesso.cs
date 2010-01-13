@@ -46,7 +46,7 @@ namespace Negocios.ModuloComentario.Processos
 
         public void Excluir(ComentarioVO comentario)
         {
-            this.comentarioRepositorio.Excluir(comentario);
+            //this.comentarioRepositorio.Excluir(comentario);
         }
 
         public void Alterar(ComentarioVO comentario)

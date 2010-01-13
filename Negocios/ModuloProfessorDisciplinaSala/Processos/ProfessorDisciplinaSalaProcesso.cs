@@ -38,7 +38,7 @@ namespace Negocios.ModuloProfessorDisciplinaSala.Processos
 
         public void Excluir(ProfessorDisciplinaSala professorDisciplinaSala)
         {
-            this.professorDisciplinaSalaRepositorio.Excluir(professorDisciplinaSala);
+            //this.professorDisciplinaSalaRepositorio.Excluir(professorDisciplinaSala);
         }
 
         public void Alterar(ProfessorDisciplinaSala professorDisciplinaSala)
