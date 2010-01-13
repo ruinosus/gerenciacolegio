@@ -7,6 +7,7 @@ using Negocios.ModuloAluno.Repositorios;
 using Negocios.ModuloAluno.Processos;
 using Negocios.ModuloAluno.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloAluno.Excecoes;
 
 namespace Negocios.ModuloAluno.Processos
 {
@@ -37,13 +38,31 @@ namespace Negocios.ModuloAluno.Processos
                 this.alunoRepositorio.Incluir(aluno);
             }
             catch (Exception e)
-            {                
+            {
                 throw e;
             }
         }
 
         public void Excluir(Aluno aluno)
         {
+            try
+            {
+                if (aluno.ID == 0)
+                    throw new AlunoNaoExcluidoExcecao();
+
+                List<Aluno> resultado = alunoRepositorio.Consultar(aluno);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new AlunoNaoExcluidoExcecao();
+
+                //aluno.s
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.alunoRepositorio.Excluir(aluno);
         }
 
@@ -54,7 +73,7 @@ namespace Negocios.ModuloAluno.Processos
 
         public List<Aluno> Consultar(Aluno aluno, TipoPesquisa tipoPesquisa)
         {
-            List<Aluno> alunoList = this.alunoRepositorio.Consultar(aluno,tipoPesquisa);           
+            List<Aluno> alunoList = this.alunoRepositorio.Consultar(aluno, tipoPesquisa);
 
             return alunoList;
         }

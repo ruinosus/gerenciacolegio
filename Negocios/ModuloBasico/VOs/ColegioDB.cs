@@ -23,19 +23,13 @@ using System.Reflection;
 using System.Text;
 using System.Data.Linq.Mapping;
 using System.Data.Linq;
-
-using System;
-using System.Data;
-using System.Data.Linq.Mapping;
-using System.Diagnostics;
-using System.Reflection;
 #if MONO_STRICT
 using System.Data.Linq;
 #else   // MONO_STRICT
 using DbLinq.Data.Linq;
 using DbLinq.Vendor;
 #endif  // MONO_STRICT
-using System.ComponentModel;
+
 
 
 public partial class ColegioDB : DbLinq.Data.Linq.DataContext
