@@ -455,12 +455,12 @@ public partial class Aluno : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -935,12 +935,12 @@ public partial class AlunoAtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? AlunoID
+    #region int? AlunoID
 
-    private uint? _alunoID;
+    private int? _alunoID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_alunoID", Name = "AlunoId", DbType = "int unsigned")]
-    public uint? AlunoID
+    [Column(Storage = "_alunoID", Name = "AlunoId", DbType = "int")]
+    public int? AlunoID
     {
         get
         {
@@ -958,12 +958,12 @@ public partial class AlunoAtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? AtividadeTurmaID
+    #region int? AtividadeTurmaID
 
-    private uint? _atividadeTurmaID;
+    private int? _atividadeTurmaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_atividadeTurmaID", Name = "AtividadeTurmaID", DbType = "int unsigned")]
-    public uint? AtividadeTurmaID
+    [Column(Storage = "_atividadeTurmaID", Name = "AtividadeTurmaID", DbType = "int")]
+    public int? AtividadeTurmaID
     {
         get
         {
@@ -981,12 +981,12 @@ public partial class AlunoAtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? DescontoID
+    #region int? DescontoID
 
-    private uint? _descontoID;
+    private int? _descontoID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_descontoID", Name = "DescontoId", DbType = "int unsigned")]
-    public uint? DescontoID
+    [Column(Storage = "_descontoID", Name = "DescontoId", DbType = "int")]
+    public int? DescontoID
     {
         get
         {
@@ -1004,12 +1004,12 @@ public partial class AlunoAtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -1180,12 +1180,12 @@ public partial class Atividade : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -1303,12 +1303,12 @@ public partial class AtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? AtividadeID
+    #region int? AtividadeID
 
-    private uint? _atividadeID;
+    private int? _atividadeID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_atividadeID", Name = "AtividadeId", DbType = "int unsigned")]
-    public uint? AtividadeID
+    [Column(Storage = "_atividadeID", Name = "AtividadeId", DbType = "int")]
+    public int? AtividadeID
     {
         get
         {
@@ -1326,35 +1326,12 @@ public partial class AtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region System.DateTime? DiaSemana
+    #region string HoraFim
 
-    private System.DateTime? _diaSemana;
+    private string _horaFim;
     [DebuggerNonUserCode]
-    [Column(Storage = "_diaSemana", Name = "DiaSemana", DbType = "date")]
-    public System.DateTime? DiaSemana
-    {
-        get
-        {
-            return _diaSemana;
-        }
-        set
-        {
-            if (value != _diaSemana)
-            {
-                _diaSemana = value;
-                OnPropertyChanged("DiaSemana");
-            }
-        }
-    }
-
-    #endregion
-
-    #region System.DateTime? HoraFim
-
-    private System.DateTime? _horaFim;
-    [DebuggerNonUserCode]
-    [Column(Storage = "_horaFim", Name = "HoraFim", DbType = "time")]
-    public System.DateTime? HoraFim
+    [Column(Storage = "_horaFim", Name = "HoraFim", DbType = "varchar(30)")]
+    public string HoraFim
     {
         get
         {
@@ -1372,12 +1349,12 @@ public partial class AtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region System.DateTime? HoraInicio
+    #region string HoraInicio
 
-    private System.DateTime? _horaInicio;
+    private string _horaInicio;
     [DebuggerNonUserCode]
     [Column(Storage = "_horaInicio", Name = "HoraInicio", DbType = "time")]
-    public System.DateTime? HoraInicio
+    public string HoraInicio
     {
         get
         {
@@ -1648,12 +1625,12 @@ public partial class AtividadeTurma : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? FuncionarioID
+    #region int? FuncionarioID
 
-    private uint? _funcionarioID;
+    private int? _funcionarioID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_funcionarioID", Name = "FuncionarioId", DbType = "int unsigned")]
-    public uint? FuncionarioID
+    [Column(Storage = "_funcionarioID", Name = "FuncionarioId", DbType = "int")]
+    public int? FuncionarioID
     {
         get
         {
@@ -1873,12 +1850,12 @@ public partial class BoletoAtividade : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? AlunoAtividadeTurmaID
+    #region int? AlunoAtividadeTurmaID
 
-    private uint? _alunoAtividadeTurmaID;
+    private int? _alunoAtividadeTurmaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_matriculaID", Name = "AlunoAtividadeTurmaID", DbType = "int unsigned")]
-    public uint? AlunoAtividadeTurmaID
+    [Column(Storage = "_matriculaID", Name = "AlunoAtividadeTurmaID", DbType = "int")]
+    public int? AlunoAtividadeTurmaID
     {
         get
         {
@@ -2176,12 +2153,12 @@ public partial class BoletoMensalidade : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? MatriculaID
+    #region int? MatriculaID
 
-    private uint? _matriculaID;
+    private int? _matriculaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_matriculaID", Name = "MatriculaId", DbType = "int unsigned")]
-    public uint? MatriculaID
+    [Column(Storage = "_matriculaID", Name = "MatriculaId", DbType = "int")]
+    public int? MatriculaID
     {
         get
         {
@@ -3145,12 +3122,12 @@ public partial class Dependencia : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -3168,12 +3145,12 @@ public partial class Dependencia : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? ProfessorDisciplinaSalaID
+    #region int? ProfessorDisciplinaSalaID
 
-    private uint? _professorDisciplinaSalaID;
+    private int? _professorDisciplinaSalaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_professorDisciplinaSalaID", Name = "ProfessorDisciplinaSalaId", DbType = "int unsigned")]
-    public uint? ProfessorDisciplinaSalaID
+    [Column(Storage = "_professorDisciplinaSalaID", Name = "ProfessorDisciplinaSalaId", DbType = "int")]
+    public int? ProfessorDisciplinaSalaID
     {
         get
         {
@@ -3241,7 +3218,7 @@ public partial class Dependencia : INotifyPropertyChanged
 
     private double _vc1;
     [DebuggerNonUserCode]
-    [Column(Storage = "_vc1", Name = "Vc1", DbType = "double unsigned", CanBeNull = false)]
+    [Column(Storage = "_vc1", Name = "Vc1", DbType = "double", CanBeNull = false)]
     public double Vc1
     {
         get
@@ -3287,7 +3264,7 @@ public partial class Dependencia : INotifyPropertyChanged
 
     private double? _vp;
     [DebuggerNonUserCode]
-    [Column(Storage = "_vp", Name = "Vp", DbType = "double unsigned")]
+    [Column(Storage = "_vp", Name = "Vp", DbType = "double")]
     public double? Vp
     {
         get
@@ -3396,12 +3373,12 @@ public partial class Desconto : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -3508,12 +3485,12 @@ public partial class Disciplina : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -3957,12 +3934,12 @@ public partial class Funcionario : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -4683,12 +4660,12 @@ public partial class Matricula : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? AlunoID
+    #region int? AlunoID
 
-    private uint? _alunoID;
+    private int? _alunoID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_alunoID", Name = "AlunoId", DbType = "int unsigned")]
-    public uint? AlunoID
+    [Column(Storage = "_alunoID", Name = "AlunoId", DbType = "int")]
+    public int? AlunoID
     {
         get
         {
@@ -4729,12 +4706,12 @@ public partial class Matricula : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? DescontoID
+    #region int? DescontoID
 
-    private uint? _descontoID;
+    private int? _descontoID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_descontoID", Name = "DescontoId", DbType = "int unsigned")]
-    public uint? DescontoID
+    [Column(Storage = "_descontoID", Name = "DescontoId", DbType = "int")]
+    public int? DescontoID
     {
         get
         {
@@ -4752,12 +4729,12 @@ public partial class Matricula : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -5017,12 +4994,12 @@ public partial class Nota : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -5040,12 +5017,12 @@ public partial class Nota : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? MatriculaID
+    #region int? MatriculaID
 
-    private uint? _matriculaID;
+    private int? _matriculaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_matriculaID", Name = "MatriculaId", DbType = "int unsigned")]
-    public uint? MatriculaID
+    [Column(Storage = "_matriculaID", Name = "MatriculaId", DbType = "int")]
+    public int? MatriculaID
     {
         get
         {
@@ -5063,12 +5040,12 @@ public partial class Nota : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? ProfessorDisciplinaSalaID
+    #region int? ProfessorDisciplinaSalaID
 
-    private uint? _professorDisciplinaSalaID;
+    private int? _professorDisciplinaSalaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_professorDisciplinaSalaID", Name = "ProfessorDisciplinaSalaId", DbType = "int unsigned")]
-    public uint? ProfessorDisciplinaSalaID
+    [Column(Storage = "_professorDisciplinaSalaID", Name = "ProfessorDisciplinaSalaId", DbType = "int")]
+    public int? ProfessorDisciplinaSalaID
     {
         get
         {
@@ -5136,7 +5113,7 @@ public partial class Nota : INotifyPropertyChanged
 
     private double _vc1;
     [DebuggerNonUserCode]
-    [Column(Storage = "_vc1", Name = "Vc1", DbType = "double unsigned", CanBeNull = false)]
+    [Column(Storage = "_vc1", Name = "Vc1", DbType = "double", CanBeNull = false)]
     public double Vc1
     {
         get
@@ -5182,7 +5159,7 @@ public partial class Nota : INotifyPropertyChanged
 
     private double? _vp;
     [DebuggerNonUserCode]
-    [Column(Storage = "_vp", Name = "Vp", DbType = "double unsigned")]
+    [Column(Storage = "_vp", Name = "Vp", DbType = "double")]
     public double? Vp
     {
         get
@@ -6008,12 +5985,12 @@ public partial class ProfessorDisciplinaSala : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? DisciplinaID
+    #region int? DisciplinaID
 
-    private uint? _disciplinaID;
+    private int? _disciplinaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_disciplinaID", Name = "DisciplinaId", DbType = "int unsigned")]
-    public uint? DisciplinaID
+    [Column(Storage = "_disciplinaID", Name = "DisciplinaId", DbType = "int")]
+    public int? DisciplinaID
     {
         get
         {
@@ -6031,12 +6008,12 @@ public partial class ProfessorDisciplinaSala : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? FuncionarioID
+    #region int? FuncionarioID
 
-    private uint? _funcionarioID;
+    private int? _funcionarioID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_funcionarioID", Name = "FuncionarioId", DbType = "int unsigned")]
-    public uint? FuncionarioID
+    [Column(Storage = "_funcionarioID", Name = "FuncionarioId", DbType = "int")]
+    public int? FuncionarioID
     {
         get
         {
@@ -6054,12 +6031,12 @@ public partial class ProfessorDisciplinaSala : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -6392,12 +6369,12 @@ public partial class Responsavel : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -6789,12 +6766,12 @@ public partial class ResponsavelAluno : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -6812,12 +6789,12 @@ public partial class ResponsavelAluno : INotifyPropertyChanged
 
     #endregion
 
-    #region uint AlunoID
+    #region int AlunoID
 
-    private uint _alunoID;
+    private int _alunoID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_alunoID", Name = "AlunoId", DbType = "int unsigned",  CanBeNull = false)]
-    public uint AlunoID
+    [Column(Storage = "_alunoID", Name = "AlunoId", DbType = "int",  CanBeNull = false)]
+    public int AlunoID
     {
         get
         {
@@ -6881,12 +6858,12 @@ public partial class ResponsavelAluno : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ResponsavelID
+    #region int ResponsavelID
 
-    private uint _responsavelID;
+    private int _responsavelID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_responsavelID", Name = "ResponsavelId", DbType = "int unsigned",  CanBeNull = false)]
-    public uint ResponsavelID
+    [Column(Storage = "_responsavelID", Name = "ResponsavelId", DbType = "int",  CanBeNull = false)]
+    public int ResponsavelID
     {
         get
         {
@@ -7055,12 +7032,12 @@ public partial class Sala : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -7078,12 +7055,12 @@ public partial class Sala : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? SerieID
+    #region int? SerieID
 
-    private uint? _serieID;
+    private int? _serieID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_serieID", Name = "SerieId", DbType = "int unsigned")]
-    public uint? SerieID
+    [Column(Storage = "_serieID", Name = "SerieId", DbType = "int")]
+    public int? SerieID
     {
         get
         {
@@ -7124,12 +7101,12 @@ public partial class Sala : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? TurmaID
+    #region int? TurmaID
 
-    private uint? _turmaID;
+    private int? _turmaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_turmaID", Name = "TurmaId", DbType = "int unsigned")]
-    public uint? TurmaID
+    [Column(Storage = "_turmaID", Name = "TurmaId", DbType = "int")]
+    public int? TurmaID
     {
         get
         {
@@ -7147,12 +7124,12 @@ public partial class Sala : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? TurnoID
+    #region int? TurnoID
 
-    private uint? _turnoID;
+    private int? _turnoID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_turnoID", Name = "TurnoId", DbType = "int unsigned")]
-    public uint? TurnoID
+    [Column(Storage = "_turnoID", Name = "TurnoId", DbType = "int")]
+    public int? TurnoID
     {
         get
         {
@@ -7299,12 +7276,12 @@ public partial class SalaPeriodo : INotifyPropertyChanged
 
     #endregion
 
-    #region uint? SalaID
+    #region int? SalaID
 
-    private uint? _salaID;
+    private int? _salaID;
     [DebuggerNonUserCode]
-    [Column(Storage = "_salaID", Name = "SalaId", DbType = "int unsigned")]
-    public uint? SalaID
+    [Column(Storage = "_salaID", Name = "SalaId", DbType = "int")]
+    public int? SalaID
     {
         get
         {
@@ -7408,12 +7385,12 @@ public partial class Serie : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -7516,12 +7493,12 @@ public partial class Turma : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
@@ -7622,12 +7599,12 @@ public partial class Turno : INotifyPropertyChanged
 
     #endregion
 
-    #region uint ID
+    #region int ID
 
-    private uint _id;
+    private int _id;
     [DebuggerNonUserCode]
-    [Column(Storage = "_id", Name = "Id", DbType = "int unsigned", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
-    public uint ID
+    [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, CanBeNull = false)]
+    public int ID
     {
         get
         {
