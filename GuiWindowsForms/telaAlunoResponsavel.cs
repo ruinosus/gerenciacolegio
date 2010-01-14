@@ -597,11 +597,11 @@ namespace GuiWindowsForms
 
                 #region VALIDA - ENDEREÇO
 
-                if (String.IsNullOrEmpty(txtLogradouro.Text))
-                {
-                    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtLogradouro.Text))
+                //{
+                //    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
+                //    return;
+                //}
                 responsavel.Logradouro = txtLogradouro.Text;
 
                 #endregion

@@ -353,7 +353,7 @@
             this.cicloCol.HeaderText = "Ciclo";
             this.cicloCol.Name = "cicloCol";
             this.cicloCol.ReadOnly = true;
-            this.cicloCol.Width = 185;
+            this.cicloCol.Width = 175;
             // 
             // valorCol
             // 
@@ -361,7 +361,7 @@
             this.valorCol.HeaderText = "Valor";
             this.valorCol.Name = "valorCol";
             this.valorCol.ReadOnly = true;
-            this.valorCol.Width = 127;
+            this.valorCol.Width = 120;
             // 
             // telaConfiguracoesSerie
             // 
