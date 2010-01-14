@@ -10,6 +10,11 @@ using Negocios.ModuloAluno.Processos;
 
 using GuiWindowsForms.Relatorios;
 using GuiWindowsForms.Relatorios.BoletoMensalidadeDataSetTableAdapters;
+using Negocios.ModuloBasico.VOs;
+
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Soap;
+using System.IO;
 
 namespace GuiWindowsForms
 {
@@ -48,6 +53,8 @@ namespace GuiWindowsForms
         #region EVENTOS
         private void btnLogar_Click(object sender, EventArgs e)
         {
+
+            //Conexao abc = new Conexao();
 
             #region Validação dos campos de login e senha
 
@@ -161,6 +168,18 @@ namespace GuiWindowsForms
 
         private void btnLogar_Enter(object sender, EventArgs e)
         {
+
+            //Conexao c = new Conexao();
+
+            //c.Banco = "ColegioDB";
+            //c.Caminho = "Localhost";
+            //c.Senha = "123";
+            //c.Usuario = "root";
+
+            //SoapFormatter s = new SoapFormatter();
+            //FileStream f = File.Create("config.xml");
+            //s.Serialize(f, c);
+            //f.Close();
             #region Validação dos campos de login e senha
 
             try

@@ -1,0 +1,10 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:Conexao id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Negocios.ModuloBasico.VOs/Negocios%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<_x003C_Caminho_x003E_k__BackingField id="ref-3">Localhost</_x003C_Caminho_x003E_k__BackingField>
+<_x003C_Usuario_x003E_k__BackingField id="ref-4">root</_x003C_Usuario_x003E_k__BackingField>
+<_x003C_Senha_x003E_k__BackingField id="ref-5">123</_x003C_Senha_x003E_k__BackingField>
+<_x003C_Banco_x003E_k__BackingField id="ref-6">ColegioDB</_x003C_Banco_x003E_k__BackingField>
+</a1:Conexao>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
