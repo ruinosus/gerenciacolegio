@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Negocios.ModuloResponsavelAluno.Processos;
 using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloResponsavel.Processos;
+using Negocios.ModuloBasico.Enums;
 
 namespace GuiWindowsForms
 {
@@ -139,6 +140,7 @@ namespace GuiWindowsForms
                 dgvResponsavelAluno.AutoGenerateColumns = false;
                 ResponsavelAluno responsavelAluno = new ResponsavelAluno();
                 responsavelAluno.AlunoID = memoria.Aluno.ID;
+                responsavelAluno.Status = (int)Status.Ativo;
                 responsavelAlunoLista = processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
                 dgvResponsavelAluno.DataSource = responsavelAlunoLista;
             }
@@ -171,6 +173,7 @@ namespace GuiWindowsForms
                 {
                     IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
                     ResponsavelAluno responsavelAluno = new ResponsavelAluno();
+                    responsavelAluno.Status = (int)Status.Ativo;
                     responsavelAluno.AlunoID = memoria.Aluno.ID;
                     responsavelAluno.ResponsavelID = ((Responsavel)comboResponsavel.SelectedItem).ID;
 
@@ -213,8 +216,9 @@ namespace GuiWindowsForms
         {
             try
             {
-                IResponsavelProcesso processo = ResponsavelProcesso.Instance;
+                IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
                 processo.Excluir(responsavelAlunoLista[linhaSelecionadaGrid]);
+                processo.Confirmar();
             }
             catch (Exception)
             {
