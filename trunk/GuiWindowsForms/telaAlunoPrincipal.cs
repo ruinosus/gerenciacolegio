@@ -21,7 +21,7 @@ namespace GuiWindowsForms
             Aluno,
             Funcionario
         }
-        List<MatriculaAuxiliar> matriculasAxiliarLista;
+        List<Aluno> alunosAxiliarLista;
         int linhaSelecionadaGrid = -1;
 
         TelaSelecionada tela = TelaSelecionada.Aluno;
@@ -382,24 +382,12 @@ namespace GuiWindowsForms
                 case TelaSelecionada.Aluno:
                     {
 
-                        IMatriculaProcesso processo = MatriculaProcesso.Instance;
-                        Matricula m = new Matricula();
+                        IAlunoProcesso processo = AlunoProcesso.Instance;
                         Aluno a = new Aluno();
                         a.Nome = txtBusca.Text;
-                        m.Aluno = a;
-                        List<Matricula> matriculasLista = processo.Consultar(m, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
-                        matriculasAxiliarLista = new List<MatriculaAuxiliar>();
+                        alunosAxiliarLista  = processo.Consultar(a, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
 
-                        foreach (Matricula matricula in matriculasLista)
-                        {
-                            matriculasAxiliarLista.Add(
-                                new MatriculaAuxiliar(matricula.Aluno.Nome,
-                                                      matricula.SalaPeriodo.Sala.Serie.ToString(),
-                                                      matricula.Aluno.FoneAluno, matricula.Valor.Value, matricula)
-                                                      );
-
-                        }
-                        dgvAluno.DataSource = matriculasAxiliarLista;
+                        dgvAluno.DataSource = alunosAxiliarLista;
                         break;
                     }
                 case TelaSelecionada.Funcionario:
@@ -417,10 +405,10 @@ namespace GuiWindowsForms
         {
             if (linhaSelecionadaGrid != -1)
             {
-                Matricula matricula = (matriculasAxiliarLista[linhaSelecionadaGrid]).Matricula;
+                Aluno aluno = (alunosAxiliarLista[linhaSelecionadaGrid]);
                 
                 Memoria memoria = Memoria.Instance;
-                memoria.Aluno = matricula.Aluno;
+                memoria.Aluno = aluno;
               
 
                 this.Hide();
@@ -463,8 +451,8 @@ namespace GuiWindowsForms
                     throw new Exception();
                 }
                 IAlunoProcesso processo = AlunoProcesso.Instance;
-                Matricula matricula = (matriculasAxiliarLista[linhaSelecionadaGrid]).Matricula;
-                processo.Excluir(matricula.Aluno);
+                Aluno aluno = (alunosAxiliarLista[linhaSelecionadaGrid]);
+                processo.Excluir(aluno);
                 processo.Confirmar();
             }
             catch (Exception)
@@ -475,26 +463,6 @@ namespace GuiWindowsForms
         } 
         #endregion
         
-        #region Classe Auxiliar
-        class MatriculaAuxiliar
-        {
-            public string NomeAluno { get; set; }
-            public string NomeSerie { get; set; }
-            public string TelefoneAluno { get; set; }
-            public double Valor { get; set; }
-            public Matricula Matricula { get; set; }
-            public MatriculaAuxiliar(string nomeAluno, string nomeSerie,
-                                     string telefoneAluno, double valor, Matricula matricula)
-            {
-                this.NomeAluno = nomeAluno;
-                this.NomeSerie = nomeSerie;
-                this.TelefoneAluno = telefoneAluno;
-                this.Valor = valor;
-                this.Matricula = matricula;
-            }
-        }
-        #endregion
-
         private void telaAlunoPrincipal_Activated(object sender, EventArgs e)
         {
 
