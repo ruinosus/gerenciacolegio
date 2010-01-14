@@ -130,7 +130,7 @@ namespace GuiWindowsForms
 
         private void telaAlunoResponsavelBusca_Activated(object sender, EventArgs e)
         {
-   
+
 
             if (memoria.Aluno != null)
             {
@@ -144,7 +144,7 @@ namespace GuiWindowsForms
             }
         }
 
-        
+
 
         private void dgvResponsavelAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -169,25 +169,35 @@ namespace GuiWindowsForms
             {
                 if (memoria.Aluno != null)
                 {
+                    IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
                     ResponsavelAluno responsavelAluno = new ResponsavelAluno();
                     responsavelAluno.AlunoID = memoria.Aluno.ID;
                     responsavelAluno.ResponsavelID = ((Responsavel)comboResponsavel.SelectedItem).ID;
+
+                    if (processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E).Count > 0)
+                    {
+                        throw new Exception("Responsável já vinculado ao Aluno.");
+                    }
+
                     responsavelAluno.GrauParentesco = cmbGrauParentesco.Text;
-                    if(ckbResideCom.Checked)
-                    responsavelAluno.ResideCom = 0;
+                    if (!ckbResideCom.Checked)
+                        responsavelAluno.ResideCom = 0;
                     else
                         responsavelAluno.ResideCom = 1;
                     responsavelAluno.Restricoes = txtRestricoes.Text;
-                    IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
+
+
+
+
 
                     processo.Incluir(responsavelAluno);
                     processo.Confirmar();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
-                throw;
+                MessageBox.Show(ex.Message);
+
             }
         }
 
@@ -196,6 +206,21 @@ namespace GuiWindowsForms
             IResponsavelProcesso processo = ResponsavelProcesso.Instance;
             comboResponsavel.DataSource = processo.Consultar();
             comboResponsavel.DisplayMember = "Nome";
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IResponsavelProcesso processo = ResponsavelProcesso.Instance;
+                processo.Excluir(responsavelAlunoLista[linhaSelecionadaGrid]);
+            }
+            catch (Exception)
+            {
+
+                
+            }
 
         }
     }
