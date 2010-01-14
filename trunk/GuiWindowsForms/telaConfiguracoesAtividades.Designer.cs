@@ -48,6 +48,7 @@
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.pagTurma = new System.Windows.Forms.TabPage();
+            this.btnAlterarAtividade = new System.Windows.Forms.Button();
             this.lblAtividadeTurma = new System.Windows.Forms.Label();
             this.cmbAtividadeTurma = new System.Windows.Forms.ComboBox();
             this.btnAdicionarTurma = new System.Windows.Forms.Button();
@@ -96,7 +97,6 @@
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.tbcAtividade.SuspendLayout();
             this.pagCadastrarAtividade.SuspendLayout();
@@ -147,7 +147,7 @@
             this.tbcAtividade.Name = "tbcAtividade";
             this.tbcAtividade.SelectedIndex = 0;
             this.tbcAtividade.Size = new System.Drawing.Size(688, 550);
-            this.tbcAtividade.TabIndex = 112;
+            this.tbcAtividade.TabIndex = 1;
             // 
             // pagCadastrarAtividade
             // 
@@ -182,6 +182,7 @@
             this.btnAlterar.Size = new System.Drawing.Size(32, 32);
             this.btnAlterar.TabIndex = 114;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // dataGridView1
             // 
@@ -234,7 +235,7 @@
             this.btnAdicionarAtividade.Location = new System.Drawing.Point(577, 245);
             this.btnAdicionarAtividade.Name = "btnAdicionarAtividade";
             this.btnAdicionarAtividade.Size = new System.Drawing.Size(32, 32);
-            this.btnAdicionarAtividade.TabIndex = 113;
+            this.btnAdicionarAtividade.TabIndex = 0;
             this.btnAdicionarAtividade.UseVisualStyleBackColor = true;
             this.btnAdicionarAtividade.MouseLeave += new System.EventHandler(this.btnAdicionarAtividade_MouseLeave);
             this.btnAdicionarAtividade.Click += new System.EventHandler(this.btnAdicionarAtividade_Click);
@@ -274,6 +275,7 @@
             this.pctImagemAtividade.Location = new System.Drawing.Point(514, 35);
             this.pctImagemAtividade.Name = "pctImagemAtividade";
             this.pctImagemAtividade.Size = new System.Drawing.Size(126, 80);
+            this.pctImagemAtividade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctImagemAtividade.TabIndex = 71;
             this.pctImagemAtividade.TabStop = false;
             // 
@@ -293,7 +295,7 @@
             this.txtNome.MaxLength = 30;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(193, 20);
-            this.txtNome.TabIndex = 73;
+            this.txtNome.TabIndex = 7;
             // 
             // lblDescricao
             // 
@@ -312,12 +314,12 @@
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(330, 38);
-            this.txtDescricao.TabIndex = 2;
+            this.txtDescricao.TabIndex = 8;
             this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
             // pagTurma
             // 
-            this.pagTurma.Controls.Add(this.button1);
+            this.pagTurma.Controls.Add(this.btnAlterarAtividade);
             this.pagTurma.Controls.Add(this.lblAtividadeTurma);
             this.pagTurma.Controls.Add(this.cmbAtividadeTurma);
             this.pagTurma.Controls.Add(this.btnAdicionarTurma);
@@ -349,6 +351,19 @@
             this.pagTurma.TabIndex = 0;
             this.pagTurma.Text = "Turma";
             this.pagTurma.UseVisualStyleBackColor = true;
+            // 
+            // btnAlterarAtividade
+            // 
+            this.btnAlterarAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar;
+            this.btnAlterarAtividade.FlatAppearance.BorderSize = 0;
+            this.btnAlterarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterarAtividade.Location = new System.Drawing.Point(529, 252);
+            this.btnAlterarAtividade.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAlterarAtividade.Name = "btnAlterarAtividade";
+            this.btnAlterarAtividade.Size = new System.Drawing.Size(32, 32);
+            this.btnAlterarAtividade.TabIndex = 134;
+            this.btnAlterarAtividade.UseVisualStyleBackColor = true;
+            this.btnAlterarAtividade.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblAtividadeTurma
             // 
@@ -843,18 +858,6 @@
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(529, 252);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 32);
-            this.button1.TabIndex = 134;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // telaConfiguracoesAtividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -961,6 +964,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAlterarAtividade;
     }
 }
