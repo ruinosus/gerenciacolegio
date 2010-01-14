@@ -13,6 +13,7 @@ using Negocios.ModuloDesconto.Processos;
 using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloMatricula.Constantes;
 using Negocios.ModuloBoletoMensalidade.Processos;
+using System.Globalization;
 
 namespace GuiWindowsForms
 {
@@ -30,6 +31,8 @@ namespace GuiWindowsForms
         List<SalaAuxiliar> listaSalaAuxiliar = null;
         List<SalaPeriodo> listaSalaPeriodo = null;
         List<Desconto> listaDescontoAux = null;
+
+        String[] meses = new String[] { "-", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" };
 
         #region SINGLETON DA TELA
         /*
@@ -337,30 +340,20 @@ namespace GuiWindowsForms
                     matriculaControlador.Incluir(matricula);
                     matriculaControlador.Confirmar();
 
-                    for (int i = 1; i < 13; i++)
+                    for (int i = 0; i < 12; i++)
                     {
                         boletoMensalidadeControlador = BoletoMensalidadeProcesso.Instance;
                         boletoMensalidade = new BoletoMensalidade();
 
                         boletoMensalidade.Descricao = "BOLETO";
-                        if (i > 1)
-                        {
-                            boletoMensalidade.DataVencimento = DateTime.Now.AddMonths(i);
-                        }
-                        else
-                        {
-                            boletoMensalidade.DataVencimento = DateTime.Now;
-                        }
+
+                        boletoMensalidade.DataVencimento = DateTime.Now.AddMonths(i);
+
                         boletoMensalidade.Status = 1;
                         boletoMensalidade.Desconto = ((Desconto)cmbDesconto.SelectedItem).Percentual;
-                        if (i == 1)
-                        {
-                            boletoMensalidade.Parcela = DateTime.Now.Month.ToString();
-                        }
-                        else
-                        {
-                            boletoMensalidade.Parcela = DateTime.Now.AddMonths(i).Month.ToString();
-                        }
+
+                        boletoMensalidade.Parcela = meses[DateTime.Now.AddMonths(i).Month];
+                        
                         boletoMensalidade.MatriculaID = matricula.ID;
                         boletoMensalidade.DataEmissao = DateTime.Now;
                         boletoMensalidade.Valor = matricula.Valor;
@@ -385,7 +378,7 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region Função para verificar se amatricula já esta cadastrada
+        #region Função para verificar se a matricula já esta cadastrada
         public bool verificaSeJaInserido(Matricula matricula)
         {
             matriculaControlador = MatriculaProcesso.Instance;
@@ -397,7 +390,7 @@ namespace GuiWindowsForms
 
             foreach (Matricula b in listaAuxiliar)
             {
-                if ((b.AlunoID == matricula.AlunoID) && (b.Ano == matricula.Ano) && (b.DataMatricula == matricula.DataMatricula) && (b.SalaPeriodoID==matricula.SalaPeriodoID))
+                if ((b.AlunoID == matricula.AlunoID) && (b.Ano == matricula.Ano))
                 {
                     testa = true;
                 }
