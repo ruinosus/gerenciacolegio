@@ -385,6 +385,7 @@ namespace GuiWindowsForms
                         IAlunoProcesso processo = AlunoProcesso.Instance;
                         Aluno a = new Aluno();
                         a.Nome = txtBusca.Text;
+                        a.PerfilID = 0;
                         alunosAxiliarLista  = processo.Consultar(a, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
 
                         dgvAluno.DataSource = alunosAxiliarLista;

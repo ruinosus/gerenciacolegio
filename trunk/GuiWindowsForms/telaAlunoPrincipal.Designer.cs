@@ -39,7 +39,7 @@
             this.dgvAluno = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
-<<<<<<< .mine
+
             this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.btnFinanceiro = new System.Windows.Forms.Button();
             this.btnConfiguracoes = new System.Windows.Forms.Button();
@@ -49,11 +49,11 @@
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnAluno = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-=======
+
             this.colunaNomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoneAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> .r158
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -183,7 +183,7 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-<<<<<<< .mine
+
             // btnCadastrarFuncionario
             // 
             this.btnCadastrarFuncionario.BackColor = System.Drawing.Color.Transparent;
@@ -314,7 +314,7 @@
             this.pictureBox1.TabIndex = 71;
             this.pictureBox1.TabStop = false;
             // 
-=======
+
             // colunaNomeAluno
             // 
             this.colunaNomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -348,7 +348,7 @@
             this.EmailAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.EmailAluno.Width = 116;
             // 
->>>>>>> .r158
+
             // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
