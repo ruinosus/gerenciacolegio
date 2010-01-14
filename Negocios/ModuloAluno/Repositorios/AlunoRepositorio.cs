@@ -485,7 +485,7 @@ namespace Negocios.ModuloAluno.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (aluno.PerfilID!=0)
+                        if (aluno.PerfilID != 0 && aluno.PerfilID!=null)
                         {
                             if (pesquisa)
                             {
@@ -504,6 +504,8 @@ namespace Negocios.ModuloAluno.Repositorios
                             pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
+
+
 
                         if (!string.IsNullOrEmpty(aluno.PlanoSaude))
                         {
@@ -1113,7 +1115,7 @@ namespace Negocios.ModuloAluno.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (aluno.PerfilID != 0)
+                        if (aluno.PerfilID != 0 && aluno.PerfilID != null)
                         {
                             if (pesquisa)
                             {

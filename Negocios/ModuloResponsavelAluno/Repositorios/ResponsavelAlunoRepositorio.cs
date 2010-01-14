@@ -74,6 +74,46 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (responsavelAluno.Aluno != null && !string.IsNullOrEmpty(responsavelAluno.Aluno.Nome))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ra in resultado
+                                                    where
+                                                    ra.Aluno.Nome.Contains(responsavelAluno.Aluno.Nome)
+                                                    select ra).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ra in resultado
+                                              where
+                                              ra.Aluno.Nome.Contains(responsavelAluno.Aluno.Nome)
+                                              select ra).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.Responsavel != null && !string.IsNullOrEmpty(responsavelAluno.Responsavel.Nome))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ra in resultado
+                                                    where
+                                                    ra.Responsavel.Nome.Contains(responsavelAluno.Responsavel.Nome)
+                                                    select ra).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ra in resultado
+                                              where
+                                              ra.Responsavel.Nome.Contains(responsavelAluno.Responsavel.Nome)
+                                              select ra).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (responsavelAluno.ResponsavelID != 0)
                         {
                             if (pesquisa)
@@ -177,6 +217,46 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                                 resultado = ((from ra in Consultar()
                                               where
                                               ra.ID == responsavelAluno.ID
+                                              select ra).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.Aluno != null && !string.IsNullOrEmpty(responsavelAluno.Aluno.Nome))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ra in Consultar()
+                                                    where
+                                                    ra.Aluno.Nome.Contains(responsavelAluno.Aluno.Nome)
+                                                    select ra).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ra in Consultar()
+                                              where
+                                              ra.Aluno.Nome.Contains(responsavelAluno.Aluno.Nome)
+                                              select ra).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (responsavelAluno.Responsavel != null && !string.IsNullOrEmpty(responsavelAluno.Responsavel.Nome))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from ra in Consultar()
+                                                    where
+                                                    ra.Responsavel.Nome.Contains(responsavelAluno.Responsavel.Nome)
+                                                    select ra).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from ra in Consultar()
+                                              where
+                                              ra.Responsavel.Nome.Contains(responsavelAluno.Responsavel.Nome)
                                               select ra).ToList());
                             }
                             pesquisa = true;
