@@ -115,6 +115,11 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 	[Table(Name = "ColegioDB.aluno")]
 	public partial class Aluno : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+
+        public override string ToString()
+        {
+            return Nome;
+        }
 		#region INotifyPropertyChanging handling
 
 		public event PropertyChangingEventHandler PropertyChanging;
@@ -8781,6 +8786,11 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 	[Table(Name = "ColegioDB.responsavel")]
 	public partial class Responsavel : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+
+        public override string ToString()
+        {
+            return Nome;
+        }
 		#region INotifyPropertyChanging handling
 
 		public event PropertyChangingEventHandler PropertyChanging;

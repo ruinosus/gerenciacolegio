@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloResponsavelAluno.Processos;
 using Negocios.ModuloBasico.VOs;
+using Negocios.ModuloResponsavel.Processos;
 
 namespace GuiWindowsForms
 {
@@ -21,6 +22,7 @@ namespace GuiWindowsForms
         List<ResponsavelAluno> responsavelAlunoLista;
         int linhaSelecionadaGrid = -1;
         private static telaAlunoResponsavelBusca telaalunoresponsavelbusca;
+        Memoria memoria = Memoria.Instance;
 
         private static bool IsShown = false;
 
@@ -128,10 +130,11 @@ namespace GuiWindowsForms
 
         private void telaAlunoResponsavelBusca_Activated(object sender, EventArgs e)
         {
-            Memoria memoria = Memoria.Instance;
+   
 
             if (memoria.Aluno != null)
             {
+                CarregarCombos();
                 IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
                 dgvResponsavelAluno.AutoGenerateColumns = false;
                 ResponsavelAluno responsavelAluno = new ResponsavelAluno();
@@ -141,8 +144,58 @@ namespace GuiWindowsForms
             }
         }
 
-        private void btnPesquisarResponsaveis_Click(object sender, EventArgs e)
+        
+
+        private void dgvResponsavelAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+
+            if (linhaSelecionadaGrid != -1)
+                dgvResponsavelAluno.Rows[linhaSelecionadaGrid].Selected = true;
+
+        }
+
+        private void dgvResponsavelAluno_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+
+            if (linhaSelecionadaGrid != -1)
+                dgvResponsavelAluno.Rows[linhaSelecionadaGrid].Selected = true;
+        }
+
+        private void ucMenuInferior1_EventoCadastrar()
+        {
+            try
+            {
+                if (memoria.Aluno != null)
+                {
+                    ResponsavelAluno responsavelAluno = new ResponsavelAluno();
+                    responsavelAluno.AlunoID = memoria.Aluno.ID;
+                    responsavelAluno.ResponsavelID = ((Responsavel)comboResponsavel.SelectedItem).ID;
+                    responsavelAluno.GrauParentesco = cmbGrauParentesco.Text;
+                    if(ckbResideCom.Checked)
+                    responsavelAluno.ResideCom = 0;
+                    else
+                        responsavelAluno.ResideCom = 1;
+                    responsavelAluno.Restricoes = txtRestricoes.Text;
+                    IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
+
+                    processo.Incluir(responsavelAluno);
+                    processo.Confirmar();
+                }
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        private void CarregarCombos()
+        {
+            IResponsavelProcesso processo = ResponsavelProcesso.Instance;
+            comboResponsavel.DataSource = processo.Consultar();
+            comboResponsavel.DisplayMember = "Nome";
 
         }
     }
