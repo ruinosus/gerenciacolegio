@@ -8970,7 +8970,7 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 
 		private string _cpf;
 		[DebuggerNonUserCode]
-		[Column(Storage = "_cpf", Name = "Cpf", DbType = "varchar(11)", AutoSync = AutoSync.Never)]
+		[Column(Storage = "_cpf", Name = "Cpf", DbType = "varchar(14)", AutoSync = AutoSync.Never)]
 		public string Cpf
 		{
 			get

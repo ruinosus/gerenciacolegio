@@ -24,7 +24,13 @@ namespace GuiWindowsForms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
 
+        public void limparFigura()
+        {
+            pctImagem.Image.Dispose();
+        }
+        
         public void carregaResponsavel(Responsavel responsavel)
         {
             lblAtivo.Text = "Ativo - AINDA POR FAZER";
