@@ -46,6 +46,7 @@
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
@@ -54,6 +55,7 @@
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
+            this.gpbSerie.Controls.Add(this.btnAlterar);
             this.gpbSerie.Controls.Add(this.btnAdicionarDesconto);
             this.gpbSerie.Controls.Add(this.btnExcluir);
             this.gpbSerie.Controls.Add(this.txtValor);
@@ -141,7 +143,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Descricao,
@@ -238,6 +240,16 @@
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(520, 198);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(32, 32);
+            this.btnAlterar.TabIndex = 71;
+            this.btnAlterar.Text = "?";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
             // telaConfiguracoesDescontoMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,5 +299,6 @@
         private System.Windows.Forms.Button btnAdicionarDesconto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Percentual;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }
