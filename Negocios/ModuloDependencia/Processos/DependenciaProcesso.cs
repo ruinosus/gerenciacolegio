@@ -8,6 +8,7 @@ using Negocios.ModuloDependencia.Repositorios;
 using Negocios.ModuloDependencia.Processos;
 using Negocios.ModuloDependencia.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloDependencia.Excecoes;
 
 namespace Negocios.ModuloDependencia.Processos
 {
@@ -39,6 +40,24 @@ namespace Negocios.ModuloDependencia.Processos
 
         public void Excluir(Dependencia dependencia)
         {
+
+            try
+            {
+                if (dependencia.ID == 0)
+                    throw new DependenciaNaoExcluidaExcecao();
+
+                List<Dependencia> resultado = dependenciaRepositorio.Consultar(dependencia, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new DependenciaNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.dependenciaRepositorio.Excluir(dependencia);
         }
 

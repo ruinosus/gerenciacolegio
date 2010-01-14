@@ -8,6 +8,7 @@ using Negocios.ModuloDisciplina.Repositorios;
 using Negocios.ModuloDisciplina.Processos;
 using Negocios.ModuloDisciplina.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloDisciplina.Excecoes;
 
 namespace Negocios.ModuloDisciplina.Processos
 {
@@ -39,6 +40,24 @@ namespace Negocios.ModuloDisciplina.Processos
 
         public void Excluir(Disciplina disciplina)
         {
+
+            try
+            {
+                if (disciplina.ID == 0)
+                    throw new DisciplinaNaoExcluidaExcecao();
+
+                List<Disciplina> resultado = disciplinaRepositorio.Consultar(disciplina, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new DisciplinaNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.disciplinaRepositorio.Excluir(disciplina);
         }
 

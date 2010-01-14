@@ -6,16 +6,17 @@ using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloBoletoMensalidade.Excecoes;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloBoletoMensalidade.Repositorios
 {
     public class BoletoMensalidadeRepositorio: IBoletoMensalidadeRepositorio
     {
-		#region Atributos
-		
-        ColegioDB db = new ColegioDB(new MySqlConnection(BasicoConstantes.CONEXAO));
-		
-		#endregion      
+        #region Atributos
+     
+        ColegioDB db ;
+
+        #endregion      
 		
         #region Métodos da Interface
 
@@ -450,6 +451,15 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
         }
 
         #endregion      
+
+        #region Construtor
+        public BoletoMensalidadeRepositorio()
+        {
+            Conexao conexao = new Conexao();
+            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+
+        } 
+        #endregion
          
 
     

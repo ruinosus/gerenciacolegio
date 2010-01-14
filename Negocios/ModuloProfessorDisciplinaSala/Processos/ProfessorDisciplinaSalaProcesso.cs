@@ -7,6 +7,7 @@ using Negocios.ModuloProfessorDisciplinaSala.Repositorios;
 using Negocios.ModuloProfessorDisciplinaSala.Processos;
 using Negocios.ModuloProfessorDisciplinaSala.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloProfessorDisciplinaSala.Excecoes;
 
 namespace Negocios.ModuloProfessorDisciplinaSala.Processos
 {
@@ -38,6 +39,24 @@ namespace Negocios.ModuloProfessorDisciplinaSala.Processos
 
         public void Excluir(ProfessorDisciplinaSala professorDisciplinaSala)
         {
+
+            try
+            {
+                if (professorDisciplinaSala.ID == 0)
+                    throw new ProfessorDisciplinaSalaNaoExcluidaExcecao();
+
+                List<ProfessorDisciplinaSala> resultado = professorDisciplinaSalaRepositorio.Consultar(professorDisciplinaSala, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new ProfessorDisciplinaSalaNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.professorDisciplinaSalaRepositorio.Excluir(professorDisciplinaSala);
         }
 

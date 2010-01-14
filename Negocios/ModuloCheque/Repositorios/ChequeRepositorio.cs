@@ -6,16 +6,17 @@ using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloCheque.Excecoes;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloCheque.Repositorios
 {
     public class ChequeRepositorio: IChequeRepositorio
     {
-		#region Atributos
-		
-        ColegioDB db = new ColegioDB(new MySqlConnection(BasicoConstantes.CONEXAO));
-		
-		#endregion      
+        #region Atributos
+       
+        ColegioDB db;
+
+        #endregion      
 		
         #region Métodos da Interface
 
@@ -562,6 +563,15 @@ namespace Negocios.ModuloCheque.Repositorios
         }
 
         #endregion       
+
+        #region Construtor
+        public ChequeRepositorio()
+        {
+            Conexao conexao = new Conexao();
+            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+
+        } 
+        #endregion
 
 
     }

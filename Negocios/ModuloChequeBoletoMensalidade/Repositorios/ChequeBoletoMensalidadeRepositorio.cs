@@ -6,16 +6,17 @@ using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloChequeBoletoMensalidade.Excecoes;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
 {
     public class ChequeBoletoMensalidadeRepositorio: IChequeBoletoMensalidadeRepositorio
     {
-		#region Atributos
-		
-        ColegioDB db = new ColegioDB(new MySqlConnection(BasicoConstantes.CONEXAO));
-		
-		#endregion      
+        #region Atributos
+        
+        ColegioDB db ;
+
+        #endregion      
 		
         #region Métodos da Interface
 
@@ -279,6 +280,15 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Repositorios
         }
 
         #endregion      
+
+        #region Construtor
+        public ChequeBoletoMensalidadeRepositorio()
+        {
+            Conexao conexao = new Conexao();
+            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+
+        } 
+        #endregion
 
 
     

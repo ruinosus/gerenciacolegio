@@ -8,6 +8,7 @@ using Negocios.ModuloResponsavel.Repositorios;
 using Negocios.ModuloResponsavel.Processos;
 using Negocios.ModuloResponsavel.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloResponsavel.Excecoes;
 
 namespace Negocios.ModuloResponsavel.Processos
 {
@@ -39,6 +40,24 @@ namespace Negocios.ModuloResponsavel.Processos
 
         public void Excluir(Responsavel responsavel)
         {
+
+            try
+            {
+                if (responsavel.ID == 0)
+                    throw new ResponsavelNaoExcluidoExcecao();
+
+                List<Responsavel> resultado = responsavelRepositorio.Consultar(responsavel, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new ResponsavelNaoExcluidoExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.responsavelRepositorio.Excluir(responsavel);
         }
 

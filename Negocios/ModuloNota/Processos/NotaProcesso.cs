@@ -8,6 +8,7 @@ using Negocios.ModuloNota.Repositorios;
 using Negocios.ModuloNota.Processos;
 using Negocios.ModuloNota.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloNota.Excecoes;
 
 namespace Negocios.ModuloNota.Processos
 {
@@ -39,6 +40,23 @@ namespace Negocios.ModuloNota.Processos
 
         public void Excluir(Nota nota)
         {
+            try
+            {
+                if (nota.ID == 0)
+                    throw new NotaNaoExcluidaExcecao();
+
+                List<Nota> resultado = notaRepositorio.Consultar(nota, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new NotaNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.notaRepositorio.Excluir(nota);
         }
 

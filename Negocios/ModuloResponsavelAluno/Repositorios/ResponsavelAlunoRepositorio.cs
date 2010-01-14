@@ -6,6 +6,7 @@ using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloResponsavelAluno.Excecoes;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloResponsavelAluno.Repositorios
 {
@@ -13,9 +14,9 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
     {
         #region Atributos
 
-        ColegioDB db = new ColegioDB(new MySqlConnection(BasicoConstantes.CONEXAO));
+        ColegioDB db ;
 
-        #endregion
+        #endregion      
 
         #region Métodos da Interface
 
@@ -368,6 +369,15 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
             db.SubmitChanges();
         }
 
+        #endregion
+
+        #region Construtor
+        public ResponsavelAlunoRepositorio()
+        {
+            Conexao conexao = new Conexao();
+            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+
+        } 
         #endregion
 
 

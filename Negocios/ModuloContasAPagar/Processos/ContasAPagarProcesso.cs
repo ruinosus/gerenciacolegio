@@ -7,6 +7,7 @@ using Negocios.ModuloContasAPagar.Repositorios;
 using Negocios.ModuloContasAPagar.Processos;
 using Negocios.ModuloContasAPagar.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloContasAPagar.Excecoes;
 
 namespace Negocios.ModuloContasAPagar.Processos
 {
@@ -38,6 +39,24 @@ namespace Negocios.ModuloContasAPagar.Processos
 
         public void Excluir(ContasAPagar contasAPagar)
         {
+
+            try
+            {
+                if (contasAPagar.ID == 0)
+                    throw new ContasAPagarNaoExcluidaExcecao();
+
+                List<ContasAPagar> resultado = contasAPagarRepositorio.Consultar(contasAPagar, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new ContasAPagarNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.contasAPagarRepositorio.Excluir(contasAPagar);
         }
 

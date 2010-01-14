@@ -8,6 +8,7 @@ using Negocios.ModuloSala.Repositorios;
 using Negocios.ModuloSala.Processos;
 using Negocios.ModuloSala.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloSala.Excecoes;
 
 namespace Negocios.ModuloSala.Processos
 {
@@ -39,6 +40,24 @@ namespace Negocios.ModuloSala.Processos
 
         public void Excluir(Sala sala)
         {
+
+            try
+            {
+                if (sala.ID == 0)
+                    throw new SalaNaoExcluidaExcecao();
+
+                List<Sala> resultado = salaRepositorio.Consultar(sala, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new SalaNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.salaRepositorio.Excluir(sala);
         }
 

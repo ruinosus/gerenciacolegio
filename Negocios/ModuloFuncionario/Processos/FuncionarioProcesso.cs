@@ -8,6 +8,7 @@ using Negocios.ModuloFuncionario.Repositorios;
 using Negocios.ModuloFuncionario.Processos;
 using Negocios.ModuloFuncionario.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloFuncionario.Excecoes;
 
 namespace Negocios.ModuloFuncionario.Processos
 {
@@ -39,6 +40,24 @@ namespace Negocios.ModuloFuncionario.Processos
 
         public void Excluir(Funcionario funcionario)
         {
+
+            try
+            {
+                if (funcionario.ID == 0)
+                    throw new FuncionarioNaoExcluidoExcecao();
+
+                List<Funcionario> resultado = funcionarioRepositorio.Consultar(funcionario, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new FuncionarioNaoExcluidoExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.funcionarioRepositorio.Excluir(funcionario);
         }
 

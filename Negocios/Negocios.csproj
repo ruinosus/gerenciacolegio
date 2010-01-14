@@ -49,6 +49,7 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -69,9 +70,11 @@
     <Compile Include="ModuloAtividadeTurma\Processos\Interfaces\IAtividadeTurmaProcesso.cs" />
     <Compile Include="ModuloAtividadeTurma\Repositorios\AtividadeTurmaRepositorio.cs" />
     <Compile Include="ModuloAtividadeTurma\Repositorios\Interfaces\IAtividadeTurmaRepositorio.cs" />
+    <Compile Include="ModuloBasico\VOs\Conexao.cs" />
     <Compile Include="ModuloBasico\VOs\Singleton.cs" />
     <Compile Include="ModuloBasico\VOs\Memoria.cs" />
     <Compile Include="ModuloBoletoAtividade\Constantes\BoletoAtividadeConstantes.cs" />
+    <Compile Include="ModuloBasico\Excecoes\ArquivoConfiguracaoNaoEncontradoExcecao.cs" />
     <Compile Include="ModuloBoletoAtividade\Excecoes\BoletoAtividadeNaoAlteradaExcecao.cs" />
     <Compile Include="ModuloBoletoAtividade\Excecoes\BoletoAtividadeNaoExcluidaExcecao.cs" />
     <Compile Include="ModuloBoletoAtividade\Excecoes\BoletoAtividadeNaoIncluidaExcecao.cs" />
@@ -374,7 +377,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ModuloAuxiliar\Util\MenuController\" />
-    <Folder Include="ModuloBasico\Excecoes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

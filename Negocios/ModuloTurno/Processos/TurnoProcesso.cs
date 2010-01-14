@@ -8,6 +8,7 @@ using Negocios.ModuloTurno.Repositorios;
 using Negocios.ModuloTurno.Processos;
 using Negocios.ModuloTurno.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloTurno.Excecoes;
 
 namespace Negocios.ModuloTurno.Processos
 {
@@ -39,6 +40,23 @@ namespace Negocios.ModuloTurno.Processos
 
         public void Excluir(Turno turno)
         {
+            try
+            {
+                if (turno.ID == 0)
+                    throw new TurnoNaoExcluidoExcecao();
+
+                List<Turno> resultado = turnoRepositorio.Consultar(turno, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new TurnoNaoExcluidoExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.turnoRepositorio.Excluir(turno);
         }
 

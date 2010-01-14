@@ -7,6 +7,7 @@ using Negocios.ModuloChequeBoletoMensalidade.Repositorios;
 using Negocios.ModuloChequeBoletoMensalidade.Processos;
 using Negocios.ModuloChequeBoletoMensalidade.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloChequeBoletoMensalidade.Excecoes;
 
 namespace Negocios.ModuloChequeBoletoMensalidade.Processos
 {
@@ -38,6 +39,24 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Processos
 
         public void Excluir(ChequeBoletoMensalidade chequeBoletoMensalidade)
         {
+
+            try
+            {
+                if (chequeBoletoMensalidade.ID == 0)
+                    throw new ChequeBoletoMensalidadeNaoExcluidaExcecao();
+
+                List<ChequeBoletoMensalidade> resultado = chequeBoletoMensalidadeRepositorio.Consultar(chequeBoletoMensalidade, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new ChequeBoletoMensalidadeNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.chequeBoletoMensalidadeRepositorio.Excluir(chequeBoletoMensalidade);
         }
 

@@ -50,12 +50,12 @@ namespace Negocios.ModuloAluno.Processos
                 if (aluno.ID == 0)
                     throw new AlunoNaoExcluidoExcecao();
 
-                List<Aluno> resultado = alunoRepositorio.Consultar();
+                List<Aluno> resultado = alunoRepositorio.Consultar(aluno,TipoPesquisa.E);
 
                 if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
                     throw new AlunoNaoExcluidoExcecao();
 
-                //aluno.s
+                resultado[0].Status = (int)Status.Inativo;
 
             }
             catch (Exception e)

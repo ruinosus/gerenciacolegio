@@ -8,6 +8,7 @@ using Negocios.ModuloPerfil.Repositorios;
 using Negocios.ModuloPerfil.Processos;
 using Negocios.ModuloPerfil.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloPerfil.Excecoes;
 
 namespace Negocios.ModuloPerfil.Processos
 {
@@ -39,6 +40,24 @@ namespace Negocios.ModuloPerfil.Processos
 
         public void Excluir(Perfil perfil)
         {
+
+            try
+            {
+                if (perfil.ID == 0)
+                    throw new PerfilNaoExcluidoExcecao();
+
+                List<Perfil> resultado = perfilRepositorio.Consultar(perfil, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new PerfilNaoExcluidoExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.perfilRepositorio.Excluir(perfil);
         }
 

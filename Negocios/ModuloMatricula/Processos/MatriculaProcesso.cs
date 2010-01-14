@@ -8,6 +8,7 @@ using Negocios.ModuloMatricula.Repositorios;
 using Negocios.ModuloMatricula.Processos;
 using Negocios.ModuloMatricula.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloMatricula.Excecoes;
 
 namespace Negocios.ModuloMatricula.Processos
 {
@@ -39,6 +40,23 @@ namespace Negocios.ModuloMatricula.Processos
 
         public void Excluir(Matricula matricula)
         {
+            try
+            {
+                if (matricula.ID == 0)
+                    throw new MatriculaNaoExcluidaExcecao();
+
+                List<Matricula> resultado = matriculaRepositorio.Consultar(matricula, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new MatriculaNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.matriculaRepositorio.Excluir(matricula);
         }
 

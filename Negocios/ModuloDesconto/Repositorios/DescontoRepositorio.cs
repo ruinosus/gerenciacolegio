@@ -6,17 +6,17 @@ using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloDesconto.Excecoes;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloDesconto.Repositorios
 {
-    public class DescontoRepositorio: IDescontoRepositorio
+    public class DescontoRepositorio : IDescontoRepositorio
     {
-		#region Atributos
-		
-        ColegioDB db = new ColegioDB(new MySqlConnection(BasicoConstantes.CONEXAO));
-		
-		#endregion      
-		
+        #region Atributos
+        ColegioDB db;
+
+        #endregion
+
         #region Métodos da Interface
 
         public List<Desconto> Consultar()
@@ -44,10 +44,10 @@ namespace Negocios.ModuloDesconto.Repositorios
                             }
                             else
                             {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.ID == desconto.ID
-                                                    select d).ToList());
+                                resultado = ((from d in resultado
+                                              where
+                                              d.ID == desconto.ID
+                                              select d).ToList());
                             }
                             pesquisa = true;
                             resultado = resultado.Distinct().ToList();
@@ -64,10 +64,10 @@ namespace Negocios.ModuloDesconto.Repositorios
                             }
                             else
                             {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.Descricao.Contains(desconto.Descricao)
-                                                    select d).ToList());
+                                resultado = ((from d in resultado
+                                              where
+                                              d.Descricao.Contains(desconto.Descricao)
+                                              select d).ToList());
                             }
                             pesquisa = true;
                             resultado = resultado.Distinct().ToList();
@@ -84,16 +84,16 @@ namespace Negocios.ModuloDesconto.Repositorios
                             }
                             else
                             {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.Status.HasValue && d.Status.Value == desconto.Status.Value
-                                                    select d).ToList());
+                                resultado = ((from d in resultado
+                                              where
+                                              d.Status.HasValue && d.Status.Value == desconto.Status.Value
+                                              select d).ToList());
                             }
                             pesquisa = true;
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (desconto.Percentual!= 0)
+                        if (desconto.Percentual != 0)
                         {
                             if (pesquisa)
                             {
@@ -104,10 +104,10 @@ namespace Negocios.ModuloDesconto.Repositorios
                             }
                             else
                             {
-                                resultado=((from d in resultado
-                                                    where
-                                                     d.Percentual == desconto.Percentual
-                                                    select d).ToList());
+                                resultado = ((from d in resultado
+                                              where
+                                               d.Percentual == desconto.Percentual
+                                              select d).ToList());
                             }
                             pesquisa = true;
                             resultado = resultado.Distinct().ToList();
@@ -217,7 +217,7 @@ namespace Negocios.ModuloDesconto.Repositorios
             }
             catch (Exception)
             {
-                
+
                 throw new DescontoNaoIncluidoExcecao();
             }
         }
@@ -240,7 +240,7 @@ namespace Negocios.ModuloDesconto.Repositorios
             }
             catch (Exception)
             {
-                
+
                 throw new DescontoNaoExcluidoExcecao();
             }
         }
@@ -261,12 +261,12 @@ namespace Negocios.ModuloDesconto.Repositorios
 
                 descontoAux.Descricao = desconto.Descricao;
                 descontoAux.Percentual = desconto.Percentual;
-                descontoAux.Status= desconto.Status;
+                descontoAux.Status = desconto.Status;
                 Confirmar();
             }
             catch (Exception)
             {
-                
+
                 throw new DescontoNaoAlteradoExcecao();
             }
         }
@@ -276,8 +276,16 @@ namespace Negocios.ModuloDesconto.Repositorios
             db.SubmitChanges();
         }
 
-        #endregion      
+        #endregion
+
+        #region Construtor
+        public DescontoRepositorio()
+        {
+            Conexao conexao = new Conexao();
+            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+        }
 
 
+        #endregion
     }
-} 
+}
