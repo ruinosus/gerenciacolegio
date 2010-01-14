@@ -18,6 +18,7 @@ namespace GuiWindowsForms
     public partial class telaConfiguracoesSerie : Form
     {
         int linhaSelecionadaGrid = -1;
+        int verificaButton = 0;
 
         List<ClasseGrid> listaGrid = null;
         List<Sala> listaSala = null;
@@ -189,6 +190,15 @@ namespace GuiWindowsForms
                 Program.ultimaTela = 6;
                 Program.SelecionaForm(Program.ultimaTela);
             }
+
+            cmbSerie.Enabled = false;
+            cmbCiclo.Enabled = false;
+            cmbTurno.Enabled = false;
+            cmbTurma.Enabled = false;
+            txtValor.Enabled = false;
+            dataGridView1.Enabled = true;
+            btnAdicionarSerie.Enabled = true;
+            btnExcluir.Enabled = true;
         }
 
         #endregion
@@ -220,89 +230,205 @@ namespace GuiWindowsForms
         #region EVENTO CADASTRAR
         private void ucMenuInferior1_EventoCadastrar()
         {
-            try
+           //Verifica o button selecionado se é Alterar numero(2) 
+           //ou Adicionar numero(1)
+            if (verificaButton == 2)
             {
-                sala = new Sala();
-                serie = new Serie();
-                salaControlador = SalaProcesso.Instance;
-
-                #region VALIDA - SERIE
-
-                if (String.IsNullOrEmpty(cmbSerie.Text))
+                #region ALTERAR SERIE
+                try
                 {
-                    errorProviderTela.SetError(cmbSerie, "Informe a serie");
-                    return;
+                    sala = new Sala();
+                    serie = new Serie();
+                    salaControlador = SalaProcesso.Instance;
+
+                    #region VALIDA - SERIE
+
+                    if (String.IsNullOrEmpty(cmbSerie.Text))
+                    {
+                        errorProviderTela.SetError(cmbSerie, "Informe a serie");
+                        return;
+                    }
+                    sala.SerieID = ((Serie)cmbSerie.SelectedItem).ID;
+                    serie = ((Serie)cmbSerie.SelectedItem);
+
+
+                    #endregion
+
+                    #region VALIDA - CICLO
+
+                    if (String.IsNullOrEmpty(cmbCiclo.Text))
+                    {
+                        errorProviderTela.SetError(cmbCiclo, "Informe o ciclo");
+                        return;
+                    }
+                    sala.Ciclo = cmbCiclo.Text;
+
+                    #endregion
+
+                    #region VALIDA - TURNO
+
+                    if (String.IsNullOrEmpty(cmbTurno.Text))
+                    {
+                        errorProviderTela.SetError(cmbTurno, "Informe o turno");
+                        return;
+                    }
+                    sala.TurnoID = ((Turno)cmbTurno.SelectedItem).ID;
+
+                    #endregion
+
+                    #region VALIDA - TURMA
+
+                    if (String.IsNullOrEmpty(cmbTurma.Text))
+                    {
+                        errorProviderTela.SetError(cmbTurma, "Informe a turma");
+                        return;
+                    }
+                    sala.TurmaID = ((Turma)cmbTurma.SelectedItem).ID;
+
+                    #endregion
+
+                    #region VALIDA - VALOR
+
+                    if (String.IsNullOrEmpty(txtValor.Text))
+                    {
+                        errorProviderTela.SetError(txtValor, "Informe o valor");
+                        return;
+                    }
+                    sala.Valor = Convert.ToDouble(txtValor.Text);
+
+                    #endregion
+
+                    if (linhaSelecionadaGrid != -1)
+                    {
+                        sala.ID = listaSala[linhaSelecionadaGrid].ID;
+                        salaControlador.Alterar(sala);
+                        carregaForm();
+                        linhaSelecionadaGrid = -1;
+
+                        MessageBox.Show(SerieConstantes.SERIE_ALTERADA, "Colégio Conhecer");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
+                    }
                 }
-                sala.SerieID = ((Serie)cmbSerie.SelectedItem).ID;
-                serie = ((Serie)cmbSerie.SelectedItem);
-
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                carregaForm();
+                limparTela();
                 #endregion
-
-                #region VALIDA - CICLO
-
-                if (String.IsNullOrEmpty(cmbCiclo.Text))
-                {
-                    errorProviderTela.SetError(cmbCiclo, "Informe o ciclo");
-                    return;
-                }
-                sala.Ciclo = cmbCiclo.Text;
-
-                #endregion
-
-                #region VALIDA - TURNO
-
-                if (String.IsNullOrEmpty(cmbTurno.Text))
-                {
-                    errorProviderTela.SetError(cmbTurno, "Informe o turno");
-                    return;
-                }
-                sala.TurnoID = ((Turno)cmbTurno.SelectedItem).ID;
-
-                #endregion
-
-                #region VALIDA - TURMA
-
-                if (String.IsNullOrEmpty(cmbTurma.Text))
-                {
-                    errorProviderTela.SetError(cmbTurma, "Informe a turma");
-                    return;
-                }
-                sala.TurmaID = ((Turma)cmbTurma.SelectedItem).ID;
-
-                #endregion
-
-                #region VALIDA - VALOR
-
-                if (String.IsNullOrEmpty(txtValor.Text))
-                {
-                    errorProviderTela.SetError(txtValor, "Informe o valor");
-                    return;
-                }
-                sala.Valor = Convert.ToDouble(txtValor.Text);
-
-                #endregion
-
-                if (linhaSelecionadaGrid != -1)
-                {
-                    sala.ID = listaSala[linhaSelecionadaGrid].ID;
-                    salaControlador.Alterar(sala);
-                    carregaForm();
-                    linhaSelecionadaGrid = -1;
-
-                    MessageBox.Show(SerieConstantes.SERIE_ALTERADA,"Colégio Conhecer - Alterar Série");
-                }
-                else
-                {
-                    MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +","Colégio Conhecer - Alterar Série");
-                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                #region ADICIONAR SERIE
+                try
+                {
+                    sala = new Sala();
+                    serie = new Serie();
+                    salaPeriodo = new SalaPeriodo();
+
+                    salaControlador = SalaProcesso.Instance;
+                    salaPeriodoControlador = SalaPeriodoProcesso.Instance;
+
+                    #region VALIDA - SERIE
+
+                    if (String.IsNullOrEmpty(cmbSerie.Text))
+                    {
+                        errorProviderTela.SetError(cmbSerie, "Informe a serie");
+                        return;
+                    }
+                    sala.SerieID = ((Serie)cmbSerie.SelectedItem).ID;
+                    serie = ((Serie)cmbSerie.SelectedItem);
+
+
+                    #endregion
+
+                    #region VALIDA - CICLO
+
+                    if (String.IsNullOrEmpty(cmbCiclo.Text))
+                    {
+                        errorProviderTela.SetError(cmbCiclo, "Informe o ciclo");
+                        return;
+                    }
+                    sala.Ciclo = cmbCiclo.Text;
+
+                    #endregion
+
+                    #region VALIDA - TURNO
+
+                    if (String.IsNullOrEmpty(cmbTurno.Text))
+                    {
+                        errorProviderTela.SetError(cmbTurno, "Informe o turno");
+                        return;
+                    }
+                    sala.TurnoID = ((Turno)cmbTurno.SelectedItem).ID;
+
+                    #endregion
+
+                    #region VALIDA - TURMA
+
+                    if (String.IsNullOrEmpty(cmbTurma.Text))
+                    {
+                        errorProviderTela.SetError(cmbTurma, "Informe a turma");
+                        return;
+                    }
+                    sala.TurmaID = ((Turma)cmbTurma.SelectedItem).ID;
+
+                    #endregion
+
+                    #region VALIDA - VALOR
+
+                    if (String.IsNullOrEmpty(txtValor.Text))
+                    {
+                        errorProviderTela.SetError(txtValor, "Informe o valor");
+                        return;
+                    }
+                    sala.Valor = Convert.ToDouble(txtValor.Text);
+
+                    #endregion
+
+
+                    if (verificaSeJaInserido(sala) == false)
+                    {
+                        sala.Status = 0;
+                        salaControlador.Incluir(sala);
+                        salaControlador.Confirmar();
+
+                        salaPeriodo.Ano = DateTime.Now.Year;
+                        salaPeriodo.SalaID = sala.ID;
+                        salaPeriodo.Status = 1;
+
+                        salaPeriodoControlador.Incluir(salaPeriodo);
+                        salaPeriodoControlador.Confirmar();
+
+                        linhaSelecionadaGrid = -1;
+
+                        MessageBox.Show(SerieConstantes.SERIE_INCLUIDA, "Colégio Conhecer");
+                    }
+                    else
+                    {
+                        MessageBox.Show("A Série já existe na base de dados", "Colégio Conhecer");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                carregaForm();
+                limparTela();
+                #endregion
             }
-            carregaForm();
-            limparTela();
+            verificaButton = 0;
+            cmbSerie.Enabled = false;
+            cmbCiclo.Enabled = false;
+            cmbTurno.Enabled = false;
+            cmbTurma.Enabled = false;
+            txtValor.Enabled = false;
+            dataGridView1.Enabled = true;
+            btnAdicionarSerie.Enabled = true;
+            btnExcluir.Enabled = true;
         }
         #endregion
 
@@ -475,6 +601,7 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region CARREGAR FORM
         private void carregaForm()
         {
             salaControlador = SalaProcesso.Instance;
@@ -502,6 +629,7 @@ namespace GuiWindowsForms
             dataGridView1.DataSource = listaGrid;
 
         }
+        #endregion
 
         #region EVENTOS PARA EXIBIÇÃO DE MENSAGENS DA TELA
 
@@ -541,106 +669,122 @@ namespace GuiWindowsForms
 
         private void btnAdicionarSerie_Click(object sender, EventArgs e)
         {
+            #region ADICIONAR SERIE
+            //try
+            //{
+            //    sala = new Sala();
+            //    serie = new Serie();
+            //    salaPeriodo = new SalaPeriodo();
 
-            try
-            {
-                sala = new Sala();
-                serie = new Serie();
-                salaPeriodo = new SalaPeriodo();
+            //    salaControlador = SalaProcesso.Instance;
+            //    salaPeriodoControlador = SalaPeriodoProcesso.Instance;
 
-                salaControlador = SalaProcesso.Instance;
-                salaPeriodoControlador = SalaPeriodoProcesso.Instance;
+            //    #region VALIDA - SERIE
 
-                #region VALIDA - SERIE
-
-                if (String.IsNullOrEmpty(cmbSerie.Text))
-                {
-                    errorProviderTela.SetError(cmbSerie, "Informe a serie");
-                    return;
-                }
-                sala.SerieID = ((Serie)cmbSerie.SelectedItem).ID;
-                serie = ((Serie)cmbSerie.SelectedItem);
+            //    if (String.IsNullOrEmpty(cmbSerie.Text))
+            //    {
+            //        errorProviderTela.SetError(cmbSerie, "Informe a serie");
+            //        return;
+            //    }
+            //    sala.SerieID = ((Serie)cmbSerie.SelectedItem).ID;
+            //    serie = ((Serie)cmbSerie.SelectedItem);
 
 
-                #endregion
+            //    #endregion
 
-                #region VALIDA - CICLO
+            //    #region VALIDA - CICLO
 
-                if (String.IsNullOrEmpty(cmbCiclo.Text))
-                {
-                    errorProviderTela.SetError(cmbCiclo, "Informe o ciclo");
-                    return;
-                }
-                sala.Ciclo = cmbCiclo.Text;
+            //    if (String.IsNullOrEmpty(cmbCiclo.Text))
+            //    {
+            //        errorProviderTela.SetError(cmbCiclo, "Informe o ciclo");
+            //        return;
+            //    }
+            //    sala.Ciclo = cmbCiclo.Text;
 
-                #endregion
+            //    #endregion
 
-                #region VALIDA - TURNO
+            //    #region VALIDA - TURNO
 
-                if (String.IsNullOrEmpty(cmbTurno.Text))
-                {
-                    errorProviderTela.SetError(cmbTurno, "Informe o turno");
-                    return;
-                }
-                sala.TurnoID = ((Turno)cmbTurno.SelectedItem).ID;
+            //    if (String.IsNullOrEmpty(cmbTurno.Text))
+            //    {
+            //        errorProviderTela.SetError(cmbTurno, "Informe o turno");
+            //        return;
+            //    }
+            //    sala.TurnoID = ((Turno)cmbTurno.SelectedItem).ID;
 
-                #endregion
+            //    #endregion
 
-                #region VALIDA - TURMA
+            //    #region VALIDA - TURMA
 
-                if (String.IsNullOrEmpty(cmbTurma.Text))
-                {
-                    errorProviderTela.SetError(cmbTurma, "Informe a turma");
-                    return;
-                }
-                sala.TurmaID = ((Turma)cmbTurma.SelectedItem).ID;
+            //    if (String.IsNullOrEmpty(cmbTurma.Text))
+            //    {
+            //        errorProviderTela.SetError(cmbTurma, "Informe a turma");
+            //        return;
+            //    }
+            //    sala.TurmaID = ((Turma)cmbTurma.SelectedItem).ID;
 
-                #endregion
+            //    #endregion
 
-                #region VALIDA - VALOR
+            //    #region VALIDA - VALOR
 
-                if (String.IsNullOrEmpty(txtValor.Text))
-                {
-                    errorProviderTela.SetError(txtValor, "Informe o valor");
-                    return;
-                }
-                sala.Valor = Convert.ToDouble(txtValor.Text);
+            //    if (String.IsNullOrEmpty(txtValor.Text))
+            //    {
+            //        errorProviderTela.SetError(txtValor, "Informe o valor");
+            //        return;
+            //    }
+            //    sala.Valor = Convert.ToDouble(txtValor.Text);
 
-                #endregion
+            //    #endregion
 
                 
-                if (verificaSeJaInserido(sala)==false)
-                {
-                        sala.Status = 0;
-                        salaControlador.Incluir(sala);
-                        salaControlador.Confirmar();
+            //    if (verificaSeJaInserido(sala)==false)
+            //    {
+            //            sala.Status = 0;
+            //            salaControlador.Incluir(sala);
+            //            salaControlador.Confirmar();
 
-                        salaPeriodo.Ano = DateTime.Now.Year;
-                        salaPeriodo.SalaID = sala.ID;
-                        salaPeriodo.Status = 1;
+            //            salaPeriodo.Ano = DateTime.Now.Year;
+            //            salaPeriodo.SalaID = sala.ID;
+            //            salaPeriodo.Status = 1;
 
-                        salaPeriodoControlador.Incluir(salaPeriodo);
-                        salaPeriodoControlador.Confirmar();
+            //            salaPeriodoControlador.Incluir(salaPeriodo);
+            //            salaPeriodoControlador.Confirmar();
                         
-                        linhaSelecionadaGrid = -1;
+            //            linhaSelecionadaGrid = -1;
 
-                        MessageBox.Show(SerieConstantes.SERIE_INCLUIDA, "Colégio Conhecer - Inserir Série");
-                }
-                else
-                {
-                    MessageBox.Show("A Série já existe na base de dados", "Colégio Conhecer - Inserir Série");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            carregaForm();
-            limparTela();
+            //            MessageBox.Show(SerieConstantes.SERIE_INCLUIDA, "Colégio Conhecer - Inserir Série");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("A Série já existe na base de dados", "Colégio Conhecer - Inserir Série");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //carregaForm();
+            //limparTela();
+            #endregion
+
+
+            verificaButton = 1;
+
+            cmbSerie.Enabled = true;
+            cmbCiclo.Enabled = true;
+            cmbTurno.Enabled = true;
+            cmbTurma.Enabled = true;
+            txtValor.Enabled = true;
+            dataGridView1.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnExcluir.Enabled = false;
+
+
         }
 
         #endregion
 
+        #region LIMPAR TELA
         public void limparTela()
         {
             txtValor.Clear();
@@ -649,6 +793,7 @@ namespace GuiWindowsForms
             cmbTurma.SelectedIndex = 0;
             cmbTurno.SelectedIndex = 0;
         }
+        #endregion
 
         public bool verificaSeJaInserido(Sala sala)
         {
@@ -667,6 +812,20 @@ namespace GuiWindowsForms
                 }
             }
             return testa;
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            verificaButton = 2;
+
+            cmbSerie.Enabled = true;
+            cmbCiclo.Enabled = true;
+            cmbTurno.Enabled = true;
+            cmbTurma.Enabled = true;
+            txtValor.Enabled = true;
+            dataGridView1.Enabled = false;
+            btnAdicionarSerie.Enabled = false;
+            btnExcluir.Enabled = false;
         }
 
 

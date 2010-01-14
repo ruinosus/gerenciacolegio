@@ -38,14 +38,14 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Percentual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Percentual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
@@ -101,6 +101,7 @@
             // 
             // txtValor
             // 
+            this.txtValor.Enabled = false;
             this.txtValor.Location = new System.Drawing.Point(92, 134);
             this.txtValor.MaxLength = 10;
             this.txtValor.Name = "txtValor";
@@ -119,6 +120,7 @@
             // 
             // txtDescricao
             // 
+            this.txtDescricao.Enabled = false;
             this.txtDescricao.Location = new System.Drawing.Point(92, 69);
             this.txtDescricao.MaxLength = 30;
             this.txtDescricao.Name = "txtDescricao";
@@ -157,6 +159,22 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 400;
+            // 
+            // Percentual
+            // 
+            this.Percentual.DataPropertyName = "Percentual";
+            this.Percentual.HeaderText = "Percentual";
+            this.Percentual.Name = "Percentual";
+            this.Percentual.ReadOnly = true;
+            this.Percentual.Width = 194;
             // 
             // lblHelloUsuario
             // 
@@ -219,22 +237,6 @@
             this.ucMenuInferior1.TabIndex = 135;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 400;
-            // 
-            // Percentual
-            // 
-            this.Percentual.DataPropertyName = "Percentual";
-            this.Percentual.HeaderText = "Percentual";
-            this.Percentual.Name = "Percentual";
-            this.Percentual.ReadOnly = true;
-            this.Percentual.Width = 194;
             // 
             // telaConfiguracoesDescontoMatricula
             // 
