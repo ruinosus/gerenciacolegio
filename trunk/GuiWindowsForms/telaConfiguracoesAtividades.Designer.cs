@@ -35,7 +35,10 @@
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.tbcAtividade = new System.Windows.Forms.TabControl();
             this.pagCadastrarAtividade = new System.Windows.Forms.TabPage();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdicionarAtividade = new System.Windows.Forms.Button();
             this.btnExcluirAtividade = new System.Windows.Forms.Button();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
@@ -93,9 +96,7 @@
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAlterar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.tbcAtividade.SuspendLayout();
             this.pagCadastrarAtividade.SuspendLayout();
@@ -170,6 +171,18 @@
             this.pagCadastrarAtividade.Text = "Cadastrar  Atividade";
             this.pagCadastrarAtividade.UseVisualStyleBackColor = true;
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Location = new System.Drawing.Point(525, 245);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(32, 32);
+            this.btnAlterar.TabIndex = 114;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -194,13 +207,31 @@
             this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MaxInputLength = 30;
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 225;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MaxInputLength = 100;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 350;
+            // 
             // btnAdicionarAtividade
             // 
-            this.btnAdicionarAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnAdicionarAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar;
             this.btnAdicionarAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarAtividade.FlatAppearance.BorderSize = 0;
             this.btnAdicionarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarAtividade.Location = new System.Drawing.Point(564, 245);
+            this.btnAdicionarAtividade.Location = new System.Drawing.Point(577, 245);
             this.btnAdicionarAtividade.Name = "btnAdicionarAtividade";
             this.btnAdicionarAtividade.Size = new System.Drawing.Size(32, 32);
             this.btnAdicionarAtividade.TabIndex = 113;
@@ -211,14 +242,14 @@
             // 
             // btnExcluirAtividade
             // 
-            this.btnExcluirAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
+            this.btnExcluirAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.menos;
             this.btnExcluirAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluirAtividade.FlatAppearance.BorderSize = 0;
             this.btnExcluirAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluirAtividade.Location = new System.Drawing.Point(631, 256);
+            this.btnExcluirAtividade.Location = new System.Drawing.Point(630, 245);
             this.btnExcluirAtividade.Margin = new System.Windows.Forms.Padding(0);
             this.btnExcluirAtividade.Name = "btnExcluirAtividade";
-            this.btnExcluirAtividade.Size = new System.Drawing.Size(31, 11);
+            this.btnExcluirAtividade.Size = new System.Drawing.Size(32, 32);
             this.btnExcluirAtividade.TabIndex = 69;
             this.btnExcluirAtividade.UseVisualStyleBackColor = true;
             this.btnExcluirAtividade.MouseLeave += new System.EventHandler(this.btnExcluirAtividade_MouseLeave);
@@ -227,7 +258,7 @@
             // 
             // btnAdicionarImagem
             // 
-            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar;
             this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
             this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -286,6 +317,7 @@
             // 
             // pagTurma
             // 
+            this.pagTurma.Controls.Add(this.button1);
             this.pagTurma.Controls.Add(this.lblAtividadeTurma);
             this.pagTurma.Controls.Add(this.cmbAtividadeTurma);
             this.pagTurma.Controls.Add(this.btnAdicionarTurma);
@@ -340,11 +372,11 @@
             // 
             // btnAdicionarTurma
             // 
-            this.btnAdicionarTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnAdicionarTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar;
             this.btnAdicionarTurma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarTurma.FlatAppearance.BorderSize = 0;
             this.btnAdicionarTurma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarTurma.Location = new System.Drawing.Point(572, 252);
+            this.btnAdicionarTurma.Location = new System.Drawing.Point(581, 252);
             this.btnAdicionarTurma.Name = "btnAdicionarTurma";
             this.btnAdicionarTurma.Size = new System.Drawing.Size(32, 32);
             this.btnAdicionarTurma.TabIndex = 131;
@@ -353,14 +385,14 @@
             // 
             // btnExcluirTurma
             // 
-            this.btnExcluirTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
+            this.btnExcluirTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.menos;
             this.btnExcluirTurma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluirTurma.FlatAppearance.BorderSize = 0;
             this.btnExcluirTurma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluirTurma.Location = new System.Drawing.Point(631, 263);
+            this.btnExcluirTurma.Location = new System.Drawing.Point(630, 255);
             this.btnExcluirTurma.Margin = new System.Windows.Forms.Padding(0);
             this.btnExcluirTurma.Name = "btnExcluirTurma";
-            this.btnExcluirTurma.Size = new System.Drawing.Size(31, 11);
+            this.btnExcluirTurma.Size = new System.Drawing.Size(32, 32);
             this.btnExcluirTurma.TabIndex = 130;
             this.btnExcluirTurma.UseVisualStyleBackColor = true;
             this.btnExcluirTurma.Click += new System.EventHandler(this.btnExcluirTurma_Click);
@@ -811,32 +843,17 @@
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
-            // Nome
+            // button1
             // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.MaxInputLength = 30;
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 225;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.MaxInputLength = 100;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 350;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Location = new System.Drawing.Point(500, 245);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(32, 32);
-            this.btnAlterar.TabIndex = 114;
-            this.btnAlterar.Text = "?";
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.button1.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(529, 252);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 32);
+            this.button1.TabIndex = 134;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // telaConfiguracoesAtividades
             // 
@@ -944,5 +961,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button button1;
     }
 }
