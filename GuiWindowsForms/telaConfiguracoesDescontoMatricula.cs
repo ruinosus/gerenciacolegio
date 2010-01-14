@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloDesconto.Processos;
 using Negocios.ModuloDesconto.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace GuiWindowsForms
 {
@@ -270,11 +271,11 @@ namespace GuiWindowsForms
                         descontoControlador.Confirmar();
                         linhaSelecionadaGrid = -1;
 
-                        MessageBox.Show(DescontoConstantes.DESCONTO_INCLUIDO, "Colégio Conhecer - Inserir Desconto");
+                        MessageBox.Show(DescontoConstantes.DESCONTO_INCLUIDO, "Colégio Conhecer");
                     }
                     else
                     {
-                        MessageBox.Show("O Desconto já existe na base de dados", "Colégio Conhecer - Inserir Desconto");
+                        MessageBox.Show("O Desconto já existe na base de dados", "Colégio Conhecer");
                     }
                 }
                 catch (Exception ex)
@@ -325,11 +326,11 @@ namespace GuiWindowsForms
                         descontoControlador.Confirmar();
                         linhaSelecionadaGrid = -1;
 
-                        MessageBox.Show(DescontoConstantes.DESCONTO_ALTERADO, "Colégio Conhecer - Alterar Desconto");
+                        MessageBox.Show(DescontoConstantes.DESCONTO_ALTERADO, "Colégio Conhecer");
                     }
                     else
                     {
-                        MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer - Alterar Desconto");
+                        MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
                     }
                 }
                 catch (Exception ex)
@@ -409,7 +410,10 @@ namespace GuiWindowsForms
 
             listaDesconto = new List<Desconto>();
 
-            listaDesconto = descontoControlador.Consultar();
+            Desconto d = new Desconto();
+            d.Status = (int)Status.Ativo;
+
+            listaDesconto = descontoControlador.Consultar(d, TipoPesquisa.E);
 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = null;

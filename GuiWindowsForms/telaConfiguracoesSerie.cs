@@ -616,8 +616,6 @@ namespace GuiWindowsForms
 
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-
-            
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
          
             if (linhaSelecionadaGrid >= 0)
