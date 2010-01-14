@@ -18,7 +18,14 @@ namespace GuiWindowsForms
             InitializeComponent();
             //TituloCadastrar = "Salvar Informações";
         }
+        public Button BotaoCadastrar
+        {
+            get
+            {
+                return btnSalvar;
+            }
 
+        }
 
         #region BUTTON VOLTAR
 
@@ -39,7 +46,7 @@ namespace GuiWindowsForms
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            if (EventoVoltar != null) 
+            if (EventoVoltar != null)
                 EventoVoltar();
         }
 
@@ -55,7 +62,7 @@ namespace GuiWindowsForms
         {
             if (EventoCadastrar != null)
                 EventoCadastrar();
-           // MessageBox.Show("Operação realizada com sucesso.");
+            // MessageBox.Show("Operação realizada com sucesso.");
 
         }
 

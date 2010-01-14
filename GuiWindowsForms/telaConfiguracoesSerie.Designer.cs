@@ -35,6 +35,11 @@
             this.btnAdicionarSerie = new System.Windows.Forms.Button();
             this.cmbCiclo = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.serieCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turmaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cicloCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbTurma = new System.Windows.Forms.ComboBox();
             this.cmbSerie = new System.Windows.Forms.ComboBox();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -51,11 +56,6 @@
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.serieCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turmaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cicloCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
@@ -117,6 +117,7 @@
             this.cmbCiclo.Enabled = false;
             this.cmbCiclo.FormattingEnabled = true;
             this.cmbCiclo.Items.AddRange(new object[] {
+            "selecione",
             "Educação Infantil",
             "Ensino Fundamental I",
             "Ensino Fundamental II",
@@ -153,6 +154,46 @@
             this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // serieCol
+            // 
+            this.serieCol.DataPropertyName = "SerieAux";
+            this.serieCol.HeaderText = "Série";
+            this.serieCol.Name = "serieCol";
+            this.serieCol.ReadOnly = true;
+            this.serieCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.serieCol.Width = 102;
+            // 
+            // turmaCol
+            // 
+            this.turmaCol.DataPropertyName = "TurmaAux";
+            this.turmaCol.HeaderText = "Turma";
+            this.turmaCol.Name = "turmaCol";
+            this.turmaCol.ReadOnly = true;
+            // 
+            // turnoCol
+            // 
+            this.turnoCol.DataPropertyName = "TurnoAux";
+            this.turnoCol.HeaderText = "Turno";
+            this.turnoCol.Name = "turnoCol";
+            this.turnoCol.ReadOnly = true;
+            this.turnoCol.Width = 80;
+            // 
+            // cicloCol
+            // 
+            this.cicloCol.DataPropertyName = "CicloAux";
+            this.cicloCol.HeaderText = "Ciclo";
+            this.cicloCol.Name = "cicloCol";
+            this.cicloCol.ReadOnly = true;
+            this.cicloCol.Width = 175;
+            // 
+            // valorCol
+            // 
+            this.valorCol.DataPropertyName = "ValorAux";
+            this.valorCol.HeaderText = "Valor";
+            this.valorCol.Name = "valorCol";
+            this.valorCol.ReadOnly = true;
+            this.valorCol.Width = 120;
+            // 
             // cmbTurma
             // 
             this.cmbTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -170,6 +211,8 @@
             this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSerie.Enabled = false;
             this.cmbSerie.FormattingEnabled = true;
+            this.cmbSerie.Items.AddRange(new object[] {
+            ""});
             this.cmbSerie.Location = new System.Drawing.Point(92, 69);
             this.cmbSerie.Name = "cmbSerie";
             this.cmbSerie.Size = new System.Drawing.Size(231, 21);
@@ -322,46 +365,6 @@
             this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
-            // 
-            // serieCol
-            // 
-            this.serieCol.DataPropertyName = "SerieAux";
-            this.serieCol.HeaderText = "Série";
-            this.serieCol.Name = "serieCol";
-            this.serieCol.ReadOnly = true;
-            this.serieCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.serieCol.Width = 102;
-            // 
-            // turmaCol
-            // 
-            this.turmaCol.DataPropertyName = "TurmaAux";
-            this.turmaCol.HeaderText = "Turma";
-            this.turmaCol.Name = "turmaCol";
-            this.turmaCol.ReadOnly = true;
-            // 
-            // turnoCol
-            // 
-            this.turnoCol.DataPropertyName = "TurnoAux";
-            this.turnoCol.HeaderText = "Turno";
-            this.turnoCol.Name = "turnoCol";
-            this.turnoCol.ReadOnly = true;
-            this.turnoCol.Width = 80;
-            // 
-            // cicloCol
-            // 
-            this.cicloCol.DataPropertyName = "CicloAux";
-            this.cicloCol.HeaderText = "Ciclo";
-            this.cicloCol.Name = "cicloCol";
-            this.cicloCol.ReadOnly = true;
-            this.cicloCol.Width = 175;
-            // 
-            // valorCol
-            // 
-            this.valorCol.DataPropertyName = "ValorAux";
-            this.valorCol.HeaderText = "Valor";
-            this.valorCol.Name = "valorCol";
-            this.valorCol.ReadOnly = true;
-            this.valorCol.Width = 120;
             // 
             // telaConfiguracoesSerie
             // 
