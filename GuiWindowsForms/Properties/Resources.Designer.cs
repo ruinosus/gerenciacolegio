@@ -788,6 +788,13 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap simbolo_colegio {
+            get {
+                object obj = ResourceManager.GetObject("simbolo_colegio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap vincular {
             get {
                 object obj = ResourceManager.GetObject("vincular", resourceCulture);
