@@ -370,8 +370,6 @@ namespace GuiWindowsForms
         private void telaAlunoPrincipal_Load(object sender, EventArgs e)
         {
             CarregarGrid();
-
-
         }
        
         #region EVENTOS DO GRID

@@ -97,6 +97,7 @@
             // 
             this.btnFuncionario.BackColor = System.Drawing.Color.Transparent;
             this.btnFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_prof_142x113;
+            this.btnFuncionario.Enabled = false;
             this.btnFuncionario.FlatAppearance.BorderSize = 0;
             this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuncionario.Location = new System.Drawing.Point(365, 9);
@@ -234,6 +235,7 @@
             // 
             this.btnFinanceiro.BackColor = System.Drawing.Color.Transparent;
             this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_gnd_120x110;
+            this.btnFinanceiro.Enabled = false;
             this.btnFinanceiro.FlatAppearance.BorderSize = 0;
             this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinanceiro.Location = new System.Drawing.Point(674, 15);
