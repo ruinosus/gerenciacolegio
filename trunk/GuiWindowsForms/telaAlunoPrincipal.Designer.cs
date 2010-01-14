@@ -31,26 +31,31 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoPrincipal));
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.txtBusca = new System.Windows.Forms.TextBox();
-            this.btnAluno = new System.Windows.Forms.Button();
-            this.btnFuncionario = new System.Windows.Forms.Button();
-            this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblAlunoOculto = new System.Windows.Forms.Label();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnCadastrarAluno = new System.Windows.Forms.Button();
             this.lblFuncOculto = new System.Windows.Forms.Label();
             this.lblConfOculto = new System.Windows.Forms.Label();
-            this.btnConfiguracoes = new System.Windows.Forms.Button();
             this.lblErro = new System.Windows.Forms.Label();
             this.lblFinanceiro = new System.Windows.Forms.Label();
-            this.btnFinanceiro = new System.Windows.Forms.Button();
-            this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.dgvAluno = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
+<<<<<<< .mine
+            this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
+            this.btnFinanceiro = new System.Windows.Forms.Button();
+            this.btnConfiguracoes = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnDesconectar = new System.Windows.Forms.Button();
+            this.btnCadastrarAluno = new System.Windows.Forms.Button();
+            this.btnFuncionario = new System.Windows.Forms.Button();
+            this.btnAluno = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+=======
             this.colunaNomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoneAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+>>>>>>> .r158
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -77,50 +82,6 @@
             this.txtBusca.Leave += new System.EventHandler(this.txtLogin_Leave);
             this.txtBusca.Enter += new System.EventHandler(this.txtLogin_Enter);
             // 
-            // btnAluno
-            // 
-            this.btnAluno.BackColor = System.Drawing.Color.Transparent;
-            this.btnAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_aluno_142x113;
-            this.btnAluno.FlatAppearance.BorderSize = 0;
-            this.btnAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAluno.Location = new System.Drawing.Point(240, 9);
-            this.btnAluno.Name = "btnAluno";
-            this.btnAluno.Size = new System.Drawing.Size(142, 113);
-            this.btnAluno.TabIndex = 4;
-            this.btnAluno.UseVisualStyleBackColor = false;
-            this.btnAluno.Click += new System.EventHandler(this.btnAluno_Click);
-            this.btnAluno.Leave += new System.EventHandler(this.btnAluno_Leave);
-            this.btnAluno.Enter += new System.EventHandler(this.btnAluno_Enter);
-            // 
-            // btnFuncionario
-            // 
-            this.btnFuncionario.BackColor = System.Drawing.Color.Transparent;
-            this.btnFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_prof_142x113;
-            this.btnFuncionario.Enabled = false;
-            this.btnFuncionario.FlatAppearance.BorderSize = 0;
-            this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFuncionario.Location = new System.Drawing.Point(365, 9);
-            this.btnFuncionario.Name = "btnFuncionario";
-            this.btnFuncionario.Size = new System.Drawing.Size(142, 113);
-            this.btnFuncionario.TabIndex = 5;
-            this.btnFuncionario.UseVisualStyleBackColor = false;
-            this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
-            this.btnFuncionario.Leave += new System.EventHandler(this.btnFuncionario_Leave);
-            this.btnFuncionario.Enter += new System.EventHandler(this.btnFuncionario_Enter);
-            // 
-            // btnDesconectar
-            // 
-            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(950, 9);
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
-            this.btnDesconectar.TabIndex = 7;
-            this.btnDesconectar.UseVisualStyleBackColor = false;
-            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
-            // 
             // lblAlunoOculto
             // 
             this.lblAlunoOculto.AutoSize = true;
@@ -132,35 +93,6 @@
             this.lblAlunoOculto.Size = new System.Drawing.Size(70, 23);
             this.lblAlunoOculto.TabIndex = 8;
             this.lblAlunoOculto.Text = "Alunos";
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.AutoEllipsis = true;
-            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.btnPesquisar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.Search_76x76;
-            this.btnPesquisar.FlatAppearance.BorderSize = 0;
-            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisar.Location = new System.Drawing.Point(737, 225);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(74, 75);
-            this.btnPesquisar.TabIndex = 9;
-            this.btnPesquisar.UseVisualStyleBackColor = false;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // btnCadastrarAluno
-            // 
-            this.btnCadastrarAluno.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrarAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_ok_cadastrar_110x52;
-            this.btnCadastrarAluno.FlatAppearance.BorderSize = 0;
-            this.btnCadastrarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarAluno.Location = new System.Drawing.Point(31, 667);
-            this.btnCadastrarAluno.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCadastrarAluno.Name = "btnCadastrarAluno";
-            this.btnCadastrarAluno.Size = new System.Drawing.Size(110, 52);
-            this.btnCadastrarAluno.TabIndex = 6;
-            this.btnCadastrarAluno.UseVisualStyleBackColor = false;
-            this.btnCadastrarAluno.Visible = false;
-            this.btnCadastrarAluno.Click += new System.EventHandler(this.btnCadastrarAluno_Click);
             // 
             // lblFuncOculto
             // 
@@ -188,22 +120,6 @@
             this.lblConfOculto.Text = "Configurações";
             this.lblConfOculto.Visible = false;
             // 
-            // btnConfiguracoes
-            // 
-            this.btnConfiguracoes.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfiguracoes.BackgroundImage = global::GuiWindowsForms.Properties.Resources.configuracoes_137x101;
-            this.btnConfiguracoes.FlatAppearance.BorderSize = 0;
-            this.btnConfiguracoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfiguracoes.Location = new System.Drawing.Point(526, 12);
-            this.btnConfiguracoes.Margin = new System.Windows.Forms.Padding(0);
-            this.btnConfiguracoes.Name = "btnConfiguracoes";
-            this.btnConfiguracoes.Size = new System.Drawing.Size(137, 101);
-            this.btnConfiguracoes.TabIndex = 11;
-            this.btnConfiguracoes.UseVisualStyleBackColor = false;
-            this.btnConfiguracoes.Click += new System.EventHandler(this.btnConfiguracoes_Click);
-            this.btnConfiguracoes.Leave += new System.EventHandler(this.btnConfiguracoes_Leave);
-            this.btnConfiguracoes.Enter += new System.EventHandler(this.btnConfiguracoes_Enter);
-            // 
             // lblErro
             // 
             this.lblErro.AutoSize = true;
@@ -230,43 +146,11 @@
             this.lblFinanceiro.Text = "Financeiro";
             this.lblFinanceiro.Visible = false;
             // 
-            // btnFinanceiro
-            // 
-            this.btnFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_gnd_120x110;
-            this.btnFinanceiro.Enabled = false;
-            this.btnFinanceiro.FlatAppearance.BorderSize = 0;
-            this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinanceiro.Location = new System.Drawing.Point(674, 15);
-            this.btnFinanceiro.Margin = new System.Windows.Forms.Padding(0);
-            this.btnFinanceiro.Name = "btnFinanceiro";
-            this.btnFinanceiro.Size = new System.Drawing.Size(120, 110);
-            this.btnFinanceiro.TabIndex = 14;
-            this.btnFinanceiro.UseVisualStyleBackColor = false;
-            this.btnFinanceiro.Click += new System.EventHandler(this.btnFinanceiro_Click);
-            this.btnFinanceiro.Leave += new System.EventHandler(this.btnFinanceiro_Leave);
-            this.btnFinanceiro.Enter += new System.EventHandler(this.btnFinanceiro_Enter);
-            // 
-            // btnCadastrarFuncionario
-            // 
-            this.btnCadastrarFuncionario.BackColor = System.Drawing.Color.Transparent;
-            this.btnCadastrarFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_ok_cadastrar_145x52;
-            this.btnCadastrarFuncionario.FlatAppearance.BorderSize = 0;
-            this.btnCadastrarFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarFuncionario.Location = new System.Drawing.Point(31, 667);
-            this.btnCadastrarFuncionario.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCadastrarFuncionario.Name = "btnCadastrarFuncionario";
-            this.btnCadastrarFuncionario.Size = new System.Drawing.Size(145, 52);
-            this.btnCadastrarFuncionario.TabIndex = 16;
-            this.btnCadastrarFuncionario.UseVisualStyleBackColor = false;
-            this.btnCadastrarFuncionario.Visible = false;
-            this.btnCadastrarFuncionario.Click += new System.EventHandler(this.btnCadastrarFuncionario_Click);
-            // 
             // dgvAluno
             // 
             this.dgvAluno.AllowUserToAddRows = false;
             this.dgvAluno.AllowUserToDeleteRows = false;
-            this.dgvAluno.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvAluno.BackgroundColor = System.Drawing.Color.White;
             this.dgvAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colunaNomeAluno,
@@ -299,6 +183,138 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+<<<<<<< .mine
+            // btnCadastrarFuncionario
+            // 
+            this.btnCadastrarFuncionario.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastrarFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_ok_cadastrar_145x52;
+            this.btnCadastrarFuncionario.FlatAppearance.BorderSize = 0;
+            this.btnCadastrarFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarFuncionario.Location = new System.Drawing.Point(31, 667);
+            this.btnCadastrarFuncionario.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCadastrarFuncionario.Name = "btnCadastrarFuncionario";
+            this.btnCadastrarFuncionario.Size = new System.Drawing.Size(145, 52);
+            this.btnCadastrarFuncionario.TabIndex = 16;
+            this.btnCadastrarFuncionario.UseVisualStyleBackColor = false;
+            this.btnCadastrarFuncionario.Visible = false;
+            this.btnCadastrarFuncionario.Click += new System.EventHandler(this.btnCadastrarFuncionario_Click);
+            // 
+            // btnFinanceiro
+            // 
+            this.btnFinanceiro.BackColor = System.Drawing.Color.Transparent;
+            this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_gnd_120x110;
+            this.btnFinanceiro.Enabled = false;
+            this.btnFinanceiro.FlatAppearance.BorderSize = 0;
+            this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinanceiro.Location = new System.Drawing.Point(674, 15);
+            this.btnFinanceiro.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFinanceiro.Name = "btnFinanceiro";
+            this.btnFinanceiro.Size = new System.Drawing.Size(120, 110);
+            this.btnFinanceiro.TabIndex = 14;
+            this.btnFinanceiro.UseVisualStyleBackColor = false;
+            this.btnFinanceiro.Click += new System.EventHandler(this.btnFinanceiro_Click);
+            this.btnFinanceiro.Leave += new System.EventHandler(this.btnFinanceiro_Leave);
+            this.btnFinanceiro.Enter += new System.EventHandler(this.btnFinanceiro_Enter);
+            // 
+            // btnConfiguracoes
+            // 
+            this.btnConfiguracoes.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfiguracoes.BackgroundImage = global::GuiWindowsForms.Properties.Resources.configuracoes_137x101;
+            this.btnConfiguracoes.FlatAppearance.BorderSize = 0;
+            this.btnConfiguracoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfiguracoes.Location = new System.Drawing.Point(526, 12);
+            this.btnConfiguracoes.Margin = new System.Windows.Forms.Padding(0);
+            this.btnConfiguracoes.Name = "btnConfiguracoes";
+            this.btnConfiguracoes.Size = new System.Drawing.Size(137, 101);
+            this.btnConfiguracoes.TabIndex = 11;
+            this.btnConfiguracoes.UseVisualStyleBackColor = false;
+            this.btnConfiguracoes.Click += new System.EventHandler(this.btnConfiguracoes_Click);
+            this.btnConfiguracoes.Leave += new System.EventHandler(this.btnConfiguracoes_Leave);
+            this.btnConfiguracoes.Enter += new System.EventHandler(this.btnConfiguracoes_Enter);
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.AutoEllipsis = true;
+            this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
+            this.btnPesquisar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.Search_76x76;
+            this.btnPesquisar.FlatAppearance.BorderSize = 0;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisar.Location = new System.Drawing.Point(737, 225);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(74, 75);
+            this.btnPesquisar.TabIndex = 9;
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // btnDesconectar
+            // 
+            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
+            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
+            this.btnDesconectar.FlatAppearance.BorderSize = 0;
+            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesconectar.Location = new System.Drawing.Point(950, 9);
+            this.btnDesconectar.Name = "btnDesconectar";
+            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
+            this.btnDesconectar.TabIndex = 7;
+            this.btnDesconectar.UseVisualStyleBackColor = false;
+            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
+            // 
+            // btnCadastrarAluno
+            // 
+            this.btnCadastrarAluno.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastrarAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_ok_cadastrar_110x52;
+            this.btnCadastrarAluno.FlatAppearance.BorderSize = 0;
+            this.btnCadastrarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarAluno.Location = new System.Drawing.Point(31, 667);
+            this.btnCadastrarAluno.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCadastrarAluno.Name = "btnCadastrarAluno";
+            this.btnCadastrarAluno.Size = new System.Drawing.Size(110, 52);
+            this.btnCadastrarAluno.TabIndex = 6;
+            this.btnCadastrarAluno.UseVisualStyleBackColor = false;
+            this.btnCadastrarAluno.Visible = false;
+            this.btnCadastrarAluno.Click += new System.EventHandler(this.btnCadastrarAluno_Click);
+            // 
+            // btnFuncionario
+            // 
+            this.btnFuncionario.BackColor = System.Drawing.Color.Transparent;
+            this.btnFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_prof_142x113;
+            this.btnFuncionario.Enabled = false;
+            this.btnFuncionario.FlatAppearance.BorderSize = 0;
+            this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFuncionario.Location = new System.Drawing.Point(365, 9);
+            this.btnFuncionario.Name = "btnFuncionario";
+            this.btnFuncionario.Size = new System.Drawing.Size(142, 113);
+            this.btnFuncionario.TabIndex = 5;
+            this.btnFuncionario.UseVisualStyleBackColor = false;
+            this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
+            this.btnFuncionario.Leave += new System.EventHandler(this.btnFuncionario_Leave);
+            this.btnFuncionario.Enter += new System.EventHandler(this.btnFuncionario_Enter);
+            // 
+            // btnAluno
+            // 
+            this.btnAluno.BackColor = System.Drawing.Color.Transparent;
+            this.btnAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_aluno_142x113;
+            this.btnAluno.FlatAppearance.BorderSize = 0;
+            this.btnAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAluno.Location = new System.Drawing.Point(240, 9);
+            this.btnAluno.Name = "btnAluno";
+            this.btnAluno.Size = new System.Drawing.Size(142, 113);
+            this.btnAluno.TabIndex = 4;
+            this.btnAluno.UseVisualStyleBackColor = false;
+            this.btnAluno.Click += new System.EventHandler(this.btnAluno_Click);
+            this.btnAluno.Leave += new System.EventHandler(this.btnAluno_Leave);
+            this.btnAluno.Enter += new System.EventHandler(this.btnAluno_Enter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox1.TabIndex = 71;
+            this.pictureBox1.TabStop = false;
+            // 
+=======
             // colunaNomeAluno
             // 
             this.colunaNomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -332,13 +348,14 @@
             this.EmailAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.EmailAluno.Width = 116;
             // 
+>>>>>>> .r158
             // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.dgvAluno);
             this.Controls.Add(this.btnCadastrarFuncionario);
@@ -368,6 +385,7 @@
             this.Activated += new System.EventHandler(this.telaAlunoPrincipal_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoPrincipal_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +414,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaNomeAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoneAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAluno;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

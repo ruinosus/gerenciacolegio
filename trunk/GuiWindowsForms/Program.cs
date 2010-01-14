@@ -17,9 +17,41 @@ namespace GuiWindowsForms
         [STAThread]
         static void Main()
         {
+            VerificaExecucao();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new telaLogin());
+        }
+
+        public static void VerificaExecucao()
+        {
+            Process[] processos = Process.GetProcessesByName("GuiWindowsForms");
+
+            DateTime maisNovo = DateTime.Today;
+
+            if (processos.Length > 0)
+            {
+                maisNovo = processos[0].StartTime;
+            }
+
+            if (processos.Length > 1)
+            {
+                foreach (Process p in processos)
+                {
+                    if (p.StartTime > maisNovo)
+                    {
+                        maisNovo = p.StartTime;
+                    }
+                }
+
+                foreach (Process p in processos)
+                {
+                    if (p.StartTime != maisNovo)
+                    {
+                        p.Kill();
+                    }
+                }
+            }
         }
 
         public static void SelecionaForm(int formId)
