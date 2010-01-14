@@ -375,11 +375,11 @@ namespace GuiWindowsForms
 
                             carregarComboAtividade();
 
-                            MessageBox.Show(AtividadeConstantes.ATIVIDADE_ALTERADA, "Colégio Conhecer - Alterar Atividade");
+                            MessageBox.Show(AtividadeConstantes.ATIVIDADE_ALTERADA, "Colégio Conhecer");
                         }
                         else
                         {
-                            MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer - Alterar Atividade");
+                            MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
                         }
                     }
                     catch (Exception ex)
@@ -476,11 +476,11 @@ namespace GuiWindowsForms
                             atividadeTurmaControlador.Confirmar();
                             linhaSelecionadaGrid = -1;
 
-                            MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_ALTERADA, "Colégio Conhecer - Alterar Atividade - Turma");
+                            MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_ALTERADA, "Colégio Conhecer");
                         }
                         else
                         {
-                            MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer - Alterar Atividade - Turma");
+                            MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
                         }
                     }
                     catch (Exception ex)
