@@ -950,6 +950,13 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        private void btnVincularResponsavel_Click(object sender, EventArgs e)
+        {
+            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
+            this.Hide();
+            tela.Show();
+        }
+
 
 
 

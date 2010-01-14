@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloResponsavelAluno.Processos;
+using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms
 {
@@ -16,7 +18,8 @@ namespace GuiWindowsForms
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
          * */
-
+        List<ResponsavelAluno> responsavelAlunoLista;
+        int linhaSelecionadaGrid = -1;
         private static telaAlunoResponsavelBusca telaalunoresponsavelbusca;
 
         private static bool IsShown = false;
@@ -121,6 +124,26 @@ namespace GuiWindowsForms
         private void telaAlunoResponsavelBusca_Load(object sender, EventArgs e)
         {
             uMenuImagem1.ocultarBotaoAdicionarImagem();
+        }
+
+        private void telaAlunoResponsavelBusca_Activated(object sender, EventArgs e)
+        {
+            Memoria memoria = Memoria.Instance;
+
+            if (memoria.Aluno != null)
+            {
+                IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
+                dgvResponsavelAluno.AutoGenerateColumns = false;
+                ResponsavelAluno responsavelAluno = new ResponsavelAluno();
+                responsavelAluno.AlunoID = memoria.Aluno.ID;
+                responsavelAlunoLista = processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
+                dgvResponsavelAluno.DataSource = responsavelAlunoLista;
+            }
+        }
+
+        private void btnPesquisarResponsaveis_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

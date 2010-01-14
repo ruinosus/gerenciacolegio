@@ -133,6 +133,7 @@ namespace GuiWindowsForms
             this.btnVincularResponsavel.Size = new System.Drawing.Size(30, 31);
             this.btnVincularResponsavel.TabIndex = 16;
             this.btnVincularResponsavel.UseVisualStyleBackColor = true;
+            this.btnVincularResponsavel.Click += new System.EventHandler(this.btnVincularResponsavel_Click);
             // 
             // lblEdificio
             // 
