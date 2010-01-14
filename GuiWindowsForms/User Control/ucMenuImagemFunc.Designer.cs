@@ -92,6 +92,7 @@
             this.pctImagem.Location = new System.Drawing.Point(3, 3);
             this.pctImagem.Name = "pctImagem";
             this.pctImagem.Size = new System.Drawing.Size(127, 134);
+            this.pctImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctImagem.TabIndex = 136;
             this.pctImagem.TabStop = false;
             // 
