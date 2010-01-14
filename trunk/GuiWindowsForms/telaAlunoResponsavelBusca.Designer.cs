@@ -45,11 +45,12 @@
             this.txtRestricoes = new System.Windows.Forms.TextBox();
             this.comboResponsavel = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GrauParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavelAluno)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             this.dgvResponsavelAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResponsavelAluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column3,
+            this.GrauParentesco,
             this.Column4,
             this.Column2});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -160,6 +162,7 @@
             this.btnExcluir.Size = new System.Drawing.Size(32, 11);
             this.btnExcluir.TabIndex = 70;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // lblCiclo
             // 
@@ -241,6 +244,31 @@
             this.label3.TabIndex = 82;
             this.label3.Text = "Responsável:";
             // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Responsavel";
+            this.Column3.HeaderText = "Nome do Responsável";
+            this.Column3.Name = "Column3";
+            // 
+            // GrauParentesco
+            // 
+            this.GrauParentesco.DataPropertyName = "GrauParentesco";
+            this.GrauParentesco.HeaderText = "Grau de Parentesco";
+            this.GrauParentesco.Name = "GrauParentesco";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Restricoes";
+            this.Column4.HeaderText = "Restrições";
+            this.Column4.Name = "Column4";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ResideCom";
+            this.Column2.HeaderText = "Reside Com";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
@@ -258,25 +286,6 @@
             this.uMenuImagem1.Name = "uMenuImagem1";
             this.uMenuImagem1.Size = new System.Drawing.Size(375, 201);
             this.uMenuImagem1.TabIndex = 75;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Responsavel";
-            this.Column3.HeaderText = "Nome do Responsável";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Restricoes";
-            this.Column4.HeaderText = "Restrições";
-            this.Column4.Name = "Column4";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ResideCom";
-            this.Column2.HeaderText = "Reside Com";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // telaAlunoResponsavelBusca
             // 
@@ -337,6 +346,7 @@
         private System.Windows.Forms.ComboBox comboResponsavel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GrauParentesco;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
     }
