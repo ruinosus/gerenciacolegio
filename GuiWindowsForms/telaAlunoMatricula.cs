@@ -241,6 +241,8 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaAlunoMatricula_Load(object sender, EventArgs e)
         {
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+
             descontoControlador = DescontoProcesso.Instance;
             carregaComboSerie();
 
@@ -526,9 +528,8 @@ namespace GuiWindowsForms
             {
                 alunoMatriculaAux = memoria.Aluno;
                 uMenuImagem1.carregaAluno(alunoMatriculaAux);
+                geraNumeroMatricula(Convert.ToInt32(alunoMatriculaAux.ID));
             }
-
-            geraNumeroMatricula(Convert.ToInt32(alunoMatriculaAux.ID));
         }
     }
 

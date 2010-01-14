@@ -737,6 +737,7 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaAlunoResponsavel_Load(object sender, EventArgs e)
         {
+            ucMenuSuper.ocultarBotaoAdicionarImagem();
             cmbUf.DataSource = estados;
             //responsavel = responsavelControlador.Consultar(responsavel, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
             //ucMenuSuper.carregaResponsavel(responsavel);

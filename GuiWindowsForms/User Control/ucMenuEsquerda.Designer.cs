@@ -50,6 +50,7 @@
             this.btnControledeAcesso.BackColor = System.Drawing.Color.Transparent;
             this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80;
             this.btnControledeAcesso.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnControledeAcesso.Enabled = false;
             this.btnControledeAcesso.FlatAppearance.BorderSize = 0;
             this.btnControledeAcesso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnControledeAcesso.Location = new System.Drawing.Point(16, 13);

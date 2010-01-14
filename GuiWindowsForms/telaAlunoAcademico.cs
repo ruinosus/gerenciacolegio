@@ -165,5 +165,10 @@ namespace GuiWindowsForms
             uMenuLateral1.verificaTela(telaalunoacademico);
         }
 
+        private void telaAlunoAcademico_Load(object sender, EventArgs e)
+        {
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+        }
+
     }
 }

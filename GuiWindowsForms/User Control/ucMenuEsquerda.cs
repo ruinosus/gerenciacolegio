@@ -25,7 +25,7 @@ namespace GuiWindowsForms.User_Control
             if (formAux2.Equals(telaConfiguracoes.getInstancia()))
             {
                 this.btnControledeAcesso.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_acesso_64x80;
-                this.btnControledeAcesso.Enabled = true;
+                this.btnControledeAcesso.Enabled = false; //mudar para true após (botão começa true também
                 lblControleAcesso_menu.Visible = true;
                 lblControleAcesso_menu.ForeColor = System.Drawing.Color.Yellow;
             }

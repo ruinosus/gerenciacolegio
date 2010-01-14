@@ -142,7 +142,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
 
-            Program.ultimaTela = 7;
+            Program.ultimaTela = 6;
             Program.SelecionaForm(Program.ultimaTela);
         }
 
