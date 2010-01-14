@@ -470,6 +470,9 @@ namespace GuiWindowsForms
         {
             try
             {
+                responsavel = new Responsavel();
+                responsavelControlador = ResponsavelProcesso.Instance;
+
                 #region VALIDA - NOME
 
                 if (String.IsNullOrEmpty(txtNome.Text))
@@ -673,20 +676,29 @@ namespace GuiWindowsForms
 
                 responsavel.Uf = cmbUf.Text;
                 responsavel.Nascimento = dtpNascimento.Value;
+                responsavel.Edificio = txtNomeEdificil.Text;
 
                 responsavel.PerfilID = 1;
 
                 responsavel = ucMenuSuper.retornaResponsavel(responsavel);
 
-                responsavelControlador.Incluir(responsavel);
-                responsavelControlador.Confirmar();
+                if (verificaSeJaCadastrado(responsavel) == false)
+                {
+                    responsavelControlador.Incluir(responsavel);
+                    responsavelControlador.Confirmar();
 
-                MessageBox.Show(ResponsavelConstantes.RESPONSAVEL_INCLUIDO, "Colégio Conhecer");
+                    limparTela();
 
+                    MessageBox.Show(ResponsavelConstantes.RESPONSAVEL_INCLUIDO, "Colégio Conhecer");
+                }
+                else
+                {
+                    MessageBox.Show("O Responsável já existe na base de dados", "Colégio Conhecer");
+                }
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -737,7 +749,6 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaAlunoResponsavel_Load(object sender, EventArgs e)
         {
-            ucMenuSuper.ocultarBotaoAdicionarImagem();
             cmbUf.DataSource = estados;
             //responsavel = responsavelControlador.Consultar(responsavel, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
             //ucMenuSuper.carregaResponsavel(responsavel);
@@ -852,9 +863,11 @@ namespace GuiWindowsForms
             mskCpf.Clear();
             mskFoneResidencia.Clear();
             mskFoneTrabalho.Clear();
-            cmbUf.Select();
+            cmbUf.Text = "";
             rdbFem.Checked = false;
             rdbMasc.Checked = false;
+            dtpNascimento.Value = DateTime.Now;
+            ucMenuSuper.limparFigura();
         }
 
         /// <summary>
@@ -885,6 +898,24 @@ namespace GuiWindowsForms
             {
                 rdbMasc.Select();
             }
+        }
+
+        public Boolean verificaSeJaCadastrado(Responsavel responsavelAux)
+        {
+            bool testa = false;
+
+            List<Responsavel> listaResponsavel = new List<Responsavel>();
+
+            listaResponsavel = responsavelControlador.Consultar();
+
+            foreach (Responsavel r in listaResponsavel)
+            {
+                if ((r.Cpf == responsavelAux.Cpf) || (r.Rg == responsavelAux.Rg))
+                {
+                    testa = true;
+                }
+            }
+            return testa;
         }
 
 

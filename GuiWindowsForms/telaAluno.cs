@@ -510,6 +510,9 @@ namespace GuiWindowsForms
         {
             try
             {
+                aluno = new Aluno();
+                alunoControlador = AlunoProcesso.Instance;
+
                 #region VALIDA - NOME
 
                 if (String.IsNullOrEmpty(txtNome.Text))
@@ -678,10 +681,13 @@ namespace GuiWindowsForms
                 Memoria memoria = Memoria.Instance;
                 if (memoria.Aluno == null)
                 {
-                    alunoControlador.Incluir(aluno);
-                    alunoControlador.Confirmar();
+                    if (verificaSeJaCadastrado(aluno) == false)
+                    {
+                        alunoControlador.Incluir(aluno);
+                        alunoControlador.Confirmar();
 
-                    memoria.Aluno = aluno;
+                        memoria.Aluno = aluno;
+                    }
 
                     MessageBox.Show(AlunoConstantes.ALUNO_INCLUIDO, "Colégio Conhecer - Cadastrar Aluno");
                 }
@@ -904,6 +910,24 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+        public Boolean verificaSeJaCadastrado(Aluno alunoAux)
+        {
+            bool testa = false;
+
+            List<Aluno> listaAluno = new List<Aluno>();
+
+            listaAluno = alunoControlador.Consultar();
+
+            foreach (Aluno a in listaAluno)
+            {
+                if ((a.Nome==alunoAux.Nome) && (a.Nascimento == alunoAux.Nascimento))
+                {
+                    testa = true;
+                }
+            }
+            return testa;
+        }
 
         private void telaAluno_Activated(object sender, EventArgs e)
         {
