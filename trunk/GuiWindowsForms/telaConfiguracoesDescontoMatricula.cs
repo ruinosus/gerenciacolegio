@@ -13,6 +13,7 @@ namespace GuiWindowsForms
 {
     public partial class telaConfiguracoesDescontoMatricula : Form
     {
+        int verificaButton = 0;
         int linhaSelecionadaGrid = -1;
         Desconto desconto = null;
 
@@ -170,6 +171,15 @@ namespace GuiWindowsForms
                 Program.ultimaTela = 6;
                 Program.SelecionaForm(Program.ultimaTela);
             }
+
+            txtDescricao.Enabled = false;
+            txtValor.Enabled = false;
+            dataGridView1.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnAdicionarDesconto.Enabled = true;
+
+            verificaButton = 0;
         }
 
         #endregion
@@ -200,112 +210,145 @@ namespace GuiWindowsForms
         #region EVENTO INSERIR
         private void btnAdicionarDesconto_Click(object sender, EventArgs e)
         {
-            desconto = new Desconto();
 
-            try
-            {
-                descontoControlador = DescontoProcesso.Instance;
+            txtDescricao.Enabled = true;
+            txtValor.Enabled = true;
+            dataGridView1.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnAlterar.Enabled = false;
+            btnAdicionarDesconto.Enabled = false;
 
-                #region VALIDA - DESCRIÇÃO
+            verificaButton = 1;
 
-                if (String.IsNullOrEmpty(txtDescricao.Text))
-                {
-                    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
-                    txtDescricao.Clear();
-                    return;
-                }
-                desconto.Descricao = txtDescricao.Text;
+            txtDescricao.Clear();
+            txtValor.Clear();
 
-                #endregion
-
-                #region VALIDA - VALOR
-
-                if (String.IsNullOrEmpty(txtDescricao.Text))
-                {
-                    errorProviderTela.SetError(txtValor, "Informe o valor");
-                    txtValor.Clear();
-                    return;
-                }
-                desconto.Percentual = Convert.ToDouble(txtValor.Text);
-
-                #endregion
-
-
-                if (verificaSeJaInserido(desconto) == false)
-                {
-                    desconto.Status = 0;
-                    descontoControlador.Incluir(desconto);
-                    descontoControlador.Confirmar();
-                    linhaSelecionadaGrid = -1;
-
-                    MessageBox.Show(DescontoConstantes.DESCONTO_INCLUIDO, "Colégio Conhecer - Inserir Desconto");
-                }
-                else
-                {
-                    MessageBox.Show("O Desconto já existe na base de dados", "Colégio Conhecer - Inserir Desconto");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            carregaForm();
-            limparTela();
         }
         #endregion
 
-        #region EVENTO ALTERAR
+        #region EVENTO ALTERAR ou ADICIONAR
         private void ucMenuInferior1_EventoCadastrar()
         {
-            desconto = new Desconto();
-
-            try
+            if (verificaButton == 1)
             {
-                descontoControlador = DescontoProcesso.Instance;
+                #region ADICIONAR
+                desconto = new Desconto();
 
-                #region VALIDA - DESCRIÇÃO
-
-                if (String.IsNullOrEmpty(txtDescricao.Text))
+                try
                 {
-                    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
-                    txtDescricao.Clear();
-                    return;
+                    descontoControlador = DescontoProcesso.Instance;
+
+                    #region VALIDA - DESCRIÇÃO
+
+                    if (String.IsNullOrEmpty(txtDescricao.Text))
+                    {
+                        errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                        txtDescricao.Clear();
+                        return;
+                    }
+                    desconto.Descricao = txtDescricao.Text;
+
+                    #endregion
+
+                    #region VALIDA - VALOR
+
+                    if (String.IsNullOrEmpty(txtDescricao.Text))
+                    {
+                        errorProviderTela.SetError(txtValor, "Informe o valor");
+                        txtValor.Clear();
+                        return;
+                    }
+                    desconto.Percentual = Convert.ToDouble(txtValor.Text);
+
+                    #endregion
+
+
+                    if (verificaSeJaInserido(desconto) == false)
+                    {
+                        desconto.Status = 1;
+                        descontoControlador.Incluir(desconto);
+                        descontoControlador.Confirmar();
+                        linhaSelecionadaGrid = -1;
+
+                        MessageBox.Show(DescontoConstantes.DESCONTO_INCLUIDO, "Colégio Conhecer - Inserir Desconto");
+                    }
+                    else
+                    {
+                        MessageBox.Show("O Desconto já existe na base de dados", "Colégio Conhecer - Inserir Desconto");
+                    }
                 }
-                desconto.Descricao = txtDescricao.Text;
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                carregaForm();
+                limparTela();
 
                 #endregion
-
-                #region VALIDA - VALOR
-
-                if (String.IsNullOrEmpty(txtDescricao.Text))
-                {
-                    errorProviderTela.SetError(txtValor, "Informe o valor");
-                    txtValor.Clear();
-                    return;
-                }
-                desconto.Percentual = Convert.ToDouble(txtValor.Text);
-
-                #endregion
-
-                if (linhaSelecionadaGrid != -1)
-                {
-                    descontoControlador.Alterar(desconto);
-                    descontoControlador.Confirmar();
-                    linhaSelecionadaGrid = -1;
-
-                    MessageBox.Show(DescontoConstantes.DESCONTO_ALTERADO, "Colégio Conhecer - Alterar Desconto");
-                }
-                else
-                {
-                    MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer - Alterar Desconto");
-                }
             }
-            catch (Exception ex)
+            if (verificaButton == 2)
             {
-                MessageBox.Show(ex.Message);
+                #region ALTERAR
+                desconto = new Desconto();
+
+                try
+                {
+                    descontoControlador = DescontoProcesso.Instance;
+
+                    #region VALIDA - DESCRIÇÃO
+
+                    if (String.IsNullOrEmpty(txtDescricao.Text))
+                    {
+                        errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                        txtDescricao.Clear();
+                        return;
+                    }
+                    desconto.Descricao = txtDescricao.Text;
+
+                    #endregion
+
+                    #region VALIDA - VALOR
+
+                    if (String.IsNullOrEmpty(txtDescricao.Text))
+                    {
+                        errorProviderTela.SetError(txtValor, "Informe o valor");
+                        txtValor.Clear();
+                        return;
+                    }
+                    desconto.Percentual = Convert.ToDouble(txtValor.Text);
+
+                    #endregion
+
+                    if (linhaSelecionadaGrid != -1)
+                    {
+                        descontoControlador.Alterar(desconto);
+                        descontoControlador.Confirmar();
+                        linhaSelecionadaGrid = -1;
+
+                        MessageBox.Show(DescontoConstantes.DESCONTO_ALTERADO, "Colégio Conhecer - Alterar Desconto");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer - Alterar Desconto");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                carregaForm();
+                limparTela();
+                #endregion
             }
-            carregaForm();
-            limparTela();
+
+            txtDescricao.Enabled = false;
+            txtValor.Enabled = false;
+            dataGridView1.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnAlterar.Enabled = true;
+            btnAdicionarDesconto.Enabled = true;
+
+            verificaButton = 0;
         }
         #endregion
 
@@ -323,7 +366,7 @@ namespace GuiWindowsForms
                 }
                 else
                 {
-                    MessageBox.Show("Selecione uma opção na tabela abaixo para exclusão, então pressione excluir.", "Colégio Conhecer - Excluir Desconto");
+                    MessageBox.Show("Selecione uma opção na tabela abaixo para exclusão, então pressione excluir.", "Colégio Conhecer");
                 }
             }
         }
@@ -491,5 +534,18 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region EVENTO ALTERAR
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            txtDescricao.Enabled = true;
+            txtValor.Enabled = true;
+            dataGridView1.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnAdicionarDesconto.Enabled = false;
+            
+
+            verificaButton = 2;
+        }
+        #endregion
     }        
 }

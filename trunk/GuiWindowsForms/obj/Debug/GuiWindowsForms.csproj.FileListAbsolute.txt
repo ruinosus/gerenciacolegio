@@ -79,7 +79,6 @@ C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csp
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.pdb
 C:\Users\Dudu\Desktop\col conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.ucMenuInferior.resources
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.ckbTerca.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.ucMenuInferior.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.uMenuImagem.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
@@ -383,3 +382,12 @@ C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\GuiWindowsForms\obj\Debug\Gui
 C:\Users\Dudu\Desktop\gerenciacolegio\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.config
 C:\Users\Dudu\Desktop\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividades.resources
 C:\Users\Dudu\Desktop\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaRelatorioBoletoMensalidade.resources
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.config
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividades.resources
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaRelatorioBoletoMensalidade.resources
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\Negocios.pdb
