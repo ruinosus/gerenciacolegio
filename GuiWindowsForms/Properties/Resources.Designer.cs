@@ -123,6 +123,20 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap alterar {
+            get {
+                object obj = ResourceManager.GetObject("alterar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap alterar_final {
+            get {
+                object obj = ResourceManager.GetObject("alterar_final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap atividade_mais {
             get {
                 object obj = ResourceManager.GetObject("atividade_mais", resourceCulture);

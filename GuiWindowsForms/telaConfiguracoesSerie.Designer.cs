@@ -88,11 +88,14 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(524, 201);
+            this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Location = new System.Drawing.Point(556, 198);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(32, 32);
             this.btnAlterar.TabIndex = 71;
-            this.btnAlterar.Text = "?";
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
@@ -102,7 +105,7 @@
             this.btnAdicionarSerie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarSerie.FlatAppearance.BorderSize = 0;
             this.btnAdicionarSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarSerie.Location = new System.Drawing.Point(583, 201);
+            this.btnAdicionarSerie.Location = new System.Drawing.Point(594, 198);
             this.btnAdicionarSerie.Name = "btnAdicionarSerie";
             this.btnAdicionarSerie.Size = new System.Drawing.Size(32, 32);
             this.btnAdicionarSerie.TabIndex = 3;
