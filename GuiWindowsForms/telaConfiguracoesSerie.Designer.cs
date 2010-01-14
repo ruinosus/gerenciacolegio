@@ -31,14 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesSerie));
             this.gpbSerie = new System.Windows.Forms.GroupBox();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnAdicionarSerie = new System.Windows.Forms.Button();
             this.cmbCiclo = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.serieCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turmaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cicloCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbTurma = new System.Windows.Forms.ComboBox();
             this.cmbSerie = new System.Windows.Forms.ComboBox();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -55,6 +51,11 @@
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.serieCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turmaCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnoCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cicloCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
@@ -63,6 +64,7 @@
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
+            this.gpbSerie.Controls.Add(this.btnAlterar);
             this.gpbSerie.Controls.Add(this.btnAdicionarSerie);
             this.gpbSerie.Controls.Add(this.cmbCiclo);
             this.gpbSerie.Controls.Add(this.dataGridView1);
@@ -84,6 +86,16 @@
             this.gpbSerie.TabStop = false;
             this.gpbSerie.Text = "CADASTRO DE SÉRIE";
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(524, 201);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(32, 32);
+            this.btnAlterar.TabIndex = 71;
+            this.btnAlterar.Text = "?";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
             // btnAdicionarSerie
             // 
             this.btnAdicionarSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
@@ -102,6 +114,7 @@
             // cmbCiclo
             // 
             this.cmbCiclo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiclo.Enabled = false;
             this.cmbCiclo.FormattingEnabled = true;
             this.cmbCiclo.Items.AddRange(new object[] {
             "Educação Infantil",
@@ -111,13 +124,13 @@
             this.cmbCiclo.Location = new System.Drawing.Point(405, 69);
             this.cmbCiclo.Name = "cmbCiclo";
             this.cmbCiclo.Size = new System.Drawing.Size(259, 21);
-            this.cmbCiclo.TabIndex = 12;
+            this.cmbCiclo.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.serieCol,
@@ -140,65 +153,27 @@
             this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // serieCol
-            // 
-            this.serieCol.DataPropertyName = "SerieAux";
-            this.serieCol.HeaderText = "Série";
-            this.serieCol.Name = "serieCol";
-            this.serieCol.ReadOnly = true;
-            this.serieCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.serieCol.Width = 102;
-            // 
-            // turmaCol
-            // 
-            this.turmaCol.DataPropertyName = "TurmaAux";
-            this.turmaCol.HeaderText = "Turma";
-            this.turmaCol.Name = "turmaCol";
-            this.turmaCol.ReadOnly = true;
-            // 
-            // turnoCol
-            // 
-            this.turnoCol.DataPropertyName = "TurnoAux";
-            this.turnoCol.HeaderText = "Turno";
-            this.turnoCol.Name = "turnoCol";
-            this.turnoCol.ReadOnly = true;
-            this.turnoCol.Width = 80;
-            // 
-            // cicloCol
-            // 
-            this.cicloCol.DataPropertyName = "CicloAux";
-            this.cicloCol.HeaderText = "Ciclo";
-            this.cicloCol.Name = "cicloCol";
-            this.cicloCol.ReadOnly = true;
-            this.cicloCol.Width = 185;
-            // 
-            // valorCol
-            // 
-            this.valorCol.DataPropertyName = "ValorAux";
-            this.valorCol.HeaderText = "Valor";
-            this.valorCol.Name = "valorCol";
-            this.valorCol.ReadOnly = true;
-            this.valorCol.Width = 130;
-            // 
             // cmbTurma
             // 
             this.cmbTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTurma.Enabled = false;
             this.cmbTurma.FormattingEnabled = true;
             this.cmbTurma.Location = new System.Drawing.Point(319, 116);
             this.cmbTurma.Name = "cmbTurma";
             this.cmbTurma.Size = new System.Drawing.Size(121, 21);
-            this.cmbTurma.TabIndex = 1;
+            this.cmbTurma.TabIndex = 3;
             this.cmbTurma.TextChanged += new System.EventHandler(this.cmbTurma_TextChanged);
             this.cmbTurma.Click += new System.EventHandler(this.cmbTurma_Click);
             // 
             // cmbSerie
             // 
             this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSerie.Enabled = false;
             this.cmbSerie.FormattingEnabled = true;
             this.cmbSerie.Location = new System.Drawing.Point(92, 69);
             this.cmbSerie.Name = "cmbSerie";
             this.cmbSerie.Size = new System.Drawing.Size(231, 21);
-            this.cmbSerie.TabIndex = 11;
+            this.cmbSerie.TabIndex = 0;
             this.cmbSerie.TextChanged += new System.EventHandler(this.cmbSerie_TextChanged);
             this.cmbSerie.Click += new System.EventHandler(this.cmbSerie_Click);
             // 
@@ -238,11 +213,12 @@
             // cmbTurno
             // 
             this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTurno.Enabled = false;
             this.cmbTurno.FormattingEnabled = true;
             this.cmbTurno.Location = new System.Drawing.Point(92, 116);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(121, 21);
-            this.cmbTurno.TabIndex = 0;
+            this.cmbTurno.TabIndex = 2;
             this.cmbTurno.TextChanged += new System.EventHandler(this.cmbTurno_TextChanged);
             this.cmbTurno.Click += new System.EventHandler(this.cmbTurno_Click);
             // 
@@ -257,11 +233,12 @@
             // 
             // txtValor
             // 
+            this.txtValor.Enabled = false;
             this.txtValor.Location = new System.Drawing.Point(92, 194);
             this.txtValor.MaxLength = 10;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(112, 20);
-            this.txtValor.TabIndex = 2;
+            this.txtValor.TabIndex = 4;
             this.txtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             this.txtValor.Click += new System.EventHandler(this.txtValor_Click);
@@ -342,9 +319,49 @@
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(650, 43);
-            this.ucMenuInferior1.TabIndex = 135;
+            this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
+            // 
+            // serieCol
+            // 
+            this.serieCol.DataPropertyName = "SerieAux";
+            this.serieCol.HeaderText = "Série";
+            this.serieCol.Name = "serieCol";
+            this.serieCol.ReadOnly = true;
+            this.serieCol.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.serieCol.Width = 102;
+            // 
+            // turmaCol
+            // 
+            this.turmaCol.DataPropertyName = "TurmaAux";
+            this.turmaCol.HeaderText = "Turma";
+            this.turmaCol.Name = "turmaCol";
+            this.turmaCol.ReadOnly = true;
+            // 
+            // turnoCol
+            // 
+            this.turnoCol.DataPropertyName = "TurnoAux";
+            this.turnoCol.HeaderText = "Turno";
+            this.turnoCol.Name = "turnoCol";
+            this.turnoCol.ReadOnly = true;
+            this.turnoCol.Width = 80;
+            // 
+            // cicloCol
+            // 
+            this.cicloCol.DataPropertyName = "CicloAux";
+            this.cicloCol.HeaderText = "Ciclo";
+            this.cicloCol.Name = "cicloCol";
+            this.cicloCol.ReadOnly = true;
+            this.cicloCol.Width = 185;
+            // 
+            // valorCol
+            // 
+            this.valorCol.DataPropertyName = "ValorAux";
+            this.valorCol.HeaderText = "Valor";
+            this.valorCol.Name = "valorCol";
+            this.valorCol.ReadOnly = true;
+            this.valorCol.Width = 127;
             // 
             // telaConfiguracoesSerie
             // 
@@ -366,7 +383,7 @@
             this.MinimizeBox = false;
             this.Name = "telaConfiguracoesSerie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "11";
+            this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaConfiguracoesSerie_Load);
             this.gpbSerie.ResumeLayout(false);
             this.gpbSerie.PerformLayout();
@@ -399,6 +416,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cmbCiclo;
         private System.Windows.Forms.Button btnAdicionarSerie;
+        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.DataGridViewTextBoxColumn serieCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn turmaCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn turnoCol;

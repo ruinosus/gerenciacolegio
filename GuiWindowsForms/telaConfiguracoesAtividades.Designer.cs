@@ -36,6 +36,8 @@
             this.tbcAtividade = new System.Windows.Forms.TabControl();
             this.pagCadastrarAtividade = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdicionarAtividade = new System.Windows.Forms.Button();
             this.btnExcluirAtividade = new System.Windows.Forms.Button();
             this.btnAdicionarImagem = new System.Windows.Forms.Button();
@@ -93,8 +95,6 @@
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.tbcAtividade.SuspendLayout();
             this.pagCadastrarAtividade.SuspendLayout();
@@ -191,6 +191,24 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MaxInputLength = 30;
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 230;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MaxInputLength = 100;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 366;
             // 
             // btnAdicionarAtividade
             // 
@@ -334,7 +352,7 @@
             this.cmbAtividadeTurma.Location = new System.Drawing.Point(137, 59);
             this.cmbAtividadeTurma.Name = "cmbAtividadeTurma";
             this.cmbAtividadeTurma.Size = new System.Drawing.Size(300, 21);
-            this.cmbAtividadeTurma.TabIndex = 132;
+            this.cmbAtividadeTurma.TabIndex = 1;
             // 
             // btnAdicionarTurma
             // 
@@ -518,7 +536,7 @@
             this.ckbSabado.Location = new System.Drawing.Point(572, 211);
             this.ckbSabado.Name = "ckbSabado";
             this.ckbSabado.Size = new System.Drawing.Size(63, 17);
-            this.ckbSabado.TabIndex = 127;
+            this.ckbSabado.TabIndex = 12;
             this.ckbSabado.Text = "Sábado";
             this.ckbSabado.UseVisualStyleBackColor = true;
             // 
@@ -530,7 +548,7 @@
             this.cmbFuncionario.Location = new System.Drawing.Point(137, 26);
             this.cmbFuncionario.Name = "cmbFuncionario";
             this.cmbFuncionario.Size = new System.Drawing.Size(300, 21);
-            this.cmbFuncionario.TabIndex = 128;
+            this.cmbFuncionario.TabIndex = 0;
             // 
             // ckbSexta
             // 
@@ -540,7 +558,7 @@
             this.ckbSexta.Location = new System.Drawing.Point(508, 211);
             this.ckbSexta.Name = "ckbSexta";
             this.ckbSexta.Size = new System.Drawing.Size(53, 17);
-            this.ckbSexta.TabIndex = 126;
+            this.ckbSexta.TabIndex = 11;
             this.ckbSexta.Text = "Sexta";
             this.ckbSexta.UseVisualStyleBackColor = true;
             // 
@@ -552,7 +570,7 @@
             this.ckbQuinta.Location = new System.Drawing.Point(442, 211);
             this.ckbQuinta.Name = "ckbQuinta";
             this.ckbQuinta.Size = new System.Drawing.Size(54, 17);
-            this.ckbQuinta.TabIndex = 125;
+            this.ckbQuinta.TabIndex = 10;
             this.ckbQuinta.Text = "Quirta";
             this.ckbQuinta.UseVisualStyleBackColor = true;
             // 
@@ -575,7 +593,7 @@
             this.ckbTerca.Location = new System.Drawing.Point(300, 211);
             this.ckbTerca.Name = "ckbTerca";
             this.ckbTerca.Size = new System.Drawing.Size(54, 17);
-            this.ckbTerca.TabIndex = 123;
+            this.ckbTerca.TabIndex = 8;
             this.ckbTerca.Text = "Terça";
             this.ckbTerca.UseVisualStyleBackColor = true;
             // 
@@ -587,7 +605,7 @@
             this.ckbSegunda.Location = new System.Drawing.Point(218, 210);
             this.ckbSegunda.Name = "ckbSegunda";
             this.ckbSegunda.Size = new System.Drawing.Size(69, 17);
-            this.ckbSegunda.TabIndex = 122;
+            this.ckbSegunda.TabIndex = 7;
             this.ckbSegunda.Text = "Segunda";
             this.ckbSegunda.UseVisualStyleBackColor = true;
             // 
@@ -599,7 +617,7 @@
             this.ckbQuarta.Location = new System.Drawing.Point(372, 211);
             this.ckbQuarta.Name = "ckbQuarta";
             this.ckbQuarta.Size = new System.Drawing.Size(58, 17);
-            this.ckbQuarta.TabIndex = 121;
+            this.ckbQuarta.TabIndex = 9;
             this.ckbQuarta.Text = "Quarta";
             this.ckbQuarta.UseVisualStyleBackColor = true;
             // 
@@ -611,7 +629,7 @@
             this.ckbDomingo.Location = new System.Drawing.Point(137, 210);
             this.ckbDomingo.Name = "ckbDomingo";
             this.ckbDomingo.Size = new System.Drawing.Size(68, 17);
-            this.ckbDomingo.TabIndex = 120;
+            this.ckbDomingo.TabIndex = 6;
             this.ckbDomingo.Text = "Domingo";
             this.ckbDomingo.UseVisualStyleBackColor = true;
             // 
@@ -621,7 +639,7 @@
             this.txtTurma.MaxLength = 10;
             this.txtTurma.Name = "txtTurma";
             this.txtTurma.Size = new System.Drawing.Size(112, 20);
-            this.txtTurma.TabIndex = 119;
+            this.txtTurma.TabIndex = 2;
             // 
             // lblTurma
             // 
@@ -641,7 +659,7 @@
             this.dtpHorarioFim.Location = new System.Drawing.Point(355, 130);
             this.dtpHorarioFim.Name = "dtpHorarioFim";
             this.dtpHorarioFim.Size = new System.Drawing.Size(82, 20);
-            this.dtpHorarioFim.TabIndex = 117;
+            this.dtpHorarioFim.TabIndex = 4;
             // 
             // lblHorarioFim
             // 
@@ -660,7 +678,7 @@
             this.dtpHorarioInicio.Location = new System.Drawing.Point(137, 130);
             this.dtpHorarioInicio.Name = "dtpHorarioInicio";
             this.dtpHorarioInicio.Size = new System.Drawing.Size(82, 20);
-            this.dtpHorarioInicio.TabIndex = 115;
+            this.dtpHorarioInicio.TabIndex = 3;
             // 
             // lblHorarioInicio
             // 
@@ -679,7 +697,7 @@
             this.txtValor.MaxLength = 10;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(112, 20);
-            this.txtValor.TabIndex = 113;
+            this.txtValor.TabIndex = 5;
             // 
             // lblValor
             // 
@@ -805,27 +823,9 @@
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(822, 43);
-            this.ucMenuInferior1.TabIndex = 109;
+            this.ucMenuInferior1.TabIndex = 0;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.MaxInputLength = 30;
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 230;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.MaxInputLength = 100;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 366;
             // 
             // telaConfiguracoesAtividades
             // 
