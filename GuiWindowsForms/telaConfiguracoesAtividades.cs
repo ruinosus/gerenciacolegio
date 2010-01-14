@@ -12,6 +12,7 @@ using Negocios.ModuloAtividade.Constantes;
 using System.IO;
 using Negocios.ModuloAtividadeTurma.Processos;
 using Negocios.ModuloAtividadeTurma.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace GuiWindowsForms
 {
@@ -305,7 +306,7 @@ namespace GuiWindowsForms
 
                 if (verificaSeJaInserido(atividade) == false)
                 {
-                    atividade.Status = 0;
+                    atividade.Status = (int)Status.Ativo;
                     atividadeControlador.Incluir(atividade);
                     atividadeControlador.Confirmar();
                     linhaSelecionadaGrid = -1;
@@ -707,9 +708,12 @@ namespace GuiWindowsForms
         #region EVENTO PARA ALIMENTAR E ATUALIZAR OS DATAGRIDS
         private void carregaForm()
         {
+            Atividade atividadeAux = new Atividade();
+            atividadeAux.Status = (int)Status.Ativo;
+
             atividadeControlador = AtividadeProcesso.Instance;
 
-            listaAtividade = atividadeControlador.Consultar();
+            listaAtividade = atividadeControlador.Consultar(atividadeAux,TipoPesquisa.E);
 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = null;
@@ -1356,6 +1360,16 @@ namespace GuiWindowsForms
             cmbAtividadeTurma.DisplayMember = "Nome";
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+
+        }
 
     }
 
