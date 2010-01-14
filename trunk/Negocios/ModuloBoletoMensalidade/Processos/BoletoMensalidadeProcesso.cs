@@ -7,6 +7,7 @@ using Negocios.ModuloBoletoMensalidade.Repositorios;
 using Negocios.ModuloBoletoMensalidade.Processos;
 using Negocios.ModuloBoletoMensalidade.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBoletoMensalidade.Excecoes;
 
 namespace Negocios.ModuloBoletoMensalidade.Processos
 {
@@ -38,6 +39,23 @@ namespace Negocios.ModuloBoletoMensalidade.Processos
 
         public void Excluir(BoletoMensalidade boletoMensalidade)
         {
+            try
+            {
+                if (boletoMensalidade.ID == 0)
+                    throw new BoletoMensalidadeNaoExcluidaExcecao();
+
+                List<BoletoMensalidade> resultado = boletoMensalidadeRepositorio.Consultar(boletoMensalidade, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new BoletoMensalidadeNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.boletoMensalidadeRepositorio.Excluir(boletoMensalidade);
         }
 
@@ -48,7 +66,7 @@ namespace Negocios.ModuloBoletoMensalidade.Processos
 
         public List<BoletoMensalidade> Consultar(BoletoMensalidade boletoMensalidade, TipoPesquisa tipoPesquisa)
         {
-            List<BoletoMensalidade> boletoMensalidadeList = this.boletoMensalidadeRepositorio.Consultar(boletoMensalidade, tipoPesquisa);           
+            List<BoletoMensalidade> boletoMensalidadeList = this.boletoMensalidadeRepositorio.Consultar(boletoMensalidade, tipoPesquisa);
 
             return boletoMensalidadeList;
         }

@@ -8,6 +8,7 @@ using Negocios.ModuloDesconto.Repositorios;
 using Negocios.ModuloDesconto.Processos;
 using Negocios.ModuloDesconto.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloDesconto.Excecoes;
 
 namespace Negocios.ModuloDesconto.Processos
 {
@@ -39,6 +40,24 @@ namespace Negocios.ModuloDesconto.Processos
 
         public void Excluir(Desconto desconto)
         {
+
+            try
+            {
+                if (desconto.ID == 0)
+                    throw new DescontoNaoExcluidoExcecao();
+
+                List<Desconto> resultado = descontoRepositorio.Consultar(desconto, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new DescontoNaoExcluidoExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.descontoRepositorio.Excluir(desconto);
         }
 

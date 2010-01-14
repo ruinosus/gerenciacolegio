@@ -6,16 +6,17 @@ using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloFuncionario.Excecoes;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloFuncionario.Repositorios
 {
     public class FuncionarioRepositorio: IFuncionarioRepositorio
     {
-		#region Atributos
-		
-        ColegioDB db = new ColegioDB(new MySqlConnection(BasicoConstantes.CONEXAO));
-		
-		#endregion      
+        #region Atributos
+ 
+        ColegioDB db ;
+
+        #endregion      
 		
         #region Métodos da Interface
 
@@ -1468,6 +1469,15 @@ namespace Negocios.ModuloFuncionario.Repositorios
         }
 
         #endregion      
+
+        #region Construtor
+        public FuncionarioRepositorio()
+        {
+            Conexao conexao = new Conexao();
+            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+
+        } 
+        #endregion
  
 
     }

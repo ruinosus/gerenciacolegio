@@ -6,16 +6,17 @@ using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloContasAPagar.Excecoes;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloContasAPagar.Repositorios
 {
     public class ContasAPagarRepositorio: IContasAPagarRepositorio
     {
-		#region Atributos
-		
-        ColegioDB db = new ColegioDB(new MySqlConnection(BasicoConstantes.CONEXAO));
-		
-		#endregion      
+        #region Atributos
+        
+        ColegioDB db ;
+
+        #endregion      
 		
         #region Métodos da Interface
          
@@ -486,6 +487,15 @@ namespace Negocios.ModuloContasAPagar.Repositorios
         }
 
         #endregion      
+
+        #region Construtor
+        public ContasAPagarRepositorio()
+        {
+            Conexao conexao = new Conexao();
+            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+
+        } 
+        #endregion
 
 
     

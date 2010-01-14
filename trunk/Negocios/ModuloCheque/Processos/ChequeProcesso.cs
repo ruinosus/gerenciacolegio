@@ -8,6 +8,7 @@ using Negocios.ModuloCheque.Repositorios;
 using Negocios.ModuloCheque.Processos;
 using Negocios.ModuloCheque.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloCheque.Excecoes;
 
 namespace Negocios.ModuloCheque.Processos
 {
@@ -39,6 +40,24 @@ namespace Negocios.ModuloCheque.Processos
 
         public void Excluir(Cheque cheque)
         {
+
+            try
+            {
+                if (cheque.ID == 0)
+                    throw new ChequeNaoExcluidoExcecao();
+
+                List<Cheque> resultado = chequeRepositorio.Consultar(cheque, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new ChequeNaoExcluidoExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.chequeRepositorio.Excluir(cheque);
         }
 

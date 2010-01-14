@@ -8,6 +8,7 @@ using Negocios.ModuloResponsavelAluno.Repositorios;
 using Negocios.ModuloResponsavelAluno.Processos;
 using Negocios.ModuloResponsavelAluno.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloResponsavelAluno.Excecoes;
 
 namespace Negocios.ModuloResponsavelAluno.Processos
 {
@@ -39,6 +40,24 @@ namespace Negocios.ModuloResponsavelAluno.Processos
 
         public void Excluir(ResponsavelAluno responsavelAluno)
         {
+
+            try
+            {
+                if (responsavelAluno.ID == 0)
+                    throw new ResponsavelAlunoNaoExcluidoExcecao();
+
+                List<ResponsavelAluno> resultado = responsavelAlunoRepositorio.Consultar(responsavelAluno, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new ResponsavelAlunoNaoExcluidoExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.responsavelAlunoRepositorio.Excluir(responsavelAluno);
         }
 

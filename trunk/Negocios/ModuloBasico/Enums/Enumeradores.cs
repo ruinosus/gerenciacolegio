@@ -19,5 +19,10 @@ namespace Negocios.ModuloBasico.Enums
         E = 0,
         Ou = 1
     }
-    
+
+    public enum Status
+    {
+        Inativo = 0,
+        Ativo = 1
+    }
 }

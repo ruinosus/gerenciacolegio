@@ -6,16 +6,17 @@ using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloProfessorDisciplinaSala.Excecoes;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloProfessorDisciplinaSala.Repositorios
 {
     public class ProfessorDisciplinaSalaRepositorio : IProfessorDisciplinaSalaRepositorio
     {
         #region Atributos
+        
+        ColegioDB db ;
 
-        ColegioDB db = new ColegioDB(new MySqlConnection(BasicoConstantes.CONEXAO));
-
-        #endregion
+        #endregion      
 
         #region Métodos da Interface
 
@@ -359,6 +360,15 @@ namespace Negocios.ModuloProfessorDisciplinaSala.Repositorios
             db.SubmitChanges();
         }
 
+        #endregion
+
+        #region Construtor
+        public ProfessorDisciplinaSalaRepositorio()
+        {
+            Conexao conexao = new Conexao();
+            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+
+        } 
         #endregion
 
 

@@ -41,8 +41,25 @@ namespace Negocios.ModuloAtividadeTurma.Processos
 
         public void Excluir(AtividadeTurma atividadeTurma)
         {
-            if (atividadeTurma == null || atividadeTurma.ID == 0)
-                throw new AtividadeTurmaNaoExcluidaExcecao();
+
+            try
+            {
+                if (atividadeTurma.ID == 0)
+                    throw new AtividadeTurmaNaoExcluidaExcecao();
+
+                List<AtividadeTurma> resultado = atividadeTurmaRepositorio.Consultar(atividadeTurma, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new AtividadeTurmaNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
 
             //this.atividadeTurmaRepositorio.Excluir(atividadeTurma);
         }

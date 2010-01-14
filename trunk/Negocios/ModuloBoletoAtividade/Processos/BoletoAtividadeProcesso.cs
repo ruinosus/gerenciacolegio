@@ -7,6 +7,7 @@ using Negocios.ModuloBoletoAtividade.Repositorios;
 using Negocios.ModuloBoletoAtividade.Processos;
 using Negocios.ModuloBoletoAtividade.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBoletoAtividade.Excecoes;
 
 namespace Negocios.ModuloBoletoAtividade.Processos
 {
@@ -38,6 +39,24 @@ namespace Negocios.ModuloBoletoAtividade.Processos
 
         public void Excluir(BoletoAtividade boletoAtividade)
         {
+            try
+            {
+                if (boletoAtividade.ID == 0)
+                    throw new BoletoAtividadeNaoExcluidaExcecao();
+
+                List<BoletoAtividade> resultado = boletoAtividadeRepositorio.Consultar(boletoAtividade, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new BoletoAtividadeNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.boletoAtividadeRepositorio.Excluir(boletoAtividade);
         }
 

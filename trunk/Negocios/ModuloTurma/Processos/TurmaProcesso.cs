@@ -9,6 +9,7 @@ using Negocios.ModuloTurma.Repositorios;
 using Negocios.ModuloTurma.Processos;
 using Negocios.ModuloTurma.Fabricas;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloTurma.Excecoes;
 namespace Negocios.ModuloTurma.Processos
 {
     /// <summary>
@@ -39,6 +40,23 @@ namespace Negocios.ModuloTurma.Processos
 
         public void Excluir(Turma turma)
         {
+            try
+            {
+                if (turma.ID == 0)
+                    throw new TurmaNaoExcluidaExcecao();
+
+                List<Turma> resultado = turmaRepositorio.Consultar(turma, TipoPesquisa.E);
+
+                if (resultado == null || resultado.Count <= 0 || resultado.Count > 1)
+                    throw new TurmaNaoExcluidaExcecao();
+
+                resultado[0].Status = (int)Status.Inativo;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
             //this.turmaRepositorio.Excluir(turma);
         }
 

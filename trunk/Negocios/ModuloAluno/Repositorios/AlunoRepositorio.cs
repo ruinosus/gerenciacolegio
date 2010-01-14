@@ -6,14 +6,15 @@ using Negocios.ModuloBasico.Constantes;
 using MySql.Data.MySqlClient;
 using Negocios.ModuloAluno.Excecoes;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloAluno.Repositorios
 {
     public class AlunoRepositorio: IAlunoRepositorio
     {
 		#region Atributos
-		
-        ColegioDB db = new ColegioDB(new MySqlConnection(BasicoConstantes.CONEXAO));
+        
+        ColegioDB db;
 		
 		#endregion      
 		
@@ -1385,6 +1386,15 @@ namespace Negocios.ModuloAluno.Repositorios
         }
 
         #endregion      
+
+        #region Construtor
+        public AlunoRepositorio()
+        {
+            Conexao conexao = new Conexao();
+            db = new ColegioDB(new MySqlConnection(conexao.ToString()));
+
+        } 
+        #endregion
 
 
     }
