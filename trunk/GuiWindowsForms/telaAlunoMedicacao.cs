@@ -8,12 +8,14 @@ using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloAluno.Processos;
 using Negocios.ModuloAluno.Constantes;
+using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms
 {
     public partial class telaAlunoMedicacao : Form
     {
         IAlunoProcesso alunoControlador = AlunoProcesso.Instance;
+        Memoria memoria = new Memoria();
 
         #region SINGLETON DA TELA
         /*
@@ -204,7 +206,7 @@ namespace GuiWindowsForms
                 //    txtAlergico.Clear();
                 //    return;
                 //}
-                telaAluno.aluno.Alergico = txtAlergico.Text;
+                memoria.Aluno.Alergico = txtAlergico.Text;
 
 
                 #endregion
@@ -218,11 +220,11 @@ namespace GuiWindowsForms
                 }
                 if (rdbNegativo.Checked == true)
                 {
-                    telaAluno.aluno.FatorRh = 0;
+                    memoria.Aluno.FatorRh = 0;
                 }
                 else
                 {
-                    telaAluno.aluno.FatorRh = 1;
+                    memoria.Aluno.FatorRh = 1;
                 }
 
                 #endregion
@@ -235,7 +237,7 @@ namespace GuiWindowsForms
                 //    txtNomeMedico.Clear();
                 //    return;
                 //}
-                telaAluno.aluno.NomeMedico = txtNomeMedico.Text;
+                memoria.Aluno.NomeMedico = txtNomeMedico.Text;
 
                 #endregion
 
@@ -246,7 +248,7 @@ namespace GuiWindowsForms
                 //    errorProviderTela.SetError(mskFone, "Informe o fone");
                 //    return;
                 //}
-                telaAluno.aluno.FoneMedico = mskFone.Text;
+                memoria.Aluno.FoneMedico = mskFone.Text;
 
                 #endregion
 
@@ -258,7 +260,7 @@ namespace GuiWindowsForms
                 //    txtHospital.Clear();
                 //    return;
                 //}
-                telaAluno.aluno.Hospital = txtHospital.Text;
+                memoria.Aluno.Hospital = txtHospital.Text;
 
                 #endregion
 
@@ -270,7 +272,7 @@ namespace GuiWindowsForms
                 //    txtPlanoSaude.Clear();
                 //    return;
                 //}
-                telaAluno.aluno.PlanoSaude = txtPlanoSaude.Text;
+                memoria.Aluno.PlanoSaude = txtPlanoSaude.Text;
 
                 #endregion
 
@@ -282,7 +284,7 @@ namespace GuiWindowsForms
                 //    txtDescricaoMedica.Clear();
                 //    return;
                 //}
-                telaAluno.aluno.DescricaoMedica = txtDescricaoMedica.Text;
+                memoria.Aluno.DescricaoMedica = txtDescricaoMedica.Text;
 
                 #endregion
 
@@ -294,7 +296,7 @@ namespace GuiWindowsForms
                 //    txtSituacaoEspecial.Clear();
                 //    return;
                 //}
-                telaAluno.aluno.SituacaoEspecial = txtSituacaoEspecial.Text;
+                memoria.Aluno.SituacaoEspecial = txtSituacaoEspecial.Text;
 
                 #endregion
 
@@ -306,13 +308,13 @@ namespace GuiWindowsForms
                 //    txtContato.Clear();
                 //    return;
                 //}
-                telaAluno.aluno.Contato = txtContato.Text;
+                memoria.Aluno.Contato = txtContato.Text;
 
                 #endregion
 
-                telaAluno.aluno.GrupoSanguineo = cmbGrupoSanguineo.Text;
+                memoria.Aluno.GrupoSanguineo = cmbGrupoSanguineo.Text;
 
-                alunoControlador.Alterar(telaAluno.aluno);
+                alunoControlador.Alterar(memoria.Aluno);
                 alunoControlador.Confirmar();
 
                 MessageBox.Show(AlunoConstantes.ALUNO_MEDICACAO_ALTERADA, "Colégio Conhecer");
@@ -387,9 +389,10 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaAlunoMedicacao_Load(object sender, EventArgs e)
         {
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
             limparTela();
             cmbGrupoSanguineo.DataSource = gruposanguineo;
-            uMenuImagem1.carregaAluno(telaAluno.aluno);
+            uMenuImagem1.carregaAluno(memoria.Aluno);
             carregarAlunoMedicacao();
         }
         #endregion
@@ -399,15 +402,15 @@ namespace GuiWindowsForms
         /// </summary>
         public void carregarAlunoMedicacao()
         {
-            txtAlergico.Text = telaAluno.aluno.Alergico;
-            txtDescricaoMedica.Text = telaAluno.aluno.DescricaoMedica;
-            txtHospital.Text = telaAluno.aluno.Hospital;
-            txtNomeMedico.Text = telaAluno.aluno.NomeMedico;
-            txtPlanoSaude.Text = telaAluno.aluno.PlanoSaude;
-            txtSituacaoEspecial.Text = telaAluno.aluno.SituacaoEspecial;
-            mskFone.Text = telaAluno.aluno.FoneMedico;
-            cmbGrupoSanguineo.Text = telaAluno.aluno.GrupoSanguineo;
-            txtContato.Text = telaAluno.aluno.Contato;
+            txtAlergico.Text = memoria.Aluno.Alergico;
+            txtDescricaoMedica.Text = memoria.Aluno.DescricaoMedica;
+            txtHospital.Text = memoria.Aluno.Hospital;
+            txtNomeMedico.Text = memoria.Aluno.NomeMedico;
+            txtPlanoSaude.Text = memoria.Aluno.PlanoSaude;
+            txtSituacaoEspecial.Text = memoria.Aluno.SituacaoEspecial;
+            mskFone.Text = memoria.Aluno.FoneMedico;
+            cmbGrupoSanguineo.Text = memoria.Aluno.GrupoSanguineo;
+            txtContato.Text = memoria.Aluno.Contato;
             if (rdbNegativo.Checked == true)
             {
                 rdbNegativo.Select();

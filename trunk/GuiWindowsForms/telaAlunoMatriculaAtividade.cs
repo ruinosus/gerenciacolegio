@@ -215,7 +215,7 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaAlunoMatriculaAtividade_Load(object sender, EventArgs e)
         {
-
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
         }
         #endregion
 

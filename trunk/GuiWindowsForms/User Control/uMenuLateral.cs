@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms.User_Control
 {
@@ -49,8 +50,17 @@ namespace GuiWindowsForms.User_Control
 
         private void btnMatricula_Click(object sender, EventArgs e)
         {
-            if (EventoAbrirTelaMatricula != null)
-                EventoAbrirTelaMatricula();
+              Memoria memoria = Memoria.Instance;
+              if (memoria.Aluno != null)
+              {
+                  if (EventoAbrirTelaMatricula != null)
+                      EventoAbrirTelaMatricula();
+              }
+              else
+              {
+                  MessageBox.Show("Só é possivel acessar matrícula com um aluno em uso a ser matriculado, cadastre ou selecione um aluno para então matriculá-lo.");
+              }
+
         }
 
         /// <summary>

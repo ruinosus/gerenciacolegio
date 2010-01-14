@@ -16,7 +16,7 @@ namespace GuiWindowsForms
     public partial class telaAluno : Form
     {
 
-        public static Aluno aluno = new Aluno();
+        Aluno aluno = new Aluno();
         IAlunoProcesso alunoControlador = AlunoProcesso.Instance;
 
         #region SINGLETON DA TELA
@@ -680,6 +680,8 @@ namespace GuiWindowsForms
                 {
                     alunoControlador.Incluir(aluno);
                     alunoControlador.Confirmar();
+
+                    memoria.Aluno = aluno;
 
                     MessageBox.Show(AlunoConstantes.ALUNO_INCLUIDO, "Colégio Conhecer - Cadastrar Aluno");
                 }

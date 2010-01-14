@@ -117,5 +117,10 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+        private void telaAlunoResponsavelBusca_Load(object sender, EventArgs e)
+        {
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+        }
     }
 }

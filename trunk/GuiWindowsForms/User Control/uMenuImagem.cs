@@ -38,6 +38,11 @@ namespace GuiWindowsForms
             }
         }
 
+        public void ocultarBotaoAdicionarImagem()
+        {
+            btnAdicionarImagem.Visible = false;
+        }
+
         public Responsavel retornaResponsavel(Responsavel responsavel)
         {
             if (pctImagem.Image != null)

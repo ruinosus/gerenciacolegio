@@ -195,5 +195,10 @@ namespace GuiWindowsForms
             telaRelatorioBoletoMensalidade telaBoleto = new telaRelatorioBoletoMensalidade();
             telaBoleto.ShowDialog();
         }
+
+        private void telaAlunoFinanceiro_Load(object sender, EventArgs e)
+        {
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+        }
     }
 }
