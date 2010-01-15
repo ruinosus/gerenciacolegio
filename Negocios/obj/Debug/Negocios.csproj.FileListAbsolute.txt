@@ -87,3 +87,5 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\bin\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\Negocios.dll
 C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\bin\Debug\DbLinq.MySql.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\bin\Debug\DbLinq.pdb

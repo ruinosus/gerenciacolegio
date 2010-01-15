@@ -131,7 +131,7 @@ namespace GuiWindowsForms
             this.btnVincularResponsavel.Margin = new System.Windows.Forms.Padding(0);
             this.btnVincularResponsavel.Name = "btnVincularResponsavel";
             this.btnVincularResponsavel.Size = new System.Drawing.Size(30, 31);
-            this.btnVincularResponsavel.TabIndex = 16;
+            this.btnVincularResponsavel.TabIndex = 17;
             this.btnVincularResponsavel.UseVisualStyleBackColor = true;
             this.btnVincularResponsavel.Click += new System.EventHandler(this.btnVincularResponsavel_Click);
             // 
@@ -141,7 +141,7 @@ namespace GuiWindowsForms
             this.lblEdificio.Location = new System.Drawing.Point(48, 204);
             this.lblEdificio.Name = "lblEdificio";
             this.lblEdificio.Size = new System.Drawing.Size(55, 13);
-            this.lblEdificio.TabIndex = 60;
+            this.lblEdificio.TabIndex = 10;
             this.lblEdificio.Text = "Edifício:";
             // 
             // txtNomeEdificil
@@ -206,7 +206,7 @@ namespace GuiWindowsForms
             this.lblComplemento.Location = new System.Drawing.Point(505, 159);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(86, 13);
-            this.lblComplemento.TabIndex = 55;
+            this.lblComplemento.TabIndex = 9;
             this.lblComplemento.Text = "Complemento:";
             // 
             // lblUf
@@ -215,7 +215,7 @@ namespace GuiWindowsForms
             this.lblUf.Location = new System.Drawing.Point(367, 249);
             this.lblUf.Name = "lblUf";
             this.lblUf.Size = new System.Drawing.Size(27, 13);
-            this.lblUf.TabIndex = 54;
+            this.lblUf.TabIndex = 12;
             this.lblUf.Text = "UF:";
             // 
             // lblFoneResidencia
@@ -224,7 +224,7 @@ namespace GuiWindowsForms
             this.lblFoneResidencia.Location = new System.Drawing.Point(239, 295);
             this.lblFoneResidencia.Name = "lblFoneResidencia";
             this.lblFoneResidencia.Size = new System.Drawing.Size(75, 13);
-            this.lblFoneResidencia.TabIndex = 53;
+            this.lblFoneResidencia.TabIndex = 15;
             this.lblFoneResidencia.Text = "Fone Resid:";
             // 
             // mskCep
@@ -246,7 +246,7 @@ namespace GuiWindowsForms
             this.label4.Location = new System.Drawing.Point(48, 292);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 51;
+            this.label4.TabIndex = 14;
             this.label4.Text = "Cep:";
             // 
             // txtCidade
@@ -268,7 +268,7 @@ namespace GuiWindowsForms
             this.lblCidade.Location = new System.Drawing.Point(505, 256);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(50, 13);
-            this.lblCidade.TabIndex = 49;
+            this.lblCidade.TabIndex = 13;
             this.lblCidade.Text = "Cidade:";
             // 
             // txtBairro
@@ -290,7 +290,7 @@ namespace GuiWindowsForms
             this.lblBairro.Location = new System.Drawing.Point(48, 249);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(44, 13);
-            this.lblBairro.TabIndex = 47;
+            this.lblBairro.TabIndex = 11;
             this.lblBairro.Text = "Bairro:";
             // 
             // txtLogradouro
@@ -312,7 +312,7 @@ namespace GuiWindowsForms
             this.label3.Location = new System.Drawing.Point(46, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 45;
+            this.label3.TabIndex = 8;
             this.label3.Text = "Endereço:";
             // 
             // txtEmail
@@ -331,7 +331,7 @@ namespace GuiWindowsForms
             this.lblEmail.Location = new System.Drawing.Point(46, 113);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(77, 13);
-            this.lblEmail.TabIndex = 33;
+            this.lblEmail.TabIndex = 6;
             this.lblEmail.Text = "Email Aluno:";
             // 
             // mskFoneEmergencia
@@ -340,7 +340,7 @@ namespace GuiWindowsForms
             this.mskFoneEmergencia.Mask = "(99) 0000-0000";
             this.mskFoneEmergencia.Name = "mskFoneEmergencia";
             this.mskFoneEmergencia.Size = new System.Drawing.Size(111, 20);
-            this.mskFoneEmergencia.TabIndex = 18;
+            this.mskFoneEmergencia.TabIndex = 16;
             this.mskFoneEmergencia.Leave += new System.EventHandler(this.mskFoneEmergencia_Leave);
             this.mskFoneEmergencia.Enter += new System.EventHandler(this.mskFoneEmergencia_Enter);
             this.mskFoneEmergencia.TextChanged += new System.EventHandler(this.mskFoneEmergencia_TextChanged);
@@ -351,7 +351,7 @@ namespace GuiWindowsForms
             this.lblFoneEmergencia.Location = new System.Drawing.Point(507, 295);
             this.lblFoneEmergencia.Name = "lblFoneEmergencia";
             this.lblFoneEmergencia.Size = new System.Drawing.Size(78, 13);
-            this.lblFoneEmergencia.TabIndex = 29;
+            this.lblFoneEmergencia.TabIndex = 16;
             this.lblFoneEmergencia.Text = "Fone Emerg:";
             // 
             // mskFoneAluno
@@ -371,7 +371,7 @@ namespace GuiWindowsForms
             this.lblFoneAluno.Location = new System.Drawing.Point(505, 113);
             this.lblFoneAluno.Name = "lblFoneAluno";
             this.lblFoneAluno.Size = new System.Drawing.Size(75, 13);
-            this.lblFoneAluno.TabIndex = 25;
+            this.lblFoneAluno.TabIndex = 7;
             this.lblFoneAluno.Text = "Fone Aluno:";
             // 
             // cmbNaturalidade
@@ -421,7 +421,7 @@ namespace GuiWindowsForms
             this.label2.Location = new System.Drawing.Point(557, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 9;
+            this.label2.TabIndex = 5;
             this.label2.Text = "Naturalidade:";
             // 
             // cmbNacionalidade
@@ -700,7 +700,7 @@ namespace GuiWindowsForms
             this.lblNacionalidade.Location = new System.Drawing.Point(272, 70);
             this.lblNacionalidade.Name = "lblNacionalidade";
             this.lblNacionalidade.Size = new System.Drawing.Size(92, 13);
-            this.lblNacionalidade.TabIndex = 7;
+            this.lblNacionalidade.TabIndex = 4;
             this.lblNacionalidade.Text = "Nacionalidade:";
             // 
             // rdbFem
@@ -724,7 +724,7 @@ namespace GuiWindowsForms
             this.rdbMasc.Location = new System.Drawing.Point(508, 32);
             this.rdbMasc.Name = "rdbMasc";
             this.rdbMasc.Size = new System.Drawing.Size(55, 17);
-            this.rdbMasc.TabIndex = 1;
+            this.rdbMasc.TabIndex = 2;
             this.rdbMasc.TabStop = true;
             this.rdbMasc.Text = "Masc";
             this.rdbMasc.UseVisualStyleBackColor = true;
@@ -737,7 +737,7 @@ namespace GuiWindowsForms
             this.lblSexo.Location = new System.Drawing.Point(463, 32);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(39, 13);
-            this.lblSexo.TabIndex = 4;
+            this.lblSexo.TabIndex = 2;
             this.lblSexo.Text = "Sexo:";
             // 
             // txtNome
@@ -746,7 +746,7 @@ namespace GuiWindowsForms
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(312, 20);
-            this.txtNome.TabIndex = 0;
+            this.txtNome.TabIndex = 1;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
@@ -757,6 +757,8 @@ namespace GuiWindowsForms
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNascimento.Location = new System.Drawing.Point(128, 70);
             this.dtpNascimento.Name = "dtpNascimento";
+            this.dtpNascimento.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dtpNascimento.ShowUpDown = true;
             this.dtpNascimento.Size = new System.Drawing.Size(110, 20);
             this.dtpNascimento.TabIndex = 3;
             // 
@@ -766,7 +768,7 @@ namespace GuiWindowsForms
             this.label1.Location = new System.Drawing.Point(46, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 3;
             this.label1.Text = "Nascimento:";
             // 
             // lblNome
@@ -775,7 +777,7 @@ namespace GuiWindowsForms
             this.lblNome.Location = new System.Drawing.Point(46, 32);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(43, 13);
-            this.lblNome.TabIndex = 0;
+            this.lblNome.TabIndex = 1;
             this.lblNome.Text = "Nome:";
             // 
             // lblHelloUsuario
@@ -823,7 +825,7 @@ namespace GuiWindowsForms
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
-            this.ucMenuInferior1.TabIndex = 2;
+            this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucAluno1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
@@ -833,7 +835,7 @@ namespace GuiWindowsForms
             this.uMenuLateral1.Location = new System.Drawing.Point(875, 75);
             this.uMenuLateral1.Name = "uMenuLateral1";
             this.uMenuLateral1.Size = new System.Drawing.Size(130, 584);
-            this.uMenuLateral1.TabIndex = 0;
+            this.uMenuLateral1.TabIndex = 2;
             this.uMenuLateral1.EventoAbrirTelaMedica += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMedica(this.uMenuLateral1_EventoAbrirTelaMedica);
             this.uMenuLateral1.Load += new System.EventHandler(this.uMenuLateral1_Load);
             this.uMenuLateral1.EventoAbrirTelaResponsavel += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaResponsavel(this.uMenuLateral1_EventoAbrirTelaResponsavel);
@@ -872,6 +874,7 @@ namespace GuiWindowsForms
             this.Name = "telaAluno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Load += new System.EventHandler(this.telaAluno_Load);
             this.Activated += new System.EventHandler(this.telaAluno_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAluno_FormClosing);
             this.gpbDadosPessoais.ResumeLayout(false);

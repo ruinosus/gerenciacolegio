@@ -218,6 +218,7 @@ namespace GuiWindowsForms
             btnExcluir.Enabled = false;
             btnAlterar.Enabled = false;
             btnAdicionarDesconto.Enabled = false;
+            txtDescricao.Focus();
 
             verificaButton = 1;
 
@@ -290,10 +291,10 @@ namespace GuiWindowsForms
             if (verificaButton == 2)
             {
                 #region ALTERAR
-                desconto = new Desconto();
 
                 try
                 {
+                    desconto = new Desconto();
                     descontoControlador = DescontoProcesso.Instance;
 
                     #region VALIDA - DESCRIÇÃO
@@ -320,10 +321,18 @@ namespace GuiWindowsForms
 
                     #endregion
 
+                    desconto.Status = 1;
+
                     if (linhaSelecionadaGrid != -1)
                     {
+                        //descontoControlador.Alterar(desconto);
+                        //descontoControlador.Confirmar();
+                        //carregaForm();
+                        //linhaSelecionadaGrid = -1;
+
+                        desconto.ID = listaDesconto[linhaSelecionadaGrid].ID;
                         descontoControlador.Alterar(desconto);
-                        descontoControlador.Confirmar();
+                        carregaForm();
                         linhaSelecionadaGrid = -1;
 
                         MessageBox.Show(DescontoConstantes.DESCONTO_ALTERADO, "Colégio Conhecer");
@@ -372,7 +381,6 @@ namespace GuiWindowsForms
             }
         }
         #endregion
-
 
         #region Função para verificar se o desconto já esta cadastrado
         public bool verificaSeJaInserido(Desconto desconto)
@@ -546,6 +554,7 @@ namespace GuiWindowsForms
             dataGridView1.Enabled = false;
             btnExcluir.Enabled = false;
             btnAdicionarDesconto.Enabled = false;
+            txtDescricao.Focus();
             
 
             verificaButton = 2;

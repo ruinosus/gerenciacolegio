@@ -389,3 +389,5 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.dl
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.pdb

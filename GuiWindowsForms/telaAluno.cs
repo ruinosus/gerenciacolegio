@@ -981,6 +981,11 @@ namespace GuiWindowsForms
             tela.Show();
         }
 
+        private void telaAluno_Load(object sender, EventArgs e)
+        {
+            limparTela();
+        }
+
 
 
 
