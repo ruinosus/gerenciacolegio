@@ -98,7 +98,13 @@ namespace GuiWindowsForms
         {
             this.Hide();
             Program.ultimaTela = 6;
+
+            Memoria memoria = Memoria.Instance;
+            memoria.Aluno = null;
             telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            telaalunoresponsavel.limparTela();
+            telaAluno telaAlunoAuxiliar = telaAluno.getInstancia();
+            telaAlunoAuxiliar.limparTelaAluno();
             telaalunoresponsavel.Show();
         }
         #endregion

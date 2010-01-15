@@ -28,19 +28,30 @@ namespace GuiWindowsForms
 
         public void limparFigura()
         {
-            pctImagem.Image.Dispose();
+            pctImagem.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
         }
         
         public void carregaResponsavel(Responsavel responsavel)
         {
-            lblAtivo.Text = "Ativo - AINDA POR FAZER";
-            lblFoneEmerg.Text = responsavel.Fone;
-            lblMatricula.Text = "xxxx.xxx.xx.xxx - AINDA POR FAZER";
-            lblNomeAluno.Text = responsavel.Nome;
-            lblSerie.Text = "AINDA POR FAZER";
-            if (responsavel.Imagem != null && responsavel.Imagem.Length != 0)
+            if (responsavel != null)
             {
-                pctImagem.Image = arrayParaImagem(responsavel.Imagem);
+                lblAtivo.Text = "Ativo - AINDA POR FAZER";
+                lblFoneEmerg.Text = responsavel.Fone;
+                lblMatricula.Text = "xxxx.xxx.xx.xxx - AINDA POR FAZER";
+                lblNomeAluno.Text = responsavel.Nome;
+                lblSerie.Text = "AINDA POR FAZER";
+                if (responsavel.Imagem != null && responsavel.Imagem.Length != 0)
+                {
+                    pctImagem.Image = arrayParaImagem(responsavel.Imagem);
+                }
+            }
+            else
+            {
+                lblAtivo.Text = "";
+                lblFoneEmerg.Text = "";
+                lblMatricula.Text = "";
+                lblNomeAluno.Text = "";
+                lblSerie.Text = "";
             }
         }
 
@@ -67,14 +78,25 @@ namespace GuiWindowsForms
 
         public void carregaAluno(Aluno aluno)
         {
-            lblAtivo.Text = "Ativo - AINDA POR FAZER";
-            lblFoneEmerg.Text = aluno.FoneEmergencia;
-            lblMatricula.Text = "xxxx.xxx.xx.xxx - AINDA POR FAZER";
-            lblNomeAluno.Text = aluno.Nome;
-            lblSerie.Text = "AINDA POR FAZER";
-            if (aluno.Imagem!=null && aluno.Imagem.Length!=0)
+            if (aluno != null)
             {
-                pctImagem.Image = arrayParaImagem(aluno.Imagem);
+                lblAtivo.Text = "Ativo - AINDA POR FAZER";
+                lblFoneEmerg.Text = aluno.FoneEmergencia;
+                lblMatricula.Text = "xxxx.xxx.xx.xxx - AINDA POR FAZER";
+                lblNomeAluno.Text = aluno.Nome;
+                lblSerie.Text = "AINDA POR FAZER";
+                if (aluno.Imagem != null && aluno.Imagem.Length != 0)
+                {
+                    pctImagem.Image = arrayParaImagem(aluno.Imagem);
+                }
+            }
+            else
+            {
+                lblAtivo.Text = "";
+                lblFoneEmerg.Text = "";
+                lblMatricula.Text = "";
+                lblNomeAluno.Text = "";
+                lblSerie.Text = "";
             }
         }
 

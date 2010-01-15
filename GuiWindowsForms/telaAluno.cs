@@ -10,6 +10,7 @@ using Negocios.ModuloAluno;
 using Negocios.ModuloAluno.Processos;
 using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloAluno.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace GuiWindowsForms
 {
@@ -676,6 +677,7 @@ namespace GuiWindowsForms
                  */
 
                 aluno.PerfilID = 1;
+                aluno.Status = (int)Status.Ativo;
 
                 aluno = uMenuImagem1.retornaAluno(aluno);
                 Memoria memoria = Memoria.Instance;
@@ -752,7 +754,7 @@ namespace GuiWindowsForms
         #region LOAD
         private void uMenuImagem1_Load(object sender, EventArgs e)
         {
-            limparTela();
+            limparTelaAluno();
             cmbUf.DataSource = estados;
             //aluno.ID = 7;
             //aluno = alunoControlador.Consultar(aluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
@@ -766,7 +768,7 @@ namespace GuiWindowsForms
         /// <summary>
         /// Método para limpar a tela.
         /// </summary>
-        private void limparTela()
+        public void limparTelaAluno()
         {
             txtBairro.Clear();
             txtCidade.Clear();
@@ -775,14 +777,17 @@ namespace GuiWindowsForms
             txtLogradouro.Clear();
             txtNome.Clear();
             txtNomeEdificil.Clear();
-            cmbNacionalidade.Select();
-            cmbNaturalidade.Select();
-            cmbSelecionarAluno.Select();
+            cmbNacionalidade.SelectedIndex = 0;
+            cmbNaturalidade.SelectedIndex = 0;
             cmbUf.Select();
             mskCep.Clear();
+            mskCep.Text = "";
             mskFoneAluno.Clear();
+            mskFoneAluno.Text = "";
             mskFoneEmergencia.Clear();
+            mskFoneEmergencia.Text = "";
             mskFoneResidencia.Clear();
+            mskFoneResidencia.Text = "";
             rdbFem.Checked = false;
             rdbMasc.Checked = false;
         }
@@ -931,13 +936,17 @@ namespace GuiWindowsForms
 
         private void telaAluno_Activated(object sender, EventArgs e)
         {
-            Memoria memoria = Memoria.Instance;
-            if (memoria.Aluno != null)
-            {
-                aluno = memoria.Aluno;
-                uMenuImagem1.carregaAluno(aluno);
-                carregarAluno();
-            }
+                Memoria memoria = Memoria.Instance;
+                if (memoria.Aluno != null)
+                {
+                    aluno = memoria.Aluno;
+                    uMenuImagem1.carregaAluno(aluno);
+                    carregarAluno();
+                }
+                else
+                {
+                    limparTelaAluno();
+                }
         }
 
         #region SELECIONA CIDADE
@@ -983,7 +992,7 @@ namespace GuiWindowsForms
 
         private void telaAluno_Load(object sender, EventArgs e)
         {
-            limparTela();
+            limparTelaAluno();
         }
 
 

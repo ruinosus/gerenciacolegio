@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloResponsavel.Processos;
 using Negocios.ModuloResponsavel.Constantes;
+using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms
 {
@@ -678,7 +680,8 @@ namespace GuiWindowsForms
                 responsavel.Nascimento = dtpNascimento.Value;
                 responsavel.Edificio = txtNomeEdificil.Text;
 
-                responsavel.PerfilID = 1;
+                responsavel.PerfilID = 2;
+                responsavel.Status = (int)Status.Ativo;
 
                 responsavel = ucMenuSuper.retornaResponsavel(responsavel);
 
@@ -917,6 +920,7 @@ namespace GuiWindowsForms
             }
             return testa;
         }
+
 
 
     }
