@@ -39,7 +39,6 @@
             this.dgvAluno = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
-
             this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.btnFinanceiro = new System.Windows.Forms.Button();
             this.btnConfiguracoes = new System.Windows.Forms.Button();
@@ -49,7 +48,6 @@
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnAluno = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-
             this.colunaNomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoneAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -182,7 +180,6 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-
             // btnCadastrarFuncionario
             // 
             this.btnCadastrarFuncionario.BackColor = System.Drawing.Color.Transparent;
@@ -313,7 +310,6 @@
             this.pictureBox1.TabIndex = 71;
             this.pictureBox1.TabStop = false;
             // 
-
             // colunaNomeAluno
             // 
             this.colunaNomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -323,7 +319,7 @@
             this.colunaNomeAluno.Name = "colunaNomeAluno";
             this.colunaNomeAluno.ReadOnly = true;
             this.colunaNomeAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colunaNomeAluno.Width = 233;
+            this.colunaNomeAluno.Width = 250;
             // 
             // FoneAluno
             // 
@@ -334,7 +330,7 @@
             this.FoneAluno.Name = "FoneAluno";
             this.FoneAluno.ReadOnly = true;
             this.FoneAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.FoneAluno.Width = 130;
+            this.FoneAluno.Width = 150;
             // 
             // EmailAluno
             // 
@@ -345,9 +341,8 @@
             this.EmailAluno.Name = "EmailAluno";
             this.EmailAluno.ReadOnly = true;
             this.EmailAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.EmailAluno.Width = 116;
+            this.EmailAluno.Width = 180;
             // 
-
             // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -410,9 +405,9 @@
         private System.Windows.Forms.DataGridView dgvAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaNomeAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoneAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAluno;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

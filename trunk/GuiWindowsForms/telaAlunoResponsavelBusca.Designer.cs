@@ -45,12 +45,12 @@
             this.txtRestricoes = new System.Windows.Forms.TextBox();
             this.comboResponsavel = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GrauParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavelAluno)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,11 +115,13 @@
             // 
             // btnAlterar
             // 
+            this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Location = new System.Drawing.Point(802, 324);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(32, 32);
             this.btnAlterar.TabIndex = 71;
-            this.btnAlterar.Text = "?";
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
             // btnAdicionarSerie
@@ -146,7 +148,7 @@
             "Avô(ó)",
             "Primo(a)",
             "Irmão(ã)"});
-            this.cmbGrauParentesco.Location = new System.Drawing.Point(360, 207);
+            this.cmbGrauParentesco.Location = new System.Drawing.Point(360, 217);
             this.cmbGrauParentesco.Name = "cmbGrauParentesco";
             this.cmbGrauParentesco.Size = new System.Drawing.Size(144, 21);
             this.cmbGrauParentesco.TabIndex = 1;
@@ -211,6 +213,7 @@
             // txtRestricoes
             // 
             this.txtRestricoes.Location = new System.Drawing.Point(357, 291);
+            this.txtRestricoes.MaxLength = 300;
             this.txtRestricoes.Multiline = true;
             this.txtRestricoes.Name = "txtRestricoes";
             this.txtRestricoes.Size = new System.Drawing.Size(444, 65);
@@ -228,7 +231,7 @@
             "Avô(ó)",
             "Primo(a)",
             "Irmão(ã)"});
-            this.comboResponsavel.Location = new System.Drawing.Point(611, 207);
+            this.comboResponsavel.Location = new System.Drawing.Point(611, 217);
             this.comboResponsavel.Name = "comboResponsavel";
             this.comboResponsavel.Size = new System.Drawing.Size(190, 21);
             this.comboResponsavel.TabIndex = 81;
@@ -243,31 +246,6 @@
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 82;
             this.label3.Text = "Responsável:";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Responsavel";
-            this.Column3.HeaderText = "Nome do Responsável";
-            this.Column3.Name = "Column3";
-            // 
-            // GrauParentesco
-            // 
-            this.GrauParentesco.DataPropertyName = "GrauParentesco";
-            this.GrauParentesco.HeaderText = "Grau de Parentesco";
-            this.GrauParentesco.Name = "GrauParentesco";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Restricoes";
-            this.Column4.HeaderText = "Restrições";
-            this.Column4.Name = "Column4";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ResideCom";
-            this.Column2.HeaderText = "Reside Com";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // ucMenuInferior1
             // 
@@ -286,6 +264,37 @@
             this.uMenuImagem1.Name = "uMenuImagem1";
             this.uMenuImagem1.Size = new System.Drawing.Size(375, 201);
             this.uMenuImagem1.TabIndex = 75;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Responsavel";
+            this.Column3.HeaderText = "Nome do Responsável";
+            this.Column3.MaxInputLength = 30;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 250;
+            // 
+            // GrauParentesco
+            // 
+            this.GrauParentesco.DataPropertyName = "GrauParentesco";
+            this.GrauParentesco.HeaderText = "Grau de Parentesco";
+            this.GrauParentesco.MaxInputLength = 30;
+            this.GrauParentesco.Name = "GrauParentesco";
+            this.GrauParentesco.Width = 130;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Restricoes";
+            this.Column4.HeaderText = "Restrições";
+            this.Column4.MaxInputLength = 60;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 220;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ResideCom";
+            this.Column2.HeaderText = "Reside Com";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // telaAlunoResponsavelBusca
             // 
