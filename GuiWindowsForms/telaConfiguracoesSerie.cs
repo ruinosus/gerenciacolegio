@@ -782,8 +782,6 @@ namespace GuiWindowsForms
             cmbTurno.SelectedIndex = 0;
             cmbCiclo.SelectedIndex = 0;
             txtValor.Clear();
-        
-        
         }
 
     }

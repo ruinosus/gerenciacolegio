@@ -35,7 +35,7 @@
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.tbcAtividade = new System.Windows.Forms.TabControl();
             this.pagCadastrarAtividade = new System.Windows.Forms.TabPage();
-            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnAlterarAtividade = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +48,7 @@
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.pagTurma = new System.Windows.Forms.TabPage();
-            this.btnAlterarAtividade = new System.Windows.Forms.Button();
+            this.btnAlterarAtividadeTurma = new System.Windows.Forms.Button();
             this.lblAtividadeTurma = new System.Windows.Forms.Label();
             this.cmbAtividadeTurma = new System.Windows.Forms.ComboBox();
             this.btnAdicionarTurma = new System.Windows.Forms.Button();
@@ -152,7 +152,7 @@
             // pagCadastrarAtividade
             // 
             this.pagCadastrarAtividade.BackColor = System.Drawing.Color.Transparent;
-            this.pagCadastrarAtividade.Controls.Add(this.btnAlterar);
+            this.pagCadastrarAtividade.Controls.Add(this.btnAlterarAtividade);
             this.pagCadastrarAtividade.Controls.Add(this.dataGridView1);
             this.pagCadastrarAtividade.Controls.Add(this.btnAdicionarAtividade);
             this.pagCadastrarAtividade.Controls.Add(this.btnExcluirAtividade);
@@ -171,18 +171,18 @@
             this.pagCadastrarAtividade.Text = "Cadastrar  Atividade";
             this.pagCadastrarAtividade.UseVisualStyleBackColor = true;
             // 
-            // btnAlterar
+            // btnAlterarAtividade
             // 
-            this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar;
-            this.btnAlterar.FlatAppearance.BorderSize = 0;
-            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Location = new System.Drawing.Point(525, 245);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(32, 32);
-            this.btnAlterar.TabIndex = 114;
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnAlterarAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar;
+            this.btnAlterarAtividade.FlatAppearance.BorderSize = 0;
+            this.btnAlterarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterarAtividade.Location = new System.Drawing.Point(525, 245);
+            this.btnAlterarAtividade.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAlterarAtividade.Name = "btnAlterarAtividade";
+            this.btnAlterarAtividade.Size = new System.Drawing.Size(32, 32);
+            this.btnAlterarAtividade.TabIndex = 114;
+            this.btnAlterarAtividade.UseVisualStyleBackColor = true;
+            this.btnAlterarAtividade.Click += new System.EventHandler(this.btnAlterarAtividade_Click);
             // 
             // dataGridView1
             // 
@@ -261,6 +261,7 @@
             // 
             this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar;
             this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionarImagem.Enabled = false;
             this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
             this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionarImagem.Location = new System.Drawing.Point(564, 121);
@@ -291,6 +292,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.Enabled = false;
             this.txtNome.Location = new System.Drawing.Point(93, 112);
             this.txtNome.MaxLength = 30;
             this.txtNome.Name = "txtNome";
@@ -309,6 +311,7 @@
             // 
             // txtDescricao
             // 
+            this.txtDescricao.Enabled = false;
             this.txtDescricao.Location = new System.Drawing.Point(93, 162);
             this.txtDescricao.MaxLength = 100;
             this.txtDescricao.Multiline = true;
@@ -319,7 +322,7 @@
             // 
             // pagTurma
             // 
-            this.pagTurma.Controls.Add(this.btnAlterarAtividade);
+            this.pagTurma.Controls.Add(this.btnAlterarAtividadeTurma);
             this.pagTurma.Controls.Add(this.lblAtividadeTurma);
             this.pagTurma.Controls.Add(this.cmbAtividadeTurma);
             this.pagTurma.Controls.Add(this.btnAdicionarTurma);
@@ -352,18 +355,18 @@
             this.pagTurma.Text = "Turma";
             this.pagTurma.UseVisualStyleBackColor = true;
             // 
-            // btnAlterarAtividade
+            // btnAlterarAtividadeTurma
             // 
-            this.btnAlterarAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar;
-            this.btnAlterarAtividade.FlatAppearance.BorderSize = 0;
-            this.btnAlterarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterarAtividade.Location = new System.Drawing.Point(529, 252);
-            this.btnAlterarAtividade.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAlterarAtividade.Name = "btnAlterarAtividade";
-            this.btnAlterarAtividade.Size = new System.Drawing.Size(32, 32);
-            this.btnAlterarAtividade.TabIndex = 134;
-            this.btnAlterarAtividade.UseVisualStyleBackColor = true;
-            this.btnAlterarAtividade.Click += new System.EventHandler(this.button1_Click);
+            this.btnAlterarAtividadeTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar;
+            this.btnAlterarAtividadeTurma.FlatAppearance.BorderSize = 0;
+            this.btnAlterarAtividadeTurma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterarAtividadeTurma.Location = new System.Drawing.Point(529, 252);
+            this.btnAlterarAtividadeTurma.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAlterarAtividadeTurma.Name = "btnAlterarAtividadeTurma";
+            this.btnAlterarAtividadeTurma.Size = new System.Drawing.Size(32, 32);
+            this.btnAlterarAtividadeTurma.TabIndex = 134;
+            this.btnAlterarAtividadeTurma.UseVisualStyleBackColor = true;
+            this.btnAlterarAtividadeTurma.Click += new System.EventHandler(this.btnAlterarAtividadeTurma_Click);
             // 
             // lblAtividadeTurma
             // 
@@ -379,6 +382,7 @@
             // 
             this.cmbAtividadeTurma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbAtividadeTurma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAtividadeTurma.Enabled = false;
             this.cmbAtividadeTurma.FormattingEnabled = true;
             this.cmbAtividadeTurma.Location = new System.Drawing.Point(137, 59);
             this.cmbAtividadeTurma.Name = "cmbAtividadeTurma";
@@ -563,6 +567,7 @@
             // 
             this.ckbSabado.AutoSize = true;
             this.ckbSabado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbSabado.Enabled = false;
             this.ckbSabado.ForeColor = System.Drawing.Color.Black;
             this.ckbSabado.Location = new System.Drawing.Point(572, 211);
             this.ckbSabado.Name = "ckbSabado";
@@ -575,6 +580,7 @@
             // 
             this.cmbFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFuncionario.Enabled = false;
             this.cmbFuncionario.FormattingEnabled = true;
             this.cmbFuncionario.Location = new System.Drawing.Point(137, 26);
             this.cmbFuncionario.Name = "cmbFuncionario";
@@ -585,6 +591,7 @@
             // 
             this.ckbSexta.AutoSize = true;
             this.ckbSexta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbSexta.Enabled = false;
             this.ckbSexta.ForeColor = System.Drawing.Color.Black;
             this.ckbSexta.Location = new System.Drawing.Point(508, 211);
             this.ckbSexta.Name = "ckbSexta";
@@ -597,6 +604,7 @@
             // 
             this.ckbQuinta.AutoSize = true;
             this.ckbQuinta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbQuinta.Enabled = false;
             this.ckbQuinta.ForeColor = System.Drawing.Color.Black;
             this.ckbQuinta.Location = new System.Drawing.Point(442, 211);
             this.ckbQuinta.Name = "ckbQuinta";
@@ -620,6 +628,7 @@
             // 
             this.ckbTerca.AutoSize = true;
             this.ckbTerca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbTerca.Enabled = false;
             this.ckbTerca.ForeColor = System.Drawing.Color.Black;
             this.ckbTerca.Location = new System.Drawing.Point(300, 211);
             this.ckbTerca.Name = "ckbTerca";
@@ -632,6 +641,7 @@
             // 
             this.ckbSegunda.AutoSize = true;
             this.ckbSegunda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbSegunda.Enabled = false;
             this.ckbSegunda.ForeColor = System.Drawing.Color.Black;
             this.ckbSegunda.Location = new System.Drawing.Point(218, 210);
             this.ckbSegunda.Name = "ckbSegunda";
@@ -644,6 +654,7 @@
             // 
             this.ckbQuarta.AutoSize = true;
             this.ckbQuarta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbQuarta.Enabled = false;
             this.ckbQuarta.ForeColor = System.Drawing.Color.Black;
             this.ckbQuarta.Location = new System.Drawing.Point(372, 211);
             this.ckbQuarta.Name = "ckbQuarta";
@@ -656,6 +667,7 @@
             // 
             this.ckbDomingo.AutoSize = true;
             this.ckbDomingo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckbDomingo.Enabled = false;
             this.ckbDomingo.ForeColor = System.Drawing.Color.Black;
             this.ckbDomingo.Location = new System.Drawing.Point(137, 210);
             this.ckbDomingo.Name = "ckbDomingo";
@@ -666,6 +678,7 @@
             // 
             // txtTurma
             // 
+            this.txtTurma.Enabled = false;
             this.txtTurma.Location = new System.Drawing.Point(137, 93);
             this.txtTurma.MaxLength = 10;
             this.txtTurma.Name = "txtTurma";
@@ -686,6 +699,7 @@
             // dtpHorarioFim
             // 
             this.dtpHorarioFim.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpHorarioFim.Enabled = false;
             this.dtpHorarioFim.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHorarioFim.Location = new System.Drawing.Point(355, 130);
             this.dtpHorarioFim.Name = "dtpHorarioFim";
@@ -705,6 +719,7 @@
             // dtpHorarioInicio
             // 
             this.dtpHorarioInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpHorarioInicio.Enabled = false;
             this.dtpHorarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHorarioInicio.Location = new System.Drawing.Point(137, 130);
             this.dtpHorarioInicio.Name = "dtpHorarioInicio";
@@ -724,6 +739,7 @@
             // 
             // txtValor
             // 
+            this.txtValor.Enabled = false;
             this.txtValor.Location = new System.Drawing.Point(137, 165);
             this.txtValor.MaxLength = 10;
             this.txtValor.Name = "txtValor";
@@ -963,7 +979,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn DomingoAuxTurma;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
-        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnAlterarAtividade;
+        private System.Windows.Forms.Button btnAlterarAtividadeTurma;
     }
 }

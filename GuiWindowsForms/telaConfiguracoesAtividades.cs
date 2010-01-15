@@ -23,6 +23,8 @@ namespace GuiWindowsForms
         Atividade atividadeAux = new Atividade();
         AtividadeTurma atividadeTurma = new AtividadeTurma();
 
+        int verificaButton = 0;
+
         private Image imagemAuxiliar = null;
 
         int linhaSelecionadaGrid = -1;
@@ -33,7 +35,9 @@ namespace GuiWindowsForms
 
         IFuncionarioProcesso funcionarioControlador = null;
         IAtividadeProcesso atividadeControlador = null;
-        IAtividadeTurmaProcesso atividadeTurmaControlador = null;   
+        IAtividadeTurmaProcesso atividadeTurmaControlador = null;
+
+        #region MÉTODOS INICIAS DA TELA
 
         #region SINGLETON DA TELA
         /*
@@ -128,6 +132,10 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        #endregion
+
+        #region USER CONTROLS
+
         #region USER CONTROLS - MENU CONFIGURAÇÕES ESQUERDA
         private void ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso()
         {
@@ -190,13 +198,46 @@ namespace GuiWindowsForms
                 Program.ultimaTela = 6;
                 Program.SelecionaForm(Program.ultimaTela);
             }
+            txtNome.Enabled = false;
+            txtDescricao.Enabled = false;
+            btnAdicionarImagem.Enabled = true;
+            ucMenuInferior1.BotaoCadastrar.Enabled = false;
+            dataGridView1.Enabled = false;
+            btnAlterarAtividade.Enabled = true;
+            btnExcluirAtividade.Enabled = true;
+            btnAdicionarTurma.Enabled = true;
+            btnAdicionarAtividade.Enabled = true;
+            txtTurma.Enabled = false;
+            txtValor.Enabled = false;
+            cmbAtividadeTurma.Enabled = false;
+            cmbFuncionario.Enabled = false;
+            dtpHorarioFim.Enabled = false;
+            dtpHorarioInicio.Enabled = false;
+            ckbDomingo.Enabled = false;
+            ckbQuarta.Enabled = false;
+            ckbQuinta.Enabled = false;
+            ckbSabado.Enabled = false;
+            ckbSegunda.Enabled = false;
+            ckbSexta.Enabled = false;
+            ckbTerca.Enabled = false;
+            dataGridView2.Enabled = true;
+            btnAlterarAtividadeTurma.Enabled = true;
+            btnExcluirTurma.Enabled = true;
+            ucMenuInferior1.BotaoCadastrar.Enabled = false;
+
         }
 
         #endregion
 
+        #endregion
+
+        #region MÉTODOS PARA CARGA E INICIALIZAÇÃO
+
         #region LOAD
         private void ckbTerca_Load(object sender, EventArgs e)
         {
+            ucMenuInferior1.BotaoCadastrar.Enabled = false;
+
             funcionarioControlador = FuncionarioProcesso.Instance;
             atividadeControlador = AtividadeProcesso.Instance;
 
@@ -213,289 +254,61 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region LIMPAR ERRO PROVIDER
-        private void txtDescricao_TextChanged(object sender, EventArgs e)
+        #region CARREGAR COMBO ATIVIDADE
+        public void carregarComboAtividade()
         {
-            errorProviderTela.Clear();
-        }
+            Atividade carregarComboAtividade = new Atividade();
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
-        }
+            carregarComboAtividade.Status = (int)Status.Ativo;
 
-        private void txtValor_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
-        }
-
-        private void ckbDomingo_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
-        }
-
-        private void checkBox2_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
-        }
-
-        private void checkBox1_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
-        }
-
-        private void ckbQuarta_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
-        }
-
-        private void ckbQuinta_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
-        }
-
-        private void ckbSexta_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
-        }
-
-        private void ckbSabado_TextChanged(object sender, EventArgs e)
-        {
-            errorProviderTela.Clear();
+            List<Atividade> listaAtividadeCmb = new List<Atividade>();
+            listaAtividadeCmb = atividadeControlador.Consultar(carregarComboAtividade, TipoPesquisa.E);
+            cmbAtividadeTurma.DataSource = null;
+            cmbAtividadeTurma.DataSource = listaAtividadeCmb;
+            cmbAtividadeTurma.DisplayMember = "Nome";
         }
         #endregion
 
+        #endregion
 
-        #region EVENTO INCLUIR ATIVIDADE
+
+        #region CONTROLES (BOTÕES E GRIDS)
+
+        #region CONTROLES DA TELA ATIVIDADE
+
+        #region BOTÃO INCLUIR ATIVIDADE
         private void btnAdicionarAtividade_Click(object sender, EventArgs e)
         {
-            atividadeControlador = AtividadeProcesso.Instance;
-            funcionarioControlador = FuncionarioProcesso.Instance;
+            IniciarCamposAtividade();
 
-            funcionario = new Funcionario();
-            atividade = new Atividade();
+            verificaButton = 1;
 
-            try
-            {
-
-                #region VALIDA - NOME
-
-                if (String.IsNullOrEmpty(txtNome.Text))
-                {
-                    errorProviderTela.SetError(txtNome, "Informe o nome");
-                    txtNome.Clear();
-                    return;
-                }
-                atividade.Nome = txtNome.Text;
-
-                #endregion
-
-                #region VALIDA - DESCRIÇÃO
-
-                //if (String.IsNullOrEmpty(txtDescricao.Text))
-                //{
-                //    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
-                //    txtDescricao.Clear();
-                //    return;
-                //}
-                atividade.Descricao = txtDescricao.Text;
-
-                #endregion
-
-                atividade.Imagem = atividadeAux.Imagem;
-
-                if (verificaSeJaInserido(atividade) == false)
-                {
-                    atividade.Status = (int)Status.Ativo;
-                    atividadeControlador.Incluir(atividade);
-                    atividadeControlador.Confirmar();
-                    linhaSelecionadaGrid = -1;
-
-                    carregarComboAtividade();
-
-                    MessageBox.Show(AtividadeConstantes.ATIVIDADE_INCLUIDA, "Colégio Conhecer - Inserir Atividade");
-                }
-                else
-                {
-                    MessageBox.Show("A atividade já existe na base de dados", "Colégio Conhecer - Inserir Atividade");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            carregaForm();
-            limparTela();
+            txtNome.Enabled = true;
+            txtDescricao.Enabled = true;
+            btnAdicionarImagem.Enabled = true;
+            ucMenuInferior1.BotaoCadastrar.Enabled = true;
+            dataGridView1.Enabled = false;
+            btnAlterarAtividade.Enabled = false;
+            btnExcluirAtividade.Enabled = false;
         }
         #endregion
 
-        #region EVENTO ALTERAR ATIVIDADE/TURMA
-        private void ucMenuInferior1_EventoCadastrar()
+        #region BOTÃO ALTERAR ATIVIDADE
+        private void btnAlterarAtividade_Click(object sender, EventArgs e)
         {
-                atividadeControlador = AtividadeProcesso.Instance;
-                atividadeTurmaControlador = AtividadeTurmaProcesso.Instance;
+            verificaButton = 2;
 
-                atividade = new Atividade();
-                atividadeTurma = new AtividadeTurma();
-
-                if (tbcAtividade.SelectedIndex==0)
-                {
-                    try
-                    {
-                        #region VALIDA - NOME
-
-                        if (String.IsNullOrEmpty(txtNome.Text))
-                        {
-                            errorProviderTela.SetError(txtNome, "Informe o nome");
-                            txtNome.Clear();
-                            return;
-                        }
-                        atividade.Nome = txtNome.Text;
-
-                        #endregion
-
-                        #region VALIDA - DESCRIÇÃO
-
-                        //if (String.IsNullOrEmpty(txtDescricao.Text))
-                        //{
-                        //    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
-                        //    txtDescricao.Clear();
-                        //    return;
-                        //}
-                        atividade.Descricao = txtDescricao.Text;
-
-                        #endregion
-
-                        atividade.Imagem = atividadeAux.Imagem;
-
-                        if (linhaSelecionadaGrid != -1)
-                        {
-                            atividadeControlador.Alterar(atividade);
-                            atividadeControlador.Confirmar();
-                            linhaSelecionadaGrid = -1;
-
-                            carregarComboAtividade();
-
-                            MessageBox.Show(AtividadeConstantes.ATIVIDADE_ALTERADA, "Colégio Conhecer");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    carregaForm();
-                    limparTela();
-                }
-                else
-                {
-                    try
-                    {
-                        #region VALIDA - FUNCIONARIO
-
-                        if (String.IsNullOrEmpty(cmbFuncionario.Text))
-                        {
-                            errorProviderTela.SetError(cmbFuncionario, "Informe o funcionário da atividade");
-                            return;
-                        }
-                        atividadeTurma.FuncionarioID = ((Funcionario)cmbFuncionario.SelectedItem).ID;
-
-
-                        #endregion
-
-                        #region VALIDA - ATIVIDADE
-
-                        if (String.IsNullOrEmpty(cmbAtividadeTurma.Text))
-                        {
-                            errorProviderTela.SetError(cmbAtividadeTurma, "Informe a atividade a ser configurada");
-                            return;
-                        }
-                        atividadeTurma.AtividadeID = ((Atividade)cmbAtividadeTurma.SelectedItem).ID;
-
-
-                        #endregion
-
-                        #region VALIDA - TURMA
-
-                        if (String.IsNullOrEmpty(txtTurma.Text))
-                        {
-                            errorProviderTela.SetError(txtTurma, "Informe a turma");
-                            txtTurma.Clear();
-                            return;
-                        }
-                        atividadeTurma.Turma = txtTurma.Text;
-
-                        #endregion
-
-                        #region VALIDA - VALOR
-
-                        if (String.IsNullOrEmpty(txtValor.Text))
-                        {
-                            errorProviderTela.SetError(txtValor, "Informe o valor");
-                            txtValor.Clear();
-                            return;
-                        }
-                        atividadeTurma.Valor = Convert.ToDouble(txtValor.Text);
-
-                        #endregion
-
-                        #region VALIDA - DIA DA SEMANA
-                        if (ckbDomingo.Checked == false && ckbSegunda.Checked == false && ckbTerca.Checked == false &&
-                            ckbQuarta.Checked == false && ckbQuinta.Checked == false && ckbSexta.Checked == false && ckbSabado.Checked == false)
-                        {
-                            errorProviderTela.SetError(txtValor, "Informe o dia da semana");
-                            return;
-                        }
-                        if (ckbDomingo.Checked == true)
-                            atividadeTurma.Domingo = 0;
-                        if (ckbQuarta.Checked == true)
-                            atividadeTurma.Quarta = 0;
-                        if (ckbQuinta.Checked == true)
-                            atividadeTurma.Quinta = 0;
-                        if (ckbSabado.Checked == true)
-                            atividadeTurma.Sabado = 0;
-                        if (ckbSegunda.Checked == true)
-                            atividadeTurma.Segunda = 0;
-                        if (ckbSexta.Checked == true)
-                            atividadeTurma.Sexta = 0;
-                        if (ckbTerca.Checked == true)
-                            atividadeTurma.Terca = 0;
-
-                        #endregion
-
-                        atividadeTurma.HoraInicio = dtpHorarioFim.ToString();
-                        atividadeTurma.HoraFim = dtpHorarioFim.ToString();
-
-                        atividadeTurma.Status = 0;
-
-                        if (linhaSelecionadaGrid != -1)
-                        {
-                            atividadeTurmaControlador.Alterar(atividadeTurma);
-                            atividadeTurmaControlador.Confirmar();
-                            linhaSelecionadaGrid = -1;
-
-                            MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_ALTERADA, "Colégio Conhecer");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    carregaForm2();
-                    limparTela();
-                }
-            }
-
+            txtNome.Enabled = true;
+            txtDescricao.Enabled = true;
+            btnAdicionarImagem.Enabled = true;
+            ucMenuInferior1.BotaoCadastrar.Enabled = true;
+            dataGridView1.Enabled = false;
+            btnAdicionarAtividade.Enabled = false;
+            btnExcluirAtividade.Enabled = false;
+        }
         #endregion
 
-        #region EVENTO EXCLUIR ATIVIDADE
+        #region BOTÃO EXCLUIR ATIVIDADE
         private void btnExcluirAtividade_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Tem certeza que deseja excluir a atividade ?", "Colégio Conhecer - Excluir Atividade", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
@@ -515,7 +328,11 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region EVENTO EXCLUIR TURMA
+        #endregion
+
+        #region CONTROLES DA TELA TURMA (ATIVIDADE)
+
+        #region BOTÃO EXCLUIR TURMA
         private void btnExcluirTurma_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Tem certeza que deseja excluir a turma ?", "Colégio Conhecer - Excluir Atividade - Turma", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
@@ -535,175 +352,61 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region EVENTO INSERIR TURMA
+        #region BOTÃO INSERIR TURMA
         private void btnAdicionarTurma_Click(object sender, EventArgs e)
         {
-            atividadeTurma = new AtividadeTurma();
-            atividadeTurmaControlador = AtividadeTurmaProcesso.Instance;
+            IniciarCamposTurma();
 
-                try
-                {
-                    #region VALIDA - FUNCIONARIO
+            verificaButton = 3;
 
-                    //if (String.IsNullOrEmpty(cmbFuncionario.Text))
-                    //{
-                    //    errorProviderTela.SetError(cmbFuncionario, "Informe o funcionário da atividade");
-                    //    return;
-                    //}
-                    atividadeTurma.FuncionarioID = ((Funcionario)cmbFuncionario.SelectedItem).ID;
-
-
-                    #endregion
-
-                    #region VALIDA - ATIVIDADE
-
-                    if (String.IsNullOrEmpty(cmbAtividadeTurma.Text))
-                    {
-                        errorProviderTela.SetError(cmbAtividadeTurma, "Informe a atividade a ser configurada");
-                        return;
-                    }
-                    atividadeTurma.AtividadeID = ((Atividade)cmbAtividadeTurma.SelectedItem).ID;
-
-
-                    #endregion
-
-                    #region VALIDA - TURMA
-
-                    //if (String.IsNullOrEmpty(txtTurma.Text))
-                    //{
-                    //    errorProviderTela.SetError(txtTurma, "Informe a turma");
-                    //    txtTurma.Clear();
-                    //    return;
-                    //}
-                    atividadeTurma.Turma = txtTurma.Text;
-
-                    #endregion
-
-                    #region VALIDA - VALOR
-
-                    if (String.IsNullOrEmpty(txtValor.Text))
-                    {
-                        errorProviderTela.SetError(txtValor, "Informe o valor");
-                        txtValor.Clear();
-                        return;
-                    }
-                    atividadeTurma.Valor = Convert.ToDouble(txtValor.Text);
-
-                    #endregion
-
-                    #region VALIDA - DIA DA SEMANA
-                    if (ckbDomingo.Checked == false && ckbSegunda.Checked == false && ckbTerca.Checked == false &&
-                        ckbQuarta.Checked == false && ckbQuinta.Checked == false && ckbSexta.Checked == false && ckbSabado.Checked == false)
-                    {
-                        errorProviderTela.SetError(txtValor, "Informe o dia da semana");
-                        return;
-                    }
-                    if (ckbDomingo.Checked == true)
-                        atividadeTurma.Domingo = 1;
-                    if (ckbQuarta.Checked == true)
-                        atividadeTurma.Quarta = 1;
-                    if (ckbQuinta.Checked == true)
-                        atividadeTurma.Quinta = 1;
-                    if (ckbSabado.Checked == true)
-                        atividadeTurma.Sabado = 1;
-                    if (ckbSegunda.Checked == true)
-                        atividadeTurma.Segunda = 1;
-                    if (ckbSexta.Checked == true)
-                        atividadeTurma.Sexta = 1;
-                    if (ckbTerca.Checked == true)
-                        atividadeTurma.Terca = 1;
-
-                    #endregion
-
-                    atividadeTurma.HoraInicio = dtpHorarioInicio.Value.ToString();
-                    atividadeTurma.HoraFim = dtpHorarioFim.Value.ToString();
-
-                    atividadeTurma.Status = 0;
-
-                    if (verificaSeJaInserido2(atividadeTurma) == false)
-                    {
-                        atividadeTurma.Status = 0;
-                        atividadeTurmaControlador.Incluir(atividadeTurma);
-                        atividadeTurmaControlador.Confirmar();
-                        linhaSelecionadaGrid = -1;
-
-                        MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_INCLUIDA, "Colégio Conhecer - Inserir Atividade - Turma");
-                    }
-                    else
-                    {
-                        MessageBox.Show("A turma já existe na base de dados", "Colégio Conhecer - Inserir Atividade - Turma");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                carregaForm2();
-                limparTela();
+            txtTurma.Enabled = true;
+            txtValor.Enabled = true;
+            cmbAtividadeTurma.Enabled = true;
+            cmbFuncionario.Enabled = true;
+            dtpHorarioFim.Enabled = true;
+            dtpHorarioInicio.Enabled = true;
+            ckbDomingo.Enabled = true;
+            ckbQuarta.Enabled = true;
+            ckbQuinta.Enabled = true;
+            ckbSabado.Enabled = true;
+            ckbSegunda.Enabled = true;
+            ckbSexta.Enabled = true;
+            ckbTerca.Enabled = true;
+            dataGridView2.Enabled = false;
+            btnAlterarAtividadeTurma.Enabled = false;
+            btnExcluirTurma.Enabled = false;
+            ucMenuInferior1.BotaoCadastrar.Enabled = true;
         }
         #endregion
 
-
-        #region Evento para limpar os campos da tela
-        public void limparTela()
+        #region BOTÃO ALTERAR TURMA
+        private void btnAlterarAtividadeTurma_Click(object sender, EventArgs e)
         {
-            txtDescricao.Clear();
-            txtNome.Clear();
-            txtTurma.Clear();
-            txtValor.Clear();
-            dtpHorarioFim.Value = DateTime.Now;
-            dtpHorarioInicio.Value = DateTime.Now;
-            ckbDomingo.Checked = false;
-            ckbQuarta.Checked = false;
-            ckbQuinta.Checked = false;
-            ckbSabado.Checked = false;
-            ckbSegunda.Checked = false;
-            ckbSexta.Checked = false;
-            ckbTerca.Checked = false;
+            verificaButton = 4;
+
+            txtTurma.Enabled = true;
+            txtValor.Enabled = true;
+            cmbAtividadeTurma.Enabled = true;
+            cmbFuncionario.Enabled = true;
+            dtpHorarioFim.Enabled = true;
+            dtpHorarioInicio.Enabled = true;
+            ckbDomingo.Enabled = true;
+            ckbQuarta.Enabled = true;
+            ckbQuinta.Enabled = true;
+            ckbSabado.Enabled = true;
+            ckbSegunda.Enabled = true;
+            ckbSexta.Enabled = true;
+            ckbTerca.Enabled = true;
+            dataGridView2.Enabled = false;
+            btnAdicionarTurma.Enabled = false;
+            btnExcluirTurma.Enabled = false;
+            ucMenuInferior1.BotaoCadastrar.Enabled = true;
         }
         #endregion
 
-        #region Função para verificar se a atividade já esta cadastrado
-
-        public bool verificaSeJaInserido(Atividade atividade)
-        {
-            atividadeControlador = AtividadeProcesso.Instance;
-
-            List<Atividade> listaAuxiliar = new List<Atividade>();
-            listaAuxiliar = atividadeControlador.Consultar();
-
-            bool testa = false;
-
-            foreach (Atividade b in listaAuxiliar)
-            {
-                if ((b.Descricao == atividade.Descricao) && (b.Nome == atividade.Nome))
-                {
-                    testa = true;
-                }
-            }
-            return testa;
-        }
-
-        public bool verificaSeJaInserido2(AtividadeTurma atividadeTurma)
-        {
-            atividadeTurmaControlador = AtividadeTurmaProcesso.Instance;
-
-            List<AtividadeTurma> listaTurmaAuxiliar2 = new List<AtividadeTurma>();
-            listaTurmaAuxiliar2 = atividadeTurmaControlador.Consultar();
-
-            bool testa = false;
-
-            foreach (AtividadeTurma b in listaTurmaAuxiliar2)
-            {
-                if ((b.AtividadeID == atividadeTurma.AtividadeID) && (b.FuncionarioID == atividadeTurma.FuncionarioID) && (b.Valor == atividadeTurma.Valor) && (b.Turma == atividadeTurma.Turma))
-                {
-                    testa = true;
-                }
-            }
-            return testa;
-        }
-
         #endregion
+
+        #region CONTROLE DOS GRIDS
 
         #region EVENTO PARA ALIMENTAR E ATUALIZAR OS DATAGRIDS
         private void carregaForm()
@@ -713,7 +416,7 @@ namespace GuiWindowsForms
 
             atividadeControlador = AtividadeProcesso.Instance;
 
-            listaAtividade = atividadeControlador.Consultar(atividadeAux,TipoPesquisa.E);
+            listaAtividade = atividadeControlador.Consultar(atividadeAux, TipoPesquisa.E);
 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = null;
@@ -766,7 +469,13 @@ namespace GuiWindowsForms
                 txtNome.Text = listaAtividade[linhaSelecionadaGrid].Nome;
                 Byte[] imagemAux = listaAtividade[linhaSelecionadaGrid].Imagem;
                 if (imagemAux.Length > 0)
-                pctImagemAtividade.Image = arrayParaImagem(imagemAux);
+                {
+                    pctImagemAtividade.Image = arrayParaImagem(imagemAux);
+                }
+                else
+                {
+                    pctImagemAtividade.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+                }
             }
             else
             {
@@ -785,7 +494,13 @@ namespace GuiWindowsForms
                 txtNome.Text = listaAtividade[linhaSelecionadaGrid].Nome;
                 Byte[] imagemAux = listaAtividade[linhaSelecionadaGrid].Imagem;
                 if (imagemAux.Length > 0)
-                pctImagemAtividade.Image = arrayParaImagem(imagemAux);
+                {
+                    pctImagemAtividade.Image = arrayParaImagem(imagemAux);
+                }
+                else
+                {
+                    pctImagemAtividade.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+                }
             }
             else
             {
@@ -804,7 +519,7 @@ namespace GuiWindowsForms
                 txtNome.Text = listaAtividade[linhaSelecionadaGrid].Nome;
                 Byte[] imagemAux = listaAtividade[linhaSelecionadaGrid].Imagem;
                 if (imagemAux.Length > 0)
-                pctImagemAtividade.Image = arrayParaImagem(imagemAux);
+                    pctImagemAtividade.Image = arrayParaImagem(imagemAux);
             }
             else
             {
@@ -826,6 +541,10 @@ namespace GuiWindowsForms
                 {
                     pctImagemAtividade.Image = arrayParaImagem(imagemAux);
                 }
+                else
+                {
+                    pctImagemAtividade.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+                }
             }
             else
             {
@@ -843,8 +562,14 @@ namespace GuiWindowsForms
                 txtDescricao.Text = listaAtividade[linhaSelecionadaGrid].Descricao;
                 txtNome.Text = listaAtividade[linhaSelecionadaGrid].Nome;
                 Byte[] imagemAux = listaAtividade[linhaSelecionadaGrid].Imagem;
-                if(imagemAux.Length>0)
-                pctImagemAtividade.Image = arrayParaImagem(imagemAux);
+                if (imagemAux.Length > 0)
+                {
+                    pctImagemAtividade.Image = arrayParaImagem(imagemAux);
+                }
+                else
+                {
+                    pctImagemAtividade.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+                }
             }
             else
             {
@@ -1241,38 +966,391 @@ namespace GuiWindowsForms
 
         #endregion
 
-        #region Mensagens dos botões
-        private void btnExcluirAtividade_MouseEnter(object sender, EventArgs e)
-        {
-            ucMenuInferior1.exibirMensagem("Excluir uma atividade");
-        }
+        #endregion
 
-        private void btnExcluirAtividade_MouseLeave(object sender, EventArgs e)
-        {
-            ucMenuInferior1.ocultarMensagem();
-        }
+        #endregion
 
-        private void btnAdicionarAtividade_MouseEnter(object sender, EventArgs e)
-        {
-            ucMenuInferior1.exibirMensagem("Adicionar uma atividade");
-        }
 
-        private void btnAdicionarAtividade_MouseLeave(object sender, EventArgs e)
+        #region BOTÃO SALVAR INFORMAÇÕES
+        private void ucMenuInferior1_EventoCadastrar()
         {
-            ucMenuInferior1.ocultarMensagem();
-        }
+            //Verifica o button selecionado se é Alterar numero(2) 
+            //ou Adicionar numero(1)
 
-        private void dataGridView1_MouseEnter(object sender, EventArgs e)
-        {
-            ucMenuInferior1.exibirMensagem("Selecione um registro para alterar ou excluir");
-        }
+            if (verificaButton == 2)
+            {
+                #region ALTERAR ATIVIDADE
+                atividadeControlador = AtividadeProcesso.Instance;
+                atividadeTurmaControlador = AtividadeTurmaProcesso.Instance;
 
-        private void dataGridView1_MouseLeave(object sender, EventArgs e)
-        {
-            ucMenuInferior1.ocultarMensagem();
+                atividade = new Atividade();
+                atividadeTurma = new AtividadeTurma();
+
+                try
+                {
+                    #region VALIDA - NOME
+
+                    if (String.IsNullOrEmpty(txtNome.Text))
+                    {
+                        errorProviderTela.SetError(txtNome, "Informe o nome");
+                        txtNome.Clear();
+                        return;
+                    }
+                    atividade.Nome = txtNome.Text;
+
+                    #endregion
+
+                    #region VALIDA - DESCRIÇÃO
+
+                    //if (String.IsNullOrEmpty(txtDescricao.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                    //    txtDescricao.Clear();
+                    //    return;
+                    //}
+                    atividade.Descricao = txtDescricao.Text;
+
+                    #endregion
+
+                    atividade.Imagem = atividadeAux.Imagem;
+
+                    if (linhaSelecionadaGrid != -1)
+                    {
+                        atividadeControlador.Alterar(atividade);
+                        atividadeControlador.Confirmar();
+                        linhaSelecionadaGrid = -1;
+
+                        carregarComboAtividade();
+
+                        MessageBox.Show(AtividadeConstantes.ATIVIDADE_ALTERADA, "Colégio Conhecer");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                carregaForm();
+                limparTela();
+
+                #endregion
+            }
+            else if(verificaButton == 1)
+            {
+                #region ADICIONAR ATIVIDADE
+
+                atividadeControlador = AtividadeProcesso.Instance;
+                funcionarioControlador = FuncionarioProcesso.Instance;
+
+                funcionario = new Funcionario();
+                atividade = new Atividade();
+
+                try
+                {
+
+                    #region VALIDA - NOME
+
+                    if (String.IsNullOrEmpty(txtNome.Text))
+                    {
+                        errorProviderTela.SetError(txtNome, "Informe o nome");
+                        txtNome.Clear();
+                        return;
+                    }
+                    atividade.Nome = txtNome.Text;
+
+                    #endregion
+
+                    #region VALIDA - DESCRIÇÃO
+
+                    //if (String.IsNullOrEmpty(txtDescricao.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtDescricao, "Informe a descrição");
+                    //    txtDescricao.Clear();
+                    //    return;
+                    //}
+                    atividade.Descricao = txtDescricao.Text;
+
+                    #endregion
+
+                    atividade.Imagem = atividadeAux.Imagem;
+
+                    if (verificaSeJaInserido(atividade) == false)
+                    {
+                        atividade.Status = (int)Status.Ativo;
+                        atividadeControlador.Incluir(atividade);
+                        atividadeControlador.Confirmar();
+                        linhaSelecionadaGrid = -1;
+
+                        carregarComboAtividade();
+
+                        MessageBox.Show(AtividadeConstantes.ATIVIDADE_INCLUIDA, "Colégio Conhecer - Inserir Atividade");
+                    }
+                    else
+                    {
+                        MessageBox.Show("A atividade já existe na base de dados", "Colégio Conhecer - Inserir Atividade");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                carregaForm();
+                limparTela();
+
+                #endregion
+            }
+            else if (verificaButton == 4)
+            {
+                #region ALTERAR ATIVIDADE TURMA
+                try
+                {
+                    #region VALIDA - FUNCIONARIO
+
+                    if (String.IsNullOrEmpty(cmbFuncionario.Text))
+                    {
+                        errorProviderTela.SetError(cmbFuncionario, "Informe o funcionário da atividade");
+                        return;
+                    }
+                    atividadeTurma.FuncionarioID = ((Funcionario)cmbFuncionario.SelectedItem).ID;
+
+
+                    #endregion
+
+                    #region VALIDA - ATIVIDADE
+
+                    if (String.IsNullOrEmpty(cmbAtividadeTurma.Text))
+                    {
+                        errorProviderTela.SetError(cmbAtividadeTurma, "Informe a atividade a ser configurada");
+                        return;
+                    }
+                    atividadeTurma.AtividadeID = ((Atividade)cmbAtividadeTurma.SelectedItem).ID;
+
+
+                    #endregion
+
+                    #region VALIDA - TURMA
+
+                    if (String.IsNullOrEmpty(txtTurma.Text))
+                    {
+                        errorProviderTela.SetError(txtTurma, "Informe a turma");
+                        txtTurma.Clear();
+                        return;
+                    }
+                    atividadeTurma.Turma = txtTurma.Text;
+
+                    #endregion
+
+                    #region VALIDA - VALOR
+
+                    if (String.IsNullOrEmpty(txtValor.Text))
+                    {
+                        errorProviderTela.SetError(txtValor, "Informe o valor");
+                        txtValor.Clear();
+                        return;
+                    }
+                    atividadeTurma.Valor = Convert.ToDouble(txtValor.Text);
+
+                    #endregion
+
+                    #region VALIDA - DIA DA SEMANA
+                    if (ckbDomingo.Checked == false && ckbSegunda.Checked == false && ckbTerca.Checked == false &&
+                        ckbQuarta.Checked == false && ckbQuinta.Checked == false && ckbSexta.Checked == false && ckbSabado.Checked == false)
+                    {
+                        errorProviderTela.SetError(txtValor, "Informe o dia da semana");
+                        return;
+                    }
+                    if (ckbDomingo.Checked == true)
+                        atividadeTurma.Domingo = 0;
+                    if (ckbQuarta.Checked == true)
+                        atividadeTurma.Quarta = 0;
+                    if (ckbQuinta.Checked == true)
+                        atividadeTurma.Quinta = 0;
+                    if (ckbSabado.Checked == true)
+                        atividadeTurma.Sabado = 0;
+                    if (ckbSegunda.Checked == true)
+                        atividadeTurma.Segunda = 0;
+                    if (ckbSexta.Checked == true)
+                        atividadeTurma.Sexta = 0;
+                    if (ckbTerca.Checked == true)
+                        atividadeTurma.Terca = 0;
+
+                    #endregion
+
+                    atividadeTurma.HoraInicio = dtpHorarioFim.ToString();
+                    atividadeTurma.HoraFim = dtpHorarioFim.ToString();
+
+                    atividadeTurma.Status = 0;
+
+                    if (linhaSelecionadaGrid != -1)
+                    {
+                        atividadeTurmaControlador.Alterar(atividadeTurma);
+                        atividadeTurmaControlador.Confirmar();
+                        linhaSelecionadaGrid = -1;
+
+                        MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_ALTERADA, "Colégio Conhecer");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                carregaForm2();
+                limparTela();
+                #endregion
+            }
+            else
+            {
+                #region EVENTO ADICIONAR TURMA
+
+                atividadeTurma = new AtividadeTurma();
+                atividadeTurmaControlador = AtividadeTurmaProcesso.Instance;
+
+                try
+                {
+                    #region VALIDA - FUNCIONARIO
+
+                    //if (String.IsNullOrEmpty(cmbFuncionario.Text))
+                    //{
+                    //    errorProviderTela.SetError(cmbFuncionario, "Informe o funcionário da atividade");
+                    //    return;
+                    //}
+                    atividadeTurma.FuncionarioID = ((Funcionario)cmbFuncionario.SelectedItem).ID;
+
+
+                    #endregion
+
+                    #region VALIDA - ATIVIDADE
+
+                    if (String.IsNullOrEmpty(cmbAtividadeTurma.Text))
+                    {
+                        errorProviderTela.SetError(cmbAtividadeTurma, "Informe a atividade a ser configurada");
+                        return;
+                    }
+                    atividadeTurma.AtividadeID = ((Atividade)cmbAtividadeTurma.SelectedItem).ID;
+
+
+                    #endregion
+
+                    #region VALIDA - TURMA
+
+                    //if (String.IsNullOrEmpty(txtTurma.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtTurma, "Informe a turma");
+                    //    txtTurma.Clear();
+                    //    return;
+                    //}
+                    atividadeTurma.Turma = txtTurma.Text;
+
+                    #endregion
+
+                    #region VALIDA - VALOR
+
+                    if (String.IsNullOrEmpty(txtValor.Text))
+                    {
+                        errorProviderTela.SetError(txtValor, "Informe o valor");
+                        txtValor.Clear();
+                        return;
+                    }
+                    atividadeTurma.Valor = Convert.ToDouble(txtValor.Text);
+
+                    #endregion
+
+                    #region VALIDA - DIA DA SEMANA
+                    if (ckbDomingo.Checked == false && ckbSegunda.Checked == false && ckbTerca.Checked == false &&
+                        ckbQuarta.Checked == false && ckbQuinta.Checked == false && ckbSexta.Checked == false && ckbSabado.Checked == false)
+                    {
+                        errorProviderTela.SetError(txtValor, "Informe o dia da semana");
+                        return;
+                    }
+                    if (ckbDomingo.Checked == true)
+                        atividadeTurma.Domingo = 1;
+                    if (ckbQuarta.Checked == true)
+                        atividadeTurma.Quarta = 1;
+                    if (ckbQuinta.Checked == true)
+                        atividadeTurma.Quinta = 1;
+                    if (ckbSabado.Checked == true)
+                        atividadeTurma.Sabado = 1;
+                    if (ckbSegunda.Checked == true)
+                        atividadeTurma.Segunda = 1;
+                    if (ckbSexta.Checked == true)
+                        atividadeTurma.Sexta = 1;
+                    if (ckbTerca.Checked == true)
+                        atividadeTurma.Terca = 1;
+
+                    #endregion
+
+                    atividadeTurma.HoraInicio = dtpHorarioInicio.Value.ToString();
+                    atividadeTurma.HoraFim = dtpHorarioFim.Value.ToString();
+
+                    atividadeTurma.Status = 0;
+
+                    if (verificaSeJaInserido2(atividadeTurma) == false)
+                    {
+                        atividadeTurma.Status = 0;
+                        atividadeTurmaControlador.Incluir(atividadeTurma);
+                        atividadeTurmaControlador.Confirmar();
+                        linhaSelecionadaGrid = -1;
+
+                        MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_INCLUIDA, "Colégio Conhecer - Inserir Atividade - Turma");
+                    }
+                    else
+                    {
+                        MessageBox.Show("A turma já existe na base de dados", "Colégio Conhecer - Inserir Atividade - Turma");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                carregaForm2();
+                limparTela();
+
+                #endregion
+            }
+
+            if (verificaButton == 1 || verificaButton == 2)
+            {
+                dataGridView1.Enabled = true;
+                btnAdicionarAtividade.Enabled = true;
+                btnExcluirAtividade.Enabled = true;
+                btnAlterarAtividade.Enabled = true;
+                txtNome.Enabled = false;
+                txtDescricao.Enabled = false;
+                pctImagemAtividade.Enabled = false;
+            }
+            else
+            {
+                dataGridView2.Enabled = true;
+                btnAlterarAtividadeTurma.Enabled = true;
+                btnExcluirTurma.Enabled = true;
+                btnAdicionarTurma.Enabled = true;
+                txtTurma.Enabled = false;
+                txtValor.Enabled = false;
+                cmbAtividadeTurma.Enabled = false;
+                cmbFuncionario.Enabled = false;
+                dtpHorarioFim.Enabled = false;
+                dtpHorarioInicio.Enabled = false;
+                ckbDomingo.Enabled = false;
+                ckbQuarta.Enabled = false;
+                ckbQuinta.Enabled = false;
+                ckbSabado.Enabled = false;
+                ckbSegunda.Enabled = false;
+                ckbSexta.Enabled = false;
+                ckbTerca.Enabled = false;
+            }
+
+            verificaButton = 0;
         }
 
         #endregion
+
 
         #region ADICIONAR IMAGEM
 
@@ -1285,8 +1363,8 @@ namespace GuiWindowsForms
         {
             MemoryStream ms = new MemoryStream(imagem, 0, imagem.Length);
 
-            if(imagem.Length>0)
-            ms.Write(imagem, 0, imagem.Length);
+            if (imagem.Length > 0)
+                ms.Write(imagem, 0, imagem.Length);
             return Image.FromStream(ms, true);
         }
 
@@ -1299,8 +1377,8 @@ namespace GuiWindowsForms
         {
             MemoryStream ms = new MemoryStream();
 
-            if(imageIn!=null)
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            if (imageIn != null)
+                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             return ms.ToArray();
         }
 
@@ -1350,26 +1428,181 @@ namespace GuiWindowsForms
 
         #endregion
 
-        #region CARREGAR COMBO ATIVIDADE
-        public void carregarComboAtividade()
+        #region MENSAGENS E MÉTODOS DE LIMPEZA
+
+        #region LIMPA CAMPOS DA TELA ATIVIDADE
+        private void IniciarCamposAtividade()
         {
-            List<Atividade> listaAtividadeCmb = new List<Atividade>();
-            listaAtividadeCmb = atividadeControlador.Consultar();
-            cmbAtividadeTurma.DataSource = null;
-            cmbAtividadeTurma.DataSource = listaAtividadeCmb;
-            cmbAtividadeTurma.DisplayMember = "Nome";
+            txtNome.Clear();
+            txtDescricao.Clear();
+            //pctImagemAtividade.Dispose();
         }
         #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        #region LIMPA CAMPOS DA TELA TURMA
+        private void IniciarCamposTurma()
         {
+            txtTurma.Clear();
+            txtValor.Clear();
+            dtpHorarioFim.Value = DateTime.Now;
+            dtpHorarioInicio.Value = DateTime.Now;
+            ckbDomingo.Checked = false;
+            ckbQuarta.Checked = false;
+            ckbQuinta.Checked = false;
+            ckbSabado.Checked = false;
+            ckbSegunda.Checked = false;
+            ckbSexta.Checked = false;
+            ckbTerca.Checked = false;
+        }
+        #endregion
 
+        #region LIMPAR ERRO PROVIDER
+        private void txtDescricao_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
         }
 
-        private void btnAlterar_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            errorProviderTela.Clear();
         }
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void ckbDomingo_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void checkBox2_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void checkBox1_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void ckbQuarta_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void ckbQuinta_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void ckbSexta_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+
+        private void ckbSabado_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+        }
+        #endregion
+
+        #region LIMPA CAMPO DE AMBAS AS TELAS
+        public void limparTela()
+        {
+            txtDescricao.Clear();
+            txtNome.Clear();
+            txtTurma.Clear();
+            txtValor.Clear();
+            dtpHorarioFim.Value = DateTime.Now;
+            dtpHorarioInicio.Value = DateTime.Now;
+            ckbDomingo.Checked = false;
+            ckbQuarta.Checked = false;
+            ckbQuinta.Checked = false;
+            ckbSabado.Checked = false;
+            ckbSegunda.Checked = false;
+            ckbSexta.Checked = false;
+            ckbTerca.Checked = false;
+        }
+        #endregion
+
+        #region MENSAGENS
+        private void btnExcluirAtividade_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Excluir uma atividade");
+        }
+
+        private void btnExcluirAtividade_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
+        private void btnAdicionarAtividade_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Adicionar uma atividade");
+        }
+
+        private void btnAdicionarAtividade_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
+        private void dataGridView1_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Selecione um registro para alterar ou excluir");
+        }
+
+        private void dataGridView1_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Função para verificar se a atividade já esta cadastrado
+
+        public bool verificaSeJaInserido(Atividade atividade)
+        {
+            atividadeControlador = AtividadeProcesso.Instance;
+
+            List<Atividade> listaAuxiliar = new List<Atividade>();
+            listaAuxiliar = atividadeControlador.Consultar();
+
+            bool testa = false;
+
+            foreach (Atividade b in listaAuxiliar)
+            {
+                if ((b.Descricao == atividade.Descricao) && (b.Nome == atividade.Nome))
+                {
+                    testa = true;
+                }
+            }
+            return testa;
+        }
+
+        public bool verificaSeJaInserido2(AtividadeTurma atividadeTurma)
+        {
+            atividadeTurmaControlador = AtividadeTurmaProcesso.Instance;
+
+            List<AtividadeTurma> listaTurmaAuxiliar2 = new List<AtividadeTurma>();
+            listaTurmaAuxiliar2 = atividadeTurmaControlador.Consultar();
+
+            bool testa = false;
+
+            foreach (AtividadeTurma b in listaTurmaAuxiliar2)
+            {
+                if ((b.AtividadeID == atividadeTurma.AtividadeID) && (b.FuncionarioID == atividadeTurma.FuncionarioID) && (b.Valor == atividadeTurma.Valor) && (b.Turma == atividadeTurma.Turma))
+                {
+                    testa = true;
+                }
+            }
+            return testa;
+        }
+
+        #endregion
 
     }
 
