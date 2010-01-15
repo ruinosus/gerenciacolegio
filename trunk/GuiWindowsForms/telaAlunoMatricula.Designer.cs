@@ -269,6 +269,7 @@
             this.btnMatriculaAtividade.BackColor = System.Drawing.Color.Transparent;
             this.btnMatriculaAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_add_atividade_48x48;
             this.btnMatriculaAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMatriculaAtividade.Enabled = false;
             this.btnMatriculaAtividade.FlatAppearance.BorderSize = 0;
             this.btnMatriculaAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMatriculaAtividade.Location = new System.Drawing.Point(39, 560);

@@ -82,13 +82,14 @@
             this.gpbSerie.Location = new System.Drawing.Point(153, 129);
             this.gpbSerie.Name = "gpbSerie";
             this.gpbSerie.Size = new System.Drawing.Size(688, 550);
-            this.gpbSerie.TabIndex = 1;
+            this.gpbSerie.TabIndex = 0;
             this.gpbSerie.TabStop = false;
             this.gpbSerie.Text = "CADASTRO DE SÉRIE";
             // 
             // btnAlterar
             // 
             this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
+            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlterar.FlatAppearance.BorderSize = 0;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Location = new System.Drawing.Point(556, 198);
@@ -244,7 +245,7 @@
             this.lblCiclo.Location = new System.Drawing.Point(360, 72);
             this.lblCiclo.Name = "lblCiclo";
             this.lblCiclo.Size = new System.Drawing.Size(39, 13);
-            this.lblCiclo.TabIndex = 4;
+            this.lblCiclo.TabIndex = 1;
             this.lblCiclo.Text = "Ciclo:";
             // 
             // lblTurma
@@ -253,7 +254,7 @@
             this.lblTurma.Location = new System.Drawing.Point(267, 119);
             this.lblTurma.Name = "lblTurma";
             this.lblTurma.Size = new System.Drawing.Size(46, 13);
-            this.lblTurma.TabIndex = 8;
+            this.lblTurma.TabIndex = 3;
             this.lblTurma.Text = "Turma:";
             // 
             // cmbTurno
@@ -274,7 +275,7 @@
             this.lblTurno.Location = new System.Drawing.Point(21, 119);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(44, 13);
-            this.lblTurno.TabIndex = 6;
+            this.lblTurno.TabIndex = 2;
             this.lblTurno.Text = "Turno:";
             // 
             // txtValor
@@ -295,7 +296,7 @@
             this.lblValor.Location = new System.Drawing.Point(21, 197);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(68, 13);
-            this.lblValor.TabIndex = 3;
+            this.lblValor.TabIndex = 4;
             this.lblValor.Text = "Valor (R$):";
             // 
             // lblSerie
@@ -304,7 +305,7 @@
             this.lblSerie.Location = new System.Drawing.Point(21, 72);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(40, 13);
-            this.lblSerie.TabIndex = 1;
+            this.lblSerie.TabIndex = 0;
             this.lblSerie.Text = "Série:";
             // 
             // lblHelloUsuario
