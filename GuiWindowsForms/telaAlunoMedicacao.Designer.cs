@@ -101,7 +101,7 @@
             this.txtContato.Multiline = true;
             this.txtContato.Name = "txtContato";
             this.txtContato.Size = new System.Drawing.Size(716, 56);
-            this.txtContato.TabIndex = 48;
+            this.txtContato.TabIndex = 11;
             // 
             // lblSituacaoEspecial
             // 
@@ -109,7 +109,7 @@
             this.lblSituacaoEspecial.Location = new System.Drawing.Point(48, 306);
             this.lblSituacaoEspecial.Name = "lblSituacaoEspecial";
             this.lblSituacaoEspecial.Size = new System.Drawing.Size(113, 13);
-            this.lblSituacaoEspecial.TabIndex = 47;
+            this.lblSituacaoEspecial.TabIndex = 9;
             this.lblSituacaoEspecial.Text = "Situação Especial:";
             // 
             // lblSituacaoEspeci
@@ -118,7 +118,7 @@
             this.lblSituacaoEspeci.Location = new System.Drawing.Point(46, 396);
             this.lblSituacaoEspeci.Name = "lblSituacaoEspeci";
             this.lblSituacaoEspeci.Size = new System.Drawing.Size(580, 13);
-            this.lblSituacaoEspeci.TabIndex = 45;
+            this.lblSituacaoEspeci.TabIndex = 10;
             this.lblSituacaoEspeci.Text = "Na impossibilidade de contactar pais e/ou responsãveis, falar com ( especificar g" +
                 "rau de parentesco):";
             // 
@@ -138,7 +138,7 @@
             this.lblDescricaoMedica.Location = new System.Drawing.Point(46, 221);
             this.lblDescricaoMedica.Name = "lblDescricaoMedica";
             this.lblDescricaoMedica.Size = new System.Drawing.Size(436, 13);
-            this.lblDescricaoMedica.TabIndex = 43;
+            this.lblDescricaoMedica.TabIndex = 8;
             this.lblDescricaoMedica.Text = "Medicação a ser ministrada em caso de dor ou febre (especificar dosagem):";
             // 
             // txtDescricaoMedica
@@ -166,7 +166,7 @@
             this.lblPlanoSaude.Location = new System.Drawing.Point(448, 180);
             this.lblPlanoSaude.Name = "lblPlanoSaude";
             this.lblPlanoSaude.Size = new System.Drawing.Size(101, 13);
-            this.lblPlanoSaude.TabIndex = 40;
+            this.lblPlanoSaude.TabIndex = 7;
             this.lblPlanoSaude.Text = "Plano de Saúde:";
             // 
             // lblHospital
@@ -175,7 +175,7 @@
             this.lblHospital.Location = new System.Drawing.Point(48, 183);
             this.lblHospital.Name = "lblHospital";
             this.lblHospital.Size = new System.Drawing.Size(57, 13);
-            this.lblHospital.TabIndex = 39;
+            this.lblHospital.TabIndex = 6;
             this.lblHospital.Text = "Hospital:";
             // 
             // txtHospital
@@ -239,7 +239,7 @@
             this.lblEmail.Location = new System.Drawing.Point(48, 140);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(106, 13);
-            this.lblEmail.TabIndex = 33;
+            this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Nome do Médico:";
             // 
             // mskFone
@@ -257,7 +257,7 @@
             this.lblFone.Location = new System.Drawing.Point(602, 140);
             this.lblFone.Name = "lblFone";
             this.lblFone.Size = new System.Drawing.Size(39, 13);
-            this.lblFone.TabIndex = 25;
+            this.lblFone.TabIndex = 5;
             this.lblFone.Text = "Fone:";
             // 
             // lblFatorRh
@@ -266,7 +266,7 @@
             this.lblFatorRh.Location = new System.Drawing.Point(274, 103);
             this.lblFatorRh.Name = "lblFatorRh";
             this.lblFatorRh.Size = new System.Drawing.Size(60, 13);
-            this.lblFatorRh.TabIndex = 7;
+            this.lblFatorRh.TabIndex = 2;
             this.lblFatorRh.Text = "Fator Rh:";
             // 
             // txtAlergico
@@ -343,7 +343,7 @@
             this.uMenuLateral1.Location = new System.Drawing.Point(875, 75);
             this.uMenuLateral1.Name = "uMenuLateral1";
             this.uMenuLateral1.Size = new System.Drawing.Size(130, 584);
-            this.uMenuLateral1.TabIndex = 122;
+            this.uMenuLateral1.TabIndex = 1;
             this.uMenuLateral1.EventoAbrirTelaMedica += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMedica(this.uMenuLateral1_EventoAbrirTelaMedica);
             this.uMenuLateral1.Load += new System.EventHandler(this.uMenuLateral1_Load);
             this.uMenuLateral1.EventoAbrirTelaResponsavel += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaResponsavel(this.uMenuLateral1_EventoAbrirTelaResponsavel);

@@ -893,7 +893,6 @@
             this.MinimizeBox = false;
             this.Name = "telaConfiguracoesAtividades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.ckbTerca_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoesAtividades_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();

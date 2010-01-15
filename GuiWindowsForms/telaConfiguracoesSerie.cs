@@ -219,7 +219,7 @@ namespace GuiWindowsForms
 
             List<Turma> listaTurma = new List<Turma>();
             Turma turmaInicio = new Turma();
-            turmaInicio.Nome = "selecionae";
+            turmaInicio.Nome = "selecione";
             turmaInicio.ID = 0;
             listaTurma = turmaControlador.Consultar();
             listaTurma.Insert(0, turmaInicio);
@@ -382,7 +382,7 @@ namespace GuiWindowsForms
 
                     #region VALIDA - TURNO
 
-                    if (String.IsNullOrEmpty(cmbTurno.Text))
+                    if (String.IsNullOrEmpty(cmbTurno.Text) )
                     {
                         errorProviderTela.SetError(cmbTurno, "Informe o turno");
                         return;
@@ -725,7 +725,7 @@ namespace GuiWindowsForms
             btnExcluir.Enabled = false;
             ucMenuInferior1.BotaoCadastrar.Enabled = true;
 
-
+            cmbSerie.Focus();
         }
 
         #endregion
@@ -773,6 +773,8 @@ namespace GuiWindowsForms
             btnAdicionarSerie.Enabled = false;
             btnExcluir.Enabled = false;
             ucMenuInferior1.BotaoCadastrar.Enabled = true;
+
+            cmbSerie.Focus();
         }
 
         private void IniciarCampos() 
