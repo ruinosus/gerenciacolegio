@@ -317,7 +317,7 @@
             this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(802, 9);
+            this.lblHelloUsuario.Location = new System.Drawing.Point(780, 9);
             this.lblHelloUsuario.Name = "lblHelloUsuario";
             this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
             this.lblHelloUsuario.TabIndex = 37;
@@ -381,7 +381,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaAlunoMedicacao_Load);
-            this.Activated += new System.EventHandler(this.telaAlunoMedicacao_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMedicacao_FormClosing);
             this.gpbContato.ResumeLayout(false);
             this.gpbContato.PerformLayout();
