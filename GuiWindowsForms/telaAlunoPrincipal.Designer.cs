@@ -37,6 +37,9 @@
             this.lblErro = new System.Windows.Forms.Label();
             this.lblFinanceiro = new System.Windows.Forms.Label();
             this.dgvAluno = new System.Windows.Forms.DataGridView();
+            this.colunaNomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FoneAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
@@ -48,9 +51,6 @@
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnAluno = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.colunaNomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FoneAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -162,6 +162,39 @@
             this.dgvAluno.DoubleClick += new System.EventHandler(this.dgvAluno_DoubleClick);
             this.dgvAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellClick);
             this.dgvAluno.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellEnter);
+            // 
+            // colunaNomeAluno
+            // 
+            this.colunaNomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colunaNomeAluno.DataPropertyName = "Nome";
+            this.colunaNomeAluno.HeaderText = "Nome do Aluno";
+            this.colunaNomeAluno.MaxInputLength = 40;
+            this.colunaNomeAluno.Name = "colunaNomeAluno";
+            this.colunaNomeAluno.ReadOnly = true;
+            this.colunaNomeAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colunaNomeAluno.Width = 250;
+            // 
+            // FoneAluno
+            // 
+            this.FoneAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FoneAluno.DataPropertyName = "FoneAluno";
+            this.FoneAluno.HeaderText = "Telefone do Aluno";
+            this.FoneAluno.MaxInputLength = 15;
+            this.FoneAluno.Name = "FoneAluno";
+            this.FoneAluno.ReadOnly = true;
+            this.FoneAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FoneAluno.Width = 150;
+            // 
+            // EmailAluno
+            // 
+            this.EmailAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.EmailAluno.DataPropertyName = "Email";
+            this.EmailAluno.HeaderText = "Email do Aluno";
+            this.EmailAluno.MaxInputLength = 20;
+            this.EmailAluno.Name = "EmailAluno";
+            this.EmailAluno.ReadOnly = true;
+            this.EmailAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EmailAluno.Width = 180;
             // 
             // Column3
             // 
@@ -309,39 +342,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(235, 112);
             this.pictureBox1.TabIndex = 71;
             this.pictureBox1.TabStop = false;
-            // 
-            // colunaNomeAluno
-            // 
-            this.colunaNomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colunaNomeAluno.DataPropertyName = "Nome";
-            this.colunaNomeAluno.HeaderText = "Nome do Aluno";
-            this.colunaNomeAluno.MaxInputLength = 40;
-            this.colunaNomeAluno.Name = "colunaNomeAluno";
-            this.colunaNomeAluno.ReadOnly = true;
-            this.colunaNomeAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colunaNomeAluno.Width = 250;
-            // 
-            // FoneAluno
-            // 
-            this.FoneAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FoneAluno.DataPropertyName = "FoneAluno";
-            this.FoneAluno.HeaderText = "Telefone do Aluno";
-            this.FoneAluno.MaxInputLength = 15;
-            this.FoneAluno.Name = "FoneAluno";
-            this.FoneAluno.ReadOnly = true;
-            this.FoneAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.FoneAluno.Width = 150;
-            // 
-            // EmailAluno
-            // 
-            this.EmailAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.EmailAluno.DataPropertyName = "Email";
-            this.EmailAluno.HeaderText = "Email do Aluno";
-            this.EmailAluno.MaxInputLength = 20;
-            this.EmailAluno.Name = "EmailAluno";
-            this.EmailAluno.ReadOnly = true;
-            this.EmailAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.EmailAluno.Width = 180;
             // 
             // telaAlunoPrincipal
             // 

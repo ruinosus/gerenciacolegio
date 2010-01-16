@@ -105,7 +105,7 @@ namespace GuiWindowsForms
             telaalunoresponsavel.limparTela();
             telaAluno telaAlunoAuxiliar = telaAluno.getInstancia();
             telaAlunoAuxiliar.limparTelaAluno();
-            telaalunoresponsavel.Show();
+            telaAlunoAuxiliar.Show();
         }
         #endregion
 
