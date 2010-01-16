@@ -293,7 +293,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void cmbNaturalidade_Enter(object sender, EventArgs e)
         {
-            cmbNaturalidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            txtNaturalidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
         }
 
         /// <summary>
@@ -303,7 +303,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void cmbNaturalidade_Leave(object sender, EventArgs e)
         {
-            cmbNaturalidade.BackColor = System.Drawing.Color.White;
+            txtNaturalidade.BackColor = System.Drawing.Color.White;
         }
 
         /// <summary>
@@ -669,7 +669,7 @@ namespace GuiWindowsForms
 
                 aluno.Nascimento = dtpNascimento.Value;
                 aluno.Nacionalidade = cmbNacionalidade.Text;
-                aluno.Naturalidade = cmbNaturalidade.Text;
+                aluno.Naturalidade = txtNaturalidade.Text;
                 aluno.Uf = cmbUf.Text;
                 
                 /*
@@ -778,7 +778,7 @@ namespace GuiWindowsForms
             txtNome.Clear();
             txtNomeEdificil.Clear();
             cmbNacionalidade.SelectedIndex = 0;
-            cmbNaturalidade.SelectedIndex = 0;
+            txtNaturalidade.Clear();
             cmbUf.Select();
             mskCep.Clear();
             mskCep.Text = "";
@@ -806,7 +806,7 @@ namespace GuiWindowsForms
             txtLogradouro.Text = aluno.Logradouro;
             txtNome.Text = aluno.Nome;
             cmbNacionalidade.Text = aluno.Nacionalidade;
-            cmbNaturalidade.Text = aluno.Naturalidade;
+            txtNaturalidade.Text = aluno.Naturalidade;
             cmbUf.Text = aluno.Uf;
             mskCep.Text = aluno.Cep;
             mskFoneAluno.Text = aluno.FoneAluno;
@@ -947,6 +947,7 @@ namespace GuiWindowsForms
                 {
                     limparTelaAluno();
                 }
+                txtNome.Focus();
         }
 
         #region SELECIONA CIDADE
@@ -993,6 +994,7 @@ namespace GuiWindowsForms
         private void telaAluno_Load(object sender, EventArgs e)
         {
             limparTelaAluno();
+            txtNome.Focus();
         }
 
 

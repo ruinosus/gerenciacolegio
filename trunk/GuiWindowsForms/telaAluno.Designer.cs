@@ -32,6 +32,7 @@ namespace GuiWindowsForms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAluno));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.txtNaturalidade = new System.Windows.Forms.TextBox();
             this.btnVincularResponsavel = new System.Windows.Forms.Button();
             this.lblEdificio = new System.Windows.Forms.Label();
             this.txtNomeEdificil = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@ namespace GuiWindowsForms
             this.lblFoneEmergencia = new System.Windows.Forms.Label();
             this.mskFoneAluno = new System.Windows.Forms.MaskedTextBox();
             this.lblFoneAluno = new System.Windows.Forms.Label();
-            this.cmbNaturalidade = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbNacionalidade = new System.Windows.Forms.ComboBox();
             this.lblNacionalidade = new System.Windows.Forms.Label();
@@ -80,6 +80,7 @@ namespace GuiWindowsForms
             // gpbDadosPessoais
             // 
             this.gpbDadosPessoais.BackColor = System.Drawing.Color.Transparent;
+            this.gpbDadosPessoais.Controls.Add(this.txtNaturalidade);
             this.gpbDadosPessoais.Controls.Add(this.btnVincularResponsavel);
             this.gpbDadosPessoais.Controls.Add(this.lblEdificio);
             this.gpbDadosPessoais.Controls.Add(this.txtNomeEdificil);
@@ -103,7 +104,6 @@ namespace GuiWindowsForms
             this.gpbDadosPessoais.Controls.Add(this.lblFoneEmergencia);
             this.gpbDadosPessoais.Controls.Add(this.mskFoneAluno);
             this.gpbDadosPessoais.Controls.Add(this.lblFoneAluno);
-            this.gpbDadosPessoais.Controls.Add(this.cmbNaturalidade);
             this.gpbDadosPessoais.Controls.Add(this.label2);
             this.gpbDadosPessoais.Controls.Add(this.cmbNacionalidade);
             this.gpbDadosPessoais.Controls.Add(this.lblNacionalidade);
@@ -122,37 +122,47 @@ namespace GuiWindowsForms
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DADOS PESSOAIS ALUNO";
             // 
+            // txtNaturalidade
+            // 
+            this.txtNaturalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtNaturalidade.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtNaturalidade.Location = new System.Drawing.Point(588, 116);
+            this.txtNaturalidade.MaxLength = 30;
+            this.txtNaturalidade.Name = "txtNaturalidade";
+            this.txtNaturalidade.Size = new System.Drawing.Size(202, 20);
+            this.txtNaturalidade.TabIndex = 12;
+            // 
             // btnVincularResponsavel
             // 
             this.btnVincularResponsavel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVincularResponsavel.BackgroundImage")));
             this.btnVincularResponsavel.FlatAppearance.BorderSize = 0;
             this.btnVincularResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVincularResponsavel.Location = new System.Drawing.Point(128, 332);
+            this.btnVincularResponsavel.Location = new System.Drawing.Point(733, 31);
             this.btnVincularResponsavel.Margin = new System.Windows.Forms.Padding(0);
             this.btnVincularResponsavel.Name = "btnVincularResponsavel";
             this.btnVincularResponsavel.Size = new System.Drawing.Size(30, 31);
-            this.btnVincularResponsavel.TabIndex = 17;
+            this.btnVincularResponsavel.TabIndex = 6;
             this.btnVincularResponsavel.UseVisualStyleBackColor = true;
             this.btnVincularResponsavel.Click += new System.EventHandler(this.btnVincularResponsavel_Click);
             // 
             // lblEdificio
             // 
             this.lblEdificio.AutoSize = true;
-            this.lblEdificio.Location = new System.Drawing.Point(48, 204);
+            this.lblEdificio.Location = new System.Drawing.Point(14, 214);
             this.lblEdificio.Name = "lblEdificio";
             this.lblEdificio.Size = new System.Drawing.Size(55, 13);
-            this.lblEdificio.TabIndex = 10;
+            this.lblEdificio.TabIndex = 17;
             this.lblEdificio.Text = "Edifício:";
             // 
             // txtNomeEdificil
             // 
             this.txtNomeEdificil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtNomeEdificil.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNomeEdificil.Location = new System.Drawing.Point(128, 204);
+            this.txtNomeEdificil.Location = new System.Drawing.Point(110, 212);
             this.txtNomeEdificil.MaxLength = 30;
             this.txtNomeEdificil.Name = "txtNomeEdificil";
             this.txtNomeEdificil.Size = new System.Drawing.Size(200, 20);
-            this.txtNomeEdificil.TabIndex = 10;
+            this.txtNomeEdificil.TabIndex = 18;
             this.txtNomeEdificil.TextChanged += new System.EventHandler(this.txtNomeEdificil_TextChanged);
             this.txtNomeEdificil.Leave += new System.EventHandler(this.txtNomeEdificil_Leave);
             this.txtNomeEdificil.Enter += new System.EventHandler(this.txtNomeEdificil_Enter);
@@ -161,11 +171,11 @@ namespace GuiWindowsForms
             // 
             this.mskFoneResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.mskFoneResidencia.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.mskFoneResidencia.Location = new System.Drawing.Point(329, 292);
+            this.mskFoneResidencia.Location = new System.Drawing.Point(109, 306);
             this.mskFoneResidencia.Mask = "(99) 0000-0000";
             this.mskFoneResidencia.Name = "mskFoneResidencia";
             this.mskFoneResidencia.Size = new System.Drawing.Size(111, 20);
-            this.mskFoneResidencia.TabIndex = 15;
+            this.mskFoneResidencia.TabIndex = 28;
             this.mskFoneResidencia.Leave += new System.EventHandler(this.mskFoneResidencia_Leave);
             this.mskFoneResidencia.Enter += new System.EventHandler(this.mskFoneResidencia_Enter);
             this.mskFoneResidencia.TextChanged += new System.EventHandler(this.mskFoneResidencia_TextChanged);
@@ -177,11 +187,11 @@ namespace GuiWindowsForms
             this.cmbUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.cmbUf.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbUf.FormattingEnabled = true;
-            this.cmbUf.Location = new System.Drawing.Point(400, 249);
+            this.cmbUf.Location = new System.Drawing.Point(382, 254);
             this.cmbUf.MaxLength = 2;
             this.cmbUf.Name = "cmbUf";
-            this.cmbUf.Size = new System.Drawing.Size(40, 21);
-            this.cmbUf.TabIndex = 12;
+            this.cmbUf.Size = new System.Drawing.Size(58, 21);
+            this.cmbUf.TabIndex = 24;
             this.cmbUf.SelectedIndexChanged += new System.EventHandler(this.cmbUf_SelectedIndexChanged_1);
             this.cmbUf.MouseEnter += new System.EventHandler(this.cmbUf_MouseEnter);
             this.cmbUf.MouseLeave += new System.EventHandler(this.cmbUf_MouseLeave);
@@ -191,11 +201,11 @@ namespace GuiWindowsForms
             // 
             this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtComplemento.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtComplemento.Location = new System.Drawing.Point(606, 157);
+            this.txtComplemento.Location = new System.Drawing.Point(590, 163);
             this.txtComplemento.MaxLength = 30;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(200, 20);
-            this.txtComplemento.TabIndex = 9;
+            this.txtComplemento.TabIndex = 16;
             this.txtComplemento.TextChanged += new System.EventHandler(this.txtComplemento_TextChanged);
             this.txtComplemento.Leave += new System.EventHandler(this.txtComplemento_Leave);
             this.txtComplemento.Enter += new System.EventHandler(this.txtComplemento_Enter);
@@ -203,39 +213,39 @@ namespace GuiWindowsForms
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(505, 159);
+            this.lblComplemento.Location = new System.Drawing.Point(498, 165);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(86, 13);
-            this.lblComplemento.TabIndex = 9;
+            this.lblComplemento.TabIndex = 15;
             this.lblComplemento.Text = "Complemento:";
             // 
             // lblUf
             // 
             this.lblUf.AutoSize = true;
-            this.lblUf.Location = new System.Drawing.Point(367, 249);
+            this.lblUf.Location = new System.Drawing.Point(349, 256);
             this.lblUf.Name = "lblUf";
             this.lblUf.Size = new System.Drawing.Size(27, 13);
-            this.lblUf.TabIndex = 12;
+            this.lblUf.TabIndex = 23;
             this.lblUf.Text = "UF:";
             // 
             // lblFoneResidencia
             // 
             this.lblFoneResidencia.AutoSize = true;
-            this.lblFoneResidencia.Location = new System.Drawing.Point(239, 295);
+            this.lblFoneResidencia.Location = new System.Drawing.Point(14, 308);
             this.lblFoneResidencia.Name = "lblFoneResidencia";
             this.lblFoneResidencia.Size = new System.Drawing.Size(75, 13);
-            this.lblFoneResidencia.TabIndex = 15;
+            this.lblFoneResidencia.TabIndex = 27;
             this.lblFoneResidencia.Text = "Fone Resid:";
             // 
             // mskCep
             // 
             this.mskCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.mskCep.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.mskCep.Location = new System.Drawing.Point(128, 292);
+            this.mskCep.Location = new System.Drawing.Point(110, 254);
             this.mskCep.Mask = "00000-999";
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(72, 20);
-            this.mskCep.TabIndex = 14;
+            this.mskCep.TabIndex = 22;
             this.mskCep.Leave += new System.EventHandler(this.mskCep_Leave);
             this.mskCep.Enter += new System.EventHandler(this.mskCep_Enter);
             this.mskCep.TextChanged += new System.EventHandler(this.mskCep_TextChanged);
@@ -243,21 +253,21 @@ namespace GuiWindowsForms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 292);
+            this.label4.Location = new System.Drawing.Point(14, 256);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 14;
+            this.label4.TabIndex = 21;
             this.label4.Text = "Cep:";
             // 
             // txtCidade
             // 
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtCidade.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCidade.Location = new System.Drawing.Point(604, 249);
+            this.txtCidade.Location = new System.Drawing.Point(590, 252);
             this.txtCidade.MaxLength = 30;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(200, 20);
-            this.txtCidade.TabIndex = 13;
+            this.txtCidade.TabIndex = 26;
             this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
             this.txtCidade.Leave += new System.EventHandler(this.txtCidade_Leave);
             this.txtCidade.Enter += new System.EventHandler(this.txtCidade_Enter);
@@ -265,21 +275,21 @@ namespace GuiWindowsForms
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(505, 256);
+            this.lblCidade.Location = new System.Drawing.Point(498, 254);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(50, 13);
-            this.lblCidade.TabIndex = 13;
+            this.lblCidade.TabIndex = 25;
             this.lblCidade.Text = "Cidade:";
             // 
             // txtBairro
             // 
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtBairro.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBairro.Location = new System.Drawing.Point(128, 249);
+            this.txtBairro.Location = new System.Drawing.Point(590, 210);
             this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(200, 20);
-            this.txtBairro.TabIndex = 11;
+            this.txtBairro.TabIndex = 20;
             this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             this.txtBairro.Leave += new System.EventHandler(this.txtBairro_Leave);
             this.txtBairro.Enter += new System.EventHandler(this.txtBairro_Enter);
@@ -287,21 +297,21 @@ namespace GuiWindowsForms
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(48, 249);
+            this.lblBairro.Location = new System.Drawing.Point(498, 212);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(44, 13);
-            this.lblBairro.TabIndex = 11;
+            this.lblBairro.TabIndex = 19;
             this.lblBairro.Text = "Bairro:";
             // 
             // txtLogradouro
             // 
             this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtLogradouro.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtLogradouro.Location = new System.Drawing.Point(128, 156);
+            this.txtLogradouro.Location = new System.Drawing.Point(110, 165);
             this.txtLogradouro.MaxLength = 60;
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(312, 20);
-            this.txtLogradouro.TabIndex = 8;
+            this.txtLogradouro.TabIndex = 14;
             this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
             this.txtLogradouro.Leave += new System.EventHandler(this.txtLogradouro_Leave);
             this.txtLogradouro.Enter += new System.EventHandler(this.txtLogradouro_Enter);
@@ -309,38 +319,38 @@ namespace GuiWindowsForms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 161);
+            this.label3.Location = new System.Drawing.Point(12, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 8;
+            this.label3.TabIndex = 13;
             this.label3.Text = "Endereço:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(128, 113);
+            this.txtEmail.Location = new System.Drawing.Point(110, 354);
             this.txtEmail.MaxLength = 40;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(220, 20);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 33;
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(46, 113);
+            this.lblEmail.Location = new System.Drawing.Point(12, 356);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(77, 13);
-            this.lblEmail.TabIndex = 6;
+            this.lblEmail.TabIndex = 33;
             this.lblEmail.Text = "Email Aluno:";
             // 
             // mskFoneEmergencia
             // 
-            this.mskFoneEmergencia.Location = new System.Drawing.Point(604, 292);
+            this.mskFoneEmergencia.Location = new System.Drawing.Point(590, 304);
             this.mskFoneEmergencia.Mask = "(99) 0000-0000";
             this.mskFoneEmergencia.Name = "mskFoneEmergencia";
             this.mskFoneEmergencia.Size = new System.Drawing.Size(111, 20);
-            this.mskFoneEmergencia.TabIndex = 16;
+            this.mskFoneEmergencia.TabIndex = 32;
             this.mskFoneEmergencia.Leave += new System.EventHandler(this.mskFoneEmergencia_Leave);
             this.mskFoneEmergencia.Enter += new System.EventHandler(this.mskFoneEmergencia_Enter);
             this.mskFoneEmergencia.TextChanged += new System.EventHandler(this.mskFoneEmergencia_TextChanged);
@@ -348,19 +358,19 @@ namespace GuiWindowsForms
             // lblFoneEmergencia
             // 
             this.lblFoneEmergencia.AutoSize = true;
-            this.lblFoneEmergencia.Location = new System.Drawing.Point(507, 295);
+            this.lblFoneEmergencia.Location = new System.Drawing.Point(500, 306);
             this.lblFoneEmergencia.Name = "lblFoneEmergencia";
             this.lblFoneEmergencia.Size = new System.Drawing.Size(78, 13);
-            this.lblFoneEmergencia.TabIndex = 16;
+            this.lblFoneEmergencia.TabIndex = 31;
             this.lblFoneEmergencia.Text = "Fone Emerg:";
             // 
             // mskFoneAluno
             // 
-            this.mskFoneAluno.Location = new System.Drawing.Point(604, 113);
+            this.mskFoneAluno.Location = new System.Drawing.Point(352, 306);
             this.mskFoneAluno.Mask = "(99) 0000-0000";
             this.mskFoneAluno.Name = "mskFoneAluno";
             this.mskFoneAluno.Size = new System.Drawing.Size(111, 20);
-            this.mskFoneAluno.TabIndex = 7;
+            this.mskFoneAluno.TabIndex = 30;
             this.mskFoneAluno.Leave += new System.EventHandler(this.mskFoneAluno_Leave);
             this.mskFoneAluno.Enter += new System.EventHandler(this.mskFoneAluno_Enter);
             this.mskFoneAluno.TextChanged += new System.EventHandler(this.mskFoneAluno_TextChanged);
@@ -368,60 +378,19 @@ namespace GuiWindowsForms
             // lblFoneAluno
             // 
             this.lblFoneAluno.AutoSize = true;
-            this.lblFoneAluno.Location = new System.Drawing.Point(505, 113);
+            this.lblFoneAluno.Location = new System.Drawing.Point(271, 308);
             this.lblFoneAluno.Name = "lblFoneAluno";
             this.lblFoneAluno.Size = new System.Drawing.Size(75, 13);
-            this.lblFoneAluno.TabIndex = 7;
+            this.lblFoneAluno.TabIndex = 29;
             this.lblFoneAluno.Text = "Fone Aluno:";
-            // 
-            // cmbNaturalidade
-            // 
-            this.cmbNaturalidade.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbNaturalidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNaturalidade.FormattingEnabled = true;
-            this.cmbNaturalidade.Items.AddRange(new object[] {
-            "São Paulo",
-            "Minas Gerais",
-            "Rio de Janeiro",
-            "Bahia",
-            "Rio Grande do Sul",
-            "Paraná",
-            "Pernambuco",
-            "Ceará",
-            "Pará",
-            "Maranhão",
-            "Santa Catarina",
-            "Goiás",
-            "Paraíba",
-            "Espírito Santo ",
-            "Amazonas ",
-            "Alagoas ",
-            "Piauí ",
-            "Rio Grande do Norte",
-            "Mato Grosso ",
-            "Distrito Federal",
-            "Mato Grosso do Sul",
-            "Sergipe ",
-            "Rondônia",
-            "Tocantins ",
-            "Acre",
-            "Amapá",
-            "Roraima "});
-            this.cmbNaturalidade.Location = new System.Drawing.Point(646, 70);
-            this.cmbNaturalidade.Name = "cmbNaturalidade";
-            this.cmbNaturalidade.Size = new System.Drawing.Size(158, 21);
-            this.cmbNaturalidade.TabIndex = 5;
-            this.cmbNaturalidade.Leave += new System.EventHandler(this.cmbNaturalidade_Leave);
-            this.cmbNaturalidade.Enter += new System.EventHandler(this.cmbNaturalidade_Enter);
-            this.cmbNaturalidade.TextChanged += new System.EventHandler(this.cmbNaturalidade_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(557, 70);
+            this.label2.Location = new System.Drawing.Point(499, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 11;
             this.label2.Text = "Naturalidade:";
             // 
             // cmbNacionalidade
@@ -686,10 +655,10 @@ namespace GuiWindowsForms
             "West Bank",
             "Zâmbia",
             "Zimbabué "});
-            this.cmbNacionalidade.Location = new System.Drawing.Point(370, 68);
+            this.cmbNacionalidade.Location = new System.Drawing.Point(110, 120);
             this.cmbNacionalidade.Name = "cmbNacionalidade";
-            this.cmbNacionalidade.Size = new System.Drawing.Size(158, 21);
-            this.cmbNacionalidade.TabIndex = 4;
+            this.cmbNacionalidade.Size = new System.Drawing.Size(204, 21);
+            this.cmbNacionalidade.TabIndex = 10;
             this.cmbNacionalidade.Leave += new System.EventHandler(this.cmbNacionalidade_Leave);
             this.cmbNacionalidade.Enter += new System.EventHandler(this.cmbNacionalidade_Enter);
             this.cmbNacionalidade.TextChanged += new System.EventHandler(this.cmbNacionalidade_TextChanged);
@@ -697,20 +666,20 @@ namespace GuiWindowsForms
             // lblNacionalidade
             // 
             this.lblNacionalidade.AutoSize = true;
-            this.lblNacionalidade.Location = new System.Drawing.Point(272, 70);
+            this.lblNacionalidade.Location = new System.Drawing.Point(12, 123);
             this.lblNacionalidade.Name = "lblNacionalidade";
             this.lblNacionalidade.Size = new System.Drawing.Size(92, 13);
-            this.lblNacionalidade.TabIndex = 4;
+            this.lblNacionalidade.TabIndex = 9;
             this.lblNacionalidade.Text = "Nacionalidade:";
             // 
             // rdbFem
             // 
             this.rdbFem.AutoSize = true;
             this.rdbFem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbFem.Location = new System.Drawing.Point(569, 32);
+            this.rdbFem.Location = new System.Drawing.Point(604, 31);
             this.rdbFem.Name = "rdbFem";
             this.rdbFem.Size = new System.Drawing.Size(48, 17);
-            this.rdbFem.TabIndex = 2;
+            this.rdbFem.TabIndex = 5;
             this.rdbFem.TabStop = true;
             this.rdbFem.Text = "Fem";
             this.rdbFem.UseVisualStyleBackColor = true;
@@ -721,10 +690,10 @@ namespace GuiWindowsForms
             // 
             this.rdbMasc.AutoSize = true;
             this.rdbMasc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbMasc.Location = new System.Drawing.Point(508, 32);
+            this.rdbMasc.Location = new System.Drawing.Point(543, 31);
             this.rdbMasc.Name = "rdbMasc";
             this.rdbMasc.Size = new System.Drawing.Size(55, 17);
-            this.rdbMasc.TabIndex = 2;
+            this.rdbMasc.TabIndex = 4;
             this.rdbMasc.TabStop = true;
             this.rdbMasc.Text = "Masc";
             this.rdbMasc.UseVisualStyleBackColor = true;
@@ -734,19 +703,19 @@ namespace GuiWindowsForms
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(463, 32);
+            this.lblSexo.Location = new System.Drawing.Point(498, 33);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(39, 13);
-            this.lblSexo.TabIndex = 2;
+            this.lblSexo.TabIndex = 3;
             this.lblSexo.Text = "Sexo:";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(128, 32);
+            this.txtNome.Location = new System.Drawing.Point(110, 30);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(312, 20);
-            this.txtNome.TabIndex = 1;
+            this.txtNome.TabIndex = 2;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
@@ -755,26 +724,27 @@ namespace GuiWindowsForms
             // 
             this.dtpNascimento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(128, 70);
+            this.dtpNascimento.Location = new System.Drawing.Point(110, 75);
             this.dtpNascimento.Name = "dtpNascimento";
             this.dtpNascimento.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpNascimento.ShowUpDown = true;
-            this.dtpNascimento.Size = new System.Drawing.Size(110, 20);
-            this.dtpNascimento.TabIndex = 3;
+            this.dtpNascimento.Size = new System.Drawing.Size(100, 20);
+            this.dtpNascimento.TabIndex = 8;
+            this.dtpNascimento.Value = new System.DateTime(2010, 1, 16, 0, 0, 0, 0);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 70);
+            this.label1.Location = new System.Drawing.Point(14, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 7;
             this.label1.Text = "Nascimento:";
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(46, 32);
+            this.lblNome.Location = new System.Drawing.Point(14, 33);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(43, 13);
             this.lblNome.TabIndex = 1;
@@ -810,9 +780,9 @@ namespace GuiWindowsForms
             // 
             this.cmbSelecionarAluno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbSelecionarAluno.FormattingEnabled = true;
-            this.cmbSelecionarAluno.Location = new System.Drawing.Point(643, 177);
+            this.cmbSelecionarAluno.Location = new System.Drawing.Point(594, 177);
             this.cmbSelecionarAluno.Name = "cmbSelecionarAluno";
-            this.cmbSelecionarAluno.Size = new System.Drawing.Size(216, 21);
+            this.cmbSelecionarAluno.Size = new System.Drawing.Size(265, 21);
             this.cmbSelecionarAluno.TabIndex = 63;
             // 
             // errorProviderTela
@@ -898,7 +868,6 @@ namespace GuiWindowsForms
         private System.Windows.Forms.ComboBox cmbNacionalidade;
         private System.Windows.Forms.Label lblNacionalidade;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbNaturalidade;
         private System.Windows.Forms.MaskedTextBox mskFoneAluno;
         private System.Windows.Forms.Label lblFoneAluno;
         private System.Windows.Forms.MaskedTextBox mskFoneEmergencia;
@@ -929,6 +898,7 @@ namespace GuiWindowsForms
         private ucMenuInferior ucMenuInferior1;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
         private uMenuImagem uMenuImagem1;
+        private System.Windows.Forms.TextBox txtNaturalidade;
 
 
 

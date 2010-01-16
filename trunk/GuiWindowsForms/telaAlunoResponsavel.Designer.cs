@@ -486,8 +486,9 @@
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNascimento.Location = new System.Drawing.Point(128, 70);
             this.dtpNascimento.Name = "dtpNascimento";
-            this.dtpNascimento.Size = new System.Drawing.Size(110, 23);
+            this.dtpNascimento.Size = new System.Drawing.Size(141, 23);
             this.dtpNascimento.TabIndex = 13;
+            this.dtpNascimento.Value = new System.DateTime(2010, 1, 16, 0, 0, 0, 0);
             // 
             // lblNascimento
             // 
