@@ -49,7 +49,7 @@ namespace GuiWindowsForms
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblEndereco = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.mskFoneEmergencia = new System.Windows.Forms.MaskedTextBox();
@@ -97,7 +97,7 @@ namespace GuiWindowsForms
             this.gpbDadosPessoais.Controls.Add(this.txtBairro);
             this.gpbDadosPessoais.Controls.Add(this.lblBairro);
             this.gpbDadosPessoais.Controls.Add(this.txtLogradouro);
-            this.gpbDadosPessoais.Controls.Add(this.label3);
+            this.gpbDadosPessoais.Controls.Add(this.lblEndereco);
             this.gpbDadosPessoais.Controls.Add(this.txtEmail);
             this.gpbDadosPessoais.Controls.Add(this.lblEmail);
             this.gpbDadosPessoais.Controls.Add(this.mskFoneEmergencia);
@@ -174,7 +174,7 @@ namespace GuiWindowsForms
             this.mskFoneResidencia.Location = new System.Drawing.Point(109, 306);
             this.mskFoneResidencia.Mask = "(99) 0000-0000";
             this.mskFoneResidencia.Name = "mskFoneResidencia";
-            this.mskFoneResidencia.Size = new System.Drawing.Size(111, 20);
+            this.mskFoneResidencia.Size = new System.Drawing.Size(101, 20);
             this.mskFoneResidencia.TabIndex = 28;
             this.mskFoneResidencia.Leave += new System.EventHandler(this.mskFoneResidencia_Leave);
             this.mskFoneResidencia.Enter += new System.EventHandler(this.mskFoneResidencia_Enter);
@@ -310,20 +310,20 @@ namespace GuiWindowsForms
             this.txtLogradouro.Location = new System.Drawing.Point(110, 165);
             this.txtLogradouro.MaxLength = 60;
             this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(312, 20);
+            this.txtLogradouro.Size = new System.Drawing.Size(330, 20);
             this.txtLogradouro.TabIndex = 14;
             this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
             this.txtLogradouro.Leave += new System.EventHandler(this.txtLogradouro_Leave);
             this.txtLogradouro.Enter += new System.EventHandler(this.txtLogradouro_Enter);
             // 
-            // label3
+            // lblEndereco
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Endereço:";
+            this.lblEndereco.AutoSize = true;
+            this.lblEndereco.Location = new System.Drawing.Point(12, 167);
+            this.lblEndereco.Name = "lblEndereco";
+            this.lblEndereco.Size = new System.Drawing.Size(65, 13);
+            this.lblEndereco.TabIndex = 13;
+            this.lblEndereco.Text = "Endereço:";
             // 
             // txtEmail
             // 
@@ -349,7 +349,7 @@ namespace GuiWindowsForms
             this.mskFoneEmergencia.Location = new System.Drawing.Point(590, 304);
             this.mskFoneEmergencia.Mask = "(99) 0000-0000";
             this.mskFoneEmergencia.Name = "mskFoneEmergencia";
-            this.mskFoneEmergencia.Size = new System.Drawing.Size(111, 20);
+            this.mskFoneEmergencia.Size = new System.Drawing.Size(101, 20);
             this.mskFoneEmergencia.TabIndex = 32;
             this.mskFoneEmergencia.Leave += new System.EventHandler(this.mskFoneEmergencia_Leave);
             this.mskFoneEmergencia.Enter += new System.EventHandler(this.mskFoneEmergencia_Enter);
@@ -366,10 +366,10 @@ namespace GuiWindowsForms
             // 
             // mskFoneAluno
             // 
-            this.mskFoneAluno.Location = new System.Drawing.Point(352, 306);
+            this.mskFoneAluno.Location = new System.Drawing.Point(339, 306);
             this.mskFoneAluno.Mask = "(99) 0000-0000";
             this.mskFoneAluno.Name = "mskFoneAluno";
-            this.mskFoneAluno.Size = new System.Drawing.Size(111, 20);
+            this.mskFoneAluno.Size = new System.Drawing.Size(101, 20);
             this.mskFoneAluno.TabIndex = 30;
             this.mskFoneAluno.Leave += new System.EventHandler(this.mskFoneAluno_Leave);
             this.mskFoneAluno.Enter += new System.EventHandler(this.mskFoneAluno_Enter);
@@ -378,7 +378,7 @@ namespace GuiWindowsForms
             // lblFoneAluno
             // 
             this.lblFoneAluno.AutoSize = true;
-            this.lblFoneAluno.Location = new System.Drawing.Point(271, 308);
+            this.lblFoneAluno.Location = new System.Drawing.Point(258, 308);
             this.lblFoneAluno.Name = "lblFoneAluno";
             this.lblFoneAluno.Size = new System.Drawing.Size(75, 13);
             this.lblFoneAluno.TabIndex = 29;
@@ -711,10 +711,11 @@ namespace GuiWindowsForms
             // 
             // txtNome
             // 
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtNome.Location = new System.Drawing.Point(110, 30);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(312, 20);
+            this.txtNome.Size = new System.Drawing.Size(330, 20);
             this.txtNome.TabIndex = 2;
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
@@ -756,7 +757,7 @@ namespace GuiWindowsForms
             this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(802, 9);
+            this.lblHelloUsuario.Location = new System.Drawing.Point(780, 9);
             this.lblHelloUsuario.Name = "lblHelloUsuario";
             this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
             this.lblHelloUsuario.TabIndex = 22;
@@ -892,7 +893,7 @@ namespace GuiWindowsForms
         private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.TextBox txtLogradouro;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.Button btnVincularResponsavel;
         private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
         private ucMenuInferior ucMenuInferior1;

@@ -32,6 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoResponsavelBusca));
             this.dgvResponsavelAluno = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GrauParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -47,10 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrauParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavelAluno)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +87,37 @@
             this.dgvResponsavelAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavelAluno_CellClick);
             this.dgvResponsavelAluno.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavelAluno_CellEnter);
             // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Responsavel";
+            this.Column3.HeaderText = "Nome do Responsável";
+            this.Column3.MaxInputLength = 30;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 250;
+            // 
+            // GrauParentesco
+            // 
+            this.GrauParentesco.DataPropertyName = "GrauParentesco";
+            this.GrauParentesco.HeaderText = "Grau de Parentesco";
+            this.GrauParentesco.MaxInputLength = 30;
+            this.GrauParentesco.Name = "GrauParentesco";
+            this.GrauParentesco.Width = 130;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Restricoes";
+            this.Column4.HeaderText = "Restrições";
+            this.Column4.MaxInputLength = 60;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 220;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ResideCom";
+            this.Column2.HeaderText = "Reside Com";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // btnDesconectar
             // 
             this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
@@ -107,7 +138,7 @@
             this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(794, 5);
+            this.lblHelloUsuario.Location = new System.Drawing.Point(760, 7);
             this.lblHelloUsuario.Name = "lblHelloUsuario";
             this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
             this.lblHelloUsuario.TabIndex = 71;
@@ -264,37 +295,6 @@
             this.uMenuImagem1.Name = "uMenuImagem1";
             this.uMenuImagem1.Size = new System.Drawing.Size(375, 201);
             this.uMenuImagem1.TabIndex = 75;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Responsavel";
-            this.Column3.HeaderText = "Nome do Responsável";
-            this.Column3.MaxInputLength = 30;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 250;
-            // 
-            // GrauParentesco
-            // 
-            this.GrauParentesco.DataPropertyName = "GrauParentesco";
-            this.GrauParentesco.HeaderText = "Grau de Parentesco";
-            this.GrauParentesco.MaxInputLength = 30;
-            this.GrauParentesco.Name = "GrauParentesco";
-            this.GrauParentesco.Width = 130;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Restricoes";
-            this.Column4.HeaderText = "Restrições";
-            this.Column4.MaxInputLength = 60;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 220;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ResideCom";
-            this.Column2.HeaderText = "Reside Com";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // telaAlunoResponsavelBusca
             // 

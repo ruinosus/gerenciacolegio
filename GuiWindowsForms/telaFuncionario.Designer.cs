@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaFuncionario));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.cmbEmissorUf = new System.Windows.Forms.ComboBox();
             this.lblEdificio = new System.Windows.Forms.Label();
             this.txtNomeEdificil = new System.Windows.Forms.TextBox();
             this.mskFoneResidencia = new System.Windows.Forms.MaskedTextBox();
@@ -74,7 +75,6 @@
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cmbEmissorUf = new System.Windows.Forms.ComboBox();
             this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
@@ -132,6 +132,48 @@
             this.gpbDadosPessoais.TabIndex = 39;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DADOS DO FUNCIONÁRIO";
+            // 
+            // cmbEmissorUf
+            // 
+            this.cmbEmissorUf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbEmissorUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmissorUf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.cmbEmissorUf.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.cmbEmissorUf.FormattingEnabled = true;
+            this.cmbEmissorUf.Items.AddRange(new object[] {
+            "",
+            "AC",
+            "AL",
+            "AM",
+            "AP",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MG",
+            "MS",
+            "MT",
+            "PA",
+            "PB",
+            "PE",
+            "PI",
+            "PR",
+            "RJ",
+            "RN",
+            "RO",
+            "RR",
+            "RS",
+            "SC",
+            "SE",
+            "SP",
+            "TO "});
+            this.cmbEmissorUf.Location = new System.Drawing.Point(452, 114);
+            this.cmbEmissorUf.MaxLength = 2;
+            this.cmbEmissorUf.Name = "cmbEmissorUf";
+            this.cmbEmissorUf.Size = new System.Drawing.Size(50, 24);
+            this.cmbEmissorUf.TabIndex = 77;
             // 
             // lblEdificio
             // 
@@ -800,7 +842,7 @@
             this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(922, 12);
+            this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
             this.btnDesconectar.TabIndex = 87;
@@ -814,7 +856,7 @@
             this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(783, 12);
+            this.lblHelloUsuario.Location = new System.Drawing.Point(760, 7);
             this.lblHelloUsuario.Name = "lblHelloUsuario";
             this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
             this.lblHelloUsuario.TabIndex = 86;
@@ -836,48 +878,6 @@
             // errorProviderTela
             // 
             this.errorProviderTela.ContainerControl = this;
-            // 
-            // cmbEmissorUf
-            // 
-            this.cmbEmissorUf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbEmissorUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEmissorUf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.cmbEmissorUf.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.cmbEmissorUf.FormattingEnabled = true;
-            this.cmbEmissorUf.Items.AddRange(new object[] {
-            "",
-            "AC",
-            "AL",
-            "AM",
-            "AP",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MG",
-            "MS",
-            "MT",
-            "PA",
-            "PB",
-            "PE",
-            "PI",
-            "PR",
-            "RJ",
-            "RN",
-            "RO",
-            "RR",
-            "RS",
-            "SC",
-            "SE",
-            "SP",
-            "TO "});
-            this.cmbEmissorUf.Location = new System.Drawing.Point(452, 114);
-            this.cmbEmissorUf.MaxLength = 2;
-            this.cmbEmissorUf.Name = "cmbEmissorUf";
-            this.cmbEmissorUf.Size = new System.Drawing.Size(50, 24);
-            this.cmbEmissorUf.TabIndex = 77;
             // 
             // ucMenuImagemFunc1
             // 

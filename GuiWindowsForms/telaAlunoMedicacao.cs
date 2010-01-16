@@ -439,11 +439,7 @@ namespace GuiWindowsForms
             cmbGrupoSanguineo.Select();
         }
 
-        private void telaAlunoMedicacao_Activated(object sender, EventArgs e)
-        {
 
-
-        }
 
     }
 }
