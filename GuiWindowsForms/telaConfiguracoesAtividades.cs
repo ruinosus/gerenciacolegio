@@ -1159,7 +1159,7 @@ namespace GuiWindowsForms
                     if (ckbDomingo.Checked == false && ckbSegunda.Checked == false && ckbTerca.Checked == false &&
                         ckbQuarta.Checked == false && ckbQuinta.Checked == false && ckbSexta.Checked == false && ckbSabado.Checked == false)
                     {
-                        errorProviderTela.SetError(txtValor, "Informe o dia da semana");
+                        errorProviderTela.SetError(ckbSabado, "Informe o dia da semana");
                         return;
                     }
                     if (ckbDomingo.Checked == true)
@@ -1266,7 +1266,7 @@ namespace GuiWindowsForms
                     if (ckbDomingo.Checked == false && ckbSegunda.Checked == false && ckbTerca.Checked == false &&
                         ckbQuarta.Checked == false && ckbQuinta.Checked == false && ckbSexta.Checked == false && ckbSabado.Checked == false)
                     {
-                        errorProviderTela.SetError(txtValor, "Informe o dia da semana");
+                        errorProviderTela.SetError(ckbSabado, "Informe o dia da semana");
                         return;
                     }
                     if (ckbDomingo.Checked == true)
@@ -1298,11 +1298,11 @@ namespace GuiWindowsForms
                         atividadeTurmaControlador.Confirmar();
                         linhaSelecionadaGrid = -1;
 
-                        MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_INCLUIDA, "Colégio Conhecer - Inserir Atividade - Turma");
+                        MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_INCLUIDA, "Colégio Conhecer");
                     }
                     else
                     {
-                        MessageBox.Show("A turma já existe na base de dados", "Colégio Conhecer - Inserir Atividade - Turma");
+                        MessageBox.Show("A turma já existe na base de dados", "Colégio Conhecer");
                     }
                 }
                 catch (Exception ex)
