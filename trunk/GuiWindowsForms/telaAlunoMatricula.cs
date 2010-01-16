@@ -14,6 +14,7 @@ using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloMatricula.Constantes;
 using Negocios.ModuloBoletoMensalidade.Processos;
 using System.Globalization;
+using Negocios.ModuloBasico.Enums;
 
 namespace GuiWindowsForms
 {
@@ -251,9 +252,12 @@ namespace GuiWindowsForms
 
             cmbSerie.DataSource = listaSalaAuxiliar;
 
+            Desconto d = new Desconto();
+            d.Status = (int)Status.Ativo;
+
             listaDescontoAux = new List<Desconto>();
 
-            listaDescontoAux = descontoControlador.Consultar();
+            listaDescontoAux = descontoControlador.Consultar(d, TipoPesquisa.E);
             cmbDesconto.DataSource = listaDescontoAux;
             cmbDesconto.DisplayMember = "Descricao";
 
@@ -454,7 +458,11 @@ namespace GuiWindowsForms
             listaSalaPeriodo = new List<SalaPeriodo>();
             listaSalaAuxiliar = new List<SalaAuxiliar>();
 
-            listaSalaPeriodo = salaPeriodoControlador.Consultar();
+            SalaPeriodo sl = new SalaPeriodo();
+            sl.Status = (int)Status.Ativo;
+
+
+            listaSalaPeriodo = salaPeriodoControlador.Consultar(sl, TipoPesquisa.E);
 
             foreach (SalaPeriodo a in listaSalaPeriodo)
             {
@@ -523,6 +531,24 @@ namespace GuiWindowsForms
                 uMenuImagem1.carregaAluno(alunoMatriculaAux);
                 geraNumeroMatricula(Convert.ToInt32(alunoMatriculaAux.ID));
             }
+
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+
+            descontoControlador = DescontoProcesso.Instance;
+            carregaComboSerie();
+
+            cmbSerie.DataSource = listaSalaAuxiliar;
+
+            Desconto d = new Desconto();
+            d.Status = (int)Status.Ativo;
+
+            listaDescontoAux = new List<Desconto>();
+
+            listaDescontoAux = descontoControlador.Consultar(d, TipoPesquisa.E);
+            cmbDesconto.DataSource = listaDescontoAux;
+            cmbDesconto.DisplayMember = "Descricao";
+
+            carregarValorTotal();
         }
     }
 

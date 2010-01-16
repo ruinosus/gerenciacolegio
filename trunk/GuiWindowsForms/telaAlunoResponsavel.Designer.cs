@@ -319,9 +319,9 @@
             this.lblFoneResidencia.AutoSize = true;
             this.lblFoneResidencia.Location = new System.Drawing.Point(237, 352);
             this.lblFoneResidencia.Name = "lblFoneResidencia";
-            this.lblFoneResidencia.Size = new System.Drawing.Size(75, 13);
+            this.lblFoneResidencia.Size = new System.Drawing.Size(43, 13);
             this.lblFoneResidencia.TabIndex = 19;
-            this.lblFoneResidencia.Text = "Fone Resid:";
+            this.lblFoneResidencia.Text = "Fone :";
             // 
             // mskCep
             // 

@@ -50,16 +50,16 @@ namespace GuiWindowsForms.User_Control
 
         private void btnMatricula_Click(object sender, EventArgs e)
         {
-              Memoria memoria = Memoria.Instance;
-              if (memoria.Aluno != null)
-              {
-                  if (EventoAbrirTelaMatricula != null)
-                      EventoAbrirTelaMatricula();
-              }
-              else
-              {
-                  MessageBox.Show("Só é possivel acessar matrícula com um aluno em uso a ser matriculado, cadastre ou selecione um aluno para então matriculá-lo.");
-              }
+            Memoria memoria = Memoria.Instance;
+            if (memoria.Aluno != null)
+            {
+                if (EventoAbrirTelaMatricula != null)
+                    EventoAbrirTelaMatricula();
+            }
+            else
+            {
+                MessageBox.Show("Só é possivel acessar matrícula com um aluno em uso a ser matriculado, cadastre ou selecione um aluno para então matriculá-lo.");
+            }
 
         }
 
@@ -75,8 +75,17 @@ namespace GuiWindowsForms.User_Control
 
         private void btnInfoMedica_Click(object sender, EventArgs e)
         {
-            if (EventoAbrirTelaMedica != null)
-                EventoAbrirTelaMedica();
+            Memoria memoria = Memoria.Instance;
+            if (memoria.Aluno != null)
+            {
+                if (EventoAbrirTelaMedica != null)
+                    EventoAbrirTelaMedica();
+            }
+            else
+            {
+                MessageBox.Show("Só é possivel acessar informações médicas com um aluno cadastrado, cadastre ou selecione um aluno para modificar suas informações médicas.");
+            }
+
         }
 
         /// <summary>
@@ -131,7 +140,7 @@ namespace GuiWindowsForms.User_Control
         {
             formAux = form;
 
-            if(formAux.Equals(telaAluno.getInstancia()))
+            if (formAux.Equals(telaAluno.getInstancia()))
             {
                 controlaBotoesMenu(telaAluno.getInstancia());
                 this.btnDados.BackgroundImage = global::GuiWindowsForms.Properties.Resources.dados_73x74;
@@ -269,7 +278,7 @@ namespace GuiWindowsForms.User_Control
             }
 
         }
-         
+
         #endregion
 
         #region Controle de mudança das figuras e exibição dos textos das mesmas

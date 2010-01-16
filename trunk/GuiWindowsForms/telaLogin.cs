@@ -90,10 +90,19 @@ namespace GuiWindowsForms
                     }
                     else
                     {
-                        this.Hide();
-                        Program.ultimaTela = 9;
-                        telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
-                        telaalunoprincipal.Show();
+                        if (txtLogin.Text == "conhecer" & txtSenha.Text == "conhecer")
+                        {
+                            this.Hide();
+                            Program.ultimaTela = 9;
+                            telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+                            telaalunoprincipal.Show();
+                        }
+                        else
+                        {
+                            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                            errorProviderTela.SetError(txtLogin, "Login errado");
+                            throw new Exception("Dados inexistentes, insira os dados corretamente.");
+                        }
                     }
                 }
             }
@@ -214,10 +223,20 @@ namespace GuiWindowsForms
                     }
                     else
                     {
-                        this.Hide();
-                        Program.ultimaTela = 9;
-                        telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
-                        telaalunoprincipal.Show();
+                        if (txtLogin.Text == "conhecer" & txtSenha.Text == "conhecer" )
+                        {
+                            this.Hide();
+                            Program.ultimaTela = 9;
+                            telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+                            telaalunoprincipal.Show();
+                        }
+                        else 
+                        {
+                            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                            errorProviderTela.SetError(txtLogin, "Login errado");
+                            throw new Exception("Dados inexistentes, insira os dados corretamente.");
+                        }
+  
                     }
                 }
             }
@@ -228,6 +247,11 @@ namespace GuiWindowsForms
             }
 
             #endregion
+        }
+
+        private void txtLogin_TextChanged_1(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
         }
 
         //private void txtLogin_Enter_1(object sender, EventArgs e)
