@@ -39,11 +39,11 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Percentual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Percentual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
@@ -174,6 +174,24 @@
             this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MaxInputLength = 50;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 400;
+            // 
+            // Percentual
+            // 
+            this.Percentual.DataPropertyName = "Percentual";
+            this.Percentual.HeaderText = "Percentual";
+            this.Percentual.MaxInputLength = 30;
+            this.Percentual.Name = "Percentual";
+            this.Percentual.ReadOnly = true;
+            this.Percentual.Width = 170;
+            // 
             // lblHelloUsuario
             // 
             this.lblHelloUsuario.AutoSize = true;
@@ -203,24 +221,6 @@
             // errorProviderTela
             // 
             this.errorProviderTela.ContainerControl = this;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.MaxInputLength = 50;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 400;
-            // 
-            // Percentual
-            // 
-            this.Percentual.DataPropertyName = "Percentual";
-            this.Percentual.HeaderText = "Percentual";
-            this.Percentual.MaxInputLength = 30;
-            this.Percentual.Name = "Percentual";
-            this.Percentual.ReadOnly = true;
-            this.Percentual.Width = 170;
             // 
             // ucMenuConfiguracoesEsquerda1
             // 
@@ -273,6 +273,7 @@
             this.MinimizeBox = false;
             this.Name = "telaConfiguracoesDescontoMatricula";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaConfiguracoesDescontoMatricula_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoesDescontoMatricula_FormClosing);
             this.gpbSerie.ResumeLayout(false);
