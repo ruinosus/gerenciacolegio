@@ -19,18 +19,15 @@ namespace GuiWindowsForms
 
         private Image imagemAuxiliar = null;
 
-        /// <summary>
-        /// Método para carregar dados do aluno
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// 
 
+        #region LIMPAR FIGURA
         public void limparFigura()
         {
             pctImagem.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
         }
-        
+        #endregion
+
+        #region CARREGA RESPONSAVEL
         public void carregaResponsavel(Responsavel responsavel)
         {
             if (responsavel != null)
@@ -54,12 +51,16 @@ namespace GuiWindowsForms
                 lblSerie.Text = "";
             }
         }
+        #endregion
 
+        #region OCULTAR BOTAO ADICIONAR IMAGEM
         public void ocultarBotaoAdicionarImagem()
         {
             btnAdicionarImagem.Visible = false;
         }
+        #endregion
 
+        #region RETORNA RESPONSAVEL
         public Responsavel retornaResponsavel(Responsavel responsavel)
         {
             if (pctImagem.Image != null)
@@ -69,13 +70,14 @@ namespace GuiWindowsForms
 
             return responsavel;
         }
+        #endregion
 
+        #region CARREGA ALUNO
         /// <summary>
         /// Método para carregar dados do aluno
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         public void carregaAluno(Aluno aluno)
         {
             if (aluno != null)
@@ -99,7 +101,9 @@ namespace GuiWindowsForms
                 lblSerie.Text = "";
             }
         }
+        #endregion
 
+        #region RETORNA ALUNO
         public Aluno retornaAluno(Aluno aluno)
         {
             if (pctImagem.Image != null)
@@ -109,21 +113,25 @@ namespace GuiWindowsForms
             
             return aluno;
         }
+        #endregion
 
+        #region ADICIONAR IMAGEM
         /// <summary>
         /// Método para adicionar uma imagem
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         /// 
-
         private void btnAdicionarImagem_Click(object sender, EventArgs e)
         {
+
             pctImagem.SizeMode = PictureBoxSizeMode.StretchImage;
             pctImagem.Image = retornarImagem();
             imagemAuxiliar = pctImagem.Image;
         }
+        #endregion
 
+        #region RETORNAR IMAGEM
         /// <summary>
         /// Função que retorna a imagem e chama a caixa de diálogo para associação.
         /// </summary>
@@ -156,7 +164,9 @@ namespace GuiWindowsForms
 
             return imagem;
         }
+        #endregion
 
+        #region CONVERTE ARRAY DE BYTE PARA IMAGEM
         /// <summary>
         /// Função que converte de um array de byte para uma imagem
         /// </summary>
@@ -171,7 +181,9 @@ namespace GuiWindowsForms
 
             return Image.FromStream(ms, true);
         }
+        #endregion
 
+        #region CONVERTE IMAGEM PARA ARRAY DE BYTE
         /// <summary>
         /// Função que converte de uma imagem para um array de byte
         /// </summary>
@@ -187,5 +199,7 @@ namespace GuiWindowsForms
             return ms.ToArray();
 
         }
+        #endregion
+
     }
 }

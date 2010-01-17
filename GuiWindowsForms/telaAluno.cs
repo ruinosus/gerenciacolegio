@@ -16,7 +16,6 @@ namespace GuiWindowsForms
 {
     public partial class telaAluno : Form
     {
-
         Aluno aluno = new Aluno();
         IAlunoProcesso alunoControlador = AlunoProcesso.Instance;
 
@@ -31,13 +30,13 @@ namespace GuiWindowsForms
         private static bool IsShown = false;
         #endregion
 
-        #region INSTANCIA TELA ALUNO 
+        #region INSTANCIA TELA ALUNO
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso.
         /// Evita abertura de múltiplas instâncias
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
-        
+
         public static telaAluno getInstancia()
         {
             if (telaaluno == null)
@@ -52,7 +51,7 @@ namespace GuiWindowsForms
         /// <summary>
         /// Construtor da tela
         /// </summary>
-        
+
         public telaAluno()
         {
             InitializeComponent();
@@ -162,7 +161,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void txtLogradouro_Leave(object sender, EventArgs e)
         {
-
+            txtLogradouro.BackColor = System.Drawing.Color.White;
         }
 
         /// <summary>
@@ -504,7 +503,7 @@ namespace GuiWindowsForms
             uMenuLateral1.verificaTela(telaaluno);
         }
         #endregion
-        
+
         #region EVENTO CADASTRAR
 
         private void ucAluno1_EventoCadastrar()
@@ -595,7 +594,7 @@ namespace GuiWindowsForms
                 //    return;
                 //}
 
-                #endregion 
+                #endregion
 
                 #region VALIDA - BAIRRO
 
@@ -607,7 +606,7 @@ namespace GuiWindowsForms
                 //}
                 aluno.Bairro = txtBairro.Text;
 
-                #endregion 
+                #endregion
 
                 #region VALIDA - CIDADE
 
@@ -632,7 +631,7 @@ namespace GuiWindowsForms
                 aluno.Cep = mskCep.Text;
 
                 #endregion
-        
+
                 #region VALIDA - FONE RESIDENCIA
 
                 //if (mskFoneResidencia.MaskCompleted == false)
@@ -671,7 +670,7 @@ namespace GuiWindowsForms
                 aluno.Nacionalidade = cmbNacionalidade.Text;
                 aluno.Naturalidade = txtNaturalidade.Text;
                 aluno.Uf = cmbUf.Text;
-                
+
                 /*
                  * Perfil temporário para testes, retirar quando for concluida a implementação do perfil
                  */
@@ -754,12 +753,9 @@ namespace GuiWindowsForms
         #region LOAD
         private void uMenuImagem1_Load(object sender, EventArgs e)
         {
-            limparTelaAluno();
             cmbUf.DataSource = estados;
-            //aluno.ID = 7;
-            //aluno = alunoControlador.Consultar(aluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
-            //uMenuImagem1.carregaAluno(aluno);
-            //carregarAluno();
+            uMenuImagem1.limparFigura();
+
         }
 
         #endregion
@@ -926,7 +922,7 @@ namespace GuiWindowsForms
 
             foreach (Aluno a in listaAluno)
             {
-                if ((a.Nome==alunoAux.Nome) && (a.Nascimento == alunoAux.Nascimento))
+                if ((a.Nome == alunoAux.Nome) && (a.Nascimento == alunoAux.Nascimento))
                 {
                     testa = true;
                 }
@@ -936,18 +932,19 @@ namespace GuiWindowsForms
 
         private void telaAluno_Activated(object sender, EventArgs e)
         {
-                Memoria memoria = Memoria.Instance;
-                if (memoria.Aluno != null)
-                {
-                    aluno = memoria.Aluno;
-                    uMenuImagem1.carregaAluno(aluno);
-                    carregarAluno();
-                }
-                else
-                {
-                    limparTelaAluno();
-                }
-                txtNome.Focus();
+            Memoria memoria = Memoria.Instance;
+            if (memoria.Aluno != null)
+            {
+                aluno = memoria.Aluno;
+                uMenuImagem1.carregaAluno(aluno);
+                carregarAluno();
+            }
+            else
+            {
+                limparTelaAluno();
+
+            }
+            txtNome.Focus();
         }
 
         #region SELECIONA CIDADE
@@ -995,6 +992,11 @@ namespace GuiWindowsForms
         {
             limparTelaAluno();
             txtNome.Focus();
+        }
+
+        private void uMenuImagem1_EventoImagem()
+        {
+
         }
 
 
