@@ -25,4 +25,15 @@ namespace Negocios.ModuloBasico.Enums
         Inativo = 0,
         Ativo = 1
     }
+
+    /// <summary>
+    /// Enum que representa os status do Banco.
+    /// </summary>
+    public enum StatusBanco
+    {
+        Inativo = 1,
+        Inclusao,
+        Alteracao,
+        Navegacao
+    }   
 }

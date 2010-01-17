@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Negocios.ModuloBasico.Enums;
 
 namespace Negocios.ModuloBasico.VOs
 {
@@ -11,5 +12,6 @@ namespace Negocios.ModuloBasico.VOs
         public Matricula Matricula{ get; set; }
         public Aluno Aluno { get; set; }
         public Funcionario Funcionario{ get; set; }
+        public StatusBanco Status { get; set; }
     }
 }
