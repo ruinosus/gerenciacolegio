@@ -676,6 +676,7 @@ namespace GuiWindowsForms
 
                 #endregion
 
+                responsavel.FoneOpcional = mskFoneOpcional.Text;
                 responsavel.Uf = cmbUf.Text;
                 responsavel.Nascimento = dtpNascimento.Value;
                 responsavel.Edificio = txtNomeEdificil.Text;
@@ -865,11 +866,13 @@ namespace GuiWindowsForms
             mskCep.Clear();
             mskCpf.Clear();
             mskFoneResidencia.Clear();
+            mskFoneOpcional.Clear();
             mskFoneTrabalho.Clear();
             cmbUf.Text = "";
             rdbFem.Checked = false;
             rdbMasc.Checked = false;
             dtpNascimento.Value = DateTime.Now;
+            
             ucMenuSuper.limparFigura();
         }
 
@@ -919,6 +922,53 @@ namespace GuiWindowsForms
                 }
             }
             return testa;
+        }
+
+        private void cmbUf_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cmbUf.Text == "") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "AC") { txtCidade.Text = "RIO BRANCO"; }
+            if (cmbUf.Text == "AL") { txtCidade.Text = "MACEIO"; }
+            if (cmbUf.Text == "AM") { txtCidade.Text = "MANAUS"; }
+            if (cmbUf.Text == "AP") { txtCidade.Text = "MACAPÁ"; }
+            if (cmbUf.Text == "BA") { txtCidade.Text = "SALVADOR"; }
+            if (cmbUf.Text == "CE") { txtCidade.Text = "FORTALEZA"; }
+            if (cmbUf.Text == "DF") { txtCidade.Text = "BRASÍLIA"; }
+            if (cmbUf.Text == "ES") { txtCidade.Text = "VITÓRIA"; }
+            if (cmbUf.Text == "GO") { txtCidade.Text = "GOIÂNIA"; }
+            if (cmbUf.Text == "MA") { txtCidade.Text = "SÃO LUIZ"; }
+            if (cmbUf.Text == "MG") { txtCidade.Text = "BELO HORIZONTE"; }
+            if (cmbUf.Text == "MS") { txtCidade.Text = "CAMPO GRANDE"; }
+            if (cmbUf.Text == "MT") { txtCidade.Text = "CUIABÁ"; }
+            if (cmbUf.Text == "PA") { txtCidade.Text = "BELÉM"; }
+            if (cmbUf.Text == "PB") { txtCidade.Text = "JOÃO PESSOA"; }
+            if (cmbUf.Text == "PE") { txtCidade.Text = "RECIFE"; }
+            if (cmbUf.Text == "PI") { txtCidade.Text = "TEREZINA"; }
+            if (cmbUf.Text == "PR") { txtCidade.Text = "PARANÁ"; }
+            if (cmbUf.Text == "RJ") { txtCidade.Text = "RIO DE JANEIRO"; }
+            if (cmbUf.Text == "RN") { txtCidade.Text = "NATAL"; }
+            if (cmbUf.Text == "RO") { txtCidade.Text = "PORTO VELHO"; }
+            if (cmbUf.Text == "RR") { txtCidade.Text = "BOA VISTA"; }
+            if (cmbUf.Text == "RS") { txtCidade.Text = "PORTO ALEFRE"; }
+            if (cmbUf.Text == "SC") { txtCidade.Text = "FLORIANÓPOLIS"; }
+            if (cmbUf.Text == "SE") { txtCidade.Text = "ARACAJÚ"; }
+            if (cmbUf.Text == "SP") { txtCidade.Text = "SÃO PAULO"; }
+            if (cmbUf.Text == "TO") { txtCidade.Text = "PALMAS"; }
+        }
+
+        private void cmbUf_MouseLeave(object sender, EventArgs e)
+        {
+            cmbUf.BackColor = System.Drawing.Color.White;
+        }
+
+        private void cmbUf_MouseEnter(object sender, EventArgs e)
+        {
+            cmbUf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+        }
+
+        private void cmbUf_TextChanged_1(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
         }
 
 

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoResponsavel));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.mskFoneOpcional = new System.Windows.Forms.MaskedTextBox();
+            this.lblFone2 = new System.Windows.Forms.Label();
             this.lblEdificio = new System.Windows.Forms.Label();
             this.txtNomeEdificil = new System.Windows.Forms.TextBox();
             this.cmbUf = new System.Windows.Forms.ComboBox();
@@ -69,8 +71,6 @@
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.lblFone2 = new System.Windows.Forms.Label();
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.ucAluno1 = new GuiWindowsForms.ucMenuInferior();
             this.ucMenuSuper = new GuiWindowsForms.uMenuImagem();
@@ -81,7 +81,7 @@
             // gpbDadosPessoais
             // 
             this.gpbDadosPessoais.BackColor = System.Drawing.Color.Transparent;
-            this.gpbDadosPessoais.Controls.Add(this.maskedTextBox1);
+            this.gpbDadosPessoais.Controls.Add(this.mskFoneOpcional);
             this.gpbDadosPessoais.Controls.Add(this.lblFone2);
             this.gpbDadosPessoais.Controls.Add(this.lblEdificio);
             this.gpbDadosPessoais.Controls.Add(this.txtNomeEdificil);
@@ -126,6 +126,25 @@
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DADOS DO RESPONSÁVEL";
             // 
+            // mskFoneOpcional
+            // 
+            this.mskFoneOpcional.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.mskFoneOpcional.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.mskFoneOpcional.Location = new System.Drawing.Point(357, 317);
+            this.mskFoneOpcional.Mask = "(99) 0000-0000";
+            this.mskFoneOpcional.Name = "mskFoneOpcional";
+            this.mskFoneOpcional.Size = new System.Drawing.Size(101, 20);
+            this.mskFoneOpcional.TabIndex = 33;
+            // 
+            // lblFone2
+            // 
+            this.lblFone2.AutoSize = true;
+            this.lblFone2.Location = new System.Drawing.Point(252, 319);
+            this.lblFone2.Name = "lblFone2";
+            this.lblFone2.Size = new System.Drawing.Size(99, 13);
+            this.lblFone2.TabIndex = 32;
+            this.lblFone2.Text = "Fone (opcional):";
+            // 
             // lblEdificio
             // 
             this.lblEdificio.AutoSize = true;
@@ -157,6 +176,10 @@
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.Size = new System.Drawing.Size(58, 21);
             this.cmbUf.TabIndex = 23;
+            this.cmbUf.SelectedIndexChanged += new System.EventHandler(this.cmbUf_SelectedIndexChanged_1);
+            this.cmbUf.MouseEnter += new System.EventHandler(this.cmbUf_MouseEnter);
+            this.cmbUf.MouseLeave += new System.EventHandler(this.cmbUf_MouseLeave);
+            this.cmbUf.TextChanged += new System.EventHandler(this.cmbUf_TextChanged_1);
             // 
             // txtComplemento
             // 
@@ -525,25 +548,6 @@
             // 
             this.errorProviderTela.ContainerControl = this;
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.maskedTextBox1.Location = new System.Drawing.Point(357, 317);
-            this.maskedTextBox1.Mask = "(99) 0000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(101, 20);
-            this.maskedTextBox1.TabIndex = 33;
-            // 
-            // lblFone2
-            // 
-            this.lblFone2.AutoSize = true;
-            this.lblFone2.Location = new System.Drawing.Point(252, 319);
-            this.lblFone2.Name = "lblFone2";
-            this.lblFone2.Size = new System.Drawing.Size(99, 13);
-            this.lblFone2.TabIndex = 32;
-            this.lblFone2.Text = "Fone (opcional):";
-            // 
             // uMenuLateral1
             // 
             this.uMenuLateral1.BackColor = System.Drawing.Color.Transparent;
@@ -652,7 +656,7 @@
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mskFoneOpcional;
         private System.Windows.Forms.Label lblFone2;
     }
 }

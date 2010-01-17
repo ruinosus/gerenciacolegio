@@ -1058,6 +1058,7 @@ namespace Negocios.ModuloResponsavel.Repositorios
                 responsavelAux.Sexo = responsavel.Sexo;
                 responsavelAux.Status= responsavel.Status;
                 responsavelAux.Uf = responsavel.Uf;
+                responsavelAux.FoneOpcional = responsavel.FoneOpcional;
 
 
                 Confirmar();
