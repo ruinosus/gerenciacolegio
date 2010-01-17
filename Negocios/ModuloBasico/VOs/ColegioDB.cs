@@ -227,7 +227,7 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 
 		private string _alergico;
 		[DebuggerNonUserCode]
-		[Column(Storage = "_alergico", Name = "Alergico", DbType = "varchar(100)", AutoSync = AutoSync.Never)]
+		[Column(Storage = "_alergico", Name = "Alergico", DbType = "varchar(300)", AutoSync = AutoSync.Never)]
 		public string Alergico
 		{
 			get
@@ -9079,6 +9079,32 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 		}
 
 		#endregion
+
+        #region string FoneOpcional
+
+        private string _foneOpcional;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_foneOpcional", Name = "FoneOpcional", DbType = "varchar(14)", AutoSync = AutoSync.Never)]
+        public string FoneOpcional
+        {
+            get
+            {
+                return _foneOpcional;
+            }
+            set
+            {
+                if (value != _foneOpcional)
+                {
+                    OnFoneChanging(value);
+                    SendPropertyChanging();
+                    _foneOpcional = value;
+                    SendPropertyChanged("FoneOpcional");
+                    OnFoneChanged();
+                }
+            }
+        }
+
+        #endregion
 
 		#region string FoneTrabalho
 

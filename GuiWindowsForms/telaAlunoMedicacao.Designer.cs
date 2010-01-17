@@ -272,7 +272,7 @@
             // txtAlergico
             // 
             this.txtAlergico.Location = new System.Drawing.Point(51, 38);
-            this.txtAlergico.MaxLength = 50;
+            this.txtAlergico.MaxLength = 300;
             this.txtAlergico.Multiline = true;
             this.txtAlergico.Name = "txtAlergico";
             this.txtAlergico.Size = new System.Drawing.Size(716, 40);
