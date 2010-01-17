@@ -125,7 +125,7 @@
             // btnAdicionarImagem
             // 
             this.btnAdicionarImagem.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar_final_32x32;
+            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
             this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
             this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

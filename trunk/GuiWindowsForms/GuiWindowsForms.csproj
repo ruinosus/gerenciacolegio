@@ -408,22 +408,7 @@
     <None Include="Resources\modelo tela-iconemenor.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Search_76x761.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icone_aluno_142x115.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icone_prof_142x115.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icone_aluno_142x1152.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icone_aluno_142x115_over.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icone_prof_142x115_over.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icone_aluno_142x113.png" />
@@ -442,15 +427,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icone_desconectar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icone_cadastrar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icone_cadastrar1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icone_cadastrar2.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -485,15 +461,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\7004_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\webdev-ok-128x128.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons7069.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\adicionar_final_32x32.png" />
   </ItemGroup>
   <ItemGroup>
@@ -501,27 +468,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\voltar_final_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\injecao_72x72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\responsavel_72x72_2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\academico_72x72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dados_72x72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\responsavel_72x72.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons7897.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\financeiro_72x72.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\academico_73x72.png" />
@@ -554,22 +500,10 @@
     <None Include="Resources\responsavel_73x66_hover.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ok_32x32_tipo2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ok_32x32_tipo2_final.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\btn_ok_cadastrar_110x49.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btn_ok_cadastrar_110x50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\btn_ok_cadastrar_110x52.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\configuracoes_142x113.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\configuracoes_137x101.png" />
@@ -608,9 +542,6 @@
     <None Include="Resources\matricula_68x69_disabled.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons7021.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\financeiro_gnd_120x110.png" />
   </ItemGroup>
   <ItemGroup>
@@ -618,18 +549,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\configuracoes_137x101_hover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons5488.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons6927.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons7018.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons7780.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\conf_acesso_64x80.png" />
@@ -689,15 +608,6 @@
     <None Include="Resources\add_matricula_47x49_hover.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\adicionar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\impressora.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Search2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\financeiro_busca_73x75.png" />
   </ItemGroup>
   <ItemGroup>
@@ -713,24 +623,6 @@
     <None Include="Resources\atividade_mais.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\func_dados.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\func_dependentes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\func_documentos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\func_profissional.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons7070.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\menos.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\conf_mais.png" />
   </ItemGroup>
   <ItemGroup>
@@ -744,15 +636,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\func_dados_71x62_hover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\func_dependentes_71x62.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\func_dependentes_71x62_disabled.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\func_dependentes_71x62_hover.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\func_profissional_64x71.png" />
@@ -791,9 +674,6 @@
     <None Include="Resources\btn_ok_cadastrar_145x52.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Search_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Search_32x32_final.png" />
   </ItemGroup>
   <ItemGroup>
@@ -804,9 +684,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\conf_serie_64x70_disabled_h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\vincular.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\vincular_final.png" />
@@ -843,9 +720,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alterar_final.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\alterar.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alterar_branco.png" />
