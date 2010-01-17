@@ -53,9 +53,11 @@
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gpbMatricula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -309,13 +311,22 @@
             // 
             this.errorProviderTela.ContainerControl = this;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox2.TabIndex = 137;
+            this.pictureBox2.TabStop = false;
+            // 
             // telaAlunoMatriculaAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.btnMatriculaSerie);
             this.Controls.Add(this.gpbMatricula);
@@ -336,6 +347,7 @@
             this.gpbMatricula.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,5 +378,6 @@
         private ucMenuInferior ucMenuInferior1;
         private uMenuImagem uMenuImagem1;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

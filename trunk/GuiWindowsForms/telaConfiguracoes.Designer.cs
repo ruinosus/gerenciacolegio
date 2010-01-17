@@ -35,6 +35,8 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHelloUsuario
@@ -116,13 +118,22 @@
             this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
             this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox1.TabIndex = 96;
+            this.pictureBox1.TabStop = false;
+            // 
             // telaConfiguracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor1;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnDesconectar);
@@ -139,6 +150,7 @@
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaConfiguracoes_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoes_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,5 +164,6 @@
         private System.Windows.Forms.Button btnVoltar;
         private GuiWindowsForms.User_Control.ucMenuDireita ucMenuDireita1;
         private GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda ucMenuConfiguracoesEsquerda1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

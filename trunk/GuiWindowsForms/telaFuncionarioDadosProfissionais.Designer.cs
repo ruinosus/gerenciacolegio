@@ -67,8 +67,10 @@
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
             this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpbDadosProfissionais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbDadosProfissionais
@@ -506,13 +508,22 @@
             this.ucMenuLateralFunc1.Load += new System.EventHandler(this.ucMenuLateralFunc1_Load);
             this.ucMenuLateralFunc1.EventoAbrirDadosProfissionais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosProfissionais(this.ucMenuLateralFunc1_EventoAbrirDadosProfissionais);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox1.TabIndex = 136;
+            this.pictureBox1.TabStop = false;
+            // 
             // telaFuncionarioDadosProfissionais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.ucMenuImagemFunc1);
             this.Controls.Add(this.btnImprimir);
@@ -532,6 +543,7 @@
             this.gpbDadosProfissionais.ResumeLayout(false);
             this.gpbDadosProfissionais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,5 +588,6 @@
         private ucMenuInferior ucMenuInferior1;
         private GuiWindowsForms.User_Control.ucMenuLateralFunc ucMenuLateralFunc1;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

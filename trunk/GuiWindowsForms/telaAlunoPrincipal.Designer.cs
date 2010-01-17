@@ -41,6 +41,7 @@
             this.FoneAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.btnFinanceiro = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.btnCadastrarAluno = new System.Windows.Forms.Button();
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnAluno = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -200,6 +200,15 @@
             // 
             this.Column3.Name = "Column3";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox1.TabIndex = 71;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnExcluir
             // 
             this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
@@ -333,15 +342,6 @@
             this.btnAluno.Click += new System.EventHandler(this.btnAluno_Click);
             this.btnAluno.Leave += new System.EventHandler(this.btnAluno_Leave);
             this.btnAluno.Enter += new System.EventHandler(this.btnAluno_Enter);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
-            this.pictureBox1.TabIndex = 71;
-            this.pictureBox1.TabStop = false;
             // 
             // telaAlunoPrincipal
             // 
