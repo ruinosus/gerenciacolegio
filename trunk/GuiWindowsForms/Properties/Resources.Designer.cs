@@ -109,23 +109,9 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap adicionar {
-            get {
-                object obj = ResourceManager.GetObject("adicionar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap adicionar_final_32x32 {
             get {
                 object obj = ResourceManager.GetObject("adicionar_final_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap alterar {
-            get {
-                object obj = ResourceManager.GetObject("alterar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -319,13 +305,6 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap configuracoes_142x113 {
-            get {
-                object obj = ResourceManager.GetObject("configuracoes_142x113", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap dados_73x74 {
             get {
                 object obj = ResourceManager.GetObject("dados_73x74", resourceCulture);
@@ -424,13 +403,6 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap func_dados {
-            get {
-                object obj = ResourceManager.GetObject("func_dados", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap func_dados_71x62 {
             get {
                 object obj = ResourceManager.GetObject("func_dados_71x62", resourceCulture);
@@ -459,41 +431,6 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap func_dependentes {
-            get {
-                object obj = ResourceManager.GetObject("func_dependentes", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap func_dependentes_71x62 {
-            get {
-                object obj = ResourceManager.GetObject("func_dependentes_71x62", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap func_dependentes_71x62_disabled {
-            get {
-                object obj = ResourceManager.GetObject("func_dependentes_71x62_disabled", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap func_dependentes_71x62_hover {
-            get {
-                object obj = ResourceManager.GetObject("func_dependentes_71x62_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap func_documentos {
-            get {
-                object obj = ResourceManager.GetObject("func_documentos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap func_imprimir_50x50 {
             get {
                 object obj = ResourceManager.GetObject("func_imprimir_50x50", resourceCulture);
@@ -504,13 +441,6 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap func_imprimir_50x50_hover {
             get {
                 object obj = ResourceManager.GetObject("func_imprimir_50x50_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap func_profissional {
-            get {
-                object obj = ResourceManager.GetObject("func_profissional", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -592,48 +522,6 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap icons5488 {
-            get {
-                object obj = ResourceManager.GetObject("icons5488", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap icons6927 {
-            get {
-                object obj = ResourceManager.GetObject("icons6927", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap icons7018 {
-            get {
-                object obj = ResourceManager.GetObject("icons7018", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap icons7021 {
-            get {
-                object obj = ResourceManager.GetObject("icons7021", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap icons7780 {
-            get {
-                object obj = ResourceManager.GetObject("icons7780", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap impressora {
-            get {
-                object obj = ResourceManager.GetObject("impressora", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap injecao_73x73 {
             get {
                 object obj = ResourceManager.GetObject("injecao_73x73", resourceCulture);
@@ -693,13 +581,6 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap matricula_73x73 {
             get {
                 object obj = ResourceManager.GetObject("matricula_73x73", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap menos {
-            get {
-                object obj = ResourceManager.GetObject("menos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -774,13 +655,6 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Search_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("Search_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap Search_32x32_final {
             get {
                 object obj = ResourceManager.GetObject("Search_32x32_final", resourceCulture);
@@ -795,23 +669,9 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Search2 {
-            get {
-                object obj = ResourceManager.GetObject("Search2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap simbolo_colegio {
             get {
                 object obj = ResourceManager.GetObject("simbolo_colegio", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap vincular {
-            get {
-                object obj = ResourceManager.GetObject("vincular", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

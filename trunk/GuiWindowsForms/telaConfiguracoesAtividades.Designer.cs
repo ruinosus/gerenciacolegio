@@ -175,7 +175,7 @@
             // 
             // btnAlterarAtividade
             // 
-            this.btnAlterarAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar;
+            this.btnAlterarAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
             this.btnAlterarAtividade.FlatAppearance.BorderSize = 0;
             this.btnAlterarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterarAtividade.Location = new System.Drawing.Point(525, 245);
@@ -230,7 +230,7 @@
             // 
             // btnAdicionarAtividade
             // 
-            this.btnAdicionarAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar;
+            this.btnAdicionarAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar_final_32x32;
             this.btnAdicionarAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarAtividade.FlatAppearance.BorderSize = 0;
             this.btnAdicionarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -245,14 +245,14 @@
             // 
             // btnExcluirAtividade
             // 
-            this.btnExcluirAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.menos;
+            this.btnExcluirAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
             this.btnExcluirAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluirAtividade.FlatAppearance.BorderSize = 0;
             this.btnExcluirAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluirAtividade.Location = new System.Drawing.Point(630, 245);
+            this.btnExcluirAtividade.Location = new System.Drawing.Point(630, 266);
             this.btnExcluirAtividade.Margin = new System.Windows.Forms.Padding(0);
             this.btnExcluirAtividade.Name = "btnExcluirAtividade";
-            this.btnExcluirAtividade.Size = new System.Drawing.Size(32, 32);
+            this.btnExcluirAtividade.Size = new System.Drawing.Size(32, 11);
             this.btnExcluirAtividade.TabIndex = 69;
             this.btnExcluirAtividade.UseVisualStyleBackColor = true;
             this.btnExcluirAtividade.MouseLeave += new System.EventHandler(this.btnExcluirAtividade_MouseLeave);
@@ -261,7 +261,7 @@
             // 
             // btnAdicionarImagem
             // 
-            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar;
+            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar_final_32x32;
             this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarImagem.Enabled = false;
             this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
@@ -359,7 +359,7 @@
             // 
             // btnAlterarAtividadeTurma
             // 
-            this.btnAlterarAtividadeTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar;
+            this.btnAlterarAtividadeTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
             this.btnAlterarAtividadeTurma.FlatAppearance.BorderSize = 0;
             this.btnAlterarAtividadeTurma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterarAtividadeTurma.Location = new System.Drawing.Point(529, 252);
@@ -393,7 +393,7 @@
             // 
             // btnAdicionarTurma
             // 
-            this.btnAdicionarTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar;
+            this.btnAdicionarTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.adicionar_final_32x32;
             this.btnAdicionarTurma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarTurma.FlatAppearance.BorderSize = 0;
             this.btnAdicionarTurma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -406,14 +406,14 @@
             // 
             // btnExcluirTurma
             // 
-            this.btnExcluirTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.menos;
+            this.btnExcluirTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
             this.btnExcluirTurma.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluirTurma.FlatAppearance.BorderSize = 0;
             this.btnExcluirTurma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluirTurma.Location = new System.Drawing.Point(630, 255);
+            this.btnExcluirTurma.Location = new System.Drawing.Point(630, 273);
             this.btnExcluirTurma.Margin = new System.Windows.Forms.Padding(0);
             this.btnExcluirTurma.Name = "btnExcluirTurma";
-            this.btnExcluirTurma.Size = new System.Drawing.Size(32, 32);
+            this.btnExcluirTurma.Size = new System.Drawing.Size(32, 11);
             this.btnExcluirTurma.TabIndex = 130;
             this.btnExcluirTurma.UseVisualStyleBackColor = true;
             this.btnExcluirTurma.Click += new System.EventHandler(this.btnExcluirTurma_Click);

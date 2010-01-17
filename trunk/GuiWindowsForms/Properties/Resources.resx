@@ -199,9 +199,6 @@
   <data name="btn_ok_cadastrar_110x52" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn_ok_cadastrar_110x52.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="configuracoes_142x113" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\configuracoes_142x113.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="configuracoes_137x101" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\configuracoes_137x101.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -238,9 +235,6 @@
   <data name="matricula_68x69_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\matricula_68x69_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons7021" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons7021.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="financeiro_gnd_120x110" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\financeiro_gnd_120x110.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -249,18 +243,6 @@
   </data>
   <data name="configuracoes_137x101_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\configuracoes_137x101_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons5488" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons5488.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons6927" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons6927.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons7018" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons7018.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons7780" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons7780.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="conf_acesso_64x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\conf_acesso_64x80.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,15 +301,6 @@
   <data name="add_matricula_47x49_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_matricula_47x49_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="adicionar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adicionar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="impressora" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\impressora.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Search2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="financeiro_busca_73x75" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\financeiro_busca_73x75.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -343,21 +316,6 @@
   <data name="atividade_mais" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\atividade_mais.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="func_dados" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\func_dados.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="func_dependentes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\func_dependentes.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="func_documentos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\func_documentos.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="func_profissional" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\func_profissional.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="menos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menos.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="conf_mais" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\conf_mais.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -372,15 +330,6 @@
   </data>
   <data name="func_dados_71x62_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\func_dados_71x62_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="func_dependentes_71x62" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\func_dependentes_71x62.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="func_dependentes_71x62_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\func_dependentes_71x62_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="func_dependentes_71x62_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\func_dependentes_71x62_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="func_profissional_64x71" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\func_profissional_64x71.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -418,9 +367,6 @@
   <data name="btn_ok_cadastrar_145x52" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn_ok_cadastrar_145x52.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Search_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Search_32x32_final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_32x32_final.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -432,9 +378,6 @@
   </data>
   <data name="conf_serie_64x70_disabled_h" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\conf_serie_64x70_disabled_h.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="vincular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vincular.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vincular_final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vincular_final.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -450,8 +393,5 @@
   </data>
   <data name="alterar_final" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alterar_final.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="alterar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alterar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
