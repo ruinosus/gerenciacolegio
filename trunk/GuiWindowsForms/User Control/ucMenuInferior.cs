@@ -62,8 +62,6 @@ namespace GuiWindowsForms
         {
             if (EventoCadastrar != null)
                 EventoCadastrar();
-            // MessageBox.Show("Operação realizada com sucesso.");
-
         }
 
         public void exibirMensagem(String texto)
