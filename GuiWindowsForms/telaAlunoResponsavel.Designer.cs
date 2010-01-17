@@ -74,8 +74,10 @@
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.ucAluno1 = new GuiWindowsForms.ucMenuInferior();
             this.ucMenuSuper = new GuiWindowsForms.uMenuImagem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbDadosPessoais
@@ -581,13 +583,22 @@
             this.ucMenuSuper.Size = new System.Drawing.Size(438, 201);
             this.ucMenuSuper.TabIndex = 130;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox1.TabIndex = 138;
+            this.pictureBox1.TabStop = false;
+            // 
             // telaAlunoResponsavel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::GuiWindowsForms.Properties.Resources.modelo_tela_iconemenor;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.uMenuLateral1);
             this.Controls.Add(this.ucAluno1);
             this.Controls.Add(this.btnDesconectar);
@@ -607,6 +618,7 @@
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -658,5 +670,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox mskFoneOpcional;
         private System.Windows.Forms.Label lblFone2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

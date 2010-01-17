@@ -73,8 +73,10 @@ namespace GuiWindowsForms
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gpbDadosPessoais
@@ -766,7 +768,7 @@ namespace GuiWindowsForms
             // btnDesconectar
             // 
             this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconectar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDesconectar.BackgroundImage")));
+            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesconectar.Location = new System.Drawing.Point(941, 9);
@@ -824,13 +826,22 @@ namespace GuiWindowsForms
             this.uMenuImagem1.TabIndex = 73;
             this.uMenuImagem1.Load += new System.EventHandler(this.uMenuImagem1_Load);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox1.TabIndex = 138;
+            this.pictureBox1.TabStop = false;
+            // 
             // telaAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.uMenuLateral1);
             this.Controls.Add(this.cmbSelecionarAluno);
@@ -851,6 +862,7 @@ namespace GuiWindowsForms
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -900,6 +912,7 @@ namespace GuiWindowsForms
         private System.Windows.Forms.ErrorProvider errorProviderTela;
         private uMenuImagem uMenuImagem1;
         private System.Windows.Forms.TextBox txtNaturalidade;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
 
 
