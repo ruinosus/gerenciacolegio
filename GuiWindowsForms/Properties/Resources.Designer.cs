@@ -116,6 +116,13 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap alterar_branco {
+            get {
+                object obj = ResourceManager.GetObject("alterar_branco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap alterar_final {
             get {
                 object obj = ResourceManager.GetObject("alterar_final", resourceCulture);
@@ -550,6 +557,13 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap mais_branco {
+            get {
+                object obj = ResourceManager.GetObject("mais_branco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap matricula_68x69 {
             get {
                 object obj = ResourceManager.GetObject("matricula_68x69", resourceCulture);
@@ -581,6 +595,13 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap matricula_73x73 {
             get {
                 object obj = ResourceManager.GetObject("matricula_73x73", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap menos_branco {
+            get {
+                object obj = ResourceManager.GetObject("menos_branco", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
