@@ -15,7 +15,7 @@ namespace GuiWindowsForms
     public partial class telaAlunoMedicacao : Form
     {
         IAlunoProcesso alunoControlador = AlunoProcesso.Instance;
-        Memoria memoria = new Memoria();
+        Memoria memoria =  Memoria.Instance;
 
         #region SINGLETON DA TELA
         /*
