@@ -236,9 +236,9 @@
     <Compile Include="ModuloDependencia\Repositorios\DependenciaRepositorio.cs" />
     <Compile Include="ModuloDependencia\Repositorios\Interfaces\IDependenciaRepositorio.cs" />
     <Compile Include="ModuloDesconto\Constantes\DescontoConstantes.cs" />
-    <Compile Include="ModuloDesconto\Processos\Interfaces\Excecoes\DescontoNaoAlteradoExcecao.cs" />
-    <Compile Include="ModuloDesconto\Processos\Interfaces\Excecoes\DescontoNaoExcluidoExcecao.cs" />
-    <Compile Include="ModuloDesconto\Processos\Interfaces\Excecoes\DescontoNaoIncluidoExcecao.cs" />
+    <Compile Include="ModuloDesconto\Excecoes\DescontoNaoAlteradoExcecao.cs" />
+    <Compile Include="ModuloDesconto\Excecoes\DescontoNaoExcluidoExcecao.cs" />
+    <Compile Include="ModuloDesconto\Excecoes\DescontoNaoIncluidoExcecao.cs" />
     <Compile Include="ModuloDesconto\Fabricas\DescontoFabrica.cs" />
     <Compile Include="ModuloDesconto\Processos\DescontoProcesso.cs" />
     <Compile Include="ModuloDesconto\Processos\Interfaces\IDescontoProcesso.cs" />
