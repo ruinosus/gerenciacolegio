@@ -34,20 +34,19 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnAdicionarDesconto = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.txtValor = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Percentual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.btnDesconectar = new System.Windows.Forms.Button();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
@@ -57,10 +56,10 @@
             // gpbSerie
             // 
             this.gpbSerie.BackColor = System.Drawing.Color.Transparent;
+            this.gpbSerie.Controls.Add(this.txtValor);
             this.gpbSerie.Controls.Add(this.btnAlterar);
             this.gpbSerie.Controls.Add(this.btnAdicionarDesconto);
             this.gpbSerie.Controls.Add(this.btnExcluir);
-            this.gpbSerie.Controls.Add(this.txtValor);
             this.gpbSerie.Controls.Add(this.lblValor);
             this.gpbSerie.Controls.Add(this.txtDescricao);
             this.gpbSerie.Controls.Add(this.lblDescricao);
@@ -114,16 +113,6 @@
             this.btnExcluir.MouseLeave += new System.EventHandler(this.btnExcluir_MouseLeave);
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             this.btnExcluir.MouseEnter += new System.EventHandler(this.btnExcluir_MouseEnter);
-            // 
-            // txtValor
-            // 
-            this.txtValor.Enabled = false;
-            this.txtValor.Location = new System.Drawing.Point(92, 134);
-            this.txtValor.MaxLength = 10;
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(112, 20);
-            this.txtValor.TabIndex = 4;
-            this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
             // lblValor
             // 
@@ -194,35 +183,27 @@
             this.Percentual.ReadOnly = true;
             this.Percentual.Width = 170;
             // 
-            // lblHelloUsuario
-            // 
-            this.lblHelloUsuario.AutoSize = true;
-            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(760, 7);
-            this.lblHelloUsuario.Name = "lblHelloUsuario";
-            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
-            this.lblHelloUsuario.TabIndex = 128;
-            this.lblHelloUsuario.Text = "Hello Usuário!";
-            // 
-            // btnDesconectar
-            // 
-            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
-            this.btnDesconectar.TabIndex = 129;
-            this.btnDesconectar.Tag = "";
-            this.btnDesconectar.UseVisualStyleBackColor = false;
-            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
-            // 
             // errorProviderTela
             // 
             this.errorProviderTela.ContainerControl = this;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox1.TabIndex = 135;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ucDesconectarLogin1
+            // 
+            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
+            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
+            this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
+            this.ucDesconectarLogin1.TabIndex = 136;
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
             // ucMenuConfiguracoesEsquerda1
             // 
@@ -256,14 +237,14 @@
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             // 
-            // pictureBox1
+            // txtValor
             // 
-            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
-            this.pictureBox1.TabIndex = 135;
-            this.pictureBox1.TabStop = false;
+            this.txtValor.Location = new System.Drawing.Point(92, 134);
+            this.txtValor.MaxLength = 3;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(100, 20);
+            this.txtValor.TabIndex = 71;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // telaConfiguracoesDescontoMatricula
             // 
@@ -271,11 +252,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(990, 680);
+            this.Controls.Add(this.ucDesconectarLogin1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuConfiguracoesEsquerda1);
             this.Controls.Add(this.ucMenuDireita1);
-            this.Controls.Add(this.lblHelloUsuario);
-            this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.gpbSerie);
             this.Controls.Add(this.ucMenuInferior1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -293,21 +273,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox gpbSerie;
-        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Label lblHelloUsuario;
-        private System.Windows.Forms.Button btnDesconectar;
         private GuiWindowsForms.User_Control.ucMenuDireita ucMenuDireita1;
         private GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda ucMenuConfiguracoesEsquerda1;
         private ucMenuInferior ucMenuInferior1;
@@ -317,5 +293,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Percentual;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
+        private System.Windows.Forms.TextBox txtValor;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoPrincipal));
-            this.lblHelloUsuario = new System.Windows.Forms.Label();
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.lblAlunoOculto = new System.Windows.Forms.Label();
             this.lblFuncOculto = new System.Windows.Forms.Label();
@@ -47,25 +46,13 @@
             this.btnFinanceiro = new System.Windows.Forms.Button();
             this.btnConfiguracoes = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnDesconectar = new System.Windows.Forms.Button();
             this.btnCadastrarAluno = new System.Windows.Forms.Button();
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnAluno = new System.Windows.Forms.Button();
+            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblHelloUsuario
-            // 
-            this.lblHelloUsuario.AutoSize = true;
-            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(800, 9);
-            this.lblHelloUsuario.Name = "lblHelloUsuario";
-            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
-            this.lblHelloUsuario.TabIndex = 1;
-            this.lblHelloUsuario.Text = "Hello Usuário!";
             // 
             // txtBusca
             // 
@@ -284,19 +271,6 @@
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // btnDesconectar
-            // 
-            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(950, 7);
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
-            this.btnDesconectar.TabIndex = 7;
-            this.btnDesconectar.UseVisualStyleBackColor = false;
-            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
-            // 
             // btnCadastrarAluno
             // 
             this.btnCadastrarAluno.BackColor = System.Drawing.Color.Transparent;
@@ -343,12 +317,23 @@
             this.btnAluno.Leave += new System.EventHandler(this.btnAluno_Leave);
             this.btnAluno.Enter += new System.EventHandler(this.btnAluno_Enter);
             // 
+            // ucDesconectarLogin1
+            // 
+            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucDesconectarLogin1.Location = new System.Drawing.Point(768, 0);
+            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
+            this.ucDesconectarLogin1.Size = new System.Drawing.Size(220, 39);
+            this.ucDesconectarLogin1.TabIndex = 72;
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
+            // 
             // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(990, 680);
+            this.Controls.Add(this.ucDesconectarLogin1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.dgvAluno);
@@ -361,12 +346,10 @@
             this.Controls.Add(this.lblFuncOculto);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.lblAlunoOculto);
-            this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.btnCadastrarAluno);
             this.Controls.Add(this.btnFuncionario);
             this.Controls.Add(this.btnAluno);
             this.Controls.Add(this.txtBusca);
-            this.Controls.Add(this.lblHelloUsuario);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -387,11 +370,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblHelloUsuario;
         private System.Windows.Forms.TextBox txtBusca;
         private System.Windows.Forms.Button btnAluno;
         private System.Windows.Forms.Button btnFuncionario;
-        private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblAlunoOculto;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnCadastrarAluno;
@@ -409,5 +390,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaNomeAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoneAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAluno;
+        private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
     }
 }

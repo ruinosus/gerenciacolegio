@@ -50,13 +50,12 @@
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
-            this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.btnDesconectar = new System.Windows.Forms.Button();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
@@ -291,6 +290,7 @@
             this.txtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             this.txtValor.Click += new System.EventHandler(this.txtValor_Click);
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // lblValor
             // 
@@ -309,32 +309,6 @@
             this.lblSerie.Size = new System.Drawing.Size(40, 13);
             this.lblSerie.TabIndex = 0;
             this.lblSerie.Text = "Série:";
-            // 
-            // lblHelloUsuario
-            // 
-            this.lblHelloUsuario.AutoSize = true;
-            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(760, 7);
-            this.lblHelloUsuario.Name = "lblHelloUsuario";
-            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
-            this.lblHelloUsuario.TabIndex = 128;
-            this.lblHelloUsuario.Text = "Hello Usuário!";
-            // 
-            // btnDesconectar
-            // 
-            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
-            this.btnDesconectar.TabIndex = 129;
-            this.btnDesconectar.Tag = "";
-            this.btnDesconectar.UseVisualStyleBackColor = false;
-            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
             // errorProviderTela
             // 
@@ -381,17 +355,25 @@
             this.pictureBox1.TabIndex = 135;
             this.pictureBox1.TabStop = false;
             // 
+            // ucDesconectarLogin1
+            // 
+            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
+            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
+            this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
+            this.ucDesconectarLogin1.TabIndex = 136;
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
+            // 
             // telaConfiguracoesSerie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(990, 680);
+            this.Controls.Add(this.ucDesconectarLogin1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuConfiguracoesEsquerda1);
             this.Controls.Add(this.ucMenuDireita1);
-            this.Controls.Add(this.lblHelloUsuario);
-            this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.gpbSerie);
             this.Controls.Add(this.ucMenuInferior1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -409,7 +391,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -422,8 +403,6 @@
         private System.Windows.Forms.Label lblTurno;
         private System.Windows.Forms.ComboBox cmbTurno;
         private System.Windows.Forms.Label lblTurma;
-        private System.Windows.Forms.Label lblHelloUsuario;
-        private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Label lblCiclo;
         private System.Windows.Forms.Button btnExcluir;
         private GuiWindowsForms.User_Control.ucMenuDireita ucMenuDireita1;
@@ -442,5 +421,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cicloCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorCol;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
     }
 }

@@ -254,10 +254,11 @@ namespace GuiWindowsForms
 
                     #region VALIDA - VALOR
 
-                    if (String.IsNullOrEmpty(txtDescricao.Text))
+                    if (String.IsNullOrEmpty(txtValor.Text))
                     {
                         errorProviderTela.SetError(txtValor, "Informe o valor");
                         txtValor.Clear();
+                        txtValor.Text = "";
                         return;
                     }
                     desconto.Percentual = Convert.ToDouble(txtValor.Text);
@@ -311,10 +312,11 @@ namespace GuiWindowsForms
 
                     #region VALIDA - VALOR
 
-                    if (String.IsNullOrEmpty(txtDescricao.Text))
+                    if (String.IsNullOrEmpty(txtValor.Text))
                     {
                         errorProviderTela.SetError(txtValor, "Informe o valor");
                         txtValor.Clear();
+                        txtValor.Text = "";
                         return;
                     }
                     desconto.Percentual = Convert.ToDouble(txtValor.Text);
@@ -408,6 +410,7 @@ namespace GuiWindowsForms
         {
             txtDescricao.Clear();
             txtValor.Clear();
+            txtValor.Text = "";
         }
         #endregion
 
@@ -560,5 +563,21 @@ namespace GuiWindowsForms
             verificaButton = 2;
         }
         #endregion
+
+        private void ucDesconectarLogin1_EventoDesconectar()
+        {
+            Program.ultimaTela = 9;
+            this.Close();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }        
 }

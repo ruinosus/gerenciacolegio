@@ -492,5 +492,13 @@ namespace GuiWindowsForms
             }
         }
 
+        private void ucDesconectarLogin1_EventoDesconectar()
+        {
+            Program.ultimaTela = 9;
+            this.Close();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
+        }
+
     }
 }

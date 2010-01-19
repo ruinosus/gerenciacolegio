@@ -973,6 +973,19 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
 
+        private void ucDesconectarLogin1_EventoDesconectar()
+        {
+            Program.ultimaTela = 9;
+            this.Close();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
+        }
+
+        private void telaAlunoResponsavel_Activated(object sender, EventArgs e)
+        {
+            cmbUf.DataSource = estados;
+        }
+
 
 
     }

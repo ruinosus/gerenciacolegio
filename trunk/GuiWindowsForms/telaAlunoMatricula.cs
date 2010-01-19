@@ -366,6 +366,7 @@ namespace GuiWindowsForms
                         boletoMensalidade.MatriculaID = matricula.ID;
                         boletoMensalidade.DataEmissao = DateTime.Now;
                         boletoMensalidade.Valor = matricula.Valor;
+                        alunoMatriculaAux.SerieAtual = matricula.SalaPeriodo.Sala.Serie.Nome;
 
                         boletoMensalidadeControlador.Incluir(boletoMensalidade);
                         boletoMensalidadeControlador.Confirmar();
@@ -554,6 +555,14 @@ namespace GuiWindowsForms
             cmbDesconto.DisplayMember = "Descricao";
 
             carregarValorTotal();
+        }
+
+        private void ucDesconectarLogin1_EventoDesconectar()
+        {
+            Program.ultimaTela = 9;
+            this.Close();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
         }
     }
 

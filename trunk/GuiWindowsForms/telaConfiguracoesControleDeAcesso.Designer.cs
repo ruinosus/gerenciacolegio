@@ -113,12 +113,11 @@
             this.lblAluno = new System.Windows.Forms.Label();
             this.lblNomeFuncionario = new System.Windows.Forms.Label();
             this.cmbFuncionario = new System.Windows.Forms.ComboBox();
-            this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.btnDesconectar = new System.Windows.Forms.Button();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.gpbControleDeAcesso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -1046,33 +1045,6 @@
             this.cmbFuncionario.Size = new System.Drawing.Size(384, 21);
             this.cmbFuncionario.TabIndex = 0;
             // 
-            // lblHelloUsuario
-            // 
-            this.lblHelloUsuario.AutoSize = true;
-            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(760, 7);
-            this.lblHelloUsuario.Name = "lblHelloUsuario";
-            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
-            this.lblHelloUsuario.TabIndex = 108;
-            this.lblHelloUsuario.Text = "Hello Usuário!";
-            // 
-            // btnDesconectar
-            // 
-            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
-            this.btnDesconectar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(933, 5);
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
-            this.btnDesconectar.TabIndex = 110;
-            this.btnDesconectar.Tag = "";
-            this.btnDesconectar.UseVisualStyleBackColor = false;
-            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
-            // 
             // ucMenuDireita1
             // 
             this.ucMenuDireita1.BackColor = System.Drawing.Color.Transparent;
@@ -1115,17 +1087,25 @@
             this.pictureBox1.TabIndex = 123;
             this.pictureBox1.TabStop = false;
             // 
+            // ucDesconectarLogin1
+            // 
+            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
+            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
+            this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
+            this.ucDesconectarLogin1.TabIndex = 124;
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
+            // 
             // telaConfiguracoesControleDeAcesso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(990, 680);
+            this.Controls.Add(this.ucDesconectarLogin1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuDireita1);
             this.Controls.Add(this.ucMenuConfiguracoesEsquerda1);
-            this.Controls.Add(this.lblHelloUsuario);
-            this.Controls.Add(this.btnDesconectar);
             this.Controls.Add(this.gpbControleDeAcesso);
             this.Controls.Add(this.ucMenuInferior1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -1141,7 +1121,6 @@
             this.gpbControleDeAcesso.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1231,11 +1210,10 @@
         private System.Windows.Forms.Label lblDebitos;
         private System.Windows.Forms.CheckBox ckbAlteracaoDebitos;
         private System.Windows.Forms.CheckBox ckbVisualizacaoDebitos;
-        private System.Windows.Forms.Label lblHelloUsuario;
-        private System.Windows.Forms.Button btnDesconectar;
         private GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda ucMenuConfiguracoesEsquerda1;
         private GuiWindowsForms.User_Control.ucMenuDireita ucMenuDireita1;
         private ucMenuInferior ucMenuInferior1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
     }
 }
