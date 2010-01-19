@@ -95,7 +95,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
 
-            if (Program.ultimaTela == 7)
+            if (Program.ultimaTela == 1)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
@@ -118,7 +118,7 @@ namespace GuiWindowsForms
             //telaalunoresponsavel.Show();
 
             this.Hide();
-            Program.ultimaTela = 7;
+            Program.ultimaTela = 1;
             telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
             tela.Show();
         }
@@ -126,7 +126,7 @@ namespace GuiWindowsForms
         private void uMenuLateral1_EventoAbrirTelaMedica()
         {
             this.Hide();
-            Program.ultimaTela = 7;
+            Program.ultimaTela = 1;
             telaAlunoMedicacao telaalunomedicacao = telaAlunoMedicacao.getInstancia();
             telaalunomedicacao.Show();
         }
@@ -134,7 +134,7 @@ namespace GuiWindowsForms
         private void uMenuLateral1_EventoAbrirTelaMatricula()
         {
             this.Hide();
-            Program.ultimaTela = 7;
+            Program.ultimaTela = 1;
             telaAlunoMatricula telaalunomatricula = telaAlunoMatricula.getInstancia();
             telaalunomatricula.Show();
         }
@@ -142,7 +142,7 @@ namespace GuiWindowsForms
         private void uMenuLateral1_EventoAbrirTelaFinanceiro()
         {
             this.Hide();
-            Program.ultimaTela = 7;
+            Program.ultimaTela = 1;
             telaAlunoFinanceiro telaalunofinanceiro = telaAlunoFinanceiro.getInstancia();
             telaalunofinanceiro.Show();
         }
@@ -150,7 +150,7 @@ namespace GuiWindowsForms
         private void uMenuLateral1_EventoAbrirTelaDados()
         {
             this.Hide();
-            Program.ultimaTela = 7;
+            Program.ultimaTela = 1;
             telaAluno telaaluno = telaAluno.getInstancia();
             telaaluno.Show();
         }
@@ -158,7 +158,7 @@ namespace GuiWindowsForms
         private void uMenuLateral1_EventoAbrirTelaAcademico()
         {
             this.Hide();
-            Program.ultimaTela = 7;
+            Program.ultimaTela = 1;
             telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
             telaalunoacademico.Show();
         }

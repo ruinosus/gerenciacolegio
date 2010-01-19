@@ -121,312 +121,10 @@
   <data name="txtNaturalidade.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <metadata name="errorProviderTela.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>990, 680</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pictureBox1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
-  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 112</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>138</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
-    <value>pictureBox1</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ucMenuInferior1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
-  <data name="ucMenuInferior1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 637</value>
-  </data>
-  <data name="ucMenuInferior1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>598, 43</value>
-  </data>
-  <data name="ucMenuInferior1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ucMenuInferior1.Name" xml:space="preserve">
-    <value>ucMenuInferior1</value>
-  </data>
-  <data name="&gt;&gt;ucMenuInferior1.Type" xml:space="preserve">
-    <value>GuiWindowsForms.ucMenuInferior, GuiWindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ucMenuInferior1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ucMenuInferior1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="uMenuLateral1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
-  <data name="uMenuLateral1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>875, 75</value>
-  </data>
-  <data name="uMenuLateral1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 584</value>
-  </data>
-  <data name="uMenuLateral1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;uMenuLateral1.Name" xml:space="preserve">
-    <value>uMenuLateral1</value>
-  </data>
-  <data name="&gt;&gt;uMenuLateral1.Type" xml:space="preserve">
-    <value>GuiWindowsForms.User_Control.uMenuLateral, GuiWindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;uMenuLateral1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;uMenuLateral1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="cmbSelecionarAluno.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
-  <data name="cmbSelecionarAluno.Location" type="System.Drawing.Point, System.Drawing">
-    <value>594, 177</value>
-  </data>
-  <data name="cmbSelecionarAluno.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 21</value>
-  </data>
-  <data name="cmbSelecionarAluno.TabIndex" type="System.Int32, mscorlib">
-    <value>63</value>
-  </data>
-  <data name="&gt;&gt;cmbSelecionarAluno.Name" xml:space="preserve">
-    <value>cmbSelecionarAluno</value>
-  </data>
-  <data name="&gt;&gt;cmbSelecionarAluno.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmbSelecionarAluno.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;cmbSelecionarAluno.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnDesconectar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnDesconectar.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
-  <data name="btnDesconectar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDesconectar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>950, 9</value>
-  </data>
-  <data name="btnDesconectar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="btnDesconectar.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;btnDesconectar.Name" xml:space="preserve">
-    <value>btnDesconectar</value>
-  </data>
-  <data name="&gt;&gt;btnDesconectar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDesconectar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnDesconectar.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblHelloUsuario.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblHelloUsuario.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Black, 12pt, style=Bold</value>
-  </data>
-  <data name="lblHelloUsuario.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
-  <data name="lblHelloUsuario.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblHelloUsuario.Location" type="System.Drawing.Point, System.Drawing">
-    <value>780, 9</value>
-  </data>
-  <data name="lblHelloUsuario.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 23</value>
-  </data>
-  <data name="lblHelloUsuario.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="lblHelloUsuario.Text" xml:space="preserve">
-    <value>Hello Usuário!</value>
-  </data>
-  <data name="&gt;&gt;lblHelloUsuario.Name" xml:space="preserve">
-    <value>lblHelloUsuario</value>
-  </data>
-  <data name="&gt;&gt;lblHelloUsuario.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblHelloUsuario.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblHelloUsuario.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="uMenuImagem1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
-  <data name="uMenuImagem1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 0</value>
-  </data>
-  <data name="uMenuImagem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>438, 201</value>
-  </data>
-  <data name="uMenuImagem1.TabIndex" type="System.Int32, mscorlib">
-    <value>73</value>
-  </data>
-  <data name="&gt;&gt;uMenuImagem1.Name" xml:space="preserve">
-    <value>uMenuImagem1</value>
-  </data>
-  <data name="&gt;&gt;uMenuImagem1.Type" xml:space="preserve">
-    <value>GuiWindowsForms.uMenuImagem, GuiWindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;uMenuImagem1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;uMenuImagem1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        AD+AAAB/wAAA/8AAAf/gAAP/8AAP//gAP/8=
-</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Colégio Conhecer - Educação Infantil ao Ensino Médio</value>
-  </data>
-  <data name="&gt;&gt;errorProviderTela.Name" xml:space="preserve">
-    <value>errorProviderTela</value>
-  </data>
-  <data name="&gt;&gt;errorProviderTela.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>telaAluno</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtNaturalidade.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="txtNaturalidade.Location" type="System.Drawing.Point, System.Drawing">
     <value>588, 116</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtNaturalidade.MaxLength" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
@@ -451,9 +149,7 @@
   <data name="lblEdificio.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblEdificio.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblEdificio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -484,9 +180,6 @@
   <data name="txtNomeEdificil.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="txtNomeEdificil.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="txtNomeEdificil.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 212</value>
   </data>
@@ -513,9 +206,6 @@
   </data>
   <data name="mskFoneResidencia.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
-  </data>
-  <data name="mskFoneResidencia.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="mskFoneResidencia.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 306</value>
@@ -544,9 +234,6 @@
   <data name="cmbUf.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="cmbUf.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="cmbUf.Location" type="System.Drawing.Point, System.Drawing">
     <value>382, 254</value>
   </data>
@@ -574,9 +261,6 @@
   <data name="txtComplemento.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="txtComplemento.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="txtComplemento.Location" type="System.Drawing.Point, System.Drawing">
     <value>590, 163</value>
   </data>
@@ -603,9 +287,6 @@
   </data>
   <data name="lblComplemento.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblComplemento.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="lblComplemento.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -637,9 +318,6 @@
   <data name="lblUf.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblUf.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="lblUf.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -669,9 +347,6 @@
   </data>
   <data name="lblFoneResidencia.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblFoneResidencia.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="lblFoneResidencia.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -703,9 +378,6 @@
   <data name="mskCep.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="mskCep.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="mskCep.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 254</value>
   </data>
@@ -732,9 +404,6 @@
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="label4.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -766,9 +435,6 @@
   <data name="txtCidade.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="txtCidade.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="txtCidade.Location" type="System.Drawing.Point, System.Drawing">
     <value>590, 252</value>
   </data>
@@ -795,9 +461,6 @@
   </data>
   <data name="lblCidade.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblCidade.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="lblCidade.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -829,9 +492,6 @@
   <data name="txtBairro.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="txtBairro.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="txtBairro.Location" type="System.Drawing.Point, System.Drawing">
     <value>590, 210</value>
   </data>
@@ -858,9 +518,6 @@
   </data>
   <data name="lblBairro.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblBairro.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="lblBairro.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -892,9 +549,6 @@
   <data name="txtLogradouro.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="txtLogradouro.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="txtLogradouro.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 165</value>
   </data>
@@ -921,9 +575,6 @@
   </data>
   <data name="lblEndereco.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblEndereco.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="lblEndereco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -952,9 +603,6 @@
   <data name="&gt;&gt;lblEndereco.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="txtEmail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 354</value>
   </data>
@@ -965,7 +613,7 @@
     <value>220, 20</value>
   </data>
   <data name="txtEmail.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+    <value>34</value>
   </data>
   <data name="&gt;&gt;txtEmail.Name" xml:space="preserve">
     <value>txtEmail</value>
@@ -981,9 +629,6 @@
   </data>
   <data name="lblEmail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblEmail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="lblEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1012,9 +657,6 @@
   <data name="&gt;&gt;lblEmail.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
-  <data name="mskFoneEmergencia.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="mskFoneEmergencia.Location" type="System.Drawing.Point, System.Drawing">
     <value>590, 304</value>
   </data>
@@ -1041,9 +683,6 @@
   </data>
   <data name="lblFoneEmergencia.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblFoneEmergencia.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="lblFoneEmergencia.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1072,9 +711,6 @@
   <data name="&gt;&gt;lblFoneEmergencia.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
-  <data name="mskFoneAluno.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="mskFoneAluno.Location" type="System.Drawing.Point, System.Drawing">
     <value>339, 306</value>
   </data>
@@ -1101,9 +737,6 @@
   </data>
   <data name="lblFoneAluno.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblFoneAluno.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="lblFoneAluno.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1135,9 +768,6 @@
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1164,9 +794,6 @@
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>23</value>
-  </data>
-  <data name="cmbNacionalidade.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="cmbNacionalidade.Items" xml:space="preserve">
     <value>Brasil</value>
@@ -1960,9 +1587,6 @@
   <data name="lblNacionalidade.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblNacionalidade.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="lblNacionalidade.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -1992,9 +1616,6 @@
   </data>
   <data name="rdbFem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="rdbFem.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="rdbFem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2026,9 +1647,6 @@
   <data name="rdbMasc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="rdbMasc.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="rdbMasc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2058,9 +1676,6 @@
   </data>
   <data name="lblSexo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblSexo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="lblSexo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2092,9 +1707,6 @@
   <data name="txtNome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="txtNome.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="txtNome.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 30</value>
   </data>
@@ -2118,9 +1730,6 @@
   </data>
   <data name="&gt;&gt;txtNome.ZOrder" xml:space="preserve">
     <value>29</value>
-  </data>
-  <data name="dtpNascimento.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="dtpNascimento.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 75</value>
@@ -2148,9 +1757,6 @@
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="label1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2182,9 +1788,6 @@
   <data name="lblNome.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lblNome.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="lblNome.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2215,9 +1818,6 @@
   <data name="gpbDadosPessoais.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
-  <data name="gpbDadosPessoais.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>TopLeft</value>
-  </data>
   <data name="gpbDadosPessoais.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 191</value>
   </data>
@@ -2241,5 +1841,291 @@
   </data>
   <data name="&gt;&gt;gpbDadosPessoais.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="lblHelloUsuario.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblHelloUsuario.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 12pt, style=Bold</value>
+  </data>
+  <data name="lblHelloUsuario.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblHelloUsuario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>780, 9</value>
+  </data>
+  <data name="lblHelloUsuario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 23</value>
+  </data>
+  <data name="lblHelloUsuario.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lblHelloUsuario.Text" xml:space="preserve">
+    <value>Hello Usuário!</value>
+  </data>
+  <data name="&gt;&gt;lblHelloUsuario.Name" xml:space="preserve">
+    <value>lblHelloUsuario</value>
+  </data>
+  <data name="&gt;&gt;lblHelloUsuario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblHelloUsuario.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblHelloUsuario.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnDesconectar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnDesconectar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDesconectar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>950, 9</value>
+  </data>
+  <data name="btnDesconectar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="btnDesconectar.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.Name" xml:space="preserve">
+    <value>btnDesconectar</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cmbSelecionarAluno.Location" type="System.Drawing.Point, System.Drawing">
+    <value>594, 177</value>
+  </data>
+  <data name="cmbSelecionarAluno.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 21</value>
+  </data>
+  <data name="cmbSelecionarAluno.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;cmbSelecionarAluno.Name" xml:space="preserve">
+    <value>cmbSelecionarAluno</value>
+  </data>
+  <data name="&gt;&gt;cmbSelecionarAluno.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbSelecionarAluno.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cmbSelecionarAluno.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="errorProviderTela.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>990, 680</value>
+  </data>
+  <data name="pictureBox1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 112</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ucMenuInferior1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="ucMenuInferior1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 637</value>
+  </data>
+  <data name="ucMenuInferior1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>598, 43</value>
+  </data>
+  <data name="ucMenuInferior1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ucMenuInferior1.Name" xml:space="preserve">
+    <value>ucMenuInferior1</value>
+  </data>
+  <data name="&gt;&gt;ucMenuInferior1.Type" xml:space="preserve">
+    <value>GuiWindowsForms.ucMenuInferior, GuiWindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucMenuInferior1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ucMenuInferior1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="uMenuLateral1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="uMenuLateral1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>875, 75</value>
+  </data>
+  <data name="uMenuLateral1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 584</value>
+  </data>
+  <data name="uMenuLateral1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;uMenuLateral1.Name" xml:space="preserve">
+    <value>uMenuLateral1</value>
+  </data>
+  <data name="&gt;&gt;uMenuLateral1.Type" xml:space="preserve">
+    <value>GuiWindowsForms.User_Control.uMenuLateral, GuiWindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;uMenuLateral1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;uMenuLateral1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="uMenuImagem1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="uMenuImagem1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 0</value>
+  </data>
+  <data name="uMenuImagem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>585, 201</value>
+  </data>
+  <data name="uMenuImagem1.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="&gt;&gt;uMenuImagem1.Name" xml:space="preserve">
+    <value>uMenuImagem1</value>
+  </data>
+  <data name="&gt;&gt;uMenuImagem1.Type" xml:space="preserve">
+    <value>GuiWindowsForms.uMenuImagem, GuiWindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;uMenuImagem1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;uMenuImagem1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        AD+AAAB/wAAA/8AAAf/gAAP/8AAP//gAP/8=
+</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Colégio Conhecer - Educação Infantil ao Ensino Médio</value>
+  </data>
+  <data name="&gt;&gt;errorProviderTela.Name" xml:space="preserve">
+    <value>errorProviderTela</value>
+  </data>
+  <data name="&gt;&gt;errorProviderTela.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>telaAluno</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

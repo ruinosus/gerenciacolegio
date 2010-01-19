@@ -553,7 +553,7 @@
             this.ucMenuSuper.BackColor = System.Drawing.Color.Transparent;
             this.ucMenuSuper.Location = new System.Drawing.Point(244, 0);
             this.ucMenuSuper.Name = "ucMenuSuper";
-            this.ucMenuSuper.Size = new System.Drawing.Size(438, 201);
+            this.ucMenuSuper.Size = new System.Drawing.Size(550, 201);
             this.ucMenuSuper.TabIndex = 130;
             // 
             // pictureBox1

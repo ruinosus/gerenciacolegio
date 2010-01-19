@@ -184,7 +184,7 @@
             this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
             this.uMenuImagem1.Location = new System.Drawing.Point(244, 0);
             this.uMenuImagem1.Name = "uMenuImagem1";
-            this.uMenuImagem1.Size = new System.Drawing.Size(438, 201);
+            this.uMenuImagem1.Size = new System.Drawing.Size(556, 201);
             this.uMenuImagem1.TabIndex = 97;
             // 
             // pictureBox1

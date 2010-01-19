@@ -132,8 +132,16 @@ namespace GuiWindowsForms.User_Control
 
         private void btnResponsaveis_Click(object sender, EventArgs e)
         {
-            if (EventoAbrirTelaResponsavel != null)
-                EventoAbrirTelaResponsavel();
+            Memoria memoria = Memoria.Instance;
+            if (memoria.Aluno != null)
+            {
+                if (EventoAbrirTelaResponsavel != null)
+                    EventoAbrirTelaResponsavel();
+            }
+            else
+            {
+                MessageBox.Show("Só é possivel acessar informações dos responsáveis com um aluno cadastrado, cadastre ou selecione um aluno para modificar suas informações médicas.");
+            }
         }
 
         public void verificaTela(Form form)
