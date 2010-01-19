@@ -684,7 +684,7 @@ namespace GuiWindowsForms
                 responsavel.PerfilID = 2;
                 responsavel.Status = (int)Status.Ativo;
 
-                responsavel = ucMenuSuper.retornaResponsavel(responsavel);
+                //responsavel = ucMenuSuper.retornaResponsavel(responsavel);
 
                 if (verificaSeJaCadastrado(responsavel) == false)
                 {

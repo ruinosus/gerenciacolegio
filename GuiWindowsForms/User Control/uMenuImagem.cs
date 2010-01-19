@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloMatricula.Processos;
 
 namespace GuiWindowsForms
 {
@@ -18,6 +20,7 @@ namespace GuiWindowsForms
         }
 
         private Image imagemAuxiliar = null;
+        private string numMatricula = null; 
 
 
         #region LIMPAR FIGURA
@@ -27,31 +30,31 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region CARREGA RESPONSAVEL
-        public void carregaResponsavel(Responsavel responsavel)
-        {
-            if (responsavel != null)
-            {
-                lblAtivo.Text = "Ativo - AINDA POR FAZER";
-                lblFoneEmerg.Text = responsavel.Fone;
-                lblMatricula.Text = "xxxx.xxx.xx.xxx - AINDA POR FAZER";
-                lblNomeAluno.Text = responsavel.Nome;
-                lblSerie.Text = "AINDA POR FAZER";
-                if (responsavel.Imagem != null && responsavel.Imagem.Length != 0)
-                {
-                    pctImagem.Image = arrayParaImagem(responsavel.Imagem);
-                }
-            }
-            else
-            {
-                lblAtivo.Text = "";
-                lblFoneEmerg.Text = "";
-                lblMatricula.Text = "";
-                lblNomeAluno.Text = "";
-                lblSerie.Text = "";
-            }
-        }
-        #endregion
+        //#region CARREGA RESPONSAVEL
+        //public void carregaResponsavel(Responsavel responsavel)
+        //{
+        //    if (responsavel != null)
+        //    {
+        //        lblAtivo.Text = "Ativo - AINDA POR FAZER";
+        //        lblFoneEmerg.Text = responsavel.Fone;
+        //        lblMatricula.Text = "xxxx.xxx.xx.xxx - AINDA POR FAZER";
+        //        lblNomeAluno.Text = responsavel.Nome;
+        //        lblSerie.Text = "AINDA POR FAZER";
+        //        if (responsavel.Imagem != null && responsavel.Imagem.Length != 0)
+        //        {
+        //            pctImagem.Image = arrayParaImagem(responsavel.Imagem);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        lblAtivo.Text = "";
+        //        lblFoneEmerg.Text = "";
+        //        lblMatricula.Text = "";
+        //        lblNomeAluno.Text = "";
+        //        lblSerie.Text = "";
+        //    }
+        //}
+        //#endregion
 
         #region OCULTAR BOTAO ADICIONAR IMAGEM
         public void ocultarBotaoAdicionarImagem()
@@ -60,17 +63,17 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region RETORNA RESPONSAVEL
-        public Responsavel retornaResponsavel(Responsavel responsavel)
-        {
-            if (pctImagem.Image != null)
-            {
-                responsavel.Imagem = imagemParaArray(imagemAuxiliar);
-            }
+        //#region RETORNA RESPONSAVEL
+        //public Responsavel retornaResponsavel(Responsavel responsavel)
+        //{
+        //    if (pctImagem.Image != null)
+        //    {
+        //        responsavel.Imagem = imagemParaArray(imagemAuxiliar);
+        //    }
 
-            return responsavel;
-        }
-        #endregion
+        //    return responsavel;
+        //}
+        //#endregion
 
         #region CARREGA ALUNO
         /// <summary>
@@ -82,14 +85,65 @@ namespace GuiWindowsForms
         {
             if (aluno != null)
             {
-                lblAtivo.Text = "Ativo - AINDA POR FAZER";
+                Matricula matricula = new Matricula();
+                IMatriculaProcesso matriculaControlador = MatriculaProcesso.Instance;
+
+                List<Matricula> matriculaAuxiliar = new List<Matricula>();
+
+                matricula.Status = (int)Status.Ativo;
+                matriculaAuxiliar = matriculaControlador.Consultar(matricula, TipoPesquisa.E);
+
+                foreach (Matricula m in matriculaAuxiliar)
+                {
+                    if (m.AlunoID == aluno.ID)
+                    {
+                        numMatricula = m.NumMatricula;
+                    }
+                    else
+                    {
+                        numMatricula = null;
+                    }
+                }
+
+                if (aluno.Status == (int)Status.Ativo)
+                {
+                    lblAtivo.Text = "Ativo";
+                }
+                else
+                {
+                    lblAtivo.ForeColor = System.Drawing.Color.Red;
+                    lblAtivo.Text = "Inativo";
+                }
+
                 lblFoneEmerg.Text = aluno.FoneEmergencia;
-                lblMatricula.Text = "xxxx.xxx.xx.xxx - AINDA POR FAZER";
+
+                if (numMatricula != null)
+                {
+                    lblMatricula.Text = numMatricula;
+                }
+                else
+                {
+                    lblMatricula.ForeColor = System.Drawing.Color.Red;
+                    lblMatricula.Text = "Aluno ainda não matriculado";
+                }
                 lblNomeAluno.Text = aluno.Nome;
-                lblSerie.Text = "AINDA POR FAZER";
-                if (aluno.Imagem != null && aluno.Imagem.Length != 0)
+
+                if (!String.IsNullOrEmpty(aluno.SerieAtual))
+                {
+                    lblSerie.Text = aluno.SerieAtual;
+                }
+                else
+                {
+                    lblSerie.ForeColor = System.Drawing.Color.Red;
+                    lblSerie.Text = "Aluno ainda não matriculado em uma série";
+                }
+                if (aluno.Imagem != null && aluno.Imagem.Length > 0)
                 {
                     pctImagem.Image = arrayParaImagem(aluno.Imagem);
+                }
+                else
+                {
+                    pctImagem.Image = null;
                 }
             }
             else
@@ -126,8 +180,11 @@ namespace GuiWindowsForms
         {
 
             pctImagem.SizeMode = PictureBoxSizeMode.StretchImage;
-            pctImagem.Image = retornarImagem();
-            imagemAuxiliar = pctImagem.Image;
+            if (retornarImagem() != null)
+            {
+                pctImagem.Image = retornarImagem();
+                imagemAuxiliar = pctImagem.Image;
+            }
         }
         #endregion
 
