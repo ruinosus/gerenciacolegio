@@ -117,10 +117,213 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtNaturalidade.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
   <metadata name="errorProviderTela.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>990, 680</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 112</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ucMenuInferior1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="ucMenuInferior1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 637</value>
+  </data>
+  <data name="ucMenuInferior1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>598, 43</value>
+  </data>
+  <data name="ucMenuInferior1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ucMenuInferior1.Name" xml:space="preserve">
+    <value>ucMenuInferior1</value>
+  </data>
+  <data name="&gt;&gt;ucMenuInferior1.Type" xml:space="preserve">
+    <value>GuiWindowsForms.ucMenuInferior, GuiWindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucMenuInferior1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ucMenuInferior1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="uMenuLateral1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="uMenuLateral1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>875, 75</value>
+  </data>
+  <data name="uMenuLateral1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 584</value>
+  </data>
+  <data name="uMenuLateral1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;uMenuLateral1.Name" xml:space="preserve">
+    <value>uMenuLateral1</value>
+  </data>
+  <data name="&gt;&gt;uMenuLateral1.Type" xml:space="preserve">
+    <value>GuiWindowsForms.User_Control.uMenuLateral, GuiWindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;uMenuLateral1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;uMenuLateral1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cmbSelecionarAluno.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="cmbSelecionarAluno.Location" type="System.Drawing.Point, System.Drawing">
+    <value>594, 177</value>
+  </data>
+  <data name="cmbSelecionarAluno.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 21</value>
+  </data>
+  <data name="cmbSelecionarAluno.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;cmbSelecionarAluno.Name" xml:space="preserve">
+    <value>cmbSelecionarAluno</value>
+  </data>
+  <data name="&gt;&gt;cmbSelecionarAluno.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbSelecionarAluno.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cmbSelecionarAluno.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnDesconectar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnDesconectar.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="btnDesconectar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDesconectar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>950, 9</value>
+  </data>
+  <data name="btnDesconectar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="btnDesconectar.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.Name" xml:space="preserve">
+    <value>btnDesconectar</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDesconectar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblHelloUsuario.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblHelloUsuario.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial Black, 12pt, style=Bold</value>
+  </data>
+  <data name="lblHelloUsuario.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblHelloUsuario.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblHelloUsuario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>780, 9</value>
+  </data>
+  <data name="lblHelloUsuario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 23</value>
+  </data>
+  <data name="lblHelloUsuario.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lblHelloUsuario.Text" xml:space="preserve">
+    <value>Hello Usuário!</value>
+  </data>
+  <data name="&gt;&gt;lblHelloUsuario.Name" xml:space="preserve">
+    <value>lblHelloUsuario</value>
+  </data>
+  <data name="&gt;&gt;lblHelloUsuario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblHelloUsuario.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblHelloUsuario.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="uMenuImagem1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="uMenuImagem1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 0</value>
+  </data>
+  <data name="uMenuImagem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>438, 201</value>
+  </data>
+  <data name="uMenuImagem1.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="&gt;&gt;uMenuImagem1.Name" xml:space="preserve">
+    <value>uMenuImagem1</value>
+  </data>
+  <data name="&gt;&gt;uMenuImagem1.Type" xml:space="preserve">
+    <value>GuiWindowsForms.uMenuImagem, GuiWindowsForms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;uMenuImagem1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;uMenuImagem1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAAAAAACMuAAAjLgAAAAAAAAAA
@@ -196,5 +399,1847 @@
         AADAAAAAwAAYAIAA/ACAAf4BgAH+AQAB/AEAA/wDAAP4AwAA8AMAAEAHAAAADwAAAB8AAAA/AAAAH4AA
         AD+AAAB/wAAA/8AAAf/gAAP/8AAP//gAP/8=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Colégio Conhecer - Educação Infantil ao Ensino Médio</value>
+  </data>
+  <data name="&gt;&gt;errorProviderTela.Name" xml:space="preserve">
+    <value>errorProviderTela</value>
+  </data>
+  <data name="&gt;&gt;errorProviderTela.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>telaAluno</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtNaturalidade.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="txtNaturalidade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>588, 116</value>
+  </data>
+  <data name="txtNaturalidade.MaxLength" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="txtNaturalidade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 20</value>
+  </data>
+  <data name="txtNaturalidade.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtNaturalidade.Name" xml:space="preserve">
+    <value>txtNaturalidade</value>
+  </data>
+  <data name="&gt;&gt;txtNaturalidade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNaturalidade.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;txtNaturalidade.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblEdificio.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEdificio.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblEdificio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEdificio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 214</value>
+  </data>
+  <data name="lblEdificio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="lblEdificio.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblEdificio.Text" xml:space="preserve">
+    <value>Edifício:</value>
+  </data>
+  <data name="&gt;&gt;lblEdificio.Name" xml:space="preserve">
+    <value>lblEdificio</value>
+  </data>
+  <data name="&gt;&gt;lblEdificio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEdificio.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblEdificio.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtNomeEdificil.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="txtNomeEdificil.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="txtNomeEdificil.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 212</value>
+  </data>
+  <data name="txtNomeEdificil.MaxLength" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="txtNomeEdificil.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtNomeEdificil.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;txtNomeEdificil.Name" xml:space="preserve">
+    <value>txtNomeEdificil</value>
+  </data>
+  <data name="&gt;&gt;txtNomeEdificil.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNomeEdificil.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;txtNomeEdificil.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="mskFoneResidencia.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="mskFoneResidencia.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="mskFoneResidencia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 306</value>
+  </data>
+  <data name="mskFoneResidencia.Mask" xml:space="preserve">
+    <value>(99) 0000-0000</value>
+  </data>
+  <data name="mskFoneResidencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 20</value>
+  </data>
+  <data name="mskFoneResidencia.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;mskFoneResidencia.Name" xml:space="preserve">
+    <value>mskFoneResidencia</value>
+  </data>
+  <data name="&gt;&gt;mskFoneResidencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mskFoneResidencia.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;mskFoneResidencia.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cmbUf.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="cmbUf.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="cmbUf.Location" type="System.Drawing.Point, System.Drawing">
+    <value>382, 254</value>
+  </data>
+  <data name="cmbUf.MaxLength" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="cmbUf.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 21</value>
+  </data>
+  <data name="cmbUf.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;cmbUf.Name" xml:space="preserve">
+    <value>cmbUf</value>
+  </data>
+  <data name="&gt;&gt;cmbUf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbUf.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;cmbUf.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtComplemento.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="txtComplemento.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="txtComplemento.Location" type="System.Drawing.Point, System.Drawing">
+    <value>590, 163</value>
+  </data>
+  <data name="txtComplemento.MaxLength" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="txtComplemento.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtComplemento.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txtComplemento.Name" xml:space="preserve">
+    <value>txtComplemento</value>
+  </data>
+  <data name="&gt;&gt;txtComplemento.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtComplemento.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;txtComplemento.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblComplemento.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblComplemento.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblComplemento.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblComplemento.Location" type="System.Drawing.Point, System.Drawing">
+    <value>498, 165</value>
+  </data>
+  <data name="lblComplemento.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 13</value>
+  </data>
+  <data name="lblComplemento.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lblComplemento.Text" xml:space="preserve">
+    <value>Complemento:</value>
+  </data>
+  <data name="&gt;&gt;lblComplemento.Name" xml:space="preserve">
+    <value>lblComplemento</value>
+  </data>
+  <data name="&gt;&gt;lblComplemento.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblComplemento.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblComplemento.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblUf.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUf.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblUf.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblUf.Location" type="System.Drawing.Point, System.Drawing">
+    <value>349, 256</value>
+  </data>
+  <data name="lblUf.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 13</value>
+  </data>
+  <data name="lblUf.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="lblUf.Text" xml:space="preserve">
+    <value>UF:</value>
+  </data>
+  <data name="&gt;&gt;lblUf.Name" xml:space="preserve">
+    <value>lblUf</value>
+  </data>
+  <data name="&gt;&gt;lblUf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUf.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblUf.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblFoneResidencia.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFoneResidencia.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblFoneResidencia.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFoneResidencia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 308</value>
+  </data>
+  <data name="lblFoneResidencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="lblFoneResidencia.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="lblFoneResidencia.Text" xml:space="preserve">
+    <value>Fone Resid:</value>
+  </data>
+  <data name="&gt;&gt;lblFoneResidencia.Name" xml:space="preserve">
+    <value>lblFoneResidencia</value>
+  </data>
+  <data name="&gt;&gt;lblFoneResidencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFoneResidencia.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblFoneResidencia.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="mskCep.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="mskCep.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="mskCep.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 254</value>
+  </data>
+  <data name="mskCep.Mask" xml:space="preserve">
+    <value>00000-999</value>
+  </data>
+  <data name="mskCep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="mskCep.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;mskCep.Name" xml:space="preserve">
+    <value>mskCep</value>
+  </data>
+  <data name="&gt;&gt;mskCep.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mskCep.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;mskCep.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 256</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Cep:</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txtCidade.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="txtCidade.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="txtCidade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>590, 252</value>
+  </data>
+  <data name="txtCidade.MaxLength" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="txtCidade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtCidade.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;txtCidade.Name" xml:space="preserve">
+    <value>txtCidade</value>
+  </data>
+  <data name="&gt;&gt;txtCidade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtCidade.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;txtCidade.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lblCidade.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCidade.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblCidade.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblCidade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>498, 254</value>
+  </data>
+  <data name="lblCidade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="lblCidade.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="lblCidade.Text" xml:space="preserve">
+    <value>Cidade:</value>
+  </data>
+  <data name="&gt;&gt;lblCidade.Name" xml:space="preserve">
+    <value>lblCidade</value>
+  </data>
+  <data name="&gt;&gt;lblCidade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCidade.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblCidade.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="txtBairro.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="txtBairro.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="txtBairro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>590, 210</value>
+  </data>
+  <data name="txtBairro.MaxLength" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="txtBairro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="txtBairro.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;txtBairro.Name" xml:space="preserve">
+    <value>txtBairro</value>
+  </data>
+  <data name="&gt;&gt;txtBairro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtBairro.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;txtBairro.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="lblBairro.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblBairro.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblBairro.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblBairro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>498, 212</value>
+  </data>
+  <data name="lblBairro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 13</value>
+  </data>
+  <data name="lblBairro.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="lblBairro.Text" xml:space="preserve">
+    <value>Bairro:</value>
+  </data>
+  <data name="&gt;&gt;lblBairro.Name" xml:space="preserve">
+    <value>lblBairro</value>
+  </data>
+  <data name="&gt;&gt;lblBairro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblBairro.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblBairro.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="txtLogradouro.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="txtLogradouro.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="txtLogradouro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 165</value>
+  </data>
+  <data name="txtLogradouro.MaxLength" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="txtLogradouro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 20</value>
+  </data>
+  <data name="txtLogradouro.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtLogradouro.Name" xml:space="preserve">
+    <value>txtLogradouro</value>
+  </data>
+  <data name="&gt;&gt;txtLogradouro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtLogradouro.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;txtLogradouro.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="lblEndereco.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEndereco.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblEndereco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEndereco.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 167</value>
+  </data>
+  <data name="lblEndereco.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="lblEndereco.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblEndereco.Text" xml:space="preserve">
+    <value>Endereço:</value>
+  </data>
+  <data name="&gt;&gt;lblEndereco.Name" xml:space="preserve">
+    <value>lblEndereco</value>
+  </data>
+  <data name="&gt;&gt;lblEndereco.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEndereco.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblEndereco.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="txtEmail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 354</value>
+  </data>
+  <data name="txtEmail.MaxLength" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 20</value>
+  </data>
+  <data name="txtEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Name" xml:space="preserve">
+    <value>txtEmail</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="lblEmail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEmail.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblEmail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 356</value>
+  </data>
+  <data name="lblEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <data name="lblEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="lblEmail.Text" xml:space="preserve">
+    <value>Email Aluno:</value>
+  </data>
+  <data name="&gt;&gt;lblEmail.Name" xml:space="preserve">
+    <value>lblEmail</value>
+  </data>
+  <data name="&gt;&gt;lblEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEmail.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblEmail.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="mskFoneEmergencia.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="mskFoneEmergencia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>590, 304</value>
+  </data>
+  <data name="mskFoneEmergencia.Mask" xml:space="preserve">
+    <value>(99) 0000-0000</value>
+  </data>
+  <data name="mskFoneEmergencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 20</value>
+  </data>
+  <data name="mskFoneEmergencia.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;mskFoneEmergencia.Name" xml:space="preserve">
+    <value>mskFoneEmergencia</value>
+  </data>
+  <data name="&gt;&gt;mskFoneEmergencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mskFoneEmergencia.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;mskFoneEmergencia.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="lblFoneEmergencia.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFoneEmergencia.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblFoneEmergencia.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFoneEmergencia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>500, 306</value>
+  </data>
+  <data name="lblFoneEmergencia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="lblFoneEmergencia.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="lblFoneEmergencia.Text" xml:space="preserve">
+    <value>Fone Emerg:</value>
+  </data>
+  <data name="&gt;&gt;lblFoneEmergencia.Name" xml:space="preserve">
+    <value>lblFoneEmergencia</value>
+  </data>
+  <data name="&gt;&gt;lblFoneEmergencia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFoneEmergencia.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblFoneEmergencia.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="mskFoneAluno.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="mskFoneAluno.Location" type="System.Drawing.Point, System.Drawing">
+    <value>339, 306</value>
+  </data>
+  <data name="mskFoneAluno.Mask" xml:space="preserve">
+    <value>(99) 0000-0000</value>
+  </data>
+  <data name="mskFoneAluno.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 20</value>
+  </data>
+  <data name="mskFoneAluno.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;mskFoneAluno.Name" xml:space="preserve">
+    <value>mskFoneAluno</value>
+  </data>
+  <data name="&gt;&gt;mskFoneAluno.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MaskedTextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mskFoneAluno.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;mskFoneAluno.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="lblFoneAluno.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFoneAluno.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblFoneAluno.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblFoneAluno.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 308</value>
+  </data>
+  <data name="lblFoneAluno.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 13</value>
+  </data>
+  <data name="lblFoneAluno.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="lblFoneAluno.Text" xml:space="preserve">
+    <value>Fone Aluno:</value>
+  </data>
+  <data name="&gt;&gt;lblFoneAluno.Name" xml:space="preserve">
+    <value>lblFoneAluno</value>
+  </data>
+  <data name="&gt;&gt;lblFoneAluno.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFoneAluno.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblFoneAluno.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>499, 118</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Naturalidade:</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="cmbNacionalidade.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="cmbNacionalidade.Items" xml:space="preserve">
+    <value>Brasil</value>
+  </data>
+  <data name="cmbNacionalidade.Items1" xml:space="preserve">
+    <value>Afeganistão</value>
+  </data>
+  <data name="cmbNacionalidade.Items2" xml:space="preserve">
+    <value>África do Sul</value>
+  </data>
+  <data name="cmbNacionalidade.Items3" xml:space="preserve">
+    <value>Akrotiri</value>
+  </data>
+  <data name="cmbNacionalidade.Items4" xml:space="preserve">
+    <value>Albânia</value>
+  </data>
+  <data name="cmbNacionalidade.Items5" xml:space="preserve">
+    <value>Alemanha</value>
+  </data>
+  <data name="cmbNacionalidade.Items6" xml:space="preserve">
+    <value>Andorra</value>
+  </data>
+  <data name="cmbNacionalidade.Items7" xml:space="preserve">
+    <value>Angola</value>
+  </data>
+  <data name="cmbNacionalidade.Items8" xml:space="preserve">
+    <value>Anguila</value>
+  </data>
+  <data name="cmbNacionalidade.Items9" xml:space="preserve">
+    <value>Antárctida</value>
+  </data>
+  <data name="cmbNacionalidade.Items10" xml:space="preserve">
+    <value>Antígua e Barbuda</value>
+  </data>
+  <data name="cmbNacionalidade.Items11" xml:space="preserve">
+    <value>Antilhas Neerlandesas</value>
+  </data>
+  <data name="cmbNacionalidade.Items12" xml:space="preserve">
+    <value>Arábia Saudita</value>
+  </data>
+  <data name="cmbNacionalidade.Items13" xml:space="preserve">
+    <value>Arctic Ocean</value>
+  </data>
+  <data name="cmbNacionalidade.Items14" xml:space="preserve">
+    <value>Argélia</value>
+  </data>
+  <data name="cmbNacionalidade.Items15" xml:space="preserve">
+    <value>Argentina</value>
+  </data>
+  <data name="cmbNacionalidade.Items16" xml:space="preserve">
+    <value>Arménia</value>
+  </data>
+  <data name="cmbNacionalidade.Items17" xml:space="preserve">
+    <value>Aruba</value>
+  </data>
+  <data name="cmbNacionalidade.Items18" xml:space="preserve">
+    <value>Ashmore and Cartier Islands</value>
+  </data>
+  <data name="cmbNacionalidade.Items19" xml:space="preserve">
+    <value>Atlantic Ocean</value>
+  </data>
+  <data name="cmbNacionalidade.Items20" xml:space="preserve">
+    <value>Austrália</value>
+  </data>
+  <data name="cmbNacionalidade.Items21" xml:space="preserve">
+    <value>Áustria</value>
+  </data>
+  <data name="cmbNacionalidade.Items22" xml:space="preserve">
+    <value>Azerbaijão</value>
+  </data>
+  <data name="cmbNacionalidade.Items23" xml:space="preserve">
+    <value>Baamas</value>
+  </data>
+  <data name="cmbNacionalidade.Items24" xml:space="preserve">
+    <value>Bangladeche</value>
+  </data>
+  <data name="cmbNacionalidade.Items25" xml:space="preserve">
+    <value>Barbados</value>
+  </data>
+  <data name="cmbNacionalidade.Items26" xml:space="preserve">
+    <value>Barém</value>
+  </data>
+  <data name="cmbNacionalidade.Items27" xml:space="preserve">
+    <value>Bélgica</value>
+  </data>
+  <data name="cmbNacionalidade.Items28" xml:space="preserve">
+    <value>Belize</value>
+  </data>
+  <data name="cmbNacionalidade.Items29" xml:space="preserve">
+    <value>Benim</value>
+  </data>
+  <data name="cmbNacionalidade.Items30" xml:space="preserve">
+    <value>Bermudas</value>
+  </data>
+  <data name="cmbNacionalidade.Items31" xml:space="preserve">
+    <value>Bielorrússia</value>
+  </data>
+  <data name="cmbNacionalidade.Items32" xml:space="preserve">
+    <value>Birmânia</value>
+  </data>
+  <data name="cmbNacionalidade.Items33" xml:space="preserve">
+    <value>Bolívia</value>
+  </data>
+  <data name="cmbNacionalidade.Items34" xml:space="preserve">
+    <value>Bósnia e Herzegovina</value>
+  </data>
+  <data name="cmbNacionalidade.Items35" xml:space="preserve">
+    <value>Botsuana</value>
+  </data>
+  <data name="cmbNacionalidade.Items36" xml:space="preserve">
+    <value>Brunei</value>
+  </data>
+  <data name="cmbNacionalidade.Items37" xml:space="preserve">
+    <value>Bulgária</value>
+  </data>
+  <data name="cmbNacionalidade.Items38" xml:space="preserve">
+    <value>Burquina Faso</value>
+  </data>
+  <data name="cmbNacionalidade.Items39" xml:space="preserve">
+    <value>Burúndi</value>
+  </data>
+  <data name="cmbNacionalidade.Items40" xml:space="preserve">
+    <value>Butão</value>
+  </data>
+  <data name="cmbNacionalidade.Items41" xml:space="preserve">
+    <value>Cabo Verde</value>
+  </data>
+  <data name="cmbNacionalidade.Items42" xml:space="preserve">
+    <value>Camarões</value>
+  </data>
+  <data name="cmbNacionalidade.Items43" xml:space="preserve">
+    <value>Camboja</value>
+  </data>
+  <data name="cmbNacionalidade.Items44" xml:space="preserve">
+    <value>Canadá</value>
+  </data>
+  <data name="cmbNacionalidade.Items45" xml:space="preserve">
+    <value>Catar</value>
+  </data>
+  <data name="cmbNacionalidade.Items46" xml:space="preserve">
+    <value>Cazaquistão</value>
+  </data>
+  <data name="cmbNacionalidade.Items47" xml:space="preserve">
+    <value>Chade</value>
+  </data>
+  <data name="cmbNacionalidade.Items48" xml:space="preserve">
+    <value>Chile</value>
+  </data>
+  <data name="cmbNacionalidade.Items49" xml:space="preserve">
+    <value>China</value>
+  </data>
+  <data name="cmbNacionalidade.Items50" xml:space="preserve">
+    <value>Chipre</value>
+  </data>
+  <data name="cmbNacionalidade.Items51" xml:space="preserve">
+    <value>Clipperton Island</value>
+  </data>
+  <data name="cmbNacionalidade.Items52" xml:space="preserve">
+    <value>Colômbia</value>
+  </data>
+  <data name="cmbNacionalidade.Items53" xml:space="preserve">
+    <value>Comores</value>
+  </data>
+  <data name="cmbNacionalidade.Items54" xml:space="preserve">
+    <value>Congo-Brazzaville</value>
+  </data>
+  <data name="cmbNacionalidade.Items55" xml:space="preserve">
+    <value>Congo-Kinshasa</value>
+  </data>
+  <data name="cmbNacionalidade.Items56" xml:space="preserve">
+    <value>Coral Sea Islands</value>
+  </data>
+  <data name="cmbNacionalidade.Items57" xml:space="preserve">
+    <value>Coreia do Norte</value>
+  </data>
+  <data name="cmbNacionalidade.Items58" xml:space="preserve">
+    <value>Coreia do Sul</value>
+  </data>
+  <data name="cmbNacionalidade.Items59" xml:space="preserve">
+    <value>Costa do Marfim</value>
+  </data>
+  <data name="cmbNacionalidade.Items60" xml:space="preserve">
+    <value>Costa Rica</value>
+  </data>
+  <data name="cmbNacionalidade.Items61" xml:space="preserve">
+    <value>Croácia</value>
+  </data>
+  <data name="cmbNacionalidade.Items62" xml:space="preserve">
+    <value>Cuba</value>
+  </data>
+  <data name="cmbNacionalidade.Items63" xml:space="preserve">
+    <value>Dhekelia</value>
+  </data>
+  <data name="cmbNacionalidade.Items64" xml:space="preserve">
+    <value>Dinamarca</value>
+  </data>
+  <data name="cmbNacionalidade.Items65" xml:space="preserve">
+    <value>Domínica</value>
+  </data>
+  <data name="cmbNacionalidade.Items66" xml:space="preserve">
+    <value>Egipto</value>
+  </data>
+  <data name="cmbNacionalidade.Items67" xml:space="preserve">
+    <value>Emiratos Árabes Unidos</value>
+  </data>
+  <data name="cmbNacionalidade.Items68" xml:space="preserve">
+    <value>Equador</value>
+  </data>
+  <data name="cmbNacionalidade.Items69" xml:space="preserve">
+    <value>Eritreia</value>
+  </data>
+  <data name="cmbNacionalidade.Items70" xml:space="preserve">
+    <value>Eslováquia</value>
+  </data>
+  <data name="cmbNacionalidade.Items71" xml:space="preserve">
+    <value>Eslovénia</value>
+  </data>
+  <data name="cmbNacionalidade.Items72" xml:space="preserve">
+    <value>Espanha</value>
+  </data>
+  <data name="cmbNacionalidade.Items73" xml:space="preserve">
+    <value>Estados Unidos</value>
+  </data>
+  <data name="cmbNacionalidade.Items74" xml:space="preserve">
+    <value>Estónia</value>
+  </data>
+  <data name="cmbNacionalidade.Items75" xml:space="preserve">
+    <value>Etiópia</value>
+  </data>
+  <data name="cmbNacionalidade.Items76" xml:space="preserve">
+    <value>Faroé</value>
+  </data>
+  <data name="cmbNacionalidade.Items77" xml:space="preserve">
+    <value>Fiji</value>
+  </data>
+  <data name="cmbNacionalidade.Items78" xml:space="preserve">
+    <value>Filipinas</value>
+  </data>
+  <data name="cmbNacionalidade.Items79" xml:space="preserve">
+    <value>Finlândia</value>
+  </data>
+  <data name="cmbNacionalidade.Items80" xml:space="preserve">
+    <value>França</value>
+  </data>
+  <data name="cmbNacionalidade.Items81" xml:space="preserve">
+    <value>Gabão</value>
+  </data>
+  <data name="cmbNacionalidade.Items82" xml:space="preserve">
+    <value>Gâmbia</value>
+  </data>
+  <data name="cmbNacionalidade.Items83" xml:space="preserve">
+    <value>Gana</value>
+  </data>
+  <data name="cmbNacionalidade.Items84" xml:space="preserve">
+    <value>Gaza Strip</value>
+  </data>
+  <data name="cmbNacionalidade.Items85" xml:space="preserve">
+    <value>Geórgia</value>
+  </data>
+  <data name="cmbNacionalidade.Items86" xml:space="preserve">
+    <value>Geórgia do Sul e Sandwich do Sul</value>
+  </data>
+  <data name="cmbNacionalidade.Items87" xml:space="preserve">
+    <value>Gibraltar</value>
+  </data>
+  <data name="cmbNacionalidade.Items88" xml:space="preserve">
+    <value>Granada</value>
+  </data>
+  <data name="cmbNacionalidade.Items89" xml:space="preserve">
+    <value>Grécia</value>
+  </data>
+  <data name="cmbNacionalidade.Items90" xml:space="preserve">
+    <value>Gronelândia</value>
+  </data>
+  <data name="cmbNacionalidade.Items91" xml:space="preserve">
+    <value>Guame</value>
+  </data>
+  <data name="cmbNacionalidade.Items92" xml:space="preserve">
+    <value>Guatemala</value>
+  </data>
+  <data name="cmbNacionalidade.Items93" xml:space="preserve">
+    <value>Guernsey</value>
+  </data>
+  <data name="cmbNacionalidade.Items94" xml:space="preserve">
+    <value>Guiana</value>
+  </data>
+  <data name="cmbNacionalidade.Items95" xml:space="preserve">
+    <value>Guiné</value>
+  </data>
+  <data name="cmbNacionalidade.Items96" xml:space="preserve">
+    <value>Guiné Equatorial</value>
+  </data>
+  <data name="cmbNacionalidade.Items97" xml:space="preserve">
+    <value>Guiné-Bissau</value>
+  </data>
+  <data name="cmbNacionalidade.Items98" xml:space="preserve">
+    <value>Haiti</value>
+  </data>
+  <data name="cmbNacionalidade.Items99" xml:space="preserve">
+    <value>Honduras</value>
+  </data>
+  <data name="cmbNacionalidade.Items100" xml:space="preserve">
+    <value>Hong Kong</value>
+  </data>
+  <data name="cmbNacionalidade.Items101" xml:space="preserve">
+    <value>Hungria</value>
+  </data>
+  <data name="cmbNacionalidade.Items102" xml:space="preserve">
+    <value>Iémen</value>
+  </data>
+  <data name="cmbNacionalidade.Items103" xml:space="preserve">
+    <value>Ilha Bouvet</value>
+  </data>
+  <data name="cmbNacionalidade.Items104" xml:space="preserve">
+    <value>Ilha do Natal</value>
+  </data>
+  <data name="cmbNacionalidade.Items105" xml:space="preserve">
+    <value>Ilha Norfolk</value>
+  </data>
+  <data name="cmbNacionalidade.Items106" xml:space="preserve">
+    <value>Ilhas Caimão</value>
+  </data>
+  <data name="cmbNacionalidade.Items107" xml:space="preserve">
+    <value>Ilhas Cook</value>
+  </data>
+  <data name="cmbNacionalidade.Items108" xml:space="preserve">
+    <value>Ilhas dos Cocos</value>
+  </data>
+  <data name="cmbNacionalidade.Items109" xml:space="preserve">
+    <value>Ilhas Falkland</value>
+  </data>
+  <data name="cmbNacionalidade.Items110" xml:space="preserve">
+    <value>Ilhas Heard e McDonald</value>
+  </data>
+  <data name="cmbNacionalidade.Items111" xml:space="preserve">
+    <value>Ilhas Marshall</value>
+  </data>
+  <data name="cmbNacionalidade.Items112" xml:space="preserve">
+    <value>Ilhas Salomão</value>
+  </data>
+  <data name="cmbNacionalidade.Items113" xml:space="preserve">
+    <value>Ilhas Turcas e Caicos</value>
+  </data>
+  <data name="cmbNacionalidade.Items114" xml:space="preserve">
+    <value>Ilhas Virgens Americanas</value>
+  </data>
+  <data name="cmbNacionalidade.Items115" xml:space="preserve">
+    <value>Ilhas Virgens Britânicas</value>
+  </data>
+  <data name="cmbNacionalidade.Items116" xml:space="preserve">
+    <value>Índia</value>
+  </data>
+  <data name="cmbNacionalidade.Items117" xml:space="preserve">
+    <value>Indian Ocean</value>
+  </data>
+  <data name="cmbNacionalidade.Items118" xml:space="preserve">
+    <value>Indonésia</value>
+  </data>
+  <data name="cmbNacionalidade.Items119" xml:space="preserve">
+    <value>Irão</value>
+  </data>
+  <data name="cmbNacionalidade.Items120" xml:space="preserve">
+    <value>Iraque</value>
+  </data>
+  <data name="cmbNacionalidade.Items121" xml:space="preserve">
+    <value>Irlanda</value>
+  </data>
+  <data name="cmbNacionalidade.Items122" xml:space="preserve">
+    <value>Islândia</value>
+  </data>
+  <data name="cmbNacionalidade.Items123" xml:space="preserve">
+    <value>Israel</value>
+  </data>
+  <data name="cmbNacionalidade.Items124" xml:space="preserve">
+    <value>Itália</value>
+  </data>
+  <data name="cmbNacionalidade.Items125" xml:space="preserve">
+    <value>Jamaica</value>
+  </data>
+  <data name="cmbNacionalidade.Items126" xml:space="preserve">
+    <value>Jan Mayen</value>
+  </data>
+  <data name="cmbNacionalidade.Items127" xml:space="preserve">
+    <value>Japão</value>
+  </data>
+  <data name="cmbNacionalidade.Items128" xml:space="preserve">
+    <value>Jersey</value>
+  </data>
+  <data name="cmbNacionalidade.Items129" xml:space="preserve">
+    <value>Jibuti</value>
+  </data>
+  <data name="cmbNacionalidade.Items130" xml:space="preserve">
+    <value>Jordânia</value>
+  </data>
+  <data name="cmbNacionalidade.Items131" xml:space="preserve">
+    <value>Kuwait</value>
+  </data>
+  <data name="cmbNacionalidade.Items132" xml:space="preserve">
+    <value>Laos</value>
+  </data>
+  <data name="cmbNacionalidade.Items133" xml:space="preserve">
+    <value>Lesoto</value>
+  </data>
+  <data name="cmbNacionalidade.Items134" xml:space="preserve">
+    <value>Letónia</value>
+  </data>
+  <data name="cmbNacionalidade.Items135" xml:space="preserve">
+    <value>Líbano</value>
+  </data>
+  <data name="cmbNacionalidade.Items136" xml:space="preserve">
+    <value>Libéria</value>
+  </data>
+  <data name="cmbNacionalidade.Items137" xml:space="preserve">
+    <value>Líbia</value>
+  </data>
+  <data name="cmbNacionalidade.Items138" xml:space="preserve">
+    <value>Listenstaine</value>
+  </data>
+  <data name="cmbNacionalidade.Items139" xml:space="preserve">
+    <value>Lituânia</value>
+  </data>
+  <data name="cmbNacionalidade.Items140" xml:space="preserve">
+    <value>Luxemburgo</value>
+  </data>
+  <data name="cmbNacionalidade.Items141" xml:space="preserve">
+    <value>Macau</value>
+  </data>
+  <data name="cmbNacionalidade.Items142" xml:space="preserve">
+    <value>Macedónia</value>
+  </data>
+  <data name="cmbNacionalidade.Items143" xml:space="preserve">
+    <value>Madagáscar</value>
+  </data>
+  <data name="cmbNacionalidade.Items144" xml:space="preserve">
+    <value>Malásia</value>
+  </data>
+  <data name="cmbNacionalidade.Items145" xml:space="preserve">
+    <value>Malávi</value>
+  </data>
+  <data name="cmbNacionalidade.Items146" xml:space="preserve">
+    <value>Maldivas</value>
+  </data>
+  <data name="cmbNacionalidade.Items147" xml:space="preserve">
+    <value>Mali</value>
+  </data>
+  <data name="cmbNacionalidade.Items148" xml:space="preserve">
+    <value>Malta</value>
+  </data>
+  <data name="cmbNacionalidade.Items149" xml:space="preserve">
+    <value>Man, Isle of</value>
+  </data>
+  <data name="cmbNacionalidade.Items150" xml:space="preserve">
+    <value>Marianas do Norte</value>
+  </data>
+  <data name="cmbNacionalidade.Items151" xml:space="preserve">
+    <value>Marrocos</value>
+  </data>
+  <data name="cmbNacionalidade.Items152" xml:space="preserve">
+    <value>Maurícia</value>
+  </data>
+  <data name="cmbNacionalidade.Items153" xml:space="preserve">
+    <value>Mauritânia</value>
+  </data>
+  <data name="cmbNacionalidade.Items154" xml:space="preserve">
+    <value>Mayotte</value>
+  </data>
+  <data name="cmbNacionalidade.Items155" xml:space="preserve">
+    <value>México</value>
+  </data>
+  <data name="cmbNacionalidade.Items156" xml:space="preserve">
+    <value>Micronésia</value>
+  </data>
+  <data name="cmbNacionalidade.Items157" xml:space="preserve">
+    <value>Moçambique</value>
+  </data>
+  <data name="cmbNacionalidade.Items158" xml:space="preserve">
+    <value>Moldávia</value>
+  </data>
+  <data name="cmbNacionalidade.Items159" xml:space="preserve">
+    <value>Mónaco</value>
+  </data>
+  <data name="cmbNacionalidade.Items160" xml:space="preserve">
+    <value>Mongólia</value>
+  </data>
+  <data name="cmbNacionalidade.Items161" xml:space="preserve">
+    <value>Monserrate</value>
+  </data>
+  <data name="cmbNacionalidade.Items162" xml:space="preserve">
+    <value>Montenegro</value>
+  </data>
+  <data name="cmbNacionalidade.Items163" xml:space="preserve">
+    <value>Mundo</value>
+  </data>
+  <data name="cmbNacionalidade.Items164" xml:space="preserve">
+    <value>Namíbia</value>
+  </data>
+  <data name="cmbNacionalidade.Items165" xml:space="preserve">
+    <value>Nauru</value>
+  </data>
+  <data name="cmbNacionalidade.Items166" xml:space="preserve">
+    <value>Navassa Island</value>
+  </data>
+  <data name="cmbNacionalidade.Items167" xml:space="preserve">
+    <value>Nepal</value>
+  </data>
+  <data name="cmbNacionalidade.Items168" xml:space="preserve">
+    <value>Nicarágua</value>
+  </data>
+  <data name="cmbNacionalidade.Items169" xml:space="preserve">
+    <value>Níger</value>
+  </data>
+  <data name="cmbNacionalidade.Items170" xml:space="preserve">
+    <value>Nigéria</value>
+  </data>
+  <data name="cmbNacionalidade.Items171" xml:space="preserve">
+    <value>Niue</value>
+  </data>
+  <data name="cmbNacionalidade.Items172" xml:space="preserve">
+    <value>Noruega</value>
+  </data>
+  <data name="cmbNacionalidade.Items173" xml:space="preserve">
+    <value>Nova Caledónia</value>
+  </data>
+  <data name="cmbNacionalidade.Items174" xml:space="preserve">
+    <value>Nova Zelândia</value>
+  </data>
+  <data name="cmbNacionalidade.Items175" xml:space="preserve">
+    <value>Omã</value>
+  </data>
+  <data name="cmbNacionalidade.Items176" xml:space="preserve">
+    <value>Pacific Ocean</value>
+  </data>
+  <data name="cmbNacionalidade.Items177" xml:space="preserve">
+    <value>Países Baixos</value>
+  </data>
+  <data name="cmbNacionalidade.Items178" xml:space="preserve">
+    <value>Palau</value>
+  </data>
+  <data name="cmbNacionalidade.Items179" xml:space="preserve">
+    <value>Panamá</value>
+  </data>
+  <data name="cmbNacionalidade.Items180" xml:space="preserve">
+    <value>Papua-Nova Guiné</value>
+  </data>
+  <data name="cmbNacionalidade.Items181" xml:space="preserve">
+    <value>Paquistão</value>
+  </data>
+  <data name="cmbNacionalidade.Items182" xml:space="preserve">
+    <value>Paracel Islands</value>
+  </data>
+  <data name="cmbNacionalidade.Items183" xml:space="preserve">
+    <value>Paraguai</value>
+  </data>
+  <data name="cmbNacionalidade.Items184" xml:space="preserve">
+    <value>Peru</value>
+  </data>
+  <data name="cmbNacionalidade.Items185" xml:space="preserve">
+    <value>Pitcairn</value>
+  </data>
+  <data name="cmbNacionalidade.Items186" xml:space="preserve">
+    <value>Polinésia Francesa</value>
+  </data>
+  <data name="cmbNacionalidade.Items187" xml:space="preserve">
+    <value>Polónia</value>
+  </data>
+  <data name="cmbNacionalidade.Items188" xml:space="preserve">
+    <value>Porto Rico</value>
+  </data>
+  <data name="cmbNacionalidade.Items189" xml:space="preserve">
+    <value>Portugal</value>
+  </data>
+  <data name="cmbNacionalidade.Items190" xml:space="preserve">
+    <value>Quénia</value>
+  </data>
+  <data name="cmbNacionalidade.Items191" xml:space="preserve">
+    <value>Quirguizistão</value>
+  </data>
+  <data name="cmbNacionalidade.Items192" xml:space="preserve">
+    <value>Quiribáti</value>
+  </data>
+  <data name="cmbNacionalidade.Items193" xml:space="preserve">
+    <value>Reino Unido</value>
+  </data>
+  <data name="cmbNacionalidade.Items194" xml:space="preserve">
+    <value>República Centro-Africana</value>
+  </data>
+  <data name="cmbNacionalidade.Items195" xml:space="preserve">
+    <value>República Checa</value>
+  </data>
+  <data name="cmbNacionalidade.Items196" xml:space="preserve">
+    <value>República Dominicana</value>
+  </data>
+  <data name="cmbNacionalidade.Items197" xml:space="preserve">
+    <value>Roménia</value>
+  </data>
+  <data name="cmbNacionalidade.Items198" xml:space="preserve">
+    <value>Ruanda</value>
+  </data>
+  <data name="cmbNacionalidade.Items199" xml:space="preserve">
+    <value>Rússia</value>
+  </data>
+  <data name="cmbNacionalidade.Items200" xml:space="preserve">
+    <value>Salvador</value>
+  </data>
+  <data name="cmbNacionalidade.Items201" xml:space="preserve">
+    <value>Samoa</value>
+  </data>
+  <data name="cmbNacionalidade.Items202" xml:space="preserve">
+    <value>Samoa Americana</value>
+  </data>
+  <data name="cmbNacionalidade.Items203" xml:space="preserve">
+    <value>Santa Helena</value>
+  </data>
+  <data name="cmbNacionalidade.Items204" xml:space="preserve">
+    <value>Santa Lúcia</value>
+  </data>
+  <data name="cmbNacionalidade.Items205" xml:space="preserve">
+    <value>São Cristóvão e Neves</value>
+  </data>
+  <data name="cmbNacionalidade.Items206" xml:space="preserve">
+    <value>São Marinho</value>
+  </data>
+  <data name="cmbNacionalidade.Items207" xml:space="preserve">
+    <value>São Pedro e Miquelon</value>
+  </data>
+  <data name="cmbNacionalidade.Items208" xml:space="preserve">
+    <value>São Tomé e Príncipe</value>
+  </data>
+  <data name="cmbNacionalidade.Items209" xml:space="preserve">
+    <value>São Vicente e Granadinas</value>
+  </data>
+  <data name="cmbNacionalidade.Items210" xml:space="preserve">
+    <value>Sara Ocidental</value>
+  </data>
+  <data name="cmbNacionalidade.Items211" xml:space="preserve">
+    <value>Seicheles</value>
+  </data>
+  <data name="cmbNacionalidade.Items212" xml:space="preserve">
+    <value>Senegal</value>
+  </data>
+  <data name="cmbNacionalidade.Items213" xml:space="preserve">
+    <value>Serra Leoa</value>
+  </data>
+  <data name="cmbNacionalidade.Items214" xml:space="preserve">
+    <value>Sérvia</value>
+  </data>
+  <data name="cmbNacionalidade.Items215" xml:space="preserve">
+    <value>Singapura</value>
+  </data>
+  <data name="cmbNacionalidade.Items216" xml:space="preserve">
+    <value>Síria</value>
+  </data>
+  <data name="cmbNacionalidade.Items217" xml:space="preserve">
+    <value>Somália</value>
+  </data>
+  <data name="cmbNacionalidade.Items218" xml:space="preserve">
+    <value>Southern Ocean</value>
+  </data>
+  <data name="cmbNacionalidade.Items219" xml:space="preserve">
+    <value>Spratly Islands</value>
+  </data>
+  <data name="cmbNacionalidade.Items220" xml:space="preserve">
+    <value>Sri Lanca</value>
+  </data>
+  <data name="cmbNacionalidade.Items221" xml:space="preserve">
+    <value>Suazilândia</value>
+  </data>
+  <data name="cmbNacionalidade.Items222" xml:space="preserve">
+    <value>Sudão</value>
+  </data>
+  <data name="cmbNacionalidade.Items223" xml:space="preserve">
+    <value>Suécia</value>
+  </data>
+  <data name="cmbNacionalidade.Items224" xml:space="preserve">
+    <value>Suíça</value>
+  </data>
+  <data name="cmbNacionalidade.Items225" xml:space="preserve">
+    <value>Suriname</value>
+  </data>
+  <data name="cmbNacionalidade.Items226" xml:space="preserve">
+    <value>Svalbard e Jan Mayen</value>
+  </data>
+  <data name="cmbNacionalidade.Items227" xml:space="preserve">
+    <value>Tailândia</value>
+  </data>
+  <data name="cmbNacionalidade.Items228" xml:space="preserve">
+    <value>Taiwan</value>
+  </data>
+  <data name="cmbNacionalidade.Items229" xml:space="preserve">
+    <value>Tajiquistão</value>
+  </data>
+  <data name="cmbNacionalidade.Items230" xml:space="preserve">
+    <value>Tanzânia</value>
+  </data>
+  <data name="cmbNacionalidade.Items231" xml:space="preserve">
+    <value>Território Britânico do Oceano Índico</value>
+  </data>
+  <data name="cmbNacionalidade.Items232" xml:space="preserve">
+    <value>Territórios Austrais Franceses</value>
+  </data>
+  <data name="cmbNacionalidade.Items233" xml:space="preserve">
+    <value>Timor Leste</value>
+  </data>
+  <data name="cmbNacionalidade.Items234" xml:space="preserve">
+    <value>Togo</value>
+  </data>
+  <data name="cmbNacionalidade.Items235" xml:space="preserve">
+    <value>Tokelau</value>
+  </data>
+  <data name="cmbNacionalidade.Items236" xml:space="preserve">
+    <value>Tonga</value>
+  </data>
+  <data name="cmbNacionalidade.Items237" xml:space="preserve">
+    <value>Trindade e Tobago</value>
+  </data>
+  <data name="cmbNacionalidade.Items238" xml:space="preserve">
+    <value>Tunísia</value>
+  </data>
+  <data name="cmbNacionalidade.Items239" xml:space="preserve">
+    <value>Turquemenistão</value>
+  </data>
+  <data name="cmbNacionalidade.Items240" xml:space="preserve">
+    <value>Turquia</value>
+  </data>
+  <data name="cmbNacionalidade.Items241" xml:space="preserve">
+    <value>Tuvalu</value>
+  </data>
+  <data name="cmbNacionalidade.Items242" xml:space="preserve">
+    <value>Ucrânia</value>
+  </data>
+  <data name="cmbNacionalidade.Items243" xml:space="preserve">
+    <value>Uganda</value>
+  </data>
+  <data name="cmbNacionalidade.Items244" xml:space="preserve">
+    <value>União Europeia</value>
+  </data>
+  <data name="cmbNacionalidade.Items245" xml:space="preserve">
+    <value>Uruguai</value>
+  </data>
+  <data name="cmbNacionalidade.Items246" xml:space="preserve">
+    <value>Usbequistão</value>
+  </data>
+  <data name="cmbNacionalidade.Items247" xml:space="preserve">
+    <value>Vanuatu</value>
+  </data>
+  <data name="cmbNacionalidade.Items248" xml:space="preserve">
+    <value>Vaticano</value>
+  </data>
+  <data name="cmbNacionalidade.Items249" xml:space="preserve">
+    <value>Venezuela</value>
+  </data>
+  <data name="cmbNacionalidade.Items250" xml:space="preserve">
+    <value>Vietname</value>
+  </data>
+  <data name="cmbNacionalidade.Items251" xml:space="preserve">
+    <value>Wake Island</value>
+  </data>
+  <data name="cmbNacionalidade.Items252" xml:space="preserve">
+    <value>Wallis e Futuna</value>
+  </data>
+  <data name="cmbNacionalidade.Items253" xml:space="preserve">
+    <value>West Bank</value>
+  </data>
+  <data name="cmbNacionalidade.Items254" xml:space="preserve">
+    <value>Zâmbia</value>
+  </data>
+  <data name="cmbNacionalidade.Items255" xml:space="preserve">
+    <value>Zimbabué </value>
+  </data>
+  <data name="cmbNacionalidade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 120</value>
+  </data>
+  <data name="cmbNacionalidade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 21</value>
+  </data>
+  <data name="cmbNacionalidade.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cmbNacionalidade.Name" xml:space="preserve">
+    <value>cmbNacionalidade</value>
+  </data>
+  <data name="&gt;&gt;cmbNacionalidade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbNacionalidade.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;cmbNacionalidade.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="lblNacionalidade.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNacionalidade.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblNacionalidade.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNacionalidade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 123</value>
+  </data>
+  <data name="lblNacionalidade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="lblNacionalidade.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblNacionalidade.Text" xml:space="preserve">
+    <value>Nacionalidade:</value>
+  </data>
+  <data name="&gt;&gt;lblNacionalidade.Name" xml:space="preserve">
+    <value>lblNacionalidade</value>
+  </data>
+  <data name="&gt;&gt;lblNacionalidade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNacionalidade.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblNacionalidade.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="rdbFem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdbFem.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="rdbFem.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdbFem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>604, 31</value>
+  </data>
+  <data name="rdbFem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 17</value>
+  </data>
+  <data name="rdbFem.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="rdbFem.Text" xml:space="preserve">
+    <value>Fem</value>
+  </data>
+  <data name="&gt;&gt;rdbFem.Name" xml:space="preserve">
+    <value>rdbFem</value>
+  </data>
+  <data name="&gt;&gt;rdbFem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdbFem.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;rdbFem.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="rdbMasc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rdbMasc.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="rdbMasc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rdbMasc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>543, 31</value>
+  </data>
+  <data name="rdbMasc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 17</value>
+  </data>
+  <data name="rdbMasc.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="rdbMasc.Text" xml:space="preserve">
+    <value>Masc</value>
+  </data>
+  <data name="&gt;&gt;rdbMasc.Name" xml:space="preserve">
+    <value>rdbMasc</value>
+  </data>
+  <data name="&gt;&gt;rdbMasc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rdbMasc.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;rdbMasc.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="lblSexo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSexo.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblSexo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSexo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>498, 33</value>
+  </data>
+  <data name="lblSexo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lblSexo.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblSexo.Text" xml:space="preserve">
+    <value>Sexo:</value>
+  </data>
+  <data name="&gt;&gt;lblSexo.Name" xml:space="preserve">
+    <value>lblSexo</value>
+  </data>
+  <data name="&gt;&gt;lblSexo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSexo.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblSexo.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="txtNome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="txtNome.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="txtNome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 30</value>
+  </data>
+  <data name="txtNome.MaxLength" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="txtNome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>330, 20</value>
+  </data>
+  <data name="txtNome.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtNome.Name" xml:space="preserve">
+    <value>txtNome</value>
+  </data>
+  <data name="&gt;&gt;txtNome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNome.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;txtNome.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="dtpNascimento.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="dtpNascimento.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 75</value>
+  </data>
+  <data name="dtpNascimento.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="dtpNascimento.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="dtpNascimento.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;dtpNascimento.Name" xml:space="preserve">
+    <value>dtpNascimento</value>
+  </data>
+  <data name="&gt;&gt;dtpNascimento.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpNascimento.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;dtpNascimento.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 75</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Nascimento:</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="lblNome.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNome.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="lblNome.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblNome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 33</value>
+  </data>
+  <data name="lblNome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="lblNome.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lblNome.Text" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="&gt;&gt;lblNome.Name" xml:space="preserve">
+    <value>lblNome</value>
+  </data>
+  <data name="&gt;&gt;lblNome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNome.Parent" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;lblNome.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="gpbDadosPessoais.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="gpbDadosPessoais.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>TopLeft</value>
+  </data>
+  <data name="gpbDadosPessoais.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 191</value>
+  </data>
+  <data name="gpbDadosPessoais.Size" type="System.Drawing.Size, System.Drawing">
+    <value>820, 409</value>
+  </data>
+  <data name="gpbDadosPessoais.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gpbDadosPessoais.Text" xml:space="preserve">
+    <value>DADOS PESSOAIS ALUNO</value>
+  </data>
+  <data name="&gt;&gt;gpbDadosPessoais.Name" xml:space="preserve">
+    <value>gpbDadosPessoais</value>
+  </data>
+  <data name="&gt;&gt;gpbDadosPessoais.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gpbDadosPessoais.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gpbDadosPessoais.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
 </root>

@@ -19,6 +19,9 @@ namespace GuiWindowsForms
         Aluno aluno = new Aluno();
         IAlunoProcesso alunoControlador = AlunoProcesso.Instance;
 
+        //atributo para verificar se o button de Alterar foi clicado 
+        int verificaButton = 0;
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -517,200 +520,399 @@ namespace GuiWindowsForms
         {
             try
             {
-                aluno = new Aluno();
-                alunoControlador = AlunoProcesso.Instance;
 
-                #region VALIDA - NOME
+                #region CADASTRAR ALUNO
 
-                if (String.IsNullOrEmpty(txtNome.Text))
+
+                if (verificaButton == 0)
                 {
-                    errorProviderTela.SetError(txtNome, "Informe o nome");
-                    txtNome.Clear();
-                    return;
-                }
-                aluno.Nome = txtNome.Text;
 
-                #endregion
 
-                #region VALIDA - SEXO
+                    aluno = new Aluno();
+                    alunoControlador = AlunoProcesso.Instance;
 
-                if (rdbMasc.Checked == false && rdbFem.Checked == false)
-                {
-                    errorProviderTela.SetError(rdbFem, "Informe o sexo");
-                    return;
-                }
-                if (rdbMasc.Checked == true)
-                {
-                    aluno.Sexo = 0;
-                }
-                else
-                {
-                    aluno.Sexo = 1;
-                }
+                    #region VALIDA - NOME
 
-                #endregion
-
-                #region VALIDA - EMAIL ALUNO
-
-                aluno.Email = txtEmail.Text;
-
-                #endregion
-
-                #region VALIDA - FONE DO ALUNO
-
-                //if (mskFoneAluno.MaskCompleted == false)
-                //{
-                //    errorProviderTela.SetError(mskFoneAluno, "Informe o fone do aluno");
-                //    mskFoneAluno.Clear();
-                //    return;
-                //}
-                aluno.FoneAluno = mskFoneAluno.Text;
-
-                #endregion
-
-                #region VALIDA - ENDEREÇO
-
-                //if (String.IsNullOrEmpty(txtLogradouro.Text))
-                //{
-                //    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
-                //    txtLogradouro.Clear();
-                //    return;
-                //}
-                aluno.Logradouro = txtLogradouro.Text;
-
-                #endregion
-
-                #region VALIDA - COMPLEMENTO
-
-                //if (String.IsNullOrEmpty(txtComplemento.Text))
-                //{
-                //    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
-                //    txtComplemento.Clear();
-                //    return;
-                //}
-                aluno.ComplementoEndereco = txtComplemento.Text;
-
-                #endregion
-
-                #region VALIDA - NOME EDIFÍCIL
-
-                //if (String.IsNullOrEmpty(txtNomeEdificil.Text))
-                //{
-                //    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
-                //    txtNomeEdificil.Clear();
-                //    return;
-                //}
-
-                #endregion
-
-                #region VALIDA - BAIRRO
-
-                //if (String.IsNullOrEmpty(txtBairro.Text))
-                //{
-                //    errorProviderTela.SetError(txtBairro, "Informe o bairro");
-                //    txtBairro.Clear();
-                //    return;
-                //}
-                aluno.Bairro = txtBairro.Text;
-
-                #endregion
-
-                #region VALIDA - CIDADE
-
-                //if (String.IsNullOrEmpty(txtCidade.Text))
-                //{
-                //    errorProviderTela.SetError(txtCidade, "Informe a cidade");
-                //    txtCidade.Clear();
-                //    return;
-                //}
-                aluno.Cidade = txtCidade.Text;
-
-                #endregion
-
-                #region VALIDA - CEP
-
-                //if (mskCep.MaskCompleted == false)
-                //{
-                //    errorProviderTela.SetError(mskCep, "Informe o cep");
-                //    mskCep.Clear();
-                //    return;
-                //}
-                aluno.Cep = mskCep.Text;
-
-                #endregion
-
-                #region VALIDA - FONE RESIDENCIA
-
-                //if (mskFoneResidencia.MaskCompleted == false)
-                //{
-                //    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
-                //    mskFoneResidencia.Clear();
-                //    return;
-                //}
-                aluno.FoneResidencia = mskFoneResidencia.Text;
-
-                #endregion
-
-                #region VALIDA - RESIDE COM
-
-                //if (String.IsNullOrEmpty(cmbResidCom.Text))
-                //{
-                //    errorProviderTela.SetError(cmbResidCom, "Informe com quem o aluno reside");
-                //    return;
-                //}
-
-                #endregion
-
-                #region VALIDA - FONE EMERGENCIA
-
-                //if (mskFoneEmergencia.MaskCompleted == false)
-                //{
-                //    errorProviderTela.SetError(mskFoneEmergencia, "Informe o fone de emergência");
-                //    mskFoneEmergencia.Clear();
-                //    return;
-                //}
-                aluno.FoneEmergencia = mskFoneEmergencia.Text;
-
-                #endregion
-
-                aluno.Nascimento = dtpNascimento.Value;
-                aluno.Nacionalidade = cmbNacionalidade.Text;
-                aluno.Naturalidade = txtNaturalidade.Text;
-                aluno.Uf = cmbUf.Text;
-
-                /*
-                 * Perfil temporário para testes, retirar quando for concluida a implementação do perfil
-                 */
-
-                aluno.PerfilID = 1;
-                aluno.Status = (int)Status.Ativo;
-
-                //aluno = uMenuImagem1.retornaAluno(aluno);
-                Memoria memoria = Memoria.Instance;
-                if (memoria.Aluno == null)
-                {
-                    if (verificaSeJaCadastrado(aluno) == false)
+                    if (String.IsNullOrEmpty(txtNome.Text))
                     {
-                        alunoControlador.Incluir(aluno);
-                        alunoControlador.Confirmar();
+                        errorProviderTela.SetError(txtNome, "Informe o nome");
+                        txtNome.Clear();
+                        return;
+                    }
+                    aluno.Nome = txtNome.Text;
 
-                        memoria.Aluno = aluno;
+                    #endregion
+
+                    #region VALIDA - SEXO
+
+                    if (rdbMasc.Checked == false && rdbFem.Checked == false)
+                    {
+                        errorProviderTela.SetError(rdbFem, "Informe o sexo");
+                        return;
+                    }
+                    if (rdbMasc.Checked == true)
+                    {
+                        aluno.Sexo = 0;
+                    }
+                    else
+                    {
+                        aluno.Sexo = 1;
                     }
 
-                    MessageBox.Show(AlunoConstantes.ALUNO_INCLUIDO, "Colégio Conhecer - Cadastrar Aluno");
-                }
-                else
-                {
-                    alunoControlador.Alterar(aluno);
+                    #endregion
 
-                    MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer - Alterar Aluno");
+                    #region VALIDA - EMAIL ALUNO
+
+                    aluno.Email = txtEmail.Text;
+
+                    #endregion
+
+                    #region VALIDA - FONE DO ALUNO
+
+                    //if (mskFoneAluno.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFoneAluno, "Informe o fone do aluno");
+                    //    mskFoneAluno.Clear();
+                    //    return;
+                    //}
+                    aluno.FoneAluno = mskFoneAluno.Text;
+
+                    #endregion
+
+                    #region VALIDA - ENDEREÇO
+
+                    //if (String.IsNullOrEmpty(txtLogradouro.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
+                    //    txtLogradouro.Clear();
+                    //    return;
+                    //}
+                    aluno.Logradouro = txtLogradouro.Text;
+
+                    #endregion
+
+                    #region VALIDA - COMPLEMENTO
+
+                    //if (String.IsNullOrEmpty(txtComplemento.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
+                    //    txtComplemento.Clear();
+                    //    return;
+                    //}
+                    aluno.ComplementoEndereco = txtComplemento.Text;
+
+                    #endregion
+
+                    #region VALIDA - NOME EDIFÍCIL
+
+                    //if (String.IsNullOrEmpty(txtNomeEdificil.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
+                    //    txtNomeEdificil.Clear();
+                    //    return;
+                    //}
+                    aluno.Edificio = txtNomeEdificil.Text;
+                    #endregion
+
+                    #region VALIDA - BAIRRO
+
+                    //if (String.IsNullOrEmpty(txtBairro.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtBairro, "Informe o bairro");
+                    //    txtBairro.Clear();
+                    //    return;
+                    //}
+                    aluno.Bairro = txtBairro.Text;
+
+                    #endregion
+
+                    #region VALIDA - CIDADE
+
+                    //if (String.IsNullOrEmpty(txtCidade.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtCidade, "Informe a cidade");
+                    //    txtCidade.Clear();
+                    //    return;
+                    //}
+                    aluno.Cidade = txtCidade.Text;
+
+                    #endregion
+
+                    #region VALIDA - CEP
+
+                    //if (mskCep.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskCep, "Informe o cep");
+                    //    mskCep.Clear();
+                    //    return;
+                    //}
+                    aluno.Cep = mskCep.Text;
+
+                    #endregion
+
+                    #region VALIDA - FONE RESIDENCIA
+
+                    //if (mskFoneResidencia.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
+                    //    mskFoneResidencia.Clear();
+                    //    return;
+                    //}
+                    aluno.FoneResidencia = mskFoneResidencia.Text;
+
+                    #endregion
+
+                    #region VALIDA - RESIDE COM
+
+                    //if (String.IsNullOrEmpty(cmbResidCom.Text))
+                    //{
+                    //    errorProviderTela.SetError(cmbResidCom, "Informe com quem o aluno reside");
+                    //    return;
+                    //}
+
+                    #endregion
+
+                    #region VALIDA - FONE EMERGENCIA
+
+                    //if (mskFoneEmergencia.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFoneEmergencia, "Informe o fone de emergência");
+                    //    mskFoneEmergencia.Clear();
+                    //    return;
+                    //}
+                    aluno.FoneEmergencia = mskFoneEmergencia.Text;
+
+                    #endregion
+
+                    aluno.Nascimento = dtpNascimento.Value;
+                    aluno.Nacionalidade = cmbNacionalidade.Text;
+                    aluno.Naturalidade = txtNaturalidade.Text;
+                    aluno.Uf = cmbUf.Text;
+
+                    /*
+                     * Perfil temporário para testes, retirar quando for concluida a implementação do perfil
+                     */
+
+                    aluno.PerfilID = 1;
+                    aluno.Status = (int)Status.Ativo;
+
+                    //aluno = uMenuImagem1.retornaAluno(aluno);
+                    Memoria memoria = Memoria.Instance;
+                    if (memoria.Aluno == null)
+                    {
+                        if (verificaSeJaCadastrado(aluno) == false)
+                        {
+                            alunoControlador.Incluir(aluno);
+                            alunoControlador.Confirmar();
+
+                            memoria.Aluno = aluno;
+                        }
+
+                        MessageBox.Show(AlunoConstantes.ALUNO_INCLUIDO, "Colégio Conhecer - Cadastrar Aluno");
+                    }
+                    else
+                    {
+                        alunoControlador.Alterar(aluno);
+
+                        MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer - Alterar Aluno");
+                    }
                 }
+                #endregion
+
+                #region ALTERAR ALUNO
+
+                if (verificaButton == 1)
+                {
+
+
+                    alunoControlador = AlunoProcesso.Instance;
+
+                    #region VALIDA - NOME
+
+                    if (String.IsNullOrEmpty(txtNome.Text))
+                    {
+                        errorProviderTela.SetError(txtNome, "Informe o nome");
+                        txtNome.Clear();
+                        return;
+                    }
+                    aluno.Nome = txtNome.Text;
+
+                    #endregion
+
+                    #region VALIDA - SEXO
+
+                    if (rdbMasc.Checked == false && rdbFem.Checked == false)
+                    {
+                        errorProviderTela.SetError(rdbFem, "Informe o sexo");
+                        return;
+                    }
+                    if (rdbMasc.Checked == true)
+                    {
+                        aluno.Sexo = 0;
+                    }
+                    else
+                    {
+                        aluno.Sexo = 1;
+                    }
+
+                    #endregion
+
+                    #region VALIDA - EMAIL ALUNO
+
+                    aluno.Email = txtEmail.Text;
+
+                    #endregion
+
+                    #region VALIDA - FONE DO ALUNO
+
+                    //if (mskFoneAluno.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFoneAluno, "Informe o fone do aluno");
+                    //    mskFoneAluno.Clear();
+                    //    return;
+                    //}
+                    aluno.FoneAluno = mskFoneAluno.Text;
+
+                    #endregion
+
+                    #region VALIDA - ENDEREÇO
+
+                    //if (String.IsNullOrEmpty(txtLogradouro.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
+                    //    txtLogradouro.Clear();
+                    //    return;
+                    //}
+                    aluno.Logradouro = txtLogradouro.Text;
+
+                    #endregion
+
+                    #region VALIDA - COMPLEMENTO
+
+                    //if (String.IsNullOrEmpty(txtComplemento.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
+                    //    txtComplemento.Clear();
+                    //    return;
+                    //}
+                    aluno.ComplementoEndereco = txtComplemento.Text;
+
+                    #endregion
+
+                    #region VALIDA - NOME EDIFÍCIL
+
+                    //if (String.IsNullOrEmpty(txtNomeEdificil.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
+                    //    txtNomeEdificil.Clear();
+                    //    return;
+                    //}
+                    aluno.Edificio = txtNomeEdificil.Text;
+                    #endregion
+
+                    #region VALIDA - BAIRRO
+
+                    //if (String.IsNullOrEmpty(txtBairro.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtBairro, "Informe o bairro");
+                    //    txtBairro.Clear();
+                    //    return;
+                    //}
+                    aluno.Bairro = txtBairro.Text;
+
+                    #endregion
+
+                    #region VALIDA - CIDADE
+
+                    //if (String.IsNullOrEmpty(txtCidade.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtCidade, "Informe a cidade");
+                    //    txtCidade.Clear();
+                    //    return;
+                    //}
+                    aluno.Cidade = txtCidade.Text;
+
+                    #endregion
+
+                    #region VALIDA - CEP
+
+                    //if (mskCep.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskCep, "Informe o cep");
+                    //    mskCep.Clear();
+                    //    return;
+                    //}
+                    aluno.Cep = mskCep.Text;
+
+                    #endregion
+
+                    #region VALIDA - FONE RESIDENCIA
+
+                    //if (mskFoneResidencia.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
+                    //    mskFoneResidencia.Clear();
+                    //    return;
+                    //}
+                    aluno.FoneResidencia = mskFoneResidencia.Text;
+
+                    #endregion
+
+                    #region VALIDA - RESIDE COM
+
+                    //if (String.IsNullOrEmpty(cmbResidCom.Text))
+                    //{
+                    //    errorProviderTela.SetError(cmbResidCom, "Informe com quem o aluno reside");
+                    //    return;
+                    //}
+
+                    #endregion
+
+                    #region VALIDA - FONE EMERGENCIA
+
+                    //if (mskFoneEmergencia.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFoneEmergencia, "Informe o fone de emergência");
+                    //    mskFoneEmergencia.Clear();
+                    //    return;
+                    //}
+                    aluno.FoneEmergencia = mskFoneEmergencia.Text;
+
+                    #endregion
+
+                    aluno.Nascimento = dtpNascimento.Value;
+                    aluno.Nacionalidade = cmbNacionalidade.Text;
+                    aluno.Naturalidade = txtNaturalidade.Text;
+                    aluno.Uf = cmbUf.Text;
+
+                    /*
+                     * Perfil temporário para testes, retirar quando for concluida a implementação do perfil
+                     */
+
+                    aluno.PerfilID = 1;
+                    aluno.Status = (int)Status.Ativo;
+
+                    //aluno = uMenuImagem1.retornaAluno(aluno);
+                    Memoria memoria = Memoria.Instance;
+                    if (memoria.Aluno != null)
+                    {
+                        alunoControlador.Alterar(aluno);
+                        MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer - Alterar Aluno");
+                    }
+ 
+
+                }
+                #endregion
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            Enabled_False();
+            verificaButton = 0;
+
         }
 
         #endregion
@@ -952,6 +1154,9 @@ namespace GuiWindowsForms
 
             }
             txtNome.Focus();
+
+            ucMenuInferior1.exibirBotaoDeletar();
+            ucMenuInferior1.exibirBotaoAlterar();
         }
 
         #region SELECIONA CIDADE
@@ -999,6 +1204,72 @@ namespace GuiWindowsForms
         {
             limparTelaAluno();
             txtNome.Focus();
+            Enabled_False();
         }
+
+        #region ALTERAR
+        private void ucMenuInferior1_EventoAlterar()
+        {
+            Enabled_True();
+            verificaButton = 1;
+
+        }
+        #endregion
+
+        #region METODOS ENABLED
+
+        /// <summary>
+        ///  Método para Ativar a Alteração
+        ///  de todos os campos de Aluno
+        /// </summary>
+        private void Enabled_True()
+        {
+            txtNome.Enabled = true;
+            rdbFem.Enabled = true;
+            rdbMasc.Enabled = true;
+            dtpNascimento.Enabled = true;
+            cmbNacionalidade.Enabled = true;
+            txtNaturalidade.Enabled = true;
+            txtLogradouro.Enabled = true;
+            txtComplemento.Enabled = true;
+            txtNomeEdificil.Enabled = true;
+            txtBairro.Enabled = true;
+            mskCep.Enabled = true;
+            cmbUf.Enabled = true;
+            txtCidade.Enabled = true;
+            mskFoneAluno.Enabled = true;
+            mskFoneEmergencia.Enabled = true;
+            mskFoneResidencia.Enabled = true;
+            txtEmail.Enabled = true;
+            uMenuImagem1.Enabled = true;
+        }
+
+        /// <summary>
+        ///  Método para Desativar a Alteração
+        ///  de todos os campos de Aluno
+        /// </summary>
+        private void Enabled_False()
+        {
+            txtNome.Enabled = false;
+            rdbFem.Enabled = false;
+            rdbMasc.Enabled = false;
+            dtpNascimento.Enabled = false;
+            cmbNacionalidade.Enabled = false;
+            txtNaturalidade.Enabled = false;
+            txtLogradouro.Enabled = false;
+            txtComplemento.Enabled = false;
+            txtNomeEdificil.Enabled = false;
+            txtBairro.Enabled = false;
+            mskCep.Enabled = false;
+            cmbUf.Enabled = false;
+            txtCidade.Enabled = false;
+            mskFoneAluno.Enabled = false;
+            mskFoneEmergencia.Enabled = false;
+            mskFoneResidencia.Enabled = false;
+            txtEmail.Enabled = false;
+            uMenuImagem1.Enabled = false;
+        }
+
+        #endregion
     }
 }

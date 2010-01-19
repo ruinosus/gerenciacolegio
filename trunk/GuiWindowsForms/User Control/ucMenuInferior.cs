@@ -62,6 +62,11 @@ namespace GuiWindowsForms
         {
             if (EventoCadastrar != null)
                 EventoCadastrar();
+
+            btnAlterar.Enabled = true;
+            btnExcluir.Enabled = true;
+            btnIncluir.Enabled = false;
+
         }
 
         public void exibirMensagem(String texto)
@@ -97,6 +102,7 @@ namespace GuiWindowsForms
         {
             if (EventoAlterar != null)
                 EventoAlterar();
+            btnExcluir.Enabled = false;
         }
 
         public void exibirBotaoAlterar()
@@ -142,6 +148,7 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region EVENTOS
         private void btnAlterar_MouseLeave(object sender, EventArgs e)
         {
             lblInfoControles.Visible = false;
@@ -174,5 +181,6 @@ namespace GuiWindowsForms
             lblInfoControles.Visible = true;
             lblInfoControles.Text = "Excluir";
         }
+        #endregion
     }
 }
