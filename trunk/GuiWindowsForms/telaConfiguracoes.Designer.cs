@@ -85,7 +85,7 @@
             this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(31, 677);
+            this.btnVoltar.Location = new System.Drawing.Point(31, 637);
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(33, 34);
@@ -99,7 +99,7 @@
             // ucMenuDireita1
             // 
             this.ucMenuDireita1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuDireita1.Location = new System.Drawing.Point(893, 175);
+            this.ucMenuDireita1.Location = new System.Drawing.Point(880, 175);
             this.ucMenuDireita1.Name = "ucMenuDireita1";
             this.ucMenuDireita1.Size = new System.Drawing.Size(120, 493);
             this.ucMenuDireita1.TabIndex = 94;
@@ -113,7 +113,7 @@
             this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
             this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
             this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
-            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(120, 493);
+            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(120, 432);
             this.ucMenuConfiguracoesEsquerda1.TabIndex = 95;
             this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
             this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
@@ -132,7 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.ClientSize = new System.Drawing.Size(990, 680);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblInfoControles);
             this.Controls.Add(this.btnVoltar);

@@ -592,13 +592,6 @@ namespace GuiWindowsForms.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap matricula_73x73 {
-            get {
-                object obj = ResourceManager.GetObject("matricula_73x73", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap menos_branco {
             get {
                 object obj = ResourceManager.GetObject("menos_branco", resourceCulture);
@@ -609,27 +602,6 @@ namespace GuiWindowsForms.Properties {
         internal static System.Drawing.Bitmap modelo_tela {
             get {
                 object obj = ResourceManager.GetObject("modelo-tela", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap modelo_tela_azul {
-            get {
-                object obj = ResourceManager.GetObject("modelo tela-azul", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap modelo_tela_iconemenor {
-            get {
-                object obj = ResourceManager.GetObject("modelo tela-iconemenor", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap modelo_tela_iconemenor1 {
-            get {
-                object obj = ResourceManager.GetObject("modelo tela-iconemenor1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

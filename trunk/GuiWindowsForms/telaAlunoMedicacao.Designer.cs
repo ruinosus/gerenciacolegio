@@ -91,14 +91,14 @@
             this.gpbContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbContato.Location = new System.Drawing.Point(39, 191);
             this.gpbContato.Name = "gpbContato";
-            this.gpbContato.Size = new System.Drawing.Size(820, 475);
+            this.gpbContato.Size = new System.Drawing.Size(820, 440);
             this.gpbContato.TabIndex = 0;
             this.gpbContato.TabStop = false;
             this.gpbContato.Text = "DESCRIÇÕES MÉDICAS DO ALUNO";
             // 
             // txtContato
             // 
-            this.txtContato.Location = new System.Drawing.Point(51, 412);
+            this.txtContato.Location = new System.Drawing.Point(51, 367);
             this.txtContato.MaxLength = 300;
             this.txtContato.Multiline = true;
             this.txtContato.Name = "txtContato";
@@ -108,7 +108,7 @@
             // lblSituacaoEspecial
             // 
             this.lblSituacaoEspecial.AutoSize = true;
-            this.lblSituacaoEspecial.Location = new System.Drawing.Point(48, 306);
+            this.lblSituacaoEspecial.Location = new System.Drawing.Point(48, 266);
             this.lblSituacaoEspecial.Name = "lblSituacaoEspecial";
             this.lblSituacaoEspecial.Size = new System.Drawing.Size(113, 13);
             this.lblSituacaoEspecial.TabIndex = 9;
@@ -117,7 +117,7 @@
             // lblSituacaoEspeci
             // 
             this.lblSituacaoEspeci.AutoSize = true;
-            this.lblSituacaoEspeci.Location = new System.Drawing.Point(46, 396);
+            this.lblSituacaoEspeci.Location = new System.Drawing.Point(46, 351);
             this.lblSituacaoEspeci.Name = "lblSituacaoEspeci";
             this.lblSituacaoEspeci.Size = new System.Drawing.Size(580, 13);
             this.lblSituacaoEspeci.TabIndex = 10;
@@ -126,7 +126,7 @@
             // 
             // txtSituacaoEspecial
             // 
-            this.txtSituacaoEspecial.Location = new System.Drawing.Point(51, 322);
+            this.txtSituacaoEspecial.Location = new System.Drawing.Point(51, 282);
             this.txtSituacaoEspecial.MaxLength = 300;
             this.txtSituacaoEspecial.Multiline = true;
             this.txtSituacaoEspecial.Name = "txtSituacaoEspecial";
@@ -137,7 +137,7 @@
             // lblDescricaoMedica
             // 
             this.lblDescricaoMedica.AutoSize = true;
-            this.lblDescricaoMedica.Location = new System.Drawing.Point(46, 221);
+            this.lblDescricaoMedica.Location = new System.Drawing.Point(46, 186);
             this.lblDescricaoMedica.Name = "lblDescricaoMedica";
             this.lblDescricaoMedica.Size = new System.Drawing.Size(436, 13);
             this.lblDescricaoMedica.TabIndex = 8;
@@ -145,7 +145,7 @@
             // 
             // txtDescricaoMedica
             // 
-            this.txtDescricaoMedica.Location = new System.Drawing.Point(49, 237);
+            this.txtDescricaoMedica.Location = new System.Drawing.Point(49, 202);
             this.txtDescricaoMedica.MaxLength = 300;
             this.txtDescricaoMedica.Multiline = true;
             this.txtDescricaoMedica.Name = "txtDescricaoMedica";
@@ -155,7 +155,7 @@
             // 
             // txtPlanoSaude
             // 
-            this.txtPlanoSaude.Location = new System.Drawing.Point(566, 180);
+            this.txtPlanoSaude.Location = new System.Drawing.Point(566, 150);
             this.txtPlanoSaude.MaxLength = 30;
             this.txtPlanoSaude.Name = "txtPlanoSaude";
             this.txtPlanoSaude.Size = new System.Drawing.Size(201, 20);
@@ -165,7 +165,7 @@
             // lblPlanoSaude
             // 
             this.lblPlanoSaude.AutoSize = true;
-            this.lblPlanoSaude.Location = new System.Drawing.Point(448, 180);
+            this.lblPlanoSaude.Location = new System.Drawing.Point(448, 150);
             this.lblPlanoSaude.Name = "lblPlanoSaude";
             this.lblPlanoSaude.Size = new System.Drawing.Size(101, 13);
             this.lblPlanoSaude.TabIndex = 7;
@@ -174,7 +174,7 @@
             // lblHospital
             // 
             this.lblHospital.AutoSize = true;
-            this.lblHospital.Location = new System.Drawing.Point(48, 183);
+            this.lblHospital.Location = new System.Drawing.Point(48, 153);
             this.lblHospital.Name = "lblHospital";
             this.lblHospital.Size = new System.Drawing.Size(57, 13);
             this.lblHospital.TabIndex = 6;
@@ -182,7 +182,7 @@
             // 
             // txtHospital
             // 
-            this.txtHospital.Location = new System.Drawing.Point(165, 180);
+            this.txtHospital.Location = new System.Drawing.Point(165, 150);
             this.txtHospital.MaxLength = 30;
             this.txtHospital.Name = "txtHospital";
             this.txtHospital.Size = new System.Drawing.Size(201, 20);
@@ -193,7 +193,7 @@
             // 
             this.rdbNegativo.AutoSize = true;
             this.rdbNegativo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbNegativo.Location = new System.Drawing.Point(416, 103);
+            this.rdbNegativo.Location = new System.Drawing.Point(416, 93);
             this.rdbNegativo.Name = "rdbNegativo";
             this.rdbNegativo.Size = new System.Drawing.Size(76, 17);
             this.rdbNegativo.TabIndex = 3;
@@ -206,7 +206,7 @@
             // 
             this.rdbPositivo.AutoSize = true;
             this.rdbPositivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbPositivo.Location = new System.Drawing.Point(340, 103);
+            this.rdbPositivo.Location = new System.Drawing.Point(340, 93);
             this.rdbPositivo.Name = "rdbPositivo";
             this.rdbPositivo.Size = new System.Drawing.Size(70, 17);
             this.rdbPositivo.TabIndex = 2;
@@ -220,7 +220,7 @@
             this.cmbGrupoSanguineo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbGrupoSanguineo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGrupoSanguineo.FormattingEnabled = true;
-            this.cmbGrupoSanguineo.Location = new System.Drawing.Point(165, 100);
+            this.cmbGrupoSanguineo.Location = new System.Drawing.Point(165, 90);
             this.cmbGrupoSanguineo.Name = "cmbGrupoSanguineo";
             this.cmbGrupoSanguineo.Size = new System.Drawing.Size(72, 21);
             this.cmbGrupoSanguineo.TabIndex = 1;
@@ -228,7 +228,7 @@
             // 
             // txtNomeMedico
             // 
-            this.txtNomeMedico.Location = new System.Drawing.Point(165, 140);
+            this.txtNomeMedico.Location = new System.Drawing.Point(165, 120);
             this.txtNomeMedico.MaxLength = 50;
             this.txtNomeMedico.Name = "txtNomeMedico";
             this.txtNomeMedico.Size = new System.Drawing.Size(366, 20);
@@ -238,7 +238,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(48, 140);
+            this.lblEmail.Location = new System.Drawing.Point(48, 120);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(106, 13);
             this.lblEmail.TabIndex = 4;
@@ -246,7 +246,7 @@
             // 
             // mskFone
             // 
-            this.mskFone.Location = new System.Drawing.Point(656, 140);
+            this.mskFone.Location = new System.Drawing.Point(656, 120);
             this.mskFone.Mask = "(99) 0000-0000";
             this.mskFone.Name = "mskFone";
             this.mskFone.Size = new System.Drawing.Size(111, 20);
@@ -256,7 +256,7 @@
             // lblFone
             // 
             this.lblFone.AutoSize = true;
-            this.lblFone.Location = new System.Drawing.Point(602, 140);
+            this.lblFone.Location = new System.Drawing.Point(602, 120);
             this.lblFone.Name = "lblFone";
             this.lblFone.Size = new System.Drawing.Size(39, 13);
             this.lblFone.TabIndex = 5;
@@ -265,7 +265,7 @@
             // lblFatorRh
             // 
             this.lblFatorRh.AutoSize = true;
-            this.lblFatorRh.Location = new System.Drawing.Point(274, 103);
+            this.lblFatorRh.Location = new System.Drawing.Point(274, 93);
             this.lblFatorRh.Name = "lblFatorRh";
             this.lblFatorRh.Size = new System.Drawing.Size(60, 13);
             this.lblFatorRh.TabIndex = 2;
@@ -273,7 +273,7 @@
             // 
             // txtAlergico
             // 
-            this.txtAlergico.Location = new System.Drawing.Point(51, 38);
+            this.txtAlergico.Location = new System.Drawing.Point(51, 40);
             this.txtAlergico.MaxLength = 300;
             this.txtAlergico.Multiline = true;
             this.txtAlergico.Name = "txtAlergico";
@@ -284,7 +284,7 @@
             // lblGrupoSanguineo
             // 
             this.lblGrupoSanguineo.AutoSize = true;
-            this.lblGrupoSanguineo.Location = new System.Drawing.Point(48, 103);
+            this.lblGrupoSanguineo.Location = new System.Drawing.Point(48, 93);
             this.lblGrupoSanguineo.Name = "lblGrupoSanguineo";
             this.lblGrupoSanguineo.Size = new System.Drawing.Size(111, 13);
             this.lblGrupoSanguineo.TabIndex = 1;
@@ -305,7 +305,7 @@
             this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(941, 9);
+            this.btnDesconectar.Location = new System.Drawing.Point(950, 9);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
             this.btnDesconectar.TabIndex = 38;
@@ -332,9 +332,9 @@
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
+            this.ucMenuInferior1.Size = new System.Drawing.Size(744, 43);
             this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
@@ -376,7 +376,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.ClientSize = new System.Drawing.Size(990, 680);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.btnDesconectar);

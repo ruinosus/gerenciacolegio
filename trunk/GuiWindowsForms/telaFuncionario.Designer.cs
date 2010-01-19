@@ -130,7 +130,7 @@
             this.gpbDadosPessoais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDadosPessoais.Location = new System.Drawing.Point(39, 191);
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
-            this.gpbDadosPessoais.Size = new System.Drawing.Size(820, 467);
+            this.gpbDadosPessoais.Size = new System.Drawing.Size(820, 431);
             this.gpbDadosPessoais.TabIndex = 39;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DADOS DO FUNCIONÁRIO";
@@ -372,7 +372,7 @@
             // lblEstadoCivil
             // 
             this.lblEstadoCivil.AutoSize = true;
-            this.lblEstadoCivil.Location = new System.Drawing.Point(46, 442);
+            this.lblEstadoCivil.Location = new System.Drawing.Point(47, 397);
             this.lblEstadoCivil.Name = "lblEstadoCivil";
             this.lblEstadoCivil.Size = new System.Drawing.Size(78, 13);
             this.lblEstadoCivil.TabIndex = 45;
@@ -390,7 +390,7 @@
             "Separado(a)",
             "Divorciado(a) ",
             "Viúvo(a)"});
-            this.cmbEstadoCivil.Location = new System.Drawing.Point(127, 439);
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(128, 394);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
             this.cmbEstadoCivil.Size = new System.Drawing.Size(124, 21);
             this.cmbEstadoCivil.TabIndex = 44;
@@ -659,7 +659,7 @@
             "West Bank",
             "Zâmbia",
             "Zimbabué "});
-            this.cmbNacionalidade.Location = new System.Drawing.Point(369, 439);
+            this.cmbNacionalidade.Location = new System.Drawing.Point(370, 394);
             this.cmbNacionalidade.Name = "cmbNacionalidade";
             this.cmbNacionalidade.Size = new System.Drawing.Size(158, 21);
             this.cmbNacionalidade.TabIndex = 41;
@@ -668,7 +668,7 @@
             // lblNacionalidade
             // 
             this.lblNacionalidade.AutoSize = true;
-            this.lblNacionalidade.Location = new System.Drawing.Point(271, 442);
+            this.lblNacionalidade.Location = new System.Drawing.Point(272, 397);
             this.lblNacionalidade.Name = "lblNacionalidade";
             this.lblNacionalidade.Size = new System.Drawing.Size(92, 13);
             this.lblNacionalidade.TabIndex = 40;
@@ -677,7 +677,7 @@
             // lblFiliacao
             // 
             this.lblFiliacao.AutoSize = true;
-            this.lblFiliacao.Location = new System.Drawing.Point(48, 356);
+            this.lblFiliacao.Location = new System.Drawing.Point(47, 356);
             this.lblFiliacao.Name = "lblFiliacao";
             this.lblFiliacao.Size = new System.Drawing.Size(62, 13);
             this.lblFiliacao.TabIndex = 39;
@@ -687,7 +687,7 @@
             // 
             this.txtFiliacaoPai.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtFiliacaoPai.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtFiliacaoPai.Location = new System.Drawing.Point(166, 382);
+            this.txtFiliacaoPai.Location = new System.Drawing.Point(161, 351);
             this.txtFiliacaoPai.MaxLength = 30;
             this.txtFiliacaoPai.Name = "txtFiliacaoPai";
             this.txtFiliacaoPai.Size = new System.Drawing.Size(222, 23);
@@ -697,7 +697,7 @@
             // lblPai
             // 
             this.lblPai.AutoSize = true;
-            this.lblPai.Location = new System.Drawing.Point(131, 385);
+            this.lblPai.Location = new System.Drawing.Point(126, 354);
             this.lblPai.Name = "lblPai";
             this.lblPai.Size = new System.Drawing.Size(29, 13);
             this.lblPai.TabIndex = 37;
@@ -728,7 +728,7 @@
             // 
             this.txtFiliacaoMae.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.txtFiliacaoMae.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtFiliacaoMae.Location = new System.Drawing.Point(452, 382);
+            this.txtFiliacaoMae.Location = new System.Drawing.Point(447, 351);
             this.txtFiliacaoMae.MaxLength = 40;
             this.txtFiliacaoMae.Name = "txtFiliacaoMae";
             this.txtFiliacaoMae.Size = new System.Drawing.Size(220, 23);
@@ -738,7 +738,7 @@
             // lblMae
             // 
             this.lblMae.AutoSize = true;
-            this.lblMae.Location = new System.Drawing.Point(411, 387);
+            this.lblMae.Location = new System.Drawing.Point(406, 356);
             this.lblMae.Name = "lblMae";
             this.lblMae.Size = new System.Drawing.Size(35, 13);
             this.lblMae.TabIndex = 33;
@@ -870,7 +870,7 @@
             this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50;
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Location = new System.Drawing.Point(910, 630);
+            this.btnImprimir.Location = new System.Drawing.Point(896, 609);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(0);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(50, 50);
@@ -892,9 +892,9 @@
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 41);
+            this.ucMenuInferior1.Size = new System.Drawing.Size(779, 41);
             this.ucMenuInferior1.TabIndex = 99;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
@@ -924,7 +924,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.ClientSize = new System.Drawing.Size(990, 680);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuImagemFunc1);
             this.Controls.Add(this.btnImprimir);

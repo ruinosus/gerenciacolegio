@@ -83,7 +83,7 @@
             this.gpbSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbSerie.Location = new System.Drawing.Point(153, 129);
             this.gpbSerie.Name = "gpbSerie";
-            this.gpbSerie.Size = new System.Drawing.Size(688, 550);
+            this.gpbSerie.Size = new System.Drawing.Size(688, 502);
             this.gpbSerie.TabIndex = 0;
             this.gpbSerie.TabStop = false;
             this.gpbSerie.Text = "CADASTRO DE SÉRIE";
@@ -94,7 +94,7 @@
             this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlterar.FlatAppearance.BorderSize = 0;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Location = new System.Drawing.Point(556, 198);
+            this.btnAlterar.Location = new System.Drawing.Point(556, 166);
             this.btnAlterar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(32, 32);
@@ -108,7 +108,7 @@
             this.btnAdicionarSerie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarSerie.FlatAppearance.BorderSize = 0;
             this.btnAdicionarSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarSerie.Location = new System.Drawing.Point(594, 198);
+            this.btnAdicionarSerie.Location = new System.Drawing.Point(594, 166);
             this.btnAdicionarSerie.Name = "btnAdicionarSerie";
             this.btnAdicionarSerie.Size = new System.Drawing.Size(32, 32);
             this.btnAdicionarSerie.TabIndex = 3;
@@ -146,11 +146,11 @@
             this.cicloCol,
             this.valorCol});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 239);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 207);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(640, 293);
+            this.dataGridView1.Size = new System.Drawing.Size(640, 284);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -232,7 +232,7 @@
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(632, 219);
+            this.btnExcluir.Location = new System.Drawing.Point(632, 187);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(32, 11);
             this.btnExcluir.TabIndex = 70;
@@ -283,7 +283,7 @@
             // txtValor
             // 
             this.txtValor.Enabled = false;
-            this.txtValor.Location = new System.Drawing.Point(92, 194);
+            this.txtValor.Location = new System.Drawing.Point(92, 162);
             this.txtValor.MaxLength = 10;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(112, 20);
@@ -295,7 +295,7 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(21, 197);
+            this.lblValor.Location = new System.Drawing.Point(21, 165);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(68, 13);
             this.lblValor.TabIndex = 4;
@@ -345,7 +345,7 @@
             this.ucMenuConfiguracoesEsquerda1.BackColor = System.Drawing.Color.Transparent;
             this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
             this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
-            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
+            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 443);
             this.ucMenuConfiguracoesEsquerda1.TabIndex = 134;
             this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
             this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
@@ -353,7 +353,7 @@
             // ucMenuDireita1
             // 
             this.ucMenuDireita1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuDireita1.Location = new System.Drawing.Point(893, 175);
+            this.ucMenuDireita1.Location = new System.Drawing.Point(880, 175);
             this.ucMenuDireita1.Name = "ucMenuDireita1";
             this.ucMenuDireita1.Size = new System.Drawing.Size(120, 493);
             this.ucMenuDireita1.TabIndex = 133;
@@ -365,7 +365,7 @@
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(650, 43);
             this.ucMenuInferior1.TabIndex = 1;
@@ -386,7 +386,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.ClientSize = new System.Drawing.Size(990, 680);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuConfiguracoesEsquerda1);
             this.Controls.Add(this.ucMenuDireita1);
