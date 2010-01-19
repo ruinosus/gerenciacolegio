@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D79963B9-116E-4E56-ABA5-26F9392FD1C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -233,6 +233,9 @@
       <DependentUpon>telaRelatorioBoletoMensalidade.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control\ucDesconectarLogin.resx">
+      <DependentUpon>ucDesconectarLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Control\ucMenuDireita.resx">
       <DependentUpon>ucMenuDireita.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -352,6 +355,12 @@
     </Compile>
     <Compile Include="telaRelatorioBoletoMensalidade.Designer.cs">
       <DependentUpon>telaRelatorioBoletoMensalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\ucDesconectarLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\ucDesconectarLogin.Designer.cs">
+      <DependentUpon>ucDesconectarLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\ucMenuDireita.cs">
       <SubType>UserControl</SubType>

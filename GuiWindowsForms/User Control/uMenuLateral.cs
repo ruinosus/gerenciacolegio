@@ -194,7 +194,7 @@ namespace GuiWindowsForms.User_Control
         {
             if (formAux.Equals(telaAluno.getInstancia()))
             {
-                this.btnAcademico.Enabled = true;
+                this.btnAcademico.Enabled = false;
                 this.btnFinanceiro.Enabled = true;
                 this.btnInfoMedica.Enabled = true;
                 this.btnMatricula.Enabled = true;
@@ -208,7 +208,7 @@ namespace GuiWindowsForms.User_Control
             }
             else if (formAux.Equals(telaAlunoResponsavel.getInstancia()))
             {
-                this.btnAcademico.Enabled = true;
+                this.btnAcademico.Enabled = false;
                 this.btnFinanceiro.Enabled = true;
                 this.btnInfoMedica.Enabled = true;
                 this.btnMatricula.Enabled = true;
@@ -222,7 +222,7 @@ namespace GuiWindowsForms.User_Control
             }
             else if (formAux.Equals(telaAlunoMedicacao.getInstancia()))
             {
-                this.btnAcademico.Enabled = true;
+                this.btnAcademico.Enabled = false;
                 this.btnFinanceiro.Enabled = true;
                 this.btnResponsaveis.Enabled = true;
                 this.btnMatricula.Enabled = true;
@@ -236,7 +236,7 @@ namespace GuiWindowsForms.User_Control
             }
             else if (formAux.Equals(telaAlunoFinanceiro.getInstancia()))
             {
-                this.btnAcademico.Enabled = true;
+                this.btnAcademico.Enabled = false;
                 this.btnMatricula.Enabled = true;
                 this.btnResponsaveis.Enabled = true;
                 this.btnMatricula.Enabled = true;
@@ -265,7 +265,7 @@ namespace GuiWindowsForms.User_Control
             else if (formAux.Equals(telaAlunoMatricula.getInstancia()) || formAux.Equals(telaAlunoMatriculaAtividade.getInstancia()))
             {
                 this.btnFinanceiro.Enabled = true;
-                this.btnAcademico.Enabled = true;
+                this.btnAcademico.Enabled = false;
                 this.btnResponsaveis.Enabled = true;
                 this.btnMatricula.Enabled = true;
                 this.btnDados.Enabled = true;

@@ -200,6 +200,8 @@ namespace GuiWindowsForms
             dataGridView1.Enabled = true;
             btnAdicionarSerie.Enabled = true;
             btnExcluir.Enabled = true;
+            btnAlterar.Enabled = true;
+            errorProviderTela.Clear();
         }
 
         #endregion
@@ -784,6 +786,22 @@ namespace GuiWindowsForms
             cmbTurno.SelectedIndex = 0;
             cmbCiclo.SelectedIndex = 0;
             txtValor.Clear();
+        }
+
+        private void ucDesconectarLogin1_EventoDesconectar()
+        {
+            Program.ultimaTela = 9;
+            this.Close();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
         }
 
     }

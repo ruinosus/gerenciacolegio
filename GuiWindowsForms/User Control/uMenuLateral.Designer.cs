@@ -148,6 +148,7 @@
             this.btnAcademico.BackColor = System.Drawing.Color.Transparent;
             this.btnAcademico.BackgroundImage = global::GuiWindowsForms.Properties.Resources.academico_73x72_disabled;
             this.btnAcademico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAcademico.Enabled = false;
             this.btnAcademico.FlatAppearance.BorderSize = 0;
             this.btnAcademico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcademico.Location = new System.Drawing.Point(22, 498);

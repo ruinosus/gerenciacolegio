@@ -85,6 +85,7 @@ namespace GuiWindowsForms
         {
             if (aluno != null)
             {
+                #region Verifica existência de matrícula e atribui a variável
                 Matricula matricula = new Matricula();
                 IMatriculaProcesso matriculaControlador = MatriculaProcesso.Instance;
 
@@ -104,39 +105,58 @@ namespace GuiWindowsForms
                         numMatricula = null;
                     }
                 }
+                #endregion
 
+                #region Exibe o status Ativo ou Inativo
                 if (aluno.Status == (int)Status.Ativo)
                 {
                     lblAtivo.Text = "Ativo";
                 }
                 else
                 {
-                    lblAtivo.ForeColor = System.Drawing.Color.Red;
+                    lblAtivo.ForeColor = System.Drawing.Color.Black;
                     lblAtivo.Text = "Inativo";
                 }
+                #endregion
 
-                lblFoneEmerg.Text = aluno.FoneEmergencia;
+                #region Exibe o fone de emergência
+                if (!String.IsNullOrEmpty(aluno.FoneEmergencia))
+                {
+                    lblFoneEmerg.Text = aluno.FoneEmergencia;
+                }
+                else
+                {
+                    lblFoneEmerg.Text = "Telefone de emergência não cadastrado no aluno";
+                }
+                #endregion
 
+                #region Seta a matrícula caso exista
                 if (numMatricula != null)
                 {
                     lblMatricula.Text = numMatricula;
                 }
                 else
                 {
-                    lblMatricula.ForeColor = System.Drawing.Color.Red;
+                    lblMatricula.ForeColor = System.Drawing.Color.Black;
                     lblMatricula.Text = "Aluno ainda não matriculado";
                 }
+                #endregion
+
                 lblNomeAluno.Text = aluno.Nome;
 
+                #region Seta a série atual caso definida
                 if (!String.IsNullOrEmpty(aluno.SerieAtual))
                 {
                     lblSerie.Text = aluno.SerieAtual;
                 }
                 else
                 {
-                    lblSerie.ForeColor = System.Drawing.Color.Red;
+                    lblSerie.ForeColor = System.Drawing.Color.Black;
                     lblSerie.Text = "Aluno ainda não matriculado em uma série";
                 }
+                #endregion
+
+                #region seta a imagem caso exista
                 if (aluno.Imagem != null && aluno.Imagem.Length > 0)
                 {
                     pctImagem.Image = arrayParaImagem(aluno.Imagem);
@@ -145,6 +165,7 @@ namespace GuiWindowsForms
                 {
                     pctImagem.Image = null;
                 }
+                #endregion
             }
             else
             {

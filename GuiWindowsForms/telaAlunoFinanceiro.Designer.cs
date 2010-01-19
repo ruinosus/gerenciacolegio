@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoFinanceiro));
-            this.lblHelloUsuario = new System.Windows.Forms.Label();
-            this.btnDesconectar = new System.Windows.Forms.Button();
             this.gpbFinanceiro = new System.Windows.Forms.GroupBox();
             this.tabFinanceiro = new System.Windows.Forms.TabControl();
             this.tabPagamentoMensalidade = new System.Windows.Forms.TabPage();
@@ -44,6 +42,7 @@
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.gpbFinanceiro.SuspendLayout();
             this.tabFinanceiro.SuspendLayout();
             this.tabHistoricoMensalidades.SuspendLayout();
@@ -52,33 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgHistoricoAtividade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblHelloUsuario
-            // 
-            this.lblHelloUsuario.AutoSize = true;
-            this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(780, 9);
-            this.lblHelloUsuario.Name = "lblHelloUsuario";
-            this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
-            this.lblHelloUsuario.TabIndex = 47;
-            this.lblHelloUsuario.Text = "Hello Usuário!";
-            // 
-            // btnDesconectar
-            // 
-            this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
-            this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
-            this.btnDesconectar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(950, 9);
-            this.btnDesconectar.Name = "btnDesconectar";
-            this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
-            this.btnDesconectar.TabIndex = 48;
-            this.btnDesconectar.Tag = "";
-            this.btnDesconectar.UseVisualStyleBackColor = false;
-            this.btnDesconectar.Click += new System.EventHandler(this.btnDesconectar_Click);
             // 
             // gpbFinanceiro
             // 
@@ -123,7 +95,7 @@
             this.tabHistoricoMensalidades.Location = new System.Drawing.Point(4, 22);
             this.tabHistoricoMensalidades.Name = "tabHistoricoMensalidades";
             this.tabHistoricoMensalidades.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHistoricoMensalidades.Size = new System.Drawing.Size(737, 358);
+            this.tabHistoricoMensalidades.Size = new System.Drawing.Size(737, 343);
             this.tabHistoricoMensalidades.TabIndex = 1;
             this.tabHistoricoMensalidades.Text = "HISTÓRICO MENSALIDADE";
             this.tabHistoricoMensalidades.UseVisualStyleBackColor = true;
@@ -142,7 +114,7 @@
             this.tabPagamentoAtividade.Location = new System.Drawing.Point(4, 22);
             this.tabPagamentoAtividade.Name = "tabPagamentoAtividade";
             this.tabPagamentoAtividade.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagamentoAtividade.Size = new System.Drawing.Size(737, 358);
+            this.tabPagamentoAtividade.Size = new System.Drawing.Size(737, 343);
             this.tabPagamentoAtividade.TabIndex = 3;
             this.tabPagamentoAtividade.Text = "PAGAMENTO ATIVIDADE";
             this.tabPagamentoAtividade.UseVisualStyleBackColor = true;
@@ -153,7 +125,7 @@
             this.tabHistoricoAtividade.Location = new System.Drawing.Point(4, 22);
             this.tabHistoricoAtividade.Name = "tabHistoricoAtividade";
             this.tabHistoricoAtividade.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHistoricoAtividade.Size = new System.Drawing.Size(737, 358);
+            this.tabHistoricoAtividade.Size = new System.Drawing.Size(737, 343);
             this.tabHistoricoAtividade.TabIndex = 2;
             this.tabHistoricoAtividade.Text = "HISTÓRICO ATIVIDADE";
             this.tabHistoricoAtividade.UseVisualStyleBackColor = true;
@@ -224,17 +196,25 @@
             this.pictureBox1.TabIndex = 137;
             this.pictureBox1.TabStop = false;
             // 
+            // ucDesconectarLogin1
+            // 
+            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
+            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
+            this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
+            this.ucDesconectarLogin1.TabIndex = 138;
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
+            // 
             // telaAlunoFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(990, 680);
+            this.Controls.Add(this.ucDesconectarLogin1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.gpbFinanceiro);
-            this.Controls.Add(this.btnDesconectar);
-            this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.uMenuLateral1);
             this.Controls.Add(this.uMenuImagem1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -254,14 +234,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgHistoricoAtividade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblHelloUsuario;
-        private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.GroupBox gpbFinanceiro;
         private System.Windows.Forms.DataGridView dtgHistoricoMensalidade;
         private System.Windows.Forms.Button btnImprimir;
@@ -275,5 +252,6 @@
         private ucMenuInferior ucMenuInferior1;
         private uMenuImagem uMenuImagem1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
     }
 }
