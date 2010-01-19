@@ -9,6 +9,7 @@ namespace GuiWindowsForms
     static class Program
     {
         public static int ultimaTela = 9;
+        public static int ultimaTelaCadastrar = 0;
         public static Funcionario funcionarioAux = new Funcionario();
 
         /// <summary>
