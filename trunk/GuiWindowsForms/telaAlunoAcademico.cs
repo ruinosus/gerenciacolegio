@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms
 {
@@ -18,6 +19,7 @@ namespace GuiWindowsForms
          * */
 
         private static telaAlunoAcademico telaalunoacademico;
+        Memoria memoria = Memoria.Instance;
 
         private static bool IsShown = false;
 
@@ -181,6 +183,16 @@ namespace GuiWindowsForms
             this.Close();
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
+        }
+
+        private void telaAlunoAcademico_Activated(object sender, EventArgs e)
+        {
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+
+            if (memoria.Aluno != null)
+            {
+                uMenuImagem1.carregaAluno(memoria.Aluno);
+            }
         }
 
     }

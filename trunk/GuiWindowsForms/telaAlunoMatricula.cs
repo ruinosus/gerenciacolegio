@@ -33,6 +33,8 @@ namespace GuiWindowsForms
         List<SalaPeriodo> listaSalaPeriodo = null;
         List<Desconto> listaDescontoAux = null;
 
+        Memoria memoria = Memoria.Instance;
+
         String[] meses = new String[] { "-", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" };
 
         #region SINGLETON DA TELA
@@ -530,12 +532,15 @@ namespace GuiWindowsForms
 
         private void telaAlunoMatricula_Activated(object sender, EventArgs e)
         {
-            Memoria memoria = Memoria.Instance;
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+
             if (memoria.Aluno != null)
             {
-                alunoMatriculaAux = memoria.Aluno;
-                uMenuImagem1.carregaAluno(alunoMatriculaAux);
-                geraNumeroMatricula(Convert.ToInt32(alunoMatriculaAux.ID));
+                uMenuImagem1.carregaAluno(memoria.Aluno);
+            }
+            else
+            {
+                limparTela();
             }
 
             uMenuImagem1.ocultarBotaoAdicionarImagem();
