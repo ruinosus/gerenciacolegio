@@ -17,6 +17,7 @@ namespace GuiWindowsForms
     {
         Responsavel responsavel = new Responsavel();
         IResponsavelProcesso responsavelControlador = ResponsavelProcesso.Instance;
+        Memoria memoria = Memoria.Instance;
 
         #region SINGLETON DA TELA
         /*
@@ -113,19 +114,19 @@ namespace GuiWindowsForms
             IsShown = false;
             this.Hide();
 
-            if (Program.ultimaTela != 7)
+            if (Program.ultimaTela != 8)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
             else
             {
-                Program.ultimaTela = 6;
+                Program.ultimaTela = 1;
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
         #endregion
 
-        #region MUDANÇA DE CORES DAS TEXTVOXES E OUTROS CONTROLES
+        #region MUDANÇA DE CORES DAS TEXTBOXES E OUTROS CONTROLES
 
         /// <summary>
         /// Atualiza a cor da textbox ao ser ativada como controle principal
@@ -394,13 +395,13 @@ namespace GuiWindowsForms
         {
             this.Hide();
 
-            if (Program.ultimaTela != 7)
+            if (Program.ultimaTela != 8)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
             else
             {
-                Program.ultimaTela = 6;
+                Program.ultimaTela = 1;
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
@@ -754,6 +755,7 @@ namespace GuiWindowsForms
         private void telaAlunoResponsavel_Load(object sender, EventArgs e)
         {
             cmbUf.DataSource = estados;
+            ucMenuSuper.ocultarBotaoAdicionarImagem();
             //responsavel = responsavelControlador.Consultar(responsavel, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
             //ucMenuSuper.carregaResponsavel(responsavel);
             //carregarAlunoResponsavel();
@@ -984,6 +986,17 @@ namespace GuiWindowsForms
         private void telaAlunoResponsavel_Activated(object sender, EventArgs e)
         {
             cmbUf.DataSource = estados;
+            ucMenuSuper.ocultarBotaoAdicionarImagem();
+
+            if (memoria.Aluno != null)
+            {
+                ucMenuSuper.carregaAluno(memoria.Aluno);
+                carregarAlunoResponsavel();
+            }
+            else
+            {
+                limparTela();
+            }
         }
 
 

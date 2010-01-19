@@ -1038,7 +1038,7 @@ namespace GuiWindowsForms
 
                 #endregion
             }
-            else if(verificaButton == 1)
+            else if (verificaButton == 1)
             {
                 #region ADICIONAR ATIVIDADE
 
@@ -1421,9 +1421,14 @@ namespace GuiWindowsForms
         private void btnAdicionarImagem_Click(object sender, EventArgs e)
         {
             pctImagemAtividade.SizeMode = PictureBoxSizeMode.StretchImage;
+
             pctImagemAtividade.Image = retornarImagem();
-            imagemAuxiliar = pctImagemAtividade.Image;
-            atividadeAux.Imagem = imagemParaArray(imagemAuxiliar);
+
+            if (pctImagemAtividade.Image != null)
+            {
+                imagemAuxiliar = pctImagemAtividade.Image;
+                atividadeAux.Imagem = imagemParaArray(imagemAuxiliar);
+            }
         }
 
         #endregion

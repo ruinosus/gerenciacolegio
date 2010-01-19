@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using Negocios.ModuloBasico.Enums;
 
 namespace GuiWindowsForms.User_Control
 {
@@ -27,7 +28,15 @@ namespace GuiWindowsForms.User_Control
 
         public void carregaFuncionario(Funcionario funcionario)
         {
-            lblAtivo.Text = "Ativo - AINDA POR FAZER";
+            if (funcionario.Status == (int)Status.Ativo)
+            {
+                lblAtivo.Text = "Ativo";
+            }
+            else
+            {
+                lblAtivo.ForeColor = System.Drawing.Color.Red;
+                lblAtivo.Text = "Inativo";
+            }
             lblFone.Text = funcionario.FoneEmergencia;
             lblFuncao.Text = funcionario.Cargo;
             lblNomeFuncionario.Text = funcionario.Nome;
@@ -52,7 +61,10 @@ namespace GuiWindowsForms.User_Control
         {
             pctImagem.SizeMode = PictureBoxSizeMode.StretchImage;
             pctImagem.Image = retornarImagem();
-            imagemAuxiliar = pctImagem.Image;
+            if (pctImagem.Image != null)
+            {
+                imagemAuxiliar = pctImagem.Image;
+            }
         }
 
         /// <summary>

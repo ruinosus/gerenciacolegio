@@ -100,10 +100,6 @@ namespace GuiWindowsForms
                     {
                         numMatricula = m.NumMatricula;
                     }
-                    else
-                    {
-                        numMatricula = null;
-                    }
                 }
                 #endregion
 
@@ -199,11 +195,11 @@ namespace GuiWindowsForms
         /// 
         private void btnAdicionarImagem_Click(object sender, EventArgs e)
         {
-
+            telaAluno.verificaFoto = 1;
             pctImagem.SizeMode = PictureBoxSizeMode.StretchImage;
-            if (retornarImagem() != null)
+            pctImagem.Image = retornarImagem();
+            if (pctImagem.Image != null)
             {
-                pctImagem.Image = retornarImagem();
                 imagemAuxiliar = pctImagem.Image;
             }
         }

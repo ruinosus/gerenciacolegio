@@ -35,5 +35,6 @@ namespace Negocios.ModuloBasico.Enums
         Inclusao,
         Alteracao,
         Navegacao
-    }   
+    }
+
 }

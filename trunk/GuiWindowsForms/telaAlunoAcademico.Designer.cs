@@ -85,7 +85,7 @@
             this.uMenuLateral1.Load += new System.EventHandler(this.uMenuLateral1_Load);
             this.uMenuLateral1.EventoAbrirTelaResponsavel += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaResponsavel(this.uMenuLateral1_EventoAbrirTelaResponsavel);
             this.uMenuLateral1.EventoAbrirTelaMatricula += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMatricula(this.uMenuLateral1_EventoAbrirTelaMatricula);
-            this.uMenuLateral1.EventoAbrirTelaFinanceiro += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaFinanceiro(this.uMenuLateral1_EventoAbrirTelaFinanceiro);
+            this.uMenuLateral1.EventoAbrirTelaFinanceiro += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaFinanceiro(this.uMenuLateral1_EventoAbrirTelaMedica);
             this.uMenuLateral1.EventoAbrirTelaAcademico += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaAcademico(this.uMenuLateral1_EventoAbrirTelaAcademico);
             this.uMenuLateral1.EventoAbrirTelaDados += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaDados(this.uMenuLateral1_EventoAbrirTelaDados);
             // 
@@ -94,7 +94,7 @@
             this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
             this.uMenuImagem1.Location = new System.Drawing.Point(244, 0);
             this.uMenuImagem1.Name = "uMenuImagem1";
-            this.uMenuImagem1.Size = new System.Drawing.Size(375, 201);
+            this.uMenuImagem1.Size = new System.Drawing.Size(537, 201);
             this.uMenuImagem1.TabIndex = 69;
             // 
             // ucMenuInferior1
@@ -125,8 +125,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.uMenuLateral1);
             this.Controls.Add(this.gpbDadosPessoais);
-            this.Controls.Add(this.uMenuImagem1);
             this.Controls.Add(this.ucMenuInferior1);
+            this.Controls.Add(this.uMenuImagem1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

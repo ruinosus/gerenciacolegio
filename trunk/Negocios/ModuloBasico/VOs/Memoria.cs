@@ -13,5 +13,5 @@ namespace Negocios.ModuloBasico.VOs
         public Aluno Aluno { get; set; }
         public Funcionario Funcionario{ get; set; }
         public StatusBanco Status { get; set; }
-    }
+    };
 }

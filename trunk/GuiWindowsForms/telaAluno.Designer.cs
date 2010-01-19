@@ -80,11 +80,7 @@ namespace GuiWindowsForms
             // 
             // gpbDadosPessoais
             // 
-            this.gpbDadosPessoais.AccessibleDescription = null;
-            this.gpbDadosPessoais.AccessibleName = null;
-            resources.ApplyResources(this.gpbDadosPessoais, "gpbDadosPessoais");
             this.gpbDadosPessoais.BackColor = System.Drawing.Color.Transparent;
-            this.gpbDadosPessoais.BackgroundImage = null;
             this.gpbDadosPessoais.Controls.Add(this.txtNaturalidade);
             this.gpbDadosPessoais.Controls.Add(this.lblEdificio);
             this.gpbDadosPessoais.Controls.Add(this.txtNomeEdificil);
@@ -118,36 +114,24 @@ namespace GuiWindowsForms
             this.gpbDadosPessoais.Controls.Add(this.dtpNascimento);
             this.gpbDadosPessoais.Controls.Add(this.label1);
             this.gpbDadosPessoais.Controls.Add(this.lblNome);
-            this.errorProviderTela.SetError(this.gpbDadosPessoais, resources.GetString("gpbDadosPessoais.Error"));
+            resources.ApplyResources(this.gpbDadosPessoais, "gpbDadosPessoais");
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
             this.gpbDadosPessoais.TabStop = false;
             // 
             // txtNaturalidade
             // 
-            this.txtNaturalidade.AccessibleDescription = null;
-            this.txtNaturalidade.AccessibleName = null;
             resources.ApplyResources(this.txtNaturalidade, "txtNaturalidade");
-            this.txtNaturalidade.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.txtNaturalidade, resources.GetString("txtNaturalidade.Error"));
             this.txtNaturalidade.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNaturalidade.Name = "txtNaturalidade";
             // 
             // lblEdificio
             // 
-            this.lblEdificio.AccessibleDescription = null;
-            this.lblEdificio.AccessibleName = null;
             resources.ApplyResources(this.lblEdificio, "lblEdificio");
-            this.errorProviderTela.SetError(this.lblEdificio, resources.GetString("lblEdificio.Error"));
-            this.lblEdificio.Font = null;
             this.lblEdificio.Name = "lblEdificio";
             // 
             // txtNomeEdificil
             // 
-            this.txtNomeEdificil.AccessibleDescription = null;
-            this.txtNomeEdificil.AccessibleName = null;
             resources.ApplyResources(this.txtNomeEdificil, "txtNomeEdificil");
-            this.txtNomeEdificil.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.txtNomeEdificil, resources.GetString("txtNomeEdificil.Error"));
             this.txtNomeEdificil.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNomeEdificil.Name = "txtNomeEdificil";
             this.txtNomeEdificil.TextChanged += new System.EventHandler(this.txtNomeEdificil_TextChanged);
@@ -156,11 +140,7 @@ namespace GuiWindowsForms
             // 
             // mskFoneResidencia
             // 
-            this.mskFoneResidencia.AccessibleDescription = null;
-            this.mskFoneResidencia.AccessibleName = null;
             resources.ApplyResources(this.mskFoneResidencia, "mskFoneResidencia");
-            this.mskFoneResidencia.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.mskFoneResidencia, resources.GetString("mskFoneResidencia.Error"));
             this.mskFoneResidencia.ForeColor = System.Drawing.SystemColors.WindowText;
             this.mskFoneResidencia.Name = "mskFoneResidencia";
             this.mskFoneResidencia.Leave += new System.EventHandler(this.mskFoneResidencia_Leave);
@@ -169,13 +149,9 @@ namespace GuiWindowsForms
             // 
             // cmbUf
             // 
-            this.cmbUf.AccessibleDescription = null;
-            this.cmbUf.AccessibleName = null;
-            resources.ApplyResources(this.cmbUf, "cmbUf");
-            this.cmbUf.BackgroundImage = null;
             this.cmbUf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.errorProviderTela.SetError(this.cmbUf, resources.GetString("cmbUf.Error"));
+            resources.ApplyResources(this.cmbUf, "cmbUf");
             this.cmbUf.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbUf.FormattingEnabled = true;
             this.cmbUf.Name = "cmbUf";
@@ -186,11 +162,7 @@ namespace GuiWindowsForms
             // 
             // txtComplemento
             // 
-            this.txtComplemento.AccessibleDescription = null;
-            this.txtComplemento.AccessibleName = null;
             resources.ApplyResources(this.txtComplemento, "txtComplemento");
-            this.txtComplemento.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.txtComplemento, resources.GetString("txtComplemento.Error"));
             this.txtComplemento.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.TextChanged += new System.EventHandler(this.txtComplemento_TextChanged);
@@ -199,38 +171,22 @@ namespace GuiWindowsForms
             // 
             // lblComplemento
             // 
-            this.lblComplemento.AccessibleDescription = null;
-            this.lblComplemento.AccessibleName = null;
             resources.ApplyResources(this.lblComplemento, "lblComplemento");
-            this.errorProviderTela.SetError(this.lblComplemento, resources.GetString("lblComplemento.Error"));
-            this.lblComplemento.Font = null;
             this.lblComplemento.Name = "lblComplemento";
             // 
             // lblUf
             // 
-            this.lblUf.AccessibleDescription = null;
-            this.lblUf.AccessibleName = null;
             resources.ApplyResources(this.lblUf, "lblUf");
-            this.errorProviderTela.SetError(this.lblUf, resources.GetString("lblUf.Error"));
-            this.lblUf.Font = null;
             this.lblUf.Name = "lblUf";
             // 
             // lblFoneResidencia
             // 
-            this.lblFoneResidencia.AccessibleDescription = null;
-            this.lblFoneResidencia.AccessibleName = null;
             resources.ApplyResources(this.lblFoneResidencia, "lblFoneResidencia");
-            this.errorProviderTela.SetError(this.lblFoneResidencia, resources.GetString("lblFoneResidencia.Error"));
-            this.lblFoneResidencia.Font = null;
             this.lblFoneResidencia.Name = "lblFoneResidencia";
             // 
             // mskCep
             // 
-            this.mskCep.AccessibleDescription = null;
-            this.mskCep.AccessibleName = null;
             resources.ApplyResources(this.mskCep, "mskCep");
-            this.mskCep.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.mskCep, resources.GetString("mskCep.Error"));
             this.mskCep.ForeColor = System.Drawing.SystemColors.WindowText;
             this.mskCep.Name = "mskCep";
             this.mskCep.Leave += new System.EventHandler(this.mskCep_Leave);
@@ -239,20 +195,12 @@ namespace GuiWindowsForms
             // 
             // label4
             // 
-            this.label4.AccessibleDescription = null;
-            this.label4.AccessibleName = null;
             resources.ApplyResources(this.label4, "label4");
-            this.errorProviderTela.SetError(this.label4, resources.GetString("label4.Error"));
-            this.label4.Font = null;
             this.label4.Name = "label4";
             // 
             // txtCidade
             // 
-            this.txtCidade.AccessibleDescription = null;
-            this.txtCidade.AccessibleName = null;
             resources.ApplyResources(this.txtCidade, "txtCidade");
-            this.txtCidade.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.txtCidade, resources.GetString("txtCidade.Error"));
             this.txtCidade.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
@@ -261,20 +209,12 @@ namespace GuiWindowsForms
             // 
             // lblCidade
             // 
-            this.lblCidade.AccessibleDescription = null;
-            this.lblCidade.AccessibleName = null;
             resources.ApplyResources(this.lblCidade, "lblCidade");
-            this.errorProviderTela.SetError(this.lblCidade, resources.GetString("lblCidade.Error"));
-            this.lblCidade.Font = null;
             this.lblCidade.Name = "lblCidade";
             // 
             // txtBairro
             // 
-            this.txtBairro.AccessibleDescription = null;
-            this.txtBairro.AccessibleName = null;
             resources.ApplyResources(this.txtBairro, "txtBairro");
-            this.txtBairro.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.txtBairro, resources.GetString("txtBairro.Error"));
             this.txtBairro.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
@@ -283,20 +223,12 @@ namespace GuiWindowsForms
             // 
             // lblBairro
             // 
-            this.lblBairro.AccessibleDescription = null;
-            this.lblBairro.AccessibleName = null;
             resources.ApplyResources(this.lblBairro, "lblBairro");
-            this.errorProviderTela.SetError(this.lblBairro, resources.GetString("lblBairro.Error"));
-            this.lblBairro.Font = null;
             this.lblBairro.Name = "lblBairro";
             // 
             // txtLogradouro
             // 
-            this.txtLogradouro.AccessibleDescription = null;
-            this.txtLogradouro.AccessibleName = null;
             resources.ApplyResources(this.txtLogradouro, "txtLogradouro");
-            this.txtLogradouro.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.txtLogradouro, resources.GetString("txtLogradouro.Error"));
             this.txtLogradouro.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
@@ -305,42 +237,24 @@ namespace GuiWindowsForms
             // 
             // lblEndereco
             // 
-            this.lblEndereco.AccessibleDescription = null;
-            this.lblEndereco.AccessibleName = null;
             resources.ApplyResources(this.lblEndereco, "lblEndereco");
-            this.errorProviderTela.SetError(this.lblEndereco, resources.GetString("lblEndereco.Error"));
-            this.lblEndereco.Font = null;
             this.lblEndereco.Name = "lblEndereco";
             // 
             // txtEmail
             // 
-            this.txtEmail.AccessibleDescription = null;
-            this.txtEmail.AccessibleName = null;
             resources.ApplyResources(this.txtEmail, "txtEmail");
-            this.txtEmail.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.txtEmail, resources.GetString("txtEmail.Error"));
-            this.txtEmail.Font = null;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // lblEmail
             // 
-            this.lblEmail.AccessibleDescription = null;
-            this.lblEmail.AccessibleName = null;
             resources.ApplyResources(this.lblEmail, "lblEmail");
-            this.errorProviderTela.SetError(this.lblEmail, resources.GetString("lblEmail.Error"));
-            this.lblEmail.Font = null;
             this.lblEmail.Name = "lblEmail";
             // 
             // mskFoneEmergencia
             // 
-            this.mskFoneEmergencia.AccessibleDescription = null;
-            this.mskFoneEmergencia.AccessibleName = null;
             resources.ApplyResources(this.mskFoneEmergencia, "mskFoneEmergencia");
-            this.mskFoneEmergencia.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.mskFoneEmergencia, resources.GetString("mskFoneEmergencia.Error"));
-            this.mskFoneEmergencia.Font = null;
             this.mskFoneEmergencia.Name = "mskFoneEmergencia";
             this.mskFoneEmergencia.Leave += new System.EventHandler(this.mskFoneEmergencia_Leave);
             this.mskFoneEmergencia.Enter += new System.EventHandler(this.mskFoneEmergencia_Enter);
@@ -348,21 +262,12 @@ namespace GuiWindowsForms
             // 
             // lblFoneEmergencia
             // 
-            this.lblFoneEmergencia.AccessibleDescription = null;
-            this.lblFoneEmergencia.AccessibleName = null;
             resources.ApplyResources(this.lblFoneEmergencia, "lblFoneEmergencia");
-            this.errorProviderTela.SetError(this.lblFoneEmergencia, resources.GetString("lblFoneEmergencia.Error"));
-            this.lblFoneEmergencia.Font = null;
             this.lblFoneEmergencia.Name = "lblFoneEmergencia";
             // 
             // mskFoneAluno
             // 
-            this.mskFoneAluno.AccessibleDescription = null;
-            this.mskFoneAluno.AccessibleName = null;
             resources.ApplyResources(this.mskFoneAluno, "mskFoneAluno");
-            this.mskFoneAluno.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.mskFoneAluno, resources.GetString("mskFoneAluno.Error"));
-            this.mskFoneAluno.Font = null;
             this.mskFoneAluno.Name = "mskFoneAluno";
             this.mskFoneAluno.Leave += new System.EventHandler(this.mskFoneAluno_Leave);
             this.mskFoneAluno.Enter += new System.EventHandler(this.mskFoneAluno_Enter);
@@ -370,32 +275,18 @@ namespace GuiWindowsForms
             // 
             // lblFoneAluno
             // 
-            this.lblFoneAluno.AccessibleDescription = null;
-            this.lblFoneAluno.AccessibleName = null;
             resources.ApplyResources(this.lblFoneAluno, "lblFoneAluno");
-            this.errorProviderTela.SetError(this.lblFoneAluno, resources.GetString("lblFoneAluno.Error"));
-            this.lblFoneAluno.Font = null;
             this.lblFoneAluno.Name = "lblFoneAluno";
             // 
             // label2
             // 
-            this.label2.AccessibleDescription = null;
-            this.label2.AccessibleName = null;
             resources.ApplyResources(this.label2, "label2");
-            this.errorProviderTela.SetError(this.label2, resources.GetString("label2.Error"));
-            this.label2.Font = null;
             this.label2.Name = "label2";
             // 
             // cmbNacionalidade
             // 
-            this.cmbNacionalidade.AccessibleDescription = null;
-            this.cmbNacionalidade.AccessibleName = null;
-            resources.ApplyResources(this.cmbNacionalidade, "cmbNacionalidade");
-            this.cmbNacionalidade.BackgroundImage = null;
             this.cmbNacionalidade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbNacionalidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.errorProviderTela.SetError(this.cmbNacionalidade, resources.GetString("cmbNacionalidade.Error"));
-            this.cmbNacionalidade.Font = null;
             this.cmbNacionalidade.FormattingEnabled = true;
             this.cmbNacionalidade.Items.AddRange(new object[] {
             resources.GetString("cmbNacionalidade.Items"),
@@ -654,6 +545,7 @@ namespace GuiWindowsForms
             resources.GetString("cmbNacionalidade.Items253"),
             resources.GetString("cmbNacionalidade.Items254"),
             resources.GetString("cmbNacionalidade.Items255")});
+            resources.ApplyResources(this.cmbNacionalidade, "cmbNacionalidade");
             this.cmbNacionalidade.Name = "cmbNacionalidade";
             this.cmbNacionalidade.Leave += new System.EventHandler(this.cmbNacionalidade_Leave);
             this.cmbNacionalidade.Enter += new System.EventHandler(this.cmbNacionalidade_Enter);
@@ -661,22 +553,13 @@ namespace GuiWindowsForms
             // 
             // lblNacionalidade
             // 
-            this.lblNacionalidade.AccessibleDescription = null;
-            this.lblNacionalidade.AccessibleName = null;
             resources.ApplyResources(this.lblNacionalidade, "lblNacionalidade");
-            this.errorProviderTela.SetError(this.lblNacionalidade, resources.GetString("lblNacionalidade.Error"));
-            this.lblNacionalidade.Font = null;
             this.lblNacionalidade.Name = "lblNacionalidade";
             // 
             // rdbFem
             // 
-            this.rdbFem.AccessibleDescription = null;
-            this.rdbFem.AccessibleName = null;
             resources.ApplyResources(this.rdbFem, "rdbFem");
-            this.rdbFem.BackgroundImage = null;
             this.rdbFem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errorProviderTela.SetError(this.rdbFem, resources.GetString("rdbFem.Error"));
-            this.rdbFem.Font = null;
             this.rdbFem.Name = "rdbFem";
             this.rdbFem.TabStop = true;
             this.rdbFem.UseVisualStyleBackColor = true;
@@ -685,13 +568,8 @@ namespace GuiWindowsForms
             // 
             // rdbMasc
             // 
-            this.rdbMasc.AccessibleDescription = null;
-            this.rdbMasc.AccessibleName = null;
             resources.ApplyResources(this.rdbMasc, "rdbMasc");
-            this.rdbMasc.BackgroundImage = null;
             this.rdbMasc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errorProviderTela.SetError(this.rdbMasc, resources.GetString("rdbMasc.Error"));
-            this.rdbMasc.Font = null;
             this.rdbMasc.Name = "rdbMasc";
             this.rdbMasc.TabStop = true;
             this.rdbMasc.UseVisualStyleBackColor = true;
@@ -700,20 +578,12 @@ namespace GuiWindowsForms
             // 
             // lblSexo
             // 
-            this.lblSexo.AccessibleDescription = null;
-            this.lblSexo.AccessibleName = null;
             resources.ApplyResources(this.lblSexo, "lblSexo");
-            this.errorProviderTela.SetError(this.lblSexo, resources.GetString("lblSexo.Error"));
-            this.lblSexo.Font = null;
             this.lblSexo.Name = "lblSexo";
             // 
             // txtNome
             // 
-            this.txtNome.AccessibleDescription = null;
-            this.txtNome.AccessibleName = null;
             resources.ApplyResources(this.txtNome, "txtNome");
-            this.txtNome.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.txtNome, resources.GetString("txtNome.Error"));
             this.txtNome.Name = "txtNome";
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
@@ -721,58 +591,36 @@ namespace GuiWindowsForms
             // 
             // dtpNascimento
             // 
-            this.dtpNascimento.AccessibleDescription = null;
-            this.dtpNascimento.AccessibleName = null;
-            resources.ApplyResources(this.dtpNascimento, "dtpNascimento");
-            this.dtpNascimento.BackgroundImage = null;
-            this.dtpNascimento.CalendarFont = null;
             this.dtpNascimento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpNascimento.CustomFormat = null;
-            this.errorProviderTela.SetError(this.dtpNascimento, resources.GetString("dtpNascimento.Error"));
-            this.dtpNascimento.Font = null;
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            resources.ApplyResources(this.dtpNascimento, "dtpNascimento");
             this.dtpNascimento.Name = "dtpNascimento";
             this.dtpNascimento.ShowUpDown = true;
             this.dtpNascimento.Value = new System.DateTime(2010, 1, 16, 0, 0, 0, 0);
             // 
             // label1
             // 
-            this.label1.AccessibleDescription = null;
-            this.label1.AccessibleName = null;
             resources.ApplyResources(this.label1, "label1");
-            this.errorProviderTela.SetError(this.label1, resources.GetString("label1.Error"));
-            this.label1.Font = null;
             this.label1.Name = "label1";
             // 
             // lblNome
             // 
-            this.lblNome.AccessibleDescription = null;
-            this.lblNome.AccessibleName = null;
             resources.ApplyResources(this.lblNome, "lblNome");
-            this.errorProviderTela.SetError(this.lblNome, resources.GetString("lblNome.Error"));
-            this.lblNome.Font = null;
             this.lblNome.Name = "lblNome";
             // 
             // lblHelloUsuario
             // 
-            this.lblHelloUsuario.AccessibleDescription = null;
-            this.lblHelloUsuario.AccessibleName = null;
             resources.ApplyResources(this.lblHelloUsuario, "lblHelloUsuario");
             this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.errorProviderTela.SetError(this.lblHelloUsuario, resources.GetString("lblHelloUsuario.Error"));
             this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
             this.lblHelloUsuario.Name = "lblHelloUsuario";
             // 
             // btnDesconectar
             // 
-            this.btnDesconectar.AccessibleDescription = null;
-            this.btnDesconectar.AccessibleName = null;
-            resources.ApplyResources(this.btnDesconectar, "btnDesconectar");
             this.btnDesconectar.BackColor = System.Drawing.Color.Transparent;
             this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
-            this.errorProviderTela.SetError(this.btnDesconectar, resources.GetString("btnDesconectar.Error"));
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
-            this.btnDesconectar.Font = null;
+            resources.ApplyResources(this.btnDesconectar, "btnDesconectar");
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Tag = "Desconectar";
             this.btnDesconectar.UseVisualStyleBackColor = false;
@@ -780,43 +628,28 @@ namespace GuiWindowsForms
             // 
             // cmbSelecionarAluno
             // 
-            this.cmbSelecionarAluno.AccessibleDescription = null;
-            this.cmbSelecionarAluno.AccessibleName = null;
-            resources.ApplyResources(this.cmbSelecionarAluno, "cmbSelecionarAluno");
-            this.cmbSelecionarAluno.BackgroundImage = null;
             this.cmbSelecionarAluno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.errorProviderTela.SetError(this.cmbSelecionarAluno, resources.GetString("cmbSelecionarAluno.Error"));
-            this.cmbSelecionarAluno.Font = null;
             this.cmbSelecionarAluno.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbSelecionarAluno, "cmbSelecionarAluno");
             this.cmbSelecionarAluno.Name = "cmbSelecionarAluno";
             // 
             // errorProviderTela
             // 
             this.errorProviderTela.ContainerControl = this;
-            resources.ApplyResources(this.errorProviderTela, "errorProviderTela");
             // 
             // pictureBox1
             // 
-            this.pictureBox1.AccessibleDescription = null;
-            this.pictureBox1.AccessibleName = null;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.pictureBox1, resources.GetString("pictureBox1.Error"));
-            this.pictureBox1.Font = null;
+            this.errorProviderTela.SetIconAlignment(this.pictureBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox1.IconAlignment"))));
             this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
-            this.pictureBox1.ImageLocation = null;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
             // ucMenuInferior1
             // 
-            this.ucMenuInferior1.AccessibleDescription = null;
-            this.ucMenuInferior1.AccessibleName = null;
-            resources.ApplyResources(this.ucMenuInferior1, "ucMenuInferior1");
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.ucMenuInferior1, resources.GetString("ucMenuInferior1.Error"));
-            this.ucMenuInferior1.Font = null;
+            this.errorProviderTela.SetIconAlignment(this.ucMenuInferior1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucMenuInferior1.IconAlignment"))));
+            resources.ApplyResources(this.ucMenuInferior1, "ucMenuInferior1");
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucAluno1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
@@ -824,13 +657,9 @@ namespace GuiWindowsForms
             // 
             // uMenuLateral1
             // 
-            this.uMenuLateral1.AccessibleDescription = null;
-            this.uMenuLateral1.AccessibleName = null;
-            resources.ApplyResources(this.uMenuLateral1, "uMenuLateral1");
             this.uMenuLateral1.BackColor = System.Drawing.Color.Transparent;
-            this.uMenuLateral1.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.uMenuLateral1, resources.GetString("uMenuLateral1.Error"));
-            this.uMenuLateral1.Font = null;
+            this.errorProviderTela.SetIconAlignment(this.uMenuLateral1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("uMenuLateral1.IconAlignment"))));
+            resources.ApplyResources(this.uMenuLateral1, "uMenuLateral1");
             this.uMenuLateral1.Name = "uMenuLateral1";
             this.uMenuLateral1.EventoAbrirTelaMedica += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMedica(this.uMenuLateral1_EventoAbrirTelaMedica);
             this.uMenuLateral1.Load += new System.EventHandler(this.uMenuLateral1_Load);
@@ -842,24 +671,17 @@ namespace GuiWindowsForms
             // 
             // uMenuImagem1
             // 
-            this.uMenuImagem1.AccessibleDescription = null;
-            this.uMenuImagem1.AccessibleName = null;
-            resources.ApplyResources(this.uMenuImagem1, "uMenuImagem1");
             this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
-            this.uMenuImagem1.BackgroundImage = null;
-            this.errorProviderTela.SetError(this.uMenuImagem1, resources.GetString("uMenuImagem1.Error"));
-            this.uMenuImagem1.Font = null;
+            this.errorProviderTela.SetIconAlignment(this.uMenuImagem1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("uMenuImagem1.IconAlignment"))));
+            resources.ApplyResources(this.uMenuImagem1, "uMenuImagem1");
             this.uMenuImagem1.Name = "uMenuImagem1";
             this.uMenuImagem1.Load += new System.EventHandler(this.uMenuImagem1_Load);
             // 
             // telaAluno
             // 
-            this.AccessibleDescription = null;
-            this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
-            this.BackgroundImage = null;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.uMenuLateral1);
@@ -868,7 +690,6 @@ namespace GuiWindowsForms
             this.Controls.Add(this.lblHelloUsuario);
             this.Controls.Add(this.gpbDadosPessoais);
             this.Controls.Add(this.uMenuImagem1);
-            this.Font = null;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

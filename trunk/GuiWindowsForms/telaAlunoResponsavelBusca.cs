@@ -94,7 +94,7 @@ namespace GuiWindowsForms
             IsShown = false;
             this.Hide();
 
-            if (Program.ultimaTela != 7)
+            if (Program.ultimaTela != 1)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
@@ -111,7 +111,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
 
-            if (Program.ultimaTela == 7)
+            if (Program.ultimaTela == 1)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
@@ -195,6 +195,11 @@ namespace GuiWindowsForms
 
                     processo.Incluir(responsavelAluno);
                     processo.Confirmar();
+
+                    Program.ultimaTela = 8;
+                    this.Close();
+                    telaAlunoResponsavel telaRespAux = new telaAlunoResponsavel();
+                    telaRespAux.Show();
                 }
             }
             catch (Exception ex)

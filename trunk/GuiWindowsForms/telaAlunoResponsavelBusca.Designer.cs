@@ -268,7 +268,7 @@
             this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
             this.uMenuImagem1.Location = new System.Drawing.Point(244, 0);
             this.uMenuImagem1.Name = "uMenuImagem1";
-            this.uMenuImagem1.Size = new System.Drawing.Size(375, 201);
+            this.uMenuImagem1.Size = new System.Drawing.Size(533, 201);
             this.uMenuImagem1.TabIndex = 75;
             // 
             // pictureBox1
@@ -309,8 +309,8 @@
             this.Controls.Add(this.lblCiclo);
             this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.dgvResponsavelAluno);
-            this.Controls.Add(this.uMenuImagem1);
             this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.uMenuImagem1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
