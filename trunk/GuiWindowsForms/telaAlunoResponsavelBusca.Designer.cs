@@ -283,7 +283,7 @@
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(346, 43);
             this.ucMenuInferior1.TabIndex = 76;

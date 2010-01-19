@@ -88,6 +88,7 @@
             // btnAlterar
             // 
             this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
+            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlterar.FlatAppearance.BorderSize = 0;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Location = new System.Drawing.Point(125, 3);
@@ -95,12 +96,14 @@
             this.btnAlterar.Size = new System.Drawing.Size(32, 32);
             this.btnAlterar.TabIndex = 73;
             this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.Visible = false;
+            this.btnAlterar.MouseLeave += new System.EventHandler(this.btnAlterar_MouseLeave);
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnAlterar.MouseEnter += new System.EventHandler(this.btnAlterar_MouseEnter);
             // 
             // btnIncluir
             // 
             this.btnIncluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnIncluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIncluir.FlatAppearance.BorderSize = 0;
             this.btnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncluir.Location = new System.Drawing.Point(175, 3);
@@ -108,12 +111,14 @@
             this.btnIncluir.Size = new System.Drawing.Size(32, 32);
             this.btnIncluir.TabIndex = 74;
             this.btnIncluir.UseVisualStyleBackColor = true;
-            this.btnIncluir.Visible = false;
+            this.btnIncluir.MouseLeave += new System.EventHandler(this.btnIncluir_MouseLeave);
             this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
+            this.btnIncluir.MouseEnter += new System.EventHandler(this.btnIncluir_MouseEnter);
             // 
             // btnExcluir
             // 
             this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Location = new System.Drawing.Point(225, 14);
@@ -121,8 +126,9 @@
             this.btnExcluir.Size = new System.Drawing.Size(32, 11);
             this.btnExcluir.TabIndex = 75;
             this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Visible = false;
+            this.btnExcluir.MouseLeave += new System.EventHandler(this.btnExcluir_MouseLeave);
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnExcluir.MouseEnter += new System.EventHandler(this.btnExcluir_MouseEnter);
             // 
             // ucMenuInferior
             // 

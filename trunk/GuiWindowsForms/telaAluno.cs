@@ -455,9 +455,11 @@ namespace GuiWindowsForms
             //telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
             //telaalunoresponsavel.Show();
 
-            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
             this.Hide();
+            Program.ultimaTela = 7;
+            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
             tela.Show();
+
         }
 
         private void uMenuLateral1_EventoAbrirTelaMedica()
