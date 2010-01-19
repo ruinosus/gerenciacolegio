@@ -387,10 +387,10 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.pdb
-<<<<<<< .mine
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.ucDesconectarLogin.resources
-=======
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\pt-BR\GuiWindowsForms.resources.dll
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAluno.pt-BR.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\pt-BR\GuiWindowsForms.resources.dll
->>>>>>> .r198
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\pt-BR\GuiWindowsForms.resources.dll
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAluno.pt-BR.resources
+C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\pt-BR\GuiWindowsForms.resources.dll
