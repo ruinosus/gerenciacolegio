@@ -31,6 +31,7 @@
             this.lblInfoControles = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblInfoControles
@@ -39,7 +40,7 @@
             this.lblInfoControles.BackColor = System.Drawing.Color.Transparent;
             this.lblInfoControles.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
             this.lblInfoControles.ForeColor = System.Drawing.Color.Yellow;
-            this.lblInfoControles.Location = new System.Drawing.Point(128, 11);
+            this.lblInfoControles.Location = new System.Drawing.Point(230, 13);
             this.lblInfoControles.Name = "lblInfoControles";
             this.lblInfoControles.Size = new System.Drawing.Size(14, 19);
             this.lblInfoControles.TabIndex = 70;
@@ -82,11 +83,23 @@
             this.btnVoltar.Click += new System.EventHandler(this.button1_Click_2);
             this.btnVoltar.MouseEnter += new System.EventHandler(this.button1_MouseEnter_1);
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Location = new System.Drawing.Point(144, 3);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(32, 32);
+            this.btnAlterar.TabIndex = 73;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            // 
             // ucMenuInferior
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.lblInfoControles);
@@ -102,5 +115,6 @@
         private System.Windows.Forms.Label lblInfoControles;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

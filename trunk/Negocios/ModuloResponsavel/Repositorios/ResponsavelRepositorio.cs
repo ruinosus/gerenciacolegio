@@ -480,6 +480,26 @@ namespace Negocios.ModuloResponsavel.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (!string.IsNullOrEmpty(responsavel.FoneOpcional))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in resultado
+                                                    where
+                                                    r.Uf.Contains(responsavel.FoneOpcional)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado =((from r in resultado
+                                                    where
+                                                    r.FoneOpcional.Contains(responsavel.FoneOpcional)
+                                                    select r).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (responsavel.Status.HasValue)
                         {
                             if (pesquisa)
@@ -946,6 +966,26 @@ namespace Negocios.ModuloResponsavel.Repositorios
                                 resultado = ((from r in Consultar()
                                               where
                                               r.Uf.Contains(responsavel.Uf)
+                                              select r).ToList());
+                            }
+                            pesquisa = true;
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(responsavel.FoneOpcional))
+                        {
+                            if (pesquisa)
+                            {
+                                resultado.AddRange((from r in Consultar()
+                                                    where
+                                                    r.FoneOpcional.Contains(responsavel.FoneOpcional)
+                                                    select r).ToList());
+                            }
+                            else
+                            {
+                                resultado = ((from r in Consultar()
+                                              where
+                                              r.Uf.Contains(responsavel.FoneOpcional)
                                               select r).ToList());
                             }
                             pesquisa = true;
