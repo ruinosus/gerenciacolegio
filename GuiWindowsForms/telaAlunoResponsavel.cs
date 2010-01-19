@@ -924,6 +924,7 @@ namespace GuiWindowsForms
             return testa;
         }
 
+        #region SELECIONA CIDADE
         private void cmbUf_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cmbUf.Text == "") { txtCidade.Text = ""; }
@@ -955,6 +956,7 @@ namespace GuiWindowsForms
             if (cmbUf.Text == "SP") { txtCidade.Text = "SÃO PAULO"; }
             if (cmbUf.Text == "TO") { txtCidade.Text = "PALMAS"; }
         }
+        #endregion
 
         private void cmbUf_MouseLeave(object sender, EventArgs e)
         {
