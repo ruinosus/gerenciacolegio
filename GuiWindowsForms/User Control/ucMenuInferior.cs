@@ -141,5 +141,38 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+        private void btnAlterar_MouseLeave(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = false;
+        }
+
+        private void btnIncluir_MouseLeave(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = false;
+        }
+
+        private void btnExcluir_MouseLeave(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = false;
+        }
+
+        private void btnAlterar_MouseEnter(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = true;
+            lblInfoControles.Text = "Alterar Informações";
+        }
+
+        private void btnIncluir_MouseEnter(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = true;
+            lblInfoControles.Text = "Cadastrar";
+        }
+
+        private void btnExcluir_MouseEnter(object sender, EventArgs e)
+        {
+            lblInfoControles.Visible = true;
+            lblInfoControles.Text = "Excluir";
+        }
     }
 }
