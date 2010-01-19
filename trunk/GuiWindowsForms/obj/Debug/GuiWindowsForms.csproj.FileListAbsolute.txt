@@ -391,6 +391,10 @@ C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsFo
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\pt-BR\GuiWindowsForms.resources.dll
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAluno.pt-BR.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\pt-BR\GuiWindowsForms.resources.dll
+<<<<<<< .mine
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.ucDesconectarLogin.resources
+=======
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\bin\Debug\pt-BR\GuiWindowsForms.resources.dll
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAluno.pt-BR.resources
 C:\Users\Alexandre Alves\Desktop\Conhecer\GuiWindowsForms\obj\Debug\pt-BR\GuiWindowsForms.resources.dll
+>>>>>>> .r201
