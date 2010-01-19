@@ -47,7 +47,7 @@
             this.btnDesconectar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_desconectar;
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesconectar.Location = new System.Drawing.Point(941, 9);
+            this.btnDesconectar.Location = new System.Drawing.Point(950, 9);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(30, 30);
             this.btnDesconectar.TabIndex = 49;
@@ -74,7 +74,7 @@
             this.gpbDadosPessoais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDadosPessoais.Location = new System.Drawing.Point(33, 191);
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
-            this.gpbDadosPessoais.Size = new System.Drawing.Size(820, 475);
+            this.gpbDadosPessoais.Size = new System.Drawing.Size(820, 439);
             this.gpbDadosPessoais.TabIndex = 68;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DADOS ACADÊMICOS DO ALUNO";
@@ -85,7 +85,7 @@
             this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Location = new System.Drawing.Point(637, 422);
+            this.btnImprimir.Location = new System.Drawing.Point(751, 375);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(0);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(49, 50);
@@ -103,7 +103,7 @@
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(346, 43);
             this.ucMenuInferior1.TabIndex = 70;
@@ -138,7 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.ClientSize = new System.Drawing.Size(990, 680);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.uMenuLateral1);
             this.Controls.Add(this.gpbDadosPessoais);

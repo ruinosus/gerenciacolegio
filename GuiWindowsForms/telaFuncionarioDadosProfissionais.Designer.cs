@@ -108,7 +108,7 @@
             this.gpbDadosProfissionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDadosProfissionais.Location = new System.Drawing.Point(39, 191);
             this.gpbDadosProfissionais.Name = "gpbDadosProfissionais";
-            this.gpbDadosProfissionais.Size = new System.Drawing.Size(820, 467);
+            this.gpbDadosProfissionais.Size = new System.Drawing.Size(820, 437);
             this.gpbDadosProfissionais.TabIndex = 40;
             this.gpbDadosProfissionais.TabStop = false;
             this.gpbDadosProfissionais.Text = "DADOS PROFISSIONAIS DO FUNCIONÁRIO";
@@ -467,7 +467,7 @@
             this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50;
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Location = new System.Drawing.Point(910, 630);
+            this.btnImprimir.Location = new System.Drawing.Point(896, 609);
             this.btnImprimir.Margin = new System.Windows.Forms.Padding(0);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(50, 50);
@@ -482,7 +482,7 @@
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
             this.ucMenuInferior1.TabIndex = 133;
@@ -522,7 +522,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.ClientSize = new System.Drawing.Size(990, 680);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.ucMenuImagemFunc1);

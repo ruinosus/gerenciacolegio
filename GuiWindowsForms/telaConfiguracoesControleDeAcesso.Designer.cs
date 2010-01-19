@@ -212,7 +212,7 @@
             this.gpbControleDeAcesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbControleDeAcesso.Location = new System.Drawing.Point(153, 129);
             this.gpbControleDeAcesso.Name = "gpbControleDeAcesso";
-            this.gpbControleDeAcesso.Size = new System.Drawing.Size(688, 550);
+            this.gpbControleDeAcesso.Size = new System.Drawing.Size(688, 493);
             this.gpbControleDeAcesso.TabIndex = 54;
             this.gpbControleDeAcesso.TabStop = false;
             this.gpbControleDeAcesso.Text = "CONTROLE DE ACESSO";
@@ -220,7 +220,7 @@
             // lblDebitos
             // 
             this.lblDebitos.AutoSize = true;
-            this.lblDebitos.Location = new System.Drawing.Point(52, 514);
+            this.lblDebitos.Location = new System.Drawing.Point(52, 471);
             this.lblDebitos.Name = "lblDebitos";
             this.lblDebitos.Size = new System.Drawing.Size(54, 13);
             this.lblDebitos.TabIndex = 82;
@@ -229,7 +229,7 @@
             // ckbAlteracaoDebitos
             // 
             this.ckbAlteracaoDebitos.AutoSize = true;
-            this.ckbAlteracaoDebitos.Location = new System.Drawing.Point(220, 513);
+            this.ckbAlteracaoDebitos.Location = new System.Drawing.Point(220, 470);
             this.ckbAlteracaoDebitos.Name = "ckbAlteracaoDebitos";
             this.ckbAlteracaoDebitos.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoDebitos.TabIndex = 81;
@@ -240,7 +240,7 @@
             // ckbVisualizacaoDebitos
             // 
             this.ckbVisualizacaoDebitos.AutoSize = true;
-            this.ckbVisualizacaoDebitos.Location = new System.Drawing.Point(117, 513);
+            this.ckbVisualizacaoDebitos.Location = new System.Drawing.Point(117, 470);
             this.ckbVisualizacaoDebitos.Name = "ckbVisualizacaoDebitos";
             this.ckbVisualizacaoDebitos.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoDebitos.TabIndex = 80;
@@ -250,7 +250,7 @@
             // lblFolhaChamada
             // 
             this.lblFolhaChamada.AutoSize = true;
-            this.lblFolhaChamada.Location = new System.Drawing.Point(388, 477);
+            this.lblFolhaChamada.Location = new System.Drawing.Point(388, 440);
             this.lblFolhaChamada.Name = "lblFolhaChamada";
             this.lblFolhaChamada.Size = new System.Drawing.Size(98, 13);
             this.lblFolhaChamada.TabIndex = 79;
@@ -259,7 +259,7 @@
             // lblAnotacoes
             // 
             this.lblAnotacoes.AutoSize = true;
-            this.lblAnotacoes.Location = new System.Drawing.Point(415, 444);
+            this.lblAnotacoes.Location = new System.Drawing.Point(415, 410);
             this.lblAnotacoes.Name = "lblAnotacoes";
             this.lblAnotacoes.Size = new System.Drawing.Size(71, 13);
             this.lblAnotacoes.TabIndex = 78;
@@ -268,7 +268,7 @@
             // ckbAlteracaoFolhaCham
             // 
             this.ckbAlteracaoFolhaCham.AutoSize = true;
-            this.ckbAlteracaoFolhaCham.Location = new System.Drawing.Point(599, 477);
+            this.ckbAlteracaoFolhaCham.Location = new System.Drawing.Point(599, 440);
             this.ckbAlteracaoFolhaCham.Name = "ckbAlteracaoFolhaCham";
             this.ckbAlteracaoFolhaCham.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoFolhaCham.TabIndex = 77;
@@ -279,7 +279,7 @@
             // ckbVisualizacaoFolhaCham
             // 
             this.ckbVisualizacaoFolhaCham.AutoSize = true;
-            this.ckbVisualizacaoFolhaCham.Location = new System.Drawing.Point(496, 477);
+            this.ckbVisualizacaoFolhaCham.Location = new System.Drawing.Point(496, 440);
             this.ckbVisualizacaoFolhaCham.Name = "ckbVisualizacaoFolhaCham";
             this.ckbVisualizacaoFolhaCham.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoFolhaCham.TabIndex = 76;
@@ -289,7 +289,7 @@
             // ckbAlteracaoAnotacoes
             // 
             this.ckbAlteracaoAnotacoes.AutoSize = true;
-            this.ckbAlteracaoAnotacoes.Location = new System.Drawing.Point(599, 444);
+            this.ckbAlteracaoAnotacoes.Location = new System.Drawing.Point(599, 410);
             this.ckbAlteracaoAnotacoes.Name = "ckbAlteracaoAnotacoes";
             this.ckbAlteracaoAnotacoes.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoAnotacoes.TabIndex = 75;
@@ -300,7 +300,7 @@
             // ckbVisualizacaoAnotacoes
             // 
             this.ckbVisualizacaoAnotacoes.AutoSize = true;
-            this.ckbVisualizacaoAnotacoes.Location = new System.Drawing.Point(496, 444);
+            this.ckbVisualizacaoAnotacoes.Location = new System.Drawing.Point(496, 410);
             this.ckbVisualizacaoAnotacoes.Name = "ckbVisualizacaoAnotacoes";
             this.ckbVisualizacaoAnotacoes.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoAnotacoes.TabIndex = 74;
@@ -310,7 +310,7 @@
             // lblGre
             // 
             this.lblGre.AutoSize = true;
-            this.lblGre.Location = new System.Drawing.Point(69, 478);
+            this.lblGre.Location = new System.Drawing.Point(69, 441);
             this.lblGre.Name = "lblGre";
             this.lblGre.Size = new System.Drawing.Size(37, 13);
             this.lblGre.TabIndex = 73;
@@ -319,7 +319,7 @@
             // lblBoletim
             // 
             this.lblBoletim.AutoSize = true;
-            this.lblBoletim.Location = new System.Drawing.Point(57, 445);
+            this.lblBoletim.Location = new System.Drawing.Point(57, 411);
             this.lblBoletim.Name = "lblBoletim";
             this.lblBoletim.Size = new System.Drawing.Size(52, 13);
             this.lblBoletim.TabIndex = 72;
@@ -328,7 +328,7 @@
             // ckbAlteracaoGre
             // 
             this.ckbAlteracaoGre.AutoSize = true;
-            this.ckbAlteracaoGre.Location = new System.Drawing.Point(220, 477);
+            this.ckbAlteracaoGre.Location = new System.Drawing.Point(220, 440);
             this.ckbAlteracaoGre.Name = "ckbAlteracaoGre";
             this.ckbAlteracaoGre.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoGre.TabIndex = 71;
@@ -339,7 +339,7 @@
             // ckbVisualizacaoGre
             // 
             this.ckbVisualizacaoGre.AutoSize = true;
-            this.ckbVisualizacaoGre.Location = new System.Drawing.Point(117, 477);
+            this.ckbVisualizacaoGre.Location = new System.Drawing.Point(117, 440);
             this.ckbVisualizacaoGre.Name = "ckbVisualizacaoGre";
             this.ckbVisualizacaoGre.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoGre.TabIndex = 70;
@@ -349,7 +349,7 @@
             // ckbAlteracaoBoletim
             // 
             this.ckbAlteracaoBoletim.AutoSize = true;
-            this.ckbAlteracaoBoletim.Location = new System.Drawing.Point(220, 444);
+            this.ckbAlteracaoBoletim.Location = new System.Drawing.Point(220, 410);
             this.ckbAlteracaoBoletim.Name = "ckbAlteracaoBoletim";
             this.ckbAlteracaoBoletim.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoBoletim.TabIndex = 69;
@@ -360,7 +360,7 @@
             // ckbVisualizacaoBoletim
             // 
             this.ckbVisualizacaoBoletim.AutoSize = true;
-            this.ckbVisualizacaoBoletim.Location = new System.Drawing.Point(117, 444);
+            this.ckbVisualizacaoBoletim.Location = new System.Drawing.Point(117, 410);
             this.ckbVisualizacaoBoletim.Name = "ckbVisualizacaoBoletim";
             this.ckbVisualizacaoBoletim.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoBoletim.TabIndex = 68;
@@ -370,7 +370,7 @@
             // lblAdvertenciaAtraso
             // 
             this.lblAdvertenciaAtraso.AutoSize = true;
-            this.lblAdvertenciaAtraso.Location = new System.Drawing.Point(367, 412);
+            this.lblAdvertenciaAtraso.Location = new System.Drawing.Point(367, 382);
             this.lblAdvertenciaAtraso.Name = "lblAdvertenciaAtraso";
             this.lblAdvertenciaAtraso.Size = new System.Drawing.Size(119, 13);
             this.lblAdvertenciaAtraso.TabIndex = 67;
@@ -379,7 +379,7 @@
             // lblRankingNotas
             // 
             this.lblRankingNotas.AutoSize = true;
-            this.lblRankingNotas.Location = new System.Drawing.Point(391, 377);
+            this.lblRankingNotas.Location = new System.Drawing.Point(391, 350);
             this.lblRankingNotas.Name = "lblRankingNotas";
             this.lblRankingNotas.Size = new System.Drawing.Size(95, 13);
             this.lblRankingNotas.TabIndex = 66;
@@ -388,7 +388,7 @@
             // ckbAlteracaoAdvertAtraso
             // 
             this.ckbAlteracaoAdvertAtraso.AutoSize = true;
-            this.ckbAlteracaoAdvertAtraso.Location = new System.Drawing.Point(599, 410);
+            this.ckbAlteracaoAdvertAtraso.Location = new System.Drawing.Point(599, 380);
             this.ckbAlteracaoAdvertAtraso.Name = "ckbAlteracaoAdvertAtraso";
             this.ckbAlteracaoAdvertAtraso.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoAdvertAtraso.TabIndex = 65;
@@ -399,7 +399,7 @@
             // ckbVisualizacaoAdvertAtraso
             // 
             this.ckbVisualizacaoAdvertAtraso.AutoSize = true;
-            this.ckbVisualizacaoAdvertAtraso.Location = new System.Drawing.Point(496, 410);
+            this.ckbVisualizacaoAdvertAtraso.Location = new System.Drawing.Point(496, 380);
             this.ckbVisualizacaoAdvertAtraso.Name = "ckbVisualizacaoAdvertAtraso";
             this.ckbVisualizacaoAdvertAtraso.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoAdvertAtraso.TabIndex = 64;
@@ -409,7 +409,7 @@
             // ckbAlteracaoRankingNotas
             // 
             this.ckbAlteracaoRankingNotas.AutoSize = true;
-            this.ckbAlteracaoRankingNotas.Location = new System.Drawing.Point(599, 377);
+            this.ckbAlteracaoRankingNotas.Location = new System.Drawing.Point(599, 350);
             this.ckbAlteracaoRankingNotas.Name = "ckbAlteracaoRankingNotas";
             this.ckbAlteracaoRankingNotas.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoRankingNotas.TabIndex = 63;
@@ -420,7 +420,7 @@
             // ckbVisualizacaoRankingNotas
             // 
             this.ckbVisualizacaoRankingNotas.AutoSize = true;
-            this.ckbVisualizacaoRankingNotas.Location = new System.Drawing.Point(496, 377);
+            this.ckbVisualizacaoRankingNotas.Location = new System.Drawing.Point(496, 350);
             this.ckbVisualizacaoRankingNotas.Name = "ckbVisualizacaoRankingNotas";
             this.ckbVisualizacaoRankingNotas.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoRankingNotas.TabIndex = 62;
@@ -430,7 +430,7 @@
             // ckbAlteracaFreqAlunos
             // 
             this.ckbAlteracaFreqAlunos.AutoSize = true;
-            this.ckbAlteracaFreqAlunos.Location = new System.Drawing.Point(599, 347);
+            this.ckbAlteracaFreqAlunos.Location = new System.Drawing.Point(599, 320);
             this.ckbAlteracaFreqAlunos.Name = "ckbAlteracaFreqAlunos";
             this.ckbAlteracaFreqAlunos.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaFreqAlunos.TabIndex = 61;
@@ -441,7 +441,7 @@
             // ckbVisualizacaoFreqAlunos
             // 
             this.ckbVisualizacaoFreqAlunos.AutoSize = true;
-            this.ckbVisualizacaoFreqAlunos.Location = new System.Drawing.Point(496, 347);
+            this.ckbVisualizacaoFreqAlunos.Location = new System.Drawing.Point(496, 320);
             this.ckbVisualizacaoFreqAlunos.Name = "ckbVisualizacaoFreqAlunos";
             this.ckbVisualizacaoFreqAlunos.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoFreqAlunos.TabIndex = 60;
@@ -451,7 +451,7 @@
             // lblFrequenciaAluno
             // 
             this.lblFrequenciaAluno.AutoSize = true;
-            this.lblFrequenciaAluno.Location = new System.Drawing.Point(354, 348);
+            this.lblFrequenciaAluno.Location = new System.Drawing.Point(354, 321);
             this.lblFrequenciaAluno.Name = "lblFrequenciaAluno";
             this.lblFrequenciaAluno.Size = new System.Drawing.Size(134, 13);
             this.lblFrequenciaAluno.TabIndex = 59;
@@ -460,7 +460,7 @@
             // lblEnvioEmail
             // 
             this.lblEnvioEmail.AutoSize = true;
-            this.lblEnvioEmail.Location = new System.Drawing.Point(395, 314);
+            this.lblEnvioEmail.Location = new System.Drawing.Point(395, 290);
             this.lblEnvioEmail.Name = "lblEnvioEmail";
             this.lblEnvioEmail.Size = new System.Drawing.Size(95, 13);
             this.lblEnvioEmail.TabIndex = 58;
@@ -469,7 +469,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(324, 279);
+            this.label5.Location = new System.Drawing.Point(324, 260);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(168, 13);
             this.label5.TabIndex = 57;
@@ -478,7 +478,7 @@
             // lblFolhaPonto
             // 
             this.lblFolhaPonto.AutoSize = true;
-            this.lblFolhaPonto.Location = new System.Drawing.Point(411, 247);
+            this.lblFolhaPonto.Location = new System.Drawing.Point(411, 230);
             this.lblFolhaPonto.Name = "lblFolhaPonto";
             this.lblFolhaPonto.Size = new System.Drawing.Size(79, 13);
             this.lblFolhaPonto.TabIndex = 56;
@@ -487,7 +487,7 @@
             // lblDeclaracaoQuitacao
             // 
             this.lblDeclaracaoQuitacao.AutoSize = true;
-            this.lblDeclaracaoQuitacao.Location = new System.Drawing.Point(359, 214);
+            this.lblDeclaracaoQuitacao.Location = new System.Drawing.Point(359, 201);
             this.lblDeclaracaoQuitacao.Name = "lblDeclaracaoQuitacao";
             this.lblDeclaracaoQuitacao.Size = new System.Drawing.Size(131, 13);
             this.lblDeclaracaoQuitacao.TabIndex = 55;
@@ -496,7 +496,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(392, 183);
+            this.label8.Location = new System.Drawing.Point(392, 174);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 13);
             this.label8.TabIndex = 54;
@@ -505,7 +505,7 @@
             // lblCertificado
             // 
             this.lblCertificado.AutoSize = true;
-            this.lblCertificado.Location = new System.Drawing.Point(418, 146);
+            this.lblCertificado.Location = new System.Drawing.Point(418, 141);
             this.lblCertificado.Name = "lblCertificado";
             this.lblCertificado.Size = new System.Drawing.Size(72, 13);
             this.lblCertificado.TabIndex = 53;
@@ -514,7 +514,7 @@
             // ckbAlteracaoEnviarEmail
             // 
             this.ckbAlteracaoEnviarEmail.AutoSize = true;
-            this.ckbAlteracaoEnviarEmail.Location = new System.Drawing.Point(599, 314);
+            this.ckbAlteracaoEnviarEmail.Location = new System.Drawing.Point(599, 290);
             this.ckbAlteracaoEnviarEmail.Name = "ckbAlteracaoEnviarEmail";
             this.ckbAlteracaoEnviarEmail.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoEnviarEmail.TabIndex = 52;
@@ -525,7 +525,7 @@
             // ckbVisualizacaoEnviarEmail
             // 
             this.ckbVisualizacaoEnviarEmail.AutoSize = true;
-            this.ckbVisualizacaoEnviarEmail.Location = new System.Drawing.Point(496, 314);
+            this.ckbVisualizacaoEnviarEmail.Location = new System.Drawing.Point(496, 290);
             this.ckbVisualizacaoEnviarEmail.Name = "ckbVisualizacaoEnviarEmail";
             this.ckbVisualizacaoEnviarEmail.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoEnviarEmail.TabIndex = 51;
@@ -535,7 +535,7 @@
             // ckbAlteracaoFreqFuncionario
             // 
             this.ckbAlteracaoFreqFuncionario.AutoSize = true;
-            this.ckbAlteracaoFreqFuncionario.Location = new System.Drawing.Point(599, 279);
+            this.ckbAlteracaoFreqFuncionario.Location = new System.Drawing.Point(599, 260);
             this.ckbAlteracaoFreqFuncionario.Name = "ckbAlteracaoFreqFuncionario";
             this.ckbAlteracaoFreqFuncionario.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoFreqFuncionario.TabIndex = 50;
@@ -546,7 +546,7 @@
             // ckbVisualizacaoFreqFuncionario
             // 
             this.ckbVisualizacaoFreqFuncionario.AutoSize = true;
-            this.ckbVisualizacaoFreqFuncionario.Location = new System.Drawing.Point(496, 279);
+            this.ckbVisualizacaoFreqFuncionario.Location = new System.Drawing.Point(496, 260);
             this.ckbVisualizacaoFreqFuncionario.Name = "ckbVisualizacaoFreqFuncionario";
             this.ckbVisualizacaoFreqFuncionario.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoFreqFuncionario.TabIndex = 49;
@@ -556,7 +556,7 @@
             // ckbAlteracaoFolhaPonto
             // 
             this.ckbAlteracaoFolhaPonto.AutoSize = true;
-            this.ckbAlteracaoFolhaPonto.Location = new System.Drawing.Point(599, 247);
+            this.ckbAlteracaoFolhaPonto.Location = new System.Drawing.Point(599, 230);
             this.ckbAlteracaoFolhaPonto.Name = "ckbAlteracaoFolhaPonto";
             this.ckbAlteracaoFolhaPonto.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoFolhaPonto.TabIndex = 48;
@@ -567,7 +567,7 @@
             // ckbVisualizacaoFolhaPonto
             // 
             this.ckbVisualizacaoFolhaPonto.AutoSize = true;
-            this.ckbVisualizacaoFolhaPonto.Location = new System.Drawing.Point(496, 247);
+            this.ckbVisualizacaoFolhaPonto.Location = new System.Drawing.Point(496, 230);
             this.ckbVisualizacaoFolhaPonto.Name = "ckbVisualizacaoFolhaPonto";
             this.ckbVisualizacaoFolhaPonto.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoFolhaPonto.TabIndex = 47;
@@ -577,7 +577,7 @@
             // ckbAlteracaoDeclaQuitacao
             // 
             this.ckbAlteracaoDeclaQuitacao.AutoSize = true;
-            this.ckbAlteracaoDeclaQuitacao.Location = new System.Drawing.Point(599, 213);
+            this.ckbAlteracaoDeclaQuitacao.Location = new System.Drawing.Point(599, 200);
             this.ckbAlteracaoDeclaQuitacao.Name = "ckbAlteracaoDeclaQuitacao";
             this.ckbAlteracaoDeclaQuitacao.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoDeclaQuitacao.TabIndex = 46;
@@ -588,7 +588,7 @@
             // ckbVisualizacaoDeclaQuitacao
             // 
             this.ckbVisualizacaoDeclaQuitacao.AutoSize = true;
-            this.ckbVisualizacaoDeclaQuitacao.Location = new System.Drawing.Point(496, 213);
+            this.ckbVisualizacaoDeclaQuitacao.Location = new System.Drawing.Point(496, 200);
             this.ckbVisualizacaoDeclaQuitacao.Name = "ckbVisualizacaoDeclaQuitacao";
             this.ckbVisualizacaoDeclaQuitacao.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoDeclaQuitacao.TabIndex = 45;
@@ -598,7 +598,7 @@
             // ckbAlteracaoAniver
             // 
             this.ckbAlteracaoAniver.AutoSize = true;
-            this.ckbAlteracaoAniver.Location = new System.Drawing.Point(599, 179);
+            this.ckbAlteracaoAniver.Location = new System.Drawing.Point(599, 170);
             this.ckbAlteracaoAniver.Name = "ckbAlteracaoAniver";
             this.ckbAlteracaoAniver.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoAniver.TabIndex = 44;
@@ -609,7 +609,7 @@
             // ckbVisualizacaoAniver
             // 
             this.ckbVisualizacaoAniver.AutoSize = true;
-            this.ckbVisualizacaoAniver.Location = new System.Drawing.Point(496, 179);
+            this.ckbVisualizacaoAniver.Location = new System.Drawing.Point(496, 170);
             this.ckbVisualizacaoAniver.Name = "ckbVisualizacaoAniver";
             this.ckbVisualizacaoAniver.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoAniver.TabIndex = 43;
@@ -619,7 +619,7 @@
             // ckbAlteracaoCertificado
             // 
             this.ckbAlteracaoCertificado.AutoSize = true;
-            this.ckbAlteracaoCertificado.Location = new System.Drawing.Point(599, 145);
+            this.ckbAlteracaoCertificado.Location = new System.Drawing.Point(599, 140);
             this.ckbAlteracaoCertificado.Name = "ckbAlteracaoCertificado";
             this.ckbAlteracaoCertificado.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoCertificado.TabIndex = 42;
@@ -630,7 +630,7 @@
             // ckbVisualizacaoCertificado
             // 
             this.ckbVisualizacaoCertificado.AutoSize = true;
-            this.ckbVisualizacaoCertificado.Location = new System.Drawing.Point(496, 145);
+            this.ckbVisualizacaoCertificado.Location = new System.Drawing.Point(496, 140);
             this.ckbVisualizacaoCertificado.Name = "ckbVisualizacaoCertificado";
             this.ckbVisualizacaoCertificado.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoCertificado.TabIndex = 41;
@@ -670,7 +670,7 @@
             // ckbAlteracaoCheques
             // 
             this.ckbAlteracaoCheques.AutoSize = true;
-            this.ckbAlteracaoCheques.Location = new System.Drawing.Point(599, 79);
+            this.ckbAlteracaoCheques.Location = new System.Drawing.Point(599, 80);
             this.ckbAlteracaoCheques.Name = "ckbAlteracaoCheques";
             this.ckbAlteracaoCheques.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoCheques.TabIndex = 37;
@@ -681,7 +681,7 @@
             // ckbVisualizacaoCheques
             // 
             this.ckbVisualizacaoCheques.AutoSize = true;
-            this.ckbVisualizacaoCheques.Location = new System.Drawing.Point(496, 79);
+            this.ckbVisualizacaoCheques.Location = new System.Drawing.Point(496, 80);
             this.ckbVisualizacaoCheques.Name = "ckbVisualizacaoCheques";
             this.ckbVisualizacaoCheques.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoCheques.TabIndex = 36;
@@ -691,7 +691,7 @@
             // lblCheques
             // 
             this.lblCheques.AutoSize = true;
-            this.lblCheques.Location = new System.Drawing.Point(428, 79);
+            this.lblCheques.Location = new System.Drawing.Point(428, 80);
             this.lblCheques.Name = "lblCheques";
             this.lblCheques.Size = new System.Drawing.Size(60, 13);
             this.lblCheques.TabIndex = 35;
@@ -700,7 +700,7 @@
             // lblFinanceiro
             // 
             this.lblFinanceiro.AutoSize = true;
-            this.lblFinanceiro.Location = new System.Drawing.Point(39, 411);
+            this.lblFinanceiro.Location = new System.Drawing.Point(39, 380);
             this.lblFinanceiro.Name = "lblFinanceiro";
             this.lblFinanceiro.Size = new System.Drawing.Size(70, 13);
             this.lblFinanceiro.TabIndex = 34;
@@ -709,7 +709,7 @@
             // lblContasPagar
             // 
             this.lblContasPagar.AutoSize = true;
-            this.lblContasPagar.Location = new System.Drawing.Point(12, 378);
+            this.lblContasPagar.Location = new System.Drawing.Point(12, 350);
             this.lblContasPagar.Name = "lblContasPagar";
             this.lblContasPagar.Size = new System.Drawing.Size(97, 13);
             this.lblContasPagar.TabIndex = 33;
@@ -718,7 +718,7 @@
             // ckbAlteracaoFinanceiro
             // 
             this.ckbAlteracaoFinanceiro.AutoSize = true;
-            this.ckbAlteracaoFinanceiro.Location = new System.Drawing.Point(220, 411);
+            this.ckbAlteracaoFinanceiro.Location = new System.Drawing.Point(220, 380);
             this.ckbAlteracaoFinanceiro.Name = "ckbAlteracaoFinanceiro";
             this.ckbAlteracaoFinanceiro.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoFinanceiro.TabIndex = 32;
@@ -729,7 +729,7 @@
             // ckbVisualizacaoFinanceiro
             // 
             this.ckbVisualizacaoFinanceiro.AutoSize = true;
-            this.ckbVisualizacaoFinanceiro.Location = new System.Drawing.Point(117, 411);
+            this.ckbVisualizacaoFinanceiro.Location = new System.Drawing.Point(117, 380);
             this.ckbVisualizacaoFinanceiro.Name = "ckbVisualizacaoFinanceiro";
             this.ckbVisualizacaoFinanceiro.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoFinanceiro.TabIndex = 31;
@@ -739,7 +739,7 @@
             // ckbAlteracaoContasPagar
             // 
             this.ckbAlteracaoContasPagar.AutoSize = true;
-            this.ckbAlteracaoContasPagar.Location = new System.Drawing.Point(220, 378);
+            this.ckbAlteracaoContasPagar.Location = new System.Drawing.Point(220, 350);
             this.ckbAlteracaoContasPagar.Name = "ckbAlteracaoContasPagar";
             this.ckbAlteracaoContasPagar.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoContasPagar.TabIndex = 30;
@@ -750,7 +750,7 @@
             // ckbVisualizacaoContasPagar
             // 
             this.ckbVisualizacaoContasPagar.AutoSize = true;
-            this.ckbVisualizacaoContasPagar.Location = new System.Drawing.Point(117, 378);
+            this.ckbVisualizacaoContasPagar.Location = new System.Drawing.Point(117, 350);
             this.ckbVisualizacaoContasPagar.Name = "ckbVisualizacaoContasPagar";
             this.ckbVisualizacaoContasPagar.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoContasPagar.TabIndex = 29;
@@ -760,7 +760,7 @@
             // ckbAlteracaoAtividades
             // 
             this.ckbAlteracaoAtividades.AutoSize = true;
-            this.ckbAlteracaoAtividades.Location = new System.Drawing.Point(220, 348);
+            this.ckbAlteracaoAtividades.Location = new System.Drawing.Point(220, 320);
             this.ckbAlteracaoAtividades.Name = "ckbAlteracaoAtividades";
             this.ckbAlteracaoAtividades.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoAtividades.TabIndex = 28;
@@ -771,7 +771,7 @@
             // ckbVisualizacaoAtividades
             // 
             this.ckbVisualizacaoAtividades.AutoSize = true;
-            this.ckbVisualizacaoAtividades.Location = new System.Drawing.Point(117, 348);
+            this.ckbVisualizacaoAtividades.Location = new System.Drawing.Point(117, 320);
             this.ckbVisualizacaoAtividades.Name = "ckbVisualizacaoAtividades";
             this.ckbVisualizacaoAtividades.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoAtividades.TabIndex = 27;
@@ -781,7 +781,7 @@
             // lblAtividades
             // 
             this.lblAtividades.AutoSize = true;
-            this.lblAtividades.Location = new System.Drawing.Point(39, 348);
+            this.lblAtividades.Location = new System.Drawing.Point(39, 320);
             this.lblAtividades.Name = "lblAtividades";
             this.lblAtividades.Size = new System.Drawing.Size(70, 13);
             this.lblAtividades.TabIndex = 26;
@@ -790,7 +790,7 @@
             // lblMensalidades
             // 
             this.lblMensalidades.AutoSize = true;
-            this.lblMensalidades.Location = new System.Drawing.Point(23, 315);
+            this.lblMensalidades.Location = new System.Drawing.Point(23, 290);
             this.lblMensalidades.Name = "lblMensalidades";
             this.lblMensalidades.Size = new System.Drawing.Size(88, 13);
             this.lblMensalidades.TabIndex = 25;
@@ -799,7 +799,7 @@
             // lblNotas
             // 
             this.lblNotas.AutoSize = true;
-            this.lblNotas.Location = new System.Drawing.Point(65, 280);
+            this.lblNotas.Location = new System.Drawing.Point(65, 260);
             this.lblNotas.Name = "lblNotas";
             this.lblNotas.Size = new System.Drawing.Size(44, 13);
             this.lblNotas.TabIndex = 24;
@@ -808,7 +808,7 @@
             // lblRemanejamento
             // 
             this.lblRemanejamento.AutoSize = true;
-            this.lblRemanejamento.Location = new System.Drawing.Point(12, 248);
+            this.lblRemanejamento.Location = new System.Drawing.Point(12, 230);
             this.lblRemanejamento.Name = "lblRemanejamento";
             this.lblRemanejamento.Size = new System.Drawing.Size(101, 13);
             this.lblRemanejamento.TabIndex = 23;
@@ -817,7 +817,7 @@
             // lblTurno
             // 
             this.lblTurno.AutoSize = true;
-            this.lblTurno.Location = new System.Drawing.Point(69, 214);
+            this.lblTurno.Location = new System.Drawing.Point(69, 200);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(44, 13);
             this.lblTurno.TabIndex = 22;
@@ -826,7 +826,7 @@
             // lblSerie
             // 
             this.lblSerie.AutoSize = true;
-            this.lblSerie.Location = new System.Drawing.Point(71, 180);
+            this.lblSerie.Location = new System.Drawing.Point(71, 170);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(40, 13);
             this.lblSerie.TabIndex = 21;
@@ -835,7 +835,7 @@
             // lblTurma
             // 
             this.lblTurma.AutoSize = true;
-            this.lblTurma.Location = new System.Drawing.Point(65, 146);
+            this.lblTurma.Location = new System.Drawing.Point(65, 140);
             this.lblTurma.Name = "lblTurma";
             this.lblTurma.Size = new System.Drawing.Size(46, 13);
             this.lblTurma.TabIndex = 20;
@@ -844,7 +844,7 @@
             // ckbAlteracaoMensalidades
             // 
             this.ckbAlteracaoMensalidades.AutoSize = true;
-            this.ckbAlteracaoMensalidades.Location = new System.Drawing.Point(220, 315);
+            this.ckbAlteracaoMensalidades.Location = new System.Drawing.Point(220, 290);
             this.ckbAlteracaoMensalidades.Name = "ckbAlteracaoMensalidades";
             this.ckbAlteracaoMensalidades.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoMensalidades.TabIndex = 19;
@@ -855,7 +855,7 @@
             // ckbVisualizacaoMensalidades
             // 
             this.ckbVisualizacaoMensalidades.AutoSize = true;
-            this.ckbVisualizacaoMensalidades.Location = new System.Drawing.Point(117, 315);
+            this.ckbVisualizacaoMensalidades.Location = new System.Drawing.Point(117, 290);
             this.ckbVisualizacaoMensalidades.Name = "ckbVisualizacaoMensalidades";
             this.ckbVisualizacaoMensalidades.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoMensalidades.TabIndex = 18;
@@ -865,7 +865,7 @@
             // ckbAlteracaoNotas
             // 
             this.ckbAlteracaoNotas.AutoSize = true;
-            this.ckbAlteracaoNotas.Location = new System.Drawing.Point(220, 280);
+            this.ckbAlteracaoNotas.Location = new System.Drawing.Point(220, 260);
             this.ckbAlteracaoNotas.Name = "ckbAlteracaoNotas";
             this.ckbAlteracaoNotas.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoNotas.TabIndex = 17;
@@ -876,7 +876,7 @@
             // ckbVisualizacaoNotas
             // 
             this.ckbVisualizacaoNotas.AutoSize = true;
-            this.ckbVisualizacaoNotas.Location = new System.Drawing.Point(117, 280);
+            this.ckbVisualizacaoNotas.Location = new System.Drawing.Point(117, 260);
             this.ckbVisualizacaoNotas.Name = "ckbVisualizacaoNotas";
             this.ckbVisualizacaoNotas.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoNotas.TabIndex = 16;
@@ -886,7 +886,7 @@
             // ckbAlteracaoRemanejamento
             // 
             this.ckbAlteracaoRemanejamento.AutoSize = true;
-            this.ckbAlteracaoRemanejamento.Location = new System.Drawing.Point(220, 248);
+            this.ckbAlteracaoRemanejamento.Location = new System.Drawing.Point(220, 230);
             this.ckbAlteracaoRemanejamento.Name = "ckbAlteracaoRemanejamento";
             this.ckbAlteracaoRemanejamento.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoRemanejamento.TabIndex = 15;
@@ -897,7 +897,7 @@
             // ckbVisualizacaoRemanejamento
             // 
             this.ckbVisualizacaoRemanejamento.AutoSize = true;
-            this.ckbVisualizacaoRemanejamento.Location = new System.Drawing.Point(117, 248);
+            this.ckbVisualizacaoRemanejamento.Location = new System.Drawing.Point(117, 230);
             this.ckbVisualizacaoRemanejamento.Name = "ckbVisualizacaoRemanejamento";
             this.ckbVisualizacaoRemanejamento.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoRemanejamento.TabIndex = 14;
@@ -907,7 +907,7 @@
             // ckbAlteracaoTurno
             // 
             this.ckbAlteracaoTurno.AutoSize = true;
-            this.ckbAlteracaoTurno.Location = new System.Drawing.Point(220, 214);
+            this.ckbAlteracaoTurno.Location = new System.Drawing.Point(220, 200);
             this.ckbAlteracaoTurno.Name = "ckbAlteracaoTurno";
             this.ckbAlteracaoTurno.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoTurno.TabIndex = 13;
@@ -918,7 +918,7 @@
             // ckbVisualizacaoTurno
             // 
             this.ckbVisualizacaoTurno.AutoSize = true;
-            this.ckbVisualizacaoTurno.Location = new System.Drawing.Point(117, 214);
+            this.ckbVisualizacaoTurno.Location = new System.Drawing.Point(117, 200);
             this.ckbVisualizacaoTurno.Name = "ckbVisualizacaoTurno";
             this.ckbVisualizacaoTurno.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoTurno.TabIndex = 12;
@@ -928,7 +928,7 @@
             // ckbAlteracaoSerie
             // 
             this.ckbAlteracaoSerie.AutoSize = true;
-            this.ckbAlteracaoSerie.Location = new System.Drawing.Point(220, 180);
+            this.ckbAlteracaoSerie.Location = new System.Drawing.Point(220, 170);
             this.ckbAlteracaoSerie.Name = "ckbAlteracaoSerie";
             this.ckbAlteracaoSerie.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoSerie.TabIndex = 11;
@@ -939,7 +939,7 @@
             // ckbVisualizacaoSerie
             // 
             this.ckbVisualizacaoSerie.AutoSize = true;
-            this.ckbVisualizacaoSerie.Location = new System.Drawing.Point(117, 180);
+            this.ckbVisualizacaoSerie.Location = new System.Drawing.Point(117, 170);
             this.ckbVisualizacaoSerie.Name = "ckbVisualizacaoSerie";
             this.ckbVisualizacaoSerie.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoSerie.TabIndex = 10;
@@ -949,7 +949,7 @@
             // ckbAlteracaoTurma
             // 
             this.ckbAlteracaoTurma.AutoSize = true;
-            this.ckbAlteracaoTurma.Location = new System.Drawing.Point(220, 146);
+            this.ckbAlteracaoTurma.Location = new System.Drawing.Point(220, 140);
             this.ckbAlteracaoTurma.Name = "ckbAlteracaoTurma";
             this.ckbAlteracaoTurma.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoTurma.TabIndex = 9;
@@ -960,7 +960,7 @@
             // ckbVisualizacaoTurma
             // 
             this.ckbVisualizacaoTurma.AutoSize = true;
-            this.ckbVisualizacaoTurma.Location = new System.Drawing.Point(117, 146);
+            this.ckbVisualizacaoTurma.Location = new System.Drawing.Point(117, 140);
             this.ckbVisualizacaoTurma.Name = "ckbVisualizacaoTurma";
             this.ckbVisualizacaoTurma.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoTurma.TabIndex = 8;
@@ -970,7 +970,7 @@
             // ckbAlteracaoFuncionario
             // 
             this.ckbAlteracaoFuncionario.AutoSize = true;
-            this.ckbAlteracaoFuncionario.Location = new System.Drawing.Point(220, 111);
+            this.ckbAlteracaoFuncionario.Location = new System.Drawing.Point(220, 110);
             this.ckbAlteracaoFuncionario.Name = "ckbAlteracaoFuncionario";
             this.ckbAlteracaoFuncionario.Size = new System.Drawing.Size(80, 17);
             this.ckbAlteracaoFuncionario.TabIndex = 7;
@@ -981,7 +981,7 @@
             // ckbVisualizacaoFuncionario
             // 
             this.ckbVisualizacaoFuncionario.AutoSize = true;
-            this.ckbVisualizacaoFuncionario.Location = new System.Drawing.Point(117, 111);
+            this.ckbVisualizacaoFuncionario.Location = new System.Drawing.Point(117, 110);
             this.ckbVisualizacaoFuncionario.Name = "ckbVisualizacaoFuncionario";
             this.ckbVisualizacaoFuncionario.Size = new System.Drawing.Size(97, 17);
             this.ckbVisualizacaoFuncionario.TabIndex = 6;
@@ -991,7 +991,7 @@
             // lblFuncionario
             // 
             this.lblFuncionario.AutoSize = true;
-            this.lblFuncionario.Location = new System.Drawing.Point(34, 111);
+            this.lblFuncionario.Location = new System.Drawing.Point(34, 110);
             this.lblFuncionario.Name = "lblFuncionario";
             this.lblFuncionario.Size = new System.Drawing.Size(77, 13);
             this.lblFuncionario.TabIndex = 5;
@@ -1076,7 +1076,7 @@
             // ucMenuDireita1
             // 
             this.ucMenuDireita1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuDireita1.Location = new System.Drawing.Point(893, 175);
+            this.ucMenuDireita1.Location = new System.Drawing.Point(880, 175);
             this.ucMenuDireita1.Name = "ucMenuDireita1";
             this.ucMenuDireita1.Size = new System.Drawing.Size(120, 493);
             this.ucMenuDireita1.TabIndex = 121;
@@ -1091,7 +1091,7 @@
             this.ucMenuConfiguracoesEsquerda1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucMenuConfiguracoesEsquerda1.Location = new System.Drawing.Point(0, 177);
             this.ucMenuConfiguracoesEsquerda1.Name = "ucMenuConfiguracoesEsquerda1";
-            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 493);
+            this.ucMenuConfiguracoesEsquerda1.Size = new System.Drawing.Size(91, 436);
             this.ucMenuConfiguracoesEsquerda1.TabIndex = 120;
             this.ucMenuConfiguracoesEsquerda1.Load += new System.EventHandler(this.ucMenuConfiguracoesEsquerda1_Load);
             this.ucMenuConfiguracoesEsquerda1.EventoAbrirControleDeAcesso += new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda.delegateAbrirTelaControleDeAcesso(this.ucMenuConfiguracoesEsquerda1_EventoAbrirControleDeAcesso);
@@ -1099,9 +1099,9 @@
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 667);
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
+            this.ucMenuInferior1.Size = new System.Drawing.Size(733, 43);
             this.ucMenuInferior1.TabIndex = 122;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
@@ -1120,7 +1120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1000, 722);
+            this.ClientSize = new System.Drawing.Size(990, 680);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuDireita1);
             this.Controls.Add(this.ucMenuConfiguracoesEsquerda1);
