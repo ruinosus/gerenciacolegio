@@ -119,8 +119,6 @@ namespace GuiWindowsForms
             this.gpbDadosPessoais.Controls.Add(this.label1);
             this.gpbDadosPessoais.Controls.Add(this.lblNome);
             this.errorProviderTela.SetError(this.gpbDadosPessoais, resources.GetString("gpbDadosPessoais.Error"));
-            this.errorProviderTela.SetIconAlignment(this.gpbDadosPessoais, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("gpbDadosPessoais.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.gpbDadosPessoais, ((int)(resources.GetObject("gpbDadosPessoais.IconPadding"))));
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
             this.gpbDadosPessoais.TabStop = false;
             // 
@@ -132,8 +130,6 @@ namespace GuiWindowsForms
             this.txtNaturalidade.BackgroundImage = null;
             this.errorProviderTela.SetError(this.txtNaturalidade, resources.GetString("txtNaturalidade.Error"));
             this.txtNaturalidade.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.errorProviderTela.SetIconAlignment(this.txtNaturalidade, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtNaturalidade.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.txtNaturalidade, ((int)(resources.GetObject("txtNaturalidade.IconPadding"))));
             this.txtNaturalidade.Name = "txtNaturalidade";
             // 
             // lblEdificio
@@ -143,8 +139,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblEdificio, "lblEdificio");
             this.errorProviderTela.SetError(this.lblEdificio, resources.GetString("lblEdificio.Error"));
             this.lblEdificio.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblEdificio, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblEdificio.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblEdificio, ((int)(resources.GetObject("lblEdificio.IconPadding"))));
             this.lblEdificio.Name = "lblEdificio";
             // 
             // txtNomeEdificil
@@ -155,8 +149,6 @@ namespace GuiWindowsForms
             this.txtNomeEdificil.BackgroundImage = null;
             this.errorProviderTela.SetError(this.txtNomeEdificil, resources.GetString("txtNomeEdificil.Error"));
             this.txtNomeEdificil.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.errorProviderTela.SetIconAlignment(this.txtNomeEdificil, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtNomeEdificil.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.txtNomeEdificil, ((int)(resources.GetObject("txtNomeEdificil.IconPadding"))));
             this.txtNomeEdificil.Name = "txtNomeEdificil";
             this.txtNomeEdificil.TextChanged += new System.EventHandler(this.txtNomeEdificil_TextChanged);
             this.txtNomeEdificil.Leave += new System.EventHandler(this.txtNomeEdificil_Leave);
@@ -170,8 +162,6 @@ namespace GuiWindowsForms
             this.mskFoneResidencia.BackgroundImage = null;
             this.errorProviderTela.SetError(this.mskFoneResidencia, resources.GetString("mskFoneResidencia.Error"));
             this.mskFoneResidencia.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.errorProviderTela.SetIconAlignment(this.mskFoneResidencia, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("mskFoneResidencia.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.mskFoneResidencia, ((int)(resources.GetObject("mskFoneResidencia.IconPadding"))));
             this.mskFoneResidencia.Name = "mskFoneResidencia";
             this.mskFoneResidencia.Leave += new System.EventHandler(this.mskFoneResidencia_Leave);
             this.mskFoneResidencia.Enter += new System.EventHandler(this.mskFoneResidencia_Enter);
@@ -188,8 +178,6 @@ namespace GuiWindowsForms
             this.errorProviderTela.SetError(this.cmbUf, resources.GetString("cmbUf.Error"));
             this.cmbUf.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbUf.FormattingEnabled = true;
-            this.errorProviderTela.SetIconAlignment(this.cmbUf, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cmbUf.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.cmbUf, ((int)(resources.GetObject("cmbUf.IconPadding"))));
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.SelectedIndexChanged += new System.EventHandler(this.cmbUf_SelectedIndexChanged_1);
             this.cmbUf.MouseEnter += new System.EventHandler(this.cmbUf_MouseEnter);
@@ -204,8 +192,6 @@ namespace GuiWindowsForms
             this.txtComplemento.BackgroundImage = null;
             this.errorProviderTela.SetError(this.txtComplemento, resources.GetString("txtComplemento.Error"));
             this.txtComplemento.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.errorProviderTela.SetIconAlignment(this.txtComplemento, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtComplemento.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.txtComplemento, ((int)(resources.GetObject("txtComplemento.IconPadding"))));
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.TextChanged += new System.EventHandler(this.txtComplemento_TextChanged);
             this.txtComplemento.Leave += new System.EventHandler(this.txtComplemento_Leave);
@@ -218,8 +204,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblComplemento, "lblComplemento");
             this.errorProviderTela.SetError(this.lblComplemento, resources.GetString("lblComplemento.Error"));
             this.lblComplemento.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblComplemento, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblComplemento.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblComplemento, ((int)(resources.GetObject("lblComplemento.IconPadding"))));
             this.lblComplemento.Name = "lblComplemento";
             // 
             // lblUf
@@ -229,8 +213,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblUf, "lblUf");
             this.errorProviderTela.SetError(this.lblUf, resources.GetString("lblUf.Error"));
             this.lblUf.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblUf, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblUf.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblUf, ((int)(resources.GetObject("lblUf.IconPadding"))));
             this.lblUf.Name = "lblUf";
             // 
             // lblFoneResidencia
@@ -240,8 +222,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblFoneResidencia, "lblFoneResidencia");
             this.errorProviderTela.SetError(this.lblFoneResidencia, resources.GetString("lblFoneResidencia.Error"));
             this.lblFoneResidencia.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblFoneResidencia, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblFoneResidencia.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblFoneResidencia, ((int)(resources.GetObject("lblFoneResidencia.IconPadding"))));
             this.lblFoneResidencia.Name = "lblFoneResidencia";
             // 
             // mskCep
@@ -252,8 +232,6 @@ namespace GuiWindowsForms
             this.mskCep.BackgroundImage = null;
             this.errorProviderTela.SetError(this.mskCep, resources.GetString("mskCep.Error"));
             this.mskCep.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.errorProviderTela.SetIconAlignment(this.mskCep, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("mskCep.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.mskCep, ((int)(resources.GetObject("mskCep.IconPadding"))));
             this.mskCep.Name = "mskCep";
             this.mskCep.Leave += new System.EventHandler(this.mskCep_Leave);
             this.mskCep.Enter += new System.EventHandler(this.mskCep_Enter);
@@ -266,8 +244,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.label4, "label4");
             this.errorProviderTela.SetError(this.label4, resources.GetString("label4.Error"));
             this.label4.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.label4, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label4.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.label4, ((int)(resources.GetObject("label4.IconPadding"))));
             this.label4.Name = "label4";
             // 
             // txtCidade
@@ -278,8 +254,6 @@ namespace GuiWindowsForms
             this.txtCidade.BackgroundImage = null;
             this.errorProviderTela.SetError(this.txtCidade, resources.GetString("txtCidade.Error"));
             this.txtCidade.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.errorProviderTela.SetIconAlignment(this.txtCidade, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtCidade.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.txtCidade, ((int)(resources.GetObject("txtCidade.IconPadding"))));
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
             this.txtCidade.Leave += new System.EventHandler(this.txtCidade_Leave);
@@ -292,8 +266,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblCidade, "lblCidade");
             this.errorProviderTela.SetError(this.lblCidade, resources.GetString("lblCidade.Error"));
             this.lblCidade.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblCidade, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblCidade.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblCidade, ((int)(resources.GetObject("lblCidade.IconPadding"))));
             this.lblCidade.Name = "lblCidade";
             // 
             // txtBairro
@@ -304,8 +276,6 @@ namespace GuiWindowsForms
             this.txtBairro.BackgroundImage = null;
             this.errorProviderTela.SetError(this.txtBairro, resources.GetString("txtBairro.Error"));
             this.txtBairro.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.errorProviderTela.SetIconAlignment(this.txtBairro, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtBairro.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.txtBairro, ((int)(resources.GetObject("txtBairro.IconPadding"))));
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             this.txtBairro.Leave += new System.EventHandler(this.txtBairro_Leave);
@@ -318,8 +288,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblBairro, "lblBairro");
             this.errorProviderTela.SetError(this.lblBairro, resources.GetString("lblBairro.Error"));
             this.lblBairro.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblBairro, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblBairro.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblBairro, ((int)(resources.GetObject("lblBairro.IconPadding"))));
             this.lblBairro.Name = "lblBairro";
             // 
             // txtLogradouro
@@ -330,8 +298,6 @@ namespace GuiWindowsForms
             this.txtLogradouro.BackgroundImage = null;
             this.errorProviderTela.SetError(this.txtLogradouro, resources.GetString("txtLogradouro.Error"));
             this.txtLogradouro.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.errorProviderTela.SetIconAlignment(this.txtLogradouro, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtLogradouro.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.txtLogradouro, ((int)(resources.GetObject("txtLogradouro.IconPadding"))));
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
             this.txtLogradouro.Leave += new System.EventHandler(this.txtLogradouro_Leave);
@@ -344,8 +310,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblEndereco, "lblEndereco");
             this.errorProviderTela.SetError(this.lblEndereco, resources.GetString("lblEndereco.Error"));
             this.lblEndereco.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblEndereco, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblEndereco.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblEndereco, ((int)(resources.GetObject("lblEndereco.IconPadding"))));
             this.lblEndereco.Name = "lblEndereco";
             // 
             // txtEmail
@@ -356,8 +320,6 @@ namespace GuiWindowsForms
             this.txtEmail.BackgroundImage = null;
             this.errorProviderTela.SetError(this.txtEmail, resources.GetString("txtEmail.Error"));
             this.txtEmail.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.txtEmail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtEmail.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.txtEmail, ((int)(resources.GetObject("txtEmail.IconPadding"))));
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
@@ -369,8 +331,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblEmail, "lblEmail");
             this.errorProviderTela.SetError(this.lblEmail, resources.GetString("lblEmail.Error"));
             this.lblEmail.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblEmail, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblEmail.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblEmail, ((int)(resources.GetObject("lblEmail.IconPadding"))));
             this.lblEmail.Name = "lblEmail";
             // 
             // mskFoneEmergencia
@@ -381,8 +341,6 @@ namespace GuiWindowsForms
             this.mskFoneEmergencia.BackgroundImage = null;
             this.errorProviderTela.SetError(this.mskFoneEmergencia, resources.GetString("mskFoneEmergencia.Error"));
             this.mskFoneEmergencia.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.mskFoneEmergencia, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("mskFoneEmergencia.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.mskFoneEmergencia, ((int)(resources.GetObject("mskFoneEmergencia.IconPadding"))));
             this.mskFoneEmergencia.Name = "mskFoneEmergencia";
             this.mskFoneEmergencia.Leave += new System.EventHandler(this.mskFoneEmergencia_Leave);
             this.mskFoneEmergencia.Enter += new System.EventHandler(this.mskFoneEmergencia_Enter);
@@ -395,8 +353,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblFoneEmergencia, "lblFoneEmergencia");
             this.errorProviderTela.SetError(this.lblFoneEmergencia, resources.GetString("lblFoneEmergencia.Error"));
             this.lblFoneEmergencia.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblFoneEmergencia, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblFoneEmergencia.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblFoneEmergencia, ((int)(resources.GetObject("lblFoneEmergencia.IconPadding"))));
             this.lblFoneEmergencia.Name = "lblFoneEmergencia";
             // 
             // mskFoneAluno
@@ -407,8 +363,6 @@ namespace GuiWindowsForms
             this.mskFoneAluno.BackgroundImage = null;
             this.errorProviderTela.SetError(this.mskFoneAluno, resources.GetString("mskFoneAluno.Error"));
             this.mskFoneAluno.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.mskFoneAluno, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("mskFoneAluno.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.mskFoneAluno, ((int)(resources.GetObject("mskFoneAluno.IconPadding"))));
             this.mskFoneAluno.Name = "mskFoneAluno";
             this.mskFoneAluno.Leave += new System.EventHandler(this.mskFoneAluno_Leave);
             this.mskFoneAluno.Enter += new System.EventHandler(this.mskFoneAluno_Enter);
@@ -421,8 +375,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblFoneAluno, "lblFoneAluno");
             this.errorProviderTela.SetError(this.lblFoneAluno, resources.GetString("lblFoneAluno.Error"));
             this.lblFoneAluno.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblFoneAluno, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblFoneAluno.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblFoneAluno, ((int)(resources.GetObject("lblFoneAluno.IconPadding"))));
             this.lblFoneAluno.Name = "lblFoneAluno";
             // 
             // label2
@@ -432,8 +384,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.label2, "label2");
             this.errorProviderTela.SetError(this.label2, resources.GetString("label2.Error"));
             this.label2.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.label2, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label2.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.label2, ((int)(resources.GetObject("label2.IconPadding"))));
             this.label2.Name = "label2";
             // 
             // cmbNacionalidade
@@ -447,8 +397,6 @@ namespace GuiWindowsForms
             this.errorProviderTela.SetError(this.cmbNacionalidade, resources.GetString("cmbNacionalidade.Error"));
             this.cmbNacionalidade.Font = null;
             this.cmbNacionalidade.FormattingEnabled = true;
-            this.errorProviderTela.SetIconAlignment(this.cmbNacionalidade, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cmbNacionalidade.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.cmbNacionalidade, ((int)(resources.GetObject("cmbNacionalidade.IconPadding"))));
             this.cmbNacionalidade.Items.AddRange(new object[] {
             resources.GetString("cmbNacionalidade.Items"),
             resources.GetString("cmbNacionalidade.Items1"),
@@ -718,8 +666,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblNacionalidade, "lblNacionalidade");
             this.errorProviderTela.SetError(this.lblNacionalidade, resources.GetString("lblNacionalidade.Error"));
             this.lblNacionalidade.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblNacionalidade, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblNacionalidade.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblNacionalidade, ((int)(resources.GetObject("lblNacionalidade.IconPadding"))));
             this.lblNacionalidade.Name = "lblNacionalidade";
             // 
             // rdbFem
@@ -731,8 +677,6 @@ namespace GuiWindowsForms
             this.rdbFem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.errorProviderTela.SetError(this.rdbFem, resources.GetString("rdbFem.Error"));
             this.rdbFem.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.rdbFem, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rdbFem.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.rdbFem, ((int)(resources.GetObject("rdbFem.IconPadding"))));
             this.rdbFem.Name = "rdbFem";
             this.rdbFem.TabStop = true;
             this.rdbFem.UseVisualStyleBackColor = true;
@@ -748,8 +692,6 @@ namespace GuiWindowsForms
             this.rdbMasc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.errorProviderTela.SetError(this.rdbMasc, resources.GetString("rdbMasc.Error"));
             this.rdbMasc.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.rdbMasc, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("rdbMasc.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.rdbMasc, ((int)(resources.GetObject("rdbMasc.IconPadding"))));
             this.rdbMasc.Name = "rdbMasc";
             this.rdbMasc.TabStop = true;
             this.rdbMasc.UseVisualStyleBackColor = true;
@@ -763,8 +705,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblSexo, "lblSexo");
             this.errorProviderTela.SetError(this.lblSexo, resources.GetString("lblSexo.Error"));
             this.lblSexo.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblSexo, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblSexo.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblSexo, ((int)(resources.GetObject("lblSexo.IconPadding"))));
             this.lblSexo.Name = "lblSexo";
             // 
             // txtNome
@@ -774,8 +714,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.txtNome, "txtNome");
             this.txtNome.BackgroundImage = null;
             this.errorProviderTela.SetError(this.txtNome, resources.GetString("txtNome.Error"));
-            this.errorProviderTela.SetIconAlignment(this.txtNome, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("txtNome.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.txtNome, ((int)(resources.GetObject("txtNome.IconPadding"))));
             this.txtNome.Name = "txtNome";
             this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
@@ -793,8 +731,6 @@ namespace GuiWindowsForms
             this.errorProviderTela.SetError(this.dtpNascimento, resources.GetString("dtpNascimento.Error"));
             this.dtpNascimento.Font = null;
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.errorProviderTela.SetIconAlignment(this.dtpNascimento, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("dtpNascimento.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.dtpNascimento, ((int)(resources.GetObject("dtpNascimento.IconPadding"))));
             this.dtpNascimento.Name = "dtpNascimento";
             this.dtpNascimento.ShowUpDown = true;
             this.dtpNascimento.Value = new System.DateTime(2010, 1, 16, 0, 0, 0, 0);
@@ -806,8 +742,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.label1, "label1");
             this.errorProviderTela.SetError(this.label1, resources.GetString("label1.Error"));
             this.label1.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.label1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("label1.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.label1, ((int)(resources.GetObject("label1.IconPadding"))));
             this.label1.Name = "label1";
             // 
             // lblNome
@@ -817,8 +751,6 @@ namespace GuiWindowsForms
             resources.ApplyResources(this.lblNome, "lblNome");
             this.errorProviderTela.SetError(this.lblNome, resources.GetString("lblNome.Error"));
             this.lblNome.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.lblNome, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblNome.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblNome, ((int)(resources.GetObject("lblNome.IconPadding"))));
             this.lblNome.Name = "lblNome";
             // 
             // lblHelloUsuario
@@ -829,8 +761,6 @@ namespace GuiWindowsForms
             this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
             this.errorProviderTela.SetError(this.lblHelloUsuario, resources.GetString("lblHelloUsuario.Error"));
             this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.errorProviderTela.SetIconAlignment(this.lblHelloUsuario, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("lblHelloUsuario.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.lblHelloUsuario, ((int)(resources.GetObject("lblHelloUsuario.IconPadding"))));
             this.lblHelloUsuario.Name = "lblHelloUsuario";
             // 
             // btnDesconectar
@@ -843,8 +773,6 @@ namespace GuiWindowsForms
             this.errorProviderTela.SetError(this.btnDesconectar, resources.GetString("btnDesconectar.Error"));
             this.btnDesconectar.FlatAppearance.BorderSize = 0;
             this.btnDesconectar.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.btnDesconectar, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("btnDesconectar.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.btnDesconectar, ((int)(resources.GetObject("btnDesconectar.IconPadding"))));
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Tag = "Desconectar";
             this.btnDesconectar.UseVisualStyleBackColor = false;
@@ -860,8 +788,6 @@ namespace GuiWindowsForms
             this.errorProviderTela.SetError(this.cmbSelecionarAluno, resources.GetString("cmbSelecionarAluno.Error"));
             this.cmbSelecionarAluno.Font = null;
             this.cmbSelecionarAluno.FormattingEnabled = true;
-            this.errorProviderTela.SetIconAlignment(this.cmbSelecionarAluno, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cmbSelecionarAluno.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.cmbSelecionarAluno, ((int)(resources.GetObject("cmbSelecionarAluno.IconPadding"))));
             this.cmbSelecionarAluno.Name = "cmbSelecionarAluno";
             // 
             // errorProviderTela
@@ -877,8 +803,6 @@ namespace GuiWindowsForms
             this.pictureBox1.BackgroundImage = null;
             this.errorProviderTela.SetError(this.pictureBox1, resources.GetString("pictureBox1.Error"));
             this.pictureBox1.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.pictureBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox1.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.pictureBox1, ((int)(resources.GetObject("pictureBox1.IconPadding"))));
             this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
             this.pictureBox1.ImageLocation = null;
             this.pictureBox1.Name = "pictureBox1";
@@ -893,8 +817,6 @@ namespace GuiWindowsForms
             this.ucMenuInferior1.BackgroundImage = null;
             this.errorProviderTela.SetError(this.ucMenuInferior1, resources.GetString("ucMenuInferior1.Error"));
             this.ucMenuInferior1.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.ucMenuInferior1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucMenuInferior1.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.ucMenuInferior1, ((int)(resources.GetObject("ucMenuInferior1.IconPadding"))));
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucAluno1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
@@ -909,8 +831,6 @@ namespace GuiWindowsForms
             this.uMenuLateral1.BackgroundImage = null;
             this.errorProviderTela.SetError(this.uMenuLateral1, resources.GetString("uMenuLateral1.Error"));
             this.uMenuLateral1.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.uMenuLateral1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("uMenuLateral1.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.uMenuLateral1, ((int)(resources.GetObject("uMenuLateral1.IconPadding"))));
             this.uMenuLateral1.Name = "uMenuLateral1";
             this.uMenuLateral1.EventoAbrirTelaMedica += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMedica(this.uMenuLateral1_EventoAbrirTelaMedica);
             this.uMenuLateral1.Load += new System.EventHandler(this.uMenuLateral1_Load);
@@ -929,8 +849,6 @@ namespace GuiWindowsForms
             this.uMenuImagem1.BackgroundImage = null;
             this.errorProviderTela.SetError(this.uMenuImagem1, resources.GetString("uMenuImagem1.Error"));
             this.uMenuImagem1.Font = null;
-            this.errorProviderTela.SetIconAlignment(this.uMenuImagem1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("uMenuImagem1.IconAlignment"))));
-            this.errorProviderTela.SetIconPadding(this.uMenuImagem1, ((int)(resources.GetObject("uMenuImagem1.IconPadding"))));
             this.uMenuImagem1.Name = "uMenuImagem1";
             this.uMenuImagem1.Load += new System.EventHandler(this.uMenuImagem1_Load);
             // 
