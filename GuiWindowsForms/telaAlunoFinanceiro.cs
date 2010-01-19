@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms
 {
@@ -16,6 +17,8 @@ namespace GuiWindowsForms
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
          * */
+
+        Memoria memoria = Memoria.Instance;
 
         private static telaAlunoFinanceiro telaAlunofinanceiro;
 
@@ -212,6 +215,16 @@ namespace GuiWindowsForms
             this.Close();
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
+        }
+
+        private void telaAlunoFinanceiro_Activated(object sender, EventArgs e)
+        {
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+
+            if (memoria.Aluno != null)
+            {
+                uMenuImagem1.carregaAluno(memoria.Aluno);
+            }
         }
     }
 }

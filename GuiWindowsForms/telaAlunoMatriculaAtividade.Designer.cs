@@ -322,6 +322,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaAlunoMatriculaAtividade_Load);
+            this.Activated += new System.EventHandler(this.telaAlunoMatriculaAtividade_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMatriculaAtividade_FormClosing);
             this.gpbMatricula.ResumeLayout(false);
             this.gpbMatricula.PerformLayout();

@@ -131,11 +131,10 @@ namespace GuiWindowsForms
 
         private void telaAlunoResponsavelBusca_Activated(object sender, EventArgs e)
         {
-
-
             if (memoria.Aluno != null)
             {
                 CarregarCombos();
+                uMenuImagem1.carregaAluno(memoria.Aluno);
                 IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
                 dgvResponsavelAluno.AutoGenerateColumns = false;
                 ResponsavelAluno responsavelAluno = new ResponsavelAluno();

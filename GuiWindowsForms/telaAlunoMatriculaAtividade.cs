@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms
 {
     public partial class telaAlunoMatriculaAtividade : Form
     {
+        Memoria memoria = Memoria.Instance;
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -327,6 +330,16 @@ namespace GuiWindowsForms
             this.Close();
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
+        }
+
+        private void telaAlunoMatriculaAtividade_Activated(object sender, EventArgs e)
+        {
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+
+            if (memoria.Aluno != null)
+            {
+                uMenuImagem1.carregaAluno(memoria.Aluno);
+            }
         }
     }
 }
