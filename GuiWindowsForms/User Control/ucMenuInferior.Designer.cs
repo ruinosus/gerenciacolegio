@@ -32,6 +32,8 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnIncluir = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblInfoControles
@@ -40,7 +42,7 @@
             this.lblInfoControles.BackColor = System.Drawing.Color.Transparent;
             this.lblInfoControles.Font = new System.Drawing.Font("Arial Black", 10F, System.Drawing.FontStyle.Bold);
             this.lblInfoControles.ForeColor = System.Drawing.Color.Yellow;
-            this.lblInfoControles.Location = new System.Drawing.Point(230, 13);
+            this.lblInfoControles.Location = new System.Drawing.Point(274, 11);
             this.lblInfoControles.Name = "lblInfoControles";
             this.lblInfoControles.Size = new System.Drawing.Size(14, 19);
             this.lblInfoControles.TabIndex = 70;
@@ -54,10 +56,10 @@
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(67, 3);
+            this.btnSalvar.Location = new System.Drawing.Point(55, 3);
             this.btnSalvar.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(36, 29);
+            this.btnSalvar.Size = new System.Drawing.Size(36, 34);
             this.btnSalvar.TabIndex = 71;
             this.btnSalvar.Tag = "";
             this.btnSalvar.UseVisualStyleBackColor = false;
@@ -72,7 +74,7 @@
             this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(3, 3);
+            this.btnVoltar.Location = new System.Drawing.Point(5, 3);
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(33, 34);
@@ -88,17 +90,47 @@
             this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
             this.btnAlterar.FlatAppearance.BorderSize = 0;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Location = new System.Drawing.Point(144, 3);
+            this.btnAlterar.Location = new System.Drawing.Point(125, 3);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(32, 32);
             this.btnAlterar.TabIndex = 73;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Visible = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // btnIncluir
+            // 
+            this.btnIncluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnIncluir.FlatAppearance.BorderSize = 0;
+            this.btnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncluir.Location = new System.Drawing.Point(175, 3);
+            this.btnIncluir.Name = "btnIncluir";
+            this.btnIncluir.Size = new System.Drawing.Size(32, 32);
+            this.btnIncluir.TabIndex = 74;
+            this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Visible = false;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Location = new System.Drawing.Point(225, 14);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(32, 11);
+            this.btnExcluir.TabIndex = 75;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Visible = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // ucMenuInferior
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnSalvar);
@@ -116,5 +148,7 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnIncluir;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

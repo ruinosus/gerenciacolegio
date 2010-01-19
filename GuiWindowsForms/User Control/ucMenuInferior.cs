@@ -87,5 +87,59 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+        #region BUTTON ALTERAR
+
+        public delegate void delegateAlterar();
+        public event delegateAlterar EventoAlterar;
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            if (EventoAlterar != null)
+                EventoAlterar();
+        }
+
+        public void exibirBotaoAlterar()
+        {
+            btnAlterar.Visible = true;
+        }
+
+        #endregion
+
+        #region BUTTON INCLUIR
+
+        public delegate void delegateIncluir();
+        public event delegateIncluir EventoIncluir;
+
+        private void btnIncluir_Click(object sender, EventArgs e)
+        {
+            if (EventoIncluir != null)
+                EventoIncluir();
+        }
+
+        public void exibirBotaoIncluir()
+        {
+            btnIncluir.Visible = true;
+        }
+
+        #endregion
+
+        #region BUTTON EXCLUIR
+
+        public delegate void delegateDeletar();
+        public event delegateDeletar EventoDeletar;
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (EventoDeletar != null)
+                EventoDeletar();
+        }
+
+        public void exibirBotaoDeletar()
+        {
+            btnExcluir.Visible = true;
+        }
+
+        #endregion
     }
 }
