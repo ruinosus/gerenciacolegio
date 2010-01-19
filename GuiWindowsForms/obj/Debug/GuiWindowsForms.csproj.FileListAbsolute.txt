@@ -350,6 +350,13 @@ C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\GuiWindowsForms\obj\Debug\Gui
 C:\Users\Dudu\Desktop\gerenciacolegio\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.config
 C:\Users\Dudu\Desktop\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividades.resources
 C:\Users\Dudu\Desktop\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaRelatorioBoletoMensalidade.resources
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.config
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAluno.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoAcademico.resources
@@ -380,14 +387,5 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.uMenuImagem.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.config
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.pdb
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\Negocios.dll
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.dll
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.dll
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.pdb
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.pdb
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\bin\Debug\DbLinq.MySql.pdb

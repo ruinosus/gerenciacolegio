@@ -449,10 +449,15 @@ namespace GuiWindowsForms
 
         private void uMenuLateral1_EventoAbrirTelaResponsavel()
         {
+            // CHAMADA PARA TELA ALUNO RESPONSAVEL
+            //this.Hide();
+            //Program.ultimaTela = 7;
+            //telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            //telaalunoresponsavel.Show();
+
+            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
             this.Hide();
-            Program.ultimaTela = 7;
-            telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
-            telaalunoresponsavel.Show();
+            tela.Show();
         }
 
         private void uMenuLateral1_EventoAbrirTelaMedica()

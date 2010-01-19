@@ -33,7 +33,6 @@ namespace GuiWindowsForms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAluno));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.txtNaturalidade = new System.Windows.Forms.TextBox();
-            this.btnVincularResponsavel = new System.Windows.Forms.Button();
             this.lblEdificio = new System.Windows.Forms.Label();
             this.txtNomeEdificil = new System.Windows.Forms.TextBox();
             this.mskFoneResidencia = new System.Windows.Forms.MaskedTextBox();
@@ -70,10 +69,10 @@ namespace GuiWindowsForms
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.cmbSelecionarAluno = new System.Windows.Forms.ComboBox();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,7 +82,6 @@ namespace GuiWindowsForms
             // 
             this.gpbDadosPessoais.BackColor = System.Drawing.Color.Transparent;
             this.gpbDadosPessoais.Controls.Add(this.txtNaturalidade);
-            this.gpbDadosPessoais.Controls.Add(this.btnVincularResponsavel);
             this.gpbDadosPessoais.Controls.Add(this.lblEdificio);
             this.gpbDadosPessoais.Controls.Add(this.txtNomeEdificil);
             this.gpbDadosPessoais.Controls.Add(this.mskFoneResidencia);
@@ -133,19 +131,6 @@ namespace GuiWindowsForms
             this.txtNaturalidade.Name = "txtNaturalidade";
             this.txtNaturalidade.Size = new System.Drawing.Size(202, 20);
             this.txtNaturalidade.TabIndex = 12;
-            // 
-            // btnVincularResponsavel
-            // 
-            this.btnVincularResponsavel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVincularResponsavel.BackgroundImage")));
-            this.btnVincularResponsavel.FlatAppearance.BorderSize = 0;
-            this.btnVincularResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVincularResponsavel.Location = new System.Drawing.Point(733, 31);
-            this.btnVincularResponsavel.Margin = new System.Windows.Forms.Padding(0);
-            this.btnVincularResponsavel.Name = "btnVincularResponsavel";
-            this.btnVincularResponsavel.Size = new System.Drawing.Size(30, 31);
-            this.btnVincularResponsavel.TabIndex = 6;
-            this.btnVincularResponsavel.UseVisualStyleBackColor = true;
-            this.btnVincularResponsavel.Click += new System.EventHandler(this.btnVincularResponsavel_Click);
             // 
             // lblEdificio
             // 
@@ -792,6 +777,15 @@ namespace GuiWindowsForms
             // 
             this.errorProviderTela.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox1.TabIndex = 138;
+            this.pictureBox1.TabStop = false;
+            // 
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
@@ -825,15 +819,6 @@ namespace GuiWindowsForms
             this.uMenuImagem1.Size = new System.Drawing.Size(438, 201);
             this.uMenuImagem1.TabIndex = 73;
             this.uMenuImagem1.Load += new System.EventHandler(this.uMenuImagem1_Load);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
-            this.pictureBox1.TabIndex = 138;
-            this.pictureBox1.TabStop = false;
             // 
             // telaAluno
             // 
@@ -906,7 +891,6 @@ namespace GuiWindowsForms
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.Label lblEndereco;
-        private System.Windows.Forms.Button btnVincularResponsavel;
         private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
         private ucMenuInferior ucMenuInferior1;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
