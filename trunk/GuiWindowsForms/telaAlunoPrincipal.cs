@@ -99,6 +99,10 @@ namespace GuiWindowsForms
             this.Hide();
             Program.ultimaTela = 6;
 
+            //Quando abrir a telaAluno do clique do botao cadastrar
+            // os campos "Alterar" e "Excluir" ficam inativos
+            Program.ultimaTelaCadastrar = 1;
+
             Memoria memoria = Memoria.Instance;
             memoria.Aluno = null;
             telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();

@@ -66,6 +66,7 @@ namespace GuiWindowsForms
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
             btnIncluir.Enabled = false;
+            btnVoltar.Enabled = true;
 
         }
 
@@ -103,6 +104,8 @@ namespace GuiWindowsForms
             if (EventoAlterar != null)
                 EventoAlterar();
             btnExcluir.Enabled = false;
+            btnVoltar.Enabled = false;
+            
         }
 
         public void exibirBotaoAlterar()

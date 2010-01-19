@@ -1144,6 +1144,8 @@ namespace GuiWindowsForms
 
         private void telaAluno_Activated(object sender, EventArgs e)
         {
+
+
             if (verificaFoto == 0)
             {
                 Memoria memoria = Memoria.Instance;
