@@ -61,7 +61,7 @@
             this.txtBusca.MaxLength = 60;
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(415, 26);
-            this.txtBusca.TabIndex = 2;
+            this.txtBusca.TabIndex = 0;
             this.txtBusca.Leave += new System.EventHandler(this.txtLogin_Leave);
             this.txtBusca.Enter += new System.EventHandler(this.txtLogin_Enter);
             // 
@@ -221,7 +221,7 @@
             this.btnFinanceiro.Margin = new System.Windows.Forms.Padding(0);
             this.btnFinanceiro.Name = "btnFinanceiro";
             this.btnFinanceiro.Size = new System.Drawing.Size(120, 110);
-            this.btnFinanceiro.TabIndex = 14;
+            this.btnFinanceiro.TabIndex = 5;
             this.btnFinanceiro.UseVisualStyleBackColor = false;
             this.btnFinanceiro.Click += new System.EventHandler(this.btnFinanceiro_Click);
             this.btnFinanceiro.Leave += new System.EventHandler(this.btnFinanceiro_Leave);
@@ -237,7 +237,7 @@
             this.btnConfiguracoes.Margin = new System.Windows.Forms.Padding(0);
             this.btnConfiguracoes.Name = "btnConfiguracoes";
             this.btnConfiguracoes.Size = new System.Drawing.Size(137, 101);
-            this.btnConfiguracoes.TabIndex = 11;
+            this.btnConfiguracoes.TabIndex = 4;
             this.btnConfiguracoes.UseVisualStyleBackColor = false;
             this.btnConfiguracoes.Click += new System.EventHandler(this.btnConfiguracoes_Click);
             this.btnConfiguracoes.Leave += new System.EventHandler(this.btnConfiguracoes_Leave);
@@ -253,7 +253,7 @@
             this.btnPesquisar.Location = new System.Drawing.Point(737, 225);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(74, 75);
-            this.btnPesquisar.TabIndex = 9;
+            this.btnPesquisar.TabIndex = 1;
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
@@ -282,7 +282,7 @@
             this.btnFuncionario.Location = new System.Drawing.Point(365, 9);
             this.btnFuncionario.Name = "btnFuncionario";
             this.btnFuncionario.Size = new System.Drawing.Size(142, 113);
-            this.btnFuncionario.TabIndex = 5;
+            this.btnFuncionario.TabIndex = 3;
             this.btnFuncionario.UseVisualStyleBackColor = false;
             this.btnFuncionario.Click += new System.EventHandler(this.btnFuncionario_Click);
             this.btnFuncionario.Leave += new System.EventHandler(this.btnFuncionario_Leave);
@@ -297,7 +297,7 @@
             this.btnAluno.Location = new System.Drawing.Point(240, 9);
             this.btnAluno.Name = "btnAluno";
             this.btnAluno.Size = new System.Drawing.Size(142, 113);
-            this.btnAluno.TabIndex = 4;
+            this.btnAluno.TabIndex = 2;
             this.btnAluno.UseVisualStyleBackColor = false;
             this.btnAluno.Click += new System.EventHandler(this.btnAluno_Click);
             this.btnAluno.Leave += new System.EventHandler(this.btnAluno_Leave);
@@ -310,7 +310,7 @@
             this.ucDesconectarLogin1.Location = new System.Drawing.Point(768, 0);
             this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
             this.ucDesconectarLogin1.Size = new System.Drawing.Size(220, 39);
-            this.ucDesconectarLogin1.TabIndex = 72;
+            this.ucDesconectarLogin1.TabIndex = 6;
             this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
             // telaAlunoPrincipal
