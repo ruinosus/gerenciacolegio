@@ -59,21 +59,8 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
 
-            uMenuLateral1.verificaTela(telaalunoresponsavel);
 
-            cmbUf.DataSource = estados;
-            ucMenuSuper.ocultarBotaoAdicionarImagem();
-
-            if (memoria.Aluno != null)
-            {
-                ucMenuSuper.carregaAluno(memoria.Aluno);
-                responsavel = memoria.Responsavel;
-                carregarAlunoResponsavel();
-            }
-            else
-            {
-                limparTela();
-            }
+            
 
         }
 
@@ -411,6 +398,8 @@ namespace GuiWindowsForms
         {
             this.Hide();
 
+
+
             if (Program.ultimaTela != 8)
             {
                 Program.SelecionaForm(Program.ultimaTela);
@@ -702,20 +691,45 @@ namespace GuiWindowsForms
                 responsavel.Status = (int)Status.Ativo;
 
                 //responsavel = ucMenuSuper.retornaResponsavel(responsavel);
-
-                if (verificaSeJaCadastrado(responsavel) == false)
+                switch (memoria.Status)
                 {
-                    responsavelControlador.Incluir(responsavel);
-                    responsavelControlador.Confirmar();
+                    case StatusBanco.Inativo:
+                        break;
+                    case StatusBanco.Inclusao:
+                        {
+                            if (verificaSeJaCadastrado(responsavel) == false)
+                            {
+                                responsavelControlador.Incluir(responsavel);
+                                responsavelControlador.Confirmar();
 
-                    limparTela();
+                                limparTela();
 
-                    MessageBox.Show(ResponsavelConstantes.RESPONSAVEL_INCLUIDO, "Colégio Conhecer");
+                                MessageBox.Show(ResponsavelConstantes.RESPONSAVEL_INCLUIDO, "Colégio Conhecer");
+                            }
+                            else
+                            {
+                                MessageBox.Show("O Responsável já existe na base de dados", "Colégio Conhecer");
+                            }
+                            break;
+                        }
+                    case StatusBanco.Alteracao:
+                        {
+                            memoria.Responsavel = responsavel;
+                            responsavelControlador.Alterar(responsavel);
+                            responsavelControlador.Confirmar();
+                        
+                            MessageBox.Show("Responsável inserido com sucesso.", "Colégio Conhecer");
+                            break;
+
+                        }
+                    case StatusBanco.Navegacao:
+                        break;
+                    default:
+                        break;
                 }
-                else
-                {
-                    MessageBox.Show("O Responsável já existe na base de dados", "Colégio Conhecer");
-                }
+               
+
+                
             }
             catch (Exception ex)
             {
@@ -899,6 +913,8 @@ namespace GuiWindowsForms
         /// </summary>
         public void carregarAlunoResponsavel()
         {
+            txtNome.ReadOnly = true;
+            mskCpf.ReadOnly = true;
             txtBairro.Text = responsavel.Bairro;
             txtCidade.Text = responsavel.Cidade;
             txtComplemento.Text = responsavel.ComplementoEndereco;
@@ -1001,7 +1017,22 @@ namespace GuiWindowsForms
 
         private void telaAlunoResponsavel_Activated(object sender, EventArgs e)
         {
-           
+            if (memoria.Aluno != null && memoria.Responsavel != null)
+            {
+                uMenuLateral1.verificaTela(telaalunoresponsavel);
+
+                cmbUf.DataSource = estados;
+                ucMenuSuper.ocultarBotaoAdicionarImagem();
+
+                ucMenuSuper.carregaAluno(memoria.Aluno);
+                responsavel = memoria.Responsavel;
+                carregarAlunoResponsavel();
+
+            }
+            else
+            {
+                limparTela();
+            }
         }
 
 

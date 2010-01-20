@@ -102,14 +102,14 @@ namespace Negocios.ModuloResponsavel.Repositorios
                             {
                                 resultado.AddRange((from r in resultado
                                                     where
-                                                    r.Cpf.Contains(responsavel.Cpf)
+                                                    r.Cpf!=null && r.Cpf.Contains(responsavel.Cpf)
                                                     select r).ToList());
                             }
                             else
                             {
                                 resultado =((from r in resultado
                                                     where
-                                                    r.Cpf.Contains(responsavel.Cpf)
+                                                  r.Cpf != null && r.Cpf.Contains(responsavel.Cpf)
                                                     select r).ToList());
                             }
                             pesquisa = true;
