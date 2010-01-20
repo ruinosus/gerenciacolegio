@@ -130,7 +130,7 @@
             // mskFoneOpcional
             // 
             this.mskFoneOpcional.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.mskFoneOpcional.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.mskFoneOpcional.ForeColor = System.Drawing.SystemColors.WindowText;
             this.mskFoneOpcional.Location = new System.Drawing.Point(357, 317);
             this.mskFoneOpcional.Mask = "(99) 0000-0000";
             this.mskFoneOpcional.Name = "mskFoneOpcional";
@@ -158,7 +158,7 @@
             // txtNomeEdificil
             // 
             this.txtNomeEdificil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtNomeEdificil.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtNomeEdificil.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNomeEdificil.Location = new System.Drawing.Point(105, 181);
             this.txtNomeEdificil.MaxLength = 30;
             this.txtNomeEdificil.Name = "txtNomeEdificil";
@@ -170,7 +170,7 @@
             this.cmbUf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.cmbUf.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.cmbUf.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbUf.FormattingEnabled = true;
             this.cmbUf.Location = new System.Drawing.Point(400, 225);
             this.cmbUf.MaxLength = 2;
@@ -185,7 +185,7 @@
             // txtComplemento
             // 
             this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtComplemento.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtComplemento.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtComplemento.Location = new System.Drawing.Point(608, 135);
             this.txtComplemento.MaxLength = 30;
             this.txtComplemento.Name = "txtComplemento";
@@ -213,7 +213,7 @@
             // mskCep
             // 
             this.mskCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.mskCep.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.mskCep.ForeColor = System.Drawing.SystemColors.WindowText;
             this.mskCep.Location = new System.Drawing.Point(105, 225);
             this.mskCep.Mask = "00000-999";
             this.mskCep.Name = "mskCep";
@@ -232,7 +232,7 @@
             // txtCidade
             // 
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtCidade.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtCidade.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtCidade.Location = new System.Drawing.Point(608, 225);
             this.txtCidade.MaxLength = 30;
             this.txtCidade.Name = "txtCidade";
@@ -251,7 +251,7 @@
             // txtBairro
             // 
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtBairro.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtBairro.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtBairro.Location = new System.Drawing.Point(608, 181);
             this.txtBairro.MaxLength = 30;
             this.txtBairro.Name = "txtBairro";
@@ -270,7 +270,7 @@
             // txtLogradouro
             // 
             this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtLogradouro.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtLogradouro.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtLogradouro.Location = new System.Drawing.Point(105, 135);
             this.txtLogradouro.MaxLength = 60;
             this.txtLogradouro.Name = "txtLogradouro";
@@ -289,7 +289,7 @@
             // mskFoneTrabalho
             // 
             this.mskFoneTrabalho.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.mskFoneTrabalho.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.mskFoneTrabalho.ForeColor = System.Drawing.SystemColors.WindowText;
             this.mskFoneTrabalho.Location = new System.Drawing.Point(608, 317);
             this.mskFoneTrabalho.Mask = "(99) 0000-0000";
             this.mskFoneTrabalho.Name = "mskFoneTrabalho";
@@ -310,8 +310,8 @@
             // 
             // txtLocalTrabalho
             // 
-            this.txtLocalTrabalho.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtLocalTrabalho.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtLocalTrabalho.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLocalTrabalho.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtLocalTrabalho.Location = new System.Drawing.Point(608, 274);
             this.txtLocalTrabalho.MaxLength = 30;
             this.txtLocalTrabalho.Name = "txtLocalTrabalho";
@@ -332,8 +332,8 @@
             // 
             // txtProfissao
             // 
-            this.txtProfissao.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtProfissao.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtProfissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtProfissao.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtProfissao.Location = new System.Drawing.Point(105, 274);
             this.txtProfissao.MaxLength = 30;
             this.txtProfissao.Name = "txtProfissao";
@@ -355,7 +355,7 @@
             // mskCpf
             // 
             this.mskCpf.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.mskCpf.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.mskCpf.ForeColor = System.Drawing.SystemColors.WindowText;
             this.mskCpf.Location = new System.Drawing.Point(608, 85);
             this.mskCpf.Mask = "000,000,000-00";
             this.mskCpf.Name = "mskCpf";
@@ -368,7 +368,7 @@
             // txtRg
             // 
             this.txtRg.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtRg.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtRg.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtRg.Location = new System.Drawing.Point(300, 85);
             this.txtRg.MaxLength = 15;
             this.txtRg.Name = "txtRg";
@@ -380,8 +380,8 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtEmail.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtEmail.Location = new System.Drawing.Point(105, 370);
             this.txtEmail.MaxLength = 40;
             this.txtEmail.Name = "txtEmail";
@@ -402,8 +402,8 @@
             // 
             // mskFoneResidencia
             // 
-            this.mskFoneResidencia.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.mskFoneResidencia.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.mskFoneResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.mskFoneResidencia.ForeColor = System.Drawing.SystemColors.WindowText;
             this.mskFoneResidencia.Location = new System.Drawing.Point(105, 317);
             this.mskFoneResidencia.Mask = "(99) 0000-0000";
             this.mskFoneResidencia.Name = "mskFoneResidencia";
@@ -477,8 +477,8 @@
             // 
             // txtNome
             // 
-            this.txtNome.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtNome.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtNome.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNome.Location = new System.Drawing.Point(105, 32);
             this.txtNome.MaxLength = 40;
             this.txtNome.Name = "txtNome";
