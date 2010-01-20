@@ -191,12 +191,15 @@ namespace GuiWindowsForms
                     if (responsavel== null || responsavel.ID <=0)
                     {
                         responsavel = new Responsavel();
+                        responsavel.Nome = txtNome.Text;
+                        responsavel.Cpf= mskCpf.Text;
                         IResponsavelProcesso processoReponsavel = ResponsavelProcesso.Instance;
                         responsavel.Status = (int)Status.Ativo;
                         processoReponsavel.Incluir(responsavel);
                         processoReponsavel.Confirmar();
                         Memoria m = Memoria.Instance;
                         m.Responsavel = responsavel;
+                        m.Status = StatusBanco.Alteracao;
                     }
 
                     IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
@@ -224,10 +227,14 @@ namespace GuiWindowsForms
                     processo.Incluir(responsavelAluno);
                     processo.Confirmar();
 
+                    if(memoria.Status == StatusBanco.Alteracao)
+
+                    {
                     Program.ultimaTela = 8;
-                    this.Close();
+                    this.Hide();
                     telaAlunoResponsavel telaRespAux = telaAlunoResponsavel.getInstancia();
                     telaRespAux.Show();
+                    }
                 }
             }
             catch (Exception ex)

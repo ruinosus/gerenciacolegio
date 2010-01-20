@@ -38,7 +38,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                         {
                             if (pesquisa)
                             {
-                                resultado.AddRange((from ra in resultado
+                                resultado=((from ra in resultado
                                                     where
                                                     ra.ID == responsavelAluno.ID
                                                     select ra).ToList());
@@ -58,7 +58,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                         {
                             if (pesquisa)
                             {
-                                resultado.AddRange((from ra in resultado
+                                resultado=((from ra in resultado
                                                     where
                                                     ra.AlunoID == responsavelAluno.AlunoID
                                                     select ra).ToList());
@@ -78,7 +78,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                         {
                             if (pesquisa)
                             {
-                                resultado.AddRange((from ra in resultado
+                                resultado=((from ra in resultado
                                                     where
                                                     ra.Aluno.Nome.Contains(responsavelAluno.Aluno.Nome)
                                                     select ra).ToList());
@@ -98,7 +98,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                         {
                             if (pesquisa)
                             {
-                                resultado.AddRange((from ra in resultado
+                                resultado=((from ra in resultado
                                                     where
                                                     ra.Responsavel.Nome.Contains(responsavelAluno.Responsavel.Nome)
                                                     select ra).ToList());
@@ -118,7 +118,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                         {
                             if (pesquisa)
                             {
-                                resultado.AddRange((from ra in resultado
+                                resultado=((from ra in resultado
                                                     where
                                                     ra.ResponsavelID == responsavelAluno.ResponsavelID
                                                     select ra).ToList());
@@ -140,7 +140,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                         {
                             if (pesquisa)
                             {
-                                resultado.AddRange((from ra in resultado
+                                resultado=((from ra in resultado
                                                     where
                                                     ra.Restricoes.Contains(responsavelAluno.Restricoes)
                                                     select ra).ToList());
@@ -180,7 +180,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                         {
                             if (pesquisa)
                             {
-                                resultado.AddRange((from ra in resultado
+                                resultado=((from ra in resultado
                                                     where
                                                     ra.ResideCom.HasValue && ra.ResideCom.Value == responsavelAluno.ResideCom.Value
                                                     select ra).ToList());
