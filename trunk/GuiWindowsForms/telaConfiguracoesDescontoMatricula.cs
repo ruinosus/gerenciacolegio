@@ -547,6 +547,16 @@ namespace GuiWindowsForms
             ucMenuInferior1.ocultarMensagem();
         }
 
+        private void btnAlterar_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Altera um registro já cadastrado na base de dados");
+        }
+
+        private void btnAlterar_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
         #endregion
 
         #region EVENTO ALTERAR

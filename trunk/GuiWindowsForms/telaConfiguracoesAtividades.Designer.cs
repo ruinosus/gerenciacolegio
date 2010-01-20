@@ -650,6 +650,7 @@
             this.dtpHorarioFim.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHorarioFim.Location = new System.Drawing.Point(355, 130);
             this.dtpHorarioFim.Name = "dtpHorarioFim";
+            this.dtpHorarioFim.ShowUpDown = true;
             this.dtpHorarioFim.Size = new System.Drawing.Size(82, 20);
             this.dtpHorarioFim.TabIndex = 4;
             // 
@@ -670,6 +671,7 @@
             this.dtpHorarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHorarioInicio.Location = new System.Drawing.Point(137, 130);
             this.dtpHorarioInicio.Name = "dtpHorarioInicio";
+            this.dtpHorarioInicio.ShowUpDown = true;
             this.dtpHorarioInicio.Size = new System.Drawing.Size(82, 20);
             this.dtpHorarioInicio.TabIndex = 3;
             // 

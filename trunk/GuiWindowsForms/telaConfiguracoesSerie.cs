@@ -706,6 +706,16 @@ namespace GuiWindowsForms
             ucMenuInferior1.ocultarMensagem();
         }
 
+        private void btnAlterar_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Ãlterar uma sala/série selecionada do registro");
+        }
+
+        private void btnAlterar_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
         #endregion
 
         #region BUTTON ADICIONAR SERIE
