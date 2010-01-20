@@ -50,6 +50,7 @@ namespace Negocios.ModuloAtividade.Processos
                     throw new AtividadeNaoExcluidaExcecao();
 
                 resultado[0].Status = (int)Status.Inativo;
+                this.Alterar(resultado[0]);
 
             }
             catch (Exception e)

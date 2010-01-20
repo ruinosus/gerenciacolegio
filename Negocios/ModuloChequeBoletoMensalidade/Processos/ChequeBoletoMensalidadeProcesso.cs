@@ -51,6 +51,7 @@ namespace Negocios.ModuloChequeBoletoMensalidade.Processos
                     throw new ChequeBoletoMensalidadeNaoExcluidaExcecao();
 
                 resultado[0].Status = (int)Status.Inativo;
+                this.Alterar(resultado[0]);
             }
             catch (Exception e)
             {

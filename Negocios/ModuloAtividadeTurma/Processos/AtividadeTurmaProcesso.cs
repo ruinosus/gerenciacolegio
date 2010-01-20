@@ -53,6 +53,7 @@ namespace Negocios.ModuloAtividadeTurma.Processos
                     throw new AtividadeTurmaNaoExcluidaExcecao();
 
                 resultado[0].Status = (int)Status.Inativo;
+                this.Alterar(resultado[0]);
 
             }
             catch (Exception e)
