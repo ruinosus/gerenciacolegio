@@ -1173,13 +1173,11 @@ namespace GuiWindowsForms
             //VALIDA EXIBICAO DOS BOTAO DO MENU_INFERIOR
             if (Program.ultimaTelaCadastrar == 2)
             {
-                ucMenuInferior1.exibirBotaoDeletar();
                 ucMenuInferior1.exibirBotaoAlterar();
             }
 
             if (Program.ultimaTelaCadastrar == 3)
             {
-                ucMenuInferior1.exibirBotaoDeletar();
                 ucMenuInferior1.exibirBotaoAlterar();
             }
             Program.ultimaTelaCadastrar = 0;
