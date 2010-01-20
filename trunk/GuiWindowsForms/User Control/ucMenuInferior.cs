@@ -113,6 +113,11 @@ namespace GuiWindowsForms
             btnAlterar.Visible = true;
         }
 
+        public void apagarBotaoAlterar()
+        {
+            btnAlterar.Visible = false;
+        }
+
         #endregion
 
         #region BUTTON INCLUIR
@@ -131,6 +136,11 @@ namespace GuiWindowsForms
             btnIncluir.Visible = true;
         }
 
+        public void apagarBotaoIncluir()
+        {
+            btnIncluir.Visible = false;
+        }
+
         #endregion
 
         #region BUTTON EXCLUIR
@@ -147,6 +157,11 @@ namespace GuiWindowsForms
         public void exibirBotaoDeletar()
         {
             btnExcluir.Visible = true;
+        }
+
+        public void apagarBotaoDeletar()
+        {
+            btnExcluir.Visible = false;
         }
 
         #endregion

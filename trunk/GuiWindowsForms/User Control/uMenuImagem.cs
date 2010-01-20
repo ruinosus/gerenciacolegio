@@ -202,6 +202,11 @@ namespace GuiWindowsForms
             {
                 imagemAuxiliar = pctImagem.Image;
             }
+
+            //Atribui "3" a variavel de Program para identificar
+            // que veio do clique da imagem assim exibindo os
+            //campos ALTERAR, EXCLUIR na telaAluno
+            Program.ultimaTelaCadastrar = 3;
         }
         #endregion
 

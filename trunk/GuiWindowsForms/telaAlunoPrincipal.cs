@@ -343,6 +343,11 @@ namespace GuiWindowsForms
             tela = TelaSelecionada.Aluno;
             btnCadastrarFuncionario.Visible = false;
             btnCadastrarAluno.Visible = true;
+
+            //Atribui "1" a variavel de Program para identificar
+            // que veio do clique no Data Grid assim exibindo os
+            //campos ALTERAR, EXCLUIR na telaAluno
+            Program.ultimaTelaCadastrar = 1;
         }
         #endregion
 
@@ -414,6 +419,12 @@ namespace GuiWindowsForms
 
         private void dgvAluno_DoubleClick(object sender, EventArgs e)
         {
+            //Atribui "2" a variavel de Program para identificar
+            // que veio do clique no Data Grid assim exibindo os
+            //campos ALTERAR, EXCLUIR na telaAluno
+            Program.ultimaTelaCadastrar = 2;
+            
+            
             if (linhaSelecionadaGrid != -1)
             {
                 Aluno aluno = (alunosAxiliarLista[linhaSelecionadaGrid]);
@@ -432,6 +443,7 @@ namespace GuiWindowsForms
 
         private void dgvAluno_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
 
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
 
@@ -443,6 +455,12 @@ namespace GuiWindowsForms
 
         private void dgvAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
+            //Atribui "2" a variavel de Program para identificar
+            // que veio do clique no Data Grid assim exibindo os
+            //campos ALTERAR, EXCLUIR na telaAluno
+            Program.ultimaTelaCadastrar = 2;
+            
+            
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
 
             if (linhaSelecionadaGrid != -1)
