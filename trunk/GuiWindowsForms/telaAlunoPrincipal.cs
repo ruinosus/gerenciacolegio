@@ -10,6 +10,7 @@ using Negocios.ModuloAluno.Processos;
 using Negocios.ModuloFuncionario.Processos;
 using Negocios.ModuloMatricula.Processos;
 using Negocios.ModuloBasico.VOs;
+using Negocios.ModuloBasico.Enums;
 
 namespace GuiWindowsForms
 {
@@ -424,13 +425,15 @@ namespace GuiWindowsForms
             // que veio do clique no Data Grid assim exibindo os
             //campos ALTERAR, EXCLUIR na telaAluno
             Program.ultimaTelaCadastrar = 2;
-            
+
+          
             
             if (linhaSelecionadaGrid != -1)
             {
                 Aluno aluno = (alunosAxiliarLista[linhaSelecionadaGrid]);
                 
                 Memoria memoria = Memoria.Instance;
+                memoria.Status = StatusBanco.Inativo;
                 memoria.Aluno = aluno;
               
 

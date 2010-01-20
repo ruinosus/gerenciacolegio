@@ -1140,11 +1140,12 @@ namespace GuiWindowsForms
 
             Memoria memoria = Memoria.Instance;
 
-            if (memoria.Status == StatusBanco.Inativo && memoria.Aluno == null)
+            if (memoria.Status == StatusBanco.Inativo)
             {
                 ucMenuInferior1.apagarBotaoAlterar();
                 ucMenuInferior1.apagarBotaoDeletar();
                 ucMenuInferior1.apagarBotaoIncluir();
+                uMenuImagem1.limparFigura();
 
                 memoria.Status = StatusBanco.Inclusao;
                 if (verificaFoto == 0)
