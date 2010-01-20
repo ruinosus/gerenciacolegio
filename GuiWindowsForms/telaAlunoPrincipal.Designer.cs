@@ -41,7 +41,6 @@
             this.EmailAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.btnFinanceiro = new System.Windows.Forms.Button();
             this.btnConfiguracoes = new System.Windows.Forms.Button();
@@ -196,19 +195,6 @@
             this.pictureBox1.TabIndex = 71;
             this.pictureBox1.TabStop = false;
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(779, 348);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(32, 11);
-            this.btnExcluir.TabIndex = 70;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
             // btnCadastrarFuncionario
             // 
             this.btnCadastrarFuncionario.BackColor = System.Drawing.Color.Transparent;
@@ -335,7 +321,6 @@
             this.ClientSize = new System.Drawing.Size(990, 680);
             this.Controls.Add(this.ucDesconectarLogin1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.dgvAluno);
             this.Controls.Add(this.btnCadastrarFuncionario);
             this.Controls.Add(this.lblFinanceiro);
@@ -385,7 +370,6 @@
         private System.Windows.Forms.Button btnCadastrarFuncionario;
         private System.Windows.Forms.DataGridView dgvAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaNomeAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoneAluno;
