@@ -105,6 +105,7 @@ namespace GuiWindowsForms
 
             Memoria memoria = Memoria.Instance;
             memoria.Aluno = null;
+            memoria.Status = Negocios.ModuloBasico.Enums.StatusBanco.Inativo;
             telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
             telaalunoresponsavel.limparTela();
             telaAluno telaAlunoAuxiliar = telaAluno.getInstancia();
