@@ -465,3 +465,4 @@ E:\Projetos\gerenciacolegio\GuiWindowsForms\bin\Debug\DbLinq.dll
 E:\Projetos\gerenciacolegio\GuiWindowsForms\bin\Debug\DbLinq.MySql.dll
 E:\Projetos\gerenciacolegio\GuiWindowsForms\bin\Debug\Negocios.pdb
 E:\Projetos\gerenciacolegio\GuiWindowsForms\bin\Debug\MySql.Data.dll
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\bin\Debug\MySql.Data.dll
