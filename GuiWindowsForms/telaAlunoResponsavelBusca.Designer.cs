@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoResponsavelBusca));
@@ -36,23 +37,25 @@
             this.GrauParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnAdicionarSerie = new System.Windows.Forms.Button();
             this.cmbGrauParentesco = new System.Windows.Forms.ComboBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.lblCiclo = new System.Windows.Forms.Label();
+            this.lblGrauParentesco = new System.Windows.Forms.Label();
             this.ckbResideCom = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblResideCom = new System.Windows.Forms.Label();
+            this.lblRestricoes = new System.Windows.Forms.Label();
             this.txtRestricoes = new System.Windows.Forms.TextBox();
-            this.comboResponsavel = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblNome = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.mskCpf = new System.Windows.Forms.MaskedTextBox();
+            this.lblCpf = new System.Windows.Forms.Label();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavelAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvResponsavelAluno
@@ -83,6 +86,8 @@
             this.dgvResponsavelAluno.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvResponsavelAluno.Location = new System.Drawing.Point(141, 362);
             this.dgvResponsavelAluno.Name = "dgvResponsavelAluno";
+            this.dgvResponsavelAluno.ReadOnly = true;
+            this.dgvResponsavelAluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResponsavelAluno.Size = new System.Drawing.Size(769, 272);
             this.dgvResponsavelAluno.TabIndex = 36;
             this.dgvResponsavelAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavelAluno_CellClick);
@@ -94,6 +99,7 @@
             this.Column3.HeaderText = "Nome do Responsável";
             this.Column3.MaxInputLength = 30;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Width = 250;
             // 
             // GrauParentesco
@@ -102,6 +108,7 @@
             this.GrauParentesco.HeaderText = "Grau de Parentesco";
             this.GrauParentesco.MaxInputLength = 30;
             this.GrauParentesco.Name = "GrauParentesco";
+            this.GrauParentesco.ReadOnly = true;
             this.GrauParentesco.Width = 130;
             // 
             // Column4
@@ -110,6 +117,7 @@
             this.Column4.HeaderText = "Restrições";
             this.Column4.MaxInputLength = 60;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             this.Column4.Width = 220;
             // 
             // Column2
@@ -119,31 +127,9 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
-            // btnAlterar
-            // 
-            this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
-            this.btnAlterar.FlatAppearance.BorderSize = 0;
-            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Location = new System.Drawing.Point(802, 324);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(32, 32);
-            this.btnAlterar.TabIndex = 71;
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            // 
-            // btnAdicionarSerie
-            // 
-            this.btnAdicionarSerie.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
-            this.btnAdicionarSerie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarSerie.FlatAppearance.BorderSize = 0;
-            this.btnAdicionarSerie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarSerie.Location = new System.Drawing.Point(840, 324);
-            this.btnAdicionarSerie.Name = "btnAdicionarSerie";
-            this.btnAdicionarSerie.Size = new System.Drawing.Size(32, 32);
-            this.btnAdicionarSerie.TabIndex = 3;
-            this.btnAdicionarSerie.UseVisualStyleBackColor = true;
-            // 
             // cmbGrauParentesco
             // 
+            this.cmbGrauParentesco.DisplayMember = "se";
             this.cmbGrauParentesco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGrauParentesco.FormattingEnabled = true;
             this.cmbGrauParentesco.Items.AddRange(new object[] {
@@ -154,67 +140,55 @@
             "Avô(ó)",
             "Primo(a)",
             "Irmão(ã)"});
-            this.cmbGrauParentesco.Location = new System.Drawing.Point(360, 217);
+            this.cmbGrauParentesco.Location = new System.Drawing.Point(357, 256);
             this.cmbGrauParentesco.Name = "cmbGrauParentesco";
             this.cmbGrauParentesco.Size = new System.Drawing.Size(144, 21);
             this.cmbGrauParentesco.TabIndex = 1;
+            this.cmbGrauParentesco.ValueMember = "selecione";
             // 
-            // btnExcluir
+            // lblGrauParentesco
             // 
-            this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(878, 345);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(32, 11);
-            this.btnExcluir.TabIndex = 70;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // lblCiclo
-            // 
-            this.lblCiclo.AutoSize = true;
-            this.lblCiclo.BackColor = System.Drawing.Color.Transparent;
-            this.lblCiclo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCiclo.Location = new System.Drawing.Point(224, 217);
-            this.lblCiclo.Name = "lblCiclo";
-            this.lblCiclo.Size = new System.Drawing.Size(124, 13);
-            this.lblCiclo.TabIndex = 4;
-            this.lblCiclo.Text = "Grau de Parentesco:";
+            this.lblGrauParentesco.AutoSize = true;
+            this.lblGrauParentesco.BackColor = System.Drawing.Color.Transparent;
+            this.lblGrauParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGrauParentesco.Location = new System.Drawing.Point(224, 264);
+            this.lblGrauParentesco.Name = "lblGrauParentesco";
+            this.lblGrauParentesco.Size = new System.Drawing.Size(124, 13);
+            this.lblGrauParentesco.TabIndex = 4;
+            this.lblGrauParentesco.Text = "Grau de Parentesco:";
             // 
             // ckbResideCom
             // 
             this.ckbResideCom.AutoSize = true;
             this.ckbResideCom.BackColor = System.Drawing.Color.Transparent;
             this.ckbResideCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbResideCom.Location = new System.Drawing.Point(360, 254);
+            this.ckbResideCom.Location = new System.Drawing.Point(611, 264);
             this.ckbResideCom.Name = "ckbResideCom";
             this.ckbResideCom.Size = new System.Drawing.Size(15, 14);
             this.ckbResideCom.TabIndex = 77;
             this.ckbResideCom.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // lblResideCom
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(224, 255);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 78;
-            this.label1.Text = "Reside Com:";
+            this.lblResideCom.AutoSize = true;
+            this.lblResideCom.BackColor = System.Drawing.Color.Transparent;
+            this.lblResideCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResideCom.Location = new System.Drawing.Point(517, 264);
+            this.lblResideCom.Name = "lblResideCom";
+            this.lblResideCom.Size = new System.Drawing.Size(78, 13);
+            this.lblResideCom.TabIndex = 78;
+            this.lblResideCom.Text = "Reside Com:";
             // 
-            // label2
+            // lblRestricoes
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(224, 301);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 79;
-            this.label2.Text = "Restrições:";
+            this.lblRestricoes.AutoSize = true;
+            this.lblRestricoes.BackColor = System.Drawing.Color.Transparent;
+            this.lblRestricoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRestricoes.Location = new System.Drawing.Point(224, 291);
+            this.lblRestricoes.Name = "lblRestricoes";
+            this.lblRestricoes.Size = new System.Drawing.Size(71, 13);
+            this.lblRestricoes.TabIndex = 79;
+            this.lblRestricoes.Text = "Restrições:";
             // 
             // txtRestricoes
             // 
@@ -222,54 +196,10 @@
             this.txtRestricoes.MaxLength = 300;
             this.txtRestricoes.Multiline = true;
             this.txtRestricoes.Name = "txtRestricoes";
-            this.txtRestricoes.Size = new System.Drawing.Size(444, 65);
+            this.txtRestricoes.Size = new System.Drawing.Size(553, 65);
             this.txtRestricoes.TabIndex = 80;
-            // 
-            // comboResponsavel
-            // 
-            this.comboResponsavel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboResponsavel.FormattingEnabled = true;
-            this.comboResponsavel.Items.AddRange(new object[] {
-            "selecione",
-            "Pai",
-            "Mãe",
-            "Tio(a)",
-            "Avô(ó)",
-            "Primo(a)",
-            "Irmão(ã)"});
-            this.comboResponsavel.Location = new System.Drawing.Point(611, 217);
-            this.comboResponsavel.Name = "comboResponsavel";
-            this.comboResponsavel.Size = new System.Drawing.Size(190, 21);
-            this.comboResponsavel.TabIndex = 81;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(521, 217);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
-            this.label3.TabIndex = 82;
-            this.label3.Text = "Responsável:";
-            // 
-            // ucMenuInferior1
-            // 
-            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
-            this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.Size = new System.Drawing.Size(346, 43);
-            this.ucMenuInferior1.TabIndex = 76;
-            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
-            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
-            // 
-            // uMenuImagem1
-            // 
-            this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
-            this.uMenuImagem1.Location = new System.Drawing.Point(244, 0);
-            this.uMenuImagem1.Name = "uMenuImagem1";
-            this.uMenuImagem1.Size = new System.Drawing.Size(533, 201);
-            this.uMenuImagem1.TabIndex = 75;
+            this.txtRestricoes.Leave += new System.EventHandler(this.txtRestricoes_Leave);
+            this.txtRestricoes.Enter += new System.EventHandler(this.txtRestricoes_Enter);
             // 
             // pictureBox1
             // 
@@ -280,6 +210,65 @@
             this.pictureBox1.TabIndex = 138;
             this.pictureBox1.TabStop = false;
             // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(224, 224);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(43, 13);
+            this.lblNome.TabIndex = 140;
+            this.lblNome.Text = "Nome:";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtNome.Location = new System.Drawing.Point(357, 217);
+            this.txtNome.MaxLength = 50;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(330, 20);
+            this.txtNome.TabIndex = 141;
+            this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
+            // 
+            // mskCpf
+            // 
+            this.mskCpf.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.mskCpf.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.mskCpf.Location = new System.Drawing.Point(744, 217);
+            this.mskCpf.Mask = "000.000.000-00";
+            this.mskCpf.Name = "mskCpf";
+            this.mskCpf.Size = new System.Drawing.Size(100, 20);
+            this.mskCpf.TabIndex = 143;
+            this.mskCpf.Leave += new System.EventHandler(this.mskCpf_Leave);
+            this.mskCpf.Enter += new System.EventHandler(this.mskCpf_Enter);
+            this.mskCpf.TextChanged += new System.EventHandler(this.mskCpf_TextChanged);
+            // 
+            // lblCpf
+            // 
+            this.lblCpf.AutoSize = true;
+            this.lblCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCpf.Location = new System.Drawing.Point(704, 224);
+            this.lblCpf.Name = "lblCpf";
+            this.lblCpf.Size = new System.Drawing.Size(34, 13);
+            this.lblCpf.TabIndex = 142;
+            this.lblCpf.Text = "CPF:";
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(864, 214);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(46, 25);
+            this.btnPesquisar.TabIndex = 144;
+            this.btnPesquisar.Text = "??";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // ucDesconectarLogin1
             // 
             this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
@@ -289,27 +278,46 @@
             this.ucDesconectarLogin1.TabIndex = 139;
             this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
+            // ucMenuInferior1
+            // 
+            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
+            this.ucMenuInferior1.Name = "ucMenuInferior1";
+            this.ucMenuInferior1.Size = new System.Drawing.Size(598, 43);
+            this.ucMenuInferior1.TabIndex = 76;
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
+            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
+            this.ucMenuInferior1.EventoDeletar += new GuiWindowsForms.ucMenuInferior.delegateDeletar(this.ucMenuInferior1_EventoDeletar);
+            // 
+            // uMenuImagem1
+            // 
+            this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
+            this.uMenuImagem1.Location = new System.Drawing.Point(244, 0);
+            this.uMenuImagem1.Name = "uMenuImagem1";
+            this.uMenuImagem1.Size = new System.Drawing.Size(533, 201);
+            this.uMenuImagem1.TabIndex = 75;
+            // 
             // telaAlunoResponsavelBusca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(990, 680);
+            this.Controls.Add(this.btnPesquisar);
+            this.Controls.Add(this.mskCpf);
+            this.Controls.Add(this.lblCpf);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.lblNome);
             this.Controls.Add(this.ucDesconectarLogin1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboResponsavel);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtRestricoes);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblRestricoes);
+            this.Controls.Add(this.lblResideCom);
             this.Controls.Add(this.ckbResideCom);
             this.Controls.Add(this.cmbGrauParentesco);
-            this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.btnAdicionarSerie);
-            this.Controls.Add(this.lblCiclo);
+            this.Controls.Add(this.lblGrauParentesco);
             this.Controls.Add(this.ucMenuInferior1);
             this.Controls.Add(this.dgvResponsavelAluno);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.uMenuImagem1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -320,10 +328,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaAlunoResponsavelBusca_Load);
-            this.Activated += new System.EventHandler(this.telaAlunoResponsavelBusca_Activated);
+            
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoResponsavelBusca_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavelAluno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,22 +343,23 @@
         private System.Windows.Forms.DataGridView dgvResponsavelAluno;
         private uMenuImagem uMenuImagem1;
         private ucMenuInferior ucMenuInferior1;
-        private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button btnAdicionarSerie;
         private System.Windows.Forms.ComboBox cmbGrauParentesco;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Label lblCiclo;
+        private System.Windows.Forms.Label lblGrauParentesco;
         private System.Windows.Forms.CheckBox ckbResideCom;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblResideCom;
+        private System.Windows.Forms.Label lblRestricoes;
         private System.Windows.Forms.TextBox txtRestricoes;
-        private System.Windows.Forms.ComboBox comboResponsavel;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn GrauParentesco;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.MaskedTextBox mskCpf;
+        private System.Windows.Forms.Label lblCpf;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }

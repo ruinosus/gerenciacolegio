@@ -24,6 +24,8 @@ namespace GuiWindowsForms
         int linhaSelecionadaGrid = -1;
         private static telaAlunoResponsavelBusca telaalunoresponsavelbusca;
         Memoria memoria = Memoria.Instance;
+        bool bloquearCampos = false;
+        Responsavel responsavel;
 
         private static bool IsShown = false;
 
@@ -31,7 +33,6 @@ namespace GuiWindowsForms
         /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
-
         public static telaAlunoResponsavelBusca getInstancia()
         {
             if (telaalunoresponsavelbusca == null)
@@ -44,16 +45,42 @@ namespace GuiWindowsForms
         /// <summary>
         /// Construtor da tela
         /// </summary>
-
         public telaAlunoResponsavelBusca()
         {
             InitializeComponent();
+            if (memoria.Aluno != null)
+            {
+                // CarregarCombos();
+                bloquearCampos = false;
+                responsavel = new Responsavel();
+                uMenuImagem1.carregaAluno(memoria.Aluno);
+                CarregarGrid();
+                ucMenuInferior1.exibirBotaoDeletar();
+                ucMenuInferior1.exibirBotaoAlterar();
+                ucMenuInferior1.exibirBotaoIncluir();
+                if (responsavelAlunoLista.Count > 0)
+                {
+                    dgvResponsavelAluno.Rows[0].Selected = true;
+                    linhaSelecionadaGrid = 0;
+                }
+                uMenuImagem1.ocultarBotaoAdicionarImagem();
+            }
+        }
+
+        private void CarregarGrid()
+        {
+            IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
+            dgvResponsavelAluno.AutoGenerateColumns = false;
+            ResponsavelAluno responsavelAluno = new ResponsavelAluno();
+            responsavelAluno.AlunoID = memoria.Aluno.ID;
+            responsavelAluno.Status = (int)Status.Ativo;
+            responsavelAlunoLista = processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
+            dgvResponsavelAluno.DataSource = responsavelAlunoLista;
         }
 
         /// <summary>
         /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
         /// </summary>
-
         public new void Show()
         {
             if (IsShown)
@@ -68,26 +95,11 @@ namespace GuiWindowsForms
         }
 
         /// <summary>
-        /// Botão para esconder a tela e voltar para a tela de login
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnDesconectar_Click(object sender, EventArgs e)
-        {
-            Program.ultimaTela = 9;
-            this.Close();
-            telaLogin telalogin = telaLogin.getInstancia();
-            telalogin.Show();
-        }
-
-        /// <summary>
         /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
         /// pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
         /// <param name="e">Cancela seu fechamento, permite só que seja ocultada</param>
-
         private void telaAlunoResponsavelBusca_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
@@ -129,25 +141,7 @@ namespace GuiWindowsForms
             uMenuImagem1.ocultarBotaoAdicionarImagem();
         }
 
-        private void telaAlunoResponsavelBusca_Activated(object sender, EventArgs e)
-        {
-            if (memoria.Aluno != null)
-            {
-                CarregarCombos();
-                uMenuImagem1.carregaAluno(memoria.Aluno);
-                IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
-                dgvResponsavelAluno.AutoGenerateColumns = false;
-                ResponsavelAluno responsavelAluno = new ResponsavelAluno();
-                responsavelAluno.AlunoID = memoria.Aluno.ID;
-                responsavelAluno.Status = (int)Status.Ativo;
-                responsavelAlunoLista = processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
-                dgvResponsavelAluno.DataSource = responsavelAlunoLista;
-            }
-        }
-
-
-
-        private void dgvResponsavelAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
+       private void dgvResponsavelAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
 
@@ -170,11 +164,46 @@ namespace GuiWindowsForms
             {
                 if (memoria.Aluno != null)
                 {
+
+
+                    #region VALIDA - NOME
+
+                    if (string.IsNullOrEmpty(txtNome.Text))
+                    {
+                        errorProviderTela.SetError(txtNome, "Informe o nome");
+                        return;
+                    }
+                    responsavel.Nome = txtNome.Text;
+
+                    #endregion
+
+                    #region VALIDA - CPF
+
+                    //if (mskCpf.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskCpf, "Informe o cpf");
+                    //    return;
+                    //}
+                  //  responsavel.Cpf = mskCpf.Text;
+
+                    #endregion
+
+                    if (responsavel== null || responsavel.ID <=0)
+                    {
+                        responsavel = new Responsavel();
+                        IResponsavelProcesso processoReponsavel = ResponsavelProcesso.Instance;
+                        responsavel.Status = (int)Status.Ativo;
+                        processoReponsavel.Incluir(responsavel);
+                        processoReponsavel.Confirmar();
+                        Memoria m = Memoria.Instance;
+                        m.Responsavel = responsavel;
+                    }
+
                     IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
                     ResponsavelAluno responsavelAluno = new ResponsavelAluno();
                     responsavelAluno.Status = (int)Status.Ativo;
                     responsavelAluno.AlunoID = memoria.Aluno.ID;
-                    responsavelAluno.ResponsavelID = ((Responsavel)comboResponsavel.SelectedItem).ID;
+                    responsavelAluno.ResponsavelID = responsavel.ID;
 
                     if (processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E).Count > 0)
                     {
@@ -197,7 +226,7 @@ namespace GuiWindowsForms
 
                     Program.ultimaTela = 8;
                     this.Close();
-                    telaAlunoResponsavel telaRespAux = new telaAlunoResponsavel();
+                    telaAlunoResponsavel telaRespAux = telaAlunoResponsavel.getInstancia();
                     telaRespAux.Show();
                 }
             }
@@ -208,29 +237,7 @@ namespace GuiWindowsForms
             }
         }
 
-        private void CarregarCombos()
-        {
-            IResponsavelProcesso processo = ResponsavelProcesso.Instance;
-            comboResponsavel.DataSource = processo.Consultar();
-            comboResponsavel.DisplayMember = "Nome";
-
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
-                processo.Excluir(responsavelAlunoLista[linhaSelecionadaGrid]);
-                processo.Confirmar();
-            }
-            catch (Exception)
-            {
-
-                
-            }
-
-        }
+    
 
         private void ucDesconectarLogin1_EventoDesconectar()
         {
@@ -238,6 +245,96 @@ namespace GuiWindowsForms
             this.Close();
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
+        }
+
+        private void mskCpf_Leave(object sender, EventArgs e)
+        {
+            mskCpf.BackColor = System.Drawing.Color.White;
+        }
+
+        private void mskCpf_Enter(object sender, EventArgs e)
+        {
+            mskCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+        }
+
+        private void mskCpf_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderTela.Clear();
+            try
+            {
+                if (mskCpf.MaskCompleted)
+                {
+                    IResponsavelProcesso processo = ResponsavelProcesso.Instance;
+                    responsavel = new Responsavel();
+                    responsavel.Cpf = mskCpf.Text;
+                    List<Responsavel> resultado = processo.Consultar(responsavel, TipoPesquisa.E);
+
+                    if (resultado.Count > 0)
+                    {
+                        responsavel = resultado[0];
+                        txtNome.Text = responsavel.Nome;
+                        bloquearCampos = true;
+                        BloquearCampos();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                
+            
+            }
+        }
+
+        private void BloquearCampos()
+        {
+            txtNome.ReadOnly = bloquearCampos;
+            mskCpf.ReadOnly = bloquearCampos;
+        }
+
+        private void txtNome_Enter(object sender, EventArgs e)
+        {
+            txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+        }
+
+        private void txtNome_Leave(object sender, EventArgs e)
+        {
+            txtNome.BackColor = System.Drawing.Color.White;
+        }
+
+        private void txtRestricoes_Leave(object sender, EventArgs e)
+        {
+            txtRestricoes.BackColor = System.Drawing.Color.White;
+        }
+
+        private void txtRestricoes_Enter(object sender, EventArgs e)
+        {
+            txtRestricoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            txtNome.Clear();
+            responsavel = new Responsavel();
+            mskCpf.Clear();
+            bloquearCampos = false;
+            BloquearCampos();
+        }
+
+        private void ucMenuInferior1_EventoDeletar()
+        {
+            try
+            {
+                IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
+                processo.Excluir(responsavelAlunoLista[linhaSelecionadaGrid]);
+                processo.Confirmar();
+                CarregarGrid();
+            }
+            catch (Exception)
+            {
+
+
+            }
+
         }
     }
 }
