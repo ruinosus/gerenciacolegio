@@ -263,6 +263,14 @@ namespace GuiWindowsForms
                         errorProviderTela.SetError(cmbSerie, "Informe a serie");
                         return;
                     }
+
+
+                    if (cmbSerie.SelectedIndex == 0) 
+                    {
+                        errorProviderTela.SetError(cmbSerie, "Informe a serie");
+                        return;
+                    }
+
                     sala.SerieID = ((Serie)cmbSerie.SelectedItem).ID;
                     serie = ((Serie)cmbSerie.SelectedItem);
 
@@ -272,6 +280,12 @@ namespace GuiWindowsForms
                     #region VALIDA - CICLO
 
                     if (String.IsNullOrEmpty(cmbCiclo.Text))
+                    {
+                        errorProviderTela.SetError(cmbCiclo, "Informe o ciclo");
+                        return;
+                    }
+
+                    if (cmbCiclo.SelectedIndex == 0) 
                     {
                         errorProviderTela.SetError(cmbCiclo, "Informe o ciclo");
                         return;
@@ -287,6 +301,13 @@ namespace GuiWindowsForms
                         errorProviderTela.SetError(cmbTurno, "Informe o turno");
                         return;
                     }
+
+                    if (cmbTurno.SelectedIndex == 0)
+                    {
+                        errorProviderTela.SetError(cmbTurno, "Informe o turno");
+                        return;
+                    }
+
                     sala.TurnoID = ((Turno)cmbTurno.SelectedItem).ID;
 
                     #endregion
@@ -298,6 +319,13 @@ namespace GuiWindowsForms
                         errorProviderTela.SetError(cmbTurma, "Informe a turma");
                         return;
                     }
+
+                    if (cmbTurma.SelectedIndex == 0)
+                    {
+                        errorProviderTela.SetError(cmbTurma, "Informe a turma");
+                        return;
+                    }
+
                     sala.TurmaID = ((Turma)cmbTurma.SelectedItem).ID;
 
                     #endregion
@@ -326,6 +354,8 @@ namespace GuiWindowsForms
                     {
                         MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
                     }
+
+
                 }
                 catch (Exception ex)
                 {
@@ -358,6 +388,7 @@ namespace GuiWindowsForms
                     if (cmbSerie.SelectedIndex == 0) 
                     {
                         errorProviderTela.SetError(cmbSerie, "Informe a serie");
+                        return;
                     }
                     sala.SerieID = ((Serie)cmbSerie.SelectedItem).ID;
                     serie = ((Serie)cmbSerie.SelectedItem);
@@ -376,6 +407,7 @@ namespace GuiWindowsForms
                     if (cmbCiclo.SelectedIndex == 0)
                     {
                         errorProviderTela.SetError(cmbCiclo, "Informe o ciclo");
+                        return;
                     }
 
                     sala.Ciclo = cmbCiclo.Text;
@@ -393,6 +425,7 @@ namespace GuiWindowsForms
                     if (cmbTurno.SelectedIndex == 0)
                     {
                         errorProviderTela.SetError(cmbTurno, "Informe o turno");
+                        return;
                     }
 
 
@@ -411,6 +444,7 @@ namespace GuiWindowsForms
                     if (cmbTurma.SelectedIndex == 0)
                     {
                         errorProviderTela.SetError(cmbTurma, "Informe a turma");
+                        return;
                     }
 
                     sala.TurmaID = ((Turma)cmbTurma.SelectedItem).ID;
@@ -468,6 +502,7 @@ namespace GuiWindowsForms
             dataGridView1.Enabled = true;
             btnAdicionarSerie.Enabled = true;
             btnExcluir.Enabled = true;
+            btnAlterar.Enabled = true;
         }
         #endregion
 
