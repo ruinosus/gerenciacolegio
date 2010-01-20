@@ -424,3 +424,4 @@ C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\obj\Debug\Gui
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.ucMenuLateralFunc.resources
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.uMenuImagem.resources
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer\GuiWindowsForms\bin\Debug\MySql.Data.dll
