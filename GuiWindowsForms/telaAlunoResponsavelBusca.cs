@@ -346,11 +346,23 @@ namespace GuiWindowsForms
 
         private void telaAlunoResponsavelBusca_Activated(object sender, EventArgs e)
         {
+            LimparCampos();
+            
             if (memoria.Status == StatusBanco.Alteracao)
             {
 
                 CarregarGrid();
             }
+        }
+
+
+        public void LimparCampos() 
+        {
+            txtNome.Clear();
+            mskCpf.Clear();
+            txtRestricoes.Clear();
+            ckbResideCom.Checked = false;
+
         }
     }
 }

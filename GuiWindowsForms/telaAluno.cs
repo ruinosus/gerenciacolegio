@@ -692,7 +692,7 @@ namespace GuiWindowsForms
                     aluno.PerfilID = 1;
                     aluno.Status = (int)Status.Ativo;
 
-                    //aluno = uMenuImagem1.retornaAluno(aluno);
+                    aluno = uMenuImagem1.retornaAluno(aluno);
                     Memoria memoria = Memoria.Instance;
                     if (memoria.Aluno == null)
                     {
