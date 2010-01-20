@@ -985,6 +985,8 @@ namespace GuiWindowsForms
 
         private void telaAlunoResponsavel_Activated(object sender, EventArgs e)
         {
+            uMenuLateral1.verificaTela(telaalunoresponsavel);
+
             cmbUf.DataSource = estados;
             ucMenuSuper.ocultarBotaoAdicionarImagem();
 

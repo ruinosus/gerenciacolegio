@@ -454,6 +454,8 @@ namespace GuiWindowsForms
 
         private void telaAlunoMedicacao_Activated(object sender, EventArgs e)
         {
+
+            uMenuLateral1.verificaTela(telaalunomedicacao);
             cmbGrupoSanguineo.DataSource = gruposanguineo;
             uMenuImagem1.ocultarBotaoAdicionarImagem();
 

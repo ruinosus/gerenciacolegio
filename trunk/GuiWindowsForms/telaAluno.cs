@@ -1144,8 +1144,7 @@ namespace GuiWindowsForms
 
         private void telaAluno_Activated(object sender, EventArgs e)
         {
-
-
+            uMenuLateral1.verificaTela(telaaluno);
             if (verificaFoto == 0)
             {
                 Memoria memoria = Memoria.Instance;
