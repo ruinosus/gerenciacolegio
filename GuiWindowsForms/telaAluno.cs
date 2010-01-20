@@ -1137,47 +1137,51 @@ namespace GuiWindowsForms
 
         private void telaAluno_Activated(object sender, EventArgs e)
         {
-            
 
-            ucMenuInferior1.apagarBotaoAlterar();
-            ucMenuInferior1.apagarBotaoDeletar();
-            ucMenuInferior1.apagarBotaoIncluir();
+            Memoria memoria = Memoria.Instance;
 
-
-            if (verificaFoto == 0)
+            if (memoria.Status == StatusBanco.Inativo && memoria.Aluno == null)
             {
-                Memoria memoria = Memoria.Instance;
-                if (memoria.Aluno != null)
+                ucMenuInferior1.apagarBotaoAlterar();
+                ucMenuInferior1.apagarBotaoDeletar();
+                ucMenuInferior1.apagarBotaoIncluir();
+
+                memoria.Status = StatusBanco.Inclusao;
+                if (verificaFoto == 0)
                 {
-                    aluno = memoria.Aluno;
-                    uMenuImagem1.carregaAluno(aluno);
-                    carregarAluno();
+                   
+                    if (memoria.Aluno != null)
+                    {
+                        aluno = memoria.Aluno;
+                        uMenuImagem1.carregaAluno(aluno);
+                        carregarAluno();
+                    }
+                    else
+                    {
+                        limparTelaAluno();
+                    }
+                    txtNome.Focus();
+
                 }
                 else
                 {
-                    limparTelaAluno();
+                    verificaFoto = 0;
                 }
-                txtNome.Focus();
 
-            }
-            else
-            {
-                verificaFoto = 0;
-            }
+                //VALIDA EXIBICAO DOS BOTAO DO MENU_INFERIOR
+                if (Program.ultimaTelaCadastrar == 2)
+                {
+                    Enabled_False();
+                    ucMenuInferior1.exibirBotaoAlterar();
+                }
 
-            //VALIDA EXIBICAO DOS BOTAO DO MENU_INFERIOR
-            if (Program.ultimaTelaCadastrar == 2)
-            {
-                Enabled_False();
-                ucMenuInferior1.exibirBotaoAlterar();
+                if (Program.ultimaTelaCadastrar == 3)
+                {
+                    Enabled_False();
+                    ucMenuInferior1.exibirBotaoAlterar();
+                }
+                Program.ultimaTelaCadastrar = 0;
             }
-
-            if (Program.ultimaTelaCadastrar == 3)
-            {
-                Enabled_False();
-                ucMenuInferior1.exibirBotaoAlterar();
-            }
-            Program.ultimaTelaCadastrar = 0;
 
         }
 
