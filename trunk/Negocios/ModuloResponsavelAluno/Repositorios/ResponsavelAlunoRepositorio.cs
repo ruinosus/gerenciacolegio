@@ -160,7 +160,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
                         {
                             if (pesquisa)
                             {
-                                resultado.AddRange((from ra in resultado
+                                resultado =((from ra in resultado
                                                     where
                                                     ra.Status.HasValue && ra.Status.Value == responsavelAluno.Status.Value
                                                     select ra).ToList());
