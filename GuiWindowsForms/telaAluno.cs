@@ -1144,7 +1144,11 @@ namespace GuiWindowsForms
 
         private void telaAluno_Activated(object sender, EventArgs e)
         {
-            uMenuLateral1.verificaTela(telaaluno);
+            ucMenuInferior1.apagarBotaoAlterar();
+            ucMenuInferior1.apagarBotaoDeletar();
+            ucMenuInferior1.apagarBotaoIncluir();
+            
+            
             if (verificaFoto == 0)
             {
                 Memoria memoria = Memoria.Instance;
@@ -1160,13 +1164,26 @@ namespace GuiWindowsForms
                 }
                 txtNome.Focus();
 
-                ucMenuInferior1.exibirBotaoDeletar();
-                ucMenuInferior1.exibirBotaoAlterar();
             }
             else
             {
                 verificaFoto = 0;
             }
+
+            //VALIDA EXIBICAO DOS BOTAO DO MENU_INFERIOR
+            if (Program.ultimaTelaCadastrar == 2)
+            {
+                ucMenuInferior1.exibirBotaoDeletar();
+                ucMenuInferior1.exibirBotaoAlterar();
+            }
+
+            if (Program.ultimaTelaCadastrar == 3)
+            {
+                ucMenuInferior1.exibirBotaoDeletar();
+                ucMenuInferior1.exibirBotaoAlterar();
+            }
+            Program.ultimaTelaCadastrar = 0;
+
         }
 
         #region SELECIONA CIDADE
