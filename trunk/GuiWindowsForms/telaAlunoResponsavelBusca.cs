@@ -343,5 +343,14 @@ namespace GuiWindowsForms
             }
 
         }
+
+        private void telaAlunoResponsavelBusca_Activated(object sender, EventArgs e)
+        {
+            if (memoria.Status == StatusBanco.Alteracao)
+            {
+
+                CarregarGrid();
+            }
+        }
     }
 }
