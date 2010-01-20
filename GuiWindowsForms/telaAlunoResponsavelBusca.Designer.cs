@@ -62,6 +62,7 @@
             // 
             this.dgvResponsavelAluno.AllowUserToAddRows = false;
             this.dgvResponsavelAluno.AllowUserToDeleteRows = false;
+            this.dgvResponsavelAluno.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -261,11 +262,13 @@
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.Search_32x32_final;
+            this.btnPesquisar.FlatAppearance.BorderSize = 0;
+            this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Location = new System.Drawing.Point(864, 214);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(46, 25);
+            this.btnPesquisar.Size = new System.Drawing.Size(32, 32);
             this.btnPesquisar.TabIndex = 144;
-            this.btnPesquisar.Text = "??";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
