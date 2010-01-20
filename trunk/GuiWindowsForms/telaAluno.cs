@@ -438,15 +438,8 @@ namespace GuiWindowsForms
         {
             this.Hide();
 
-            if (Program.ultimaTela == 1)
-            {
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-            else
-            {
-                Program.ultimaTela = 6;
-                Program.SelecionaForm(Program.ultimaTela);
-            }
+            Program.ultimaTela = 6;
+            Program.SelecionaForm(Program.ultimaTela);
         }
 
         #endregion
@@ -902,7 +895,7 @@ namespace GuiWindowsForms
                         alunoControlador.Alterar(aluno);
                         MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer - Alterar Aluno");
                     }
- 
+
 
                 }
                 #endregion
@@ -1144,11 +1137,13 @@ namespace GuiWindowsForms
 
         private void telaAluno_Activated(object sender, EventArgs e)
         {
+            
+
             ucMenuInferior1.apagarBotaoAlterar();
             ucMenuInferior1.apagarBotaoDeletar();
             ucMenuInferior1.apagarBotaoIncluir();
-            
-            
+
+
             if (verificaFoto == 0)
             {
                 Memoria memoria = Memoria.Instance;
@@ -1173,11 +1168,13 @@ namespace GuiWindowsForms
             //VALIDA EXIBICAO DOS BOTAO DO MENU_INFERIOR
             if (Program.ultimaTelaCadastrar == 2)
             {
+                Enabled_False();
                 ucMenuInferior1.exibirBotaoAlterar();
             }
 
             if (Program.ultimaTelaCadastrar == 3)
             {
+                Enabled_False();
                 ucMenuInferior1.exibirBotaoAlterar();
             }
             Program.ultimaTelaCadastrar = 0;
@@ -1229,7 +1226,6 @@ namespace GuiWindowsForms
         {
             limparTelaAluno();
             txtNome.Focus();
-            Enabled_False();
         }
 
         #region ALTERAR
