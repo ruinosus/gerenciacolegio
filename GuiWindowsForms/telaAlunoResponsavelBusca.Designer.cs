@@ -230,7 +230,7 @@
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtNome.Location = new System.Drawing.Point(357, 217);
-            this.txtNome.MaxLength = 50;
+            this.txtNome.MaxLength = 40;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(330, 20);
             this.txtNome.TabIndex = 141;
