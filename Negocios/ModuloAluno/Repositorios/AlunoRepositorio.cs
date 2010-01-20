@@ -452,14 +452,14 @@ namespace Negocios.ModuloAluno.Repositorios
                             {
                                 resultado.AddRange((from a in resultado
                                                     where
-                                                    a.Nome.Contains(aluno.Nome)
+                                                    a.Nome.ToUpper().Contains(aluno.Nome.ToUpper())
                                                     select a).ToList());
                             }
                             else 
                             {
                                 resultado=((from a in resultado
                                                     where
-                                                    a.Nome.Contains(aluno.Nome)
+                                                     a.Nome.ToUpper().Contains(aluno.Nome.ToUpper())
                                                     select a).ToList());
                             }
                             pesquisa = true;
@@ -1081,14 +1081,14 @@ namespace Negocios.ModuloAluno.Repositorios
                             {
                                 resultado.AddRange((from a in Consultar()
                                                     where
-                                                    a.Nome.Contains(aluno.Nome)
+                                                    a.Nome.ToUpper().Contains(aluno.Nome.ToUpper())
                                                     select a).ToList());
                             }
                             else
                             {
                                 resultado = ((from a in Consultar()
                                               where
-                                              a.Nome.Contains(aluno.Nome)
+                                             a.Nome.ToUpper().Contains(aluno.Nome.ToUpper())
                                               select a).ToList());
                             }
                             pesquisa = true;
