@@ -698,6 +698,7 @@ namespace GuiWindowsForms
                     {
                         if (verificaSeJaCadastrado(aluno) == false)
                         {
+                            aluno = uMenuImagem1.retornaAluno(aluno);
                             alunoControlador.Incluir(aluno);
                             alunoControlador.Confirmar();
 
