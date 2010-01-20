@@ -1044,6 +1044,8 @@
             this.cmbFuncionario.Name = "cmbFuncionario";
             this.cmbFuncionario.Size = new System.Drawing.Size(384, 21);
             this.cmbFuncionario.TabIndex = 0;
+            this.cmbFuncionario.MouseEnter += new System.EventHandler(this.cmbFuncionario_MouseEnter);
+            this.cmbFuncionario.MouseLeave += new System.EventHandler(this.cmbFuncionario_MouseLeave);
             // 
             // ucMenuDireita1
             // 

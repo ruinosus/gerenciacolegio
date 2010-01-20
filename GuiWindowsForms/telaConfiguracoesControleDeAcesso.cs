@@ -343,6 +343,16 @@ namespace GuiWindowsForms
             telalogin.Show();
         }
 
+        private void cmbFuncionario_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Selecione um funcionário para a criação do perfil vinculado");
+        }
+
+        private void cmbFuncionario_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
 
     }
 }

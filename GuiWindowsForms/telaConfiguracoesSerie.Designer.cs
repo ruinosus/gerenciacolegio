@@ -99,7 +99,9 @@
             this.btnAlterar.Size = new System.Drawing.Size(32, 32);
             this.btnAlterar.TabIndex = 71;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.MouseLeave += new System.EventHandler(this.btnAlterar_MouseLeave);
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnAlterar.MouseEnter += new System.EventHandler(this.btnAlterar_MouseEnter);
             // 
             // btnAdicionarSerie
             // 
@@ -341,7 +343,7 @@
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.Size = new System.Drawing.Size(650, 43);
+            this.ucMenuInferior1.Size = new System.Drawing.Size(915, 43);
             this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);

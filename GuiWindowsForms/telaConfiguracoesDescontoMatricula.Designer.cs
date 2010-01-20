@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesDescontoMatricula));
             this.gpbSerie = new System.Windows.Forms.GroupBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnAdicionarDesconto = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.txtValor = new System.Windows.Forms.TextBox();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
@@ -72,6 +72,15 @@
             this.gpbSerie.TabStop = false;
             this.gpbSerie.Text = "DESCONTO MATRICULA";
             // 
+            // txtValor
+            // 
+            this.txtValor.Location = new System.Drawing.Point(92, 134);
+            this.txtValor.MaxLength = 3;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(100, 20);
+            this.txtValor.TabIndex = 71;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            // 
             // btnAlterar
             // 
             this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
@@ -82,7 +91,9 @@
             this.btnAlterar.Size = new System.Drawing.Size(32, 32);
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.MouseLeave += new System.EventHandler(this.btnAlterar_MouseLeave);
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnAlterar.MouseEnter += new System.EventHandler(this.btnAlterar_MouseEnter);
             // 
             // btnAdicionarDesconto
             // 
@@ -236,15 +247,6 @@
             this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
-            // 
-            // txtValor
-            // 
-            this.txtValor.Location = new System.Drawing.Point(92, 134);
-            this.txtValor.MaxLength = 3;
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 20);
-            this.txtValor.TabIndex = 71;
-            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // telaConfiguracoesDescontoMatricula
             // 

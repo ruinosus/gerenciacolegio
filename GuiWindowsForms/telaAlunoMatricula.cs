@@ -15,6 +15,7 @@ using Negocios.ModuloMatricula.Constantes;
 using Negocios.ModuloBoletoMensalidade.Processos;
 using System.Globalization;
 using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloAluno.Processos;
 
 namespace GuiWindowsForms
 {
@@ -252,23 +253,23 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaAlunoMatricula_Load(object sender, EventArgs e)
         {
-            uMenuImagem1.ocultarBotaoAdicionarImagem();
+            //uMenuImagem1.ocultarBotaoAdicionarImagem();
 
-            descontoControlador = DescontoProcesso.Instance;
-            carregaComboSerie();
+            //descontoControlador = DescontoProcesso.Instance;
+            //carregaComboSerie();
 
-            cmbSerie.DataSource = listaSalaAuxiliar;
+            //cmbSerie.DataSource = listaSalaAuxiliar;
 
-            Desconto d = new Desconto();
-            d.Status = (int)Status.Ativo;
+            //Desconto d = new Desconto();
+            //d.Status = (int)Status.Ativo;
 
-            listaDescontoAux = new List<Desconto>();
+            //listaDescontoAux = new List<Desconto>();
 
-            listaDescontoAux = descontoControlador.Consultar(d, TipoPesquisa.E);
-            cmbDesconto.DataSource = listaDescontoAux;
-            cmbDesconto.DisplayMember = "Descricao";
+            //listaDescontoAux = descontoControlador.Consultar(d, TipoPesquisa.E);
+            //cmbDesconto.DataSource = listaDescontoAux;
+            //cmbDesconto.DisplayMember = "Descricao";
 
-            carregarValorTotal();
+            //carregarValorTotal();
             
         }
         #endregion
@@ -368,12 +369,17 @@ namespace GuiWindowsForms
                         boletoMensalidade.MatriculaID = matricula.ID;
                         boletoMensalidade.DataEmissao = DateTime.Now;
                         boletoMensalidade.Valor = matricula.Valor;
-                        alunoMatriculaAux.SerieAtual = matricula.SalaPeriodo.Sala.Serie.Nome;
 
                         boletoMensalidadeControlador.Incluir(boletoMensalidade);
                         boletoMensalidadeControlador.Confirmar();
 
                     }
+                    IAlunoProcesso alunoControlador = AlunoProcesso.Instance;
+
+                    alunoMatriculaAux.SerieAtual = matricula.SalaPeriodo.Sala.Serie.Nome;
+
+                    alunoControlador.Alterar(alunoMatriculaAux);
+                    alunoControlador.Confirmar();
 
                     MessageBox.Show(MatriculaConstantes.MATRICULA_INCLUIDA, "Colégio Conhecer - Inserir Matrícula");
                 }
@@ -539,6 +545,9 @@ namespace GuiWindowsForms
             if (memoria.Aluno != null)
             {
                 uMenuImagem1.carregaAluno(memoria.Aluno);
+                alunoMatriculaAux = memoria.Aluno;
+                geraNumeroMatricula(memoria.Aluno.ID);
+
             }
             else
             {

@@ -307,7 +307,7 @@
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.Size = new System.Drawing.Size(744, 43);
+            this.ucMenuInferior1.Size = new System.Drawing.Size(860, 43);
             this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
