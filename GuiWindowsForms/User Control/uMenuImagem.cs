@@ -26,7 +26,7 @@ namespace GuiWindowsForms
         #region LIMPAR FIGURA
         public void limparFigura()
         {
-            pctImagem.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            pctImagem.Image = null;
         }
         #endregion
 
