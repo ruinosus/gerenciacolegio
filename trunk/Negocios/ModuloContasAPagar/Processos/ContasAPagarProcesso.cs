@@ -51,6 +51,7 @@ namespace Negocios.ModuloContasAPagar.Processos
                     throw new ContasAPagarNaoExcluidaExcecao();
 
                 resultado[0].Status = (int)Status.Inativo;
+                this.Alterar(resultado[0]);
             }
             catch (Exception e)
             {

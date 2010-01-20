@@ -52,6 +52,7 @@ namespace Negocios.ModuloPerfil.Processos
                     throw new PerfilNaoExcluidoExcecao();
 
                 resultado[0].Status = (int)Status.Inativo;
+                this.Alterar(resultado[0]);
             }
             catch (Exception e)
             {

@@ -56,7 +56,7 @@ namespace Negocios.ModuloAluno.Processos
                     throw new AlunoNaoExcluidoExcecao();
 
                 resultado[0].Status = (int)Status.Inativo;
-
+                this.Alterar(resultado[0]);
             }
             catch (Exception e)
             {

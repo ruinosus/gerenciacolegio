@@ -52,6 +52,7 @@ namespace Negocios.ModuloSala.Processos
                     throw new SalaNaoExcluidaExcecao();
 
                 resultado[0].Status = (int)Status.Inativo;
+                this.Alterar(resultado[0]);
             }
             catch (Exception e)
             {
