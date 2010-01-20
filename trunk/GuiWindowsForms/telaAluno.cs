@@ -463,8 +463,8 @@ namespace GuiWindowsForms
 
             this.Hide();
             Program.ultimaTela = 1;
-            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
-            tela.Show();
+            telaAlunoResponsavelBusca telaalunoresponsavelbusca = telaAlunoResponsavelBusca.getInstancia();
+            telaalunoresponsavelbusca.Show();
 
         }
 
