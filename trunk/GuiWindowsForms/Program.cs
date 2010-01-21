@@ -10,6 +10,7 @@ namespace GuiWindowsForms
     {
         public static int ultimaTela = 9;
         public static int ultimaTelaCadastrar = 0;
+        public static string usuarioLogin = null;
         public static Funcionario funcionarioAux = new Funcionario();
 
         /// <summary>

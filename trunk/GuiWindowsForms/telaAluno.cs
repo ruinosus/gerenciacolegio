@@ -116,15 +116,8 @@ namespace GuiWindowsForms
             memoria.Aluno = null;
             this.Hide();
 
-            if (Program.ultimaTela != 7)
-            {
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-            else
-            {
                 Program.ultimaTela = 6;
                 Program.SelecionaForm(Program.ultimaTela);
-            }
         }
         #endregion
 
@@ -701,6 +694,7 @@ namespace GuiWindowsForms
                             aluno = uMenuImagem1.retornaAluno(aluno);
                             alunoControlador.Incluir(aluno);
                             alunoControlador.Confirmar();
+                            uMenuImagem1.carregaAluno(aluno);
 
                             memoria.Aluno = aluno;
                         }
@@ -710,6 +704,7 @@ namespace GuiWindowsForms
                     else
                     {
                         alunoControlador.Alterar(aluno);
+                        uMenuImagem1.carregaAluno(aluno);
 
                         MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer - Alterar Aluno");
                     }
@@ -895,6 +890,7 @@ namespace GuiWindowsForms
                     {
                         alunoControlador.Alterar(aluno);
                         MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer - Alterar Aluno");
+                        uMenuImagem1.carregaAluno(aluno);
                     }
 
 
@@ -1138,7 +1134,7 @@ namespace GuiWindowsForms
 
         private void telaAluno_Activated(object sender, EventArgs e)
         {
-
+            uMenuLateral1.verificaTela(telaaluno);
             Memoria memoria = Memoria.Instance;
 
             if (memoria.Status == StatusBanco.Inativo)
@@ -1146,7 +1142,6 @@ namespace GuiWindowsForms
                 ucMenuInferior1.apagarBotaoAlterar();
                 ucMenuInferior1.apagarBotaoDeletar();
                 ucMenuInferior1.apagarBotaoIncluir();
-                uMenuImagem1.limparFigura();
 
                 memoria.Status = StatusBanco.Inclusao;
                 if (verificaFoto == 0)
@@ -1168,6 +1163,7 @@ namespace GuiWindowsForms
                 else
                 {
                     verificaFoto = 0;
+                    uMenuImagem1.limparFigura();
                 }
 
                 //VALIDA EXIBICAO DOS BOTAO DO MENU_INFERIOR
@@ -1181,6 +1177,12 @@ namespace GuiWindowsForms
                 {
                     Enabled_False();
                     ucMenuInferior1.exibirBotaoAlterar();
+                }
+
+                if (Program.ultimaTelaCadastrar == 1)
+                {
+                    Enabled_True();
+                    uMenuImagem1.carregaAluno(null);
                 }
                 Program.ultimaTelaCadastrar = 0;
             }

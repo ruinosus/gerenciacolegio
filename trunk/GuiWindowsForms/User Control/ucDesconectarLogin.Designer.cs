@@ -38,7 +38,7 @@
             this.lblHelloUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblHelloUsuario.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
             this.lblHelloUsuario.ForeColor = System.Drawing.Color.Yellow;
-            this.lblHelloUsuario.Location = new System.Drawing.Point(-2, 6);
+            this.lblHelloUsuario.Location = new System.Drawing.Point(55, 6);
             this.lblHelloUsuario.Name = "lblHelloUsuario";
             this.lblHelloUsuario.Size = new System.Drawing.Size(133, 23);
             this.lblHelloUsuario.TabIndex = 24;

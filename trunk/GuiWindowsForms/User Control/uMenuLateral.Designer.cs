@@ -167,6 +167,7 @@
             this.btnFinanceiro.BackColor = System.Drawing.Color.Transparent;
             this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_73x60_disabled;
             this.btnFinanceiro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFinanceiro.Enabled = false;
             this.btnFinanceiro.FlatAppearance.BorderSize = 0;
             this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinanceiro.Location = new System.Drawing.Point(22, 402);
