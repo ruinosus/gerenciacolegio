@@ -26,6 +26,7 @@ namespace GuiWindowsForms
         Memoria memoria = Memoria.Instance;
         bool bloquearCampos = false;
         Responsavel responsavel;
+        StatusBanco statusBanco;
 
         private static bool IsShown = false;
 
@@ -48,7 +49,7 @@ namespace GuiWindowsForms
         public telaAlunoResponsavelBusca()
         {
             InitializeComponent();
-            
+
         }
 
         private void CarregarGrid()
@@ -125,12 +126,23 @@ namespace GuiWindowsForms
             uMenuImagem1.ocultarBotaoAdicionarImagem();
         }
 
-       private void dgvResponsavelAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
+        private void dgvResponsavelAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
 
             if (linhaSelecionadaGrid != -1)
+            {
                 dgvResponsavelAluno.Rows[linhaSelecionadaGrid].Selected = true;
+
+
+                cmbGrauParentesco.Text = responsavelAlunoLista[linhaSelecionadaGrid].GrauParentesco;
+                txtNome.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Nome;
+                mskCpf.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Cpf;
+                ckbResideCom.Checked = Convert.ToBoolean(responsavelAlunoLista[linhaSelecionadaGrid].ResideCom.Value);
+                txtRestricoes.Text = responsavelAlunoLista[linhaSelecionadaGrid].Restricoes;
+                responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
+                ManipularCampos(true);
+            }
 
         }
 
@@ -139,7 +151,18 @@ namespace GuiWindowsForms
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
 
             if (linhaSelecionadaGrid != -1)
+            {
                 dgvResponsavelAluno.Rows[linhaSelecionadaGrid].Selected = true;
+
+
+                cmbGrauParentesco.Text = responsavelAlunoLista[linhaSelecionadaGrid].GrauParentesco;
+                txtNome.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Nome;
+                mskCpf.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Cpf;
+                ckbResideCom.Checked = Convert.ToBoolean(responsavelAlunoLista[linhaSelecionadaGrid].ResideCom.Value);
+                txtRestricoes.Text = responsavelAlunoLista[linhaSelecionadaGrid].Restricoes;
+                responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
+                ManipularCampos(true);
+            }
         }
 
         private void ucMenuInferior1_EventoCadastrar()
@@ -159,6 +182,8 @@ namespace GuiWindowsForms
                     }
                     responsavel.Nome = txtNome.Text;
 
+
+
                     #endregion
 
                     #region VALIDA - CPF
@@ -168,15 +193,25 @@ namespace GuiWindowsForms
                     //    errorProviderTela.SetError(mskCpf, "Informe o cpf");
                     //    return;
                     //}
-                  //  responsavel.Cpf = mskCpf.Text;
+                    //  responsavel.Cpf = mskCpf.Text;
 
                     #endregion
 
-                    if (responsavel== null || responsavel.ID <=0)
+                    #region VALIDA - GRAU PARENTESCO
+
+                    if (string.IsNullOrEmpty(cmbGrauParentesco.Text) || cmbGrauParentesco.Text.ToLower().Equals("selecione"))
+                    {
+                        errorProviderTela.SetError(cmbGrauParentesco, "Informe o Grau de Parentesco");
+                        return;
+                    }
+
+                    #endregion
+
+                    if (responsavel == null || responsavel.ID <= 0)
                     {
                         responsavel = new Responsavel();
                         responsavel.Nome = txtNome.Text;
-                        responsavel.Cpf= mskCpf.Text;
+                        responsavel.Cpf = mskCpf.Text;
                         IResponsavelProcesso processoReponsavel = ResponsavelProcesso.Instance;
                         responsavel.Status = (int)Status.Ativo;
                         processoReponsavel.Incluir(responsavel);
@@ -192,10 +227,7 @@ namespace GuiWindowsForms
                     responsavelAluno.AlunoID = memoria.Aluno.ID;
                     responsavelAluno.ResponsavelID = responsavel.ID;
 
-                    if (processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E).Count > 0)
-                    {
-                        throw new Exception("Responsável já vinculado ao Aluno.");
-                    }
+                   
 
                     responsavelAluno.GrauParentesco = cmbGrauParentesco.Text;
                     if (!ckbResideCom.Checked)
@@ -207,17 +239,41 @@ namespace GuiWindowsForms
 
 
 
-
-                    processo.Incluir(responsavelAluno);
-                    processo.Confirmar();
-
-                    if(memoria.Status == StatusBanco.Alteracao)
-
+                    switch (statusBanco)
                     {
-                    Program.ultimaTela = 8;
-                    this.Hide();
-                    telaAlunoResponsavel telaRespAux = telaAlunoResponsavel.getInstancia();
-                    telaRespAux.Show();
+                        case StatusBanco.Inclusao:
+                            {
+                                if (processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E).Count > 0)
+                                {
+                                    throw new Exception("Responsável já vinculado ao Aluno.");
+                                }
+                                processo.Incluir(responsavelAluno);
+                                processo.Confirmar();
+                                break;
+                            }
+                        case StatusBanco.Alteracao:
+                            {
+                                responsavelAluno.ID = responsavelAlunoLista[linhaSelecionadaGrid].ID;
+                                processo.Alterar(responsavelAluno);
+                                processo.Confirmar();
+                                break;
+                            }
+                       
+                    }
+                   
+                
+
+                    if (memoria.Status == StatusBanco.Alteracao)
+                    {
+                        Program.ultimaTela = 8;
+                        this.Hide();
+                        telaAlunoResponsavel telaRespAux = telaAlunoResponsavel.getInstancia();
+                        telaRespAux.Show();
+                    }
+                    else
+                    {
+                        CarregarGrid();
+                        ManipularCampos(true);
                     }
                 }
             }
@@ -227,8 +283,6 @@ namespace GuiWindowsForms
 
             }
         }
-
-    
 
         private void ucDesconectarLogin1_EventoDesconectar()
         {
@@ -253,7 +307,7 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
             try
             {
-                if (mskCpf.MaskCompleted)
+                if (mskCpf.MaskCompleted && !mskCpf.ReadOnly)
                 {
                     IResponsavelProcesso processo = ResponsavelProcesso.Instance;
                     responsavel = new Responsavel();
@@ -271,8 +325,8 @@ namespace GuiWindowsForms
             }
             catch (Exception)
             {
-                
-            
+
+
             }
         }
 
@@ -335,23 +389,26 @@ namespace GuiWindowsForms
             if (memoria.Aluno != null)
             {
                 // CarregarCombos();
+                ManipularCampos(true);
                 bloquearCampos = false;
                 responsavel = new Responsavel();
                 uMenuImagem1.carregaAluno(memoria.Aluno);
                 CarregarGrid();
+                ucMenuInferior1.exibirBotaoIncluir();
                 ucMenuInferior1.exibirBotaoDeletar();
                 ucMenuInferior1.exibirBotaoAlterar();
-                ucMenuInferior1.exibirBotaoIncluir();
                 if (responsavelAlunoLista.Count > 0)
                 {
                     dgvResponsavelAluno.Rows[0].Selected = true;
                     linhaSelecionadaGrid = 0;
+                    
                 }
+                
                 uMenuImagem1.ocultarBotaoAdicionarImagem();
             }
 
-        
-            
+
+
             if (memoria.Status == StatusBanco.Alteracao)
             {
 
@@ -359,8 +416,7 @@ namespace GuiWindowsForms
             }
         }
 
-
-        public void LimparCampos() 
+        public void LimparCampos()
         {
             txtNome.Clear();
             mskCpf.Clear();
@@ -368,5 +424,56 @@ namespace GuiWindowsForms
             ckbResideCom.Checked = false;
 
         }
+
+        private void dgvResponsavelAluno_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Memoria memoria = Memoria.Instance;
+            memoria.Responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
+            memoria.Responsavel.ID = responsavelAlunoLista[linhaSelecionadaGrid].ResponsavelID;
+            memoria.Status = StatusBanco.Alteracao;
+            Program.ultimaTela = 8;
+            this.Hide();
+            telaAlunoResponsavel telaRespAux = telaAlunoResponsavel.getInstancia();
+            telaRespAux.Show();
+        }
+
+        private void ManipularCampos(bool bloquear)
+        {
+            if (bloquear)
+            {
+                cmbGrauParentesco.Enabled = false;
+                txtRestricoes.ReadOnly = true;
+                txtNome.ReadOnly = true;
+                mskCpf.ReadOnly = true;
+                ckbResideCom.Enabled = false;
+                btnPesquisar.Enabled = false;
+            }
+            else
+            {
+                cmbGrauParentesco.Enabled = true;
+                txtRestricoes.ReadOnly = false;
+                txtNome.ReadOnly = false;
+                mskCpf.ReadOnly = false;
+                ckbResideCom.Enabled = true;
+                btnPesquisar.Enabled = true;
+
+            }
+
+        }
+
+        private void ucMenuInferior1_EventoIncluir()
+        {
+            ManipularCampos(false);
+            LimparCampos();
+            statusBanco = StatusBanco.Inclusao;
+        }
+
+        private void ucMenuInferior1_EventoAlterar()
+        {
+            ManipularCampos(false);
+
+            statusBanco = StatusBanco.Alteracao;
+        }
+       
     }
 }

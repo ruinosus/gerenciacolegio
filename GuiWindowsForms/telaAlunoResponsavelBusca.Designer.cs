@@ -91,6 +91,7 @@
             this.dgvResponsavelAluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResponsavelAluno.Size = new System.Drawing.Size(769, 272);
             this.dgvResponsavelAluno.TabIndex = 36;
+            this.dgvResponsavelAluno.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavelAluno_CellDoubleClick);
             this.dgvResponsavelAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavelAluno_CellClick);
             this.dgvResponsavelAluno.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavelAluno_CellEnter);
             // 
@@ -290,6 +291,8 @@
             this.ucMenuInferior1.TabIndex = 76;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
+            this.ucMenuInferior1.EventoIncluir += new GuiWindowsForms.ucMenuInferior.delegateIncluir(this.ucMenuInferior1_EventoIncluir);
+            this.ucMenuInferior1.EventoAlterar += new GuiWindowsForms.ucMenuInferior.delegateAlterar(this.ucMenuInferior1_EventoAlterar);
             this.ucMenuInferior1.EventoDeletar += new GuiWindowsForms.ucMenuInferior.delegateDeletar(this.ucMenuInferior1_EventoDeletar);
             // 
             // uMenuImagem1
