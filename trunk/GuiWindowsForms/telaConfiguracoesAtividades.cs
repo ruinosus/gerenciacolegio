@@ -29,6 +29,7 @@ namespace GuiWindowsForms
         private Image imagemAuxiliar = null;
 
         int linhaSelecionadaGrid = -1;
+        int linhaSelecionadaGrid2 = -1;
 
         List<Atividade> listaAtividade = new List<Atividade>();
         List<AtividadeTurma> listaTurmaAtividade = new List<AtividadeTurma>();
@@ -239,9 +240,11 @@ namespace GuiWindowsForms
         {
             if (verificaTelaImagem == 0)
             {
+
                 ucMenuInferior1.BotaoCadastrar.Enabled = false;
                 btnAdicionarImagem.Enabled = false;
                 dataGridView1.Enabled = true;
+                dataGridView2.Enabled = true;
 
                 funcionarioControlador = FuncionarioProcesso.Instance;
                 atividadeControlador = AtividadeProcesso.Instance;
@@ -252,9 +255,6 @@ namespace GuiWindowsForms
                 cmbFuncionario.DisplayMember = "Nome";
 
                 carregarComboAtividade();
-
-                carregaForm();
-                carregaForm2();
 
                 verificaTelaImagem = 0;
             }
@@ -345,12 +345,12 @@ namespace GuiWindowsForms
         {
             if (MessageBox.Show("Tem certeza que deseja excluir a turma ?", "Colégio Conhecer - Excluir Atividade - Turma", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
             {
-                if (linhaSelecionadaGrid != -1)
+                if (linhaSelecionadaGrid2 != -1)
                 {
                     atividadeTurmaControlador.Excluir(listaTurmaAtividade[linhaSelecionadaGrid]);
                     atividadeTurmaControlador.Confirmar();
                     carregaForm2();
-                    linhaSelecionadaGrid = -1;
+                    linhaSelecionadaGrid2 = -1;
                 }
                 else
                 {
@@ -435,14 +435,19 @@ namespace GuiWindowsForms
         {
             atividadeTurmaControlador = AtividadeTurmaProcesso.Instance;
 
-            listaTurmaAtividade = atividadeTurmaControlador.Consultar();
+            AtividadeTurma atividadeTurmaAux = new AtividadeTurma();
+
+            atividadeTurmaAux.Status = (int)Status.Ativo;
+
+            listaTurmaAtividade = atividadeTurmaControlador.Consultar(atividadeTurmaAux, TipoPesquisa.E);
             listaTurmaAtividadeGrid = new List<classeAuxiliarAtividadeTurma>();
 
             foreach (AtividadeTurma a in listaTurmaAtividade)
             {
                 classeAuxiliarAtividadeTurma classeAtvTurma = new classeAuxiliarAtividadeTurma();
 
-                classeAtvTurma.AtividadeAuxTurma = a.Turma;
+                classeAtvTurma.AtividadeAuxTurma = a.Atividade.Nome;
+                classeAtvTurma.TurmaAuxTurma = a.Turma;
                 classeAtvTurma.FuncionarioAuxTurma = a.Funcionario.Nome;
                 classeAtvTurma.HoraInicioAuxTurma = a.HoraInicio;
                 classeAtvTurma.HoraFimAuxTurma = a.HoraFim;
@@ -594,8 +599,9 @@ namespace GuiWindowsForms
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-            if (linhaSelecionadaGrid >= 0)
+
+            linhaSelecionadaGrid2 = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid2 >= 0)
             {
                 dataGridView2.Rows[e.RowIndex].Selected = true;
 
@@ -666,14 +672,15 @@ namespace GuiWindowsForms
             }
             else
             {
-                linhaSelecionadaGrid = -1;
+                linhaSelecionadaGrid2 = -1;
             }
         }
 
         private void dataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-            if (linhaSelecionadaGrid >= 0)
+
+            linhaSelecionadaGrid2 = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid2 >= 0)
             {
                 dataGridView2.Rows[e.RowIndex].Selected = true;
 
@@ -743,14 +750,15 @@ namespace GuiWindowsForms
             }
             else
             {
-                linhaSelecionadaGrid = -1;
+                linhaSelecionadaGrid2 = -1;
             }
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-            if (linhaSelecionadaGrid >= 0)
+
+            linhaSelecionadaGrid2 = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid2 >= 0)
             {
                 dataGridView2.Rows[e.RowIndex].Selected = true;
 
@@ -820,14 +828,15 @@ namespace GuiWindowsForms
             }
             else
             {
-                linhaSelecionadaGrid = -1;
+                linhaSelecionadaGrid2 = -1;
             }
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-            if (linhaSelecionadaGrid >= 0)
+
+            linhaSelecionadaGrid2 = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid2 >= 0)
             {
                 dataGridView2.Rows[e.RowIndex].Selected = true;
 
@@ -897,14 +906,15 @@ namespace GuiWindowsForms
             }
             else
             {
-                linhaSelecionadaGrid = -1;
+                linhaSelecionadaGrid2 = -1;
             }
         }
 
         private void dataGridView2_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-            if (linhaSelecionadaGrid >= 0)
+
+            linhaSelecionadaGrid2 = int.Parse(e.RowIndex.ToString());
+            if (linhaSelecionadaGrid2 >= 0)
             {
                 dataGridView2.Rows[e.RowIndex].Selected = true;
 
@@ -974,7 +984,7 @@ namespace GuiWindowsForms
             }
             else
             {
-                linhaSelecionadaGrid = -1;
+                linhaSelecionadaGrid2 = -1;
             }
         }
 
@@ -1208,19 +1218,27 @@ namespace GuiWindowsForms
                     atividadeTurma.HoraInicio = dtpHorarioFim.ToString();
                     atividadeTurma.HoraFim = dtpHorarioFim.ToString();
 
-                    atividadeTurma.Status = 0;
+                    atividadeTurma.Status = (int)Status.Ativo;
 
-                    if (linhaSelecionadaGrid != -1)
+                    if (!atividadeTurma.HoraInicio.Equals(atividadeTurma.HoraFim))
                     {
-                        atividadeTurmaControlador.Alterar(atividadeTurma);
-                        atividadeTurmaControlador.Confirmar();
-                        linhaSelecionadaGrid = -1;
 
-                        MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_ALTERADA, "Colégio Conhecer");
+                        if (linhaSelecionadaGrid2 != -1)
+                        {
+                            atividadeTurmaControlador.Alterar(atividadeTurma);
+                            atividadeTurmaControlador.Confirmar();
+                            linhaSelecionadaGrid2 = -1;
+
+                            MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_ALTERADA, "Colégio Conhecer");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Selecione um registro para alterar, caso queira inserir use o botão +", "Colégio Conhecer");
+                        MessageBox.Show("O horário de inicio e fim da atividade não podem ser iguais", "Colégio Conhecer");
                     }
                 }
                 catch (Exception ex)
@@ -1315,20 +1333,28 @@ namespace GuiWindowsForms
                     atividadeTurma.HoraInicio = dtpHorarioInicio.Value.ToString();
                     atividadeTurma.HoraFim = dtpHorarioFim.Value.ToString();
 
-                    atividadeTurma.Status = 0;
+                    atividadeTurma.Status = (int)Status.Ativo;
 
-                    if (verificaSeJaInserido2(atividadeTurma) == false)
+                    if (!atividadeTurma.HoraInicio.Equals(atividadeTurma.HoraFim))
                     {
-                        atividadeTurma.Status = 0;
-                        atividadeTurmaControlador.Incluir(atividadeTurma);
-                        atividadeTurmaControlador.Confirmar();
-                        linhaSelecionadaGrid = -1;
 
-                        MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_INCLUIDA, "Colégio Conhecer");
+                        if (verificaSeJaInserido2(atividadeTurma) == false)
+                        {
+                            atividadeTurma.Status = (int)Status.Ativo;
+                            atividadeTurmaControlador.Incluir(atividadeTurma);
+                            atividadeTurmaControlador.Confirmar();
+                            linhaSelecionadaGrid2 = -1;
+
+                            MessageBox.Show(AtividadeTurmaConstantes.ATIVIDADETURMA_INCLUIDA, "Colégio Conhecer");
+                        }
+                        else
+                        {
+                            MessageBox.Show("A turma já existe na base de dados", "Colégio Conhecer");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("A turma já existe na base de dados", "Colégio Conhecer");
+                        MessageBox.Show("O horário de inicio e fim da atividade não podem ser iguais", "Colégio Conhecer");
                     }
                 }
                 catch (Exception ex)
@@ -1641,6 +1667,20 @@ namespace GuiWindowsForms
             this.Close();
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void telaConfiguracoesAtividades_Load(object sender, EventArgs e)
+        {
+            carregaForm();
+            carregaForm2();
         }
 
 
