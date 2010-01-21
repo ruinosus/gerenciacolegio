@@ -58,59 +58,60 @@ namespace GuiWindowsForms
 
             #region Validação dos campos de login e senha
 
-            //try
-            //{
-            //    lblErro.Visible = false;
+            try
+            {
+                lblErro.Visible = false;
 
-            //    if (String.IsNullOrEmpty(txtLogin.Text))
-            //    {
-            //        txtLogin.BackColor = System.Drawing.Color.LawnGreen;
-            //        errorProviderTela.SetError(txtLogin, "Informe o login");
-            //        throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
-            //    }
-            //    else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
-            //    {
-            //        txtLogin.BackColor = System.Drawing.Color.LawnGreen;
-            //        errorProviderTela.SetError(txtLogin, "Informe o login");
-            //        throw new Exception("O login deve conter entre 8 e 20 dígitos.");
-            //    }
-            //    else
-            //    {
-            //        if(String.IsNullOrEmpty(txtSenha.Text))
-            //        {
-            //            txtSenha.BackColor = System.Drawing.Color.LawnGreen;
-            //            errorProviderTela.SetError(txtSenha, "Informe a senha");
-            //            throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
-            //        }
-            //        else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
-            //        {
-            //            txtSenha.BackColor = System.Drawing.Color.LawnGreen;
-            //            errorProviderTela.SetError(txtSenha, "Informe o login");
-            //            throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
-            //        }
-            //        else
-            //        {
-            //            if (txtLogin.Text == "conhecer" & txtSenha.Text == "conhecer")
-            //            {
+                if (String.IsNullOrEmpty(txtLogin.Text))
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
+                    throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
+                }
+                else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
+                    throw new Exception("O login deve conter entre 8 e 20 dígitos.");
+                }
+                else
+                {
+                    if(String.IsNullOrEmpty(txtSenha.Text))
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe a senha");
+                        throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
+                    }
+                    else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe o login");
+                        throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
+                    }
+                    else
+                    {
+                        if (txtLogin.Text == "conhecer" & txtSenha.Text == "conhecer")
+                        {
                             this.Hide();
                             Program.ultimaTela = 9;
+                            Program.usuarioLogin = "Olá, Liane";
                             telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
                             telaalunoprincipal.Show();
-            //            }
-            //            else
-            //            {
-            //                txtLogin.BackColor = System.Drawing.Color.LawnGreen;
-            //                errorProviderTela.SetError(txtLogin, "Login errado");
-            //                throw new Exception("Dados inexistentes, insira os dados corretamente.");
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    lblErro.Visible = true;
-            //    lblErro.Text = ex.Message; 
-            //}
+                        }
+                        else
+                        {
+                            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                            errorProviderTela.SetError(txtLogin, "Login errado");
+                            throw new Exception("Dados inexistentes, insira os dados corretamente.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblErro.Visible = true;
+                lblErro.Text = ex.Message;
+            }
 
             #endregion
         }
@@ -191,60 +192,61 @@ namespace GuiWindowsForms
             //f.Close();
             #region Validação dos campos de login e senha
 
-            //try
-            //{
-            //    lblErro.Visible = false;
+            try
+            {
+                lblErro.Visible = false;
 
-            //    if (String.IsNullOrEmpty(txtLogin.Text))
-            //    {
-            //        txtLogin.BackColor = System.Drawing.Color.LawnGreen;
-            //        errorProviderTela.SetError(txtLogin, "Informe o login");
-            //        throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
-            //    }
-            //    else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
-            //    {
-            //        txtLogin.BackColor = System.Drawing.Color.LawnGreen;
-            //        errorProviderTela.SetError(txtLogin, "Informe o login");
-            //        throw new Exception("O login deve conter entre 8 e 20 dígitos.");
-            //    }
-            //    else
-            //    {
-            //        if (String.IsNullOrEmpty(txtSenha.Text))
-            //        {
-            //            txtSenha.BackColor = System.Drawing.Color.LawnGreen;
-            //            errorProviderTela.SetError(txtSenha, "Informe a senha");
-            //            throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
-            //        }
-            //        else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
-            //        {
-            //            txtSenha.BackColor = System.Drawing.Color.LawnGreen;
-            //            errorProviderTela.SetError(txtSenha, "Informe o login");
-            //            throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
-            //        }
-            //        else
-            //        {
-            //            if (txtLogin.Text == "conhecer" & txtSenha.Text == "conhecer" )
-            //            {
+                if (String.IsNullOrEmpty(txtLogin.Text))
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
+                    throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
+                }
+                else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
+                    throw new Exception("O login deve conter entre 8 e 20 dígitos.");
+                }
+                else
+                {
+                    if (String.IsNullOrEmpty(txtSenha.Text))
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe a senha");
+                        throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
+                    }
+                    else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe o login");
+                        throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
+                    }
+                    else
+                    {
+                        if (txtLogin.Text == "conhecer" & txtSenha.Text == "conhecer" )
+                        {
                             this.Hide();
                             Program.ultimaTela = 9;
+                            Program.usuarioLogin = "Olá, Liane";
                             telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
                             telaalunoprincipal.Show();
-        //                }
-        //                else 
-        //                {
-        //                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
-        //                    errorProviderTela.SetError(txtLogin, "Login errado");
-        //                    throw new Exception("Dados inexistentes, insira os dados corretamente.");
-        //                }
+                        }
+                        else 
+                        {
+                            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                            errorProviderTela.SetError(txtLogin, "Login errado");
+                            throw new Exception("Dados inexistentes, insira os dados corretamente.");
+                        }
   
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        lblErro.Visible = true;
-        //        lblErro.Text = ex.Message;
-        //    }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblErro.Visible = true;
+                lblErro.Text = ex.Message;
+            }
 
             #endregion
         }
@@ -254,109 +256,111 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
 
-        //private void txtLogin_Enter_1(object sender, EventArgs e)
-        //{
-        //    #region Validação dos campos de login e senha
+        private void txtLogin_Enter_1(object sender, EventArgs e)
+        {
+            #region Validação dos campos de login e senha
 
-        //    try
-        //    {
-        //        lblErro.Visible = false;
+            try
+            {
+                lblErro.Visible = false;
 
-        //        if (String.IsNullOrEmpty(txtLogin.Text))
-        //        {
-        //            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
-        //            errorProviderTela.SetError(txtLogin, "Informe o login");
-        //            throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
-        //        }
-        //        else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
-        //        {
-        //            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
-        //            errorProviderTela.SetError(txtLogin, "Informe o login");
-        //            throw new Exception("O login deve conter entre 8 e 20 dígitos.");
-        //        }
-        //        else
-        //        {
-        //            if (String.IsNullOrEmpty(txtSenha.Text))
-        //            {
-        //                txtSenha.BackColor = System.Drawing.Color.LawnGreen;
-        //                errorProviderTela.SetError(txtSenha, "Informe a senha");
-        //                throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
-        //            }
-        //            else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
-        //            {
-        //                txtSenha.BackColor = System.Drawing.Color.LawnGreen;
-        //                errorProviderTela.SetError(txtSenha, "Informe o login");
-        //                throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
-        //            }
-        //            else
-        //            {
-        //                this.Hide();
-        //                Program.ultimaTela = 9;
-        //                telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
-        //                telaalunoprincipal.Show();
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        lblErro.Visible = true;
-        //        lblErro.Text = ex.Message;
-        //    }
+                if (String.IsNullOrEmpty(txtLogin.Text))
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
+                    throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
+                }
+                else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
+                    throw new Exception("O login deve conter entre 8 e 20 dígitos.");
+                }
+                else
+                {
+                    if (String.IsNullOrEmpty(txtSenha.Text))
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe a senha");
+                        throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
+                    }
+                    else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe o login");
+                        throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
+                    }
+                    else
+                    {
+                        this.Hide();
+                        Program.ultimaTela = 9;
+                        Program.usuarioLogin = "Olá, Liane";
+                        telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+                        telaalunoprincipal.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblErro.Visible = true;
+                lblErro.Text = ex.Message;
+            }
 
-        //    #endregion
-        //}
+            #endregion
+        }
 
-        //private void txtSenha_Click(object sender, EventArgs e)
-        //{
-        //    #region Validação dos campos de login e senha
+        private void txtSenha_Click(object sender, EventArgs e)
+        {
+            #region Validação dos campos de login e senha
 
-        //    try
-        //    {
-        //        lblErro.Visible = false;
+            try
+            {
+                lblErro.Visible = false;
 
-        //        if (String.IsNullOrEmpty(txtLogin.Text))
-        //        {
-        //            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
-        //            errorProviderTela.SetError(txtLogin, "Informe o login");
-        //            throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
-        //        }
-        //        else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
-        //        {
-        //            txtLogin.BackColor = System.Drawing.Color.LawnGreen;
-        //            errorProviderTela.SetError(txtLogin, "Informe o login");
-        //            throw new Exception("O login deve conter entre 8 e 20 dígitos.");
-        //        }
-        //        else
-        //        {
-        //            if (String.IsNullOrEmpty(txtSenha.Text))
-        //            {
-        //                txtSenha.BackColor = System.Drawing.Color.LawnGreen;
-        //                errorProviderTela.SetError(txtSenha, "Informe a senha");
-        //                throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
-        //            }
-        //            else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
-        //            {
-        //                txtSenha.BackColor = System.Drawing.Color.LawnGreen;
-        //                errorProviderTela.SetError(txtSenha, "Informe o login");
-        //                throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
-        //            }
-        //            else
-        //            {
-        //                this.Hide();
-        //                Program.ultimaTela = 9;
-        //                telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
-        //                telaalunoprincipal.Show();
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        lblErro.Visible = true;
-        //        lblErro.Text = ex.Message;
-        //    }
+                if (String.IsNullOrEmpty(txtLogin.Text))
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
+                    throw new Exception("Favor digitar um login. O campo não pode estar vazio!");
+                }
+                else if (txtLogin.Text.Length < 8 || txtLogin.Text.Length > 20)
+                {
+                    txtLogin.BackColor = System.Drawing.Color.LawnGreen;
+                    errorProviderTela.SetError(txtLogin, "Informe o login");
+                    throw new Exception("O login deve conter entre 8 e 20 dígitos.");
+                }
+                else
+                {
+                    if (String.IsNullOrEmpty(txtSenha.Text))
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe a senha");
+                        throw new Exception("Favor digitar uma senha. O campo não pode estar vazio!");
+                    }
+                    else if (txtSenha.Text.Length < 8 || txtSenha.Text.Length > 20)
+                    {
+                        txtSenha.BackColor = System.Drawing.Color.LawnGreen;
+                        errorProviderTela.SetError(txtSenha, "Informe o login");
+                        throw new Exception("A senha deve conter entre 8 e 20 dígitos.");
+                    }
+                    else
+                    {
+                        this.Hide();
+                        Program.ultimaTela = 9;
+                        Program.usuarioLogin = "Olá, Liane";
+                        telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+                        telaalunoprincipal.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblErro.Visible = true;
+                lblErro.Text = ex.Message;
+            }
 
-        //    #endregion
-        //}
+            #endregion
+        }
 
         #endregion
     }
