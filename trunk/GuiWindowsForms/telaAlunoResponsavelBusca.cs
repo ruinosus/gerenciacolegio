@@ -48,23 +48,7 @@ namespace GuiWindowsForms
         public telaAlunoResponsavelBusca()
         {
             InitializeComponent();
-            if (memoria.Aluno != null)
-            {
-                // CarregarCombos();
-                bloquearCampos = false;
-                responsavel = new Responsavel();
-                uMenuImagem1.carregaAluno(memoria.Aluno);
-                CarregarGrid();
-                ucMenuInferior1.exibirBotaoDeletar();
-                ucMenuInferior1.exibirBotaoAlterar();
-                ucMenuInferior1.exibirBotaoIncluir();
-                if (responsavelAlunoLista.Count > 0)
-                {
-                    dgvResponsavelAluno.Rows[0].Selected = true;
-                    linhaSelecionadaGrid = 0;
-                }
-                uMenuImagem1.ocultarBotaoAdicionarImagem();
-            }
+            
         }
 
         private void CarregarGrid()
@@ -346,7 +330,27 @@ namespace GuiWindowsForms
 
         private void telaAlunoResponsavelBusca_Activated(object sender, EventArgs e)
         {
+
             LimparCampos();
+            if (memoria.Aluno != null)
+            {
+                // CarregarCombos();
+                bloquearCampos = false;
+                responsavel = new Responsavel();
+                uMenuImagem1.carregaAluno(memoria.Aluno);
+                CarregarGrid();
+                ucMenuInferior1.exibirBotaoDeletar();
+                ucMenuInferior1.exibirBotaoAlterar();
+                ucMenuInferior1.exibirBotaoIncluir();
+                if (responsavelAlunoLista.Count > 0)
+                {
+                    dgvResponsavelAluno.Rows[0].Selected = true;
+                    linhaSelecionadaGrid = 0;
+                }
+                uMenuImagem1.ocultarBotaoAdicionarImagem();
+            }
+
+        
             
             if (memoria.Status == StatusBanco.Alteracao)
             {
