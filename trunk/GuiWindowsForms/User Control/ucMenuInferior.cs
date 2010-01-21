@@ -105,6 +105,7 @@ namespace GuiWindowsForms
                 EventoAlterar();
             btnExcluir.Enabled = false;
             btnVoltar.Enabled = false;
+            btnIncluir.Enabled = false;
             
         }
 

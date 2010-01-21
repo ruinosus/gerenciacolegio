@@ -398,15 +398,13 @@ namespace GuiWindowsForms
         {
             this.Hide();
 
-
-
             if (Program.ultimaTela != 8)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
             else
             {
-                Program.ultimaTela = 1;
+                Program.ultimaTela = 8;
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
@@ -882,6 +880,8 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        #region LIMPAR CAMPOS
+
         /// <summary>
         /// Método para limpar a tela.
         /// </summary>
@@ -909,6 +909,7 @@ namespace GuiWindowsForms
             
             ucMenuSuper.limparFigura();
         }
+        #endregion
 
         /// <summary>
         /// Método para carregar os dados do aluno na tela

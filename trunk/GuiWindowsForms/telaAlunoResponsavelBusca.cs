@@ -169,6 +169,8 @@ namespace GuiWindowsForms
         {
             try
             {
+               
+
                 if (memoria.Aluno != null)
                 {
 
@@ -276,6 +278,15 @@ namespace GuiWindowsForms
                         ManipularCampos(true);
                     }
                 }
+
+                // Desabilita os campos quando clicar no botao cadastrar
+                // obrigando o usuario a clicar no botao "Alterar" para
+                // modificar os campos correspondentes
+                dgvResponsavelAluno.Enabled = true;
+                txtNome.Enabled = true;
+                mskCpf.Enabled = true;
+                txtRestricoes.Enabled = true;
+                btnPesquisar.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -369,10 +380,19 @@ namespace GuiWindowsForms
         {
             try
             {
-                IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
-                processo.Excluir(responsavelAlunoLista[linhaSelecionadaGrid]);
-                processo.Confirmar();
-                CarregarGrid();
+                if(MessageBox.Show("Tem certeza que deseja excluir o responsável ?", "Colégio Conhecer", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+                    IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
+                    processo.Excluir(responsavelAlunoLista[linhaSelecionadaGrid]);
+                    processo.Confirmar();
+                    CarregarGrid();
+                    LimparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Selecione uma opção na tabela abaixo para exclusão, então pressione excluir.", "Colégio Conhecer");
+                }
+
             }
             catch (Exception)
             {
@@ -461,19 +481,33 @@ namespace GuiWindowsForms
 
         }
 
+        #region EVENTO INCLUIR
         private void ucMenuInferior1_EventoIncluir()
         {
             ManipularCampos(false);
+            dgvResponsavelAluno.Enabled = false;
             LimparCampos();
             statusBanco = StatusBanco.Inclusao;
         }
+        #endregion
 
+        #region EVENTO ALTERAR
         private void ucMenuInferior1_EventoAlterar()
         {
+           
             ManipularCampos(false);
 
+            //Deixa o Grid, campo Nome, campo Cpf
+            // e o botao Pesquisar desabilitados
+            dgvResponsavelAluno.Enabled = false;
+            txtNome.Enabled = false;
+            mskCpf.Enabled = false;
+            btnPesquisar.Enabled = false;
+
+           
             statusBanco = StatusBanco.Alteracao;
         }
-       
+        #endregion
+
     }
 }
