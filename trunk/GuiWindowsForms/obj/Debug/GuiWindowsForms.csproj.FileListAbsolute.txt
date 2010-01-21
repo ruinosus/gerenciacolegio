@@ -508,3 +508,4 @@ C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.uMenuImagem.resources
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
