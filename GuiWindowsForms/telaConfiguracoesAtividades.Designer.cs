@@ -125,7 +125,7 @@
             // 
             // pagCadastrarAtividade
             // 
-            this.pagCadastrarAtividade.BackColor = System.Drawing.Color.Transparent;
+            this.pagCadastrarAtividade.BackColor = System.Drawing.Color.White;
             this.pagCadastrarAtividade.Controls.Add(this.btnAlterarAtividade);
             this.pagCadastrarAtividade.Controls.Add(this.dataGridView1);
             this.pagCadastrarAtividade.Controls.Add(this.btnAdicionarAtividade);
@@ -143,11 +143,11 @@
             this.pagCadastrarAtividade.Size = new System.Drawing.Size(680, 497);
             this.pagCadastrarAtividade.TabIndex = 1;
             this.pagCadastrarAtividade.Text = "Cadastrar  Atividade";
-            this.pagCadastrarAtividade.UseVisualStyleBackColor = true;
             // 
             // btnAlterarAtividade
             // 
             this.btnAlterarAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_branco;
+            this.btnAlterarAtividade.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlterarAtividade.FlatAppearance.BorderSize = 0;
             this.btnAlterarAtividade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterarAtividade.Location = new System.Drawing.Point(525, 203);
@@ -296,6 +296,7 @@
             // 
             // pagTurma
             // 
+            this.pagTurma.BackColor = System.Drawing.Color.White;
             this.pagTurma.Controls.Add(this.btnAlterarAtividadeTurma);
             this.pagTurma.Controls.Add(this.lblAtividadeTurma);
             this.pagTurma.Controls.Add(this.cmbAtividadeTurma);
@@ -327,7 +328,6 @@
             this.pagTurma.Size = new System.Drawing.Size(680, 497);
             this.pagTurma.TabIndex = 0;
             this.pagTurma.Text = "Turma";
-            this.pagTurma.UseVisualStyleBackColor = true;
             // 
             // btnAlterarAtividadeTurma
             // 
@@ -772,10 +772,9 @@
             // 
             // dataGridView3
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(22, 289);
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(640, 207);
+            this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 0;
             // 
             // openFileDialog1
@@ -887,7 +886,7 @@
             this.Name = "telaConfiguracoesAtividades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
-            this.Load += new System.EventHandler(this.ckbTerca_Load);
+            this.Activated += new System.EventHandler(this.telaConfiguracoesAtividades_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoesAtividades_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.tbcAtividade.ResumeLayout(false);

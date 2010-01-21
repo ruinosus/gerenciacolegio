@@ -15,7 +15,7 @@ namespace GuiWindowsForms.User_Control
         {
             InitializeComponent();
         }
-        
+
         public delegate void delegateDesconectar();
         public event delegateDesconectar EventoDesconectar;
 
@@ -27,8 +27,11 @@ namespace GuiWindowsForms.User_Control
 
         public void alterarNomeUsuario(bool visivel, string nome)
         {
-            lblHelloUsuario.Visible = visivel;
-            lblHelloUsuario.Text = nome;
+            if (Program.usuarioLogin != null)
+            {
+                lblHelloUsuario.Visible = visivel;
+                lblHelloUsuario.Text = Program.usuarioLogin;
+            }
         }
     }
 }

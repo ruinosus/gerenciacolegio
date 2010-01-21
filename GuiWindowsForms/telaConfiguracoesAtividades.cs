@@ -24,6 +24,7 @@ namespace GuiWindowsForms
         AtividadeTurma atividadeTurma = new AtividadeTurma();
 
         int verificaButton = 0;
+        int verificaTelaImagem = 0;
 
         private Image imagemAuxiliar = null;
 
@@ -234,23 +235,29 @@ namespace GuiWindowsForms
         #region MÉTODOS PARA CARGA E INICIALIZAÇÃO
 
         #region LOAD
-        private void ckbTerca_Load(object sender, EventArgs e)
+        private void telaConfiguracoesAtividades_Activated(object sender, EventArgs e)
         {
-            ucMenuInferior1.BotaoCadastrar.Enabled = false;
+            if (verificaTelaImagem == 0)
+            {
+                ucMenuInferior1.BotaoCadastrar.Enabled = false;
+                btnAdicionarImagem.Enabled = false;
+                dataGridView1.Enabled = true;
 
-            funcionarioControlador = FuncionarioProcesso.Instance;
-            atividadeControlador = AtividadeProcesso.Instance;
+                funcionarioControlador = FuncionarioProcesso.Instance;
+                atividadeControlador = AtividadeProcesso.Instance;
 
-            List<Funcionario> listaFuncionarioCmb = new List<Funcionario>();
-            listaFuncionarioCmb = funcionarioControlador.Consultar();
-            cmbFuncionario.DataSource = listaFuncionarioCmb;
-            cmbFuncionario.DisplayMember = "Nome";
+                List<Funcionario> listaFuncionarioCmb = new List<Funcionario>();
+                listaFuncionarioCmb = funcionarioControlador.Consultar();
+                cmbFuncionario.DataSource = listaFuncionarioCmb;
+                cmbFuncionario.DisplayMember = "Nome";
 
-            carregarComboAtividade();
+                carregarComboAtividade();
 
-            carregaForm();
-            carregaForm2();
+                carregaForm();
+                carregaForm2();
 
+                verificaTelaImagem = 0;
+            }
         }
         #endregion
 
@@ -290,6 +297,7 @@ namespace GuiWindowsForms
             dataGridView1.Enabled = false;
             btnAlterarAtividade.Enabled = false;
             btnExcluirAtividade.Enabled = false;
+            pctImagemAtividade.Image = null;
         }
         #endregion
 
@@ -474,7 +482,7 @@ namespace GuiWindowsForms
                 }
                 else
                 {
-                    pctImagemAtividade.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+                    pctImagemAtividade.Image = null;
                 }
             }
             else
@@ -499,7 +507,7 @@ namespace GuiWindowsForms
                 }
                 else
                 {
-                    pctImagemAtividade.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+                    pctImagemAtividade.Image = null;
                 }
             }
             else
@@ -519,7 +527,13 @@ namespace GuiWindowsForms
                 txtNome.Text = listaAtividade[linhaSelecionadaGrid].Nome;
                 Byte[] imagemAux = listaAtividade[linhaSelecionadaGrid].Imagem;
                 if (imagemAux.Length > 0)
+                {
                     pctImagemAtividade.Image = arrayParaImagem(imagemAux);
+                }
+                else
+                {
+                    pctImagemAtividade.Image = null;
+                }
             }
             else
             {
@@ -543,7 +557,7 @@ namespace GuiWindowsForms
                 }
                 else
                 {
-                    pctImagemAtividade.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+                    pctImagemAtividade.Image = null;
                 }
             }
             else
@@ -568,7 +582,7 @@ namespace GuiWindowsForms
                 }
                 else
                 {
-                    pctImagemAtividade.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+                    pctImagemAtividade.Image = null;
                 }
             }
             else
@@ -1012,15 +1026,21 @@ namespace GuiWindowsForms
 
                     #endregion
 
-                    atividade.Imagem = atividadeAux.Imagem;
+                    if (pctImagemAtividade.Image != null)
+                    {
+                        atividade.Imagem = atividadeAux.Imagem;
+                    }
 
                     if (linhaSelecionadaGrid != -1)
                     {
+                        atividade.ID = listaAtividade[linhaSelecionadaGrid].ID;
+                        atividade.Status = (int)Status.Ativo;
                         atividadeControlador.Alterar(atividade);
                         atividadeControlador.Confirmar();
                         linhaSelecionadaGrid = -1;
 
                         carregarComboAtividade();
+                        pctImagemAtividade.Image = null;
 
                         MessageBox.Show(AtividadeConstantes.ATIVIDADE_ALTERADA, "Colégio Conhecer");
                     }
@@ -1033,6 +1053,7 @@ namespace GuiWindowsForms
                 {
                     MessageBox.Show(ex.Message);
                 }
+                btnAdicionarImagem.Enabled = false;
                 carregaForm();
                 limparTela();
 
@@ -1075,7 +1096,10 @@ namespace GuiWindowsForms
 
                     #endregion
 
-                    atividade.Imagem = atividadeAux.Imagem;
+                    if (pctImagemAtividade.Image != null)
+                    {
+                        atividade.Imagem = atividadeAux.Imagem;
+                    }
 
                     if (verificaSeJaInserido(atividade) == false)
                     {
@@ -1085,6 +1109,7 @@ namespace GuiWindowsForms
                         linhaSelecionadaGrid = -1;
 
                         carregarComboAtividade();
+                        pctImagemAtividade.Image = null;
 
                         MessageBox.Show(AtividadeConstantes.ATIVIDADE_INCLUIDA, "Colégio Conhecer - Inserir Atividade");
                     }
@@ -1099,6 +1124,7 @@ namespace GuiWindowsForms
                 }
                 carregaForm();
                 limparTela();
+                btnAdicionarImagem.Enabled = false;
 
                 #endregion
             }
@@ -1348,7 +1374,6 @@ namespace GuiWindowsForms
 
             verificaButton = 0;
         }
-
         #endregion
 
 
@@ -1420,6 +1445,7 @@ namespace GuiWindowsForms
         /// <param name="e"></param>
         private void btnAdicionarImagem_Click(object sender, EventArgs e)
         {
+            verificaTelaImagem = 1;
             pctImagemAtividade.SizeMode = PictureBoxSizeMode.StretchImage;
 
             pctImagemAtividade.Image = retornarImagem();
@@ -1616,6 +1642,7 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+
 
     }
 
