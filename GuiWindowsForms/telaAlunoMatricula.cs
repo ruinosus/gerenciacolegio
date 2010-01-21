@@ -253,23 +253,6 @@ namespace GuiWindowsForms
         #region LOAD
         private void telaAlunoMatricula_Load(object sender, EventArgs e)
         {
-            //uMenuImagem1.ocultarBotaoAdicionarImagem();
-
-            //descontoControlador = DescontoProcesso.Instance;
-            //carregaComboSerie();
-
-            //cmbSerie.DataSource = listaSalaAuxiliar;
-
-            //Desconto d = new Desconto();
-            //d.Status = (int)Status.Ativo;
-
-            //listaDescontoAux = new List<Desconto>();
-
-            //listaDescontoAux = descontoControlador.Consultar(d, TipoPesquisa.E);
-            //cmbDesconto.DataSource = listaDescontoAux;
-            //cmbDesconto.DisplayMember = "Descricao";
-
-            //carregarValorTotal();
             
         }
         #endregion
