@@ -426,13 +426,16 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        #region LOAD
         private void telaAlunoPrincipal_Load(object sender, EventArgs e)
         {
             CarregarGrid();
         }
-       
+        #endregion
+
         #region EVENTOS DO GRID
 
+        #region LOAD DO GRID
         private void CarregarGrid()
         {
             dgvAluno.AutoGenerateColumns = false;
@@ -460,7 +463,9 @@ namespace GuiWindowsForms
                     break;
             }
         }
+        #endregion
 
+        #region EVENTO DOUBLE CLICK
         private void dgvAluno_DoubleClick(object sender, EventArgs e)
         {
             //Atribui "2" a variavel de Program para identificar
@@ -486,19 +491,19 @@ namespace GuiWindowsForms
             }
 
         }
+        #endregion
 
+        #region EVENTO CELL CLICK
         private void dgvAluno_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-
+        {         
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
 
             if (linhaSelecionadaGrid != -1)
                 dgvAluno.Rows[linhaSelecionadaGrid].Selected = true;
+        }
+        #endregion
 
-
-        }        
-
+        #region EVENTO CELL ENTER
         private void dgvAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             //Atribui "2" a variavel de Program para identificar
@@ -513,6 +518,7 @@ namespace GuiWindowsForms
                 dgvAluno.Rows[linhaSelecionadaGrid].Selected = true;
 
         }
+        #endregion
 
         #endregion
 
@@ -537,7 +543,8 @@ namespace GuiWindowsForms
             }
         } 
         #endregion
-        
+
+        #region MÉTODO ACTIVATED
         private void telaAlunoPrincipal_Activated(object sender, EventArgs e)
         {
             if (Program.usuarioLogin != null)
@@ -546,7 +553,9 @@ namespace GuiWindowsForms
             }
             CarregarGrid();
         }
+        #endregion
 
+        #region BUTTON DESCONECTAR
         private void ucDesconectarLogin1_EventoDesconectar()
         {
             Program.ultimaTela = 9;
@@ -554,6 +563,8 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
+
     }
 
 
