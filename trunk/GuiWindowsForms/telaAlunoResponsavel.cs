@@ -714,7 +714,9 @@ namespace GuiWindowsForms
                         }
                     case StatusBanco.Alteracao:
                         {
+                            int id = memoria.Responsavel.ID;
                             memoria.Responsavel = responsavel;
+                            memoria.Responsavel.ID = id;
                             responsavelControlador.Alterar(responsavel);
                             responsavelControlador.Confirmar();
                         
