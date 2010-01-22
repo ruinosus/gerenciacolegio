@@ -49,13 +49,17 @@
             this.btnCadastrarAluno = new System.Windows.Forms.Button();
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnAluno = new System.Windows.Forms.Button();
+            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
             this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBusca
             // 
+            this.txtBusca.Enabled = false;
             this.txtBusca.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusca.ForeColor = System.Drawing.Color.MidnightBlue;
             this.txtBusca.Location = new System.Drawing.Point(285, 248);
@@ -141,12 +145,14 @@
             this.Serie,
             this.FoneAluno,
             this.EmailAluno});
+            this.dgvAluno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvAluno.Location = new System.Drawing.Point(122, 341);
             this.dgvAluno.MultiSelect = false;
             this.dgvAluno.Name = "dgvAluno";
             this.dgvAluno.ReadOnly = true;
             this.dgvAluno.Size = new System.Drawing.Size(750, 266);
             this.dgvAluno.TabIndex = 17;
+            this.dgvAluno.Visible = false;
             this.dgvAluno.DoubleClick += new System.EventHandler(this.dgvAluno_DoubleClick);
             this.dgvAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellClick);
             this.dgvAluno.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellEnter);
@@ -222,6 +228,7 @@
             // 
             this.btnFinanceiro.BackColor = System.Drawing.Color.Transparent;
             this.btnFinanceiro.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_gnd_120x110;
+            this.btnFinanceiro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinanceiro.Enabled = false;
             this.btnFinanceiro.FlatAppearance.BorderSize = 0;
             this.btnFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -239,6 +246,7 @@
             // 
             this.btnConfiguracoes.BackColor = System.Drawing.Color.Transparent;
             this.btnConfiguracoes.BackgroundImage = global::GuiWindowsForms.Properties.Resources.configuracoes_137x101;
+            this.btnConfiguracoes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfiguracoes.FlatAppearance.BorderSize = 0;
             this.btnConfiguracoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfiguracoes.Location = new System.Drawing.Point(526, 12);
@@ -256,6 +264,8 @@
             this.btnPesquisar.AutoEllipsis = true;
             this.btnPesquisar.BackColor = System.Drawing.Color.Transparent;
             this.btnPesquisar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.Search_76x76;
+            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisar.Enabled = false;
             this.btnPesquisar.FlatAppearance.BorderSize = 0;
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Location = new System.Drawing.Point(737, 225);
@@ -284,6 +294,7 @@
             // 
             this.btnFuncionario.BackColor = System.Drawing.Color.Transparent;
             this.btnFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_prof_142x113;
+            this.btnFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFuncionario.FlatAppearance.BorderSize = 0;
             this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuncionario.Location = new System.Drawing.Point(365, 9);
@@ -299,6 +310,7 @@
             // 
             this.btnAluno.BackColor = System.Drawing.Color.Transparent;
             this.btnAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_aluno_142x113;
+            this.btnAluno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAluno.FlatAppearance.BorderSize = 0;
             this.btnAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAluno.Location = new System.Drawing.Point(240, 9);
@@ -310,9 +322,27 @@
             this.btnAluno.Leave += new System.EventHandler(this.btnAluno_Leave);
             this.btnAluno.Enter += new System.EventHandler(this.btnAluno_Enter);
             // 
+            // dgvFuncionario
+            // 
+            this.dgvFuncionario.AllowUserToAddRows = false;
+            this.dgvFuncionario.AllowUserToDeleteRows = false;
+            this.dgvFuncionario.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2});
+            this.dgvFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvFuncionario.Location = new System.Drawing.Point(122, 341);
+            this.dgvFuncionario.MultiSelect = false;
+            this.dgvFuncionario.Name = "dgvFuncionario";
+            this.dgvFuncionario.ReadOnly = true;
+            this.dgvFuncionario.Size = new System.Drawing.Size(750, 266);
+            this.dgvFuncionario.TabIndex = 72;
+            this.dgvFuncionario.Visible = false;
+            // 
             // ucDesconectarLogin1
             // 
             this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucDesconectarLogin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ucDesconectarLogin1.Location = new System.Drawing.Point(768, 0);
             this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
@@ -320,12 +350,21 @@
             this.ucDesconectarLogin1.TabIndex = 6;
             this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome do Funcionário";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
             // telaAlunoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(990, 680);
+            this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.ucDesconectarLogin1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvAluno);
@@ -355,6 +394,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoPrincipal_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,5 +423,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Serie;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoneAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAluno;
+        private System.Windows.Forms.DataGridView dgvFuncionario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

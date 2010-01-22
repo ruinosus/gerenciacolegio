@@ -105,6 +105,7 @@
             this.gpbDadosProfissionais.Controls.Add(this.txtTituloEleitor);
             this.gpbDadosProfissionais.Controls.Add(this.lblTituloEleitor);
             this.gpbDadosProfissionais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbDadosProfissionais.ForeColor = System.Drawing.SystemColors.WindowText;
             this.gpbDadosProfissionais.Location = new System.Drawing.Point(39, 191);
             this.gpbDadosProfissionais.Name = "gpbDadosProfissionais";
             this.gpbDadosProfissionais.Size = new System.Drawing.Size(820, 437);
@@ -114,12 +115,12 @@
             // 
             // txtCurso
             // 
-            this.txtCurso.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtCurso.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCurso.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtCurso.Location = new System.Drawing.Point(172, 299);
             this.txtCurso.MaxLength = 30;
             this.txtCurso.Name = "txtCurso";
-            this.txtCurso.Size = new System.Drawing.Size(227, 23);
+            this.txtCurso.Size = new System.Drawing.Size(227, 20);
             this.txtCurso.TabIndex = 96;
             this.txtCurso.TextChanged += new System.EventHandler(this.txtCurso_TextChanged);
             // 
@@ -134,12 +135,12 @@
             // 
             // txtInstituicao
             // 
-            this.txtInstituicao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtInstituicao.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtInstituicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtInstituicao.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtInstituicao.Location = new System.Drawing.Point(483, 352);
             this.txtInstituicao.MaxLength = 30;
             this.txtInstituicao.Name = "txtInstituicao";
-            this.txtInstituicao.Size = new System.Drawing.Size(225, 23);
+            this.txtInstituicao.Size = new System.Drawing.Size(225, 20);
             this.txtInstituicao.TabIndex = 91;
             this.txtInstituicao.TextChanged += new System.EventHandler(this.txtInstituicao_TextChanged);
             // 
@@ -148,11 +149,11 @@
             this.dtpDataFormacao.CalendarForeColor = System.Drawing.Color.MidnightBlue;
             this.dtpDataFormacao.CalendarTitleForeColor = System.Drawing.Color.MidnightBlue;
             this.dtpDataFormacao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpDataFormacao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.dtpDataFormacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.dtpDataFormacao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataFormacao.Location = new System.Drawing.Point(172, 352);
             this.dtpDataFormacao.Name = "dtpDataFormacao";
-            this.dtpDataFormacao.Size = new System.Drawing.Size(110, 23);
+            this.dtpDataFormacao.Size = new System.Drawing.Size(91, 20);
             this.dtpDataFormacao.TabIndex = 90;
             // 
             // lblData
@@ -205,11 +206,11 @@
             // 
             // txtCBO
             // 
-            this.txtCBO.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtCBO.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtCBO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCBO.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtCBO.Location = new System.Drawing.Point(170, 46);
             this.txtCBO.Name = "txtCBO";
-            this.txtCBO.Size = new System.Drawing.Size(169, 23);
+            this.txtCBO.Size = new System.Drawing.Size(169, 20);
             this.txtCBO.TabIndex = 85;
             this.txtCBO.TextChanged += new System.EventHandler(this.txtCBO_TextChanged);
             // 
@@ -227,11 +228,11 @@
             this.dtpDataAdmissao.CalendarForeColor = System.Drawing.Color.MidnightBlue;
             this.dtpDataAdmissao.CalendarTitleForeColor = System.Drawing.Color.MidnightBlue;
             this.dtpDataAdmissao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpDataAdmissao.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.dtpDataAdmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.dtpDataAdmissao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataAdmissao.Location = new System.Drawing.Point(172, 398);
             this.dtpDataAdmissao.Name = "dtpDataAdmissao";
-            this.dtpDataAdmissao.Size = new System.Drawing.Size(110, 23);
+            this.dtpDataAdmissao.Size = new System.Drawing.Size(91, 20);
             this.dtpDataAdmissao.TabIndex = 83;
             // 
             // lblDataAdmissao
@@ -340,11 +341,11 @@
             // 
             // txtSerie
             // 
-            this.txtSerie.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtSerie.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtSerie.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtSerie.Location = new System.Drawing.Point(683, 147);
             this.txtSerie.Name = "txtSerie";
-            this.txtSerie.Size = new System.Drawing.Size(133, 23);
+            this.txtSerie.Size = new System.Drawing.Size(133, 20);
             this.txtSerie.TabIndex = 74;
             this.txtSerie.TextChanged += new System.EventHandler(this.txtSerie_TextChanged);
             // 
@@ -359,11 +360,11 @@
             // 
             // txtCtps
             // 
-            this.txtCtps.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtCtps.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtCtps.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCtps.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtCtps.Location = new System.Drawing.Point(483, 147);
             this.txtCtps.Name = "txtCtps";
-            this.txtCtps.Size = new System.Drawing.Size(133, 23);
+            this.txtCtps.Size = new System.Drawing.Size(133, 20);
             this.txtCtps.TabIndex = 72;
             this.txtCtps.TextChanged += new System.EventHandler(this.txtCtps_TextChanged);
             // 
@@ -378,12 +379,12 @@
             // 
             // txtPis
             // 
-            this.txtPis.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtPis.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtPis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtPis.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtPis.Location = new System.Drawing.Point(173, 147);
             this.txtPis.MaxLength = 40;
             this.txtPis.Name = "txtPis";
-            this.txtPis.Size = new System.Drawing.Size(227, 23);
+            this.txtPis.Size = new System.Drawing.Size(227, 20);
             this.txtPis.TabIndex = 70;
             this.txtPis.TextChanged += new System.EventHandler(this.txtPis_TextChanged);
             // 
@@ -398,11 +399,11 @@
             // 
             // txtZona
             // 
-            this.txtZona.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtZona.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtZona.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtZona.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtZona.Location = new System.Drawing.Point(415, 96);
             this.txtZona.Name = "txtZona";
-            this.txtZona.Size = new System.Drawing.Size(124, 23);
+            this.txtZona.Size = new System.Drawing.Size(124, 20);
             this.txtZona.TabIndex = 68;
             this.txtZona.TextChanged += new System.EventHandler(this.txtZona_TextChanged);
             // 
@@ -417,11 +418,11 @@
             // 
             // txtTituloEleitor
             // 
-            this.txtTituloEleitor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtTituloEleitor.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtTituloEleitor.Location = new System.Drawing.Point(172, 96);
+            this.txtTituloEleitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtTituloEleitor.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtTituloEleitor.Location = new System.Drawing.Point(170, 96);
             this.txtTituloEleitor.Name = "txtTituloEleitor";
-            this.txtTituloEleitor.Size = new System.Drawing.Size(158, 23);
+            this.txtTituloEleitor.Size = new System.Drawing.Size(158, 20);
             this.txtTituloEleitor.TabIndex = 66;
             this.txtTituloEleitor.TextChanged += new System.EventHandler(this.txtTituloEleitor_TextChanged);
             // 
@@ -438,6 +439,7 @@
             // 
             this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
             this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50;
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Location = new System.Drawing.Point(896, 609);
@@ -455,6 +457,7 @@
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuInferior1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
@@ -473,6 +476,7 @@
             // ucMenuLateralFunc1
             // 
             this.ucMenuLateralFunc1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuLateralFunc1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucMenuLateralFunc1.Location = new System.Drawing.Point(853, 194);
             this.ucMenuLateralFunc1.Name = "ucMenuLateralFunc1";
             this.ucMenuLateralFunc1.Size = new System.Drawing.Size(150, 378);
@@ -493,6 +497,7 @@
             // ucDesconectarLogin1
             // 
             this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
             this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
             this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);

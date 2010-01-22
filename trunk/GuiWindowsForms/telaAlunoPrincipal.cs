@@ -384,6 +384,8 @@ namespace GuiWindowsForms
         #region BUTTON ALUNO
         private void btnAluno_Click(object sender, EventArgs e)
         {
+            escondeGrid();
+            exibeGrid("aluno");
             tela = TelaSelecionada.Aluno;
             btnCadastrarFuncionario.Visible = false;
             btnCadastrarAluno.Visible = true;
@@ -398,9 +400,12 @@ namespace GuiWindowsForms
         #region BUTTON FUNCIONARIO
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
+            escondeGrid();
+            exibeGrid("funcionario");
             tela = TelaSelecionada.Funcionario;
             btnCadastrarAluno.Visible = false;
             btnCadastrarFuncionario.Visible = true;
+
         }
         #endregion
 
@@ -547,6 +552,7 @@ namespace GuiWindowsForms
         #region MÉTODO ACTIVATED
         private void telaAlunoPrincipal_Activated(object sender, EventArgs e)
         {
+            escondeGrid();
             if (Program.usuarioLogin != null)
             {
                 ucDesconectarLogin1.alterarNomeUsuario(true, Program.usuarioLogin);
@@ -562,6 +568,47 @@ namespace GuiWindowsForms
             this.Close();
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
+        }
+        #endregion
+
+        #region METODO EXIBE GRID
+        /// <summary>
+        /// Método para exibir o Grid de acordo com
+        /// o botao passando uma string com o nome 
+        /// do botao
+        /// </summary>
+        /// <param name="tipoBotao"></param>
+        public void exibeGrid(string nomebotao) 
+        {
+            if (nomebotao == "aluno")
+            {
+                btnPesquisar.Enabled = true;
+                txtBusca.Enabled = true;
+                dgvAluno.Visible = true;
+            }
+
+            if (nomebotao == "funcionario")
+            {
+                btnPesquisar.Enabled = true;
+                txtBusca.Enabled = true;
+                dgvFuncionario.Visible = true;
+            }
+            
+        }
+        #endregion
+
+        #region METODO ESCONDE GRID
+        
+        /// <summary>
+        /// Esconde o Grid e desabilita
+        /// o botao Pesquisar e a barra de busca
+        /// </summary>
+        public void escondeGrid()
+        {
+            btnPesquisar.Enabled = false;
+            txtBusca.Enabled = false;
+            dgvAluno.Visible = false;
+            dgvFuncionario.Visible = false;
         }
         #endregion
 
