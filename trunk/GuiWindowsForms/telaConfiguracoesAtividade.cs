@@ -833,5 +833,33 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region Botão Abrir Tela Atividade Turma
+
+        private void btnAbrirAtividadeTurma_MouseEnter(object sender, EventArgs e)
+        {
+            label1.Text = "Cadastrar turma das atividades";
+            label1.Visible = true;
+            this.btnAbrirAtividadeTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_add_atividade_48x48_hover;
+        }
+
+        private void btnAbrirAtividadeTurma_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Text = "";
+            label1.Visible = false;
+            this.btnAbrirAtividadeTurma.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_add_atividade_48x48;
+        }
+
+        private void btnAbrirAtividadeTurma_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 11;
+            telaConfiguracoesAtividadeTurma telaconfAtvTurma = telaConfiguracoesAtividadeTurma.getInstancia();
+            telaconfAtvTurma.Show();
+        }
+
+        #endregion
+
+
+
     }
 }
