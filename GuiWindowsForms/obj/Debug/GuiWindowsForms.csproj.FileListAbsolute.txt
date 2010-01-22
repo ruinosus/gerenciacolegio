@@ -510,3 +510,4 @@ C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividadeTurma.resources
