@@ -30,8 +30,10 @@ namespace GuiWindowsForms
 
         private static bool IsShown = false;
 
+        #region SINGLETON
         /// <summary>
-        /// Padrão Singleton, verifica se a instância já esta em uso. Evita abertura de múltiplas instâncias
+        /// Padrão Singleton, verifica se a instância já esta em uso. 
+        /// Evita abertura de múltiplas instâncias
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
         public static telaAlunoResponsavelBusca getInstancia()
@@ -42,7 +44,9 @@ namespace GuiWindowsForms
             }
             return telaalunoresponsavelbusca;
         }
+        #endregion
 
+        #region CONSTRUTOR
         /// <summary>
         /// Construtor da tela
         /// </summary>
@@ -51,7 +55,9 @@ namespace GuiWindowsForms
             InitializeComponent();
 
         }
+        #endregion
 
+        #region CARREGAR GRID
         private void CarregarGrid()
         {
             IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
@@ -62,9 +68,12 @@ namespace GuiWindowsForms
             responsavelAlunoLista = processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
             dgvResponsavelAluno.DataSource = responsavelAlunoLista;
         }
+        #endregion
 
+        #region VERIFICA TELA
         /// <summary>
-        /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
+        /// Método para verificar se a tela já esta sendo exibida ou não, 
+        /// evita que a tela seja descarregada da memória
         /// </summary>
         public new void Show()
         {
@@ -76,11 +85,13 @@ namespace GuiWindowsForms
                 IsShown = true;
             }
 
-            //return SelecionaForm(aux);
         }
+        #endregion
 
+        #region ESCONDE A TELA
         /// <summary>
-        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
+        /// Evento para o fechamento da tela, não fecha de verdade, 
+        /// só a esconde, garantindo a usabilidade da tela
         /// pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
@@ -101,75 +112,16 @@ namespace GuiWindowsForms
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
-
-        #region USER CONTROLS - Controle Inferior - Botões de Navegação
-
-        private void ucAluno1_EventoVoltar()
-        {
-            this.Hide();
-
-            if (Program.ultimaTela == 1)
-            {
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-            else
-            {
-                Program.ultimaTela = 6;
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-        }
-
         #endregion
 
-        private void telaAlunoResponsavelBusca_Load(object sender, EventArgs e)
-        {
-            uMenuImagem1.ocultarBotaoAdicionarImagem();
-        }
+        #region USER CONTROLS - Menu Inferior
 
-        private void dgvResponsavelAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-
-            if (linhaSelecionadaGrid != -1)
-            {
-                dgvResponsavelAluno.Rows[linhaSelecionadaGrid].Selected = true;
-
-
-                cmbGrauParentesco.Text = responsavelAlunoLista[linhaSelecionadaGrid].GrauParentesco;
-                txtNome.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Nome;
-                mskCpf.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Cpf;
-                ckbResideCom.Checked = Convert.ToBoolean(responsavelAlunoLista[linhaSelecionadaGrid].ResideCom.Value);
-                txtRestricoes.Text = responsavelAlunoLista[linhaSelecionadaGrid].Restricoes;
-                responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
-                ManipularCampos(true);
-            }
-
-        }
-
-        private void dgvResponsavelAluno_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-
-            if (linhaSelecionadaGrid != -1)
-            {
-                dgvResponsavelAluno.Rows[linhaSelecionadaGrid].Selected = true;
-
-
-                cmbGrauParentesco.Text = responsavelAlunoLista[linhaSelecionadaGrid].GrauParentesco;
-                txtNome.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Nome;
-                mskCpf.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Cpf;
-                ckbResideCom.Checked = Convert.ToBoolean(responsavelAlunoLista[linhaSelecionadaGrid].ResideCom.Value);
-                txtRestricoes.Text = responsavelAlunoLista[linhaSelecionadaGrid].Restricoes;
-                responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
-                ManipularCampos(true);
-            }
-        }
-
+        #region EVENTO CADASTRAR
         private void ucMenuInferior1_EventoCadastrar()
         {
             try
             {
-               
+
 
                 if (memoria.Aluno != null)
                 {
@@ -229,7 +181,7 @@ namespace GuiWindowsForms
                     responsavelAluno.AlunoID = memoria.Aluno.ID;
                     responsavelAluno.ResponsavelID = responsavel.ID;
 
-                   
+
 
                     responsavelAluno.GrauParentesco = cmbGrauParentesco.Text;
                     if (!ckbResideCom.Checked)
@@ -260,10 +212,10 @@ namespace GuiWindowsForms
                                 processo.Confirmar();
                                 break;
                             }
-                       
+
                     }
-                   
-                
+
+
 
                     if (memoria.Status == StatusBanco.Alteracao)
                     {
@@ -294,7 +246,149 @@ namespace GuiWindowsForms
 
             }
         }
+        #endregion
 
+        #region EVENTO VOLTAR
+        private void ucAluno1_EventoVoltar()
+        {
+            this.Hide();
+
+            if (Program.ultimaTela == 1)
+            {
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+            else
+            {
+                Program.ultimaTela = 6;
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+        }
+        #endregion
+
+        #region EVENTO INCLUIR
+        private void ucMenuInferior1_EventoIncluir()
+        {
+            ManipularCampos(false);
+            dgvResponsavelAluno.Enabled = false;
+            txtNome.Enabled = true;
+            mskCpf.Enabled = true;
+            LimparCampos();
+            statusBanco = StatusBanco.Inclusao;
+        }
+        #endregion
+
+        #region EVENTO ALTERAR
+        private void ucMenuInferior1_EventoAlterar()
+        {
+
+            ManipularCampos(false);
+
+            //Deixa o Grid, campo Nome, campo Cpf
+            // e o botao Pesquisar desabilitados
+            dgvResponsavelAluno.Enabled = false;
+
+            btnPesquisar.Enabled = false;
+
+
+            statusBanco = StatusBanco.Alteracao;
+        }
+        #endregion
+
+        #region EVENTO DELETAR
+        private void ucMenuInferior1_EventoDeletar()
+        {
+            try
+            {
+                if (MessageBox.Show("Tem certeza que deseja excluir o responsável ?", "Colégio Conhecer", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+                    IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
+                    processo.Excluir(responsavelAlunoLista[linhaSelecionadaGrid]);
+                    processo.Confirmar();
+                    CarregarGrid();
+                    LimparCampos();
+                }
+                else
+                {
+                    MessageBox.Show("Selecione uma opção na tabela abaixo para exclusão, então pressione excluir.", "Colégio Conhecer");
+                }
+
+            }
+            catch (Exception)
+            {
+
+
+            }
+
+        }
+        #endregion
+
+        #endregion
+
+        #region LOAD
+        private void telaAlunoResponsavelBusca_Load(object sender, EventArgs e)
+        {
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+        }
+        #endregion
+
+        #region EVENTOS GRID
+
+        private void dgvResponsavelAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+
+            if (linhaSelecionadaGrid != -1)
+            {
+                dgvResponsavelAluno.Rows[linhaSelecionadaGrid].Selected = true;
+
+
+                cmbGrauParentesco.Text = responsavelAlunoLista[linhaSelecionadaGrid].GrauParentesco;
+                txtNome.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Nome;
+                mskCpf.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Cpf;
+                ckbResideCom.Checked = Convert.ToBoolean(responsavelAlunoLista[linhaSelecionadaGrid].ResideCom.Value);
+                txtRestricoes.Text = responsavelAlunoLista[linhaSelecionadaGrid].Restricoes;
+                responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
+                ManipularCampos(true);
+            }
+
+        }
+
+
+        private void dgvResponsavelAluno_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+
+            if (linhaSelecionadaGrid != -1)
+            {
+                dgvResponsavelAluno.Rows[linhaSelecionadaGrid].Selected = true;
+
+
+                cmbGrauParentesco.Text = responsavelAlunoLista[linhaSelecionadaGrid].GrauParentesco;
+                txtNome.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Nome;
+                mskCpf.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Cpf;
+                ckbResideCom.Checked = Convert.ToBoolean(responsavelAlunoLista[linhaSelecionadaGrid].ResideCom.Value);
+                txtRestricoes.Text = responsavelAlunoLista[linhaSelecionadaGrid].Restricoes;
+                responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
+                ManipularCampos(true);
+            }
+        }
+
+
+        private void dgvResponsavelAluno_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Memoria memoria = Memoria.Instance;
+            memoria.Responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
+            memoria.Responsavel.ID = responsavelAlunoLista[linhaSelecionadaGrid].ResponsavelID;
+            memoria.Status = StatusBanco.Alteracao;
+            Program.ultimaTela = 8;
+            this.Hide();
+            telaAlunoResponsavel telaRespAux = telaAlunoResponsavel.getInstancia();
+            telaRespAux.Show();
+        }
+
+        #endregion
+
+        #region DESCONECTAR
         private void ucDesconectarLogin1_EventoDesconectar()
         {
             Program.ultimaTela = 9;
@@ -302,7 +396,9 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
 
+        #region EVENTOS DOS CAMPOS
         private void mskCpf_Leave(object sender, EventArgs e)
         {
             mskCpf.BackColor = System.Drawing.Color.White;
@@ -341,12 +437,6 @@ namespace GuiWindowsForms
             }
         }
 
-        private void BloquearCampos()
-        {
-            txtNome.ReadOnly = bloquearCampos;
-            mskCpf.ReadOnly = bloquearCampos;
-        }
-
         private void txtNome_Enter(object sender, EventArgs e)
         {
             txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -367,6 +457,19 @@ namespace GuiWindowsForms
             txtRestricoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
         }
 
+        #endregion
+
+        #region METODO BLOQUEAR CAMPOS
+        private void BloquearCampos()
+        {
+            txtNome.Enabled = false;
+            mskCpf.Enabled = false;
+            //txtNome.ReadOnly = bloquearCampos;
+            //mskCpf.ReadOnly = bloquearCampos;
+        }
+        #endregion 
+
+        #region BUTTON PESQUISAR
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             txtNome.Clear();
@@ -375,36 +478,12 @@ namespace GuiWindowsForms
             bloquearCampos = false;
             BloquearCampos();
         }
+        #endregion
 
-        private void ucMenuInferior1_EventoDeletar()
-        {
-            try
-            {
-                if(MessageBox.Show("Tem certeza que deseja excluir o responsável ?", "Colégio Conhecer", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
-                {
-                    IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
-                    processo.Excluir(responsavelAlunoLista[linhaSelecionadaGrid]);
-                    processo.Confirmar();
-                    CarregarGrid();
-                    LimparCampos();
-                }
-                else
-                {
-                    MessageBox.Show("Selecione uma opção na tabela abaixo para exclusão, então pressione excluir.", "Colégio Conhecer");
-                }
-
-            }
-            catch (Exception)
-            {
-
-
-            }
-
-        }
-
+        #region ACTIVATED
         private void telaAlunoResponsavelBusca_Activated(object sender, EventArgs e)
         {
-
+            BloquearCampos();
             LimparCampos();
             if (memoria.Aluno != null)
             {
@@ -435,7 +514,12 @@ namespace GuiWindowsForms
                 CarregarGrid();
             }
         }
+        #endregion
 
+        #region METODO LIMPAR TELA
+        /// <summary>
+        /// Limpa os campos da tela ResponsavelBusca
+        /// </summary>
         public void LimparCampos()
         {
             txtNome.Clear();
@@ -444,19 +528,9 @@ namespace GuiWindowsForms
             ckbResideCom.Checked = false;
 
         }
+        #endregion
 
-        private void dgvResponsavelAluno_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Memoria memoria = Memoria.Instance;
-            memoria.Responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
-            memoria.Responsavel.ID = responsavelAlunoLista[linhaSelecionadaGrid].ResponsavelID;
-            memoria.Status = StatusBanco.Alteracao;
-            Program.ultimaTela = 8;
-            this.Hide();
-            telaAlunoResponsavel telaRespAux = telaAlunoResponsavel.getInstancia();
-            telaRespAux.Show();
-        }
-
+        #region METODO MANIPULAR CAMPOS
         private void ManipularCampos(bool bloquear)
         {
             if (bloquear)
@@ -464,6 +538,7 @@ namespace GuiWindowsForms
                 cmbGrauParentesco.Enabled = false;
                 txtRestricoes.ReadOnly = true;
                 txtNome.ReadOnly = true;
+                txtRestricoes.Enabled = false;
                 mskCpf.ReadOnly = true;
                 ckbResideCom.Enabled = false;
                 btnPesquisar.Enabled = false;
@@ -472,6 +547,7 @@ namespace GuiWindowsForms
             {
                 cmbGrauParentesco.Enabled = true;
                 txtRestricoes.ReadOnly = false;
+                txtRestricoes.Enabled = true;
                 txtNome.ReadOnly = false;
                 mskCpf.ReadOnly = false;
                 ckbResideCom.Enabled = true;
@@ -480,34 +556,9 @@ namespace GuiWindowsForms
             }
 
         }
-
-        #region EVENTO INCLUIR
-        private void ucMenuInferior1_EventoIncluir()
-        {
-            ManipularCampos(false);
-            dgvResponsavelAluno.Enabled = false;
-            LimparCampos();
-            statusBanco = StatusBanco.Inclusao;
-        }
         #endregion
 
-        #region EVENTO ALTERAR
-        private void ucMenuInferior1_EventoAlterar()
-        {
-           
-            ManipularCampos(false);
-
-            //Deixa o Grid, campo Nome, campo Cpf
-            // e o botao Pesquisar desabilitados
-            dgvResponsavelAluno.Enabled = false;
-            txtNome.Enabled = false;
-            mskCpf.Enabled = false;
-            btnPesquisar.Enabled = false;
-
-           
-            statusBanco = StatusBanco.Alteracao;
-        }
-        #endregion
+     
 
     }
 }

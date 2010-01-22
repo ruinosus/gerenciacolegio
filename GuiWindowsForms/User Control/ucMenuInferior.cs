@@ -130,6 +130,8 @@ namespace GuiWindowsForms
         {
             if (EventoIncluir != null)
                 EventoIncluir();
+            btnExcluir.Enabled = false;
+            btnVoltar.Enabled = false;
         }
 
         public void exibirBotaoIncluir()

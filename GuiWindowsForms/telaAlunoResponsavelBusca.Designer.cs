@@ -77,6 +77,7 @@
             this.GrauParentesco,
             this.Column4,
             this.Column2});
+            this.dgvResponsavelAluno.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,6 +87,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvResponsavelAluno.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvResponsavelAluno.Location = new System.Drawing.Point(141, 362);
+            this.dgvResponsavelAluno.MultiSelect = false;
             this.dgvResponsavelAluno.Name = "dgvResponsavelAluno";
             this.dgvResponsavelAluno.ReadOnly = true;
             this.dgvResponsavelAluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -131,6 +133,7 @@
             // 
             // cmbGrauParentesco
             // 
+            this.cmbGrauParentesco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbGrauParentesco.DisplayMember = "se";
             this.cmbGrauParentesco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGrauParentesco.FormattingEnabled = true;
@@ -163,6 +166,7 @@
             // 
             this.ckbResideCom.AutoSize = true;
             this.ckbResideCom.BackColor = System.Drawing.Color.Transparent;
+            this.ckbResideCom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbResideCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbResideCom.Location = new System.Drawing.Point(611, 264);
             this.ckbResideCom.Name = "ckbResideCom";
@@ -264,6 +268,7 @@
             // btnPesquisar
             // 
             this.btnPesquisar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.Search_32x32_final;
+            this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPesquisar.FlatAppearance.BorderSize = 0;
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Location = new System.Drawing.Point(864, 214);
@@ -276,6 +281,7 @@
             // ucDesconectarLogin1
             // 
             this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
             this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
             this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
@@ -285,6 +291,7 @@
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuInferior1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(598, 43);
