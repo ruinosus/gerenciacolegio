@@ -90,7 +90,7 @@ namespace GuiWindowsForms.User_Control
                 lblSerie_menu.Visible = true;
                 lblSerie_menu.ForeColor = System.Drawing.Color.Yellow;
             }
-            else if (formAux3.Equals(telaConfiguracoesAtividades.getInstancia()))
+            else if (formAux3.Equals(telaConfiguracoesAtividade.getInstancia()))
             {
                 this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75;
                 this.btnAtividade.Enabled = false;

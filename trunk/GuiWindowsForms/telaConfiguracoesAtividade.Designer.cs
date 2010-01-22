@@ -28,29 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesAtividade));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gpbSerie = new System.Windows.Forms.GroupBox();
+            this.btnAdicionarImagem = new System.Windows.Forms.Button();
+            this.pctImagemAtividade = new System.Windows.Forms.PictureBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.ucMenuConfiguracoesEsquerda1 = new GuiWindowsForms.User_Control.ucMenuConfiguracoesEsquerda();
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.btnAdicionarImagem = new System.Windows.Forms.Button();
-            this.pctImagemAtividade = new System.Windows.Forms.PictureBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpbSerie.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagemAtividade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -83,9 +87,45 @@
             this.gpbSerie.TabStop = false;
             this.gpbSerie.Text = "CADASTRAR ATIVIDADE";
             // 
+            // btnAdicionarImagem
+            // 
+            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionarImagem.Enabled = false;
+            this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
+            this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarImagem.Location = new System.Drawing.Point(584, 110);
+            this.btnAdicionarImagem.Name = "btnAdicionarImagem";
+            this.btnAdicionarImagem.Size = new System.Drawing.Size(32, 32);
+            this.btnAdicionarImagem.TabIndex = 145;
+            this.btnAdicionarImagem.UseVisualStyleBackColor = true;
+            this.btnAdicionarImagem.MouseLeave += new System.EventHandler(this.btnAdicionarImagem_MouseLeave);
+            this.btnAdicionarImagem.Click += new System.EventHandler(this.btnAdicionarImagem_Click);
+            this.btnAdicionarImagem.MouseEnter += new System.EventHandler(this.btnAdicionarImagem_MouseEnter);
+            // 
+            // pctImagemAtividade
+            // 
+            this.pctImagemAtividade.Location = new System.Drawing.Point(538, 19);
+            this.pctImagemAtividade.Name = "pctImagemAtividade";
+            this.pctImagemAtividade.Size = new System.Drawing.Size(126, 80);
+            this.pctImagemAtividade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctImagemAtividade.TabIndex = 146;
+            this.pctImagemAtividade.TabStop = false;
+            // 
+            // txtNome
+            // 
+            this.txtNome.Enabled = false;
+            this.txtNome.Location = new System.Drawing.Point(99, 69);
+            this.txtNome.MaxLength = 30;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(193, 20);
+            this.txtNome.TabIndex = 143;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
+            // 
             // btnAlterar
             // 
             this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
+            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAlterar.FlatAppearance.BorderSize = 0;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Location = new System.Drawing.Point(520, 172);
@@ -93,6 +133,19 @@
             this.btnAlterar.Size = new System.Drawing.Size(32, 32);
             this.btnAlterar.TabIndex = 0;
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.MouseLeave += new System.EventHandler(this.btnAlterar_MouseLeave);
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnAlterar.MouseEnter += new System.EventHandler(this.btnAlterar_MouseEnter);
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Enabled = false;
+            this.txtDescricao.Location = new System.Drawing.Point(99, 134);
+            this.txtDescricao.MaxLength = 100;
+            this.txtDescricao.Multiline = true;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(330, 38);
+            this.txtDescricao.TabIndex = 144;
             // 
             // btnAdicionar
             // 
@@ -105,6 +158,9 @@
             this.btnAdicionar.Size = new System.Drawing.Size(32, 32);
             this.btnAdicionar.TabIndex = 70;
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.MouseLeave += new System.EventHandler(this.btnAdicionarAtividade_MouseLeave);
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            this.btnAdicionar.MouseEnter += new System.EventHandler(this.btnAdicionarAtividade_MouseEnter);
             // 
             // btnExcluir
             // 
@@ -117,6 +173,9 @@
             this.btnExcluir.Size = new System.Drawing.Size(32, 11);
             this.btnExcluir.TabIndex = 69;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.MouseLeave += new System.EventHandler(this.btnExcluirAtividade_MouseLeave);
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnExcluir.MouseEnter += new System.EventHandler(this.btnExcluirAtividade_MouseEnter);
             // 
             // lblDescricao
             // 
@@ -151,6 +210,39 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(640, 285);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+            this.dataGridView1.MouseLeave += new System.EventHandler(this.dataGridView1_MouseLeave);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MaxInputLength = 50;
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 400;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MaxInputLength = 30;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 170;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
             // 
             // ucDesconectarLogin1
             // 
@@ -159,6 +251,7 @@
             this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
             this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
             this.ucDesconectarLogin1.TabIndex = 141;
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
             // ucMenuConfiguracoesEsquerda1
             // 
@@ -183,65 +276,8 @@
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(760, 43);
             this.ucMenuInferior1.TabIndex = 137;
-            // 
-            // btnAdicionarImagem
-            // 
-            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
-            this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarImagem.Enabled = false;
-            this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
-            this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarImagem.Location = new System.Drawing.Point(584, 110);
-            this.btnAdicionarImagem.Name = "btnAdicionarImagem";
-            this.btnAdicionarImagem.Size = new System.Drawing.Size(32, 32);
-            this.btnAdicionarImagem.TabIndex = 145;
-            this.btnAdicionarImagem.UseVisualStyleBackColor = true;
-            // 
-            // pctImagemAtividade
-            // 
-            this.pctImagemAtividade.Location = new System.Drawing.Point(538, 19);
-            this.pctImagemAtividade.Name = "pctImagemAtividade";
-            this.pctImagemAtividade.Size = new System.Drawing.Size(126, 80);
-            this.pctImagemAtividade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctImagemAtividade.TabIndex = 146;
-            this.pctImagemAtividade.TabStop = false;
-            // 
-            // txtNome
-            // 
-            this.txtNome.Enabled = false;
-            this.txtNome.Location = new System.Drawing.Point(99, 69);
-            this.txtNome.MaxLength = 30;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(193, 20);
-            this.txtNome.TabIndex = 143;
-            // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Enabled = false;
-            this.txtDescricao.Location = new System.Drawing.Point(99, 134);
-            this.txtDescricao.MaxLength = 100;
-            this.txtDescricao.Multiline = true;
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(330, 38);
-            this.txtDescricao.TabIndex = 144;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.MaxInputLength = 50;
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 400;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.MaxInputLength = 30;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 170;
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
+            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
             // 
             // telaConfiguracoesAtividade
             // 
@@ -262,11 +298,13 @@
             this.Name = "telaConfiguracoesAtividade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
+            this.Activated += new System.EventHandler(this.telaConfiguracoesAtividade_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gpbSerie.ResumeLayout(false);
             this.gpbSerie.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagemAtividade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,5 +329,7 @@
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
     }
 }

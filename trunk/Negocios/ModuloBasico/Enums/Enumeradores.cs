@@ -37,4 +37,15 @@ namespace Negocios.ModuloBasico.Enums
         Navegacao
     }
 
+    public enum OperacoesDaTela
+    {
+        Incluir = 1,
+        Alterar = 2,
+        Excluir = 3,
+        AbrirTela = 4,
+        VoltarTela = 5
+    }
+
+    
+
 }
