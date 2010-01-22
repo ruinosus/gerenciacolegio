@@ -593,7 +593,7 @@ namespace GuiWindowsForms
             cmbEstadoCivil.Text = funcionario.EstadoCivil;
             cmbNacionalidade.Text = funcionario.Nacionalidade;
             cmbUf.Text = funcionario.Uf;
-            dtpNascimento.Value = funcionario.Nascimento.Value;
+            //dtpNascimento.Value = funcionario.Nascimento.Value;
             if (funcionario.Sexo == 0)
             {
                 rdbFem.Select();

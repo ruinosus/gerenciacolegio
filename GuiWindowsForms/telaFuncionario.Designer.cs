@@ -31,15 +31,29 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaFuncionario));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.cmbEmissorUf = new System.Windows.Forms.ComboBox();
+            this.mskFoneResidencia = new System.Windows.Forms.MaskedTextBox();
+            this.lblFoneResidencia = new System.Windows.Forms.Label();
+            this.lblEstadoCivil = new System.Windows.Forms.Label();
+            this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.cmbNacionalidade = new System.Windows.Forms.ComboBox();
+            this.lblNacionalidade = new System.Windows.Forms.Label();
+            this.txtFiliacaoPai = new System.Windows.Forms.TextBox();
+            this.lblPai = new System.Windows.Forms.Label();
+            this.txtFiliacaoMae = new System.Windows.Forms.TextBox();
+            this.lblMae = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
+            this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
+            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
             this.lblEdificio = new System.Windows.Forms.Label();
             this.txtNomeEdificil = new System.Windows.Forms.TextBox();
-            this.mskFoneResidencia = new System.Windows.Forms.MaskedTextBox();
             this.cmbUf = new System.Windows.Forms.ComboBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.lblComplemento = new System.Windows.Forms.Label();
             this.lblUf = new System.Windows.Forms.Label();
-            this.lblFoneResidencia = new System.Windows.Forms.Label();
             this.mskCep = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
@@ -48,20 +62,8 @@
             this.lblBairro = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblUfIdentidade = new System.Windows.Forms.Label();
-            this.lblEmissor = new System.Windows.Forms.Label();
-            this.txtEmissor = new System.Windows.Forms.TextBox();
-            this.lblEstadoCivil = new System.Windows.Forms.Label();
-            this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
-            this.cmbNacionalidade = new System.Windows.Forms.ComboBox();
-            this.lblNacionalidade = new System.Windows.Forms.Label();
-            this.lblFiliacao = new System.Windows.Forms.Label();
-            this.txtFiliacaoPai = new System.Windows.Forms.TextBox();
-            this.lblPai = new System.Windows.Forms.Label();
             this.mskCpf = new System.Windows.Forms.MaskedTextBox();
             this.txtRg = new System.Windows.Forms.TextBox();
-            this.txtFiliacaoMae = new System.Windows.Forms.TextBox();
-            this.lblMae = new System.Windows.Forms.Label();
             this.lblCpf = new System.Windows.Forms.Label();
             this.lblRg = new System.Windows.Forms.Label();
             this.rdbFem = new System.Windows.Forms.RadioButton();
@@ -71,13 +73,9 @@
             this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
             this.lblNascimento = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
-            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
+            this.mskFoneOpcional = new System.Windows.Forms.MaskedTextBox();
+            this.lblFone2 = new System.Windows.Forms.Label();
+            this.lblFiliação = new System.Windows.Forms.Label();
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,15 +84,15 @@
             // gpbDadosPessoais
             // 
             this.gpbDadosPessoais.BackColor = System.Drawing.Color.Transparent;
-            this.gpbDadosPessoais.Controls.Add(this.cmbEmissorUf);
+            this.gpbDadosPessoais.Controls.Add(this.lblFiliação);
+            this.gpbDadosPessoais.Controls.Add(this.mskFoneOpcional);
+            this.gpbDadosPessoais.Controls.Add(this.lblFone2);
             this.gpbDadosPessoais.Controls.Add(this.lblEdificio);
             this.gpbDadosPessoais.Controls.Add(this.txtNomeEdificil);
-            this.gpbDadosPessoais.Controls.Add(this.mskFoneResidencia);
             this.gpbDadosPessoais.Controls.Add(this.cmbUf);
             this.gpbDadosPessoais.Controls.Add(this.txtComplemento);
             this.gpbDadosPessoais.Controls.Add(this.lblComplemento);
             this.gpbDadosPessoais.Controls.Add(this.lblUf);
-            this.gpbDadosPessoais.Controls.Add(this.lblFoneResidencia);
             this.gpbDadosPessoais.Controls.Add(this.mskCep);
             this.gpbDadosPessoais.Controls.Add(this.label4);
             this.gpbDadosPessoais.Controls.Add(this.txtCidade);
@@ -103,20 +101,8 @@
             this.gpbDadosPessoais.Controls.Add(this.lblBairro);
             this.gpbDadosPessoais.Controls.Add(this.txtLogradouro);
             this.gpbDadosPessoais.Controls.Add(this.label3);
-            this.gpbDadosPessoais.Controls.Add(this.lblUfIdentidade);
-            this.gpbDadosPessoais.Controls.Add(this.lblEmissor);
-            this.gpbDadosPessoais.Controls.Add(this.txtEmissor);
-            this.gpbDadosPessoais.Controls.Add(this.lblEstadoCivil);
-            this.gpbDadosPessoais.Controls.Add(this.cmbEstadoCivil);
-            this.gpbDadosPessoais.Controls.Add(this.cmbNacionalidade);
-            this.gpbDadosPessoais.Controls.Add(this.lblNacionalidade);
-            this.gpbDadosPessoais.Controls.Add(this.lblFiliacao);
-            this.gpbDadosPessoais.Controls.Add(this.txtFiliacaoPai);
-            this.gpbDadosPessoais.Controls.Add(this.lblPai);
             this.gpbDadosPessoais.Controls.Add(this.mskCpf);
             this.gpbDadosPessoais.Controls.Add(this.txtRg);
-            this.gpbDadosPessoais.Controls.Add(this.txtFiliacaoMae);
-            this.gpbDadosPessoais.Controls.Add(this.lblMae);
             this.gpbDadosPessoais.Controls.Add(this.lblCpf);
             this.gpbDadosPessoais.Controls.Add(this.lblRg);
             this.gpbDadosPessoais.Controls.Add(this.rdbFem);
@@ -126,6 +112,16 @@
             this.gpbDadosPessoais.Controls.Add(this.dtpNascimento);
             this.gpbDadosPessoais.Controls.Add(this.lblNascimento);
             this.gpbDadosPessoais.Controls.Add(this.lblNome);
+            this.gpbDadosPessoais.Controls.Add(this.mskFoneResidencia);
+            this.gpbDadosPessoais.Controls.Add(this.lblFoneResidencia);
+            this.gpbDadosPessoais.Controls.Add(this.lblEstadoCivil);
+            this.gpbDadosPessoais.Controls.Add(this.cmbEstadoCivil);
+            this.gpbDadosPessoais.Controls.Add(this.cmbNacionalidade);
+            this.gpbDadosPessoais.Controls.Add(this.lblNacionalidade);
+            this.gpbDadosPessoais.Controls.Add(this.txtFiliacaoPai);
+            this.gpbDadosPessoais.Controls.Add(this.lblPai);
+            this.gpbDadosPessoais.Controls.Add(this.txtFiliacaoMae);
+            this.gpbDadosPessoais.Controls.Add(this.lblMae);
             this.gpbDadosPessoais.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbDadosPessoais.Location = new System.Drawing.Point(39, 191);
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
@@ -134,244 +130,29 @@
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DADOS DO FUNCIONÁRIO";
             // 
-            // cmbEmissorUf
-            // 
-            this.cmbEmissorUf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbEmissorUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEmissorUf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.cmbEmissorUf.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.cmbEmissorUf.FormattingEnabled = true;
-            this.cmbEmissorUf.Items.AddRange(new object[] {
-            "",
-            "AC",
-            "AL",
-            "AM",
-            "AP",
-            "BA",
-            "CE",
-            "DF",
-            "ES",
-            "GO",
-            "MA",
-            "MG",
-            "MS",
-            "MT",
-            "PA",
-            "PB",
-            "PE",
-            "PI",
-            "PR",
-            "RJ",
-            "RN",
-            "RO",
-            "RR",
-            "RS",
-            "SC",
-            "SE",
-            "SP",
-            "TO "});
-            this.cmbEmissorUf.Location = new System.Drawing.Point(452, 114);
-            this.cmbEmissorUf.MaxLength = 2;
-            this.cmbEmissorUf.Name = "cmbEmissorUf";
-            this.cmbEmissorUf.Size = new System.Drawing.Size(50, 24);
-            this.cmbEmissorUf.TabIndex = 77;
-            // 
-            // lblEdificio
-            // 
-            this.lblEdificio.AutoSize = true;
-            this.lblEdificio.Location = new System.Drawing.Point(47, 213);
-            this.lblEdificio.Name = "lblEdificio";
-            this.lblEdificio.Size = new System.Drawing.Size(55, 13);
-            this.lblEdificio.TabIndex = 76;
-            this.lblEdificio.Text = "Edifício:";
-            // 
-            // txtNomeEdificil
-            // 
-            this.txtNomeEdificil.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtNomeEdificil.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtNomeEdificil.Location = new System.Drawing.Point(127, 213);
-            this.txtNomeEdificil.MaxLength = 30;
-            this.txtNomeEdificil.Name = "txtNomeEdificil";
-            this.txtNomeEdificil.Size = new System.Drawing.Size(200, 23);
-            this.txtNomeEdificil.TabIndex = 75;
-            this.txtNomeEdificil.TextChanged += new System.EventHandler(this.txtNomeEdificil_TextChanged);
-            // 
             // mskFoneResidencia
             // 
-            this.mskFoneResidencia.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.mskFoneResidencia.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.mskFoneResidencia.Location = new System.Drawing.Point(328, 301);
+            this.mskFoneResidencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.mskFoneResidencia.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.mskFoneResidencia.Location = new System.Drawing.Point(99, 317);
             this.mskFoneResidencia.Mask = "(99) 0000-0000";
             this.mskFoneResidencia.Name = "mskFoneResidencia";
-            this.mskFoneResidencia.Size = new System.Drawing.Size(111, 23);
-            this.mskFoneResidencia.TabIndex = 74;
-            this.mskFoneResidencia.TextChanged += new System.EventHandler(this.mskFoneResidencia_TextChanged);
-            // 
-            // cmbUf
-            // 
-            this.cmbUf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.cmbUf.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.cmbUf.FormattingEnabled = true;
-            this.cmbUf.Location = new System.Drawing.Point(399, 258);
-            this.cmbUf.MaxLength = 2;
-            this.cmbUf.Name = "cmbUf";
-            this.cmbUf.Size = new System.Drawing.Size(50, 24);
-            this.cmbUf.TabIndex = 73;
-            this.cmbUf.SelectedIndexChanged += new System.EventHandler(this.cmbUf_SelectedIndexChanged_1);
-            this.cmbUf.TextChanged += new System.EventHandler(this.cmbUf_TextChanged);
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtComplemento.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtComplemento.Location = new System.Drawing.Point(605, 166);
-            this.txtComplemento.MaxLength = 30;
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(200, 23);
-            this.txtComplemento.TabIndex = 72;
-            this.txtComplemento.TextChanged += new System.EventHandler(this.txtComplemento_TextChanged);
-            // 
-            // lblComplemento
-            // 
-            this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(506, 166);
-            this.lblComplemento.Name = "lblComplemento";
-            this.lblComplemento.Size = new System.Drawing.Size(86, 13);
-            this.lblComplemento.TabIndex = 71;
-            this.lblComplemento.Text = "Complemento:";
-            // 
-            // lblUf
-            // 
-            this.lblUf.AutoSize = true;
-            this.lblUf.Location = new System.Drawing.Point(366, 258);
-            this.lblUf.Name = "lblUf";
-            this.lblUf.Size = new System.Drawing.Size(27, 13);
-            this.lblUf.TabIndex = 70;
-            this.lblUf.Text = "UF:";
+            this.mskFoneResidencia.Size = new System.Drawing.Size(101, 20);
+            this.mskFoneResidencia.TabIndex = 139;
             // 
             // lblFoneResidencia
             // 
             this.lblFoneResidencia.AutoSize = true;
-            this.lblFoneResidencia.Location = new System.Drawing.Point(238, 304);
+            this.lblFoneResidencia.Location = new System.Drawing.Point(6, 319);
             this.lblFoneResidencia.Name = "lblFoneResidencia";
-            this.lblFoneResidencia.Size = new System.Drawing.Size(75, 13);
-            this.lblFoneResidencia.TabIndex = 69;
-            this.lblFoneResidencia.Text = "Fone Resid:";
-            // 
-            // mskCep
-            // 
-            this.mskCep.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.mskCep.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.mskCep.Location = new System.Drawing.Point(127, 301);
-            this.mskCep.Mask = "00000-999";
-            this.mskCep.Name = "mskCep";
-            this.mskCep.Size = new System.Drawing.Size(72, 23);
-            this.mskCep.TabIndex = 68;
-            this.mskCep.TextChanged += new System.EventHandler(this.mskCep_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 301);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 67;
-            this.label4.Text = "Cep:";
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtCidade.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtCidade.Location = new System.Drawing.Point(603, 258);
-            this.txtCidade.MaxLength = 30;
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(200, 23);
-            this.txtCidade.TabIndex = 66;
-            this.txtCidade.TextChanged += new System.EventHandler(this.txtCidade_TextChanged);
-            // 
-            // lblCidade
-            // 
-            this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(504, 261);
-            this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(50, 13);
-            this.lblCidade.TabIndex = 65;
-            this.lblCidade.Text = "Cidade:";
-            // 
-            // txtBairro
-            // 
-            this.txtBairro.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtBairro.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtBairro.Location = new System.Drawing.Point(127, 258);
-            this.txtBairro.MaxLength = 30;
-            this.txtBairro.Name = "txtBairro";
-            this.txtBairro.Size = new System.Drawing.Size(200, 23);
-            this.txtBairro.TabIndex = 64;
-            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
-            // 
-            // lblBairro
-            // 
-            this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(47, 258);
-            this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(44, 13);
-            this.lblBairro.TabIndex = 63;
-            this.lblBairro.Text = "Bairro:";
-            // 
-            // txtLogradouro
-            // 
-            this.txtLogradouro.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtLogradouro.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtLogradouro.Location = new System.Drawing.Point(127, 165);
-            this.txtLogradouro.MaxLength = 60;
-            this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.Size = new System.Drawing.Size(312, 23);
-            this.txtLogradouro.TabIndex = 62;
-            this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 169);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 61;
-            this.label3.Text = "Endereço:";
-            // 
-            // lblUfIdentidade
-            // 
-            this.lblUfIdentidade.AutoSize = true;
-            this.lblUfIdentidade.Location = new System.Drawing.Point(419, 114);
-            this.lblUfIdentidade.Name = "lblUfIdentidade";
-            this.lblUfIdentidade.Size = new System.Drawing.Size(27, 13);
-            this.lblUfIdentidade.TabIndex = 49;
-            this.lblUfIdentidade.Text = "UF:";
-            // 
-            // lblEmissor
-            // 
-            this.lblEmissor.AutoSize = true;
-            this.lblEmissor.Location = new System.Drawing.Point(312, 114);
-            this.lblEmissor.Name = "lblEmissor";
-            this.lblEmissor.Size = new System.Drawing.Size(54, 13);
-            this.lblEmissor.TabIndex = 47;
-            this.lblEmissor.Text = "Emissor:";
-            // 
-            // txtEmissor
-            // 
-            this.txtEmissor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtEmissor.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtEmissor.Location = new System.Drawing.Point(368, 114);
-            this.txtEmissor.Name = "txtEmissor";
-            this.txtEmissor.Size = new System.Drawing.Size(40, 23);
-            this.txtEmissor.TabIndex = 46;
-            this.txtEmissor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.lblFoneResidencia.Size = new System.Drawing.Size(43, 13);
+            this.lblFoneResidencia.TabIndex = 138;
+            this.lblFoneResidencia.Text = "Fone :";
             // 
             // lblEstadoCivil
             // 
             this.lblEstadoCivil.AutoSize = true;
-            this.lblEstadoCivil.Location = new System.Drawing.Point(47, 397);
+            this.lblEstadoCivil.Location = new System.Drawing.Point(7, 138);
             this.lblEstadoCivil.Name = "lblEstadoCivil";
             this.lblEstadoCivil.Size = new System.Drawing.Size(78, 13);
             this.lblEstadoCivil.TabIndex = 45;
@@ -389,7 +170,7 @@
             "Separado(a)",
             "Divorciado(a) ",
             "Viúvo(a)"});
-            this.cmbEstadoCivil.Location = new System.Drawing.Point(128, 394);
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(99, 135);
             this.cmbEstadoCivil.Name = "cmbEstadoCivil";
             this.cmbEstadoCivil.Size = new System.Drawing.Size(124, 21);
             this.cmbEstadoCivil.TabIndex = 44;
@@ -658,189 +439,66 @@
             "West Bank",
             "Zâmbia",
             "Zimbabué "});
-            this.cmbNacionalidade.Location = new System.Drawing.Point(370, 394);
+            this.cmbNacionalidade.Location = new System.Drawing.Point(603, 130);
             this.cmbNacionalidade.Name = "cmbNacionalidade";
-            this.cmbNacionalidade.Size = new System.Drawing.Size(158, 21);
+            this.cmbNacionalidade.Size = new System.Drawing.Size(200, 21);
             this.cmbNacionalidade.TabIndex = 41;
             this.cmbNacionalidade.TextChanged += new System.EventHandler(this.cmbNacionalidade_TextChanged);
             // 
             // lblNacionalidade
             // 
             this.lblNacionalidade.AutoSize = true;
-            this.lblNacionalidade.Location = new System.Drawing.Point(272, 397);
+            this.lblNacionalidade.Location = new System.Drawing.Point(480, 133);
             this.lblNacionalidade.Name = "lblNacionalidade";
             this.lblNacionalidade.Size = new System.Drawing.Size(92, 13);
             this.lblNacionalidade.TabIndex = 40;
             this.lblNacionalidade.Text = "Nacionalidade:";
             // 
-            // lblFiliacao
-            // 
-            this.lblFiliacao.AutoSize = true;
-            this.lblFiliacao.Location = new System.Drawing.Point(47, 356);
-            this.lblFiliacao.Name = "lblFiliacao";
-            this.lblFiliacao.Size = new System.Drawing.Size(62, 13);
-            this.lblFiliacao.TabIndex = 39;
-            this.lblFiliacao.Text = "FILIAÇÃO";
-            // 
             // txtFiliacaoPai
             // 
-            this.txtFiliacaoPai.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtFiliacaoPai.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtFiliacaoPai.Location = new System.Drawing.Point(161, 351);
+            this.txtFiliacaoPai.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtFiliacaoPai.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtFiliacaoPai.Location = new System.Drawing.Point(133, 368);
             this.txtFiliacaoPai.MaxLength = 30;
             this.txtFiliacaoPai.Name = "txtFiliacaoPai";
-            this.txtFiliacaoPai.Size = new System.Drawing.Size(222, 23);
+            this.txtFiliacaoPai.Size = new System.Drawing.Size(320, 20);
             this.txtFiliacaoPai.TabIndex = 38;
             this.txtFiliacaoPai.TextChanged += new System.EventHandler(this.txtFiliacaoPai_TextChanged);
             // 
             // lblPai
             // 
             this.lblPai.AutoSize = true;
-            this.lblPai.Location = new System.Drawing.Point(126, 354);
+            this.lblPai.Location = new System.Drawing.Point(98, 371);
             this.lblPai.Name = "lblPai";
             this.lblPai.Size = new System.Drawing.Size(29, 13);
             this.lblPai.TabIndex = 37;
             this.lblPai.Text = "Pai:";
             // 
-            // mskCpf
-            // 
-            this.mskCpf.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.mskCpf.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.mskCpf.Location = new System.Drawing.Point(315, 70);
-            this.mskCpf.Mask = "000.000.000-99";
-            this.mskCpf.Name = "mskCpf";
-            this.mskCpf.Size = new System.Drawing.Size(100, 23);
-            this.mskCpf.TabIndex = 36;
-            this.mskCpf.TextChanged += new System.EventHandler(this.mskCpf_TextChanged);
-            // 
-            // txtRg
-            // 
-            this.txtRg.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtRg.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtRg.Location = new System.Drawing.Point(127, 114);
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(158, 23);
-            this.txtRg.TabIndex = 35;
-            this.txtRg.TextChanged += new System.EventHandler(this.txtRg_TextChanged);
-            // 
             // txtFiliacaoMae
             // 
-            this.txtFiliacaoMae.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtFiliacaoMae.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtFiliacaoMae.Location = new System.Drawing.Point(447, 351);
+            this.txtFiliacaoMae.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtFiliacaoMae.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtFiliacaoMae.Location = new System.Drawing.Point(133, 398);
             this.txtFiliacaoMae.MaxLength = 40;
             this.txtFiliacaoMae.Name = "txtFiliacaoMae";
-            this.txtFiliacaoMae.Size = new System.Drawing.Size(220, 23);
+            this.txtFiliacaoMae.Size = new System.Drawing.Size(320, 20);
             this.txtFiliacaoMae.TabIndex = 34;
             this.txtFiliacaoMae.TextChanged += new System.EventHandler(this.txtFiliacaoMae_TextChanged);
             // 
             // lblMae
             // 
             this.lblMae.AutoSize = true;
-            this.lblMae.Location = new System.Drawing.Point(406, 356);
+            this.lblMae.Location = new System.Drawing.Point(97, 401);
             this.lblMae.Name = "lblMae";
             this.lblMae.Size = new System.Drawing.Size(35, 13);
             this.lblMae.TabIndex = 33;
             this.lblMae.Text = "Mãe:";
             // 
-            // lblCpf
-            // 
-            this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(275, 70);
-            this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(34, 13);
-            this.lblCpf.TabIndex = 9;
-            this.lblCpf.Text = "CPF:";
-            // 
-            // lblRg
-            // 
-            this.lblRg.AutoSize = true;
-            this.lblRg.Location = new System.Drawing.Point(43, 114);
-            this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(71, 13);
-            this.lblRg.TabIndex = 7;
-            this.lblRg.Text = "Identidade:";
-            // 
-            // rdbFem
-            // 
-            this.rdbFem.AutoSize = true;
-            this.rdbFem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbFem.Location = new System.Drawing.Point(569, 32);
-            this.rdbFem.Name = "rdbFem";
-            this.rdbFem.Size = new System.Drawing.Size(48, 17);
-            this.rdbFem.TabIndex = 6;
-            this.rdbFem.TabStop = true;
-            this.rdbFem.Text = "Fem";
-            this.rdbFem.UseVisualStyleBackColor = true;
-            this.rdbFem.TextChanged += new System.EventHandler(this.rdbFem_TextChanged);
-            // 
-            // rdbMasc
-            // 
-            this.rdbMasc.AutoSize = true;
-            this.rdbMasc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdbMasc.Location = new System.Drawing.Point(508, 32);
-            this.rdbMasc.Name = "rdbMasc";
-            this.rdbMasc.Size = new System.Drawing.Size(55, 17);
-            this.rdbMasc.TabIndex = 5;
-            this.rdbMasc.TabStop = true;
-            this.rdbMasc.Text = "Masc";
-            this.rdbMasc.UseVisualStyleBackColor = true;
-            this.rdbMasc.TextChanged += new System.EventHandler(this.rdbMasc_TextChanged);
-            // 
-            // lblSexo
-            // 
-            this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(463, 32);
-            this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(39, 13);
-            this.lblSexo.TabIndex = 4;
-            this.lblSexo.Text = "Sexo:";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.txtNome.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtNome.Location = new System.Drawing.Point(128, 32);
-            this.txtNome.MaxLength = 50;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(312, 23);
-            this.txtNome.TabIndex = 3;
-            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
-            // 
-            // dtpNascimento
-            // 
-            this.dtpNascimento.CalendarForeColor = System.Drawing.Color.MidnightBlue;
-            this.dtpNascimento.CalendarTitleForeColor = System.Drawing.Color.MidnightBlue;
-            this.dtpNascimento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpNascimento.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(128, 70);
-            this.dtpNascimento.Name = "dtpNascimento";
-            this.dtpNascimento.Size = new System.Drawing.Size(110, 23);
-            this.dtpNascimento.TabIndex = 2;
-            // 
-            // lblNascimento
-            // 
-            this.lblNascimento.AutoSize = true;
-            this.lblNascimento.Location = new System.Drawing.Point(46, 70);
-            this.lblNascimento.Name = "lblNascimento";
-            this.lblNascimento.Size = new System.Drawing.Size(77, 13);
-            this.lblNascimento.TabIndex = 1;
-            this.lblNascimento.Text = "Nascimento:";
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(46, 32);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(43, 13);
-            this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome:";
-            // 
             // btnImprimir
             // 
             this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
             this.btnImprimir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.func_imprimir_50x50;
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Location = new System.Drawing.Point(896, 609);
@@ -853,6 +511,24 @@
             // errorProviderTela
             // 
             this.errorProviderTela.ContainerControl = this;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox1.TabIndex = 136;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ucDesconectarLogin1
+            // 
+            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
+            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
+            this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
+            this.ucDesconectarLogin1.TabIndex = 137;
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
             // ucMenuImagemFunc1
             // 
@@ -875,6 +551,7 @@
             // ucMenuLateralFunc1
             // 
             this.ucMenuLateralFunc1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuLateralFunc1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucMenuLateralFunc1.Location = new System.Drawing.Point(853, 194);
             this.ucMenuLateralFunc1.Name = "ucMenuLateralFunc1";
             this.ucMenuLateralFunc1.Size = new System.Drawing.Size(150, 378);
@@ -883,23 +560,281 @@
             this.ucMenuLateralFunc1.Load += new System.EventHandler(this.ucMenuLateralFunc1_Load);
             this.ucMenuLateralFunc1.EventoAbrirDadosProfissionais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosProfissionais(this.ucMenuLateralFunc1_EventoAbrirDadosProfissionais);
             // 
-            // pictureBox1
+            // lblEdificio
             // 
-            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
-            this.pictureBox1.TabIndex = 136;
-            this.pictureBox1.TabStop = false;
+            this.lblEdificio.AutoSize = true;
+            this.lblEdificio.Location = new System.Drawing.Point(6, 234);
+            this.lblEdificio.Name = "lblEdificio";
+            this.lblEdificio.Size = new System.Drawing.Size(55, 13);
+            this.lblEdificio.TabIndex = 155;
+            this.lblEdificio.Text = "Edifício:";
             // 
-            // ucDesconectarLogin1
+            // txtNomeEdificil
             // 
-            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
-            this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
-            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
-            this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
-            this.ucDesconectarLogin1.TabIndex = 137;
-            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
+            this.txtNomeEdificil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtNomeEdificil.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtNomeEdificil.Location = new System.Drawing.Point(99, 232);
+            this.txtNomeEdificil.MaxLength = 30;
+            this.txtNomeEdificil.Name = "txtNomeEdificil";
+            this.txtNomeEdificil.Size = new System.Drawing.Size(200, 20);
+            this.txtNomeEdificil.TabIndex = 156;
+            // 
+            // cmbUf
+            // 
+            this.cmbUf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cmbUf.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cmbUf.FormattingEnabled = true;
+            this.cmbUf.Location = new System.Drawing.Point(394, 276);
+            this.cmbUf.MaxLength = 2;
+            this.cmbUf.Name = "cmbUf";
+            this.cmbUf.Size = new System.Drawing.Size(58, 21);
+            this.cmbUf.TabIndex = 162;
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtComplemento.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtComplemento.Location = new System.Drawing.Point(602, 186);
+            this.txtComplemento.MaxLength = 30;
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(200, 20);
+            this.txtComplemento.TabIndex = 154;
+            // 
+            // lblComplemento
+            // 
+            this.lblComplemento.AutoSize = true;
+            this.lblComplemento.Location = new System.Drawing.Point(482, 189);
+            this.lblComplemento.Name = "lblComplemento";
+            this.lblComplemento.Size = new System.Drawing.Size(86, 13);
+            this.lblComplemento.TabIndex = 153;
+            this.lblComplemento.Text = "Complemento:";
+            // 
+            // lblUf
+            // 
+            this.lblUf.AutoSize = true;
+            this.lblUf.Location = new System.Drawing.Point(361, 278);
+            this.lblUf.Name = "lblUf";
+            this.lblUf.Size = new System.Drawing.Size(27, 13);
+            this.lblUf.TabIndex = 161;
+            this.lblUf.Text = "UF:";
+            // 
+            // mskCep
+            // 
+            this.mskCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.mskCep.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.mskCep.Location = new System.Drawing.Point(99, 276);
+            this.mskCep.Mask = "00000-999";
+            this.mskCep.Name = "mskCep";
+            this.mskCep.Size = new System.Drawing.Size(72, 20);
+            this.mskCep.TabIndex = 160;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 278);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.TabIndex = 159;
+            this.label4.Text = "Cep:";
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCidade.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtCidade.Location = new System.Drawing.Point(602, 276);
+            this.txtCidade.MaxLength = 30;
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(200, 20);
+            this.txtCidade.TabIndex = 164;
+            // 
+            // lblCidade
+            // 
+            this.lblCidade.AutoSize = true;
+            this.lblCidade.Location = new System.Drawing.Point(482, 279);
+            this.lblCidade.Name = "lblCidade";
+            this.lblCidade.Size = new System.Drawing.Size(50, 13);
+            this.lblCidade.TabIndex = 163;
+            this.lblCidade.Text = "Cidade:";
+            // 
+            // txtBairro
+            // 
+            this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtBairro.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtBairro.Location = new System.Drawing.Point(602, 232);
+            this.txtBairro.MaxLength = 30;
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(200, 20);
+            this.txtBairro.TabIndex = 158;
+            // 
+            // lblBairro
+            // 
+            this.lblBairro.AutoSize = true;
+            this.lblBairro.Location = new System.Drawing.Point(482, 235);
+            this.lblBairro.Name = "lblBairro";
+            this.lblBairro.Size = new System.Drawing.Size(44, 13);
+            this.lblBairro.TabIndex = 157;
+            this.lblBairro.Text = "Bairro:";
+            // 
+            // txtLogradouro
+            // 
+            this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLogradouro.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtLogradouro.Location = new System.Drawing.Point(99, 186);
+            this.txtLogradouro.MaxLength = 60;
+            this.txtLogradouro.Name = "txtLogradouro";
+            this.txtLogradouro.Size = new System.Drawing.Size(353, 20);
+            this.txtLogradouro.TabIndex = 152;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 188);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 151;
+            this.label3.Text = "Endereço:";
+            // 
+            // mskCpf
+            // 
+            this.mskCpf.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.mskCpf.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.mskCpf.Location = new System.Drawing.Point(602, 83);
+            this.mskCpf.Mask = "000,000,000-00";
+            this.mskCpf.Name = "mskCpf";
+            this.mskCpf.Size = new System.Drawing.Size(100, 20);
+            this.mskCpf.TabIndex = 150;
+            // 
+            // txtRg
+            // 
+            this.txtRg.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtRg.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtRg.Location = new System.Drawing.Point(294, 83);
+            this.txtRg.MaxLength = 15;
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(158, 20);
+            this.txtRg.TabIndex = 148;
+            // 
+            // lblCpf
+            // 
+            this.lblCpf.AutoSize = true;
+            this.lblCpf.Location = new System.Drawing.Point(482, 86);
+            this.lblCpf.Name = "lblCpf";
+            this.lblCpf.Size = new System.Drawing.Size(34, 13);
+            this.lblCpf.TabIndex = 149;
+            this.lblCpf.Text = "CPF:";
+            // 
+            // lblRg
+            // 
+            this.lblRg.AutoSize = true;
+            this.lblRg.Location = new System.Drawing.Point(219, 85);
+            this.lblRg.Name = "lblRg";
+            this.lblRg.Size = new System.Drawing.Size(71, 13);
+            this.lblRg.TabIndex = 147;
+            this.lblRg.Text = "Identidade:";
+            // 
+            // rdbFem
+            // 
+            this.rdbFem.AutoSize = true;
+            this.rdbFem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbFem.Location = new System.Drawing.Point(588, 41);
+            this.rdbFem.Name = "rdbFem";
+            this.rdbFem.Size = new System.Drawing.Size(48, 17);
+            this.rdbFem.TabIndex = 144;
+            this.rdbFem.TabStop = true;
+            this.rdbFem.Text = "Fem";
+            this.rdbFem.UseVisualStyleBackColor = true;
+            // 
+            // rdbMasc
+            // 
+            this.rdbMasc.AutoSize = true;
+            this.rdbMasc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdbMasc.Location = new System.Drawing.Point(527, 41);
+            this.rdbMasc.Name = "rdbMasc";
+            this.rdbMasc.Size = new System.Drawing.Size(55, 17);
+            this.rdbMasc.TabIndex = 143;
+            this.rdbMasc.TabStop = true;
+            this.rdbMasc.Text = "Masc";
+            this.rdbMasc.UseVisualStyleBackColor = true;
+            // 
+            // lblSexo
+            // 
+            this.lblSexo.AutoSize = true;
+            this.lblSexo.Location = new System.Drawing.Point(482, 43);
+            this.lblSexo.Name = "lblSexo";
+            this.lblSexo.Size = new System.Drawing.Size(39, 13);
+            this.lblSexo.TabIndex = 142;
+            this.lblSexo.Text = "Sexo:";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtNome.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtNome.Location = new System.Drawing.Point(100, 41);
+            this.txtNome.MaxLength = 40;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(353, 20);
+            this.txtNome.TabIndex = 141;
+            // 
+            // dtpNascimento
+            // 
+            this.dtpNascimento.CalendarForeColor = System.Drawing.Color.MidnightBlue;
+            this.dtpNascimento.CalendarTitleForeColor = System.Drawing.Color.MidnightBlue;
+            this.dtpNascimento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNascimento.Location = new System.Drawing.Point(99, 83);
+            this.dtpNascimento.Name = "dtpNascimento";
+            this.dtpNascimento.Size = new System.Drawing.Size(97, 20);
+            this.dtpNascimento.TabIndex = 146;
+            this.dtpNascimento.Value = new System.DateTime(2010, 1, 16, 0, 0, 0, 0);
+            // 
+            // lblNascimento
+            // 
+            this.lblNascimento.AutoSize = true;
+            this.lblNascimento.Location = new System.Drawing.Point(6, 85);
+            this.lblNascimento.Name = "lblNascimento";
+            this.lblNascimento.Size = new System.Drawing.Size(77, 13);
+            this.lblNascimento.TabIndex = 145;
+            this.lblNascimento.Text = "Nascimento:";
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(7, 43);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(43, 13);
+            this.lblNome.TabIndex = 140;
+            this.lblNome.Text = "Nome:";
+            // 
+            // mskFoneOpcional
+            // 
+            this.mskFoneOpcional.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
+            this.mskFoneOpcional.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.mskFoneOpcional.Location = new System.Drawing.Point(351, 317);
+            this.mskFoneOpcional.Mask = "(99) 0000-0000";
+            this.mskFoneOpcional.Name = "mskFoneOpcional";
+            this.mskFoneOpcional.Size = new System.Drawing.Size(101, 20);
+            this.mskFoneOpcional.TabIndex = 166;
+            // 
+            // lblFone2
+            // 
+            this.lblFone2.AutoSize = true;
+            this.lblFone2.Location = new System.Drawing.Point(246, 319);
+            this.lblFone2.Name = "lblFone2";
+            this.lblFone2.Size = new System.Drawing.Size(99, 13);
+            this.lblFone2.TabIndex = 165;
+            this.lblFone2.Text = "Fone (opcional):";
+            // 
+            // lblFiliação
+            // 
+            this.lblFiliação.AutoSize = true;
+            this.lblFiliação.Location = new System.Drawing.Point(8, 368);
+            this.lblFiliação.Name = "lblFiliação";
+            this.lblFiliação.Size = new System.Drawing.Size(59, 13);
+            this.lblFiliação.TabIndex = 167;
+            this.lblFiliação.Text = "Filiação :";
             // 
             // telaFuncionario
             // 
@@ -936,10 +871,37 @@
         private System.Windows.Forms.GroupBox gpbDadosPessoais;
         private System.Windows.Forms.TextBox txtFiliacaoPai;
         private System.Windows.Forms.Label lblPai;
-        private System.Windows.Forms.MaskedTextBox mskCpf;
-        private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.TextBox txtFiliacaoMae;
         private System.Windows.Forms.Label lblMae;
+        private System.Windows.Forms.ComboBox cmbNacionalidade;
+        private System.Windows.Forms.Label lblNacionalidade;
+        private System.Windows.Forms.Label lblEstadoCivil;
+        private System.Windows.Forms.ComboBox cmbEstadoCivil;
+        private System.Windows.Forms.Button btnImprimir;
+        private GuiWindowsForms.User_Control.ucMenuImagemFunc ucMenuImagemFunc1;
+        private ucMenuInferior ucMenuInferior1;
+        private GuiWindowsForms.User_Control.ucMenuLateralFunc ucMenuLateralFunc1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
+        private System.Windows.Forms.MaskedTextBox mskFoneResidencia;
+        private System.Windows.Forms.Label lblFoneResidencia;
+        private System.Windows.Forms.Label lblEdificio;
+        private System.Windows.Forms.TextBox txtNomeEdificil;
+        private System.Windows.Forms.ComboBox cmbUf;
+        private System.Windows.Forms.TextBox txtComplemento;
+        private System.Windows.Forms.Label lblComplemento;
+        private System.Windows.Forms.Label lblUf;
+        private System.Windows.Forms.MaskedTextBox mskCep;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.Label lblCidade;
+        private System.Windows.Forms.TextBox txtBairro;
+        private System.Windows.Forms.Label lblBairro;
+        private System.Windows.Forms.TextBox txtLogradouro;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox mskCpf;
+        private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.RadioButton rdbFem;
@@ -949,38 +911,9 @@
         private System.Windows.Forms.DateTimePicker dtpNascimento;
         private System.Windows.Forms.Label lblNascimento;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Label lblFiliacao;
-        private System.Windows.Forms.ComboBox cmbNacionalidade;
-        private System.Windows.Forms.Label lblNacionalidade;
-        private System.Windows.Forms.Label lblEstadoCivil;
-        private System.Windows.Forms.ComboBox cmbEstadoCivil;
-        private System.Windows.Forms.Label lblEmissor;
-        private System.Windows.Forms.TextBox txtEmissor;
-        private System.Windows.Forms.Label lblUfIdentidade;
-        private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Label lblEdificio;
-        private System.Windows.Forms.TextBox txtNomeEdificil;
-        private System.Windows.Forms.MaskedTextBox mskFoneResidencia;
-        private System.Windows.Forms.ComboBox cmbUf;
-        private System.Windows.Forms.TextBox txtComplemento;
-        private System.Windows.Forms.Label lblComplemento;
-        private System.Windows.Forms.Label lblUf;
-        private System.Windows.Forms.Label lblFoneResidencia;
-        private System.Windows.Forms.MaskedTextBox mskCep;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCidade;
-        private System.Windows.Forms.Label lblCidade;
-        private System.Windows.Forms.TextBox txtBairro;
-        private System.Windows.Forms.Label lblBairro;
-        private System.Windows.Forms.TextBox txtLogradouro;
-        private System.Windows.Forms.Label label3;
-        private GuiWindowsForms.User_Control.ucMenuImagemFunc ucMenuImagemFunc1;
-        private ucMenuInferior ucMenuInferior1;
-        private GuiWindowsForms.User_Control.ucMenuLateralFunc ucMenuLateralFunc1;
-        private System.Windows.Forms.ErrorProvider errorProviderTela;
-        private System.Windows.Forms.ComboBox cmbEmissorUf;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
+        private System.Windows.Forms.MaskedTextBox mskFoneOpcional;
+        private System.Windows.Forms.Label lblFone2;
+        private System.Windows.Forms.Label lblFiliação;
 
     }
 }
