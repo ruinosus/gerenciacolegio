@@ -21,12 +21,13 @@ namespace GuiWindowsForms
     {
         enum TelaSelecionada
         {
-
             Aluno,
             Funcionario
         }
         List<Aluno> alunosAxiliarLista;
         int linhaSelecionadaGrid = -1;
+
+        List<Funcionario> funcinariosAuxiliarLista; 
 
         TelaSelecionada tela = TelaSelecionada.Aluno;
 
@@ -384,9 +385,10 @@ namespace GuiWindowsForms
         #region BUTTON ALUNO
         private void btnAluno_Click(object sender, EventArgs e)
         {
+            tela = TelaSelecionada.Aluno;
             escondeGrid();
             exibeGrid("aluno");
-            tela = TelaSelecionada.Aluno;
+           
             btnCadastrarFuncionario.Visible = false;
             btnCadastrarAluno.Visible = true;
 
@@ -400,9 +402,10 @@ namespace GuiWindowsForms
         #region BUTTON FUNCIONARIO
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
+            tela = TelaSelecionada.Funcionario;
             escondeGrid();
             exibeGrid("funcionario");
-            tela = TelaSelecionada.Funcionario;
+            
             btnCadastrarAluno.Visible = false;
             btnCadastrarFuncionario.Visible = true;
 
@@ -440,7 +443,7 @@ namespace GuiWindowsForms
 
         #region EVENTOS DO GRID
 
-        #region LOAD DO GRID
+        #region CARREGAR GRID ALUNO
         private void CarregarGrid()
         {
             dgvAluno.AutoGenerateColumns = false;
@@ -460,8 +463,16 @@ namespace GuiWindowsForms
                     }
                 case TelaSelecionada.Funcionario:
                     {
+
                         IFuncionarioProcesso processo = FuncionarioProcesso.Instance;
-                        dgvAluno.DataSource = processo.Consultar();
+                        Funcionario f = new Funcionario();
+                 
+                        f.Status = (int)Status.Inativo;
+                        funcinariosAuxiliarLista = processo.Consultar(f,Negocios.ModuloBasico.Enums.TipoPesquisa.E);
+
+                        dgvFuncionario.DataSource = null;
+                        dgvFuncionario.AutoGenerateColumns = false;
+                        dgvFuncionario.DataSource = funcinariosAuxiliarLista;
                         break;
                     }
                 default:
@@ -585,6 +596,7 @@ namespace GuiWindowsForms
                 btnPesquisar.Enabled = true;
                 txtBusca.Enabled = true;
                 dgvAluno.Visible = true;
+                CarregarGrid(); 
             }
 
             if (nomebotao == "funcionario")
@@ -592,6 +604,7 @@ namespace GuiWindowsForms
                 btnPesquisar.Enabled = true;
                 txtBusca.Enabled = true;
                 dgvFuncionario.Visible = true;
+                CarregarGrid(); 
             }
             
         }

@@ -5233,17 +5233,17 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 		partial void OnEdificioChanging(string value);
 		partial void OnEmailChanged();
 		partial void OnEmailChanging(string value);
-		partial void OnEmisorChanged();
-		partial void OnEmisorChanging(string value);
-		partial void OnEmissorUfChanged();
-		partial void OnEmissorUfChanging(string value);
 		partial void OnEstadoCivilChanged();
 		partial void OnEstadoCivilChanging(string value);
 		partial void OnFiliacaoMaeChanged();
 		partial void OnFiliacaoMaeChanging(string value);
 		partial void OnFiliacaoPaiChanged();
 		partial void OnFiliacaoPaiChanging(string value);
-		partial void OnFoneEmergenciaChanged();
+        partial void OnFoneChanged();
+        partial void OnFoneChanging(string value);
+        partial void OnFoneOpcionalChanged();
+        partial void OnFoneOpcionalChanging(string value);
+        partial void OnFoneEmergenciaChanged();
 		partial void OnFoneEmergenciaChanging(string value);
 		partial void OnGrauInstrucaoChanged();
 		partial void OnGrauInstrucaoChanging(string value);
@@ -5706,58 +5706,6 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 
 		#endregion
 
-		#region string Emisor
-
-		private string _emisor;
-		[DebuggerNonUserCode]
-		[Column(Storage = "_emisor", Name = "Emisor", DbType = "varchar(30)", AutoSync = AutoSync.Never)]
-		public string Emisor
-		{
-			get
-			{
-				return _emisor;
-			}
-			set
-			{
-				if (value != _emisor)
-				{
-					OnEmisorChanging(value);
-					SendPropertyChanging();
-					_emisor = value;
-					SendPropertyChanged("Emisor");
-					OnEmisorChanged();
-				}
-			}
-		}
-
-		#endregion
-
-		#region string EmissorUf
-
-		private string _emissorUf;
-		[DebuggerNonUserCode]
-		[Column(Storage = "_emissorUf", Name = "EmissorUf", DbType = "varchar(2)", AutoSync = AutoSync.Never)]
-		public string EmissorUf
-		{
-			get
-			{
-				return _emissorUf;
-			}
-			set
-			{
-				if (value != _emissorUf)
-				{
-					OnEmissorUfChanging(value);
-					SendPropertyChanging();
-					_emissorUf = value;
-					SendPropertyChanged("EmissorUf");
-					OnEmissorUfChanged();
-				}
-			}
-		}
-
-		#endregion
-
 		#region string EstadoCivil
 
 		private string _estadoCivil;
@@ -5835,6 +5783,58 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 		}
 
 		#endregion
+
+        #region string Fone
+
+        private string _fone;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_fone", Name = "Fone", DbType = "varchar(14)", AutoSync = AutoSync.Never)]
+        public string Fone
+        {
+            get
+            {
+                return _fone;
+            }
+            set
+            {
+                if (value != _fone)
+                {
+                    OnFoneChanging(value);
+                    SendPropertyChanging();
+                    _fone = value;
+                    SendPropertyChanged("Fone");
+                    OnFoneChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region string FoneOpcional
+
+        private string _foneOpcional;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_foneOpcional", Name = "FoneOpcional", DbType = "varchar(14)", AutoSync = AutoSync.Never)]
+        public string FoneOpcional
+        {
+            get
+            {
+                return _foneOpcional;
+            }
+            set
+            {
+                if (value != _foneOpcional)
+                {
+                    OnFoneOpcionalChanging(value);
+                    SendPropertyChanging();
+                    _foneOpcional = value;
+                    SendPropertyChanged("Fone");
+                    OnFoneOpcionalChanged();
+                }
+            }
+        }
+
+        #endregion
 
 		#region string FoneEmergencia
 
@@ -8839,6 +8839,10 @@ public partial class ColegioDB : DbLinq.Data.Linq.DataContext
 		partial void OnEmailChanging(string value);
 		partial void OnFoneChanged();
 		partial void OnFoneChanging(string value);
+        partial void OnFoneOpcionalChanged();
+        partial void OnFoneOpcionalChanging(string value);
+        partial void OnFoneEmergenciaChanged();
+        partial void OnFoneEmergenciaChanging(string value);
 		partial void OnFoneTrabalhoChanged();
 		partial void OnFoneTrabalhoChanging(string value);
 		partial void OnIDChanged();

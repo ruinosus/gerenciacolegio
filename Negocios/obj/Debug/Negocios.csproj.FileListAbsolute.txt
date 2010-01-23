@@ -80,11 +80,6 @@ C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\Negocios\obj\Debug\Negocios.d
 C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\Negocios\obj\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\gerenciacolegio\Negocios\bin\Debug\DbLinq.dll
 C:\Users\Dudu\Desktop\gerenciacolegio\Negocios\bin\Debug\DbLinq.MySql.dll
-C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\bin\Debug\Negocios.dll
-C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\bin\Debug\Negocios.pdb
-C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\Negocios.dll
-C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\Negocios.pdb
 E:\Projetos\gerenciacolegio\Negocios\bin\Debug\Negocios.dll
 E:\Projetos\gerenciacolegio\Negocios\bin\Debug\Negocios.pdb
 E:\Projetos\gerenciacolegio\Negocios\obj\Debug\ResolveAssemblyReference.cache
@@ -95,3 +90,8 @@ C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\Negocios\bin\Deb
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\Negocios\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\Negocios\obj\Debug\Negocios.dll
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\Negocios\obj\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\bin\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\bin\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\Negocios.pdb
