@@ -197,119 +197,95 @@ namespace GuiWindowsForms
 
                 #region VALIDA - CPF
 
-                if (mskCpf.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskCpf, "Informe o cpf");
-                    mskCpf.Clear();
-                    return;
-                }
+                //if (mskCpf.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskCpf, "Informe o cpf");
+                //    mskCpf.Clear();
+                //    return;
+                //}
                 funcionario.Cpf = mskCpf.Text;
 
                 #endregion
 
                 #region VALIDA - IDENTIDADE
 
-                if (String.IsNullOrEmpty(txtRg.Text))
-                {
-                    errorProviderTela.SetError(txtRg, "Informe a identidade");
-                    txtRg.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtRg.Text))
+                //{
+                //    errorProviderTela.SetError(txtRg, "Informe a identidade");
+                //    txtRg.Clear();
+                //    return;
+                //}
                 funcionario.Rg = txtRg.Text;
                
                 #endregion
 
-                #region VALIDA - EMISSOR
-
-                if (String.IsNullOrEmpty(txtEmissor.Text))
-                {
-                    errorProviderTela.SetError(txtEmissor, "Informe o órgão emissor");
-                    txtEmissor.Clear();
-                    return;
-                }
-                funcionario.Emisor = txtEmissor.Text;
-
-
-                #endregion
-                
-                #region VALIDA - EMISSOR UF
-
-                if (String.IsNullOrEmpty(cmbEmissorUf.Text))
-                {
-                    errorProviderTela.SetError(cmbEmissorUf, "Informe o uf");
-                    return;
-                }
-                funcionario.EmissorUf = cmbEmissorUf.Text;
-
-                #endregion
-
                 #region VALIDA - ENDEREÇO
 
-                if (String.IsNullOrEmpty(txtLogradouro.Text))
-                {
-                    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
-                    txtLogradouro.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtLogradouro.Text))
+                //{
+                //    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
+                //    txtLogradouro.Clear();
+                //    return;
+                //}
                 funcionario.Logradouro = txtLogradouro.Text;
 
                 #endregion
       
                 #region VALIDA - COMPLEMENTO
 
-                if (String.IsNullOrEmpty(txtComplemento.Text))
-                {
-                    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
-                    txtComplemento.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtComplemento.Text))
+                //{
+                //    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
+                //    txtComplemento.Clear();
+                //    return;
+                //}
                 funcionario.ComplementoEndereco = txtComplemento.Text;
 
                 #endregion
 
                 #region VALIDA - NOME EDIFÍCIL
 
-                if (String.IsNullOrEmpty(txtNomeEdificil.Text))
-                {
-                    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
-                    txtNomeEdificil.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtNomeEdificil.Text))
+                //{
+                //    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
+                //    txtNomeEdificil.Clear();
+                //    return;
+                //}
                 funcionario.Edificio = txtNomeEdificil.Text;
 
                 #endregion
 
                 #region VALIDA - BAIRRO
 
-                if (String.IsNullOrEmpty(txtBairro.Text))
-                {
-                    errorProviderTela.SetError(txtBairro, "Informe o bairro");
-                    txtBairro.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtBairro.Text))
+                //{
+                //    errorProviderTela.SetError(txtBairro, "Informe o bairro");
+                //    txtBairro.Clear();
+                //    return;
+                //}
                 funcionario.Bairro = txtBairro.Text;
 
                 #endregion
 
                 #region VALIDA - UF
 
-                if (String.IsNullOrEmpty(cmbUf.Text))
-                {
-                    errorProviderTela.SetError(cmbUf, "Informe o uf");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(cmbUf.Text))
+                //{
+                //    errorProviderTela.SetError(cmbUf, "Informe o uf");
+                //    return;
+                //}
                 funcionario.Uf = cmbUf.Text;
 
                 #endregion
 
                 #region VALIDA - CIDADE
 
-                if (String.IsNullOrEmpty(txtCidade.Text))
-                {
-                    errorProviderTela.SetError(txtCidade, "Informe a cidade");
-                    txtCidade.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtCidade.Text))
+                //{
+                //    errorProviderTela.SetError(txtCidade, "Informe a cidade");
+                //    txtCidade.Clear();
+                //    return;
+                //}
                 funcionario.Cidade = txtCidade.Text;
 
                 #endregion
@@ -328,58 +304,58 @@ namespace GuiWindowsForms
 
                 #region VALIDA - FONE RESIDENCIA
 
-                if (mskFoneResidencia.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
-                    mskFoneResidencia.Clear();
-                    return;
-                }
+                //if (mskFoneResidencia.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
+                //    mskFoneResidencia.Clear();
+                //    return;
+                //}
                 funcionario.FoneEmergencia = mskFoneResidencia.Text;
 
                 #endregion
 
                 #region VALIDA - FILIAÇÃO PAI
 
-                if (String.IsNullOrEmpty(txtFiliacaoPai.Text))
-                {
-                    errorProviderTela.SetError(txtFiliacaoPai, "Informe o nome do pai");
-                    txtFiliacaoPai.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtFiliacaoPai.Text))
+                //{
+                //    errorProviderTela.SetError(txtFiliacaoPai, "Informe o nome do pai");
+                //    txtFiliacaoPai.Clear();
+                //    return;
+                //}
                 funcionario.FiliacaoPai = txtFiliacaoPai.Text;
 
                 #endregion
 
                 #region VALIDA - FILIAÇÃO MÃE
 
-                if (String.IsNullOrEmpty(txtFiliacaoMae.Text))
-                {
-                    errorProviderTela.SetError(txtFiliacaoMae, "Informe o nome da mãe");
-                    txtFiliacaoMae.Clear();
-                    return;
-                }
+                //if (String.IsNullOrEmpty(txtFiliacaoMae.Text))
+                //{
+                //    errorProviderTela.SetError(txtFiliacaoMae, "Informe o nome da mãe");
+                //    txtFiliacaoMae.Clear();
+                //    return;
+                //}
                 funcionario.FiliacaoMae = txtFiliacaoMae.Text;
 
                 #endregion
 
                 #region VALIDA - ESTADO CIVIL
 
-                if (String.IsNullOrEmpty(cmbEstadoCivil.Text))
-                {
-                    errorProviderTela.SetError(cmbEstadoCivil, "Informe o estado civil");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(cmbEstadoCivil.Text))
+                //{
+                //    errorProviderTela.SetError(cmbEstadoCivil, "Informe o estado civil");
+                //    return;
+                //}
                 funcionario.EstadoCivil = cmbEstadoCivil.Text;
 
                 #endregion
 
                 #region VALIDA - NACIONALIDADE
 
-                if (String.IsNullOrEmpty(cmbNacionalidade.Text))
-                {
-                    errorProviderTela.SetError(cmbNacionalidade, "Informe a nacionalidade");
-                    return;
-                }
+                //if (String.IsNullOrEmpty(cmbNacionalidade.Text))
+                //{
+                //    errorProviderTela.SetError(cmbNacionalidade, "Informe a nacionalidade");
+                //    return;
+                //}
                 funcionario.Nacionalidade = cmbNacionalidade.Text;
 
                 #endregion
@@ -550,12 +526,12 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        #region LIMPAR FUNCIONARIO
         public void limparFuncionario()
         {
             txtBairro.Clear();
             txtCidade.Clear();
             txtComplemento.Clear();
-            txtEmissor.Clear();
             txtFiliacaoMae.Clear();
             txtFiliacaoPai.Clear();
             txtLogradouro.Clear();
@@ -566,20 +542,20 @@ namespace GuiWindowsForms
             mskCpf.Clear();
             mskFoneResidencia.Clear();
             dtpNascimento.Value = DateTime.Today;
-            cmbEmissorUf.Select();
             cmbEstadoCivil.Select();
             cmbNacionalidade.Select();
             cmbUf.Select();
             rdbMasc.Checked = false;
             rdbFem.Checked = false;
         }
+        #endregion
 
+        #region CARREGAR FUNCIONARIO
         public void carregarFuncionario()
         {
             txtBairro.Text = funcionario.Bairro;
             txtCidade.Text = funcionario.Cidade;
             txtComplemento.Text = funcionario.ComplementoEndereco;
-            txtEmissor.Text = funcionario.Emisor;
             txtFiliacaoMae.Text = funcionario.FiliacaoMae;
             txtFiliacaoPai.Text = funcionario.FiliacaoPai;
             txtLogradouro.Text = funcionario.Logradouro;
@@ -589,7 +565,6 @@ namespace GuiWindowsForms
             mskCep.Text = funcionario.Cep;
             mskCpf.Text = funcionario.Cpf;
             mskFoneResidencia.Text = funcionario.FoneEmergencia;
-            cmbEmissorUf.Text = funcionario.Uf;
             cmbEstadoCivil.Text = funcionario.EstadoCivil;
             cmbNacionalidade.Text = funcionario.Nacionalidade;
             cmbUf.Text = funcionario.Uf;
@@ -603,7 +578,9 @@ namespace GuiWindowsForms
                 rdbMasc.Select();
             }
         }
+        #endregion
 
+        #region BUTTON DESCONECTAR
         private void ucDesconectarLogin1_EventoDesconectar()
         {
             Program.ultimaTela = 9;
@@ -611,5 +588,7 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
+
     }
 }
