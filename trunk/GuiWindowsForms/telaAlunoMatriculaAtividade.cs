@@ -1,18 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloBasico.VOs;
+using Negocios.ModuloMatricula.Processos;
+using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloAtividadeTurma.Processos;
+using Negocios.ModuloAlunoAtividadeTurma.Classes_Auxiliares;
+using System.Drawing;
+using System.IO;
+using Negocios.ModuloAlunoAtividadeTurma.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaAlunoMatriculaAtividade : Form
     {
         Memoria memoria = Memoria.Instance;
+
+        AlunoAtividadeTurma alunoAtividadeTurma = new AlunoAtividadeTurma();
+        IAlunoAtividadeTurmaProcesso alunoAtvTurmaControlador = AlunoAtividadeTurmaProcesso.Instance;
+
+        IAtividadeTurmaProcesso atividadeTurmaControlador = null;
 
         #region SINGLETON DA TELA
         /*
@@ -141,13 +148,13 @@ namespace GuiWindowsForms
         {
             this.Hide();
 
-            if (Program.ultimaTela == 1)
+            if (Program.ultimaTela == 4)
             {
                 Program.SelecionaForm(Program.ultimaTela);
             }
             else
             {
-                Program.ultimaTela = 6;
+                Program.ultimaTela = 1;
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
@@ -316,6 +323,10 @@ namespace GuiWindowsForms
         private void txtDesconto_TextChanged(object sender, EventArgs e)
         {
             errorProviderTela.Clear();
+            double valorAux = Convert.ToDouble(txtValor.Text); 
+            double descontoAux = Convert.ToDouble(txtDesconto.Text);
+            double resultadoAux = valorAux - descontoAux;
+            txtTotalValor.Text = resultadoAux.ToString();
         }
 
         private void btnAdicionarImagem_TextChanged(object sender, EventArgs e)
@@ -340,7 +351,89 @@ namespace GuiWindowsForms
             if (memoria.Aluno != null)
             {
                 uMenuImagem1.carregaAluno(memoria.Aluno);
+                lblNumeroMatricula.Text = retornaMatricula(memoria);
+                alunoAtividadeTurma.Aluno = memoria.Aluno;
+                alunoAtividadeTurma.AlunoID = memoria.Aluno.ID;
+                alunoAtividadeTurma.Ano = DateTime.Now.Year;
             }
+
+            carregarComboAtividade();
+        }
+
+
+        #region MÉTODOS AUXILIARES
+
+        /// <summary>
+        /// Método para verificar a matricula e retornar para a tela
+        /// </summary>
+        /// <param name="memoria">Recebe um objeto tipo memoria (Memoria.Aluno)</param>
+        /// <returns>retorna uma string com a matrícula</returns>
+        private String retornaMatricula(Memoria memoria)
+        {
+            string numMatricula = null;
+            Matricula matricula = new Matricula();
+            IMatriculaProcesso matriculaControlador = MatriculaProcesso.Instance;
+
+            List<Matricula> matriculaAuxiliar = new List<Matricula>();
+
+            matricula.Status = (int)Status.Ativo;
+            matriculaAuxiliar = matriculaControlador.Consultar(matricula, TipoPesquisa.E);
+
+            foreach (Matricula m in matriculaAuxiliar)
+            {
+                if (m.AlunoID == memoria.Aluno.ID)
+                {
+                    numMatricula = m.NumMatricula;
+                }
+            }
+
+            return numMatricula;
+        }
+
+        /// <summary>
+        /// Retorna todas as atividades cadastradas ativas
+        /// </summary>
+        private void carregarComboAtividade()
+        {
+            AtividadeTurma atvTurmaAux = new AtividadeTurma();
+            atividadeTurmaControlador = AtividadeTurmaProcesso.Instance;
+
+            atvTurmaAux.Status = (int)Status.Ativo;
+
+            List<AtividadeTurma> listaAtividadeCmb = new List<AtividadeTurma>();
+            listaAtividadeCmb = atividadeTurmaControlador.Consultar(atvTurmaAux, TipoPesquisa.E);
+
+            List<AuxiliarAlunoAtvTurma> listaAtividadeComboAuxiliar = new List<AuxiliarAlunoAtvTurma>();
+
+            foreach (AtividadeTurma at in listaAtividadeCmb)
+            {
+                AuxiliarAlunoAtvTurma atvCmbAuxiliar = new AuxiliarAlunoAtvTurma();
+
+                atvCmbAuxiliar.Id = at.ID;
+                atvCmbAuxiliar.Nome = at.Atividade.Nome;
+                atvCmbAuxiliar.Turma = at.Turma;
+                atvCmbAuxiliar.Mensagem = at.Atividade.Nome + " - " + at.Turma;
+
+                listaAtividadeComboAuxiliar.Add(atvCmbAuxiliar);
+            }
+
+            cmbAtividade.DataSource = null;
+            cmbAtividade.DataSource = listaAtividadeComboAuxiliar;
+            cmbAtividade.DisplayMember = "Mensagem";
+        }
+
+        #endregion
+
+        private void cmbAtividade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AtividadeTurma atvTurmaCmbAuxiliar = new AtividadeTurma();
+
+            int IdAux = ((AuxiliarAlunoAtvTurma)cmbAtividade.SelectedItem).Id;
+            atvTurmaCmbAuxiliar.ID = IdAux;
+            atvTurmaCmbAuxiliar = atividadeTurmaControlador.Consultar(atvTurmaCmbAuxiliar, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            txtValor.Text = Convert.ToString(atvTurmaCmbAuxiliar.Valor);
+            txtDescricao.Text = atvTurmaCmbAuxiliar.Atividade.Descricao;
         }
     }
 }
+

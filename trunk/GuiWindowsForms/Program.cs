@@ -68,11 +68,6 @@ namespace GuiWindowsForms
                 telaAlunoAcademico telaalunoacademicoaux = telaAlunoAcademico.getInstancia();
                 telaalunoacademicoaux.Show();
             }
-            else if (formId == 3)
-            {
-                telaAlunoMatricula telaalunomatriculaaux = telaAlunoMatricula.getInstancia();
-                telaalunomatriculaaux.Show();
-            }
             else if (formId == 4)
             {
                 telaAlunoMatricula telaalunomatriculaaux = telaAlunoMatricula.getInstancia();

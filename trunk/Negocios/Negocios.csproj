@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModuloAlunoAtividadeTurma\Classes Auxiliares\AuxiliarAlunoAtvTurma.cs" />
     <Compile Include="ModuloAtividadeTurma\Constantes\AtividadeTurmaConstantes.cs" />
     <Compile Include="ModuloAtividadeTurma\Excecoes\AtividadeTurmaNaoAlteradaExcecao.cs" />
     <Compile Include="ModuloAtividadeTurma\Excecoes\AtividadeTurmaNaoExcluidaExcecao.cs" />
