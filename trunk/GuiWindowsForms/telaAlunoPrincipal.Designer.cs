@@ -52,6 +52,7 @@
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
             this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
@@ -329,7 +330,8 @@
             this.dgvFuncionario.BackgroundColor = System.Drawing.Color.White;
             this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2});
+            this.dataGridViewTextBoxColumn2,
+            this.Cargo});
             this.dgvFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvFuncionario.Location = new System.Drawing.Point(122, 341);
             this.dgvFuncionario.MultiSelect = false;
@@ -354,9 +356,17 @@
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome do Funcionário";
+            this.dataGridViewTextBoxColumn2.MaxInputLength = 60;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // Cargo
+            // 
+            this.Cargo.DataPropertyName = "Cargo";
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.Name = "Cargo";
+            this.Cargo.ReadOnly = true;
             // 
             // telaAlunoPrincipal
             // 
@@ -425,5 +435,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAluno;
         private System.Windows.Forms.DataGridView dgvFuncionario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
     }
 }

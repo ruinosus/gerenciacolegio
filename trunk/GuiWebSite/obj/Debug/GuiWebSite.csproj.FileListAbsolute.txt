@@ -58,13 +58,13 @@ C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\GuiWebSite\bin\GuiWebSite.pdb
 C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\GuiWebSite\obj\Debug\GuiWebSite.dll
 C:\Users\Dudu\Desktop\Colegio Conhecer (sem erros)\GuiWebSite\obj\Debug\GuiWebSite.pdb
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\bin\GuiWebSite.dll
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\bin\GuiWebSite.pdb
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\obj\Debug\GuiWebSite.dll
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\obj\Debug\GuiWebSite.pdb
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWebSite\bin\GuiWebSite.dll
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWebSite\bin\GuiWebSite.pdb
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWebSite\obj\Debug\GuiWebSite.dll
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWebSite\obj\Debug\GuiWebSite.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\bin\GuiWebSite.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\bin\GuiWebSite.pdb
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\obj\Debug\GuiWebSite.dll
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWebSite\obj\Debug\GuiWebSite.pdb
