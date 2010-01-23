@@ -138,7 +138,7 @@ namespace GuiWindowsForms
             }
             else
             {
-                Program.ultimaTela = 7;
+                Program.ultimaTela = 1;
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
@@ -147,10 +147,17 @@ namespace GuiWindowsForms
         #region BUTTON MATRICULA 
         private void btnMatriculaAtividade_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Program.ultimaTela = 4;
-            telaAlunoMatriculaAtividade telaalunomatriculaatividade = telaAlunoMatriculaAtividade.getInstancia();
-            telaalunomatriculaatividade.Show();
+            if (!String.IsNullOrEmpty(alunoMatriculaAux.SerieAtual))
+            {
+                this.Hide();
+                Program.ultimaTela = 4;
+                telaAlunoMatriculaAtividade telaalunomatriculaatividade = telaAlunoMatriculaAtividade.getInstancia();
+                telaalunomatriculaatividade.Show();
+            }
+            else
+            {
+                MessageBox.Show("O aluno deve estar matriculado em uma série antes de vincular-se a atividades", "Colégio Conhecer - Matricula");
+            }
         }
 
         private void btnMatriculaAtividade_MouseEnter(object sender, EventArgs e)

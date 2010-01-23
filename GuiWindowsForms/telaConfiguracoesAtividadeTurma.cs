@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloAtividadeTurma.Processos;
-using Negocios.ModuloBasico.Enums;
 using Negocios.ModuloFuncionario.Processos;
 using Negocios.ModuloAtividade.Processos;
 using Negocios.ModuloAtividadeTurma.Constantes;
+using Negocios.ModuloBasico.Enums;
 
 namespace GuiWindowsForms
 {

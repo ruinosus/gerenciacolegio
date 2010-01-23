@@ -31,11 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoMatriculaAtividade));
             this.gpbMatricula = new System.Windows.Forms.GroupBox();
-            this.btnAdicionarImagem = new System.Windows.Forms.Button();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDesconto = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtTotalValor = new System.Windows.Forms.TextBox();
             this.lblTotalValor = new System.Windows.Forms.Label();
             this.lblDesconto = new System.Windows.Forms.Label();
@@ -47,14 +45,14 @@
             this.cmbAtividade = new System.Windows.Forms.ComboBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.btnMatriculaSerie = new System.Windows.Forms.Button();
-            this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
-            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
+            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
+            this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             this.gpbMatricula.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -62,11 +60,9 @@
             // gpbMatricula
             // 
             this.gpbMatricula.BackColor = System.Drawing.Color.Transparent;
-            this.gpbMatricula.Controls.Add(this.btnAdicionarImagem);
             this.gpbMatricula.Controls.Add(this.txtDescricao);
             this.gpbMatricula.Controls.Add(this.lblDescricao);
             this.gpbMatricula.Controls.Add(this.txtDesconto);
-            this.gpbMatricula.Controls.Add(this.pictureBox1);
             this.gpbMatricula.Controls.Add(this.txtTotalValor);
             this.gpbMatricula.Controls.Add(this.lblTotalValor);
             this.gpbMatricula.Controls.Add(this.lblDesconto);
@@ -84,22 +80,6 @@
             this.gpbMatricula.TabIndex = 103;
             this.gpbMatricula.TabStop = false;
             this.gpbMatricula.Text = "MATRÍCULA DE ATIVIDADE";
-            // 
-            // btnAdicionarImagem
-            // 
-            this.btnAdicionarImagem.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdicionarImagem.BackgroundImage = global::GuiWindowsForms.Properties.Resources.atividade_mais;
-            this.btnAdicionarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarImagem.FlatAppearance.BorderSize = 0;
-            this.btnAdicionarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarImagem.Location = new System.Drawing.Point(716, 139);
-            this.btnAdicionarImagem.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAdicionarImagem.Name = "btnAdicionarImagem";
-            this.btnAdicionarImagem.Size = new System.Drawing.Size(35, 34);
-            this.btnAdicionarImagem.TabIndex = 112;
-            this.btnAdicionarImagem.Tag = "";
-            this.btnAdicionarImagem.UseVisualStyleBackColor = false;
-            this.btnAdicionarImagem.TextChanged += new System.EventHandler(this.btnAdicionarImagem_TextChanged);
             // 
             // txtDescricao
             // 
@@ -127,14 +107,6 @@
             this.txtDesconto.Size = new System.Drawing.Size(123, 20);
             this.txtDesconto.TabIndex = 109;
             this.txtDesconto.TextChanged += new System.EventHandler(this.txtDesconto_TextChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(668, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 80);
-            this.pictureBox1.TabIndex = 108;
-            this.pictureBox1.TabStop = false;
             // 
             // txtTotalValor
             // 
@@ -168,6 +140,7 @@
             // 
             this.txtValor.Location = new System.Drawing.Point(103, 215);
             this.txtValor.Name = "txtValor";
+            this.txtValor.ReadOnly = true;
             this.txtValor.Size = new System.Drawing.Size(123, 20);
             this.txtValor.TabIndex = 42;
             this.txtValor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -218,6 +191,7 @@
             this.cmbAtividade.Name = "cmbAtividade";
             this.cmbAtividade.Size = new System.Drawing.Size(250, 21);
             this.cmbAtividade.TabIndex = 33;
+            this.cmbAtividade.SelectedIndexChanged += new System.EventHandler(this.cmbAtividade_SelectedIndexChanged);
             this.cmbAtividade.TextChanged += new System.EventHandler(this.cmbAtividade_TextChanged);
             // 
             // lblValor
@@ -246,6 +220,42 @@
             this.btnMatriculaSerie.Click += new System.EventHandler(this.btnMatriculaSerie_Click);
             this.btnMatriculaSerie.MouseEnter += new System.EventHandler(this.btnMatriculaSerie_MouseEnter);
             // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox2.TabIndex = 137;
+            this.pictureBox2.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // ucDesconectarLogin1
+            // 
+            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
+            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
+            this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
+            this.ucDesconectarLogin1.TabIndex = 138;
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
+            // 
+            // ucMenuInferior1
+            // 
+            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
+            this.ucMenuInferior1.Name = "ucMenuInferior1";
+            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
+            this.ucMenuInferior1.TabIndex = 116;
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
+            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
+            // 
             // uMenuLateral1
             // 
             this.uMenuLateral1.BackColor = System.Drawing.Color.Transparent;
@@ -261,16 +271,6 @@
             this.uMenuLateral1.EventoAbrirTelaAcademico += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaAcademico(this.uMenuLateral1_EventoAbrirTelaAcademico);
             this.uMenuLateral1.EventoAbrirTelaDados += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaDados(this.uMenuLateral1_EventoAbrirTelaDados);
             // 
-            // ucMenuInferior1
-            // 
-            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
-            this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
-            this.ucMenuInferior1.TabIndex = 116;
-            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
-            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
-            // 
             // uMenuImagem1
             // 
             this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
@@ -278,28 +278,6 @@
             this.uMenuImagem1.Name = "uMenuImagem1";
             this.uMenuImagem1.Size = new System.Drawing.Size(546, 201);
             this.uMenuImagem1.TabIndex = 117;
-            // 
-            // errorProviderTela
-            // 
-            this.errorProviderTela.ContainerControl = this;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(235, 112);
-            this.pictureBox2.TabIndex = 137;
-            this.pictureBox2.TabStop = false;
-            // 
-            // ucDesconectarLogin1
-            // 
-            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
-            this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
-            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
-            this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
-            this.ucDesconectarLogin1.TabIndex = 138;
-            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
             // telaAlunoMatriculaAtividade
             // 
@@ -326,7 +304,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMatriculaAtividade_FormClosing);
             this.gpbMatricula.ResumeLayout(false);
             this.gpbMatricula.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -347,16 +324,15 @@
         private System.Windows.Forms.ComboBox cmbAtividade;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Button btnMatriculaSerie;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtDesconto;
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.Button btnAdicionarImagem;
         private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
         private ucMenuInferior ucMenuInferior1;
         private uMenuImagem uMenuImagem1;
         private System.Windows.Forms.ErrorProvider errorProviderTela;
         private System.Windows.Forms.PictureBox pictureBox2;
         private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

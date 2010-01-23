@@ -56,22 +56,22 @@
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.Atividade_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Funcionario_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoraInicio_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoraFim_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Turma_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seg_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Terca_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quarta_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quinta_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexta_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sabado_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Domingo_grid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SegundaAuxTurma2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.TercaAuxTurma2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.QuartaAuxTurma2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.QuintaAuxTurma2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SextaAuxTurma2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SabadoAuxTurma2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DomingoAuxTurma2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -408,13 +408,13 @@
             this.HoraFim_grid,
             this.Valor_grid,
             this.Turma_grid,
-            this.Seg_grid,
-            this.Terca_grid,
-            this.Quarta_grid,
-            this.Quinta_grid,
-            this.Sexta_grid,
-            this.Sabado_grid,
-            this.Domingo_grid});
+            this.SegundaAuxTurma2,
+            this.TercaAuxTurma2,
+            this.QuartaAuxTurma2,
+            this.QuintaAuxTurma2,
+            this.SextaAuxTurma2,
+            this.SabadoAuxTurma2,
+            this.DomingoAuxTurma2});
             this.dataGridView1.Location = new System.Drawing.Point(24, 200);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -428,6 +428,10 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.MouseEnter += new System.EventHandler(this.dataGridView1_MouseEnter);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
             // 
             // ucDesconectarLogin1
             // 
@@ -447,10 +451,6 @@
             this.ucMenuInferior1.TabIndex = 142;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
-            // 
-            // errorProviderTela
-            // 
-            this.errorProviderTela.ContainerControl = this;
             // 
             // Atividade_grid
             // 
@@ -498,54 +498,61 @@
             this.Turma_grid.Name = "Turma_grid";
             this.Turma_grid.ReadOnly = true;
             // 
-            // Seg_grid
+            // SegundaAuxTurma2
             // 
-            this.Seg_grid.DataPropertyName = "SegundaAuxTurma2";
-            this.Seg_grid.HeaderText = "Seg";
-            this.Seg_grid.Name = "Seg_grid";
-            this.Seg_grid.ReadOnly = true;
+            this.SegundaAuxTurma2.DataPropertyName = "SegundaAuxTurma2";
+            this.SegundaAuxTurma2.HeaderText = "Seg";
+            this.SegundaAuxTurma2.Name = "SegundaAuxTurma2";
+            this.SegundaAuxTurma2.ValueType = System.Type.GetType("System.Boolean"); 
+            this.SegundaAuxTurma2.ReadOnly = true;
             // 
-            // Terca_grid
+            // TercaAuxTurma2
             // 
-            this.Terca_grid.DataPropertyName = "TercaAuxTurma2";
-            this.Terca_grid.HeaderText = "Ter";
-            this.Terca_grid.Name = "Terca_grid";
-            this.Terca_grid.ReadOnly = true;
+            this.TercaAuxTurma2.DataPropertyName = "TercaAuxTurma2";
+            this.TercaAuxTurma2.HeaderText = "Ter";
+            this.TercaAuxTurma2.Name = "TercaAuxTurma2";
+            this.TercaAuxTurma2.ValueType = System.Type.GetType("System.Boolean"); 
+            this.TercaAuxTurma2.ReadOnly = true;
             // 
-            // Quarta_grid
+            // QuartaAuxTurma2
             // 
-            this.Quarta_grid.DataPropertyName = "QuartaAuxTurma2";
-            this.Quarta_grid.HeaderText = "Qua";
-            this.Quarta_grid.Name = "Quarta_grid";
-            this.Quarta_grid.ReadOnly = true;
+            this.QuartaAuxTurma2.DataPropertyName = "QuartaAuxTurma2";
+            this.QuartaAuxTurma2.HeaderText = "Qua";
+            this.QuartaAuxTurma2.Name = "QuartaAuxTurma2";
+            this.QuartaAuxTurma2.ValueType = System.Type.GetType("System.Boolean"); 
+            this.QuartaAuxTurma2.ReadOnly = true;
             // 
-            // Quinta_grid
+            // QuintaAuxTurma2
             // 
-            this.Quinta_grid.DataPropertyName = "QuintaAuxTurma2";
-            this.Quinta_grid.HeaderText = "Qui";
-            this.Quinta_grid.Name = "Quinta_grid";
-            this.Quinta_grid.ReadOnly = true;
+            this.QuintaAuxTurma2.DataPropertyName = "QuintaAuxTurma2";
+            this.QuintaAuxTurma2.HeaderText = "Qui";
+            this.QuintaAuxTurma2.Name = "QuintaAuxTurma2";
+            this.QuintaAuxTurma2.ValueType = System.Type.GetType("System.Boolean"); 
+            this.QuintaAuxTurma2.ReadOnly = true;
             // 
-            // Sexta_grid
+            // SextaAuxTurma2
             // 
-            this.Sexta_grid.DataPropertyName = "SextaAuxTurma2";
-            this.Sexta_grid.HeaderText = "Sex";
-            this.Sexta_grid.Name = "Sexta_grid";
-            this.Sexta_grid.ReadOnly = true;
+            this.SextaAuxTurma2.DataPropertyName = "SextaAuxTurma2";
+            this.SextaAuxTurma2.HeaderText = "Sex";
+            this.SextaAuxTurma2.Name = "SextaAuxTurma2";
+            this.SextaAuxTurma2.ValueType = System.Type.GetType("System.Boolean"); 
+            this.SextaAuxTurma2.ReadOnly = true;
             // 
-            // Sabado_grid
+            // SabadoAuxTurma2
             // 
-            this.Sabado_grid.DataPropertyName = "SabadoAuxTurma2";
-            this.Sabado_grid.HeaderText = "Sab";
-            this.Sabado_grid.Name = "Sabado_grid";
-            this.Sabado_grid.ReadOnly = true;
+            this.SabadoAuxTurma2.DataPropertyName = "SabadoAuxTurma2";
+            this.SabadoAuxTurma2.HeaderText = "Sab";
+            this.SabadoAuxTurma2.Name = "SabadoAuxTurma2";
+            this.SabadoAuxTurma2.ValueType = System.Type.GetType("System.Boolean"); 
+            this.SabadoAuxTurma2.ReadOnly = true;
             // 
-            // Domingo_grid
+            // DomingoAuxTurma2
             // 
-            this.Domingo_grid.DataPropertyName = "DomingoAuxTurma2";
-            this.Domingo_grid.HeaderText = "Dom";
-            this.Domingo_grid.Name = "Domingo_grid";
-            this.Domingo_grid.ReadOnly = true;
+            this.DomingoAuxTurma2.DataPropertyName = "DomingoAuxTurma2";
+            this.DomingoAuxTurma2.HeaderText = "Dom";
+            this.DomingoAuxTurma2.Name = "DomingoAuxTurma2";
+            this.DomingoAuxTurma2.ValueType = System.Type.GetType("System.Boolean"); 
+            this.DomingoAuxTurma2.ReadOnly = true;
             // 
             // telaConfiguracoesAtividadeTurma
             // 
@@ -611,12 +618,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HoraFim_grid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Valor_grid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Turma_grid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Seg_grid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Terca_grid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quarta_grid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quinta_grid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sexta_grid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sabado_grid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Domingo_grid;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SegundaAuxTurma2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn TercaAuxTurma2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn QuartaAuxTurma2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn QuintaAuxTurma2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SextaAuxTurma2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SabadoAuxTurma2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn DomingoAuxTurma2;
     }
 }

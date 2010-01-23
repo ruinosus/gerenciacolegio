@@ -139,7 +139,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
             Program.ultimaTela = 10;
-            telaConfiguracoesAtividades telaconfatv = telaConfiguracoesAtividades.getInstancia();
+            telaConfiguracoesAtividade telaconfatv = telaConfiguracoesAtividade.getInstancia();
             telaconfatv.Show();
         }
 
