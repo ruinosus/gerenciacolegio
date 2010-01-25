@@ -13,10 +13,10 @@ namespace Negocios.ModuloSalaPeriodo.Repositorios
     public class SalaPeriodoRepositorio : ISalaPeriodoRepositorio
     {
         #region Atributos
-        
-        ColegioDB db ;
 
-        #endregion      
+        ColegioDB db;
+
+        #endregion
 
         #region Métodos da Interface
 
@@ -28,7 +28,7 @@ namespace Negocios.ModuloSalaPeriodo.Repositorios
         public List<SalaPeriodo> Consultar(SalaPeriodo salaPeriodo, TipoPesquisa tipoPesquisa)
         {
             List<SalaPeriodo> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -36,45 +36,27 @@ namespace Negocios.ModuloSalaPeriodo.Repositorios
                     {
                         if (salaPeriodo.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from sp in resultado
-                                                    where
-                                                    sp.ID == salaPeriodo.ID
-                                                    select sp).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from sp in resultado
-                                                    where
-                                                    sp.ID == salaPeriodo.ID
-                                                    select sp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from sp in resultado
+                                          where
+                                          sp.ID == salaPeriodo.ID
+                                          select sp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (salaPeriodo.Ano.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from sp in resultado
-                                                    where
-                                                    sp.Ano.HasValue && sp.Ano.Value == salaPeriodo.Ano.Value
-                                                    select sp).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from sp in resultado
-                                                    where
-                                                    sp.Ano.HasValue && sp.Ano.Value == salaPeriodo.Ano.Value
-                                                    select sp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from sp in resultado
+                                          where
+                                          sp.Ano.HasValue && sp.Ano.Value == salaPeriodo.Ano.Value
+                                          select sp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
-                       
+
 
                         break;
                     }
@@ -100,7 +82,7 @@ namespace Negocios.ModuloSalaPeriodo.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        
+
 
 
                         break;
@@ -141,7 +123,7 @@ namespace Negocios.ModuloSalaPeriodo.Repositorios
                 salaPeriodoAux = resultado[0];
 
                 db.SalaPeriodo.DeleteOnSubmit(salaPeriodoAux);
-               
+
             }
             catch (Exception)
             {
@@ -165,7 +147,7 @@ namespace Negocios.ModuloSalaPeriodo.Repositorios
                 salaPeriodoAux = resultado[0];
 
                 salaPeriodoAux.Ano = salaPeriodo.Ano;
-                salaPeriodoAux.Sala= salaPeriodo.Sala;
+                salaPeriodoAux.Sala = salaPeriodo.Sala;
                 salaPeriodoAux.SalaID = salaPeriodo.SalaID;
 
                 Confirmar();
@@ -191,7 +173,7 @@ namespace Negocios.ModuloSalaPeriodo.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
     }
 }

@@ -10,14 +10,14 @@ using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
 {
-    public class ChequeBoletoAtividadeRepositorio: IChequeBoletoAtividadeRepositorio
+    public class ChequeBoletoAtividadeRepositorio : IChequeBoletoAtividadeRepositorio
     {
         #region Atributos
 
         ColegioDB db;
 
-        #endregion      
-		
+        #endregion
+
         #region Métodos da Interface
 
         public List<ChequeBoletoAtividade> Consultar()
@@ -28,7 +28,7 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
         public List<ChequeBoletoAtividade> Consultar(ChequeBoletoAtividade chequeBoletoAtividade, TipoPesquisa tipoPesquisa)
         {
             List<ChequeBoletoAtividade> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -36,127 +36,73 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
                     {
                         if (chequeBoletoAtividade.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cba in resultado
-                                                    where
-                                                    cba.ID == chequeBoletoAtividade.ID
-                                                    select cba).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cba in resultado
-                                                    where
-                                                    cba.ID == chequeBoletoAtividade.ID
-                                                    select cba).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cba in resultado
+                                          where
+                                          cba.ID == chequeBoletoAtividade.ID
+                                          select cba).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (chequeBoletoAtividade.BoletoAtividadeID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cba in resultado
-                                                    where
-                                                    cba.BoletoAtividadeID == chequeBoletoAtividade.BoletoAtividadeID
-                                                    select cba).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cba in resultado
-                                                    where
-                                                    cba.BoletoAtividadeID == chequeBoletoAtividade.BoletoAtividadeID
-                                                    select cba).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cba in resultado
+                                          where
+                                          cba.BoletoAtividadeID == chequeBoletoAtividade.BoletoAtividadeID
+                                          select cba).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (chequeBoletoAtividade.ChequeID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cba in resultado
-                                                    where
-                                                    cba.ChequeID == chequeBoletoAtividade.ChequeID
-                                                    select cba).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cba in resultado
-                                                    where
-                                                    cba.ChequeID == chequeBoletoAtividade.ChequeID
-                                                    select cba).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cba in resultado
+                                          where
+                                          cba.ChequeID == chequeBoletoAtividade.ChequeID
+                                          select cba).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         break;
-                    } 
+                    }
                 #endregion
                 #region Case Ou
                 case TipoPesquisa.Ou:
                     {
                         if (chequeBoletoAtividade.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cba in Consultar()
-                                                    where
-                                                    cba.ID == chequeBoletoAtividade.ID
-                                                    select cba).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cba in Consultar()
-                                              where
-                                              cba.ID == chequeBoletoAtividade.ID
-                                              select cba).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cba in Consultar()
+                                                where
+                                                cba.ID == chequeBoletoAtividade.ID
+                                                select cba).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (chequeBoletoAtividade.BoletoAtividadeID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cba in Consultar()
-                                                    where
-                                                    cba.BoletoAtividadeID == chequeBoletoAtividade.BoletoAtividadeID
-                                                    select cba).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cba in Consultar()
-                                              where
-                                              cba.BoletoAtividadeID == chequeBoletoAtividade.BoletoAtividadeID
-                                              select cba).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cba in Consultar()
+                                                where
+                                                cba.BoletoAtividadeID == chequeBoletoAtividade.BoletoAtividadeID
+                                                select cba).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (chequeBoletoAtividade.ChequeID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cba in Consultar()
-                                                    where
-                                                    cba.ChequeID == chequeBoletoAtividade.ChequeID
-                                                    select cba).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cba in Consultar()
-                                              where
-                                              cba.ChequeID == chequeBoletoAtividade.ChequeID
-                                              select cba).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cba in Consultar()
+                                                where
+                                                cba.ChequeID == chequeBoletoAtividade.ChequeID
+                                                select cba).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -179,7 +125,7 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
             }
             catch (Exception)
             {
-                
+
                 throw new ChequeBoletoAtividadeNaoIncluidaExcecao();
             }
         }
@@ -199,12 +145,12 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
                 chequeBoletoAtividadeAux = resultado[0];
 
                 db.ChequeBoletoAtividade.DeleteOnSubmit(chequeBoletoAtividadeAux);
-            
+
             }
             catch (Exception)
             {
-                
-                  throw new ChequeBoletoAtividadeNaoExcluidaExcecao();
+
+                throw new ChequeBoletoAtividadeNaoExcluidaExcecao();
             }
         }
 
@@ -214,7 +160,7 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
             {
                 ChequeBoletoAtividade chequeBoletoAtividadeAux = new ChequeBoletoAtividade();
                 chequeBoletoAtividadeAux.ID = chequeBoletoAtividade.ID;
-                
+
 
                 List<ChequeBoletoAtividade> resultado = this.Consultar(chequeBoletoAtividadeAux, TipoPesquisa.E);
 
@@ -225,13 +171,13 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
 
                 chequeBoletoAtividadeAux.BoletoAtividadeID = chequeBoletoAtividade.BoletoAtividadeID;
                 chequeBoletoAtividadeAux.ChequeID = chequeBoletoAtividade.ChequeID;
-                chequeBoletoAtividadeAux.Status = chequeBoletoAtividade.Status;                
+                chequeBoletoAtividadeAux.Status = chequeBoletoAtividade.Status;
                 Confirmar();
             }
             catch (Exception)
             {
-                
-                  throw new ChequeBoletoAtividadeNaoAlteradaExcecao();
+
+                throw new ChequeBoletoAtividadeNaoAlteradaExcecao();
             }
         }
 
@@ -240,7 +186,7 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
             db.SubmitChanges();
         }
 
-        #endregion      
+        #endregion
 
         #region Construtor
         public ChequeBoletoAtividadeRepositorio()
@@ -248,10 +194,10 @@ namespace Negocios.ModuloChequeBoletoAtividade.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
-         
 
-    
+
+
     }
 }

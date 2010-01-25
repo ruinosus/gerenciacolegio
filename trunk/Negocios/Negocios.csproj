@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{E035BBFD-00D4-461F-9AF9-D57B45582B93}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -72,6 +72,11 @@
     <Compile Include="ModuloAtividadeTurma\Repositorios\AtividadeTurmaRepositorio.cs" />
     <Compile Include="ModuloAtividadeTurma\Repositorios\Interfaces\IAtividadeTurmaRepositorio.cs" />
     <Compile Include="ModuloBasico\VOs\Conexao.cs" />
+    <Compile Include="ModuloBasico\VOs\ConversionAttribute.cs" />
+    <Compile Include="ModuloBasico\VOs\CoreList.cs" />
+    <Compile Include="ModuloBasico\VOs\DataTableConverter.cs" />
+    <Compile Include="ModuloBasico\VOs\Interfaces\IDataTableConverter.cs" />
+    <Compile Include="ModuloBasico\VOs\Serializador.cs" />
     <Compile Include="ModuloBasico\VOs\Singleton.cs" />
     <Compile Include="ModuloBasico\VOs\Memoria.cs" />
     <Compile Include="ModuloBoletoAtividade\Constantes\BoletoAtividadeConstantes.cs" />
@@ -263,6 +268,15 @@
     <Compile Include="ModuloFuncionario\Processos\Interfaces\IFuncionarioProcesso.cs" />
     <Compile Include="ModuloFuncionario\Repositorios\FuncionarioRepositorio.cs" />
     <Compile Include="ModuloFuncionario\Repositorios\Interfaces\IFuncionarioRepositorio.cs" />
+    <Compile Include="ModuloMatriculaVinculo\Constantes\MatriculaVinculoConstantes.cs" />
+    <Compile Include="ModuloMatriculaVinculo\Excecoes\MatriculaVinculoNaoAlteradaExcecao.cs" />
+    <Compile Include="ModuloMatriculaVinculo\Excecoes\MatriculaVinculoNaoExcluidaExcecao.cs" />
+    <Compile Include="ModuloMatriculaVinculo\Excecoes\MatriculaVinculoNaoIncluidaExcecao.cs" />
+    <Compile Include="ModuloMatriculaVinculo\Fabricas\MatriculaVinculoFabrica.cs" />
+    <Compile Include="ModuloMatriculaVinculo\Processos\Interfaces\IMatriculaVinculoProcesso.cs" />
+    <Compile Include="ModuloMatriculaVinculo\Processos\MatriculaVinculoProcesso.cs" />
+    <Compile Include="ModuloMatriculaVinculo\Repositorios\Interfaces\IMatriculaVinculoRepositorio.cs" />
+    <Compile Include="ModuloMatriculaVinculo\Repositorios\MatriculaVinculoRepositorio.cs" />
     <Compile Include="ModuloMatricula\Constantes\MatriculaConstantes.cs" />
     <Compile Include="ModuloMatricula\Excecoes\MatriculaNaoAlteradaExcecao.cs" />
     <Compile Include="ModuloMatricula\Excecoes\MatriculaNaoExcluidaExcecao.cs" />

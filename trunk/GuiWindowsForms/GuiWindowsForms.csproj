@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D79963B9-116E-4E56-ABA5-26F9392FD1C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -91,6 +91,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BoletoMensalidadeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\BoletoMensalidadeJuncaoDataSet.cs">
+      <DependentUpon>BoletoMensalidadeJuncaoDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\BoletoMensalidadeJuncaoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoletoMensalidadeJuncaoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\BoletoMensalidadeRelatorio.cs">
       <AutoGen>True</AutoGen>
@@ -193,9 +202,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telaConfiguracoesAtividade.resx">
       <DependentUpon>telaConfiguracoesAtividade.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="telaConfiguracoesAtividadeTurma.resx">
       <DependentUpon>telaConfiguracoesAtividadeTurma.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="telaConfiguracoesControleDeAcesso.resx">
       <DependentUpon>telaConfiguracoesControleDeAcesso.cs</DependentUpon>
@@ -748,7 +759,17 @@
     <None Include="Resources\mais_branco.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="Relatorios\BoletoMensalidadeJuncaoDataSet.xsc">
+      <DependentUpon>BoletoMensalidadeJuncaoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\BoletoMensalidadeJuncaoDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BoletoMensalidadeJuncaoDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Relatorios\BoletoMensalidadeJuncaoDataSet.xss">
+      <DependentUpon>BoletoMensalidadeJuncaoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\menos_branco.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

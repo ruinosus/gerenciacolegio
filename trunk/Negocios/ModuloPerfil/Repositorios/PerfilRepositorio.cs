@@ -10,14 +10,14 @@ using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloPerfil.Repositorios
 {
-    public class PerfilRepositorio: IPerfilRepositorio
+    public class PerfilRepositorio : IPerfilRepositorio
     {
         #region Atributos
 
         ColegioDB db;
 
-        #endregion      
-		
+        #endregion
+
         #region Métodos da Interface
 
         public List<Perfil> Consultar()
@@ -36,61 +36,34 @@ namespace Negocios.ModuloPerfil.Repositorios
                     {
                         if (perfil.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from p in resultado
-                                                    where
-                                                    p.ID == perfil.ID
-                                                    select p).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from p in resultado
-                                                    where
-                                                    p.ID == perfil.ID
-                                                    select p).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from p in resultado
+                                          where
+                                          p.ID == perfil.ID
+                                          select p).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (perfil.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.Status.HasValue && d.Status.Value == perfil.Status.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.Status.HasValue && d.Status.Value == perfil.Status.Value
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.Status.HasValue && d.Status.Value == perfil.Status.Value
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(perfil.Descricao))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                     d.Descricao.Contains(perfil.Descricao)
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                     d.Descricao.Contains(perfil.Descricao)
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                           d.Descricao.Contains(perfil.Descricao)
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -102,61 +75,34 @@ namespace Negocios.ModuloPerfil.Repositorios
                     {
                         if (perfil.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from p in Consultar()
-                                                    where
-                                                    p.ID == perfil.ID
-                                                    select p).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from p in Consultar()
-                                              where
-                                              p.ID == perfil.ID
-                                              select p).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from p in Consultar()
+                                                where
+                                                p.ID == perfil.ID
+                                                select p).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (perfil.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.Status.HasValue && d.Status.Value == perfil.Status.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.Status.HasValue && d.Status.Value == perfil.Status.Value
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Status.HasValue && d.Status.Value == perfil.Status.Value
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(perfil.Descricao))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                     d.Descricao.Contains(perfil.Descricao)
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                               d.Descricao.Contains(perfil.Descricao)
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                 d.Descricao.Contains(perfil.Descricao)
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -178,7 +124,7 @@ namespace Negocios.ModuloPerfil.Repositorios
             }
             catch (Exception)
             {
-                
+
                 throw new PerfilNaoIncluidoExcecao();
             }
         }
@@ -201,8 +147,8 @@ namespace Negocios.ModuloPerfil.Repositorios
             }
             catch (Exception)
             {
-                
-               throw new PerfilNaoExcluidoExcecao();
+
+                throw new PerfilNaoExcluidoExcecao();
             }
         }
 
@@ -221,16 +167,16 @@ namespace Negocios.ModuloPerfil.Repositorios
                 perfilAux = resultado[0];
 
                 perfilAux.CtrlAdvertenciasAtrasos = perfil.CtrlAdvertenciasAtrasos;
-                perfilAux.CtrlAluno= perfil.CtrlAluno;
+                perfilAux.CtrlAluno = perfil.CtrlAluno;
                 perfilAux.CtrlAniversariantes = perfil.CtrlAniversariantes;
-                perfilAux.CtrlAnotacoes= perfil.CtrlAnotacoes;
+                perfilAux.CtrlAnotacoes = perfil.CtrlAnotacoes;
                 perfilAux.CtrlAtividade = perfil.CtrlAtividade;
                 perfilAux.CtrlBoletim = perfil.CtrlBoletim;
-                perfilAux.CtrlCertificados= perfil.CtrlCertificados;
+                perfilAux.CtrlCertificados = perfil.CtrlCertificados;
                 perfilAux.CtrlCheques = perfil.CtrlCheques;
                 perfilAux.CtrlContasPagar = perfil.CtrlContasPagar;
                 perfilAux.CtrlDebitos = perfil.CtrlDebitos;
-                perfilAux.CtrlDeclaracaoQuitacao= perfil.CtrlDeclaracaoQuitacao;
+                perfilAux.CtrlDeclaracaoQuitacao = perfil.CtrlDeclaracaoQuitacao;
                 perfilAux.CtrlEmails = perfil.CtrlEmails;
                 perfilAux.CtrlFinanceiro = perfil.CtrlFinanceiro;
                 perfilAux.CtrlFolhaChamada = perfil.CtrlFolhaChamada;
@@ -242,20 +188,20 @@ namespace Negocios.ModuloPerfil.Repositorios
                 perfilAux.CtrlMensalidade = perfil.CtrlMensalidade;
                 perfilAux.CtrlNotas = perfil.CtrlNotas;
                 perfilAux.CtrlRankingNotas = perfil.CtrlRankingNotas;
-                perfilAux.CtrlRemanejamento= perfil.CtrlRemanejamento;
+                perfilAux.CtrlRemanejamento = perfil.CtrlRemanejamento;
                 perfilAux.CtrlSerie = perfil.CtrlSerie;
                 perfilAux.CtrlTransfHistoricos = perfil.CtrlTransfHistoricos;
                 perfilAux.CtrlTurma = perfil.CtrlTurma;
-                perfilAux.CtrlTurno= perfil.CtrlTurno;
+                perfilAux.CtrlTurno = perfil.CtrlTurno;
                 perfilAux.Descricao = perfil.Descricao;
                 perfilAux.Status = perfil.Status;
-    
+
                 Confirmar();
             }
             catch (Exception)
             {
-                
-               throw new PerfilNaoAlteradoExcecao();
+
+                throw new PerfilNaoAlteradoExcecao();
             }
         }
 
@@ -264,7 +210,7 @@ namespace Negocios.ModuloPerfil.Repositorios
             db.SubmitChanges();
         }
 
-        #endregion      
+        #endregion
 
         #region Construtor
         public PerfilRepositorio()
@@ -272,7 +218,7 @@ namespace Negocios.ModuloPerfil.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
 
 

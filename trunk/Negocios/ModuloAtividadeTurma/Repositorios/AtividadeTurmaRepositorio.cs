@@ -13,10 +13,10 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
     public class AtividadeTurmaRepositorio : IAtividadeTurmaRepositorio
     {
         #region Atributos
-        
+
         ColegioDB db;
 
-        #endregion      
+        #endregion
 
         #region Métodos da Interface
 
@@ -28,7 +28,7 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
         public List<AtividadeTurma> Consultar(AtividadeTurma atividadeTurma, TipoPesquisa tipoPesquisa)
         {
             List<AtividadeTurma> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -37,41 +37,23 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
 
                         if (atividadeTurma.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in resultado
-                                                    where
-                                                    ad.ID == atividadeTurma.ID
-                                                    select ad).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from ad in resultado
-                                              where
-                                              ad.ID == atividadeTurma.ID
-                                              select ad).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from ad in resultado
+                                          where
+                                          ad.ID == atividadeTurma.ID
+                                          select ad).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (atividadeTurma.AtividadeID.HasValue && atividadeTurma.AtividadeID.Value != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in resultado
-                                                    where
-                                                    ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeTurma.AtividadeID.Value
-                                                    select ad).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from ad in resultado
-                                              where
-                                              ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeTurma.AtividadeID.Value
-                                              select ad).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from ad in resultado
+                                          where
+                                          ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeTurma.AtividadeID.Value
+                                          select ad).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -80,21 +62,12 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
 
                         if (atividadeTurma.Status.HasValue && atividadeTurma.Status.Value != default(byte))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in resultado
-                                                    where
-                                                    ad.Status.HasValue && ad.Status.Value == atividadeTurma.Status.Value
-                                                    select ad).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from ad in resultado
-                                              where
-                                              ad.Status.HasValue && ad.Status.Value == atividadeTurma.Status.Value
-                                              select ad).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from ad in resultado
+                                          where
+                                          ad.Status.HasValue && ad.Status.Value == atividadeTurma.Status.Value
+                                          select ad).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -107,64 +80,37 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
 
                         if (atividadeTurma.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in Consultar()
-                                                    where
-                                                    ad.ID == atividadeTurma.ID
-                                                    select ad).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from ad in Consultar()
-                                              where
-                                              ad.ID == atividadeTurma.ID
-                                              select ad).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from ad in Consultar()
+                                                where
+                                                ad.ID == atividadeTurma.ID
+                                                select ad).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (atividadeTurma.AtividadeID.HasValue && atividadeTurma.AtividadeID.Value != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in Consultar()
-                                                    where
-                                                    ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeTurma.AtividadeID.Value
-                                                    select ad).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from ad in Consultar()
-                                              where
-                                              ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeTurma.AtividadeID.Value
-                                              select ad).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from ad in Consultar()
+                                                where
+                                                ad.AtividadeID.HasValue && ad.AtividadeID.Value == atividadeTurma.AtividadeID.Value
+                                                select ad).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
 
-                        
+
 
                         if (atividadeTurma.Status.HasValue && atividadeTurma.Status.Value != default(byte))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from ad in Consultar()
-                                                    where
-                                                    ad.Status.HasValue && ad.Status.Value == atividadeTurma.Status.Value
-                                                    select ad).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from ad in Consultar()
-                                              where
-                                              ad.Status.HasValue && ad.Status.Value == atividadeTurma.Status.Value
-                                              select ad).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from ad in Consultar()
+                                                where
+                                                ad.Status.HasValue && ad.Status.Value == atividadeTurma.Status.Value
+                                                select ad).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -264,7 +210,7 @@ namespace Negocios.ModuloAtividadeTurma.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
     }
 }

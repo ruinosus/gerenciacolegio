@@ -16,7 +16,7 @@ namespace Negocios.ModuloTurno.Repositorios
 
         ColegioDB db;
 
-        #endregion      
+        #endregion
 
         #region Métodos da Interface
 
@@ -28,7 +28,7 @@ namespace Negocios.ModuloTurno.Repositorios
         public List<Turno> Consultar(Turno turno, TipoPesquisa tipoPesquisa)
         {
             List<Turno> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -36,61 +36,34 @@ namespace Negocios.ModuloTurno.Repositorios
                     {
                         if (turno.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in resultado
-                                                    where
-                                                    t.ID == turno.ID
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from t in resultado
-                                                    where
-                                                    t.ID == turno.ID
-                                                    select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from t in resultado
+                                          where
+                                          t.ID == turno.ID
+                                          select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(turno.Nome))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in resultado
-                                                    where
-                                                    t.Nome.Contains(turno.Nome)
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from t in resultado
-                                                    where
-                                                    t.Nome.Contains(turno.Nome)
-                                                    select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from t in resultado
+                                          where
+                                          t.Nome.Contains(turno.Nome)
+                                          select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (turno.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in resultado
-                                                    where
-                                                    t.Status.HasValue && t.Status.Value == turno.Status.Value
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from t in resultado
-                                                    where
-                                                    t.Status.HasValue && t.Status.Value == turno.Status.Value
-                                                    select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from t in resultado
+                                          where
+                                          t.Status.HasValue && t.Status.Value == turno.Status.Value
+                                          select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -102,61 +75,34 @@ namespace Negocios.ModuloTurno.Repositorios
                     {
                         if (turno.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in Consultar()
-                                                    where
-                                                    t.ID == turno.ID
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from t in Consultar()
-                                              where
-                                              t.ID == turno.ID
-                                              select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.ID == turno.ID
+                                                select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(turno.Nome))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in Consultar()
-                                                    where
-                                                    t.Nome.Contains(turno.Nome)
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from t in Consultar()
-                                              where
-                                              t.Nome.Contains(turno.Nome)
-                                              select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.Nome.Contains(turno.Nome)
+                                                select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (turno.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in Consultar()
-                                                    where
-                                                    t.Status.HasValue && t.Status.Value == turno.Status.Value
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from t in Consultar()
-                                              where
-                                              t.Status.HasValue && t.Status.Value == turno.Status.Value
-                                              select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.Status.HasValue && t.Status.Value == turno.Status.Value
+                                                select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -178,7 +124,7 @@ namespace Negocios.ModuloTurno.Repositorios
             }
             catch (Exception)
             {
-                
+
                 throw new TurnoNaoIncluidoExcecao();
             }
         }
@@ -198,12 +144,12 @@ namespace Negocios.ModuloTurno.Repositorios
                 turnoAux = resultado[0];
 
                 db.Turno.DeleteOnSubmit(turnoAux);
-               
+
             }
             catch (Exception)
             {
-                
-              throw new TurnoNaoExcluidoExcecao();
+
+                throw new TurnoNaoExcluidoExcecao();
             }
         }
 
@@ -227,7 +173,7 @@ namespace Negocios.ModuloTurno.Repositorios
             }
             catch (Exception)
             {
-                
+
                 throw new TurnoNaoAlteradoExcecao();
             }
         }
@@ -245,7 +191,7 @@ namespace Negocios.ModuloTurno.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
 
 
