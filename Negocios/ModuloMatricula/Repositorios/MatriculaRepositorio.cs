@@ -10,14 +10,14 @@ using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloMatricula.Repositorios
 {
-    public class MatriculaRepositorio: IMatriculaRepositorio
+    public class MatriculaRepositorio : IMatriculaRepositorio
     {
         #region Atributos
-       
+
         ColegioDB db;
 
-        #endregion      
-		
+        #endregion
+
         #region Métodos da Interface
 
         public List<Matricula> Consultar()
@@ -28,7 +28,7 @@ namespace Negocios.ModuloMatricula.Repositorios
         public List<Matricula> Consultar(Matricula matricula, TipoPesquisa tipoPesquisa)
         {
             List<Matricula> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -36,182 +36,102 @@ namespace Negocios.ModuloMatricula.Repositorios
                     {
                         if (matricula.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in resultado
-                                                    where
-                                                    m.ID == matricula.ID
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from m in resultado
-                                                    where
-                                                    m.ID == matricula.ID
-                                                    select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from m in resultado
+                                          where
+                                          m.ID == matricula.ID
+                                          select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (matricula.DataMatricula.HasValue && matricula.DataMatricula.Value != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in resultado
-                                                    where
-                                                    m.DataMatricula.HasValue && m.DataMatricula.Value == matricula.DataMatricula.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from m in resultado
-                                                    where
-                                                    m.DataMatricula.HasValue && m.DataMatricula.Value == matricula.DataMatricula.Value
-                                                    select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from m in resultado
+                                          where
+                                          m.DataMatricula.HasValue && m.DataMatricula.Value == matricula.DataMatricula.Value
+                                          select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (matricula.AlunoID.HasValue && matricula.AlunoID.Value !=0)
+                        if (matricula.AlunoID.HasValue && matricula.AlunoID.Value != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in resultado
-                                                    where
-                                                    m.AlunoID.HasValue && m.AlunoID.Value == matricula.AlunoID.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from m in resultado
-                                                    where
-                                                    m.AlunoID.HasValue && m.AlunoID.Value == matricula.AlunoID.Value
-                                                    select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from m in resultado
+                                          where
+                                          m.AlunoID.HasValue && m.AlunoID.Value == matricula.AlunoID.Value
+                                          select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (matricula.Aluno!= null)
+                        if (matricula.Aluno != null)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in resultado
-                                                    where
-                                                    m.Aluno.Nome.Contains(matricula.Aluno.Nome)
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from m in resultado
-                                              where
-                                              m.Aluno.Nome.ToLower().Contains(matricula.Aluno.Nome.ToLower())
-                                              select m).ToList());
-                            }
-                            pesquisa = true;
+
+
+                            resultado = ((from m in resultado
+                                          where
+                                          m.Aluno.Nome.ToLower().Contains(matricula.Aluno.Nome.ToLower())
+                                          select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (matricula.DescontoID.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in resultado
-                                                    where
-                                                    m.DescontoID.HasValue && m.DescontoID.Value == matricula.DescontoID.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado =((from m in resultado
-                                                    where
-                                                    m.DescontoID.HasValue && m.DescontoID.Value == matricula.DescontoID.Value
-                                                    select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from m in resultado
+                                          where
+                                          m.DescontoID.HasValue && m.DescontoID.Value == matricula.DescontoID.Value
+                                          select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (matricula.SalaPeriodoID.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in resultado
-                                                    where
-                                                    m.SalaPeriodoID.HasValue && m.SalaPeriodoID.Value == matricula.SalaPeriodoID.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from m in resultado
-                                                    where
-                                                    m.SalaPeriodoID.HasValue && m.SalaPeriodoID.Value == matricula.SalaPeriodoID.Value
-                                                    select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from m in resultado
+                                          where
+                                          m.SalaPeriodoID.HasValue && m.SalaPeriodoID.Value == matricula.SalaPeriodoID.Value
+                                          select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (matricula.Valor.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in resultado
-                                                    where
-                                                    m.Valor.HasValue && m.Valor.Value == matricula.Valor.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from m in resultado
-                                                    where
-                                                    m.Valor.HasValue && m.Valor.Value == matricula.Valor.Value
-                                                    select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from m in resultado
+                                          where
+                                          m.Valor.HasValue && m.Valor.Value == matricula.Valor.Value
+                                          select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(matricula.NumMatricula))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in resultado
-                                                    where
-                                                    m.NumMatricula.Contains(matricula.NumMatricula)
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from m in resultado
-                                                    where
-                                                    m.NumMatricula.Contains(matricula.NumMatricula)
-                                                    select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from m in resultado
+                                          where
+                                          m.NumMatricula.Contains(matricula.NumMatricula)
+                                          select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
-                       
+
                         if (matricula.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in resultado
-                                                    where
-                                                    m.Status.HasValue && m.Status.Value == matricula.Status.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from m in resultado
-                                                    where
-                                                    m.Status.HasValue && m.Status.Value == matricula.Status.Value
-                                                    select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from m in resultado
+                                          where
+                                          m.Status.HasValue && m.Status.Value == matricula.Status.Value
+                                          select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -223,182 +143,101 @@ namespace Negocios.ModuloMatricula.Repositorios
                     {
                         if (matricula.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in Consultar()
-                                                    where
-                                                    m.ID == matricula.ID
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from m in Consultar()
-                                              where
-                                              m.ID == matricula.ID
-                                              select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from m in Consultar()
+                                                where
+                                                m.ID == matricula.ID
+                                                select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (matricula.DataMatricula.HasValue && matricula.DataMatricula.Value != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in Consultar()
-                                                    where
-                                                    m.DataMatricula.HasValue && m.DataMatricula.Value == matricula.DataMatricula.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from m in Consultar()
-                                              where
-                                              m.DataMatricula.HasValue && m.DataMatricula.Value == matricula.DataMatricula.Value
-                                              select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from m in Consultar()
+                                                where
+                                                m.DataMatricula.HasValue && m.DataMatricula.Value == matricula.DataMatricula.Value
+                                                select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (matricula.Aluno != null)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in Consultar()
-                                                    where
-                                                    m.Aluno.Nome.Contains(matricula.Aluno.Nome)
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from m in Consultar()
-                                              where
-                                              m.Aluno.Nome.ToLower().Contains(matricula.Aluno.Nome.ToLower())
-                                              select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from m in Consultar()
+                                                where
+                                                m.Aluno.Nome.Contains(matricula.Aluno.Nome)
+                                                select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
-                        } 
-                        
+                        }
+
                         if (matricula.AlunoID.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in Consultar()
-                                                    where
-                                                    m.AlunoID.HasValue && m.AlunoID.Value == matricula.AlunoID.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from m in Consultar()
-                                              where
-                                              m.AlunoID.HasValue && m.AlunoID.Value == matricula.AlunoID.Value
-                                              select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from m in Consultar()
+                                                where
+                                                m.AlunoID.HasValue && m.AlunoID.Value == matricula.AlunoID.Value
+                                                select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (matricula.DescontoID.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in Consultar()
-                                                    where
-                                                    m.DescontoID.HasValue && m.DescontoID.Value == matricula.DescontoID.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from m in Consultar()
-                                              where
-                                              m.DescontoID.HasValue && m.DescontoID.Value == matricula.DescontoID.Value
-                                              select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from m in Consultar()
+                                                where
+                                                m.DescontoID.HasValue && m.DescontoID.Value == matricula.DescontoID.Value
+                                                select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (matricula.SalaPeriodoID.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in Consultar()
-                                                    where
-                                                    m.SalaPeriodoID.HasValue && m.SalaPeriodoID.Value == matricula.SalaPeriodoID.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from m in Consultar()
-                                              where
-                                              m.SalaPeriodoID.HasValue && m.SalaPeriodoID.Value == matricula.SalaPeriodoID.Value
-                                              select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from m in Consultar()
+                                                where
+                                                m.SalaPeriodoID.HasValue && m.SalaPeriodoID.Value == matricula.SalaPeriodoID.Value
+                                                select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (matricula.Valor.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in Consultar()
-                                                    where
-                                                    m.Valor.HasValue && m.Valor.Value == matricula.Valor.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from m in Consultar()
-                                              where
-                                              m.Valor.HasValue && m.Valor.Value == matricula.Valor.Value
-                                              select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from m in Consultar()
+                                                where
+                                                m.Valor.HasValue && m.Valor.Value == matricula.Valor.Value
+                                                select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(matricula.NumMatricula))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in Consultar()
-                                                    where
-                                                    m.NumMatricula.Contains(matricula.NumMatricula)
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from m in Consultar()
-                                              where
-                                              m.NumMatricula.Contains(matricula.NumMatricula)
-                                              select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from m in Consultar()
+                                                where
+                                                m.NumMatricula.Contains(matricula.NumMatricula)
+                                                select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (matricula.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from m in Consultar()
-                                                    where
-                                                    m.Status.HasValue && m.Status.Value == matricula.Status.Value
-                                                    select m).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from m in Consultar()
-                                              where
-                                              m.Status.HasValue && m.Status.Value == matricula.Status.Value
-                                              select m).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from m in Consultar()
+                                                where
+                                                m.Status.HasValue && m.Status.Value == matricula.Status.Value
+                                                select m).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -420,7 +259,7 @@ namespace Negocios.ModuloMatricula.Repositorios
             }
             catch (Exception)
             {
-                
+
                 throw new MatriculaNaoIncluidaExcecao();
             }
         }
@@ -444,8 +283,8 @@ namespace Negocios.ModuloMatricula.Repositorios
             }
             catch (Exception)
             {
-                
-                 throw new MatriculaNaoExcluidaExcecao();
+
+                throw new MatriculaNaoExcluidaExcecao();
             }
         }
 
@@ -464,11 +303,11 @@ namespace Negocios.ModuloMatricula.Repositorios
 
                 matriculaAux = resultado[0];
 
-                matriculaAux.NumMatricula= matricula.NumMatricula;
+                matriculaAux.NumMatricula = matricula.NumMatricula;
                 matriculaAux.SalaPeriodoID = matricula.SalaPeriodoID;
                 matriculaAux.Status = matricula.Status;
-                matriculaAux.Valor= matricula.Valor;
-                matriculaAux.AlunoID= matricula.AlunoID;
+                matriculaAux.Valor = matricula.Valor;
+                matriculaAux.AlunoID = matricula.AlunoID;
                 matriculaAux.BoletoMensalidade = matricula.BoletoMensalidade;
                 matriculaAux.DataMatricula = matricula.DataMatricula;
                 matriculaAux.DescontoID = matricula.DescontoID;
@@ -479,8 +318,8 @@ namespace Negocios.ModuloMatricula.Repositorios
             }
             catch (Exception)
             {
-                
-                  throw new MatriculaNaoAlteradaExcecao();
+
+                throw new MatriculaNaoAlteradaExcecao();
             }
         }
 
@@ -489,7 +328,7 @@ namespace Negocios.ModuloMatricula.Repositorios
             db.SubmitChanges();
         }
 
-        #endregion      
+        #endregion
 
         #region Construtor
         public MatriculaRepositorio()
@@ -497,9 +336,9 @@ namespace Negocios.ModuloMatricula.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
 
 
-    } 
+    }
 }

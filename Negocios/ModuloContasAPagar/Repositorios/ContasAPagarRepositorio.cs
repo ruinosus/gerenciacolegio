@@ -10,207 +10,128 @@ using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloContasAPagar.Repositorios
 {
-    public class ContasAPagarRepositorio: IContasAPagarRepositorio
+    public class ContasAPagarRepositorio : IContasAPagarRepositorio
     {
         #region Atributos
-        
-        ColegioDB db ;
 
-        #endregion      
-		
+        ColegioDB db;
+
+        #endregion
+
         #region Métodos da Interface
-         
+
         public List<ContasAPagar> Consultar()
         {
             return db.ContasAPagar.ToList();
         }
-         
+
         public List<ContasAPagar> Consultar(ContasAPagar contasAPagar, TipoPesquisa tipoPesquisa)
         {
             List<ContasAPagar> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
                 case TipoPesquisa.E:
                     {
-                        if (contasAPagar.ID!= 0)
+                        if (contasAPagar.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in resultado
-                                                    where
-                                                    cp.ID == contasAPagar.ID
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cp in resultado
-                                                    where
-                                                    cp.ID == contasAPagar.ID
-                                                    select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cp in resultado
+                                          where
+                                          cp.ID == contasAPagar.ID
+                                          select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.DataPagamento.HasValue && contasAPagar.DataPagamento.Value != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in resultado
-                                                    where
-                                                    cp.DataPagamento.HasValue && cp.DataPagamento.Value == contasAPagar.DataPagamento.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cp in resultado
-                                                    where
-                                                    cp.DataPagamento.HasValue && cp.DataPagamento.Value == contasAPagar.DataPagamento.Value
-                                                    select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cp in resultado
+                                          where
+                                          cp.DataPagamento.HasValue && cp.DataPagamento.Value == contasAPagar.DataPagamento.Value
+                                          select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.DataVencimento != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in resultado
-                                                    where
-                                                    cp.DataVencimento == contasAPagar.DataVencimento
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cp in resultado
-                                                    where
-                                                    cp.DataVencimento == contasAPagar.DataVencimento
-                                                    select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cp in resultado
+                                          where
+                                          cp.DataVencimento == contasAPagar.DataVencimento
+                                          select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.Desconto.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in resultado
-                                                    where
-                                                    cp.Desconto.HasValue && cp.Desconto.Value == contasAPagar.Desconto.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cp in resultado
-                                                    where
-                                                    cp.Desconto.HasValue && cp.Desconto.Value == contasAPagar.Desconto.Value
-                                                    select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cp in resultado
+                                          where
+                                          cp.Desconto.HasValue && cp.Desconto.Value == contasAPagar.Desconto.Value
+                                          select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(contasAPagar.Descricao))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in resultado
-                                                    where
-                                                    cp.Descricao.Contains(contasAPagar.Descricao)
-                                                    select cp).ToList());
-                            }
-                            else {
-                                resultado=((from cp in resultado
-                                                    where
-                                                    cp.Descricao.Contains(contasAPagar.Descricao)
-                                                    select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cp in resultado
+                                          where
+                                          cp.Descricao.Contains(contasAPagar.Descricao)
+                                          select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.Multa.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in resultado
-                                                    where
-                                                    cp.Multa.HasValue && cp.Multa.Value == contasAPagar.Multa.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cp in resultado
-                                                    where
-                                                    cp.Multa.HasValue && cp.Multa.Value == contasAPagar.Multa.Value
-                                                    select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cp in resultado
+                                          where
+                                          cp.Multa.HasValue && cp.Multa.Value == contasAPagar.Multa.Value
+                                          select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.Parcela.HasValue)
                         {
 
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in resultado
-                                                    where
-                                                    cp.Parcela.HasValue && cp.Parcela.Value == contasAPagar.Parcela.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cp in resultado
-                                                    where
-                                                    cp.Parcela.HasValue && cp.Parcela.Value == contasAPagar.Parcela.Value
-                                                    select cp).ToList());
-                            }
-                            pesquisa = true;
+
+
+                            resultado = ((from cp in resultado
+                                          where
+                                          cp.Parcela.HasValue && cp.Parcela.Value == contasAPagar.Parcela.Value
+                                          select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in resultado
-                                                    where
-                                                    cp.Status.HasValue && cp.Status.Value == contasAPagar.Status.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cp in resultado
-                                                    where
-                                                    cp.Status.HasValue && cp.Status.Value == contasAPagar.Status.Value
-                                                    select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cp in resultado
+                                          where
+                                          cp.Status.HasValue && cp.Status.Value == contasAPagar.Status.Value
+                                          select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.Valor.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in resultado
-                                                    where
-                                                    cp.Valor.HasValue && cp.Valor.Value == contasAPagar.Valor.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from cp in resultado
-                                                    where
-                                                    cp.Valor.HasValue && cp.Valor.Value == contasAPagar.Valor.Value
-                                                    select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from cp in resultado
+                                          where
+                                          cp.Valor.HasValue && cp.Valor.Value == contasAPagar.Valor.Value
+                                          select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -222,182 +143,101 @@ namespace Negocios.ModuloContasAPagar.Repositorios
                     {
                         if (contasAPagar.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in Consultar()
-                                                    where
-                                                    cp.ID == contasAPagar.ID
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cp in Consultar()
-                                              where
-                                              cp.ID == contasAPagar.ID
-                                              select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cp in Consultar()
+                                                where
+                                                cp.ID == contasAPagar.ID
+                                                select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.DataPagamento.HasValue && contasAPagar.DataPagamento.Value != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in Consultar()
-                                                    where
-                                                    cp.DataPagamento.HasValue && cp.DataPagamento.Value == contasAPagar.DataPagamento.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cp in Consultar()
-                                              where
-                                              cp.DataPagamento.HasValue && cp.DataPagamento.Value == contasAPagar.DataPagamento.Value
-                                              select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cp in Consultar()
+                                                where
+                                                cp.DataPagamento.HasValue && cp.DataPagamento.Value == contasAPagar.DataPagamento.Value
+                                                select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.DataVencimento != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in Consultar()
-                                                    where
-                                                    cp.DataVencimento == contasAPagar.DataVencimento
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cp in Consultar()
-                                              where
-                                              cp.DataVencimento == contasAPagar.DataVencimento
-                                              select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cp in Consultar()
+                                                where
+                                                cp.DataVencimento == contasAPagar.DataVencimento
+                                                select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.Desconto.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in Consultar()
-                                                    where
-                                                    cp.Desconto.HasValue && cp.Desconto.Value == contasAPagar.Desconto.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cp in Consultar()
-                                              where
-                                              cp.Desconto.HasValue && cp.Desconto.Value == contasAPagar.Desconto.Value
-                                              select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cp in Consultar()
+                                                where
+                                                cp.Desconto.HasValue && cp.Desconto.Value == contasAPagar.Desconto.Value
+                                                select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(contasAPagar.Descricao))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in Consultar()
-                                                    where
-                                                    cp.Descricao.Contains(contasAPagar.Descricao)
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cp in Consultar()
-                                              where
-                                              cp.Descricao.Contains(contasAPagar.Descricao)
-                                              select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cp in Consultar()
+                                                where
+                                                cp.Descricao.Contains(contasAPagar.Descricao)
+                                                select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.Multa.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in Consultar()
-                                                    where
-                                                    cp.Multa.HasValue && cp.Multa.Value == contasAPagar.Multa.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cp in Consultar()
-                                              where
-                                              cp.Multa.HasValue && cp.Multa.Value == contasAPagar.Multa.Value
-                                              select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cp in Consultar()
+                                                where
+                                                cp.Multa.HasValue && cp.Multa.Value == contasAPagar.Multa.Value
+                                                select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.Parcela.HasValue)
                         {
 
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in Consultar()
-                                                    where
-                                                    cp.Parcela.HasValue && cp.Parcela.Value == contasAPagar.Parcela.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cp in Consultar()
-                                              where
-                                              cp.Parcela.HasValue && cp.Parcela.Value == contasAPagar.Parcela.Value
-                                              select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cp in Consultar()
+                                                where
+                                                cp.Parcela.HasValue && cp.Parcela.Value == contasAPagar.Parcela.Value
+                                                select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in Consultar()
-                                                    where
-                                                    cp.Status.HasValue && cp.Status.Value == contasAPagar.Status.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cp in Consultar()
-                                              where
-                                              cp.Status.HasValue && cp.Status.Value == contasAPagar.Status.Value
-                                              select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cp in Consultar()
+                                                where
+                                                cp.Status.HasValue && cp.Status.Value == contasAPagar.Status.Value
+                                                select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (contasAPagar.Valor.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from cp in Consultar()
-                                                    where
-                                                    cp.Valor.HasValue && cp.Valor.Value == contasAPagar.Valor.Value
-                                                    select cp).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from cp in Consultar()
-                                              where
-                                              cp.Valor.HasValue && cp.Valor.Value == contasAPagar.Valor.Value
-                                              select cp).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from cp in Consultar()
+                                                where
+                                                cp.Valor.HasValue && cp.Valor.Value == contasAPagar.Valor.Value
+                                                select cp).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -419,7 +259,7 @@ namespace Negocios.ModuloContasAPagar.Repositorios
             }
             catch (Exception)
             {
-                
+
                 throw new ContasAPagarNaoIncluidaExcecao();
             }
         }
@@ -430,7 +270,7 @@ namespace Negocios.ModuloContasAPagar.Repositorios
             {
                 ContasAPagar contasAPagarAux = new ContasAPagar();
                 contasAPagarAux.ID = contasAPagar.ID;
-                
+
 
                 List<ContasAPagar> resultado = this.Consultar(contasAPagarAux, TipoPesquisa.E);
 
@@ -440,12 +280,12 @@ namespace Negocios.ModuloContasAPagar.Repositorios
                 contasAPagarAux = resultado[0];
 
                 db.ContasAPagar.DeleteOnSubmit(contasAPagarAux);
-            
+
             }
             catch (Exception)
             {
-                
-               throw new ContasAPagarNaoExcluidaExcecao();
+
+                throw new ContasAPagarNaoExcluidaExcecao();
             }
         }
 
@@ -465,10 +305,10 @@ namespace Negocios.ModuloContasAPagar.Repositorios
 
                 contasAPagarAux.DataPagamento = contasAPagar.DataPagamento;
                 contasAPagarAux.DataVencimento = contasAPagar.DataVencimento;
-                contasAPagarAux.Desconto= contasAPagar.Desconto;
+                contasAPagarAux.Desconto = contasAPagar.Desconto;
                 contasAPagarAux.Descricao = contasAPagar.Descricao;
                 contasAPagarAux.Multa = contasAPagar.Multa;
-                contasAPagarAux.Parcela= contasAPagar.Parcela;
+                contasAPagarAux.Parcela = contasAPagar.Parcela;
                 contasAPagarAux.Status = contasAPagar.Status;
                 contasAPagarAux.Valor = contasAPagar.Valor;
 
@@ -476,8 +316,8 @@ namespace Negocios.ModuloContasAPagar.Repositorios
             }
             catch (Exception)
             {
-                
-            throw new ContasAPagarNaoAlteradaExcecao();
+
+                throw new ContasAPagarNaoAlteradaExcecao();
             }
         }
 
@@ -486,7 +326,7 @@ namespace Negocios.ModuloContasAPagar.Repositorios
             db.SubmitChanges();
         }
 
-        #endregion      
+        #endregion
 
         #region Construtor
         public ContasAPagarRepositorio()
@@ -494,10 +334,10 @@ namespace Negocios.ModuloContasAPagar.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
 
 
-    
+
     }
 }

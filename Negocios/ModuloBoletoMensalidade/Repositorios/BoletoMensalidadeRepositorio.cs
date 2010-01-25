@@ -10,14 +10,14 @@ using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloBoletoMensalidade.Repositorios
 {
-    public class BoletoMensalidadeRepositorio: IBoletoMensalidadeRepositorio
+    public class BoletoMensalidadeRepositorio : IBoletoMensalidadeRepositorio
     {
         #region Atributos
-     
-        ColegioDB db ;
 
-        #endregion      
-		
+        ColegioDB db;
+
+        #endregion
+
         #region Métodos da Interface
 
         public List<BoletoMensalidade> Consultar()
@@ -28,7 +28,7 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
         public List<BoletoMensalidade> Consultar(BoletoMensalidade boletoMensalidade, TipoPesquisa tipoPesquisa)
         {
             List<BoletoMensalidade> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -37,159 +37,92 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
 
                         if (boletoMensalidade.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in resultado
-                                                    where
-                                                    bm.ID == boletoMensalidade.ID
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from bm in resultado
-                                                    where
-                                                    bm.ID == boletoMensalidade.ID
-                                                    select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from bm in resultado
+                                          where
+                                          bm.ID == boletoMensalidade.ID
+                                          select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoMensalidade.DataEmissao != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in resultado
-                                                    where
-                                                    bm.DataEmissao == boletoMensalidade.DataEmissao
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from bm in resultado
-                                                    where
-                                                    bm.DataEmissao == boletoMensalidade.DataEmissao
-                                                    select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from bm in resultado
+                                          where
+                                          bm.DataEmissao == boletoMensalidade.DataEmissao
+                                          select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (boletoMensalidade.DataPagamento.HasValue && boletoMensalidade.DataPagamento.Value != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in resultado
-                                                    where
-                                                    bm.DataPagamento.HasValue && bm.DataPagamento.Value == boletoMensalidade.DataPagamento.Value
-                                                    select bm).ToList());
-                            }
-                            else {
-                                resultado=((from bm in resultado
-                                                    where
-                                                    bm.DataPagamento.HasValue && bm.DataPagamento.Value == boletoMensalidade.DataPagamento.Value
-                                                    select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from bm in resultado
+                                          where
+                                          bm.DataPagamento.HasValue && bm.DataPagamento.Value == boletoMensalidade.DataPagamento.Value
+                                          select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoMensalidade.DataVencimento != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in resultado
-                                                    where
-                                                    bm.DataVencimento == boletoMensalidade.DataVencimento
-                                                    select bm).ToList());
-                            }
-                            else {
-                                resultado=((from bm in resultado
-                                                    where
-                                                    bm.DataVencimento == boletoMensalidade.DataVencimento
-                                                    select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from bm in resultado
+                                          where
+                                          bm.DataVencimento == boletoMensalidade.DataVencimento
+                                          select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoMensalidade.Desconto.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in resultado
-                                                    where
-                                                    bm.Desconto.HasValue && bm.Desconto.Value == boletoMensalidade.Desconto.Value
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from bm in resultado
-                                                    where
-                                                    bm.Desconto.HasValue && bm.Desconto.Value == boletoMensalidade.Desconto.Value
-                                                    select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from bm in resultado
+                                          where
+                                          bm.Desconto.HasValue && bm.Desconto.Value == boletoMensalidade.Desconto.Value
+                                          select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (string.IsNullOrEmpty(boletoMensalidade.Descricao))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in resultado
-                                                    where
-                                                    bm.Descricao.Contains(boletoMensalidade.Descricao)
-                                                    select bm).ToList());
-                            }
-                            else {
-                                resultado=((from bm in resultado
-                                                    where
-                                                    bm.Descricao.Contains(boletoMensalidade.Descricao)
-                                                    select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from bm in resultado
+                                          where
+                                          bm.Descricao.Contains(boletoMensalidade.Descricao)
+                                          select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoMensalidade.Multa.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in resultado
-                                                    where
-                                                    bm.Multa.HasValue && bm.Multa.Value == boletoMensalidade.Multa.Value
-                                                    select bm).ToList());
-                            }
-                            else {
-                                resultado=((from bm in resultado
-                                                    where
-                                                    bm.Multa.HasValue && bm.Multa.Value == boletoMensalidade.Multa.Value
-                                                    select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from bm in resultado
+                                          where
+                                          bm.Multa.HasValue && bm.Multa.Value == boletoMensalidade.Multa.Value
+                                          select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        
+
 
                         if (boletoMensalidade.Status.HasValue && boletoMensalidade.Status.Value != default(byte))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in resultado
-                                                    where
-                                                    bm.Status.HasValue && bm.Status.Value == boletoMensalidade.Status.Value
-                                                    select bm).ToList());
-                            }
-                            else {
-                                resultado=((from bm in resultado
-                                                    where
-                                                    bm.Status.HasValue && bm.Status.Value == boletoMensalidade.Status.Value
-                                                    select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from bm in resultado
+                                          where
+                                          bm.Status.HasValue && bm.Status.Value == boletoMensalidade.Status.Value
+                                          select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -202,164 +135,92 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
 
                         if (boletoMensalidade.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in Consultar()
-                                                    where
-                                                    bm.ID == boletoMensalidade.ID
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from bm in Consultar()
-                                              where
-                                              bm.ID == boletoMensalidade.ID
-                                              select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from bm in Consultar()
+                                                where
+                                                bm.ID == boletoMensalidade.ID
+                                                select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoMensalidade.DataEmissao != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in Consultar()
-                                                    where
-                                                    bm.DataEmissao == boletoMensalidade.DataEmissao
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from bm in Consultar()
-                                              where
-                                              bm.DataEmissao == boletoMensalidade.DataEmissao
-                                              select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from bm in Consultar()
+                                                where
+                                                bm.DataEmissao == boletoMensalidade.DataEmissao
+                                                select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (boletoMensalidade.DataPagamento.HasValue && boletoMensalidade.DataPagamento.Value != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in Consultar()
-                                                    where
-                                                    bm.DataPagamento.HasValue && bm.DataPagamento.Value == boletoMensalidade.DataPagamento.Value
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from bm in Consultar()
-                                              where
-                                              bm.DataPagamento.HasValue && bm.DataPagamento.Value == boletoMensalidade.DataPagamento.Value
-                                              select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from bm in Consultar()
+                                                where
+                                                bm.DataPagamento.HasValue && bm.DataPagamento.Value == boletoMensalidade.DataPagamento.Value
+                                                select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoMensalidade.DataVencimento != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in Consultar()
-                                                    where
-                                                    bm.DataVencimento == boletoMensalidade.DataVencimento
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from bm in Consultar()
-                                              where
-                                              bm.DataVencimento == boletoMensalidade.DataVencimento
-                                              select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from bm in Consultar()
+                                                where
+                                                bm.DataVencimento == boletoMensalidade.DataVencimento
+                                                select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoMensalidade.Desconto.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in Consultar()
-                                                    where
-                                                    bm.Desconto.HasValue && bm.Desconto.Value == boletoMensalidade.Desconto.Value
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from bm in Consultar()
-                                              where
-                                              bm.Desconto.HasValue && bm.Desconto.Value == boletoMensalidade.Desconto.Value
-                                              select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from bm in Consultar()
+                                                where
+                                                bm.Desconto.HasValue && bm.Desconto.Value == boletoMensalidade.Desconto.Value
+                                                select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (string.IsNullOrEmpty(boletoMensalidade.Descricao))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in Consultar()
-                                                    where
-                                                    bm.Descricao.Contains(boletoMensalidade.Descricao)
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from bm in Consultar()
-                                              where
-                                              bm.Descricao.Contains(boletoMensalidade.Descricao)
-                                              select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from bm in Consultar()
+                                                where
+                                                bm.Descricao.Contains(boletoMensalidade.Descricao)
+                                                select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (boletoMensalidade.Multa.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in Consultar()
-                                                    where
-                                                    bm.Multa.HasValue && bm.Multa.Value == boletoMensalidade.Multa.Value
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from bm in Consultar()
-                                              where
-                                              bm.Multa.HasValue && bm.Multa.Value == boletoMensalidade.Multa.Value
-                                              select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from bm in Consultar()
+                                                where
+                                                bm.Multa.HasValue && bm.Multa.Value == boletoMensalidade.Multa.Value
+                                                select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        
+
 
                         if (boletoMensalidade.Status.HasValue && boletoMensalidade.Status.Value != default(byte))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from bm in Consultar()
-                                                    where
-                                                    bm.Status.HasValue && bm.Status.Value == boletoMensalidade.Status.Value
-                                                    select bm).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from bm in Consultar()
-                                              where
-                                              bm.Status.HasValue && bm.Status.Value == boletoMensalidade.Status.Value
-                                              select bm).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from bm in Consultar()
+                                                where
+                                                bm.Status.HasValue && bm.Status.Value == boletoMensalidade.Status.Value
+                                                select bm).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -404,8 +265,8 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
             }
             catch (Exception)
             {
-                
-                 throw new BoletoMensalidadeNaoExcluidaExcecao();
+
+                throw new BoletoMensalidadeNaoExcluidaExcecao();
             }
         }
 
@@ -434,14 +295,15 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
                 boletoMensalidadeAux.Parcela = boletoMensalidade.Parcela;
                 boletoMensalidadeAux.Status = boletoMensalidade.Status;
                 boletoMensalidadeAux.Valor = boletoMensalidade.Valor;
-
-
+                boletoMensalidadeAux.DataImpressao = boletoMensalidade.DataImpressao;
+                boletoMensalidadeAux.Juncao = boletoMensalidade.Juncao;
+                boletoMensalidadeAux.NumeroImpressao = boletoMensalidade.NumeroImpressao;
                 Confirmar();
             }
             catch (Exception)
             {
-                
-                  throw new BoletoMensalidadeNaoAlteradaExcecao();
+
+                throw new BoletoMensalidadeNaoAlteradaExcecao();
             }
         }
 
@@ -450,7 +312,7 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
             db.SubmitChanges();
         }
 
-        #endregion      
+        #endregion
 
         #region Construtor
         public BoletoMensalidadeRepositorio()
@@ -458,10 +320,10 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
-         
 
-    
+
+
     }
 }

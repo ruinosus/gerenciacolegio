@@ -10,14 +10,14 @@ using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloFuncionario.Repositorios
 {
-    public class FuncionarioRepositorio: IFuncionarioRepositorio
+    public class FuncionarioRepositorio : IFuncionarioRepositorio
     {
         #region Atributos
- 
-        ColegioDB db ;
 
-        #endregion      
-		
+        ColegioDB db;
+
+        #endregion
+
         #region Métodos da Interface
 
         public List<Funcionario> Consultar()
@@ -28,7 +28,7 @@ namespace Negocios.ModuloFuncionario.Repositorios
         public List<Funcionario> Consultar(Funcionario funcionario, TipoPesquisa tipoPesquisa)
         {
             List<Funcionario> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -37,21 +37,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region ID
                         if (funcionario.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.ID == funcionario.ID
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from f in resultado
-                                                    where
-                                                    f.ID == funcionario.ID
-                                                    select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.ID == funcionario.ID
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -59,21 +50,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Alergico
                         if (!string.IsNullOrEmpty(funcionario.Alergico))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Alergico.Contains(funcionario.Alergico)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Alergico.Contains(funcionario.Alergico)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Alergico.Contains(funcionario.Alergico)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -81,21 +63,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Bairro
                         if (!string.IsNullOrEmpty(funcionario.Bairro))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Bairro.Contains(funcionario.Bairro)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Bairro.Contains(funcionario.Bairro)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Bairro.Contains(funcionario.Bairro)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -103,21 +76,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Cargo
                         if (!string.IsNullOrEmpty(funcionario.Cargo))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Cargo.Contains(funcionario.Cargo)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Cargo.Contains(funcionario.Cargo)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Cargo.Contains(funcionario.Cargo)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -125,21 +89,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Cep
                         if (!string.IsNullOrEmpty(funcionario.Cep))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Cep.Contains(funcionario.Cep)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Cep.Contains(funcionario.Cep)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Cep.Contains(funcionario.Cep)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -147,21 +102,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Cidade
                         if (!string.IsNullOrEmpty(funcionario.Cidade))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Cidade.Contains(funcionario.Cidade)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Cidade.Contains(funcionario.Cidade)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Cidade.Contains(funcionario.Cidade)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -169,21 +115,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Cpf
                         if (!string.IsNullOrEmpty(funcionario.Cpf))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Cpf.Contains(funcionario.Cpf)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Cpf.Contains(funcionario.Cpf)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Cpf.Contains(funcionario.Cpf)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -191,43 +128,25 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Ctps
                         if (!string.IsNullOrEmpty(funcionario.Ctps))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Ctps.Contains(funcionario.Ctps)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Ctps.Contains(funcionario.Ctps)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Ctps.Contains(funcionario.Ctps)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
-                        #endregion                      
+                        #endregion
 
                         #region ContatoEmergencia
                         if (!string.IsNullOrEmpty(funcionario.ContatoEmergencia))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.ContatoEmergencia.Contains(funcionario.ContatoEmergencia)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.ContatoEmergencia.Contains(funcionario.ContatoEmergencia)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.ContatoEmergencia.Contains(funcionario.ContatoEmergencia)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -235,21 +154,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region ComplementoEndereco
                         if (!string.IsNullOrEmpty(funcionario.ComplementoEndereco))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.ComplementoEndereco.Contains(funcionario.ComplementoEndereco)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.ComplementoEndereco.Contains(funcionario.ComplementoEndereco)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.ComplementoEndereco.Contains(funcionario.ComplementoEndereco)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -257,21 +167,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region DataEfetivacao
                         if (funcionario.DataEfetivacao.HasValue && funcionario.DataEfetivacao.Value != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.DataEfetivacao.HasValue && f.DataEfetivacao.Value == funcionario.DataEfetivacao.Value
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.DataEfetivacao.HasValue && f.DataEfetivacao.Value == funcionario.DataEfetivacao.Value
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.DataEfetivacao.HasValue && f.DataEfetivacao.Value == funcionario.DataEfetivacao.Value
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -279,21 +180,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Edificio
                         if (!string.IsNullOrEmpty(funcionario.Edificio))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Edificio.Contains(funcionario.Edificio)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.ComplementoEndereco.Contains(funcionario.ComplementoEndereco)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.ComplementoEndereco.Contains(funcionario.ComplementoEndereco)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -301,21 +193,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region EstadoCivil
                         if (!string.IsNullOrEmpty(funcionario.EstadoCivil))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.EstadoCivil.Contains(funcionario.EstadoCivil)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.EstadoCivil.Contains(funcionario.EstadoCivil)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.EstadoCivil.Contains(funcionario.EstadoCivil)
+                                          select f).ToList());
+
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -324,21 +207,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Email
                         if (!string.IsNullOrEmpty(funcionario.Email))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Email.Contains(funcionario.Email)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Email.Contains(funcionario.Email)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Email.Contains(funcionario.Email)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -346,21 +220,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region FiliacaoPai
                         if (!string.IsNullOrEmpty(funcionario.FiliacaoPai))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.FiliacaoPai.Contains(funcionario.FiliacaoPai)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.FiliacaoPai.Contains(funcionario.FiliacaoPai)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.FiliacaoPai.Contains(funcionario.FiliacaoPai)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -368,21 +233,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region FiliacaoMae
                         if (!string.IsNullOrEmpty(funcionario.FiliacaoMae))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.FiliacaoMae.Contains(funcionario.FiliacaoMae)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.FiliacaoMae.Contains(funcionario.FiliacaoMae)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.FiliacaoMae.Contains(funcionario.FiliacaoMae)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -390,21 +246,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Fone
                         if (!string.IsNullOrEmpty(funcionario.Fone))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Fone.Contains(funcionario.Fone)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Fone.Contains(funcionario.Fone)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Fone.Contains(funcionario.Fone)
+                                          select f).ToList());
+
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -413,21 +260,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region FoneOpcional
                         if (!string.IsNullOrEmpty(funcionario.FoneOpcional))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.FoneOpcional.Contains(funcionario.FoneOpcional)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.FoneOpcional.Contains(funcionario.FoneOpcional)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.FoneOpcional.Contains(funcionario.FoneOpcional)
+                                          select f).ToList());
+
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -436,43 +274,25 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region FoneEmergencia
                         if (!string.IsNullOrEmpty(funcionario.FoneEmergencia))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.FoneEmergencia.Contains(funcionario.FoneEmergencia)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.FoneEmergencia.Contains(funcionario.FoneEmergencia)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.FoneEmergencia.Contains(funcionario.FoneEmergencia)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
-                        #endregion          
+                        #endregion
 
                         #region Login
                         if (!string.IsNullOrEmpty(funcionario.Login))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Login.Contains(funcionario.Login)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Login.Contains(funcionario.Login)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Login.Contains(funcionario.Login)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -481,43 +301,25 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         if (!string.IsNullOrEmpty(funcionario.Logradouro))
                         {
 
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Logradouro.Contains(funcionario.Logradouro)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Logradouro.Contains(funcionario.Logradouro)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Logradouro.Contains(funcionario.Logradouro)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
-                        #endregion 
+                        #endregion
 
                         #region Nascimento
                         if (funcionario.Nascimento.HasValue && funcionario.Nascimento.Value != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Nascimento.HasValue && f.Nascimento.Value == funcionario.Nascimento
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Nascimento.HasValue && f.Nascimento.Value == funcionario.Nascimento
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Nascimento.HasValue && f.Nascimento.Value == funcionario.Nascimento
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -525,21 +327,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Nacionalidade
                         if (!string.IsNullOrEmpty(funcionario.Nacionalidade))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Nacionalidade.Contains(funcionario.Nacionalidade)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Nacionalidade.Contains(funcionario.Nacionalidade)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Nacionalidade.Contains(funcionario.Nacionalidade)
+                                          select f).ToList());
+
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -548,21 +341,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Naturalidade
                         if (!string.IsNullOrEmpty(funcionario.Naturalidade))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Naturalidade.Contains(funcionario.Naturalidade)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Naturalidade.Contains(funcionario.Naturalidade)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Naturalidade.Contains(funcionario.Naturalidade)
+                                          select f).ToList());
+
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -571,21 +355,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Nome
                         if (!string.IsNullOrEmpty(funcionario.Nome))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Nome.Contains(funcionario.Nome)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Nome.Contains(funcionario.Nome)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Nome.Contains(funcionario.Nome)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -593,43 +368,25 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region PerfilID
                         if (funcionario.PerfilID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.PerfilID == funcionario.PerfilID
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.PerfilID == funcionario.PerfilID
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.PerfilID == funcionario.PerfilID
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
-                        #endregion                      
+                        #endregion
 
                         #region Pis
                         if (!string.IsNullOrEmpty(funcionario.Pis))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Pis.Contains(funcionario.Pis)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Pis.Contains(funcionario.Pis)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Pis.Contains(funcionario.Pis)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -637,21 +394,11 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Rg
                         if (!string.IsNullOrEmpty(funcionario.Rg))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Rg.Contains(funcionario.Rg)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Rg.Contains(funcionario.Rg)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Rg.Contains(funcionario.Rg)
+                                          select f).ToList());
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -660,21 +407,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Sexo
                         if (funcionario.Sexo.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Sexo.HasValue && f.Sexo.Value == funcionario.Sexo.Value
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Sexo.HasValue && f.Sexo.Value == funcionario.Sexo.Value
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Sexo.HasValue && f.Sexo.Value == funcionario.Sexo.Value
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -682,65 +420,38 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Serie
                         if (!string.IsNullOrEmpty(funcionario.Serie))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Serie.Contains(funcionario.Serie)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Serie.Contains(funcionario.Serie)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Serie.Contains(funcionario.Serie)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
-                        
+
                         #region Senha
                         if (!string.IsNullOrEmpty(funcionario.Senha))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Senha.Contains(funcionario.Senha)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Senha.Contains(funcionario.Senha)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Senha.Contains(funcionario.Senha)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
-                       
+
                         #region Status
                         if (funcionario.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Status.HasValue && f.Status.Value == funcionario.Status.Value
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from f in resultado
-                                                    where
-                                                    f.Status.HasValue && f.Status.Value == funcionario.Status.Value
-                                                    select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Status.HasValue && f.Status.Value == funcionario.Status.Value
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -748,21 +459,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Uf
                         if (!string.IsNullOrEmpty(funcionario.Uf))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in resultado
-                                                    where
-                                                    f.Uf.Contains(funcionario.Uf)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in resultado
-                                              where
-                                              f.Uf.Contains(funcionario.Uf)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from f in resultado
+                                          where
+                                          f.Uf.Contains(funcionario.Uf)
+                                          select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -776,21 +478,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region ID
                         if (funcionario.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.ID == funcionario.ID
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.ID == funcionario.ID
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.ID == funcionario.ID
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -798,21 +491,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Alergico
                         if (!string.IsNullOrEmpty(funcionario.Alergico))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Alergico.Contains(funcionario.Alergico)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Alergico.Contains(funcionario.Alergico)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Alergico.Contains(funcionario.Alergico)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -820,21 +504,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Bairro
                         if (!string.IsNullOrEmpty(funcionario.Bairro))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Bairro.Contains(funcionario.Bairro)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Bairro.Contains(funcionario.Bairro)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Bairro.Contains(funcionario.Bairro)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -842,21 +517,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Cargo
                         if (!string.IsNullOrEmpty(funcionario.Cargo))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Cargo.Contains(funcionario.Cargo)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Cargo.Contains(funcionario.Cargo)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Cargo.Contains(funcionario.Cargo)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -864,21 +530,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Cep
                         if (!string.IsNullOrEmpty(funcionario.Cep))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Cep.Contains(funcionario.Cep)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Cep.Contains(funcionario.Cep)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Cep.Contains(funcionario.Cep)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -886,21 +543,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Cidade
                         if (!string.IsNullOrEmpty(funcionario.Cidade))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Cidade.Contains(funcionario.Cidade)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Cidade.Contains(funcionario.Cidade)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Cidade.Contains(funcionario.Cidade)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -908,21 +556,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region ComplementoEndereco
                         if (!string.IsNullOrEmpty(funcionario.ComplementoEndereco))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.ComplementoEndereco.Contains(funcionario.ComplementoEndereco)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.ComplementoEndereco.Contains(funcionario.ComplementoEndereco)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.ComplementoEndereco.Contains(funcionario.ComplementoEndereco)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -930,21 +569,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region ContatoEmergencia
                         if (!string.IsNullOrEmpty(funcionario.ContatoEmergencia))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.ContatoEmergencia.Contains(funcionario.ContatoEmergencia)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.ContatoEmergencia.Contains(funcionario.ContatoEmergencia)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.ContatoEmergencia.Contains(funcionario.ContatoEmergencia)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -952,21 +582,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Cpf
                         if (!string.IsNullOrEmpty(funcionario.Cpf))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Cpf.Contains(funcionario.Cpf)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Cpf.Contains(funcionario.Cpf)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Cpf.Contains(funcionario.Cpf)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -974,21 +595,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Ctps
                         if (!string.IsNullOrEmpty(funcionario.Ctps))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Ctps.Contains(funcionario.Ctps)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Ctps.Contains(funcionario.Ctps)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Ctps.Contains(funcionario.Ctps)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -996,21 +608,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region DataEfetivacao
                         if (funcionario.DataEfetivacao.HasValue && funcionario.DataEfetivacao.Value != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.DataEfetivacao.HasValue && f.DataEfetivacao.Value == funcionario.DataEfetivacao.Value
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.DataEfetivacao.HasValue && f.DataEfetivacao.Value == funcionario.DataEfetivacao.Value
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.DataEfetivacao.HasValue && f.DataEfetivacao.Value == funcionario.DataEfetivacao.Value
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1019,21 +622,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         if (!string.IsNullOrEmpty(funcionario.Edificio))
                         {
 
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Edificio.Contains(funcionario.Edificio)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Edificio.Contains(funcionario.Edificio)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Edificio.Contains(funcionario.Edificio)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1041,21 +635,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region EstadoCivil
                         if (!string.IsNullOrEmpty(funcionario.EstadoCivil))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.EstadoCivil.Contains(funcionario.EstadoCivil)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.EstadoCivil.Contains(funcionario.EstadoCivil)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.EstadoCivil.Contains(funcionario.EstadoCivil)
+                                                select f).ToList());
+
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -1064,21 +649,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Email
                         if (!string.IsNullOrEmpty(funcionario.Email))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Email.Contains(funcionario.Email)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Email.Contains(funcionario.Email)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Email.Contains(funcionario.Email)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1086,21 +662,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region FiliacaoPai
                         if (!string.IsNullOrEmpty(funcionario.FiliacaoPai))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.FiliacaoPai.Contains(funcionario.FiliacaoPai)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.FiliacaoPai.Contains(funcionario.FiliacaoPai)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.FiliacaoPai.Contains(funcionario.FiliacaoPai)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1108,21 +675,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region FiliacaoMae
                         if (!string.IsNullOrEmpty(funcionario.FiliacaoMae))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.FiliacaoMae.Contains(funcionario.FiliacaoMae)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.FiliacaoMae.Contains(funcionario.FiliacaoMae)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.FiliacaoMae.Contains(funcionario.FiliacaoMae)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1130,21 +688,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Fone
                         if (!string.IsNullOrEmpty(funcionario.Fone))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Fone.Contains(funcionario.Fone)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Fone.Contains(funcionario.Fone)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Fone.Contains(funcionario.Fone)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1152,21 +701,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region FoneEmergencia
                         if (!string.IsNullOrEmpty(funcionario.FoneEmergencia))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.FoneEmergencia.Contains(funcionario.FoneEmergencia)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from f in Consultar()
-                                           where
-                                           f.FoneEmergencia.Contains(funcionario.FoneEmergencia)
-                                           select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.FoneEmergencia.Contains(funcionario.FoneEmergencia)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1174,21 +714,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region FoneOpcional
                         if (!string.IsNullOrEmpty(funcionario.FoneOpcional))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.FoneOpcional.Contains(funcionario.FoneOpcional)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.FoneOpcional.Contains(funcionario.FoneOpcional)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.FoneOpcional.Contains(funcionario.FoneOpcional)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1196,21 +727,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Login
                         if (!string.IsNullOrEmpty(funcionario.Login))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Login.Contains(funcionario.Login)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Login.Contains(funcionario.Login)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Login.Contains(funcionario.Login)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1219,21 +741,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         if (!string.IsNullOrEmpty(funcionario.Logradouro))
                         {
 
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Logradouro.Contains(funcionario.Logradouro)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Logradouro.Contains(funcionario.Logradouro)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Logradouro.Contains(funcionario.Logradouro)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1241,21 +754,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Nascimento
                         if (funcionario.Nascimento.HasValue && funcionario.Nascimento.Value != default(DateTime))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Nascimento.HasValue && f.Nascimento.Value == funcionario.Nascimento
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Nascimento.HasValue && f.Nascimento.Value == funcionario.Nascimento
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Nascimento.HasValue && f.Nascimento.Value == funcionario.Nascimento
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1263,21 +767,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Naturalidade
                         if (!string.IsNullOrEmpty(funcionario.Naturalidade))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Naturalidade.Contains(funcionario.Naturalidade)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Naturalidade.Contains(funcionario.Naturalidade)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Naturalidade.Contains(funcionario.Naturalidade)
+                                                select f).ToList());
+
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -1286,21 +781,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Nacionalidade
                         if (!string.IsNullOrEmpty(funcionario.Nacionalidade))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Nacionalidade.Contains(funcionario.Nacionalidade)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Nacionalidade.Contains(funcionario.Nacionalidade)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Nacionalidade.Contains(funcionario.Nacionalidade)
+                                                select f).ToList());
+
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -1309,43 +795,25 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Nome
                         if (!string.IsNullOrEmpty(funcionario.Nome))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Nome.Contains(funcionario.Nome)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Nome.Contains(funcionario.Nome)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Nome.Contains(funcionario.Nome)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
-                        #endregion          
+                        #endregion
 
                         #region Rg
                         if (!string.IsNullOrEmpty(funcionario.Rg))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Rg.Contains(funcionario.Rg)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Rg.Contains(funcionario.Rg)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Rg.Contains(funcionario.Rg)
+                                                select f).ToList());
+
 
                             resultado = resultado.Distinct().ToList();
                         }
@@ -1354,21 +822,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region PerfilID
                         if (funcionario.PerfilID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.PerfilID == funcionario.PerfilID
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.PerfilID == funcionario.PerfilID
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.PerfilID == funcionario.PerfilID
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1376,21 +835,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Senha
                         if (!string.IsNullOrEmpty(funcionario.Senha))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Senha.Contains(funcionario.Senha)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Senha.Contains(funcionario.Senha)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Senha.Contains(funcionario.Senha)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1398,43 +848,25 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Sexo
                         if (funcionario.Sexo.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Sexo.HasValue && f.Sexo.Value == funcionario.Sexo.Value
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Sexo.HasValue && f.Sexo.Value == funcionario.Sexo.Value
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Sexo.HasValue && f.Sexo.Value == funcionario.Sexo.Value
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
-                        #endregion 
+                        #endregion
 
                         #region Uf
                         if (!string.IsNullOrEmpty(funcionario.Uf))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Uf.Contains(funcionario.Uf)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Uf.Contains(funcionario.Uf)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Uf.Contains(funcionario.Uf)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1442,21 +874,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Serie
                         if (!string.IsNullOrEmpty(funcionario.Serie))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Serie.Contains(funcionario.Serie)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Serie.Contains(funcionario.Serie)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Serie.Contains(funcionario.Serie)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1464,21 +887,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Pis
                         if (!string.IsNullOrEmpty(funcionario.Pis))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Pis.Contains(funcionario.Pis)
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Pis.Contains(funcionario.Pis)
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Pis.Contains(funcionario.Pis)
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1486,21 +900,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #region Status
                         if (funcionario.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from f in Consultar()
-                                                    where
-                                                    f.Status.HasValue && f.Status.Value == funcionario.Status.Value
-                                                    select f).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from f in Consultar()
-                                              where
-                                              f.Status.HasValue && f.Status.Value == funcionario.Status.Value
-                                              select f).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from f in Consultar()
+                                                where
+                                                f.Status.HasValue && f.Status.Value == funcionario.Status.Value
+                                                select f).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
                         #endregion
@@ -1524,7 +929,7 @@ namespace Negocios.ModuloFuncionario.Repositorios
             }
             catch (Exception)
             {
-                
+
                 throw new FuncionarioNaoIncluidoExcecao();
             }
         }
@@ -1545,12 +950,12 @@ namespace Negocios.ModuloFuncionario.Repositorios
                 funcionarioAux = resultado[0];
 
                 db.Funcionario.DeleteOnSubmit(funcionarioAux);
-            
+
             }
             catch (Exception)
             {
-                
-             throw new FuncionarioNaoExcluidoExcecao();
+
+                throw new FuncionarioNaoExcluidoExcecao();
             }
         }
 
@@ -1571,26 +976,26 @@ namespace Negocios.ModuloFuncionario.Repositorios
 
                 funcionarioAux.Alergico = funcionario.Alergico;
                 funcionarioAux.Bairro = funcionario.Bairro;
-                funcionarioAux.Cargo= funcionario.Cargo;
+                funcionarioAux.Cargo = funcionario.Cargo;
                 funcionarioAux.Cep = funcionario.Cep;
                 funcionarioAux.Cidade = funcionario.Cidade;
-                funcionarioAux.ComplementoEndereco= funcionario.ComplementoEndereco;
-                funcionarioAux.ContatoEmergencia= funcionario.ContatoEmergencia;
-                funcionarioAux.Cpf= funcionario.Cpf;
-                funcionarioAux.Ctps= funcionario.Ctps;
-                funcionarioAux.DataEfetivacao= funcionario.DataEfetivacao;
-                funcionarioAux.Email= funcionario.Email;
+                funcionarioAux.ComplementoEndereco = funcionario.ComplementoEndereco;
+                funcionarioAux.ContatoEmergencia = funcionario.ContatoEmergencia;
+                funcionarioAux.Cpf = funcionario.Cpf;
+                funcionarioAux.Ctps = funcionario.Ctps;
+                funcionarioAux.DataEfetivacao = funcionario.DataEfetivacao;
+                funcionarioAux.Email = funcionario.Email;
                 funcionarioAux.FiliacaoPai = funcionario.FiliacaoPai;
                 funcionarioAux.FiliacaoMae = funcionario.FiliacaoMae;
                 funcionarioAux.FoneEmergencia = funcionario.FoneEmergencia;
-                funcionarioAux.Imagem= funcionario.Imagem;
-                funcionarioAux.Login= funcionario.Login;
-                funcionarioAux.Logradouro= funcionario.Logradouro;
+                funcionarioAux.Imagem = funcionario.Imagem;
+                funcionarioAux.Login = funcionario.Login;
+                funcionarioAux.Logradouro = funcionario.Logradouro;
                 funcionarioAux.Nascimento = funcionario.Nascimento;
                 funcionarioAux.Naturalidade = funcionario.Naturalidade;
                 funcionarioAux.Nome = funcionario.Nome;
-                funcionarioAux.PerfilID= funcionario.PerfilID;
-                funcionarioAux.Pis= funcionario.Pis;
+                funcionarioAux.PerfilID = funcionario.PerfilID;
+                funcionarioAux.Pis = funcionario.Pis;
                 funcionarioAux.Senha = funcionario.Senha;
                 funcionarioAux.Serie = funcionario.Serie;
                 funcionarioAux.Sexo = funcionario.Sexo;
@@ -1604,8 +1009,8 @@ namespace Negocios.ModuloFuncionario.Repositorios
             }
             catch (Exception)
             {
-                
-               throw new FuncionarioNaoAlteradoExcecao();
+
+                throw new FuncionarioNaoAlteradoExcecao();
             }
         }
 
@@ -1614,7 +1019,7 @@ namespace Negocios.ModuloFuncionario.Repositorios
             db.SubmitChanges();
         }
 
-        #endregion      
+        #endregion
 
         #region Construtor
         public FuncionarioRepositorio()
@@ -1622,9 +1027,9 @@ namespace Negocios.ModuloFuncionario.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
- 
+
 
     }
 }

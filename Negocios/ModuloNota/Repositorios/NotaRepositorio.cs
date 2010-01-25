@@ -16,7 +16,7 @@ namespace Negocios.ModuloNota.Repositorios
 
         ColegioDB db;
 
-        #endregion      
+        #endregion
 
         #region Métodos da Interface
 
@@ -28,7 +28,7 @@ namespace Negocios.ModuloNota.Repositorios
         public List<Nota> Consultar(Nota nota, TipoPesquisa tipoPesquisa)
         {
             List<Nota> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -36,21 +36,12 @@ namespace Negocios.ModuloNota.Repositorios
                     {
                         if (nota.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.ID == nota.ID
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.ID == nota.ID
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.ID == nota.ID
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -58,157 +49,90 @@ namespace Negocios.ModuloNota.Repositorios
 
                         if (nota.Aprovado.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.Aprovado.HasValue && d.Aprovado.Value == nota.Aprovado.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.Aprovado.HasValue && d.Aprovado.Value == nota.Aprovado.Value
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.Aprovado.HasValue && d.Aprovado.Value == nota.Aprovado.Value
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.ProfessorDisciplinaSalaID.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == nota.ProfessorDisciplinaSalaID.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == nota.ProfessorDisciplinaSalaID.Value
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == nota.ProfessorDisciplinaSalaID.Value
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.Rec.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.Rec.HasValue && d.Rec.Value == nota.Rec.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.Rec.HasValue && d.Rec.Value == nota.Rec.Value
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.Rec.HasValue && d.Rec.Value == nota.Rec.Value
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.RecFinal.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.RecFinal.HasValue && d.RecFinal.Value == nota.RecFinal.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.RecFinal.HasValue && d.RecFinal.Value == nota.RecFinal.Value
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.RecFinal.HasValue && d.RecFinal.Value == nota.RecFinal.Value
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.Vp.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                            resultado.AddRange((from d in resultado
-                                                where
-                                                d.Vp.HasValue && d.Vp.Value == nota.Vp.Value
-                                                select d).ToList());
-                            }else{resultado=((from d in resultado
-                                                where
-                                                d.Vp.HasValue && d.Vp.Value == nota.Vp.Value
-                                                select d).ToList());}
-                            pesquisa = true;
+                            resultado = ((from d in resultado
+                                          where
+                                          d.Vp.HasValue && d.Vp.Value == nota.Vp.Value
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.Vc1 <= 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.Vc1 == nota.Vc1
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.Vc1 == nota.Vc1
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.Vc1 == nota.Vc1
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.Vc2 <= 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.Vc2 == nota.Vc2
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.Vc2 == nota.Vc2
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.Vc2 == nota.Vc2
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.Status.HasValue && d.Status.Value == nota.Status.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.Status.HasValue && d.Status.Value == nota.Status.Value
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.Status.HasValue && d.Status.Value == nota.Status.Value
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -220,21 +144,12 @@ namespace Negocios.ModuloNota.Repositorios
                     {
                         if (nota.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.ID == nota.ID
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.ID == nota.ID
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.ID == nota.ID
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -242,161 +157,89 @@ namespace Negocios.ModuloNota.Repositorios
 
                         if (nota.Aprovado.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.Aprovado.HasValue && d.Aprovado.Value == nota.Aprovado.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.Aprovado.HasValue && d.Aprovado.Value == nota.Aprovado.Value
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Aprovado.HasValue && d.Aprovado.Value == nota.Aprovado.Value
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.ProfessorDisciplinaSalaID.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == nota.ProfessorDisciplinaSalaID.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == nota.ProfessorDisciplinaSalaID.Value
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.ProfessorDisciplinaSalaID.HasValue && d.ProfessorDisciplinaSalaID.Value == nota.ProfessorDisciplinaSalaID.Value
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.Rec.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.Rec.HasValue && d.Rec.Value == nota.Rec.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.Rec.HasValue && d.Rec.Value == nota.Rec.Value
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Rec.HasValue && d.Rec.Value == nota.Rec.Value
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.RecFinal.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.RecFinal.HasValue && d.RecFinal.Value == nota.RecFinal.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.RecFinal.HasValue && d.RecFinal.Value == nota.RecFinal.Value
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.RecFinal.HasValue && d.RecFinal.Value == nota.RecFinal.Value
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.Vp.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.Vp.HasValue && d.Vp.Value == nota.Vp.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.Vp.HasValue && d.Vp.Value == nota.Vp.Value
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Vp.HasValue && d.Vp.Value == nota.Vp.Value
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.Vc1 <= 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.Vc1 == nota.Vc1
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                             where
-                                             d.Vc1 == nota.Vc1
-                                             select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Vc1 == nota.Vc1
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.Vc2 <= 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.Vc2 == nota.Vc2
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.Vc2 == nota.Vc2
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Vc2 == nota.Vc2
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (nota.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.Status.HasValue && d.Status.Value == nota.Status.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.Status.HasValue && d.Status.Value == nota.Status.Value
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Status.HasValue && d.Status.Value == nota.Status.Value
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -491,7 +334,7 @@ namespace Negocios.ModuloNota.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
 
 

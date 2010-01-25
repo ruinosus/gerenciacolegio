@@ -10,14 +10,14 @@ using Negocios.ModuloBasico.VOs;
 
 namespace Negocios.ModuloDisciplina.Repositorios
 {
-    public class DisciplinaRepositorio: IDisciplinaRepositorio
+    public class DisciplinaRepositorio : IDisciplinaRepositorio
     {
         #region Atributos
-        
+
         ColegioDB db;
 
-        #endregion      
-		
+        #endregion
+
         #region Métodos da Interface
 
         public List<Disciplina> Consultar()
@@ -28,7 +28,7 @@ namespace Negocios.ModuloDisciplina.Repositorios
         public List<Disciplina> Consultar(Disciplina disciplina, TipoPesquisa tipoPesquisa)
         {
             List<Disciplina> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -36,86 +36,53 @@ namespace Negocios.ModuloDisciplina.Repositorios
                     {
                         if (disciplina.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.ID == disciplina.ID
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.ID == disciplina.ID
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.ID == disciplina.ID
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        
+
                         if (disciplina.TipoAvaliacao.HasValue)
                         {
 
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.TipoAvaliacao.HasValue && d.TipoAvaliacao.Value == disciplina.TipoAvaliacao.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.TipoAvaliacao.HasValue && d.TipoAvaliacao.Value == disciplina.TipoAvaliacao.Value
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.TipoAvaliacao.HasValue && d.TipoAvaliacao.Value == disciplina.TipoAvaliacao.Value
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(disciplina.Nome))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.Nome.Contains(disciplina.Nome)
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.Nome.Contains(disciplina.Nome)
-                                                    select d).ToList());
-                            } pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.Nome.Contains(disciplina.Nome)
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        
+
                         if (disciplina.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in resultado
-                                                    where
-                                                    d.Status.HasValue && d.Status.Value == disciplina.Status.Value
-                                                    select d).ToList());
-                            }
-                            else {
-                                resultado=((from d in resultado
-                                                    where
-                                                    d.Status.HasValue && d.Status.Value == disciplina.Status.Value
-                                                    select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from d in resultado
+                                          where
+                                          d.Status.HasValue && d.Status.Value == disciplina.Status.Value
+                                          select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        
+
                         break;
                     }
                 #endregion
@@ -124,21 +91,12 @@ namespace Negocios.ModuloDisciplina.Repositorios
                     {
                         if (disciplina.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.ID == disciplina.ID
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.ID == disciplina.ID
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.ID == disciplina.ID
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -146,61 +104,35 @@ namespace Negocios.ModuloDisciplina.Repositorios
                         if (disciplina.TipoAvaliacao.HasValue)
                         {
 
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.TipoAvaliacao.HasValue && d.TipoAvaliacao.Value == disciplina.TipoAvaliacao.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.TipoAvaliacao.HasValue && d.TipoAvaliacao.Value == disciplina.TipoAvaliacao.Value
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.TipoAvaliacao.HasValue && d.TipoAvaliacao.Value == disciplina.TipoAvaliacao.Value
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(disciplina.Nome))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.Nome.Contains(disciplina.Nome)
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.Nome.Contains(disciplina.Nome)
-                                              select d).ToList());
-                            } pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Nome.Contains(disciplina.Nome)
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
 
                         if (disciplina.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from d in Consultar()
-                                                    where
-                                                    d.Status.HasValue && d.Status.Value == disciplina.Status.Value
-                                                    select d).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from d in Consultar()
-                                              where
-                                              d.Status.HasValue && d.Status.Value == disciplina.Status.Value
-                                              select d).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from d in Consultar()
+                                                where
+                                                d.Status.HasValue && d.Status.Value == disciplina.Status.Value
+                                                select d).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -223,7 +155,7 @@ namespace Negocios.ModuloDisciplina.Repositorios
             }
             catch (Exception)
             {
-                
+
                 throw new DisciplinaNaoIncluidaExcecao();
             }
         }
@@ -244,12 +176,12 @@ namespace Negocios.ModuloDisciplina.Repositorios
                 disciplinaAux = resultado[0];
 
                 db.Disciplina.DeleteOnSubmit(disciplinaAux);
-            
+
             }
             catch (Exception)
             {
-                
-                  throw new DisciplinaNaoExcluidaExcecao();
+
+                throw new DisciplinaNaoExcluidaExcecao();
             }
         }
 
@@ -277,7 +209,7 @@ namespace Negocios.ModuloDisciplina.Repositorios
             }
             catch (Exception)
             {
-                  throw new DisciplinaNaoAlteradaExcecao();
+                throw new DisciplinaNaoAlteradaExcecao();
             }
         }
 
@@ -286,7 +218,7 @@ namespace Negocios.ModuloDisciplina.Repositorios
             db.SubmitChanges();
         }
 
-        #endregion      
+        #endregion
 
         #region Construtor
         public DisciplinaRepositorio()
@@ -294,7 +226,7 @@ namespace Negocios.ModuloDisciplina.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
     }
 }

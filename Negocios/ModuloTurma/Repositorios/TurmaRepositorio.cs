@@ -16,7 +16,7 @@ namespace Negocios.ModuloTurma.Repositorios
 
         ColegioDB db;
 
-        #endregion      
+        #endregion
 
         #region Métodos da Interface
 
@@ -28,7 +28,7 @@ namespace Negocios.ModuloTurma.Repositorios
         public List<Turma> Consultar(Turma turma, TipoPesquisa tipoPesquisa)
         {
             List<Turma> resultado = Consultar();
-            bool pesquisa = false;
+
             switch (tipoPesquisa)
             {
                 #region Case E
@@ -36,61 +36,34 @@ namespace Negocios.ModuloTurma.Repositorios
                     {
                         if (turma.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in resultado
-                                                    where
-                                                    t.ID == turma.ID
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from t in resultado
-                                                    where
-                                                    t.ID == turma.ID
-                                                    select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from t in resultado
+                                          where
+                                          t.ID == turma.ID
+                                          select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(turma.Nome))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in resultado
-                                                    where
-                                                    t.Nome.Contains(turma.Nome)
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from t in resultado
-                                                    where
-                                                    t.Nome.Contains(turma.Nome)
-                                                    select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from t in resultado
+                                          where
+                                          t.Nome.Contains(turma.Nome)
+                                          select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (turma.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in resultado
-                                                    where
-                                                    t.Status.HasValue && t.Status.Value == turma.Status.Value
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado=((from t in resultado
-                                                    where
-                                                    t.Status.HasValue && t.Status.Value == turma.Status.Value
-                                                    select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado = ((from t in resultado
+                                          where
+                                          t.Status.HasValue && t.Status.Value == turma.Status.Value
+                                          select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -102,61 +75,34 @@ namespace Negocios.ModuloTurma.Repositorios
                     {
                         if (turma.ID != 0)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in Consultar()
-                                                    where
-                                                    t.ID == turma.ID
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from t in Consultar()
-                                              where
-                                              t.ID == turma.ID
-                                              select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.ID == turma.ID
+                                                select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (!string.IsNullOrEmpty(turma.Nome))
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in Consultar()
-                                                    where
-                                                    t.Nome.Contains(turma.Nome)
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from t in Consultar()
-                                              where
-                                              t.Nome.Contains(turma.Nome)
-                                              select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.Nome.Contains(turma.Nome)
+                                                select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
                         if (turma.Status.HasValue)
                         {
-                            if (pesquisa)
-                            {
-                                resultado.AddRange((from t in Consultar()
-                                                    where
-                                                    t.Status.HasValue && t.Status.Value == turma.Status.Value
-                                                    select t).ToList());
-                            }
-                            else
-                            {
-                                resultado = ((from t in Consultar()
-                                              where
-                                              t.Status.HasValue && t.Status.Value == turma.Status.Value
-                                              select t).ToList());
-                            }
-                            pesquisa = true;
+
+                            resultado.AddRange((from t in Consultar()
+                                                where
+                                                t.Status.HasValue && t.Status.Value == turma.Status.Value
+                                                select t).ToList());
+
                             resultado = resultado.Distinct().ToList();
                         }
 
@@ -245,7 +191,7 @@ namespace Negocios.ModuloTurma.Repositorios
             Conexao conexao = new Conexao();
             db = new ColegioDB(new MySqlConnection(conexao.ToString()));
 
-        } 
+        }
         #endregion
 
 
