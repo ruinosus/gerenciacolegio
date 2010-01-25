@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloFuncionario.Processos;
+using Negocios.ModuloBasico.VOs;
+using Negocios.ModuloBasico.Enums;
 
 namespace GuiWindowsForms
 {
     public partial class telaFuncionario : Form
     {
         Funcionario funcionario = new Funcionario();
-        IFuncionarioProcesso funcionarioControlador = FuncionarioProcesso.Instance; 
+        IFuncionarioProcesso funcionarioControlador = FuncionarioProcesso.Instance;
 
         #region SINGLETON DA TELA
         /*
@@ -47,7 +49,7 @@ namespace GuiWindowsForms
         /// <summary>
         /// Construtor da tela
         /// </summary>
-        
+
         public telaFuncionario()
         {
             InitializeComponent();
@@ -216,7 +218,7 @@ namespace GuiWindowsForms
                 //    return;
                 //}
                 funcionario.Rg = txtRg.Text;
-               
+
                 #endregion
 
                 #region VALIDA - ENDEREÇO
@@ -230,7 +232,7 @@ namespace GuiWindowsForms
                 funcionario.Logradouro = txtLogradouro.Text;
 
                 #endregion
-      
+
                 #region VALIDA - COMPLEMENTO
 
                 //if (String.IsNullOrEmpty(txtComplemento.Text))
@@ -369,7 +371,7 @@ namespace GuiWindowsForms
                 funcionarioControlador.Confirmar();
 
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -590,5 +592,94 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        #region ACTIVATED
+        private void telaFuncionario_Activated(object sender, EventArgs e)
+        {
+            Memoria memoria = Memoria.Instance;
+
+
+            if (memoria.Status == StatusBanco.Inativo)
+            {
+                ucMenuInferior1.apagarBotaoAlterar();
+                ucMenuInferior1.apagarBotaoDeletar();
+                ucMenuInferior1.apagarBotaoIncluir();
+
+                memoria.Status = StatusBanco.Inclusao;
+
+                if (memoria.Funcionario != null)
+                {
+                    funcionario = memoria.Funcionario;
+                    carregarFuncionario();
+ 
+                }
+                else
+                {
+                    limparFuncionario();
+                }
+                txtNome.Focus();
+
+                //VALIDA EXIBICAO DOS BOTAO DO MENU_INFERIOR
+                if (Program.ultimaTelaCadastrar == 2)
+                {
+                    Enabled_False();
+                    ucMenuInferior1.exibirBotaoAlterar();
+                }
+
+                if (Program.ultimaTelaCadastrar == 3)
+                {
+                    Enabled_False();
+                    ucMenuInferior1.exibirBotaoAlterar();
+                }
+                Program.ultimaTelaCadastrar = 0;
+            }
+        }
+        #endregion
+
+        #region METODOS ENABLED
+
+        /// <summary>
+        ///  Método para Ativar a Alteração
+        ///  de todos os campos de Funcionario
+        /// </summary>
+        private void Enabled_True()
+        {
+            txtNome.Enabled = true;
+            rdbFem.Enabled = true;
+            rdbMasc.Enabled = true;
+            dtpNascimento.Enabled = true;
+            cmbNacionalidade.Enabled = true;
+            txtNaturalidade.Enabled = true;
+            txtLogradouro.Enabled = true;
+            txtComplemento.Enabled = true;
+            txtNomeEdificil.Enabled = true;
+            txtBairro.Enabled = true;
+            mskCep.Enabled = true;
+            cmbUf.Enabled = true;
+            txtCidade.Enabled = true;
+            mskFoneResidencia.Enabled = true;
+        }
+
+        /// <summary>
+        ///  Método para Desativar a Alteração
+        ///  de todos os campos de Funcionario
+        /// </summary>
+        private void Enabled_False()
+        {
+            txtNome.Enabled = false;
+            rdbFem.Enabled = false;
+            rdbMasc.Enabled = false;
+            dtpNascimento.Enabled = false;
+            cmbNacionalidade.Enabled = false;
+            txtNaturalidade.Enabled = false;
+            txtLogradouro.Enabled = false;
+            txtComplemento.Enabled = false;
+            txtNomeEdificil.Enabled = false;
+            txtBairro.Enabled = false;
+            mskCep.Enabled = false;
+            cmbUf.Enabled = false;
+            txtCidade.Enabled = false;
+        }
+
+        #endregion
     }
 }
