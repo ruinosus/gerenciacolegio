@@ -95,3 +95,8 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\bin\Debug\Negocios.dll
 C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\bin\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\Negocios.dll
 C:\Users\Dudu\Desktop\Colegio Conhecer\Negocios\obj\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\Col_Conhecer\Negocios\bin\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Col_Conhecer\Negocios\bin\Debug\Negocios.pdb
+C:\Users\Dudu\Desktop\Col_Conhecer\Negocios\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dudu\Desktop\Col_Conhecer\Negocios\obj\Debug\Negocios.dll
+C:\Users\Dudu\Desktop\Col_Conhecer\Negocios\obj\Debug\Negocios.pdb

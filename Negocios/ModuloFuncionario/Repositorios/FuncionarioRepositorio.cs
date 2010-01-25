@@ -366,7 +366,7 @@ namespace Negocios.ModuloFuncionario.Repositorios
                         #endregion
 
                         #region PerfilID
-                        if (funcionario.PerfilID != 0)
+                        if (funcionario.PerfilID != 0 && funcionario.PerfilID != null)
                         {
 
                             resultado = ((from f in resultado
