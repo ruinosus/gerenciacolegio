@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
 using Negocios.ModuloBasico.Enums;
+using System.Data;
 
 namespace Negocios.ModuloMatriculaVinculo.Processos
 {
@@ -48,5 +49,13 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
         /// Método responsável por confirmar as alterações no sistema.
         /// </summary>       
         void Confirmar();
+
+        /// <summary>
+        /// Método responsável por retornar um Datatable referente ao relatorio de Matriculas Vinculadas
+        /// </summary>
+        /// <param name="matriculaVinculo">Objeto do tipo matriculaVinculo que irá ser utilizado como parametro de pesquisa.</param>
+        /// <param name="tipoPesquisa">Tipo de pesquisa a ser utilizada.</param>
+        /// <returns>DataTabel contendo o dados necessários para o relarório.</returns>
+        DataTable GerarRelatorio(MatriculaVinculo matriculaVinculo, TipoPesquisa tipoPesquisa);
     }
 }

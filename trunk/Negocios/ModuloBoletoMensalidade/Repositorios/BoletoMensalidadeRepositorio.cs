@@ -46,6 +46,17 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
+                        if (boletoMensalidade.MatriculaID != 0 && boletoMensalidade.MatriculaID != null)
+                        {
+
+                            resultado = ((from bm in resultado
+                                          where
+                                          bm.MatriculaID == boletoMensalidade.MatriculaID
+                                          select bm).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
                         if (boletoMensalidade.DataEmissao != default(DateTime))
                         {
 
