@@ -16,6 +16,7 @@ using Negocios.ModuloBoletoMensalidade.Processos;
 using System.Globalization;
 using Negocios.ModuloBasico.Enums;
 using Negocios.ModuloAluno.Processos;
+using Negocios.ModuloAtividadeTurma.Processos;
 
 namespace GuiWindowsForms
 {
@@ -101,22 +102,6 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region BUTTON DESCONECTAR
-        /// <summary>
-        /// Botão para esconder a tela e voltar para a tela de login
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnDesconectar_Click(object sender, EventArgs e)
-        {
-            Program.ultimaTela = 9;
-            this.Close();
-            telaLogin telalogin = telaLogin.getInstancia();
-            telalogin.Show();
-        }
-        #endregion
-
         #region MÉTODO PARA FECHAR A TELA
         /// <summary>
         /// Evento para o fechamento da tela, não fecha de verdade, 
@@ -147,7 +132,8 @@ namespace GuiWindowsForms
         #region BUTTON MATRICULA 
         private void btnMatriculaAtividade_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(alunoMatriculaAux.SerieAtual))
+
+            if ((!String.IsNullOrEmpty(alunoMatriculaAux.SerieAtual))&&verificaTurmaAtividade()>0)
             {
                 this.Hide();
                 Program.ultimaTela = 4;
@@ -156,7 +142,7 @@ namespace GuiWindowsForms
             }
             else
             {
-                MessageBox.Show("O aluno deve estar matriculado em uma série antes de vincular-se a atividades", "Colégio Conhecer - Matricula");
+                MessageBox.Show("O aluno deve estar matriculado em uma série e existir turmas das atividades antes de vincular-se a atividades", "Colégio Conhecer - Matricula");
             }
         }
 
@@ -372,6 +358,8 @@ namespace GuiWindowsForms
                     alunoControlador.Confirmar();
 
                     MessageBox.Show(MatriculaConstantes.MATRICULA_INCLUIDA, "Colégio Conhecer - Inserir Matrícula");
+
+                    memoria.Aluno = alunoMatriculaAux;
                 }
                 else
                 {
@@ -569,6 +557,24 @@ namespace GuiWindowsForms
             this.Close();
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
+        }
+
+        private int verificaTurmaAtividade()
+        {
+            int aux = 0;
+            AtividadeTurma atvTurmaAux = new AtividadeTurma();
+            IAtividadeTurmaProcesso atvTurmaControladorAux = AtividadeTurmaProcesso.Instance;
+
+            atvTurmaAux.Status = (int)Status.Ativo;
+
+            List<AtividadeTurma> listaAtvTurmaAux = new List<AtividadeTurma>();
+            listaAtvTurmaAux = atvTurmaControladorAux.Consultar(atvTurmaAux, TipoPesquisa.E);
+
+            if (listaAtvTurmaAux.Count > 0)
+            {
+                aux = listaAtvTurmaAux.Count;
+            }
+            return aux;
         }
     }
 
