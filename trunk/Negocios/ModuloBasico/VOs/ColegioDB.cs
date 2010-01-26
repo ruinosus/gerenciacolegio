@@ -1259,6 +1259,12 @@ using Negocios.ModuloBasico.VOs;
         partial void OnIDChanging(int value);
         partial void OnStatusChanged();
         partial void OnStatusChanging(sbyte? value);
+        partial void OnValorChanged();
+        partial void OnValorChanging(double? value);
+        partial void OnDescontoChanged();
+        partial void OnDescontoChanging(double? value);
+        partial void OnDataMatriculaChanged();
+        partial void OnDataMatriculaChanging(DateTime? value);
 
         #endregion
 
@@ -1314,6 +1320,84 @@ using Negocios.ModuloBasico.VOs;
 
         #endregion
 
+        #region double? Valor
+
+        private double? _valor;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_valor", Name = "Valor", DbType = "double", AutoSync = AutoSync.Never)]
+        public double? Valor
+        {
+            get
+            {
+                return _valor;
+            }
+            set
+            {
+                if (value != _valor)
+                {
+                    OnValorChanging(value);
+                    SendPropertyChanging();
+                    _valor = value;
+                    SendPropertyChanged("Valor");
+                    OnValorChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region double? Desconto
+
+        private double? _desconto;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_desconto", Name = "Desconto", DbType = "double", AutoSync = AutoSync.Never)]
+        public double? Desconto
+        {
+            get
+            {
+                return _desconto;
+            }
+            set
+            {
+                if (value != _desconto)
+                {
+                    OnDescontoChanging(value);
+                    SendPropertyChanging();
+                    _desconto = value;
+                    SendPropertyChanged("Desconto");
+                    OnDescontoChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region DateTime? DataMatricula
+
+        private DateTime? _dataMatricula;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_dataMatricula", Name = "DataMatricula", DbType = "datetime", AutoSync = AutoSync.Never)]
+        public DateTime? DataMatricula
+        {
+            get
+            {
+                return _dataMatricula;
+            }
+            set
+            {
+                if (value != _dataMatricula)
+                {
+                    OnDataMatriculaChanging(value);
+                    SendPropertyChanging();
+                    _dataMatricula = value;
+                    SendPropertyChanged("DataMatricula");
+                    OnDataMatriculaChanged();
+                }
+            }
+        }
+
+        #endregion
+
         #region int? AtividadeTurmaID
 
         private int? _atividadeTurmaID;
@@ -1334,32 +1418,6 @@ using Negocios.ModuloBasico.VOs;
                     _atividadeTurmaID = value;
                     SendPropertyChanged("AtividadeTurmaID");
                     OnAtividadeTurmaIDChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region int? DescontoID
-
-        private int? _descontoID;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_descontoID", Name = "DescontoId", DbType = "int", AutoSync = AutoSync.Never)]
-        public int? DescontoID
-        {
-            get
-            {
-                return _descontoID;
-            }
-            set
-            {
-                if (value != _descontoID)
-                {
-                    OnDescontoIDChanging(value);
-                    SendPropertyChanging();
-                    _descontoID = value;
-                    SendPropertyChanged("DescontoID");
-                    OnDescontoIDChanged();
                 }
             }
         }
@@ -1505,41 +1563,6 @@ using Negocios.ModuloBasico.VOs;
                 }
             }
         }
-
-        private EntityRef<Desconto> _desConTo;
-        [Association(Storage = "_desConTo", OtherKey = "ID", ThisKey = "DescontoID", Name = "fk_AlunoAtividadeTurma_Desconto", IsForeignKey = true)]
-        [DebuggerNonUserCode]
-        public Desconto Desconto
-        {
-            get
-            {
-                return _desConTo.Entity;
-            }
-            set
-            {
-                if (value != _desConTo.Entity)
-                {
-                    if (_desConTo.Entity != null)
-                    {
-                        var previousDesconto = _desConTo.Entity;
-                        _desConTo.Entity = null;
-                        previousDesconto.AlunoAtividadeTurma.Remove(this);
-                    }
-                    _desConTo.Entity = value;
-                    if (value != null)
-                    {
-                        value.AlunoAtividadeTurma.Add(this);
-                        _descontoID = value.ID;
-                    }
-                    else
-                    {
-                        _descontoID = null;
-                    }
-                }
-            }
-        }
-
-
         #endregion
 
         #region Attachement handlers
@@ -1564,7 +1587,6 @@ using Negocios.ModuloBasico.VOs;
             _boleToAtIvIDade = new EntitySet<BoletoAtividade>(BoletoAtividade_Attach, BoletoAtividade_Detach);
             _alUNo = new EntityRef<Aluno>();
             _atIvIdaDeTuRmA = new EntityRef<AtividadeTurma>();
-            _desConTo = new EntityRef<Desconto>();
             OnCreated();
         }
 
@@ -2432,6 +2454,8 @@ using Negocios.ModuloBasico.VOs;
         partial void OnStatusChanging(sbyte? value);
         partial void OnValorChanged();
         partial void OnValorChanging(double? value);
+        partial void OnMatriculaIDChanged();
+        partial void OnMatriculaIDChanging(int? value);
 
         #endregion
 
@@ -2617,6 +2641,32 @@ using Negocios.ModuloBasico.VOs;
 
         #endregion
 
+        #region int? MatriculaId
+
+        private int? _matriculaId;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_matriculaId", Name = "MatriculaId", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.Never, CanBeNull = false)]
+        public int? MatriculaId
+        {
+            get
+            {
+                return _matriculaId;
+            }
+            set
+            {
+                if (value != _matriculaId)
+                {
+                    OnMatriculaIDChanging(value);
+                    SendPropertyChanging();
+                    _matriculaId = value;
+                    SendPropertyChanged("MatriculaId");
+                    OnMatriculaIDChanged();
+                }
+            }
+        }
+
+        #endregion
+
         #region double? Multa
 
         private double? _multa;
@@ -2776,6 +2826,39 @@ using Negocios.ModuloBasico.VOs;
             }
         }
 
+        private EntityRef<Matricula> _matricula;
+        [Association(Storage = "_matricula", OtherKey = "ID", ThisKey = "MatriculaId", Name = "fk_BoletoAtividade_Matricula", IsForeignKey = true)]
+        [DebuggerNonUserCode]
+        public Matricula Matricula
+        {
+            get
+            {
+                return _matricula.Entity;
+            }
+            set
+            {
+                if (value != _matricula.Entity)
+                {
+                    if (_matricula.Entity != null)
+                    {
+                        var previousMatricula = _matricula.Entity;
+                        _matricula.Entity = null;
+                        previousMatricula.BoletoAtividade.Remove(this);
+                    }
+                    _matricula.Entity = value;
+                    if (value != null)
+                    {
+                        value.BoletoAtividade.Add(this);
+                        _matriculaId = value.ID;
+                    }
+                    else
+                    {
+                        _matriculaId = null;
+                    }
+                }
+            }
+        }
+
 
         #endregion
 
@@ -2800,6 +2883,8 @@ using Negocios.ModuloBasico.VOs;
         {
             _chequeBoleToAtIvIDade = new EntitySet<ChequeBoletoAtividade>(ChequeBoletoAtividade_Attach, ChequeBoletoAtividade_Detach);
             _alUNoAtIvIdaDeTuRmA = new EntityRef<AlunoAtividadeTurma>();
+            _matricula = new EntityRef<Matricula>();
+
             OnCreated();
         }
 
@@ -4975,20 +5060,20 @@ using Negocios.ModuloBasico.VOs;
 
         #region Children
 
-        private EntitySet<AlunoAtividadeTurma> _alUNoAtIvIdaDeTuRmA;
-        [Association(Storage = "_alUNoAtIvIdaDeTuRmA", OtherKey = "DescontoID", ThisKey = "ID", Name = "fk_AlunoAtividadeTurma_Desconto")]
-        [DebuggerNonUserCode]
-        public EntitySet<AlunoAtividadeTurma> AlunoAtividadeTurma
-        {
-            get
-            {
-                return _alUNoAtIvIdaDeTuRmA;
-            }
-            set
-            {
-                _alUNoAtIvIdaDeTuRmA = value;
-            }
-        }
+        //private EntitySet<AlunoAtividadeTurma> _alUNoAtIvIdaDeTuRmA;
+        //[Association(Storage = "_alUNoAtIvIdaDeTuRmA", OtherKey = "DescontoID", ThisKey = "ID", Name = "fk_AlunoAtividadeTurma_Desconto")]
+        //[DebuggerNonUserCode]
+        //public EntitySet<AlunoAtividadeTurma> AlunoAtividadeTurma
+        //{
+        //    get
+        //    {
+        //        return _alUNoAtIvIdaDeTuRmA;
+        //    }
+        //    set
+        //    {
+        //        _alUNoAtIvIdaDeTuRmA = value;
+        //    }
+        //}
 
         private EntitySet<Matricula> _matRiCuLa;
         [Association(Storage = "_matRiCuLa", OtherKey = "DescontoID", ThisKey = "ID", Name = "fk_Matricula_Desconto")]
@@ -5010,16 +5095,6 @@ using Negocios.ModuloBasico.VOs;
 
         #region Attachement handlers
 
-        private void AlunoAtividadeTurma_Attach(AlunoAtividadeTurma entity)
-        {
-            entity.Desconto = this;
-        }
-
-        private void AlunoAtividadeTurma_Detach(AlunoAtividadeTurma entity)
-        {
-            entity.Desconto = null;
-        }
-
         private void Matricula_Attach(Matricula entity)
         {
             entity.Desconto = this;
@@ -5037,7 +5112,6 @@ using Negocios.ModuloBasico.VOs;
 
         public Desconto()
         {
-            _alUNoAtIvIdaDeTuRmA = new EntitySet<AlunoAtividadeTurma>(AlunoAtividadeTurma_Attach, AlunoAtividadeTurma_Detach);
             _matRiCuLa = new EntitySet<Matricula>(Matricula_Attach, Matricula_Detach);
             OnCreated();
         }
@@ -6932,6 +7006,21 @@ using Negocios.ModuloBasico.VOs;
             }
         }
 
+        private EntitySet<BoletoAtividade> _boleToatIvIdADe;
+        [Association(Storage = "_boleToatIvIdADe", OtherKey = "MatriculaId", ThisKey = "ID", Name = "fk_BoletoAtividade_Matricula")]
+        [DebuggerNonUserCode]
+        public EntitySet<BoletoAtividade> BoletoAtividade
+        {
+            get
+            {
+                return _boleToatIvIdADe;
+            }
+            set
+            {
+                _boleToatIvIdADe = value;
+            }
+        }
+
         private EntitySet<MatriculaVinculo> _matRiCuLaViNCuLoPrincipal;
         [Association(Storage = "_matRiCuLaViNCuLo", OtherKey = "MatriculaPrincipalID", ThisKey = "ID", Name = "fk_MatriculaVinculo_Matricula1")]
         [DebuggerNonUserCode]
@@ -7092,6 +7181,16 @@ using Negocios.ModuloBasico.VOs;
         }
 
         private void BoletoMensalidade_Detach(BoletoMensalidade entity)
+        {
+            entity.Matricula = null;
+        }
+
+        private void BoletoAtividade_Attach(BoletoAtividade entity)
+        {
+            entity.Matricula = this;
+        }
+
+        private void BoletoAtividade_Detach(BoletoAtividade entity)
         {
             entity.Matricula = null;
         }

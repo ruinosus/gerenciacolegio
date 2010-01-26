@@ -9,6 +9,8 @@ using Negocios.ModuloAlunoAtividadeTurma.Classes_Auxiliares;
 using System.Drawing;
 using System.IO;
 using Negocios.ModuloAlunoAtividadeTurma.Processos;
+using Negocios.ModuloAlunoAtividadeTurma.Constantes;
+using Negocios.ModuloBoletoAtividade.Processos;
 
 namespace GuiWindowsForms
 {
@@ -17,9 +19,14 @@ namespace GuiWindowsForms
         Memoria memoria = Memoria.Instance;
 
         AlunoAtividadeTurma alunoAtividadeTurma = new AlunoAtividadeTurma();
-        IAlunoAtividadeTurmaProcesso alunoAtvTurmaControlador = AlunoAtividadeTurmaProcesso.Instance;
+        BoletoAtividade boletoAtividade = new BoletoAtividade();
 
+        IAlunoAtividadeTurmaProcesso alunoAtvTurmaControlador = AlunoAtividadeTurmaProcesso.Instance;
+        IBoletoAtividadeProcesso boletoAtividadeControlador = null;
         IAtividadeTurmaProcesso atividadeTurmaControlador = null;
+
+        String[] meses = new String[] { "-", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" };
+
 
         #region SINGLETON DA TELA
         /*
@@ -31,7 +38,7 @@ namespace GuiWindowsForms
 
         private static bool IsShown = false;
         #endregion
-
+       
         #region INSTANCIA TELA MATRICULA
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. E
@@ -77,22 +84,6 @@ namespace GuiWindowsForms
             }
 
             //return SelecionaForm(aux);
-        }
-        #endregion
-
-        #region  BUTTON DESCONECTAR
-        /// <summary>
-        /// Botão para esconder a tela e voltar para a tela de login
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnDesconectar_Click(object sender, EventArgs e)
-        {
-            Program.ultimaTela = 9;
-            this.Close();
-            telaLogin telalogin = telaLogin.getInstancia();
-            telalogin.Show();
         }
         #endregion
 
@@ -238,6 +229,9 @@ namespace GuiWindowsForms
 
         private void ucMenuInferior1_EventoCadastrar()
         {
+            alunoAtividadeTurma = new AlunoAtividadeTurma();
+            alunoAtvTurmaControlador = AlunoAtividadeTurmaProcesso.Instance;
+
             try
             {
                 #region VALIDA - ATIVIDADE
@@ -247,6 +241,8 @@ namespace GuiWindowsForms
                     errorProviderTela.SetError(cmbAtividade, "Informe a atividade");
                     return;
                 }
+                alunoAtividadeTurma.AtividadeTurmaID = ((AuxiliarAlunoAtvTurma)cmbAtividade.SelectedItem).Id;
+
 
                 #endregion
 
@@ -280,6 +276,7 @@ namespace GuiWindowsForms
                     txtDesconto.Clear();
                     return;
                 }
+                alunoAtividadeTurma.Desconto = Convert.ToDouble(txtDesconto.Text);
                 #endregion
 
                 #region VALIDA - VALOR TOTAL
@@ -290,15 +287,60 @@ namespace GuiWindowsForms
                     txtTotalValor.Clear();
                     return;
                 }
+                alunoAtividadeTurma.Valor = Convert.ToDouble(txtTotalValor.Text);
 
                 #endregion
 
+                alunoAtividadeTurma.AlunoID = memoria.Aluno.ID;
+                alunoAtividadeTurma.Ano = DateTime.Now.Year;
+                alunoAtividadeTurma.DataMatricula = dtpNascimento.Value;
+                alunoAtividadeTurma.Status = (int)Status.Ativo;
 
+                int matriculaAux = -1;
 
+                if (retornaIdMatricula(memoria) != -1)
+                {
+                    matriculaAux = retornaIdMatricula(memoria);
+                }
+
+                if (verificaSeJaInserido(alunoAtividadeTurma) == false)
+                {
+                    alunoAtvTurmaControlador.Incluir(alunoAtividadeTurma);
+                    alunoAtvTurmaControlador.Confirmar();
+
+                    for (int i = 0; i < 12; i++)
+                    {
+                        boletoAtividadeControlador = BoletoAtividadeProcesso.Instance;
+                        boletoAtividade = new BoletoAtividade();
+
+                        boletoAtividade.Descricao = "BOLETO";
+
+                        boletoAtividade.DataVencimento = DateTime.Now.AddMonths(i);
+
+                        boletoAtividade.Status = (int)Status.Ativo;
+                        boletoAtividade.Desconto = Convert.ToDouble(txtDesconto.Text);
+
+                        boletoAtividade.Parcela = meses[DateTime.Now.AddMonths(i).Month];
+
+                        boletoAtividade.MatriculaId = matriculaAux;
+                        boletoAtividade.DataEmissao = DateTime.Now;
+                        boletoAtividade.Valor = alunoAtividadeTurma.Valor;
+
+                        boletoAtividadeControlador.Incluir(boletoAtividade);
+                        boletoAtividadeControlador.Confirmar();
+
+                    }
+
+                    MessageBox.Show(AlunoAtividadeTurmaConstantes.ALUNOATIVIDADETURMA_INCLUIDO, "Colégio Conhecer - Inserir Matrícula da Atividade");
+                }
+                else
+                {
+                    MessageBox.Show("A Matrícula já existe na base de dados", "Colégio Conhecer - Inserir Matrícula da Atividade");
+                }
             }
             catch (Exception ex)
-            { 
-            
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -345,6 +387,7 @@ namespace GuiWindowsForms
 
         private void telaAlunoMatriculaAtividade_Activated(object sender, EventArgs e)
         {
+            carregarComboAtividade();
             uMenuLateral1.verificaTela(telaalunomatriculatividade);
             uMenuImagem1.ocultarBotaoAdicionarImagem();
 
@@ -356,12 +399,35 @@ namespace GuiWindowsForms
                 alunoAtividadeTurma.AlunoID = memoria.Aluno.ID;
                 alunoAtividadeTurma.Ano = DateTime.Now.Year;
             }
-
-            carregarComboAtividade();
         }
 
 
         #region MÉTODOS AUXILIARES
+
+        /// <summary>
+        /// Verifica se a matricula já existe no cadastro
+        /// </summary>
+        /// <param name="matricula"></param>
+        /// <returns></returns>
+        public bool verificaSeJaInserido(AlunoAtividadeTurma matricula)
+        {
+            alunoAtvTurmaControlador = AlunoAtividadeTurmaProcesso.Instance;
+
+            List<AlunoAtividadeTurma> listaAuxiliar = new List<AlunoAtividadeTurma>();
+            listaAuxiliar = alunoAtvTurmaControlador.Consultar();
+
+            bool testa = false;
+
+            foreach (AlunoAtividadeTurma b in listaAuxiliar)
+            {
+                if ((b.AlunoID == matricula.AlunoID) && (b.Ano == matricula.Ano))
+                {
+                    testa = true;
+                }
+            }
+            return testa;
+        }
+
 
         /// <summary>
         /// Método para verificar a matricula e retornar para a tela
@@ -422,18 +488,51 @@ namespace GuiWindowsForms
             cmbAtividade.DisplayMember = "Mensagem";
         }
 
-        #endregion
-
+        /// <summary>
+        /// Evento para variar os valores de acordo com o desconto digitado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbAtividade_SelectedIndexChanged(object sender, EventArgs e)
         {
             AtividadeTurma atvTurmaCmbAuxiliar = new AtividadeTurma();
 
-            int IdAux = ((AuxiliarAlunoAtvTurma)cmbAtividade.SelectedItem).Id;
-            atvTurmaCmbAuxiliar.ID = IdAux;
-            atvTurmaCmbAuxiliar = atividadeTurmaControlador.Consultar(atvTurmaCmbAuxiliar, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
-            txtValor.Text = Convert.ToString(atvTurmaCmbAuxiliar.Valor);
-            txtDescricao.Text = atvTurmaCmbAuxiliar.Atividade.Descricao;
+            if ((AuxiliarAlunoAtvTurma)cmbAtividade.SelectedItem != null)
+            {
+                int IdAux = ((AuxiliarAlunoAtvTurma)cmbAtividade.SelectedItem).Id;
+                atvTurmaCmbAuxiliar.ID = IdAux;
+                atvTurmaCmbAuxiliar = atividadeTurmaControlador.Consultar(atvTurmaCmbAuxiliar, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+                txtValor.Text = Convert.ToString(atvTurmaCmbAuxiliar.Valor);
+                txtDescricao.Text = atvTurmaCmbAuxiliar.Atividade.Descricao;
+            }
         }
+
+        /// <summary>
+        /// Método para retornar o número da matrícula do aluno em questão
+        /// </summary>
+        /// <param name="memoria"></param>
+        /// <returns></returns>
+        private int retornaIdMatricula(Memoria memoria)
+        {
+            int matriculaAux = -1;
+
+            IMatriculaProcesso matriculaProcesso = MatriculaProcesso.Instance;
+            Matricula matriculaAuxObj = new Matricula();
+
+            List<Matricula> listaAlunoAux = new List<Matricula>();
+            matriculaAuxObj.AlunoID = memoria.Aluno.ID;
+            matriculaAuxObj.Ano = DateTime.Now.Year;
+            listaAlunoAux = matriculaProcesso.Consultar(matriculaAuxObj, TipoPesquisa.E);
+            if (listaAlunoAux.Count > 0)
+            {
+                matriculaAux = listaAlunoAux[0].ID;
+            }
+            return matriculaAux;
+
+        }
+
+        #endregion
+
     }
 }
 

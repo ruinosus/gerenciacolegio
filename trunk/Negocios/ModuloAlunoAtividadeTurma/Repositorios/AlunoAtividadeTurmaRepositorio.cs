@@ -57,20 +57,6 @@ namespace Negocios.ModuloAlunoAtividadeTurma.Repositorios
                         }
 
 
-
-                        if (alunoAtividadeTurma.DescontoID != 0)
-                        {
-
-
-
-                            resultado = ((from aa in resultado
-                                          where
-                                          aa.DescontoID == alunoAtividadeTurma.DescontoID
-                                          select aa).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
-
                         if (alunoAtividadeTurma.Status.HasValue)
                         {
 
@@ -111,17 +97,6 @@ namespace Negocios.ModuloAlunoAtividadeTurma.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (alunoAtividadeTurma.DescontoID != 0)
-                        {
-
-
-                            resultado.AddRange((from aa in Consultar()
-                                                where
-                                                aa.DescontoID == alunoAtividadeTurma.DescontoID
-                                                select aa).ToList());
-
-                            resultado = resultado.Distinct().ToList();
-                        }
 
                         if (alunoAtividadeTurma.Status.HasValue)
                         {
@@ -198,7 +173,6 @@ namespace Negocios.ModuloAlunoAtividadeTurma.Repositorios
 
                 alunoAtividadeTurmaAux.AlunoID = alunoAtividadeTurma.AlunoID;
                 alunoAtividadeTurmaAux.AtividadeTurmaID = alunoAtividadeTurma.AtividadeTurmaID;
-                alunoAtividadeTurmaAux.DescontoID = alunoAtividadeTurma.DescontoID;
                 alunoAtividadeTurmaAux.Status = alunoAtividadeTurma.Status;
                 alunoAtividadeTurmaAux.Ano = alunoAtividadeTurma.Ano;
 
