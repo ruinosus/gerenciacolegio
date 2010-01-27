@@ -325,6 +325,7 @@ namespace GuiWindowsForms
                         boletoAtividade.MatriculaId = matriculaAux;
                         boletoAtividade.DataEmissao = DateTime.Now;
                         boletoAtividade.Valor = alunoAtividadeTurma.Valor;
+                        boletoAtividade.AlunoAtividadeTurmaID = alunoAtividadeTurma.ID;
 
                         boletoAtividadeControlador.Incluir(boletoAtividade);
                         boletoAtividadeControlador.Confirmar();
