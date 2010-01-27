@@ -6,11 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloSerie.Processos;
+using Negocios.ModuloMatricula.Entidades;
+using Negocios.ModuloBoletoAtividade.Processos;
+using Negocios.ModuloBoletoMensalidade.Processos;
 
 namespace GuiWindowsForms
 {
     public partial class telaFinanceiro : Form
     {
+        ClasseColetoraFinanceiro classeColetoraFinanceiro = null;
+
+        #region Métodos e Instâncias padrão da tela
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -67,7 +75,7 @@ namespace GuiWindowsForms
 
             //return SelecionaForm(aux);
         }
-        #endregion 
+        #endregion
 
         #region  BUTTON DESCONECTAR
         /// <summary>
@@ -76,7 +84,7 @@ namespace GuiWindowsForms
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void btnDesconectar_Click(object sender, EventArgs e)
+        private void ucDesconectarLogin1_EventoDesconectar()
         {
             Program.ultimaTela = 9;
             this.Close();
@@ -129,7 +137,7 @@ namespace GuiWindowsForms
         {
             this.btnPesquisar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_busca_73x75_hover;
         }
-       
+
         private void btnPesquisar_MouseLeave(object sender, EventArgs e)
         {
             this.btnPesquisar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.financeiro_busca_73x75;
@@ -148,12 +156,219 @@ namespace GuiWindowsForms
 
         #endregion
 
-        private void ucDesconectarLogin1_EventoDesconectar()
+        #endregion
+
+        /// <summary>
+        /// Método de pesquisa 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            Program.ultimaTela = 9;
-            this.Close();
-            telaLogin telalogin = telaLogin.getInstancia();
-            telalogin.Show();
+            try
+            {
+                #region VALIDA - TXTBUSCA
+
+                if (String.IsNullOrEmpty(txtBusca.Text))
+                {
+                    errorProviderTela.SetError(txtBusca, "Informe o nome do aluno a pesquisar");
+                    txtBusca.Clear();
+                    return;
+                }
+                classeColetoraFinanceiro.aluno = txtBusca.Text;
+
+                #endregion
+
+                #region VALIDA - SERIE
+
+                if (!String.IsNullOrEmpty(cmbSerie.Text))
+                {
+                    classeColetoraFinanceiro.serie = cmbSerie.Text;
+                }
+
+                #endregion
+
+                #region VALIDA - CHECKBOXES MATRICULA E ATIVIDADE
+
+                if (ckbAtividade.Checked == true && ckbMatricula.Checked == true)
+                {
+                    classeColetoraFinanceiro.tipo = (int)selecaoMatriculaAtividade.Ambos;
+
+                }
+                else if (ckbMatricula.Checked == true && ckbAtividade.Checked == false)
+                {
+                    classeColetoraFinanceiro.tipo = (int)selecaoMatriculaAtividade.Matricula;
+                }
+                else if (ckbMatricula.Checked == false && ckbAtividade.Checked == true)
+                {
+                    classeColetoraFinanceiro.tipo = (int)selecaoMatriculaAtividade.Atividade;
+                }
+
+                #endregion
+
+                #region VALIDA - CHECKBOXES REGULAR E PENDENTE
+
+                if (ckbAtivo.Checked == true && ckbPendente.Checked == true)
+                {
+                    classeColetoraFinanceiro.situacao = (int)selecaoPagamentoPendenteAtivo.Ambos;
+                }
+                else if (ckbAtivo.Checked == true && ckbPendente.Checked == false)
+                {
+                    classeColetoraFinanceiro.situacao = (int)selecaoPagamentoPendenteAtivo.Ativo;
+                }
+                else if (ckbAtivo.Checked == false && ckbPendente.Checked == true)
+                {
+                    classeColetoraFinanceiro.situacao = (int)selecaoPagamentoPendenteAtivo.Pendente;
+                }
+
+                #endregion
+
+                #region VALIDA - DEMAIS CAMPOS
+
+                //Verifica se o campo de data foi alterado do original
+                if (dateTimePicker1.Value != DateTime.Now && dateTimePicker2.Value != DateTime.Now)
+                {
+                    classeColetoraFinanceiro.dataInicioPeriodo = dateTimePicker1.Value;
+                    classeColetoraFinanceiro.dataFimPeriodo = dateTimePicker2.Value;
+                }
+                else if (dateTimePicker1.Value != DateTime.Now)
+                {
+                    classeColetoraFinanceiro.dataInicioPeriodo = dateTimePicker1.Value;
+                    classeColetoraFinanceiro.dataFimPeriodo = DateTime.Now;
+                }
+                else
+                {
+                    throw new Exception("A data de inicio não pode ser maior que a data de fim");
+                }
+
+                //Verifica se o radioButton de desconto esta selecionado ou não
+                if (rdbNao.Checked == true)
+                {
+                    classeColetoraFinanceiro.desconto = (int)selecaoMatriculaDesconto.SemDesconto;
+                }
+                else
+                {
+                    classeColetoraFinanceiro.desconto = (int)selecaoMatriculaDesconto.Desconto;
+                }
+
+
+                #endregion
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void telaFinanceiro_Activated(object sender, EventArgs e)
+        {
+            //Operações responsáveis por carregar o Combo de Série
+            cmbSerie.DataSource = null;
+            cmbSerie.DataSource = carregarComboSerie();
+            cmbSerie.DisplayMember = "Nome";
+
+            //Operações responsáveis por alimentar o grid principal da tela
+            dtgResultado.AutoGenerateColumns = false;
+            dtgResultado.DataSource = null;
+            dtgResultado.DataSource = carregarDataGridFinanceiro();
+        }
+
+        /// <summary>
+        /// Método responsável por carregar o combo de série 
+        /// </summary>
+        /// <returns>Lista de séries ativas</returns>
+        private List<Serie> carregarComboSerie()
+        {
+            Serie serieObj = new Serie();
+            serieObj.Status = (int)Status.Ativo;
+
+            ISerieProcesso serieControlador = SerieProcesso.Instance;
+            List<Serie> listSerie = new List<Serie>();
+
+            listSerie = serieControlador.Consultar(serieObj, TipoPesquisa.E);
+
+            return listSerie;
+        }
+
+        /// <summary>
+        /// Método para carregar o DataGrid inicial da tela
+        /// </summary>
+        /// <returns>Lista da classe auxiliar para alimentar o financeiro</returns>
+        private List<ClasseAuxiliarFinanceiro> carregarDataGridFinanceiro()
+        {
+            ClasseAuxiliarFinanceiro classeAuxiliarFinanceiro = new ClasseAuxiliarFinanceiro();
+            List<ClasseAuxiliarFinanceiro> classeAuxiliarFinanceiroList = new List<ClasseAuxiliarFinanceiro>();
+
+            foreach (BoletoMensalidade b in retornaListaAtivosMensalidade())
+            {
+                classeAuxiliarFinanceiro.aluno = b.Matricula.Aluno.Nome;
+                if (b.DataPagamento.HasValue == true)
+                {
+                    classeAuxiliarFinanceiro.dataPagamento = Convert.ToDateTime(b.DataPagamento);
+                }
+                classeAuxiliarFinanceiro.dataVencimento = b.DataVencimento;
+                if (b.Desconto.HasValue == true)
+                {
+                    classeAuxiliarFinanceiro.desconto = Convert.ToDouble(b.Desconto);
+                }
+                classeAuxiliarFinanceiro.matriculaId = Convert.ToInt32(b.MatriculaID);
+                classeAuxiliarFinanceiro.parcela = b.Parcela;
+                classeAuxiliarFinanceiro.serie = b.Matricula.SalaPeriodo.Sala.Serie.Nome;
+                classeAuxiliarFinanceiro.valor = Convert.ToDouble(b.Valor);
+
+                classeAuxiliarFinanceiroList.Add(classeAuxiliarFinanceiro);
+            }
+
+            return classeAuxiliarFinanceiroList;
+
+        }
+
+        /// <summary>
+        /// Método responsável por retornar uma lista dos objetos ativos de BoletoAtividade
+        /// </summary>
+        /// <returns>Lista de Boleto Atividade ativos</returns>
+        private List<BoletoAtividade> retornaListaAtivosAtividade()
+        {
+            IBoletoAtividadeProcesso boletoAtividadeControlador = BoletoAtividadeProcesso.Instance;
+
+            List<BoletoAtividade> boletoAtividadeList = new List<BoletoAtividade>();
+            List<BoletoAtividade> boletoAtividadeList2 = new List<BoletoAtividade>();
+
+            boletoAtividadeList = boletoAtividadeControlador.Consultar();
+
+            IEnumerable<BoletoAtividade> query = from b in boletoAtividadeList where b.Status == 1 select b;
+
+            foreach (BoletoAtividade boleto in query)
+            {
+                boletoAtividadeList2.Add(boleto);
+            }
+
+            return boletoAtividadeList2;
+        }
+
+        /// <summary>
+        /// Método responsável por retornar uma lista dos objetos ativos de BoletoMensalidade
+        /// </summary>
+        /// <returns>Lista de Boleto Mensalidade ativos</returns>
+        private List<BoletoMensalidade> retornaListaAtivosMensalidade()
+        {
+            IBoletoMensalidadeProcesso boletoMensalidadeControlador = BoletoMensalidadeProcesso.Instance;
+
+            List<BoletoMensalidade> boletoMensalidadeList = new List<BoletoMensalidade>();
+            List<BoletoMensalidade> boletoMensalidadeList2 = new List<BoletoMensalidade>();
+
+            boletoMensalidadeList = boletoMensalidadeControlador.Consultar();
+
+            IEnumerable<BoletoMensalidade> query = from b in boletoMensalidadeList where b.Status == 1 select b;
+
+            foreach (BoletoMensalidade boleto in query)
+            {
+                boletoMensalidadeList2.Add(boleto);
+            }
+
+            return boletoMensalidadeList2;
         }
     }
 }
