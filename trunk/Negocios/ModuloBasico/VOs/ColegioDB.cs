@@ -1,4 +1,4 @@
-#region Auto-generated classes for ColegioDB database on 2010-01-23 16:59:59Z
+#region Auto-generated classes for ColegioDB database on 2010-01-26 21:48:15Z
 
 //
 //  ____  _     __  __      _        _
@@ -7,7 +7,7 @@
 // | |_| | |_) | |  | |  __/ || (_| | |
 // |____/|_.__/|_|  |_|\___|\__\__,_|_|
 //
-// Auto-generated from ColegioDB on 2010-01-23 16:59:59Z
+// Auto-generated from ColegioDB on 2010-01-26 21:48:15Z
 // Please visit http://linq.to/db for more information
 
 #endregion
@@ -24,7 +24,6 @@ using DbLinq.Data.Linq;
 using DbLinq.Vendor;
 #endif  // MONO_STRICT
 using System.ComponentModel;
-using Negocios.ModuloBasico.VOs;
 
 
     public partial class ColegioDB : DataContext
@@ -111,10 +110,6 @@ using Negocios.ModuloBasico.VOs;
     [Table(Name = "ColegioDB.aluno")]
     public partial class Aluno : INotifyPropertyChanging, INotifyPropertyChanged
     {
-        public override string ToString()
-        {
-            return this.Nome;
-        }
         #region INotifyPropertyChanging handling
 
         public event PropertyChangingEventHandler PropertyChanging;
@@ -1253,18 +1248,16 @@ using Negocios.ModuloBasico.VOs;
         partial void OnAnoChanging(int? value);
         partial void OnAtividadeTurmaIDChanged();
         partial void OnAtividadeTurmaIDChanging(int? value);
-        partial void OnDescontoIDChanged();
-        partial void OnDescontoIDChanging(int? value);
+        partial void OnDataMatriculaChanged();
+        partial void OnDataMatriculaChanging(DateTime? value);
+        partial void OnDescontoChanged();
+        partial void OnDescontoChanging(double? value);
         partial void OnIDChanged();
         partial void OnIDChanging(int value);
         partial void OnStatusChanged();
         partial void OnStatusChanging(sbyte? value);
         partial void OnValorChanged();
         partial void OnValorChanging(double? value);
-        partial void OnDescontoChanged();
-        partial void OnDescontoChanging(double? value);
-        partial void OnDataMatriculaChanged();
-        partial void OnDataMatriculaChanging(DateTime? value);
 
         #endregion
 
@@ -1320,52 +1313,26 @@ using Negocios.ModuloBasico.VOs;
 
         #endregion
 
-        #region double? Valor
+        #region int? AtividadeTurmaID
 
-        private double? _valor;
+        private int? _atividadeTurmaID;
         [DebuggerNonUserCode]
-        [Column(Storage = "_valor", Name = "Valor", DbType = "double", AutoSync = AutoSync.Never)]
-        public double? Valor
+        [Column(Storage = "_atividadeTurmaID", Name = "AtividadeTurmaId", DbType = "int", AutoSync = AutoSync.Never)]
+        public int? AtividadeTurmaID
         {
             get
             {
-                return _valor;
+                return _atividadeTurmaID;
             }
             set
             {
-                if (value != _valor)
+                if (value != _atividadeTurmaID)
                 {
-                    OnValorChanging(value);
+                    OnAtividadeTurmaIDChanging(value);
                     SendPropertyChanging();
-                    _valor = value;
-                    SendPropertyChanged("Valor");
-                    OnValorChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region double? Desconto
-
-        private double? _desconto;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_desconto", Name = "Desconto", DbType = "double", AutoSync = AutoSync.Never)]
-        public double? Desconto
-        {
-            get
-            {
-                return _desconto;
-            }
-            set
-            {
-                if (value != _desconto)
-                {
-                    OnDescontoChanging(value);
-                    SendPropertyChanging();
-                    _desconto = value;
-                    SendPropertyChanged("Desconto");
-                    OnDescontoChanged();
+                    _atividadeTurmaID = value;
+                    SendPropertyChanged("AtividadeTurmaID");
+                    OnAtividadeTurmaIDChanged();
                 }
             }
         }
@@ -1398,26 +1365,26 @@ using Negocios.ModuloBasico.VOs;
 
         #endregion
 
-        #region int? AtividadeTurmaID
+        #region double? Desconto
 
-        private int? _atividadeTurmaID;
+        private double? _desconto;
         [DebuggerNonUserCode]
-        [Column(Storage = "_atividadeTurmaID", Name = "AtividadeTurmaId", DbType = "int", AutoSync = AutoSync.Never)]
-        public int? AtividadeTurmaID
+        [Column(Storage = "_desconto", Name = "Desconto", DbType = "double", AutoSync = AutoSync.Never)]
+        public double? Desconto
         {
             get
             {
-                return _atividadeTurmaID;
+                return _desconto;
             }
             set
             {
-                if (value != _atividadeTurmaID)
+                if (value != _desconto)
                 {
-                    OnAtividadeTurmaIDChanging(value);
+                    OnDescontoChanging(value);
                     SendPropertyChanging();
-                    _atividadeTurmaID = value;
-                    SendPropertyChanged("AtividadeTurmaID");
-                    OnAtividadeTurmaIDChanged();
+                    _desconto = value;
+                    SendPropertyChanged("Desconto");
+                    OnDescontoChanged();
                 }
             }
         }
@@ -1470,6 +1437,32 @@ using Negocios.ModuloBasico.VOs;
                     _status = value;
                     SendPropertyChanged("Status");
                     OnStatusChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region double? Valor
+
+        private double? _valor;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_valor", Name = "Valor", DbType = "double", AutoSync = AutoSync.Never)]
+        public double? Valor
+        {
+            get
+            {
+                return _valor;
+            }
+            set
+            {
+                if (value != _valor)
+                {
+                    OnValorChanging(value);
+                    SendPropertyChanging();
+                    _valor = value;
+                    SendPropertyChanged("Valor");
+                    OnValorChanged();
                 }
             }
         }
@@ -1563,6 +1556,8 @@ using Negocios.ModuloBasico.VOs;
                 }
             }
         }
+
+
         #endregion
 
         #region Attachement handlers
@@ -2446,6 +2441,8 @@ using Negocios.ModuloBasico.VOs;
         partial void OnDescricaoChanging(string value);
         partial void OnIDChanged();
         partial void OnIDChanging(int value);
+        partial void OnMatriculaIDChanged();
+        partial void OnMatriculaIDChanging(int? value);
         partial void OnMultaChanged();
         partial void OnMultaChanging(double? value);
         partial void OnParcelaChanged();
@@ -2454,8 +2451,6 @@ using Negocios.ModuloBasico.VOs;
         partial void OnStatusChanging(sbyte? value);
         partial void OnValorChanged();
         partial void OnValorChanging(double? value);
-        partial void OnMatriculaIDChanged();
-        partial void OnMatriculaIDChanging(int? value);
 
         #endregion
 
@@ -2641,25 +2636,25 @@ using Negocios.ModuloBasico.VOs;
 
         #endregion
 
-        #region int? MatriculaId
+        #region int? MatriculaID
 
-        private int? _matriculaId;
+        private int? _matriculaID;
         [DebuggerNonUserCode]
-        [Column(Storage = "_matriculaId", Name = "MatriculaId", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.Never, CanBeNull = false)]
-        public int? MatriculaId
+        [Column(Storage = "_matriculaID", Name = "MatriculaId", DbType = "int", AutoSync = AutoSync.Never)]
+        public int? MatriculaID
         {
             get
             {
-                return _matriculaId;
+                return _matriculaID;
             }
             set
             {
-                if (value != _matriculaId)
+                if (value != _matriculaID)
                 {
                     OnMatriculaIDChanging(value);
                     SendPropertyChanging();
-                    _matriculaId = value;
-                    SendPropertyChanged("MatriculaId");
+                    _matriculaID = value;
+                    SendPropertyChanged("MatriculaID");
                     OnMatriculaIDChanged();
                 }
             }
@@ -2826,34 +2821,34 @@ using Negocios.ModuloBasico.VOs;
             }
         }
 
-        private EntityRef<Matricula> _matricula;
-        [Association(Storage = "_matricula", OtherKey = "ID", ThisKey = "MatriculaId", Name = "fk_BoletoAtividade_Matricula", IsForeignKey = true)]
+        private EntityRef<Matricula> _matRiCuLa;
+        [Association(Storage = "_matRiCuLa", OtherKey = "ID", ThisKey = "MatriculaID", Name = "fk_BoletoAtividade_Matricula", IsForeignKey = true)]
         [DebuggerNonUserCode]
         public Matricula Matricula
         {
             get
             {
-                return _matricula.Entity;
+                return _matRiCuLa.Entity;
             }
             set
             {
-                if (value != _matricula.Entity)
+                if (value != _matRiCuLa.Entity)
                 {
-                    if (_matricula.Entity != null)
+                    if (_matRiCuLa.Entity != null)
                     {
-                        var previousMatricula = _matricula.Entity;
-                        _matricula.Entity = null;
+                        var previousMatricula = _matRiCuLa.Entity;
+                        _matRiCuLa.Entity = null;
                         previousMatricula.BoletoAtividade.Remove(this);
                     }
-                    _matricula.Entity = value;
+                    _matRiCuLa.Entity = value;
                     if (value != null)
                     {
                         value.BoletoAtividade.Add(this);
-                        _matriculaId = value.ID;
+                        _matriculaID = value.ID;
                     }
                     else
                     {
-                        _matriculaId = null;
+                        _matriculaID = null;
                     }
                 }
             }
@@ -2883,8 +2878,7 @@ using Negocios.ModuloBasico.VOs;
         {
             _chequeBoleToAtIvIDade = new EntitySet<ChequeBoletoAtividade>(ChequeBoletoAtividade_Attach, ChequeBoletoAtividade_Detach);
             _alUNoAtIvIdaDeTuRmA = new EntityRef<AlunoAtividadeTurma>();
-            _matricula = new EntityRef<Matricula>();
-
+            _matRiCuLa = new EntityRef<Matricula>();
             OnCreated();
         }
 
@@ -5060,21 +5054,6 @@ using Negocios.ModuloBasico.VOs;
 
         #region Children
 
-        //private EntitySet<AlunoAtividadeTurma> _alUNoAtIvIdaDeTuRmA;
-        //[Association(Storage = "_alUNoAtIvIdaDeTuRmA", OtherKey = "DescontoID", ThisKey = "ID", Name = "fk_AlunoAtividadeTurma_Desconto")]
-        //[DebuggerNonUserCode]
-        //public EntitySet<AlunoAtividadeTurma> AlunoAtividadeTurma
-        //{
-        //    get
-        //    {
-        //        return _alUNoAtIvIdaDeTuRmA;
-        //    }
-        //    set
-        //    {
-        //        _alUNoAtIvIdaDeTuRmA = value;
-        //    }
-        //}
-
         private EntitySet<Matricula> _matRiCuLa;
         [Association(Storage = "_matRiCuLa", OtherKey = "DescontoID", ThisKey = "ID", Name = "fk_Matricula_Desconto")]
         [DebuggerNonUserCode]
@@ -6991,6 +6970,21 @@ using Negocios.ModuloBasico.VOs;
 
         #region Children
 
+        private EntitySet<BoletoAtividade> _boleToAtIvIDade;
+        [Association(Storage = "_boleToAtIvIDade", OtherKey = "MatriculaID", ThisKey = "ID", Name = "fk_BoletoAtividade_Matricula")]
+        [DebuggerNonUserCode]
+        public EntitySet<BoletoAtividade> BoletoAtividade
+        {
+            get
+            {
+                return _boleToAtIvIDade;
+            }
+            set
+            {
+                _boleToAtIvIDade = value;
+            }
+        }
+
         private EntitySet<BoletoMensalidade> _boleTomeNsAlIDAde;
         [Association(Storage = "_boleTomeNsAlIDAde", OtherKey = "MatriculaID", ThisKey = "ID", Name = "fk_BoletoMensalidade_Matricula")]
         [DebuggerNonUserCode]
@@ -7006,48 +7000,33 @@ using Negocios.ModuloBasico.VOs;
             }
         }
 
-        private EntitySet<BoletoAtividade> _boleToatIvIdADe;
-        [Association(Storage = "_boleToatIvIdADe", OtherKey = "MatriculaId", ThisKey = "ID", Name = "fk_BoletoAtividade_Matricula")]
-        [DebuggerNonUserCode]
-        public EntitySet<BoletoAtividade> BoletoAtividade
-        {
-            get
-            {
-                return _boleToatIvIdADe;
-            }
-            set
-            {
-                _boleToatIvIdADe = value;
-            }
-        }
-
-        private EntitySet<MatriculaVinculo> _matRiCuLaViNCuLoPrincipal;
+        private EntitySet<MatriculaVinculo> _matRiCuLaViNCuLo;
         [Association(Storage = "_matRiCuLaViNCuLo", OtherKey = "MatriculaPrincipalID", ThisKey = "ID", Name = "fk_MatriculaVinculo_Matricula1")]
         [DebuggerNonUserCode]
-        public EntitySet<MatriculaVinculo> MatriculaVinculoPrincipal
+        public EntitySet<MatriculaVinculo> MatriculaVinculo
         {
             get
             {
-                return _matRiCuLaViNCuLoPrincipal;
+                return _matRiCuLaViNCuLo;
             }
             set
             {
-                _matRiCuLaViNCuLoPrincipal = value;
+                _matRiCuLaViNCuLo = value;
             }
         }
 
-        private EntitySet<MatriculaVinculo> _matRiCuLaViNCuLoVinculada;
+        private EntitySet<MatriculaVinculo> _matRiCuLaViNCuLo1;
         [Association(Storage = "_matRiCuLaViNCuLo1", OtherKey = "MatriculaVinculadaID", ThisKey = "ID", Name = "fk_MatriculaVinculo_Matricula2")]
         [DebuggerNonUserCode]
-        public EntitySet<MatriculaVinculo> MatriculaVinculoVinculada
+        public EntitySet<MatriculaVinculo> MatriculaVinculo1
         {
             get
             {
-                return _matRiCuLaViNCuLoVinculada;
+                return _matRiCuLaViNCuLo1;
             }
             set
             {
-                _matRiCuLaViNCuLoVinculada = value;
+                _matRiCuLaViNCuLo1 = value;
             }
         }
 
@@ -7175,22 +7154,22 @@ using Negocios.ModuloBasico.VOs;
 
         #region Attachement handlers
 
-        private void BoletoMensalidade_Attach(BoletoMensalidade entity)
-        {
-            entity.Matricula = this;
-        }
-
-        private void BoletoMensalidade_Detach(BoletoMensalidade entity)
-        {
-            entity.Matricula = null;
-        }
-
         private void BoletoAtividade_Attach(BoletoAtividade entity)
         {
             entity.Matricula = this;
         }
 
         private void BoletoAtividade_Detach(BoletoAtividade entity)
+        {
+            entity.Matricula = null;
+        }
+
+        private void BoletoMensalidade_Attach(BoletoMensalidade entity)
+        {
+            entity.Matricula = this;
+        }
+
+        private void BoletoMensalidade_Detach(BoletoMensalidade entity)
         {
             entity.Matricula = null;
         }
@@ -7232,9 +7211,10 @@ using Negocios.ModuloBasico.VOs;
 
         public Matricula()
         {
+            _boleToAtIvIDade = new EntitySet<BoletoAtividade>(BoletoAtividade_Attach, BoletoAtividade_Detach);
             _boleTomeNsAlIDAde = new EntitySet<BoletoMensalidade>(BoletoMensalidade_Attach, BoletoMensalidade_Detach);
-            _matRiCuLaViNCuLoPrincipal = new EntitySet<MatriculaVinculo>(MatriculaVinculo_Attach, MatriculaVinculo_Detach);
-            _matRiCuLaViNCuLoVinculada = new EntitySet<MatriculaVinculo>(MatriculaVinculo1_Attach, MatriculaVinculo1_Detach);
+            _matRiCuLaViNCuLo = new EntitySet<MatriculaVinculo>(MatriculaVinculo_Attach, MatriculaVinculo_Detach);
+            _matRiCuLaViNCuLo1 = new EntitySet<MatriculaVinculo>(MatriculaVinculo1_Attach, MatriculaVinculo1_Detach);
             _notA = new EntitySet<Nota>(Nota_Attach, Nota_Detach);
             _alUNo = new EntityRef<Aluno>();
             _desConTo = new EntityRef<Desconto>();
@@ -7454,29 +7434,29 @@ using Negocios.ModuloBasico.VOs;
 
         #region Parents
 
-        private EntityRef<Matricula> _matRiCuLaPrincipal;
+        private EntityRef<Matricula> _matRiCuLa;
         [Association(Storage = "_matRiCuLa", OtherKey = "ID", ThisKey = "MatriculaPrincipalID", Name = "fk_MatriculaVinculo_Matricula1", IsForeignKey = true)]
         [DebuggerNonUserCode]
         public Matricula MatriculaPrincipal
         {
             get
             {
-                return _matRiCuLaPrincipal.Entity;
+                return _matRiCuLa.Entity;
             }
             set
             {
-                if (value != _matRiCuLaPrincipal.Entity)
+                if (value != _matRiCuLa.Entity)
                 {
-                    if (_matRiCuLaPrincipal.Entity != null)
+                    if (_matRiCuLa.Entity != null)
                     {
-                        var previousMatricula = _matRiCuLaPrincipal.Entity;
-                        _matRiCuLaPrincipal.Entity = null;
-                        previousMatricula.MatriculaVinculoPrincipal.Remove(this);
+                        var previousMatricula = _matRiCuLa.Entity;
+                        _matRiCuLa.Entity = null;
+                        previousMatricula.MatriculaVinculo.Remove(this);
                     }
-                    _matRiCuLaPrincipal.Entity = value;
+                    _matRiCuLa.Entity = value;
                     if (value != null)
                     {
-                        value.MatriculaVinculoPrincipal.Add(this);
+                        value.MatriculaVinculo.Add(this);
                         _matriculaPrincipalID = value.ID;
                     }
                     else
@@ -7487,29 +7467,29 @@ using Negocios.ModuloBasico.VOs;
             }
         }
 
-        private EntityRef<Matricula> _matRiCuLaVinculada;
+        private EntityRef<Matricula> _matRiCuLa1;
         [Association(Storage = "_matRiCuLa1", OtherKey = "ID", ThisKey = "MatriculaVinculadaID", Name = "fk_MatriculaVinculo_Matricula2", IsForeignKey = true)]
         [DebuggerNonUserCode]
         public Matricula MatriculaVinculada
         {
             get
             {
-                return _matRiCuLaVinculada.Entity;
+                return _matRiCuLa1.Entity;
             }
             set
             {
-                if (value != _matRiCuLaVinculada.Entity)
+                if (value != _matRiCuLa1.Entity)
                 {
-                    if (_matRiCuLaVinculada.Entity != null)
+                    if (_matRiCuLa1.Entity != null)
                     {
-                        var previousMatricula = _matRiCuLaVinculada.Entity;
-                        _matRiCuLaVinculada.Entity = null;
-                        previousMatricula.MatriculaVinculoVinculada.Remove(this);
+                        var previousMatricula = _matRiCuLa1.Entity;
+                        _matRiCuLa1.Entity = null;
+                        previousMatricula.MatriculaVinculo1.Remove(this);
                     }
-                    _matRiCuLaVinculada.Entity = value;
+                    _matRiCuLa1.Entity = value;
                     if (value != null)
                     {
-                        value.MatriculaVinculoVinculada.Add(this);
+                        value.MatriculaVinculo1.Add(this);
                         _matriculaVinculadaID = value.ID;
                     }
                     else
@@ -7527,8 +7507,8 @@ using Negocios.ModuloBasico.VOs;
 
         public MatriculaVinculo()
         {
-            _matRiCuLaPrincipal = new EntityRef<Matricula>();
-            _matRiCuLaVinculada = new EntityRef<Matricula>();
+            _matRiCuLa = new EntityRef<Matricula>();
+            _matRiCuLa1 = new EntityRef<Matricula>();
             OnCreated();
         }
 
@@ -9304,10 +9284,6 @@ using Negocios.ModuloBasico.VOs;
     [Table(Name = "ColegioDB.responsavel")]
     public partial class Responsavel : INotifyPropertyChanging, INotifyPropertyChanged
     {
-        public override string ToString()
-        {
-            return this.Nome;
-        }
         #region INotifyPropertyChanging handling
 
         public event PropertyChangingEventHandler PropertyChanging;
@@ -11454,7 +11430,6 @@ using Negocios.ModuloBasico.VOs;
         #region int ID
 
         private int _id;
-        [ConversionAttribute(DataTableConversion = true, KeyField = true, AllowDbNull = false)]
         [DebuggerNonUserCode]
         [Column(Storage = "_id", Name = "Id", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.Never, CanBeNull = false)]
         public int ID
@@ -11481,7 +11456,6 @@ using Negocios.ModuloBasico.VOs;
         #region string Nome
 
         private string _nome;
-        [ConversionAttribute(DataTableConversion = true, KeyField = true, AllowDbNull = false)]
         [DebuggerNonUserCode]
         [Column(Storage = "_nome", Name = "Nome", DbType = "varchar(30)", AutoSync = AutoSync.Never)]
         public string Nome
@@ -11508,7 +11482,6 @@ using Negocios.ModuloBasico.VOs;
         #region sbyte? Status
 
         private sbyte? _status;
-        [ConversionAttribute(DataTableConversion = true,  AllowDbNull = true)]
         [DebuggerNonUserCode]
         [Column(Storage = "_status", Name = "Status", DbType = "tinyint(1)", AutoSync = AutoSync.Never)]
         public sbyte? Status
