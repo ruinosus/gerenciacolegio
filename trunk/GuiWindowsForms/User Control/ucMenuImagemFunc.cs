@@ -129,5 +129,14 @@ namespace GuiWindowsForms.User_Control
             return ms.ToArray();
 
         }
+
+
+        #region OCULTAR BOTAO ADICIONAR IMAGEM
+        public void ocultarBotaoAdicionarImagem()
+        {
+            btnAdicionarImagem.Visible = false;
+        }
+        #endregion
+
     }
 }

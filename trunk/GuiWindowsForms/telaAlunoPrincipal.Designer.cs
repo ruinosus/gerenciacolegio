@@ -50,9 +50,9 @@
             this.btnFuncionario = new System.Windows.Forms.Button();
             this.btnAluno = new System.Windows.Forms.Button();
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
-            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
@@ -340,17 +340,9 @@
             this.dgvFuncionario.Size = new System.Drawing.Size(750, 266);
             this.dgvFuncionario.TabIndex = 72;
             this.dgvFuncionario.Visible = false;
-            // 
-            // ucDesconectarLogin1
-            // 
-            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
-            this.ucDesconectarLogin1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ucDesconectarLogin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucDesconectarLogin1.Location = new System.Drawing.Point(768, 0);
-            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
-            this.ucDesconectarLogin1.Size = new System.Drawing.Size(220, 39);
-            this.ucDesconectarLogin1.TabIndex = 6;
-            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
+            this.dgvFuncionario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellDoubleClick_1);
+            this.dgvFuncionario.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellContentDoubleClick);
+            this.dgvFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellContentClick);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -367,6 +359,17 @@
             this.Cargo.HeaderText = "Cargo";
             this.Cargo.Name = "Cargo";
             this.Cargo.ReadOnly = true;
+            // 
+            // ucDesconectarLogin1
+            // 
+            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucDesconectarLogin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ucDesconectarLogin1.Location = new System.Drawing.Point(768, 0);
+            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
+            this.ucDesconectarLogin1.Size = new System.Drawing.Size(220, 39);
+            this.ucDesconectarLogin1.TabIndex = 6;
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
             // telaAlunoPrincipal
             // 

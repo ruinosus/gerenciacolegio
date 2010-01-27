@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaFuncionario));
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.txtNaturalidade = new System.Windows.Forms.TextBox();
+            this.lblNaturalidade = new System.Windows.Forms.Label();
             this.lblFiliação = new System.Windows.Forms.Label();
             this.mskFoneOpcional = new System.Windows.Forms.MaskedTextBox();
             this.lblFone2 = new System.Windows.Forms.Label();
@@ -76,8 +78,6 @@
             this.ucMenuImagemFunc1 = new GuiWindowsForms.User_Control.ucMenuImagemFunc();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.ucMenuLateralFunc1 = new GuiWindowsForms.User_Control.ucMenuLateralFunc();
-            this.txtNaturalidade = new System.Windows.Forms.TextBox();
-            this.lblNaturalidade = new System.Windows.Forms.Label();
             this.gpbDadosPessoais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -133,6 +133,26 @@
             this.gpbDadosPessoais.TabIndex = 0;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "DADOS DO FUNCIONÁRIO";
+            // 
+            // txtNaturalidade
+            // 
+            this.txtNaturalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtNaturalidade.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtNaturalidade.Location = new System.Drawing.Point(597, 128);
+            this.txtNaturalidade.MaxLength = 30;
+            this.txtNaturalidade.Name = "txtNaturalidade";
+            this.txtNaturalidade.Size = new System.Drawing.Size(202, 20);
+            this.txtNaturalidade.TabIndex = 14;
+            // 
+            // lblNaturalidade
+            // 
+            this.lblNaturalidade.AutoSize = true;
+            this.lblNaturalidade.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblNaturalidade.Location = new System.Drawing.Point(477, 130);
+            this.lblNaturalidade.Name = "lblNaturalidade";
+            this.lblNaturalidade.Size = new System.Drawing.Size(83, 13);
+            this.lblNaturalidade.TabIndex = 13;
+            this.lblNaturalidade.Text = "Naturalidade:";
             // 
             // lblFiliação
             // 
@@ -828,6 +848,7 @@
             this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
+            this.ucMenuInferior1.EventoAlterar += new GuiWindowsForms.ucMenuInferior.delegateAlterar(this.ucMenuInferior1_EventoAlterar);
             // 
             // ucMenuLateralFunc1
             // 
@@ -840,26 +861,6 @@
             this.ucMenuLateralFunc1.EventoAbrirDadosPessoais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosPessoais(this.ucMenuLateralFunc1_EventoAbrirDadosPessoais);
             this.ucMenuLateralFunc1.Load += new System.EventHandler(this.ucMenuLateralFunc1_Load);
             this.ucMenuLateralFunc1.EventoAbrirDadosProfissionais += new GuiWindowsForms.User_Control.ucMenuLateralFunc.delegateAbrirTelaDadosProfissionais(this.ucMenuLateralFunc1_EventoAbrirDadosProfissionais);
-            // 
-            // txtNaturalidade
-            // 
-            this.txtNaturalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtNaturalidade.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNaturalidade.Location = new System.Drawing.Point(597, 128);
-            this.txtNaturalidade.MaxLength = 30;
-            this.txtNaturalidade.Name = "txtNaturalidade";
-            this.txtNaturalidade.Size = new System.Drawing.Size(202, 20);
-            this.txtNaturalidade.TabIndex = 14;
-            // 
-            // lblNaturalidade
-            // 
-            this.lblNaturalidade.AutoSize = true;
-            this.lblNaturalidade.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblNaturalidade.Location = new System.Drawing.Point(477, 130);
-            this.lblNaturalidade.Name = "lblNaturalidade";
-            this.lblNaturalidade.Size = new System.Drawing.Size(83, 13);
-            this.lblNaturalidade.TabIndex = 13;
-            this.lblNaturalidade.Text = "Naturalidade:";
             // 
             // telaFuncionario
             // 
@@ -882,6 +883,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaFuncionario_Load);
+            this.Activated += new System.EventHandler(this.telaFuncionario_Activated_1);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaFuncionario_FormClosing);
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();

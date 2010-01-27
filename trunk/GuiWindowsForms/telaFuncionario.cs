@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Negocios.ModuloFuncionario.Constantes;
 using Negocios.ModuloFuncionario.Processos;
 using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloBasico.Enums;
@@ -16,6 +17,9 @@ namespace GuiWindowsForms
     {
         Funcionario funcionario = new Funcionario();
         IFuncionarioProcesso funcionarioControlador = FuncionarioProcesso.Instance;
+
+        //atributo para verificar se o button de Alterar foi clicado 
+        int verificaButton = 0;
 
         #region SINGLETON DA TELA
         /*
@@ -120,8 +124,11 @@ namespace GuiWindowsForms
         #endregion
 
         #region USER CONTROLS - MENU INFERIOR
+
+        #region EVENTO VOLTAR
         private void ucMenuInferior1_EventoVoltar()
         {
+
             this.Hide();
 
             if (Program.ultimaTela != 17)
@@ -133,32 +140,17 @@ namespace GuiWindowsForms
                 Program.ultimaTela = 6;
                 Program.SelecionaForm(Program.ultimaTela);
             }
+           
         }
         #endregion
 
-        #region USER CONTROLS - MENU LATERAL
-        private void ucMenuLateralFunc1_EventoAbrirDadosProfissionais()
+        #region EVENTO ALTERAR
+        private void ucMenuInferior1_EventoAlterar()
         {
-            this.Hide();
-            Program.ultimaTela = 17;
-            telaFuncionarioDadosProfissionais telaafuncprofissionais = telaFuncionarioDadosProfissionais.getInstancia();
-            telaafuncprofissionais.Show();
-        }
-
-
-        private void ucMenuLateralFunc1_EventoAbrirDadosPessoais()
-        {
-            this.Hide();
-            Program.ultimaTela = 17;
-            telaFuncionario telaafuncdados = telaFuncionario.getInstancia();
-            telaafuncdados.Show();
-        }
-        #endregion
-
-        #region LOAD
-        private void ucMenuLateralFunc1_Load(object sender, EventArgs e)
-        {
-            ucMenuLateralFunc1.verificaTela(teladfunc);
+            Enabled_True();
+            ucMenuLateralFunc1.Enabled = false;
+            btnImprimir.Enabled = false;
+            verificaButton = 1;
         }
         #endregion
 
@@ -197,15 +189,9 @@ namespace GuiWindowsForms
 
                 #endregion
 
-                #region VALIDA - CPF
+                #region VALIDA - NASCIMENTO
 
-                //if (mskCpf.MaskCompleted == false)
-                //{
-                //    errorProviderTela.SetError(mskCpf, "Informe o cpf");
-                //    mskCpf.Clear();
-                //    return;
-                //}
-                funcionario.Cpf = mskCpf.Text;
+                funcionario.Nascimento = dtpNascimento.Value;
 
                 #endregion
 
@@ -218,6 +204,52 @@ namespace GuiWindowsForms
                 //    return;
                 //}
                 funcionario.Rg = txtRg.Text;
+
+                #endregion
+                
+                #region VALIDA - CPF
+
+                //if (mskCpf.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskCpf, "Informe o cpf");
+                //    mskCpf.Clear();
+                //    return;
+                //}
+                funcionario.Cpf = mskCpf.Text;
+
+                #endregion
+
+                #region VALIDA - NACIONALIDADE
+
+                //if (String.IsNullOrEmpty(cmbNacionalidade.Text))
+                //{
+                //    errorProviderTela.SetError(cmbNacionalidade, "Informe a nacionalidade");
+                //    return;
+                //}
+                funcionario.Nacionalidade = cmbNacionalidade.Text;
+
+                #endregion
+
+                #region VALIDA - NATURALIDADE
+
+                //if (String.IsNullOrEmpty(txtNaturalidade.Text))
+                //{
+                //    errorProviderTela.SetError(txtNaturalidade, "Informe a naturalidade");
+                //    txtNaturalidade.Clear();
+                //    return;
+                //}
+                funcionario.Naturalidade = txtNaturalidade.Text;
+
+                #endregion
+
+                #region VALIDA - ESTADO CIVIL
+
+                //if (String.IsNullOrEmpty(cmbEstadoCivil.Text))
+                //{
+                //    errorProviderTela.SetError(cmbEstadoCivil, "Informe o estado civil");
+                //    return;
+                //}
+                funcionario.EstadoCivil = cmbEstadoCivil.Text;
 
                 #endregion
 
@@ -269,6 +301,18 @@ namespace GuiWindowsForms
 
                 #endregion
 
+                #region VALIDA - CEP
+
+                //if (mskCep.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskCep, "Informe o cep");
+                //    mskCep.Clear();
+                //    return;
+                //}
+                funcionario.Cep = mskCep.Text;
+
+                #endregion
+
                 #region VALIDA - UF
 
                 //if (String.IsNullOrEmpty(cmbUf.Text))
@@ -292,19 +336,7 @@ namespace GuiWindowsForms
 
                 #endregion
 
-                #region VALIDA - CEP
-
-                if (mskCep.MaskCompleted == false)
-                {
-                    errorProviderTela.SetError(mskCep, "Informe o cep");
-                    mskCep.Clear();
-                    return;
-                }
-                funcionario.Cep = mskCep.Text;
-
-                #endregion
-
-                #region VALIDA - FONE RESIDENCIA
+                #region VALIDA - FONE 
 
                 //if (mskFoneResidencia.MaskCompleted == false)
                 //{
@@ -313,6 +345,18 @@ namespace GuiWindowsForms
                 //    return;
                 //}
                 funcionario.FoneEmergencia = mskFoneResidencia.Text;
+
+                #endregion
+
+                #region VALIDA - FONE OPCIONAL
+
+                //if (mskFoneOpcional.MaskCompleted == false)
+                //{
+                //    errorProviderTela.SetError(mskFoneOpcional, "Informe um fone opcional");
+                //    mskFoneOpcional.Clear();
+                //    return;
+                //}
+                funcionario.FoneOpcional= mskFoneOpcional.Text;
 
                 #endregion
 
@@ -340,41 +384,50 @@ namespace GuiWindowsForms
 
                 #endregion
 
-                #region VALIDA - ESTADO CIVIL
-
-                //if (String.IsNullOrEmpty(cmbEstadoCivil.Text))
-                //{
-                //    errorProviderTela.SetError(cmbEstadoCivil, "Informe o estado civil");
-                //    return;
-                //}
-                funcionario.EstadoCivil = cmbEstadoCivil.Text;
-
-                #endregion
-
-                #region VALIDA - NACIONALIDADE
-
-                //if (String.IsNullOrEmpty(cmbNacionalidade.Text))
-                //{
-                //    errorProviderTela.SetError(cmbNacionalidade, "Informe a nacionalidade");
-                //    return;
-                //}
-                funcionario.Nacionalidade = cmbNacionalidade.Text;
-
-                #endregion
-
-                funcionario.Nascimento = dtpNascimento.Value;
-
                 ucMenuImagemFunc1.retornaFuncionario(funcionario);
                 funcionario.PerfilID = 1;
 
                 funcionarioControlador.Incluir(funcionario);
                 funcionarioControlador.Confirmar();
 
+                //Habilitar o User Control lateral
+                ucMenuLateralFunc1.Enabled = true;
+
+                //Habilitar o Button Imprimir
+                btnImprimir.Enabled = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        #endregion
+
+        #endregion
+
+        #region USER CONTROLS - MENU LATERAL
+        private void ucMenuLateralFunc1_EventoAbrirDadosProfissionais()
+        {
+            this.Hide();
+            Program.ultimaTela = 17;
+            telaFuncionarioDadosProfissionais telaafuncprofissionais = telaFuncionarioDadosProfissionais.getInstancia();
+            telaafuncprofissionais.Show();
+        }
+
+
+        private void ucMenuLateralFunc1_EventoAbrirDadosPessoais()
+        {
+            this.Hide();
+            Program.ultimaTela = 17;
+            telaFuncionario telaafuncdados = telaFuncionario.getInstancia();
+            telaafuncdados.Show();
+        }
+        #endregion
+
+        #region LOAD
+        private void ucMenuLateralFunc1_Load(object sender, EventArgs e)
+        {
+            ucMenuLateralFunc1.verificaTela(teladfunc);
         }
         #endregion
 
@@ -489,6 +542,7 @@ namespace GuiWindowsForms
             funcionario = funcionarioControlador.Consultar(funcionario, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
             carregarFuncionario();
             ucMenuImagemFunc1.carregaFuncionario(funcionario);
+            ucMenuImagemFunc1.ocultarBotaoAdicionarImagem();
             Program.funcionarioAux = funcionario;
         }
         #endregion
@@ -593,7 +647,8 @@ namespace GuiWindowsForms
         #endregion
 
         #region ACTIVATED
-        private void telaFuncionario_Activated(object sender, EventArgs e)
+
+        private void telaFuncionario_Activated_1(object sender, EventArgs e)
         {
             Memoria memoria = Memoria.Instance;
 
@@ -610,12 +665,13 @@ namespace GuiWindowsForms
                 {
                     funcionario = memoria.Funcionario;
                     carregarFuncionario();
- 
+
                 }
                 else
                 {
                     limparFuncionario();
                 }
+                Enabled_True();
                 txtNome.Focus();
 
                 //VALIDA EXIBICAO DOS BOTAO DO MENU_INFERIOR
@@ -633,6 +689,8 @@ namespace GuiWindowsForms
                 Program.ultimaTelaCadastrar = 0;
             }
         }
+
+
         #endregion
 
         #region METODOS ENABLED
@@ -644,6 +702,8 @@ namespace GuiWindowsForms
         private void Enabled_True()
         {
             txtNome.Enabled = true;
+            txtRg.Enabled = true;
+            mskCpf.Enabled = true;
             rdbFem.Enabled = true;
             rdbMasc.Enabled = true;
             dtpNascimento.Enabled = true;
@@ -655,8 +715,12 @@ namespace GuiWindowsForms
             txtBairro.Enabled = true;
             mskCep.Enabled = true;
             cmbUf.Enabled = true;
-            txtCidade.Enabled = true;
             mskFoneResidencia.Enabled = true;
+            mskFoneOpcional.Enabled = true;
+            txtCidade.Enabled = true;
+            cmbEstadoCivil.Enabled = true;
+            txtFiliacaoMae.Enabled = true;
+            txtFiliacaoPai.Enabled = true;
         }
 
         /// <summary>
@@ -666,6 +730,8 @@ namespace GuiWindowsForms
         private void Enabled_False()
         {
             txtNome.Enabled = false;
+            txtRg.Enabled = false;
+            mskCpf.Enabled = false;
             rdbFem.Enabled = false;
             rdbMasc.Enabled = false;
             dtpNascimento.Enabled = false;
@@ -677,9 +743,18 @@ namespace GuiWindowsForms
             txtBairro.Enabled = false;
             mskCep.Enabled = false;
             cmbUf.Enabled = false;
+            mskFoneResidencia.Enabled = false;
+            mskFoneOpcional.Enabled = false;
             txtCidade.Enabled = false;
+            cmbEstadoCivil.Enabled = false;
+            txtFiliacaoMae.Enabled = false;
+            txtFiliacaoPai.Enabled = false;
         }
 
         #endregion
+
+   
+
+        
     }
 }

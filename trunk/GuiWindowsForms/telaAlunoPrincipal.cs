@@ -392,10 +392,7 @@ namespace GuiWindowsForms
             btnCadastrarFuncionario.Visible = false;
             btnCadastrarAluno.Visible = true;
 
-            //Atribui "1" a variavel de Program para identificar
-            // que veio do clique no Data Grid assim exibindo os
-            //campos ALTERAR, EXCLUIR na telaAluno
-            Program.ultimaTelaCadastrar = 1;
+
         }
         #endregion
 
@@ -408,6 +405,7 @@ namespace GuiWindowsForms
             
             btnCadastrarAluno.Visible = false;
             btnCadastrarFuncionario.Visible = true;
+
 
         }
         #endregion
@@ -440,6 +438,8 @@ namespace GuiWindowsForms
 
             telaFuncionario telafuncionario = telaFuncionario.getInstancia();
             telafuncionario.Show();
+
+
         }
         #endregion
 
@@ -493,13 +493,7 @@ namespace GuiWindowsForms
             #region EVENTO DOUBLE CLICK GRID ALUNO
             private void dgvAluno_DoubleClick(object sender, EventArgs e)
             {
-                //Atribui "2" a variavel de Program para identificar
-                // que veio do clique no Data Grid assim exibindo os
-                //campos ALTERAR, EXCLUIR na telaAluno
-                Program.ultimaTelaCadastrar = 2;
-
-              
-                
+                 
                 if (linhaSelecionadaGrid != -1)
                 {
                     Aluno aluno = (alunosAxiliarLista[linhaSelecionadaGrid]);
@@ -513,6 +507,11 @@ namespace GuiWindowsForms
                     Program.ultimaTela = 6;
                     telaAluno tAluno = telaAluno.getInstancia();
                     tAluno.Show();
+
+                    //Atribui "2" a variavel de Program para identificar
+                    // que veio do clique no Data Grid assim exibindo os
+                    //campos ALTERAR, EXCLUIR na telaAluno
+                    Program.ultimaTelaCadastrar = 2;
                 }
 
             }
@@ -548,12 +547,6 @@ namespace GuiWindowsForms
             #region EVENTO DOUBLE CLICK GRID FUNCIONARIO
             private void dgvFuncionario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
             {
-                //Atribui "2" a variavel de Program para identificar
-                // que veio do clique no Data Grid assim exibindo os
-                //campos ALTERAR, EXCLUIR na telaFuncionario
-                Program.ultimaTelaCadastrar = 2;
-
-
 
                 if (linhaSelecionadaGrid != -1)
                 {
@@ -568,8 +561,134 @@ namespace GuiWindowsForms
                     Program.ultimaTela = 6;
                     telaFuncionario tFuncionario = telaFuncionario.getInstancia();
                     tFuncionario.Show();
+
+                    //Atribui "2" a variavel de Program para identificar
+                    // que veio do clique no Data Grid assim exibindo os
+                    //campos ALTERAR, EXCLUIR na telaFuncionario
+                    Program.ultimaTelaCadastrar = 2;
                 }
 
+            }
+            #endregion
+
+            #region EVENTO CELL CLICK GRID FUNCIONARIO
+            //private void dgvFuncionario_CellClick(object sender, DataGridViewCellEventArgs e)
+            //{
+
+
+            //    linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+            //    if (linhaSelecionadaGrid != -1)
+            //    {
+            //        Funcionario funcionario = (funcinariosAuxiliarLista[linhaSelecionadaGrid]);
+
+            //        Memoria memoria = Memoria.Instance;
+            //        memoria.Status = StatusBanco.Inativo;
+            //        memoria.Funcionario = funcionario;
+
+
+            //        this.Hide();
+            //        Program.ultimaTela = 6;
+            //        telaFuncionario tFuncionario = telaFuncionario.getInstancia();
+            //        tFuncionario.Show();
+
+
+            //        //Atribui "2" a variavel de Program para identificar
+            //        // que veio do clique no Data Grid assim exibindo os
+            //        //campos ALTERAR, EXCLUIR na telaFuncionario
+            //        Program.ultimaTelaCadastrar = 2;
+            //    }
+            //}
+            #endregion
+
+            #region EVENTO CELL CONTENT CLICK FUNCIONARIO
+            private void dgvFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            {
+
+                //linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+
+
+                //if (linhaSelecionadaGrid != -1)
+                //{
+                //    Funcionario funcionario = (funcinariosAuxiliarLista[linhaSelecionadaGrid]);
+
+                //    Memoria memoria = Memoria.Instance;
+                //    memoria.Status = StatusBanco.Inativo;
+                //    memoria.Funcionario = funcionario;
+
+
+                //    this.Hide();
+                //    Program.ultimaTela = 6;
+                //    telaFuncionario tFuncionario = telaFuncionario.getInstancia();
+                //    tFuncionario.Show();
+
+                //    //Atribui "2" a variavel de Program para identificar
+                //    // que veio do clique no Data Grid assim exibindo os
+                //    //campos ALTERAR, EXCLUIR na telaFuncionario
+                //    Program.ultimaTelaCadastrar = 2;
+                //}
+            }
+            #endregion
+
+            #region EVENTO CELL CONTENT DOUBLE CLICK GRID FUNCIONARIO
+            private void dgvFuncionario_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+            {
+
+                //linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+
+
+                //if (linhaSelecionadaGrid != -1)
+                //{
+                //    Funcionario funcionario = (funcinariosAuxiliarLista[linhaSelecionadaGrid]);
+
+                //    Memoria memoria = Memoria.Instance;
+                //    memoria.Status = StatusBanco.Inativo;
+                //    memoria.Funcionario = funcionario;
+
+
+                //    this.Hide();
+                //    Program.ultimaTela = 6;
+                //    telaFuncionario tFuncionario = telaFuncionario.getInstancia();
+                //    tFuncionario.Show();
+
+                //    //Atribui "2" a variavel de Program para identificar
+                //    // que veio do clique no Data Grid assim exibindo os
+                //    //campos ALTERAR, EXCLUIR na telaFuncionario
+                //    Program.ultimaTelaCadastrar = 2;
+                //}
+            }
+            #endregion
+
+            #region EVENTO CELL DOUBLE CLICK FUNCIONARIO
+            private void dgvFuncionario_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+            {
+
+
+                linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+
+
+                if (linhaSelecionadaGrid != -1)
+                {
+                    Funcionario funcionario = (funcinariosAuxiliarLista[linhaSelecionadaGrid]);
+
+                    Memoria memoria = Memoria.Instance;
+                    memoria.Status = StatusBanco.Inativo;
+                    memoria.Funcionario = funcionario;
+
+
+                    this.Hide();
+                    Program.ultimaTela = 6;
+                    telaFuncionario tFuncionario = telaFuncionario.getInstancia();
+
+                    //Atribui "2" a variavel de Program para identificar
+                    // que veio do clique no Data Grid assim exibindo os
+                    //campos ALTERAR, EXCLUIR na telaFuncionario
+                    Program.ultimaTelaCadastrar = 2;
+                    
+                    
+                    tFuncionario.Show();
+
+                 
+                }
             }
             #endregion
 
@@ -661,6 +780,9 @@ namespace GuiWindowsForms
             dgvFuncionario.Visible = false;
         }
         #endregion
+
+        
+
 
     
 

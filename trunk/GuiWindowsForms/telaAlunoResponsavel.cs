@@ -786,10 +786,6 @@ namespace GuiWindowsForms
         {
             cmbUf.DataSource = estados;
             ucMenuSuper.ocultarBotaoAdicionarImagem();
-            //responsavel = responsavelControlador.Consultar(responsavel, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
-            //ucMenuSuper.carregaResponsavel(responsavel);
-            //carregarAlunoResponsavel();
-
         }
         #endregion
 
