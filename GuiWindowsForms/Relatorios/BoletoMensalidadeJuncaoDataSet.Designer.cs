@@ -262,7 +262,17 @@ namespace GuiWindowsForms.Relatorios {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class BoletoMensalidadeJuncaoDataTableDataTable : global::System.Data.TypedTableBase<BoletoMensalidadeJuncaoDataTableRow> {
             
-            private global::System.Data.DataColumn columnID;
+            private global::System.Data.DataColumn columnNomeAluno;
+            
+            private global::System.Data.DataColumn columnSerieAluno;
+            
+            private global::System.Data.DataColumn columnParcela;
+            
+            private global::System.Data.DataColumn columnVencimento;
+            
+            private global::System.Data.DataColumn columnValor;
+            
+            private global::System.Data.DataColumn columnAno;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public BoletoMensalidadeJuncaoDataTableDataTable() {
@@ -295,9 +305,44 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn IDColumn {
+            public global::System.Data.DataColumn NomeAlunoColumn {
                 get {
-                    return this.columnID;
+                    return this.columnNomeAluno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn SerieAlunoColumn {
+                get {
+                    return this.columnSerieAluno;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn ParcelaColumn {
+                get {
+                    return this.columnParcela;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn VencimentoColumn {
+                get {
+                    return this.columnVencimento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn ValorColumn {
+                get {
+                    return this.columnValor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn AnoColumn {
+                get {
+                    return this.columnAno;
                 }
             }
             
@@ -330,10 +375,15 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public BoletoMensalidadeJuncaoDataTableRow AddBoletoMensalidadeJuncaoDataTableRow(int ID) {
+            public BoletoMensalidadeJuncaoDataTableRow AddBoletoMensalidadeJuncaoDataTableRow(string NomeAluno, string SerieAluno, string Parcela, System.DateTime Vencimento, double Valor, string Ano) {
                 BoletoMensalidadeJuncaoDataTableRow rowBoletoMensalidadeJuncaoDataTableRow = ((BoletoMensalidadeJuncaoDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID};
+                        NomeAluno,
+                        SerieAluno,
+                        Parcela,
+                        Vencimento,
+                        Valor,
+                        Ano};
                 rowBoletoMensalidadeJuncaoDataTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBoletoMensalidadeJuncaoDataTableRow);
                 return rowBoletoMensalidadeJuncaoDataTableRow;
@@ -353,13 +403,28 @@ namespace GuiWindowsForms.Relatorios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
+                this.columnNomeAluno = base.Columns["NomeAluno"];
+                this.columnSerieAluno = base.Columns["SerieAluno"];
+                this.columnParcela = base.Columns["Parcela"];
+                this.columnVencimento = base.Columns["Vencimento"];
+                this.columnValor = base.Columns["Valor"];
+                this.columnAno = base.Columns["Ano"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
+                this.columnNomeAluno = new global::System.Data.DataColumn("NomeAluno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNomeAluno);
+                this.columnSerieAluno = new global::System.Data.DataColumn("SerieAluno", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSerieAluno);
+                this.columnParcela = new global::System.Data.DataColumn("Parcela", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnParcela);
+                this.columnVencimento = new global::System.Data.DataColumn("Vencimento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVencimento);
+                this.columnValor = new global::System.Data.DataColumn("Valor", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValor);
+                this.columnAno = new global::System.Data.DataColumn("Ano", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAno);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -492,28 +557,159 @@ namespace GuiWindowsForms.Relatorios {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public int ID {
+            public string NomeAluno {
                 get {
                     try {
-                        return ((int)(this[this.tableBoletoMensalidadeJuncaoDataTable.IDColumn]));
+                        return ((string)(this[this.tableBoletoMensalidadeJuncaoDataTable.NomeAlunoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ID\' in table \'BoletoMensalidadeJuncaoDataTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NomeAluno\' in table \'BoletoMensalidadeJuncaoDataTable\' is D" +
+                                "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBoletoMensalidadeJuncaoDataTable.IDColumn] = value;
+                    this[this.tableBoletoMensalidadeJuncaoDataTable.NomeAlunoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool IsIDNull() {
-                return this.IsNull(this.tableBoletoMensalidadeJuncaoDataTable.IDColumn);
+            public string SerieAluno {
+                get {
+                    try {
+                        return ((string)(this[this.tableBoletoMensalidadeJuncaoDataTable.SerieAlunoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SerieAluno\' in table \'BoletoMensalidadeJuncaoDataTable\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBoletoMensalidadeJuncaoDataTable.SerieAlunoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void SetIDNull() {
-                this[this.tableBoletoMensalidadeJuncaoDataTable.IDColumn] = global::System.Convert.DBNull;
+            public string Parcela {
+                get {
+                    try {
+                        return ((string)(this[this.tableBoletoMensalidadeJuncaoDataTable.ParcelaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Parcela\' in table \'BoletoMensalidadeJuncaoDataTable\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBoletoMensalidadeJuncaoDataTable.ParcelaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public System.DateTime Vencimento {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableBoletoMensalidadeJuncaoDataTable.VencimentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vencimento\' in table \'BoletoMensalidadeJuncaoDataTable\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBoletoMensalidadeJuncaoDataTable.VencimentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public double Valor {
+                get {
+                    try {
+                        return ((double)(this[this.tableBoletoMensalidadeJuncaoDataTable.ValorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Valor\' in table \'BoletoMensalidadeJuncaoDataTable\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableBoletoMensalidadeJuncaoDataTable.ValorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string Ano {
+                get {
+                    try {
+                        return ((string)(this[this.tableBoletoMensalidadeJuncaoDataTable.AnoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ano\' in table \'BoletoMensalidadeJuncaoDataTable\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableBoletoMensalidadeJuncaoDataTable.AnoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsNomeAlunoNull() {
+                return this.IsNull(this.tableBoletoMensalidadeJuncaoDataTable.NomeAlunoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetNomeAlunoNull() {
+                this[this.tableBoletoMensalidadeJuncaoDataTable.NomeAlunoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsSerieAlunoNull() {
+                return this.IsNull(this.tableBoletoMensalidadeJuncaoDataTable.SerieAlunoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetSerieAlunoNull() {
+                this[this.tableBoletoMensalidadeJuncaoDataTable.SerieAlunoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsParcelaNull() {
+                return this.IsNull(this.tableBoletoMensalidadeJuncaoDataTable.ParcelaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetParcelaNull() {
+                this[this.tableBoletoMensalidadeJuncaoDataTable.ParcelaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsVencimentoNull() {
+                return this.IsNull(this.tableBoletoMensalidadeJuncaoDataTable.VencimentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetVencimentoNull() {
+                this[this.tableBoletoMensalidadeJuncaoDataTable.VencimentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsValorNull() {
+                return this.IsNull(this.tableBoletoMensalidadeJuncaoDataTable.ValorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetValorNull() {
+                this[this.tableBoletoMensalidadeJuncaoDataTable.ValorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool IsAnoNull() {
+                return this.IsNull(this.tableBoletoMensalidadeJuncaoDataTable.AnoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void SetAnoNull() {
+                this[this.tableBoletoMensalidadeJuncaoDataTable.AnoColumn] = global::System.Convert.DBNull;
             }
         }
         
