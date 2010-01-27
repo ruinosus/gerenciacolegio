@@ -427,6 +427,7 @@ namespace GuiWindowsForms
 
         #region USER CONTROLS - Controle Inferior - Botões de Navegação
 
+        #region EVENTO VOLTAR
         private void ucAluno1_EventoVoltar()
         {
             this.Hide();
@@ -434,72 +435,14 @@ namespace GuiWindowsForms
             Program.ultimaTela = 6;
             Program.SelecionaForm(Program.ultimaTela);
         }
-
         #endregion
 
-        #region USER CONTROLS - Controle Lateral - Botões de Navegação
-
-        private void uMenuLateral1_EventoAbrirTelaResponsavel()
+        #region ALTERAR
+        private void ucMenuInferior1_EventoAlterar()
         {
-            // CHAMADA PARA TELA ALUNO RESPONSAVEL
-            //this.Hide();
-            //Program.ultimaTela = 7;
-            //telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
-            //telaalunoresponsavel.Show();
+            Enabled_True();
+            verificaButton = 1;
 
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAlunoResponsavelBusca telaalunoresponsavelbusca = telaAlunoResponsavelBusca.getInstancia();
-            telaalunoresponsavelbusca.Show();
-
-        }
-
-        private void uMenuLateral1_EventoAbrirTelaMedica()
-        {
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAlunoMedicacao telaalunomedicacao = telaAlunoMedicacao.getInstancia();
-            telaalunomedicacao.Show();
-        }
-
-        private void uMenuLateral1_EventoAbrirTelaMatricula()
-        {
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAlunoMatricula telaalunomatricula = telaAlunoMatricula.getInstancia();
-            telaalunomatricula.Show();
-        }
-
-        private void uMenuLateral1_EventoAbrirTelaFinanceiro()
-        {
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAlunoFinanceiro telaalunofinanceiro = telaAlunoFinanceiro.getInstancia();
-            telaalunofinanceiro.Show();
-        }
-
-        private void uMenuLateral1_EventoAbrirTelaDados()
-        {
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAluno telaaluno = telaAluno.getInstancia();
-            telaaluno.Show();
-        }
-
-        private void uMenuLateral1_EventoAbrirTelaAcademico()
-        {
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
-            telaalunoacademico.Show();
-        }
-
-        #endregion
-
-        #region USER CONTROLS - Menu Lateral
-        private void uMenuLateral1_Load(object sender, EventArgs e)
-        {
-            uMenuLateral1.verificaTela(telaaluno);
         }
         #endregion
 
@@ -910,6 +853,74 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #endregion
+
+        #region USER CONTROLS - Controle Lateral - Botões de Navegação
+
+        private void uMenuLateral1_EventoAbrirTelaResponsavel()
+        {
+            // CHAMADA PARA TELA ALUNO RESPONSAVEL
+            //this.Hide();
+            //Program.ultimaTela = 7;
+            //telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            //telaalunoresponsavel.Show();
+
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoResponsavelBusca telaalunoresponsavelbusca = telaAlunoResponsavelBusca.getInstancia();
+            telaalunoresponsavelbusca.Show();
+
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaMedica()
+        {
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoMedicacao telaalunomedicacao = telaAlunoMedicacao.getInstancia();
+            telaalunomedicacao.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaMatricula()
+        {
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoMatricula telaalunomatricula = telaAlunoMatricula.getInstancia();
+            telaalunomatricula.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaFinanceiro()
+        {
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoFinanceiro telaalunofinanceiro = telaAlunoFinanceiro.getInstancia();
+            telaalunofinanceiro.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaDados()
+        {
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAluno telaaluno = telaAluno.getInstancia();
+            telaaluno.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaAcademico()
+        {
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
+            telaalunoacademico.Show();
+        }
+
+        #endregion
+
+        #region USER CONTROLS - Menu Lateral
+        private void uMenuLateral1_Load(object sender, EventArgs e)
+        {
+            uMenuLateral1.verificaTela(telaaluno);
+        }
+        #endregion
+
         #region TEXTBOX UF EVENTO SELECTED
         // Quando selecionar a UF o campo CIDADE é selecionado a capital correspondente
         private void cmbUf_SelectedIndexChanged(object sender, EventArgs e)
@@ -1114,6 +1125,7 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region METODO VERIFICA_SE_JA_CADASTRADO
         public Boolean verificaSeJaCadastrado(Aluno alunoAux)
         {
             bool testa = false;
@@ -1131,7 +1143,9 @@ namespace GuiWindowsForms
             }
             return testa;
         }
+        #endregion
 
+        #region ACTIVATED
         private void telaAluno_Activated(object sender, EventArgs e)
         {
             uMenuLateral1.verificaTela(telaaluno);
@@ -1188,6 +1202,7 @@ namespace GuiWindowsForms
             }
 
         }
+        #endregion
 
         #region SELECIONA CIDADE
         private void cmbUf_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -1223,25 +1238,20 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        #region BUTTON VINCULAR RESPONSAVEL
         private void btnVincularResponsavel_Click(object sender, EventArgs e)
         {
             telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
             this.Hide();
             tela.Show();
         }
+        #endregion 
 
+        #region LOAD
         private void telaAluno_Load(object sender, EventArgs e)
         {
             limparTelaAluno();
             txtNome.Focus();
-        }
-
-        #region ALTERAR
-        private void ucMenuInferior1_EventoAlterar()
-        {
-            Enabled_True();
-            verificaButton = 1;
-
         }
         #endregion
 
