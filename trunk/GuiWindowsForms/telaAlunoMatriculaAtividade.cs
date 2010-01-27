@@ -322,7 +322,7 @@ namespace GuiWindowsForms
 
                         boletoAtividade.Parcela = meses[DateTime.Now.AddMonths(i).Month];
 
-                        boletoAtividade.MatriculaId = matriculaAux;
+                        boletoAtividade.MatriculaID = matriculaAux;
                         boletoAtividade.DataEmissao = DateTime.Now;
                         boletoAtividade.Valor = alunoAtividadeTurma.Valor;
                         boletoAtividade.AlunoAtividadeTurmaID = alunoAtividadeTurma.ID;

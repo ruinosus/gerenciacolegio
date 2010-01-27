@@ -22,7 +22,7 @@ namespace GuiWindowsForms
             VerificaExecucao();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new telaFinanceiro());
+            Application.Run(new telaLogin());
         }
 
         public static void VerificaExecucao()
