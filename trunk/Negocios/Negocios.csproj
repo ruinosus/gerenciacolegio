@@ -277,6 +277,7 @@
     <Compile Include="ModuloMatriculaVinculo\Processos\MatriculaVinculoProcesso.cs" />
     <Compile Include="ModuloMatriculaVinculo\Repositorios\Interfaces\IMatriculaVinculoRepositorio.cs" />
     <Compile Include="ModuloMatriculaVinculo\Repositorios\MatriculaVinculoRepositorio.cs" />
+    <Compile Include="ModuloMatriculaVinculo\VOs\MatriculaVinculoBoleto.cs" />
     <Compile Include="ModuloMatricula\Constantes\MatriculaConstantes.cs" />
     <Compile Include="ModuloMatricula\Excecoes\MatriculaNaoAlteradaExcecao.cs" />
     <Compile Include="ModuloMatricula\Excecoes\MatriculaNaoExcluidaExcecao.cs" />
