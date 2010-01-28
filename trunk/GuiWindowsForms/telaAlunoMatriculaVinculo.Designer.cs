@@ -1,0 +1,202 @@
+﻿namespace GuiWindowsForms
+{
+    partial class telaAlunoMatriculaVinculo
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoMatriculaVinculo));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbAluno = new System.Windows.Forms.ComboBox();
+            this.lblAluno = new System.Windows.Forms.Label();
+            this.dgvResponsavelAluno = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GrauParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
+            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
+            this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavelAluno)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            this.errorProviderTela.SetIconAlignment(this.pictureBox1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("pictureBox1.IconAlignment"))));
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
+            // cmbAluno
+            // 
+            this.cmbAluno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbAluno.DisplayMember = "se";
+            this.cmbAluno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAluno.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbAluno, "cmbAluno");
+            this.cmbAluno.Name = "cmbAluno";
+            this.cmbAluno.ValueMember = "selecione";
+            // 
+            // lblAluno
+            // 
+            resources.ApplyResources(this.lblAluno, "lblAluno");
+            this.lblAluno.BackColor = System.Drawing.Color.Transparent;
+            this.lblAluno.Name = "lblAluno";
+            // 
+            // dgvResponsavelAluno
+            // 
+            this.dgvResponsavelAluno.AllowUserToAddRows = false;
+            this.dgvResponsavelAluno.AllowUserToDeleteRows = false;
+            this.dgvResponsavelAluno.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResponsavelAluno.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvResponsavelAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResponsavelAluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
+            this.GrauParentesco});
+            this.dgvResponsavelAluno.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResponsavelAluno.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.dgvResponsavelAluno, "dgvResponsavelAluno");
+            this.dgvResponsavelAluno.MultiSelect = false;
+            this.dgvResponsavelAluno.Name = "dgvResponsavelAluno";
+            this.dgvResponsavelAluno.ReadOnly = true;
+            this.dgvResponsavelAluno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Aluno";
+            resources.ApplyResources(this.Column3, "Column3");
+            this.Column3.MaxInputLength = 30;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // GrauParentesco
+            // 
+            this.GrauParentesco.DataPropertyName = "SerieAtual";
+            resources.ApplyResources(this.GrauParentesco, "GrauParentesco");
+            this.GrauParentesco.MaxInputLength = 30;
+            this.GrauParentesco.Name = "GrauParentesco";
+            this.GrauParentesco.ReadOnly = true;
+            // 
+            // ucDesconectarLogin1
+            // 
+            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.ucDesconectarLogin1, "ucDesconectarLogin1");
+            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
+            // 
+            // ucMenuInferior1
+            // 
+            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.errorProviderTela.SetIconAlignment(this.ucMenuInferior1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucMenuInferior1.IconAlignment"))));
+            resources.ApplyResources(this.ucMenuInferior1, "ucMenuInferior1");
+            this.ucMenuInferior1.Name = "ucMenuInferior1";
+            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
+            // 
+            // uMenuLateral1
+            // 
+            this.uMenuLateral1.BackColor = System.Drawing.Color.Transparent;
+            this.errorProviderTela.SetIconAlignment(this.uMenuLateral1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("uMenuLateral1.IconAlignment"))));
+            resources.ApplyResources(this.uMenuLateral1, "uMenuLateral1");
+            this.uMenuLateral1.Name = "uMenuLateral1";
+            this.uMenuLateral1.EventoAbrirTelaMedica += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMedica(this.uMenuLateral1_EventoAbrirTelaMedica);
+            this.uMenuLateral1.EventoAbrirTelaResponsavel += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaResponsavel(this.uMenuLateral1_EventoAbrirTelaResponsavel);
+            this.uMenuLateral1.EventoAbrirTelaMatricula += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaMatricula(this.uMenuLateral1_EventoAbrirTelaMatricula);
+            this.uMenuLateral1.EventoAbrirTelaFinanceiro += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaFinanceiro(this.uMenuLateral1_EventoAbrirTelaFinanceiro);
+            this.uMenuLateral1.EventoAbrirTelaAcademico += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaAcademico(this.uMenuLateral1_EventoAbrirTelaAcademico);
+            this.uMenuLateral1.EventoAbrirTelaDados += new GuiWindowsForms.User_Control.uMenuLateral.delegateAbrirTelaDados(this.uMenuLateral1_EventoAbrirTelaDados);
+            // 
+            // uMenuImagem1
+            // 
+            this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
+            this.errorProviderTela.SetIconAlignment(this.uMenuImagem1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("uMenuImagem1.IconAlignment"))));
+            resources.ApplyResources(this.uMenuImagem1, "uMenuImagem1");
+            this.uMenuImagem1.Name = "uMenuImagem1";
+            // 
+            // telaAlunoMatriculaVinculo
+            // 
+            resources.ApplyResources(this, "$this");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
+            this.Controls.Add(this.ucDesconectarLogin1);
+            this.Controls.Add(this.cmbAluno);
+            this.Controls.Add(this.lblAluno);
+            this.Controls.Add(this.dgvResponsavelAluno);
+            this.Controls.Add(this.ucMenuInferior1);
+            this.Controls.Add(this.uMenuLateral1);
+            this.Controls.Add(this.uMenuImagem1);
+            this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "telaAlunoMatriculaVinculo";
+            this.Activated += new System.EventHandler(this.telaAlunoMatriculaVinculo_Activated);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavelAluno)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
+        private uMenuImagem uMenuImagem1;
+        private GuiWindowsForms.User_Control.uMenuLateral uMenuLateral1;
+        private ucMenuInferior ucMenuInferior1;
+        private System.Windows.Forms.ComboBox cmbAluno;
+        private System.Windows.Forms.Label lblAluno;
+        private System.Windows.Forms.DataGridView dgvResponsavelAluno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GrauParentesco;
+        private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
+    }
+}
