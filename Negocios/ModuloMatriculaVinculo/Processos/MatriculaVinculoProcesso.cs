@@ -116,18 +116,18 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
                 meses.Add("Novembro");
                 meses.Add("Dezembro");
                 //List<BoletoMensalidade> boletoMensalidadeLista = listaMatricula[0].MatriculaPrincipal.BoletoMensalidade.ToList();
-                mvbBase.NomeAluno += listaMatricula[0].MatriculaPrincipal.Aluno.Nome;
-                mvbBase.Ano += listaMatricula[0].MatriculaPrincipal.Ano;
-                mvbBase.SerieAluno += listaMatricula[0].MatriculaPrincipal.Aluno.SerieAtual;
-                mvbBase.Valor += listaMatricula[0].MatriculaPrincipal.Valor.Value;
-                mvbBase.Vencimento = new DateTime(DateTime.Now.Year,1,listaMatricula[0].MatriculaPrincipal.DiaVencimento.Value);
+                mvbBase.NomeAluno += listaMatricula[0].MatriculaMestre.Aluno.Nome;
+                mvbBase.Ano += listaMatricula[0].MatriculaMestre.Ano;
+                mvbBase.SerieAluno += listaMatricula[0].MatriculaMestre.Aluno.SerieAtual;
+                mvbBase.Valor += listaMatricula[0].MatriculaMestre.Valor.Value;
+                mvbBase.Vencimento = new DateTime(DateTime.Now.Year, 1, listaMatricula[0].MatriculaMestre.DiaVencimento.Value);
                 //mvb.Vencimento 
                 foreach (MatriculaVinculo mv in listaMatricula)
                 {
-                    mvbBase.NomeAluno += ", " + mv.MatriculaVinculada.Aluno.Nome;
-                    mvbBase.Ano += ", " + mv.MatriculaVinculada.Ano;
-                    mvbBase.SerieAluno += ", " + mv.MatriculaVinculada.Aluno.SerieAtual;
-                    mvbBase.Valor += mv.MatriculaVinculada.Valor.Value;
+                    mvbBase.NomeAluno += ", " + mv.MatriculaDependente.Aluno.Nome;
+                    mvbBase.Ano += ", " + mv.MatriculaDependente.Ano;
+                    mvbBase.SerieAluno += ", " + mv.MatriculaDependente.Aluno.SerieAtual;
+                    mvbBase.Valor += mv.MatriculaDependente.Valor.Value;
                 }
                 
                 MatriculaVinculoBoleto mvbMes;

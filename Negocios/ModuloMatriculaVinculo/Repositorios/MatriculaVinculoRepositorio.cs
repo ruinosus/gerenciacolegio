@@ -43,20 +43,20 @@ namespace Negocios.ModuloMatriculaVinculo.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (matriculaVinculo.MatriculaPrincipalID != 0)
+                        if (matriculaVinculo.MatriculaMestreID != 0)
                         {
                             resultado = ((from m in resultado
                                           where
-                                          m.MatriculaPrincipalID == matriculaVinculo.MatriculaPrincipalID
+                                          m.MatriculaMestreID == matriculaVinculo.MatriculaMestreID
                                           select m).ToList());
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (matriculaVinculo.MatriculaVinculadaID != 0)
+                        if (matriculaVinculo.MatriculaDependenteID != 0)
                         {
                             resultado = ((from m in resultado
                                           where
-                                          m.MatriculaVinculadaID == matriculaVinculo.MatriculaVinculadaID
+                                          m.MatriculaDependenteID == matriculaVinculo.MatriculaDependenteID
                                           select m).ToList());
                             resultado = resultado.Distinct().ToList();
                         }
@@ -97,23 +97,23 @@ namespace Negocios.ModuloMatriculaVinculo.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (matriculaVinculo.MatriculaPrincipalID != 0)
+                        if (matriculaVinculo.MatriculaMestreID != 0)
                         {
 
                             resultado.AddRange((from m in Consultar()
                                                 where
-                                                m.MatriculaPrincipalID == matriculaVinculo.MatriculaPrincipalID
+                                                m.MatriculaMestreID == matriculaVinculo.MatriculaMestreID
                                                 select m).ToList());
 
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (matriculaVinculo.MatriculaVinculadaID != 0)
+                        if (matriculaVinculo.MatriculaDependenteID != 0)
                         {
 
                             resultado.AddRange((from m in Consultar()
                                                 where
-                                                m.MatriculaVinculadaID == matriculaVinculo.MatriculaVinculadaID
+                                                m.MatriculaDependenteID == matriculaVinculo.MatriculaDependenteID
                                                 select m).ToList());
 
                             resultado = resultado.Distinct().ToList();
@@ -195,8 +195,8 @@ namespace Negocios.ModuloMatriculaVinculo.Repositorios
 
                 matriculaVinculoAux.DataVinculo = matriculaVinculo.DataVinculo;
                 matriculaVinculoAux.GrupoID = matriculaVinculo.GrupoID;
-                matriculaVinculoAux.MatriculaPrincipalID = matriculaVinculo.MatriculaPrincipalID;
-                matriculaVinculoAux.MatriculaVinculadaID = matriculaVinculo.MatriculaVinculadaID;
+                matriculaVinculoAux.MatriculaMestreID = matriculaVinculo.MatriculaMestreID;
+                matriculaVinculoAux.MatriculaDependenteID = matriculaVinculo.MatriculaDependenteID;
                 matriculaVinculoAux.Status = matriculaVinculo.Status;
 
                 Confirmar();
