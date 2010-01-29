@@ -107,6 +107,7 @@
             this.dgvAlunosVinculados.Name = "dgvAlunosVinculados";
             this.dgvAlunosVinculados.ReadOnly = true;
             this.dgvAlunosVinculados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAlunosVinculados.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlunosVinculados_CellEnter);
             // 
             // Column3
             // 

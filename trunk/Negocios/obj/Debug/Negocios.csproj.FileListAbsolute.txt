@@ -100,3 +100,8 @@ C:\Users\Dudu\Desktop\Col_Conhecer\Negocios\bin\Debug\Negocios.pdb
 C:\Users\Dudu\Desktop\Col_Conhecer\Negocios\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Dudu\Desktop\Col_Conhecer\Negocios\obj\Debug\Negocios.dll
 C:\Users\Dudu\Desktop\Col_Conhecer\Negocios\obj\Debug\Negocios.pdb
+E:\gerenciacolegio\Negocios\bin\Debug\Negocios.dll
+E:\gerenciacolegio\Negocios\bin\Debug\Negocios.pdb
+E:\gerenciacolegio\Negocios\obj\Debug\ResolveAssemblyReference.cache
+E:\gerenciacolegio\Negocios\obj\Debug\Negocios.dll
+E:\gerenciacolegio\Negocios\obj\Debug\Negocios.pdb

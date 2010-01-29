@@ -65,7 +65,7 @@ namespace GuiWindowsForms
 
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
-            btnIncluir.Enabled = false;
+            btnIncluir.Enabled = true;
             btnVoltar.Enabled = true;
 
         }
