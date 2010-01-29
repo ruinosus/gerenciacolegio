@@ -11,11 +11,13 @@ using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloBasico.Enums;
 using Negocios.ModuloMatriculaVinculo.Processos;
 using Negocios.ModuloMatricula.Processos;
+using Negocios.ModuloMatriculaVinculo.VOs;
 
 namespace GuiWindowsForms
 {
     public partial class telaAlunoMatriculaVinculo : Form
     {
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -188,67 +190,13 @@ namespace GuiWindowsForms
             uMenuLateral1.verificaTela(telaalunomatriculavinculo);
         }
         #endregion
-
-        private void ucDesconectarLogin1_EventoDesconectar()
-        {
-            Program.ultimaTela = 9;
-            this.Close();
-            telaLogin telalogin = telaLogin.getInstancia();
-            telalogin.Show();
-        }
-
-        private void CarregarCombo()
-        {
-            Memoria memoria = Memoria.Instance;
-            if (memoria.Aluno != null)
-            {
-
-                IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
-                ResponsavelAluno responsavelAluno = new ResponsavelAluno();
-                responsavelAluno.AlunoID = memoria.Aluno.ID;
-                responsavelAluno.Status = (int)Status.Ativo;
-
-                List<ResponsavelAluno> resultado = processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
-                List<ResponsavelAluno> listaCombo = new List<ResponsavelAluno>();
-                responsavelAluno.AlunoID = 0;
-                List<Aluno> alunos = new List<Aluno>();
-                foreach (ResponsavelAluno ra in resultado)
-                {
-                    responsavelAluno.ResponsavelID = ra.ResponsavelID;
-                    listaCombo.AddRange(processo.Consultar(responsavelAluno, TipoPesquisa.E));
-                }
-
-                listaCombo.RemoveAll(delegate(ResponsavelAluno ra)
-                {
-                    return ra.AlunoID == memoria.Aluno.ID;
-                });
-
-                for (int i = 0; i < listaCombo.Count; i++)
-                {
-                    for (int j = i; j < listaCombo.Count; j++)
-                    {
-                        if (listaCombo[i].AlunoID == listaCombo[j].AlunoID && i != j)
-                        {
-                            listaCombo.RemoveAt(i);
-                            i = 0;
-                        }
-                    }
-
-                }
-                foreach (ResponsavelAluno ra in listaCombo)
-                {
-                    alunos.Add(ra.Aluno);
-                }
-                cmbAluno.DataSource = alunos;
-                cmbAluno.DisplayMember = "Nome";
-                cmbAluno.ValueMember = "ID";
-
-            }
-
-
-        }
-
-        ///Metodo responsável por verificar se o Aluno atual está com vinculo dependente com outro aluno.
+      
+        #region MÉTODOS DE MANIPULAÇÃO DE INFORMAÇÃO
+        /// <summary>
+        /// Metodo responsável por verificar se o Aluno atual está com vinculo dependente com outro aluno.
+        /// </summary>
+        /// <param name="aluno"> Aluno que será utilizado como pesquisa</param>
+        /// <returns>Lista contendo todos os vinculos do aluno informado.</returns>
         private List<MatriculaVinculo> VerificarMatriculaDependente(Aluno aluno)
         {
             Matricula matricula = CarregarMatricula(aluno);
@@ -267,7 +215,11 @@ namespace GuiWindowsForms
 
         }
 
+        /// <summary>
         ///Metodo responsável por verificar se o aluno atual está com vinculo mestre com outros alunos.
+        /// </summary>
+        /// <param name="aluno"> Aluno que será utilizado como pesquisa</param>
+        /// <returns>Lista contendo todos os vinculos do aluno informado.</returns>     
         private List<MatriculaVinculo> VerificarMatriculaMestre(Aluno aluno)
         {
             Matricula matricula = CarregarMatricula(aluno);
@@ -286,8 +238,11 @@ namespace GuiWindowsForms
 
         }
 
-
-        ///Carrega a matricula atual do aluno.
+        /// <summary>
+        /// Carrega a matricula atual do aluno.
+        /// </summary>
+        /// <param name="aluno"> Aluno que será utilizado como pesquisa</param>
+        /// <returns>Matricula atual do aluno informado.</returns>
         private Matricula CarregarMatricula(Aluno aluno)
         {
             Matricula resultado = new Matricula();
@@ -311,35 +266,142 @@ namespace GuiWindowsForms
             return resultado;
         }
 
+        /// <summary>
+        /// Método responsável por carregar o Grid.
+        /// </summary>
+        /// <param name="matriculaVinculoLista">Lista a ser carregada.</param>
+        private void CarregarGrid(List<MatriculaVinculo> matriculaVinculoLista)
+        {
+            List<MatriculaVinculoBoleto> matriculaVinculoBoletoLista = new List<MatriculaVinculoBoleto>();
+            MatriculaVinculoBoleto matriculaVinculoBoleto;
+            foreach (MatriculaVinculo mv in matriculaVinculoLista)
+            {
+                matriculaVinculoBoleto = new MatriculaVinculoBoleto();
+                matriculaVinculoBoleto.NomeAluno = mv.MatriculaDependente.Aluno.Nome;
+                matriculaVinculoBoleto.SerieAluno = mv.MatriculaDependente.Aluno.SerieAtual;
+                matriculaVinculoBoleto.Ano = mv.MatriculaDependente.Ano.Value.ToString();
+                matriculaVinculoBoletoLista.Add(matriculaVinculoBoleto);
+            }
+            dgvAlunosVinculados.AutoGenerateColumns = false;
+            dgvAlunosVinculados.DataSource = matriculaVinculoBoletoLista;
+        }
+
+        /// <summary>
+        /// Método responsável por carregar o Combo com os alunos disponíveis.
+        /// </summary>
+        /// <param name="removerAlunos">informa se é necessário remover os alunos</param>
+        private void CarregarCombo(bool removerAlunos)
+        {
+            if (Memoria.Instance.Aluno != null)
+            {
+
+                IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
+                ResponsavelAluno responsavelAluno = new ResponsavelAluno();
+                responsavelAluno.AlunoID = Memoria.Instance.Aluno.ID;
+                responsavelAluno.Status = (int)Status.Ativo;
+
+                List<ResponsavelAluno> resultado = processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
+                List<ResponsavelAluno> listaCombo = new List<ResponsavelAluno>();
+                responsavelAluno.AlunoID = 0;
+                List<Aluno> alunos = new List<Aluno>();
+                foreach (ResponsavelAluno ra in resultado)
+                {
+                    responsavelAluno.ResponsavelID = ra.ResponsavelID;
+                    listaCombo.AddRange(processo.Consultar(responsavelAluno, TipoPesquisa.E));
+                }
+
+                listaCombo.RemoveAll(delegate(ResponsavelAluno ra)
+                {
+                    return ra.AlunoID == Memoria.Instance.Aluno.ID;
+                });
+
+                for (int i = 0; i < listaCombo.Count; i++)
+                {
+                    for (int j = i; j < listaCombo.Count; j++)
+                    {
+                        if (listaCombo[i].AlunoID == listaCombo[j].AlunoID && i != j)
+                        {
+                            listaCombo.RemoveAt(i);
+                            i = 0;
+                        }
+                    }
+
+                }
+                foreach (ResponsavelAluno ra in listaCombo)
+                {
+                    alunos.Add(ra.Aluno);
+                }
+                if (removerAlunos)
+                {
+                    for (int i = 0; i < alunos.Count; i++)
+                    {
+                        if (VerificarMatriculaDependente(alunos[i]).Count > 0 || VerificarMatriculaMestre(alunos[i]).Count > 0)
+                        {
+                            alunos.RemoveAt(i);
+                            i = -1;
+                        }
+
+                    }
+                }
+
+                cmbAluno.DataSource = alunos;
+                cmbAluno.DisplayMember = "Nome";
+                cmbAluno.ValueMember = "ID";
+            }
+
+
+        } 
+        #endregion
+ 
+        private void ucDesconectarLogin1_EventoDesconectar()
+        {
+            Program.ultimaTela = 9;
+            this.Close();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
+        }
 
         private void telaAlunoMatriculaVinculo_Activated(object sender, EventArgs e)
         {
-            CarregarCombo();
+            List<MatriculaVinculo> matriculaVinculoListaAlunoAtualDependente = VerificarMatriculaDependente(Memoria.Instance.Aluno);
+            List<MatriculaVinculo> matriculaVinculoListaAlunoAtualMestre = VerificarMatriculaMestre(Memoria.Instance.Aluno);
+            if (matriculaVinculoListaAlunoAtualDependente.Count > 0)
+            {
+                //o aluno atual é dependente de outro aluno, logo a tela deverá ser bloqueada.
+            }
+            else if (matriculaVinculoListaAlunoAtualMestre.Count > 0)
+            {
+                CarregarCombo(true);
+                //o aluno atual é Mestre de outro(s) aluno(s), logo deverá ser retirado do cmbAluno os alunos já vinculados ao aluno atual
+            }
+            else
+            {
+                CarregarCombo(false);
+            }
+            CarregarGrid(matriculaVinculoListaAlunoAtualMestre);
+
+            //alunosLista é a lista que vai contar os alunos possiveis para vinculação.(lista que será exibida pelo cmbAluno)
+
         }
 
-        /*
-         List<MatriculaVinculo> matriculaVinculoListaAlunoAtualDependente = VerificarMatriculaDependente(memoria.Aluno); 
-if(matriculaVinculoListaAlunoAtualDependente.Count > 0)
-{	
-	//o aluno atual é dependente de outro aluno, logo a tela deverá ser bloqueada.
-}	
+        private void ucMenuInferior1_EventoIncluir()
+        {
 
-List<MatriculaVinculo> matriculaVinculoListaAlunoAtualMestre = VerificarMatriculaMestre(memoria.Aluno);
-if(matriculaVinculoListaAlunoAtualMestre.Count > 0)
-{	
-	//o aluno atual é Mestre de outro(s) aluno(s), logo deverá ser retirado do cmbAluno os alunos já vinculados ao aluno atual
-}
-//AlunosLista é a lista que vai contar os alunos possiveis para vinculação.(lista que será exibida pelo cmbAluno)
-List<MatriculaVinculo> mvlDependente;
-List<MatriculaVinculo> mvlMestre;
-for(int i = 0; i < AlunosLista.Count;i++;)
-{
-	RF003 - Boleto Bancário - Emissão Inválida Cód. Ref. BG-0911.03s
-}
-         
-         
-         */
+        }
 
+        private void ucMenuInferior1_EventoDeletar()
+        {
 
+        }
+
+        private void ucMenuInferior1_EventoCadastrar()
+        {
+
+        }
+
+        private void ucMenuInferior1_EventoAlterar()
+        {
+
+        }
     }
 }
