@@ -17,6 +17,12 @@ namespace GuiWindowsForms
 {
     public partial class telaAlunoMatriculaVinculo : Form
     {
+        #region ATRIBUTOS
+        List<MatriculaVinculo> matriculaVinculoListaAlunoAtualDependente;
+        List<MatriculaVinculo> matriculaVinculoListaAlunoAtualMestre;
+        List<MatriculaVinculoBoleto> matriculaVinculoBoletoLista;
+        int linhaSelecionadaGrid = -1;
+        #endregion
 
         #region SINGLETON DA TELA
         /*
@@ -190,7 +196,7 @@ namespace GuiWindowsForms
             uMenuLateral1.verificaTela(telaalunomatriculavinculo);
         }
         #endregion
-      
+
         #region MÉTODOS DE MANIPULAÇÃO DE INFORMAÇÃO
         /// <summary>
         /// Metodo responsável por verificar se o Aluno atual está com vinculo dependente com outro aluno.
@@ -202,7 +208,7 @@ namespace GuiWindowsForms
             Matricula matricula = CarregarMatricula(aluno);
             List<MatriculaVinculo> resultado = new List<MatriculaVinculo>();
 
-            if (matricula != null)
+            if (Memoria.Instance.Matricula != null)
             {
                 IMatriculaVinculoProcesso processo = MatriculaVinculoProcesso.Instance;
                 MatriculaVinculo matriculaVinculoPesquisa = new MatriculaVinculo();
@@ -225,7 +231,7 @@ namespace GuiWindowsForms
             Matricula matricula = CarregarMatricula(aluno);
             List<MatriculaVinculo> resultado = new List<MatriculaVinculo>();
 
-            if (matricula != null)
+            if (Memoria.Instance.Matricula != null)
             {
                 IMatriculaVinculoProcesso processo = MatriculaVinculoProcesso.Instance;
                 MatriculaVinculo matriculaVinculoPesquisa = new MatriculaVinculo();
@@ -272,7 +278,7 @@ namespace GuiWindowsForms
         /// <param name="matriculaVinculoLista">Lista a ser carregada.</param>
         private void CarregarGrid(List<MatriculaVinculo> matriculaVinculoLista)
         {
-            List<MatriculaVinculoBoleto> matriculaVinculoBoletoLista = new List<MatriculaVinculoBoleto>();
+            matriculaVinculoBoletoLista = new List<MatriculaVinculoBoleto>();
             MatriculaVinculoBoleto matriculaVinculoBoleto;
             foreach (MatriculaVinculo mv in matriculaVinculoLista)
             {
@@ -350,9 +356,9 @@ namespace GuiWindowsForms
             }
 
 
-        } 
+        }
         #endregion
- 
+
         private void ucDesconectarLogin1_EventoDesconectar()
         {
             Program.ultimaTela = 9;
@@ -363,44 +369,189 @@ namespace GuiWindowsForms
 
         private void telaAlunoMatriculaVinculo_Activated(object sender, EventArgs e)
         {
-            List<MatriculaVinculo> matriculaVinculoListaAlunoAtualDependente = VerificarMatriculaDependente(Memoria.Instance.Aluno);
-            List<MatriculaVinculo> matriculaVinculoListaAlunoAtualMestre = VerificarMatriculaMestre(Memoria.Instance.Aluno);
-            if (matriculaVinculoListaAlunoAtualDependente.Count > 0)
+            switch (Memoria.Instance.StatusTelaAlunoMatriculaVinculo)
             {
-                //o aluno atual é dependente de outro aluno, logo a tela deverá ser bloqueada.
-            }
-            else if (matriculaVinculoListaAlunoAtualMestre.Count > 0)
-            {
-                CarregarCombo(true);
-                //o aluno atual é Mestre de outro(s) aluno(s), logo deverá ser retirado do cmbAluno os alunos já vinculados ao aluno atual
-            }
-            else
-            {
-                CarregarCombo(false);
-            }
-            CarregarGrid(matriculaVinculoListaAlunoAtualMestre);
+                case OperacoesDaTela.AbrirTela:
+                    {
+                        if (Memoria.Instance.Aluno != null)
+                        {
+                            Memoria.Instance.Matricula = CarregarMatricula(Memoria.Instance.Aluno);
+                            matriculaVinculoListaAlunoAtualDependente = VerificarMatriculaDependente(Memoria.Instance.Aluno);
+                            matriculaVinculoListaAlunoAtualMestre = VerificarMatriculaMestre(Memoria.Instance.Aluno);
+                            if (matriculaVinculoListaAlunoAtualDependente.Count > 0)
+                            {
+                                Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Bloquear;
+                            }
+                            else
+                            {
+                                CarregarCombo(true);
+                                CarregarGrid(matriculaVinculoListaAlunoAtualMestre);
+                                Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Navegar;
+                            }
 
-            //alunosLista é a lista que vai contar os alunos possiveis para vinculação.(lista que será exibida pelo cmbAluno)
+
+                        }
+                        break;
+                    }
+            }
+            uMenuImagem1.carregaAluno(Memoria.Instance.Aluno);
+            AjustarBotoes();
+
 
         }
 
         private void ucMenuInferior1_EventoIncluir()
         {
-
+            Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Incluir;
+            AjustarBotoes();
         }
 
         private void ucMenuInferior1_EventoDeletar()
         {
-
+            MessageBox.Show("removido");
+            Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Navegar;
+            AjustarBotoes();
         }
 
         private void ucMenuInferior1_EventoCadastrar()
         {
 
+            try
+            {
+                if (cmbAluno.SelectedItem == null)
+                {
+                    errorProviderTela.SetError(cmbAluno, "Nenhum Aluno selecionado");
+                    return;
+                }
+                IMatriculaVinculoProcesso processo = MatriculaVinculoProcesso.Instance;
+                MatriculaVinculo mv = new MatriculaVinculo();
+                mv.MatriculaDependenteID = CarregarMatricula((Aluno)cmbAluno.SelectedItem).ID;
+                mv.MatriculaMestreID = Memoria.Instance.Matricula.ID;
+                mv.DataVinculo = DateTime.Now;
+                mv.Status = (int)Status.Ativo;
+                switch (Memoria.Instance.StatusTelaAlunoMatriculaVinculo)
+                {
+                    case OperacoesDaTela.Incluir:
+                        {
+                            processo.Incluir(mv);
+                            processo.Confirmar();
+                            break;
+                        }
+                    case OperacoesDaTela.Alterar:
+                        {
+                            processo.Alterar(mv);
+                            processo.Confirmar();
+                            break;
+                        }
+                   
+                }
+
+                CarregarCombo(true);
+                Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Navegar;
+                AjustarBotoes();
+            }
+            catch (Exception)
+            {
+
+            }
+           
+           
         }
 
         private void ucMenuInferior1_EventoAlterar()
         {
+            Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Alterar;
+            AjustarBotoes();
+        }
+
+        private void AjustarBotoes()
+        {
+            switch (Memoria.Instance.StatusTelaAlunoMatriculaVinculo)
+            {
+                case OperacoesDaTela.Incluir:
+                    {
+                        ApagarBotoes();
+                        break;
+                    }
+                case OperacoesDaTela.Alterar:
+                    {
+                        ApagarBotoes();
+                        break;
+                    }
+                case OperacoesDaTela.Navegar:
+                    {
+                        ApagarBotoes();
+                        if (matriculaVinculoListaAlunoAtualMestre.Count > 0)
+                        {
+                            ucMenuInferior1.exibirBotaoAlterar();
+                            ucMenuInferior1.exibirBotaoDeletar();
+                        }
+                        ucMenuInferior1.exibirBotaoIncluir();
+                        break;
+                    }
+                case OperacoesDaTela.Bloquear:
+                    {
+                        ApagarBotoes();
+                        break;
+                    }
+                default:
+                    break;
+            }
+            AjustarEdits();
+        }
+
+        private void ApagarBotoes()
+        {
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+            ucMenuInferior1.apagarBotaoAlterar();
+            ucMenuInferior1.apagarBotaoDeletar();
+            ucMenuInferior1.apagarBotaoIncluir();
+        }
+
+        private void AjustarEdits()
+        {
+            switch (Memoria.Instance.StatusTelaAlunoMatriculaVinculo)
+            {
+                case OperacoesDaTela.Incluir:
+                    {
+                        cmbAluno.Enabled = true;
+                        dgvAlunosVinculados.Enabled = false;
+                        break;
+                    }
+                case OperacoesDaTela.Alterar:
+                    {
+                        cmbAluno.Enabled = true;
+                        dgvAlunosVinculados.Enabled = false;
+                        break;
+                    }
+                case OperacoesDaTela.Navegar:
+                    {
+                        cmbAluno.Enabled = false;
+                        dgvAlunosVinculados.Enabled = true;
+                        break;
+                    }
+                case OperacoesDaTela.Bloquear:
+                    {
+                        cmbAluno.Enabled = false;
+                        dgvAlunosVinculados.Enabled = false;
+                        ucMenuInferior1.exibirMensagem("O Aluno atual é dependente de outro Aluno. ");
+                        break;
+                    }
+                default:
+                    break;
+            }
+
+        }
+
+        private void dgvAlunosVinculados_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
+
+            if (linhaSelecionadaGrid > -1)
+            {
+                List<Aluno> aluno = new List<Aluno>();
+                
+            }
 
         }
     }

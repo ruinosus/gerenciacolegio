@@ -78,3 +78,8 @@ E:\Projetos\gerenciacolegio\GuiWebSite\bin\GuiWebSite.pdb
 E:\Projetos\gerenciacolegio\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
 E:\Projetos\gerenciacolegio\GuiWebSite\obj\Debug\GuiWebSite.dll
 E:\Projetos\gerenciacolegio\GuiWebSite\obj\Debug\GuiWebSite.pdb
+E:\gerenciacolegio\GuiWebSite\bin\GuiWebSite.dll
+E:\gerenciacolegio\GuiWebSite\bin\GuiWebSite.pdb
+E:\gerenciacolegio\GuiWebSite\obj\Debug\ResolveAssemblyReference.cache
+E:\gerenciacolegio\GuiWebSite\obj\Debug\GuiWebSite.dll
+E:\gerenciacolegio\GuiWebSite\obj\Debug\GuiWebSite.pdb
