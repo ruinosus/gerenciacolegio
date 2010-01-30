@@ -84,7 +84,6 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
             return matriculaVinculoList;
         }
 
-
         public void Confirmar()
         {
             this.matriculaVinculoRepositorio.Confirmar();
@@ -92,6 +91,7 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
 
         public DataTable GerarRelatorio(MatriculaVinculo matriculaVinculo, TipoPesquisa tipoPesquisa)
         {
+            matriculaVinculo.Status = (int)Status.Ativo;
             List<MatriculaVinculo> listaMatricula = this.Consultar(matriculaVinculo, tipoPesquisa);
 
             CoreList<MatriculaVinculoBoleto> resultado = new CoreList<MatriculaVinculoBoleto>();
@@ -111,7 +111,7 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
                 meses.Add("Junho");
                 meses.Add("Julho");
                 meses.Add("Agosto");
-                 meses.Add("Setembro");
+                meses.Add("Setembro");
                 meses.Add("Outubro");
                 meses.Add("Novembro");
                 meses.Add("Dezembro");
