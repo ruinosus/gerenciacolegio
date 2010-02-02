@@ -109,6 +109,12 @@ public partial class ColegioDB : DataContext
 [Table(Name = "ColegioDB.aluno")]
 public partial class Aluno : INotifyPropertyChanging, INotifyPropertyChanged
 {
+
+    public override string ToString()
+    {
+        
+        return this.Nome;
+    }
     #region INotifyPropertyChanging handling
 
     public event PropertyChangingEventHandler PropertyChanging;
@@ -9283,6 +9289,12 @@ public partial class ProfessorDisciplinaSala : INotifyPropertyChanging, INotifyP
 [Table(Name = "ColegioDB.responsavel")]
 public partial class Responsavel : INotifyPropertyChanging, INotifyPropertyChanged
 {
+    public override string ToString()
+    {
+
+        return this.Nome;
+    }
+
     #region INotifyPropertyChanging handling
 
     public event PropertyChangingEventHandler PropertyChanging;

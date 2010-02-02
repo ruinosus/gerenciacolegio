@@ -97,7 +97,7 @@ namespace GuiWindowsForms
         /// <param name="sender">Tela</param>
         /// <param name="e">Cancela seu fechamento, permite só que seja ocultada</param>
 
-        private void telaAlunoMatricula_FormClosing(object sender, FormClosingEventArgs e)
+        private void telaAlunoMatriculaVinculo_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
             IsShown = false;
@@ -112,9 +112,52 @@ namespace GuiWindowsForms
                 Program.ultimaTela = 1;
                 Program.SelecionaForm(Program.ultimaTela);
             }
+
+            Resetar();
+            Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Inativa;
         }
         #endregion
 
+        #region ACTIVATED
+        private void telaAlunoMatriculaVinculo_Activated(object sender, EventArgs e)
+        {
+            switch (Memoria.Instance.StatusTelaAlunoMatriculaVinculo)
+            {
+                case OperacoesDaTela.AbrirTela:
+                    {
+                        if (Memoria.Instance.Aluno != null)
+                        {
+                            Memoria.Instance.Matricula = CarregarMatricula(Memoria.Instance.Aluno);
+                            matriculaVinculoListaAlunoAtualDependente = VerificarMatriculaDependente(Memoria.Instance.Aluno);
+                            matriculaVinculoListaAlunoAtualMestre = VerificarMatriculaMestre(Memoria.Instance.Aluno);
+                            if (matriculaVinculoListaAlunoAtualDependente.Count > 0)
+                            {
+                                Resetar();
+                                Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Bloquear;
+                            }
+                            else if (matriculaVinculoListaAlunoAtualMestre.Count >= 0)
+                            {
+                                linhaSelecionadaGrid = -1;
+                                CarregarCombo(true);
+                                CarregarGrid(matriculaVinculoListaAlunoAtualMestre);
+                                Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Navegar;
+                            }
+
+                            uMenuImagem1.carregaAluno(Memoria.Instance.Aluno);
+                            AjustarBotoes();
+                        }
+                        break;
+
+
+                    }
+            }
+
+
+
+        }     
+        #endregion
+
+        #region USER CONTROLS
         #region USER CONTROLS - Controle Inferior - Botões de Navegação
 
         private void ucAluno1_EventoVoltar()
@@ -189,6 +232,115 @@ namespace GuiWindowsForms
             telaalunoacademico.Show();
         }
 
+        #endregion
+
+        #region USER CONTROLS - Menu inferior
+
+        private void ucMenuInferior1_EventoIncluir()
+        {
+            Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Incluir;
+            AjustarBotoes();
+        }
+
+        private void ucMenuInferior1_EventoDeletar()
+        {
+            try
+            {
+
+                if (MessageBox.Show("Tem certeza que deseja excluir o Vínculo?", "Colégio Conhecer - Excluir Vínculo", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+                    if (linhaSelecionadaGrid != -1)
+                    {
+                        IMatriculaVinculoProcesso processo = MatriculaVinculoProcesso.Instance;
+                        processo.Excluir(matriculaVinculoListaAlunoAtualMestre[linhaSelecionadaGrid]);
+                        processo.Confirmar();
+                        MessageBox.Show("Regristo removido com sucesso.");
+                        Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Navegar;
+                        Atualizar();
+                        AjustarBotoes();
+
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
+
+        }
+
+        private void ucMenuInferior1_EventoCadastrar()
+        {
+
+            try
+            {
+                if (cmbAluno.SelectedItem == null)
+                {
+                    errorProviderTela.SetError(cmbAluno, "Nenhum Aluno selecionado");
+                    return;
+                }
+                Matricula matricula = CarregarMatricula((Aluno)cmbAluno.SelectedItem);
+                var resultado = (from m in matriculaVinculoListaAlunoAtualMestre
+                                 where m.MatriculaDependenteID == matricula.ID
+                                 select m).ToList();
+                if (resultado.Count > 0)
+                {
+                    errorProviderTela.SetError(cmbAluno, "Aluno já vinculado.");
+                    return;
+                }
+                IMatriculaVinculoProcesso processo = MatriculaVinculoProcesso.Instance;
+                MatriculaVinculo mv = new MatriculaVinculo();
+
+                mv.MatriculaDependenteID = matricula.ID;
+                mv.MatriculaMestreID = Memoria.Instance.Matricula.ID;
+                mv.DataVinculo = DateTime.Now;
+                mv.Status = (int)Status.Ativo;
+                switch (Memoria.Instance.StatusTelaAlunoMatriculaVinculo)
+                {
+                    case OperacoesDaTela.Incluir:
+                        {
+                            processo.Incluir(mv);
+                            processo.Confirmar();
+                            break;
+                        }
+                    case OperacoesDaTela.Alterar:
+                        {
+                            processo.Alterar(mv);
+                            processo.Confirmar();
+                            break;
+                        }
+
+                }
+                Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Navegar;
+                Atualizar();
+                AjustarBotoes();
+
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+        }
+
+        private void ucMenuInferior1_EventoAlterar()
+        {
+            Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Alterar;
+            AjustarBotoes();
+        }
+
+        private void ucDesconectarLogin1_EventoDesconectar()
+        {
+            Program.ultimaTela = 9;
+            this.Close();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
+        }
+
+        #endregion 
         #endregion
 
         #region MÉTODOS DE MANIPULAÇÃO DE INFORMAÇÃO
@@ -286,6 +438,12 @@ namespace GuiWindowsForms
 
             dgvAlunosVinculados.AutoGenerateColumns = false;
             dgvAlunosVinculados.DataSource = matriculaVinculoBoletoLista;
+
+            if (matriculaVinculoBoletoLista.Count > 0)
+            {
+                dgvAlunosVinculados.Rows[0].Selected = true;
+                linhaSelecionadaGrid = 0;
+            }
         }
 
         /// <summary>
@@ -457,117 +615,20 @@ namespace GuiWindowsForms
             }
 
         }
-        #endregion
 
-        #region MÉTODOS DO USERCONTROL
-
-        private void ucMenuInferior1_EventoIncluir()
+        private void Resetar()
         {
-            Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Incluir;
-            AjustarBotoes();
+            matriculaVinculoListaAlunoAtualDependente = new List<MatriculaVinculo>();
+            matriculaVinculoListaAlunoAtualMestre = new List<MatriculaVinculo>();
+            matriculaVinculoBoletoLista = new List<MatriculaVinculoBoleto>();
+            linhaSelecionadaGrid = -1;
+            alunos = new List<Aluno>();
+            ExibirCombo(alunos);
+            CarregarGrid(matriculaVinculoListaAlunoAtualMestre);
         }
+        #endregion        
 
-        private void ucMenuInferior1_EventoDeletar()
-        {
-            try
-            {
-
-                if (MessageBox.Show("Tem certeza que deseja excluir o Vínculo?", "Colégio Conhecer - Excluir Vínculo", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
-                {
-                    if (linhaSelecionadaGrid != -1)
-                    {
-                        IMatriculaVinculoProcesso processo = MatriculaVinculoProcesso.Instance;
-                        processo.Excluir(matriculaVinculoListaAlunoAtualMestre[linhaSelecionadaGrid]);
-                        processo.Confirmar();
-                        MessageBox.Show("Regristo removido com sucesso.");
-                        Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Navegar;
-                        Atualizar();
-                        AjustarBotoes();
-
-                    }
-                }
-
-            }
-            catch (Exception)
-            {
-
-                //throw;
-            }
-
-        }
-
-        private void ucMenuInferior1_EventoCadastrar()
-        {
-
-            try
-            {
-                if (cmbAluno.SelectedItem == null)
-                {
-                    errorProviderTela.SetError(cmbAluno, "Nenhum Aluno selecionado");
-                    return;
-                }
-                Matricula matricula = CarregarMatricula((Aluno)cmbAluno.SelectedItem);
-                var resultado = (from m in matriculaVinculoListaAlunoAtualMestre
-                                 where m.MatriculaDependenteID == matricula.ID
-                                 select m).ToList();
-                if (resultado.Count > 0)
-                {
-                    errorProviderTela.SetError(cmbAluno, "Aluno já vinculado.");
-                    return;
-                }
-                IMatriculaVinculoProcesso processo = MatriculaVinculoProcesso.Instance;
-                MatriculaVinculo mv = new MatriculaVinculo();
-
-                mv.MatriculaDependenteID = matricula.ID;
-                mv.MatriculaMestreID = Memoria.Instance.Matricula.ID;
-                mv.DataVinculo = DateTime.Now;
-                mv.Status = (int)Status.Ativo;
-                switch (Memoria.Instance.StatusTelaAlunoMatriculaVinculo)
-                {
-                    case OperacoesDaTela.Incluir:
-                        {
-                            processo.Incluir(mv);
-                            processo.Confirmar();
-                            break;
-                        }
-                    case OperacoesDaTela.Alterar:
-                        {
-                            processo.Alterar(mv);
-                            processo.Confirmar();
-                            break;
-                        }
-
-                }
-                Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Navegar;
-                Atualizar();
-                AjustarBotoes();
-
-            }
-            catch (Exception)
-            {
-
-            }
-
-
-        }
-
-        private void ucMenuInferior1_EventoAlterar()
-        {
-            Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Alterar;
-            AjustarBotoes();
-        }
-
-        private void ucDesconectarLogin1_EventoDesconectar()
-        {
-            Program.ultimaTela = 9;
-            this.Close();
-            telaLogin telalogin = telaLogin.getInstancia();
-            telalogin.Show();
-        }
-
-        #endregion
-
-        #region ClasseAuxiliar
+        #region CLASSE AUXILIAR
         private class ClasseGridAuxiliar : MatriculaVinculoBoleto
         {
             public int ID { get; set; }
@@ -582,50 +643,13 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        private void telaAlunoMatriculaVinculo_Activated(object sender, EventArgs e)
-        {
-            switch (Memoria.Instance.StatusTelaAlunoMatriculaVinculo)
-            {
-                case OperacoesDaTela.AbrirTela:
-                    {
-                        if (Memoria.Instance.Aluno != null)
-                        {
-                            Memoria.Instance.Matricula = CarregarMatricula(Memoria.Instance.Aluno);
-                            matriculaVinculoListaAlunoAtualDependente = VerificarMatriculaDependente(Memoria.Instance.Aluno);
-                            matriculaVinculoListaAlunoAtualMestre = VerificarMatriculaMestre(Memoria.Instance.Aluno);
-                            if (matriculaVinculoListaAlunoAtualDependente.Count > 0)
-                            {
-                                Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Bloquear;
-                            }
-                            else if (matriculaVinculoListaAlunoAtualMestre.Count > 0)
-                            {
-                                CarregarCombo(true);
-                                CarregarGrid(matriculaVinculoListaAlunoAtualMestre);
-                                Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Navegar;
-                            }
-                            else if (matriculaVinculoListaAlunoAtualMestre.Count == 0)
-                            {
-                                CarregarCombo(true);
-                                CarregarGrid(matriculaVinculoListaAlunoAtualMestre);
-                                Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.Navegar;
-                            }
-
-
-                        }
-                        break;
-                    }
-            }
-            uMenuImagem1.carregaAluno(Memoria.Instance.Aluno);
-            AjustarBotoes();
-
-
-        }
-
+        #region MÉTODOS DO GRID
         private void dgvAlunosVinculados_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
 
             AjustarBotoes();
         }
+        #endregion
     }
 }

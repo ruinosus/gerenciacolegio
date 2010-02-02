@@ -280,17 +280,17 @@ namespace GuiWindowsForms
             {
                 lblErro.Visible = false;
                 #region Validações
-                if (String.IsNullOrEmpty(txtBusca.Text))
-                {
-                    txtBusca.BackColor = System.Drawing.Color.LawnGreen;
-                    throw new Exception("Digite algum critério para a pesquisa.");
-                }
+                //if (String.IsNullOrEmpty(txtBusca.Text))
+                //{
+                //    txtBusca.BackColor = System.Drawing.Color.LawnGreen;
+                //    throw new Exception("Digite algum critério para a pesquisa.");
+                //}
 
-                if (txtBusca.Text.Length < 4)
-                {
-                    txtBusca.BackColor = System.Drawing.Color.LawnGreen;
-                    throw new Exception("Digite argumentos para pesquisa maiores que 3 caracteres.");
-                }
+                //if (txtBusca.Text.Length < 4)
+                //{
+                //    txtBusca.BackColor = System.Drawing.Color.LawnGreen;
+                //    throw new Exception("Digite argumentos para pesquisa maiores que 3 caracteres.");
+                //}
                 #endregion
                 CarregarGrid();
 

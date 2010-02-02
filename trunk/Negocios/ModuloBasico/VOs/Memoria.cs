@@ -15,5 +15,7 @@ namespace Negocios.ModuloBasico.VOs
         public StatusBanco Status { get; set; }
         public Responsavel Responsavel{ get; set; }
         public OperacoesDaTela StatusTelaAlunoMatriculaVinculo { get; set; }
+        public OperacoesDaTela StatusTelaAlunoResponsavelBusca { get; set; }
+        public OperacoesDaTela StatusTelaAlunoResponsavel { get; set; }
     };
 }

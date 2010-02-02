@@ -45,7 +45,8 @@ namespace Negocios.ModuloBasico.Enums
         AbrirTela = 4,
         VoltarTela = 5,
         Navegar = 6,
-        Bloquear = 7
+        Bloquear = 7,
+        Inativa= 8
     }
 
     

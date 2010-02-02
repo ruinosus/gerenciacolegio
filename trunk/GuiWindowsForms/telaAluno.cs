@@ -866,6 +866,7 @@ namespace GuiWindowsForms
             this.Hide();
             Program.ultimaTela = 1;
             telaAlunoResponsavelBusca telaalunoresponsavelbusca = telaAlunoResponsavelBusca.getInstancia();
+            Memoria.Instance.StatusTelaAlunoResponsavelBusca = OperacoesDaTela.AbrirTela;
             telaalunoresponsavelbusca.Show();
 
         }

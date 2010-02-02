@@ -37,11 +37,11 @@
             this.cmbAluno = new System.Windows.Forms.ComboBox();
             this.lblAluno = new System.Windows.Forms.Label();
             this.dgvAlunosVinculados = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GrauParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GrauParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunosVinculados)).BeginInit();
@@ -108,22 +108,6 @@
             this.dgvAlunosVinculados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlunosVinculados.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlunosVinculados_CellEnter);
             // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "NomeAluno";
-            resources.ApplyResources(this.Column3, "Column3");
-            this.Column3.MaxInputLength = 30;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // GrauParentesco
-            // 
-            this.GrauParentesco.DataPropertyName = "SerieAluno";
-            resources.ApplyResources(this.GrauParentesco, "GrauParentesco");
-            this.GrauParentesco.MaxInputLength = 30;
-            this.GrauParentesco.Name = "GrauParentesco";
-            this.GrauParentesco.ReadOnly = true;
-            // 
             // ucDesconectarLogin1
             // 
             this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
@@ -150,6 +134,23 @@
             resources.ApplyResources(this.uMenuImagem1, "uMenuImagem1");
             this.uMenuImagem1.Name = "uMenuImagem1";
             // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "NomeAluno";
+            resources.ApplyResources(this.Column3, "Column3");
+            this.Column3.MaxInputLength = 30;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // GrauParentesco
+            // 
+            this.GrauParentesco.DataPropertyName = "SerieAluno";
+            resources.ApplyResources(this.GrauParentesco, "GrauParentesco");
+            this.GrauParentesco.MaxInputLength = 30;
+            this.GrauParentesco.Name = "GrauParentesco";
+            this.GrauParentesco.ReadOnly = true;
+            // 
             // telaAlunoMatriculaVinculo
             // 
             resources.ApplyResources(this, "$this");
@@ -167,6 +168,7 @@
             this.MinimizeBox = false;
             this.Name = "telaAlunoMatriculaVinculo";
             this.Activated += new System.EventHandler(this.telaAlunoMatriculaVinculo_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoMatriculaVinculo_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunosVinculados)).EndInit();
