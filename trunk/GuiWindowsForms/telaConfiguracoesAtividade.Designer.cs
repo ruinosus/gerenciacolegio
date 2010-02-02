@@ -298,6 +298,10 @@
             this.ucMenuDireita1.Name = "ucMenuDireita1";
             this.ucMenuDireita1.Size = new System.Drawing.Size(120, 493);
             this.ucMenuDireita1.TabIndex = 138;
+            this.ucMenuDireita1.Load += new System.EventHandler(this.ucMenuDireita1_Load);
+            this.ucMenuDireita1.EventoAbrirAtividade += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaAtividade(this.ucMenuDireita1_EventoAbrirAtividade);
+            this.ucMenuDireita1.EventoAbrirDesconto += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaDesconto(this.ucMenuDireita1_EventoAbrirDesconto);
+            this.ucMenuDireita1.EventoAbrirSerie += new GuiWindowsForms.User_Control.ucMenuDireita.delegateAbrirTelaSerie(this.ucMenuDireita1_EventoAbrirSerie);
             // 
             // ucMenuInferior1
             // 

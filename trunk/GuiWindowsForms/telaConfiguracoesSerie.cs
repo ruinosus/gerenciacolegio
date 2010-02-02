@@ -849,6 +849,11 @@ namespace GuiWindowsForms
             }
         }
 
+        private void telaConfiguracoesSerie_Activated(object sender, EventArgs e)
+        {
+            ucMenuDireita1.verificaTela(telaConfiguracoesSerie.getInstancia());
+        }
+
     }
 
     #region CLASSE AUXILIAR PARA USO NO DATAGRID

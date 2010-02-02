@@ -327,7 +327,7 @@ namespace GuiWindowsForms
 
                 #endregion
 
-                matricula.DataMatricula = dtpDataMatricula.Value;
+                matricula.DataMatricula = DateTime.Now;
                 matricula.Ano = DateTime.Now.Year;
                 matricula.NumMatricula = lblNumeroMatricula.Text;
                 matricula.Status = 1;
@@ -345,12 +345,14 @@ namespace GuiWindowsForms
 
                         boletoMensalidade.Descricao = "BOLETO";
 
-                        boletoMensalidade.DataVencimento = DateTime.Now.AddMonths(i);
+                        DateTime novoDtParcela = new DateTime(DateTime.Now.Year, 1, Convert.ToInt32(cmbVencimento.Text));
+
+                        boletoMensalidade.DataVencimento = novoDtParcela.AddMonths(i);
 
                         boletoMensalidade.Status = 1;
                         boletoMensalidade.Desconto = ((Desconto)cmbDesconto.SelectedItem).Percentual;
 
-                        boletoMensalidade.Parcela = meses[DateTime.Now.AddMonths(i).Month];
+                        boletoMensalidade.Parcela = meses[novoDtParcela.AddMonths(i).Month];
                         
                         boletoMensalidade.MatriculaID = matricula.ID;
                         boletoMensalidade.DataEmissao = DateTime.Now;
@@ -416,7 +418,6 @@ namespace GuiWindowsForms
             cmbSerie.SelectedIndex = 0;
             if (cmbVencimento.Items.Count > 0)
             cmbVencimento.SelectedIndex = 0;
-            dtpDataMatricula.Value = DateTime.Now;
         }
         #endregion
 

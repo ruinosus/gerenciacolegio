@@ -20,10 +20,12 @@ namespace GuiWindowsForms.User_Control
 
         public void verificaTela(Form form)
         {
+            formAux3 = null;
             formAux3 = form;
 
             if (formAux3.Equals(telaConfiguracoes.getInstancia()))
             {
+                controlaBotoes(telaConfiguracoes.getInstancia());
                 this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75;
                 this.btnAtividade.Enabled = true;
                 lblAtividade_menu.Visible = true;
@@ -41,6 +43,7 @@ namespace GuiWindowsForms.User_Control
             }
             else if (formAux3.Equals(telaConfiguracoesControleDeAcesso.getInstancia()))
             {
+                controlaBotoes(telaConfiguracoesControleDeAcesso.getInstancia());
                 this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled;
                 this.btnAtividade.Enabled = true;
                 lblAtividade_menu.Visible = false;
@@ -58,6 +61,7 @@ namespace GuiWindowsForms.User_Control
             }
             else if (formAux3.Equals(telaConfiguracoesDescontoMatricula.getInstancia()))
             {
+                controlaBotoes(telaConfiguracoesDescontoMatricula.getInstancia());
                 this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled;
                 this.btnAtividade.Enabled = true;
                 lblAtividade_menu.Visible = false;
@@ -75,6 +79,7 @@ namespace GuiWindowsForms.User_Control
             }
             else if (formAux3.Equals(telaConfiguracoesSerie.getInstancia()))
             {
+                controlaBotoes(telaConfiguracoesSerie.getInstancia());
                 this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75_disabled;
                 this.btnAtividade.Enabled = true;
                 lblAtividade_menu.Visible = false;
@@ -92,6 +97,7 @@ namespace GuiWindowsForms.User_Control
             }
             else if (formAux3.Equals(telaConfiguracoesAtividade.getInstancia()))
             {
+                controlaBotoes(telaConfiguracoesAtividade.getInstancia());
                 this.btnAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_atividades_84x75;
                 this.btnAtividade.Enabled = false;
                 lblAtividade_menu.Visible = true;
@@ -106,6 +112,40 @@ namespace GuiWindowsForms.User_Control
                 this.btnSerie.Enabled = true;
                 lblSerie_menu.Visible = false;
                 lblSerie_menu.ForeColor = System.Drawing.Color.White;
+            }
+        }
+
+        public void controlaBotoes(Form form)
+        {
+            if (form.Equals(telaConfiguracoes.getInstancia()))
+            {
+                this.btnDesconto.Enabled = true;
+                this.btnSerie.Enabled = true;
+                this.btnAtividade.Enabled = true;
+            }
+            else if (form.Equals(telaConfiguracoesControleDeAcesso.getInstancia()))
+            {
+                this.btnDesconto.Enabled = true;
+                this.btnSerie.Enabled = true;
+                this.btnAtividade.Enabled = true;
+            }
+            else if (form.Equals(telaConfiguracoesDescontoMatricula.getInstancia()))
+            {
+                this.btnDesconto.Enabled = false;
+                this.btnSerie.Enabled = true;
+                this.btnAtividade.Enabled = true;
+            }
+            else if (form.Equals(telaConfiguracoesSerie.getInstancia()))
+            {
+                this.btnDesconto.Enabled = true;
+                this.btnSerie.Enabled = false;
+                this.btnAtividade.Enabled = true;
+            }
+            else if (form.Equals(telaConfiguracoesAtividade.getInstancia()))
+            {
+                this.btnDesconto.Enabled = true;
+                this.btnSerie.Enabled = true;
+                this.btnAtividade.Enabled = false;
             }
         }
 

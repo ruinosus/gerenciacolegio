@@ -162,10 +162,6 @@ namespace GuiWindowsForms
 
         private void ucMenuDireita1_EventoAbrirAtividade()
         {
-            this.Hide();
-            Program.ultimaTela = 10;
-            telaConfiguracoesAtividade telaconfatv = telaConfiguracoesAtividade.getInstancia();
-            telaconfatv.Show();
         }
 
         private void ucMenuDireita1_EventoAbrirDesconto()
@@ -174,6 +170,11 @@ namespace GuiWindowsForms
             Program.ultimaTela = 10;
             telaConfiguracoesDescontoMatricula telaconfdesconto = telaConfiguracoesDescontoMatricula.getInstancia();
             telaconfdesconto.Show();
+        }
+       
+        private void ucMenuDireita1_Load(object sender, EventArgs e)
+        {
+            ucMenuDireita1.verificaTela(telaConfiguracoesAtividade.getInstancia());
         }
         #endregion
 
@@ -854,8 +855,5 @@ namespace GuiWindowsForms
         }
 
         #endregion
-
-
-
     }
 }

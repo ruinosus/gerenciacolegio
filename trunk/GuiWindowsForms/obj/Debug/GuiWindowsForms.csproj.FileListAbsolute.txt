@@ -555,8 +555,17 @@ C:\Users\Dudu\Desktop\Col_Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.uMe
 C:\Users\Dudu\Desktop\Col_Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuLateral.resources
 C:\Users\Dudu\Desktop\Col_Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
 C:\Users\Dudu\Desktop\Col_Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaRelatorioBoletoMensalidadeVinculo.resources
+<<<<<<< .mine
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatriculaVinculo.resources
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaRelatorioBoletoMensalidadeVinculo.resources
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.manifest
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\bin\Debug\GuiWindowsForms.application
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe.manifest
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.application
+=======
 C:\Users\Dudu\Desktop\Col_Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.manifest
 C:\Users\Dudu\Desktop\Col_Conhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.application
 C:\Users\Dudu\Desktop\Col_Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatriculaVinculo.resources
 C:\Users\Dudu\Desktop\Col_Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe.manifest
 C:\Users\Dudu\Desktop\Col_Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.application
+>>>>>>> .r264

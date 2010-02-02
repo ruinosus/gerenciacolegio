@@ -169,13 +169,6 @@ namespace GuiWindowsForms
 
         #endregion
 
-        #region LOAD
-        private void telaConfiguracoesControleDeAcesso_Load(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
-
         #region EVENTO CADASTRAR
         private void ucMenuInferior1_EventoCadastrar()
         {
@@ -351,6 +344,11 @@ namespace GuiWindowsForms
         private void cmbFuncionario_MouseLeave(object sender, EventArgs e)
         {
             ucMenuInferior1.ocultarMensagem();
+        }
+
+        private void telaConfiguracoesControleDeAcesso_Activated(object sender, EventArgs e)
+        {
+            ucMenuDireita1.verificaTela(telaConfiguracoesControleDeAcesso.getInstancia());
         }
 
 

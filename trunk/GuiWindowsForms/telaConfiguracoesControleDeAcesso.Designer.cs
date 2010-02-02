@@ -1117,7 +1117,7 @@
             this.Name = "telaConfiguracoesControleDeAcesso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
-            this.Load += new System.EventHandler(this.telaConfiguracoesControleDeAcesso_Load);
+            this.Activated += new System.EventHandler(this.telaConfiguracoesControleDeAcesso_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoesControleDeAcesso_FormClosing);
             this.gpbControleDeAcesso.ResumeLayout(false);
             this.gpbControleDeAcesso.PerformLayout();

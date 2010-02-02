@@ -589,5 +589,10 @@ namespace GuiWindowsForms
                 e.Handled = true;
             }
         }
+
+        private void telaConfiguracoesDescontoMatricula_Activated(object sender, EventArgs e)
+        {
+            ucMenuDireita1.verificaTela(telaConfiguracoesDescontoMatricula.getInstancia());
+        }
     }        
 }
