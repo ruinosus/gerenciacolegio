@@ -602,6 +602,7 @@ namespace GuiWindowsForms
             this.Hide();
             Program.ultimaTela = 4;
             telaAlunoMatriculaVinculo telaalunomatriculavinculo = telaAlunoMatriculaVinculo.getInstancia();
+            Memoria.Instance.StatusTelaAlunoMatriculaVinculo = OperacoesDaTela.AbrirTela;
             telaalunomatriculavinculo.Show();
         }
     }

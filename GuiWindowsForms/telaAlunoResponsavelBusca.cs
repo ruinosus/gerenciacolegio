@@ -15,22 +15,19 @@ namespace GuiWindowsForms
 {
     public partial class telaAlunoResponsavelBusca : Form
     {
-
-        /*
-         * Atributo para o Singleton da tela
-         * Atributo para controle de exibição da tela
-         * */
+        #region ATRIBUTOS
         List<ResponsavelAluno> responsavelAlunoLista;
         int linhaSelecionadaGrid = -1;
-        private static telaAlunoResponsavelBusca telaalunoresponsavelbusca;
-        Memoria memoria = Memoria.Instance;
-        bool bloquearCampos = false;
         Responsavel responsavel;
-        StatusBanco statusBanco;
-
-        private static bool IsShown = false;
+        #endregion
 
         #region SINGLETON
+        /*
+        * Atributo para o Singleton da tela
+        * Atributo para controle de exibição da tela
+        * */
+        private static telaAlunoResponsavelBusca telaalunoresponsavelbusca;
+        private static bool IsShown = false;
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. 
         /// Evita abertura de múltiplas instâncias
@@ -54,19 +51,6 @@ namespace GuiWindowsForms
         {
             InitializeComponent();
 
-        }
-        #endregion
-
-        #region CARREGAR GRID
-        private void CarregarGrid()
-        {
-            IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
-            dgvResponsavelAluno.AutoGenerateColumns = false;
-            ResponsavelAluno responsavelAluno = new ResponsavelAluno();
-            responsavelAluno.AlunoID = memoria.Aluno.ID;
-            responsavelAluno.Status = (int)Status.Ativo;
-            responsavelAlunoLista = processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
-            dgvResponsavelAluno.DataSource = responsavelAlunoLista;
         }
         #endregion
 
@@ -123,7 +107,7 @@ namespace GuiWindowsForms
             {
 
 
-                if (memoria.Aluno != null)
+                if (Memoria.Instance.Aluno != null)
                 {
 
 
@@ -161,6 +145,8 @@ namespace GuiWindowsForms
 
                     #endregion
 
+                    Memoria.Instance.StatusTelaAlunoResponsavel = OperacoesDaTela.Inativa;
+
                     if (responsavel == null || responsavel.ID <= 0)
                     {
                         responsavel = new Responsavel();
@@ -170,18 +156,16 @@ namespace GuiWindowsForms
                         responsavel.Status = (int)Status.Ativo;
                         processoReponsavel.Incluir(responsavel);
                         processoReponsavel.Confirmar();
-                        Memoria m = Memoria.Instance;
-                        m.Responsavel = responsavel;
-                        m.Status = StatusBanco.Alteracao;
+                        
+                        Memoria.Instance.Responsavel = responsavel;
+                        Memoria.Instance.StatusTelaAlunoResponsavel = OperacoesDaTela.Incluir;
                     }
 
                     IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
                     ResponsavelAluno responsavelAluno = new ResponsavelAluno();
                     responsavelAluno.Status = (int)Status.Ativo;
-                    responsavelAluno.AlunoID = memoria.Aluno.ID;
+                    responsavelAluno.AlunoID = Memoria.Instance.Aluno.ID;
                     responsavelAluno.ResponsavelID = responsavel.ID;
-
-
 
                     responsavelAluno.GrauParentesco = cmbGrauParentesco.Text;
                     if (!ckbResideCom.Checked)
@@ -189,13 +173,10 @@ namespace GuiWindowsForms
                     else
                         responsavelAluno.ResideCom = 1;
                     responsavelAluno.Restricoes = txtRestricoes.Text;
-
-
-
-
-                    switch (statusBanco)
+                    
+                    switch (Memoria.Instance.StatusTelaAlunoResponsavelBusca)
                     {
-                        case StatusBanco.Inclusao:
+                        case OperacoesDaTela.Incluir:
                             {
                                 if (processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E).Count > 0)
                                 {
@@ -205,19 +186,16 @@ namespace GuiWindowsForms
                                 processo.Confirmar();
                                 break;
                             }
-                        case StatusBanco.Alteracao:
+                        case OperacoesDaTela.Alterar:
                             {
                                 responsavelAluno.ID = responsavelAlunoLista[linhaSelecionadaGrid].ID;
                                 processo.Alterar(responsavelAluno);
                                 processo.Confirmar();
                                 break;
                             }
-
                     }
 
-
-
-                    if (memoria.Status == StatusBanco.Alteracao)
+                    if (Memoria.Instance.StatusTelaAlunoResponsavel == OperacoesDaTela.Incluir)
                     {
                         Program.ultimaTela = 8;
                         this.Hide();
@@ -226,19 +204,11 @@ namespace GuiWindowsForms
                     }
                     else
                     {
-                        CarregarGrid();
-                        ManipularCampos(true);
+                        Atualizar();
                     }
                 }
-
-                // Desabilita os campos quando clicar no botao cadastrar
-                // obrigando o usuario a clicar no botao "Alterar" para
-                // modificar os campos correspondentes
-                dgvResponsavelAluno.Enabled = true;
-                txtNome.Enabled = true;
-                mskCpf.Enabled = true;
-                txtRestricoes.Enabled = true;
-                btnPesquisar.Enabled = true;
+                Memoria.Instance.StatusTelaAlunoResponsavelBusca = OperacoesDaTela.Navegar;
+                AjustarBotoes();
             }
             catch (Exception ex)
             {
@@ -268,29 +238,17 @@ namespace GuiWindowsForms
         #region EVENTO INCLUIR
         private void ucMenuInferior1_EventoIncluir()
         {
-            ManipularCampos(false);
-            dgvResponsavelAluno.Enabled = false;
-            txtNome.Enabled = true;
-            mskCpf.Enabled = true;
-            LimparCampos();
-            statusBanco = StatusBanco.Inclusao;
+            Memoria.Instance.StatusTelaAlunoResponsavelBusca = OperacoesDaTela.Incluir;
+            AjustarBotoes();
         }
         #endregion
 
         #region EVENTO ALTERAR
         private void ucMenuInferior1_EventoAlterar()
         {
-
-            ManipularCampos(false);
-
-            //Deixa o Grid, campo Nome, campo Cpf
-            // e o botao Pesquisar desabilitados
-            dgvResponsavelAluno.Enabled = false;
-
-            btnPesquisar.Enabled = false;
-
-
-            statusBanco = StatusBanco.Alteracao;
+            Memoria.Instance.StatusTelaAlunoResponsavelBusca = OperacoesDaTela.Alterar;
+            AjustarBotoes();
+        
         }
         #endregion
 
@@ -299,13 +257,15 @@ namespace GuiWindowsForms
         {
             try
             {
+                Memoria.Instance.StatusTelaAlunoResponsavelBusca = OperacoesDaTela.Excluir;
                 if (MessageBox.Show("Tem certeza que deseja excluir o responsável ?", "Colégio Conhecer", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
                     IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
                     processo.Excluir(responsavelAlunoLista[linhaSelecionadaGrid]);
                     processo.Confirmar();
-                    CarregarGrid();
-                    LimparCampos();
+                    Memoria.Instance.StatusTelaAlunoResponsavelBusca= OperacoesDaTela.Navegar;
+                    Atualizar();
+                    AjustarBotoes();
                 }
                 else
                 {
@@ -324,68 +284,46 @@ namespace GuiWindowsForms
 
         #endregion
 
-        #region LOAD
-        private void telaAlunoResponsavelBusca_Load(object sender, EventArgs e)
-        {
-            uMenuImagem1.ocultarBotaoAdicionarImagem();
-        }
-        #endregion
-
         #region EVENTOS GRID
 
         private void dgvResponsavelAluno_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-
-            if (linhaSelecionadaGrid != -1)
-            {
-                dgvResponsavelAluno.Rows[linhaSelecionadaGrid].Selected = true;
-
-
-                cmbGrauParentesco.Text = responsavelAlunoLista[linhaSelecionadaGrid].GrauParentesco;
-                txtNome.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Nome;
-                mskCpf.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Cpf;
-                ckbResideCom.Checked = Convert.ToBoolean(responsavelAlunoLista[linhaSelecionadaGrid].ResideCom.Value);
-                txtRestricoes.Text = responsavelAlunoLista[linhaSelecionadaGrid].Restricoes;
-                responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
-                ManipularCampos(true);
-            }
+            AjustarBotoes();
 
         }
-
-
-        private void dgvResponsavelAluno_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            linhaSelecionadaGrid = int.Parse(e.RowIndex.ToString());
-
-            if (linhaSelecionadaGrid != -1)
-            {
-                dgvResponsavelAluno.Rows[linhaSelecionadaGrid].Selected = true;
-
-
-                cmbGrauParentesco.Text = responsavelAlunoLista[linhaSelecionadaGrid].GrauParentesco;
-                txtNome.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Nome;
-                mskCpf.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Cpf;
-                ckbResideCom.Checked = Convert.ToBoolean(responsavelAlunoLista[linhaSelecionadaGrid].ResideCom.Value);
-                txtRestricoes.Text = responsavelAlunoLista[linhaSelecionadaGrid].Restricoes;
-                responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
-                ManipularCampos(true);
-            }
-        }
-
 
         private void dgvResponsavelAluno_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Memoria memoria = Memoria.Instance;
-            memoria.Responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
-            memoria.Responsavel.ID = responsavelAlunoLista[linhaSelecionadaGrid].ResponsavelID;
-            memoria.Status = StatusBanco.Alteracao;
+            Memoria.Instance.Responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
+            Memoria.Instance.Responsavel.ID = responsavelAlunoLista[linhaSelecionadaGrid].ResponsavelID;
+            Memoria.Instance.StatusTelaAlunoResponsavel = OperacoesDaTela.Alterar;
             Program.ultimaTela = 8;
             this.Hide();
             telaAlunoResponsavel telaRespAux = telaAlunoResponsavel.getInstancia();
             telaRespAux.Show();
         }
 
+        #endregion
+
+        #region CARREGAR GRID
+        private void CarregarGrid()
+        {
+            IResponsavelAlunoProcesso processo = ResponsavelAlunoProcesso.Instance;
+            dgvResponsavelAluno.AutoGenerateColumns = false;
+            ResponsavelAluno responsavelAluno = new ResponsavelAluno();
+            responsavelAluno.AlunoID = Memoria.Instance.Aluno.ID;
+            responsavelAluno.Status = (int)Status.Ativo;
+            responsavelAlunoLista = processo.Consultar(responsavelAluno, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
+            
+            ExibirGrid();            
+        }
+
+        private void ExibirGrid()
+        {
+            dgvResponsavelAluno.AutoGenerateColumns = false;
+            dgvResponsavelAluno.DataSource = responsavelAlunoLista;
+        }
         #endregion
 
         #region DESCONECTAR
@@ -425,9 +363,7 @@ namespace GuiWindowsForms
                     {
                         responsavel = resultado[0];
                         txtNome.Text = responsavel.Nome;
-                        bloquearCampos = true;
-                        BloquearCampos();
-                    }
+                     }
                 }
             }
             catch (Exception)
@@ -458,107 +394,150 @@ namespace GuiWindowsForms
         }
 
         #endregion
-
-        #region METODO BLOQUEAR CAMPOS
-        private void BloquearCampos()
-        {
-            txtNome.Enabled = false;
-            mskCpf.Enabled = false;
-            //txtNome.ReadOnly = bloquearCampos;
-            //mskCpf.ReadOnly = bloquearCampos;
-        }
-        #endregion 
-
-        #region BUTTON PESQUISAR
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            txtNome.Clear();
-            responsavel = new Responsavel();
-            mskCpf.Clear();
-            bloquearCampos = false;
-            BloquearCampos();
-        }
-        #endregion
-
+      
         #region ACTIVATED
         private void telaAlunoResponsavelBusca_Activated(object sender, EventArgs e)
         {
-            BloquearCampos();
-            LimparCampos();
-            if (memoria.Aluno != null)
+           switch (Memoria.Instance.StatusTelaAlunoResponsavelBusca)
             {
-                // CarregarCombos();
-                ManipularCampos(true);
-                bloquearCampos = false;
-                responsavel = new Responsavel();
-                uMenuImagem1.carregaAluno(memoria.Aluno);
-                CarregarGrid();
-                ucMenuInferior1.exibirBotaoIncluir();
-                ucMenuInferior1.exibirBotaoDeletar();
-                ucMenuInferior1.exibirBotaoAlterar();
-                if (responsavelAlunoLista.Count > 0)
-                {
-                    dgvResponsavelAluno.Rows[0].Selected = true;
-                    linhaSelecionadaGrid = 0;
-                    
-                }
-                
-                uMenuImagem1.ocultarBotaoAdicionarImagem();
+                case OperacoesDaTela.Navegar:
+                    {
+                        CarregarGrid();
+                        uMenuImagem1.carregaAluno(Memoria.Instance.Aluno);
+                        AjustarBotoes();
+                        break;
+                    }
+                case OperacoesDaTela.AbrirTela:
+                    {
+                        if (Memoria.Instance.Aluno != null)
+                        {
+                            Resetar();
+                            Memoria.Instance.StatusTelaAlunoResponsavelBusca = OperacoesDaTela.Navegar;
+                            CarregarGrid();
+                            uMenuImagem1.carregaAluno(Memoria.Instance.Aluno);
+                            AjustarBotoes();
+                        }
+                        break;
+                    }
             }
 
-
-
-            if (memoria.Status == StatusBanco.Alteracao)
-            {
-
-                CarregarGrid();
-            }
         }
         #endregion
 
-        #region METODO LIMPAR TELA
-        /// <summary>
-        /// Limpa os campos da tela ResponsavelBusca
-        /// </summary>
-        public void LimparCampos()
+        #region MÉTODOS DE MANIPULAÇÃO DA INFORMAÇÃO
+        private void AjustarBotoes()
         {
-            txtNome.Clear();
-            mskCpf.Clear();
-            txtRestricoes.Clear();
-            ckbResideCom.Checked = false;
-
+            switch (Memoria.Instance.StatusTelaAlunoResponsavelBusca)
+            {
+                case OperacoesDaTela.Incluir:
+                    {
+                        ApagarBotoes();
+                        btnPesquisar.Enabled = true;
+                        break;
+                    }
+                case OperacoesDaTela.Alterar:
+                    {
+                        ApagarBotoes();
+                        btnPesquisar.Enabled = true;
+                        break;
+                    }
+                case OperacoesDaTela.Navegar:
+                    {
+                        btnPesquisar.Enabled = false;
+                        ApagarBotoes();
+                        if (responsavelAlunoLista.Count > 0)
+                        {
+                            ucMenuInferior1.exibirBotaoAlterar();
+                            ucMenuInferior1.exibirBotaoDeletar();
+                        }
+                        ucMenuInferior1.exibirBotaoIncluir();
+                        break;
+                    }
+                default:
+                    break;
+            }
+            AjustarEdits();
         }
-        #endregion
 
-        #region METODO MANIPULAR CAMPOS
-        private void ManipularCampos(bool bloquear)
+        private void ApagarBotoes()
         {
-            if (bloquear)
-            {
-                cmbGrauParentesco.Enabled = false;
-                txtRestricoes.ReadOnly = true;
-                txtNome.ReadOnly = true;
-                txtRestricoes.Enabled = false;
-                mskCpf.ReadOnly = true;
-                ckbResideCom.Enabled = false;
-                btnPesquisar.Enabled = false;
-            }
-            else
-            {
-                cmbGrauParentesco.Enabled = true;
-                txtRestricoes.ReadOnly = false;
-                txtRestricoes.Enabled = true;
-                txtNome.ReadOnly = false;
-                mskCpf.ReadOnly = false;
-                ckbResideCom.Enabled = true;
-                btnPesquisar.Enabled = true;
+            uMenuImagem1.ocultarBotaoAdicionarImagem();
+            ucMenuInferior1.apagarBotaoAlterar();
+            ucMenuInferior1.apagarBotaoDeletar();
+            ucMenuInferior1.apagarBotaoIncluir();
+        }
 
+        private void AjustarEdits()
+        {
+            switch (Memoria.Instance.StatusTelaAlunoResponsavelBusca)
+            {
+                case OperacoesDaTela.Incluir:
+                    {
+                        ckbResideCom.Enabled = true;
+                        mskCpf.ReadOnly = false;
+                        txtNome.ReadOnly = false;
+                        cmbGrauParentesco.Enabled = true;
+                        txtRestricoes.ReadOnly = false;
+                        dgvResponsavelAluno.Enabled = false;
+                        break;
+                    }
+                case OperacoesDaTela.Alterar:
+                    {
+                        ckbResideCom.Enabled = true;
+                        mskCpf.ReadOnly = false;
+                        txtNome.ReadOnly = false;
+                        txtRestricoes.ReadOnly = false;
+                        cmbGrauParentesco.Enabled = true;
+                        dgvResponsavelAluno.Enabled = false;
+                        break;
+                    }
+                case OperacoesDaTela.Navegar:
+                    {
+                        if (linhaSelecionadaGrid != -1)
+                        {
+                           cmbGrauParentesco.Text = responsavelAlunoLista[linhaSelecionadaGrid].GrauParentesco;
+                            txtNome.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Nome;
+                            mskCpf.Text = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel.Cpf;
+                            if (responsavelAlunoLista[linhaSelecionadaGrid].ResideCom.HasValue)
+                                ckbResideCom.Checked = Convert.ToBoolean(responsavelAlunoLista[linhaSelecionadaGrid].ResideCom.Value);
+                            txtRestricoes.Text = responsavelAlunoLista[linhaSelecionadaGrid].Restricoes;
+                            responsavel = responsavelAlunoLista[linhaSelecionadaGrid].Responsavel;
+                        }
+                        ckbResideCom.Enabled = false;
+                        mskCpf.ReadOnly = true;
+                        txtNome.ReadOnly = true;
+                        cmbGrauParentesco.Enabled = false;
+                        txtRestricoes.ReadOnly = true;
+                        dgvResponsavelAluno.Enabled = true;
+                        LimparErro();
+                        break;
+                    }
+                default:
+                    break;
             }
 
         }
+
+        private void Resetar()
+        {
+            responsavelAlunoLista = new List<ResponsavelAluno>();
+            responsavel = new Responsavel();
+            linhaSelecionadaGrid = -1;
+            ExibirGrid();
+        }
+
+        private void Atualizar()
+        {
+            CarregarGrid();
+        }
         #endregion
 
-     
+        #region LIMPAR ERROPROVIDER
+        private void LimparErro()
+        {
+            errorProviderTela.Clear();
+        }
+        #endregion
 
     }
 }

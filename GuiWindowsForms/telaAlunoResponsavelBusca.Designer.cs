@@ -94,7 +94,6 @@
             this.dgvResponsavelAluno.Size = new System.Drawing.Size(769, 272);
             this.dgvResponsavelAluno.TabIndex = 36;
             this.dgvResponsavelAluno.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavelAluno_CellDoubleClick);
-            this.dgvResponsavelAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavelAluno_CellClick);
             this.dgvResponsavelAluno.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavelAluno_CellEnter);
             // 
             // Column3
@@ -276,7 +275,6 @@
             this.btnPesquisar.Size = new System.Drawing.Size(32, 32);
             this.btnPesquisar.TabIndex = 144;
             this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // ucDesconectarLogin1
             // 
@@ -340,7 +338,6 @@
             this.Name = "telaAlunoResponsavelBusca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
-            this.Load += new System.EventHandler(this.telaAlunoResponsavelBusca_Load);
             this.Activated += new System.EventHandler(this.telaAlunoResponsavelBusca_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaAlunoResponsavelBusca_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavelAluno)).EndInit();
