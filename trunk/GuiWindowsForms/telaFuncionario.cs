@@ -15,7 +15,7 @@ namespace GuiWindowsForms
 {
     public partial class telaFuncionario : Form
     {
-        Funcionario funcionario = new Funcionario();
+        Funcionario funcionario = null;
         IFuncionarioProcesso funcionarioControlador = FuncionarioProcesso.Instance;
 
         //atributo para verificar se o button de Alterar foi clicado 
@@ -128,7 +128,6 @@ namespace GuiWindowsForms
         #region EVENTO VOLTAR
         private void ucMenuInferior1_EventoVoltar()
         {
-
             this.Hide();
 
             if (Program.ultimaTela != 17)
@@ -538,12 +537,11 @@ namespace GuiWindowsForms
         private void telaFuncionario_Load(object sender, EventArgs e)
         {
             cmbUf.DataSource = estados;
-            funcionario.PerfilID = 1;
-            funcionario = funcionarioControlador.Consultar(funcionario, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
-            carregarFuncionario();
-            ucMenuImagemFunc1.carregaFuncionario(funcionario);
-            ucMenuImagemFunc1.ocultarBotaoAdicionarImagem();
-            Program.funcionarioAux = funcionario;
+            //funcionario.PerfilID = 1;
+            //funcionario = funcionarioControlador.Consultar(funcionario, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            //carregarFuncionario();
+            //ucMenuImagemFunc1.carregaFuncionario(funcionario);
+            //Program.funcionarioAux = funcionario;
         }
         #endregion
 
@@ -652,6 +650,8 @@ namespace GuiWindowsForms
         {
             Memoria memoria = Memoria.Instance;
 
+            cmbUf.DataSource = estados;
+            ucMenuImagemFunc1.ocultarBotaoAdicionarImagem();
 
             if (memoria.Status == StatusBanco.Inativo)
             {
@@ -664,6 +664,7 @@ namespace GuiWindowsForms
                 if (memoria.Funcionario != null)
                 {
                     funcionario = memoria.Funcionario;
+                    ucMenuImagemFunc1.carregaFuncionario(funcionario);
                     carregarFuncionario();
 
                 }

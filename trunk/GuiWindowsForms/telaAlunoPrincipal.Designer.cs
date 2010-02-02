@@ -296,6 +296,7 @@
             this.btnFuncionario.BackColor = System.Drawing.Color.Transparent;
             this.btnFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_prof_142x113;
             this.btnFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFuncionario.Enabled = false;
             this.btnFuncionario.FlatAppearance.BorderSize = 0;
             this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuncionario.Location = new System.Drawing.Point(365, 9);

@@ -51,6 +51,7 @@
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
+            this.btnVincularAluno = new System.Windows.Forms.Button();
             this.gpbMatricula.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,7 +76,7 @@
             this.gpbMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbMatricula.Location = new System.Drawing.Point(39, 191);
             this.gpbMatricula.Name = "gpbMatricula";
-            this.gpbMatricula.Size = new System.Drawing.Size(820, 350);
+            this.gpbMatricula.Size = new System.Drawing.Size(820, 283);
             this.gpbMatricula.TabIndex = 0;
             this.gpbMatricula.TabStop = false;
             this.gpbMatricula.Text = "MATRÍCULA DO ALUNO";
@@ -117,7 +118,7 @@
             "29",
             "30",
             "31"});
-            this.cmbVencimento.Location = new System.Drawing.Point(171, 280);
+            this.cmbVencimento.Location = new System.Drawing.Point(161, 224);
             this.cmbVencimento.Name = "cmbVencimento";
             this.cmbVencimento.Size = new System.Drawing.Size(62, 21);
             this.cmbVencimento.TabIndex = 6;
@@ -126,7 +127,7 @@
             // lblVencimento
             // 
             this.lblVencimento.AutoSize = true;
-            this.lblVencimento.Location = new System.Drawing.Point(42, 283);
+            this.lblVencimento.Location = new System.Drawing.Point(32, 227);
             this.lblVencimento.Name = "lblVencimento";
             this.lblVencimento.Size = new System.Drawing.Size(118, 13);
             this.lblVencimento.TabIndex = 49;
@@ -134,7 +135,7 @@
             // 
             // txtTotalValor
             // 
-            this.txtTotalValor.Location = new System.Drawing.Point(668, 306);
+            this.txtTotalValor.Location = new System.Drawing.Point(662, 224);
             this.txtTotalValor.Name = "txtTotalValor";
             this.txtTotalValor.ReadOnly = true;
             this.txtTotalValor.Size = new System.Drawing.Size(123, 20);
@@ -145,7 +146,7 @@
             this.lblTotalValor.AutoSize = true;
             this.lblTotalValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalValor.ForeColor = System.Drawing.Color.Red;
-            this.lblTotalValor.Location = new System.Drawing.Point(496, 304);
+            this.lblTotalValor.Location = new System.Drawing.Point(490, 222);
             this.lblTotalValor.Name = "lblTotalValor";
             this.lblTotalValor.Size = new System.Drawing.Size(160, 20);
             this.lblTotalValor.TabIndex = 46;
@@ -156,7 +157,7 @@
             this.cmbDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbDesconto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDesconto.FormattingEnabled = true;
-            this.cmbDesconto.Location = new System.Drawing.Point(171, 226);
+            this.cmbDesconto.Location = new System.Drawing.Point(161, 170);
             this.cmbDesconto.Name = "cmbDesconto";
             this.cmbDesconto.Size = new System.Drawing.Size(163, 21);
             this.cmbDesconto.TabIndex = 5;
@@ -166,7 +167,7 @@
             // lblDesconto
             // 
             this.lblDesconto.AutoSize = true;
-            this.lblDesconto.Location = new System.Drawing.Point(42, 229);
+            this.lblDesconto.Location = new System.Drawing.Point(32, 173);
             this.lblDesconto.Name = "lblDesconto";
             this.lblDesconto.Size = new System.Drawing.Size(65, 13);
             this.lblDesconto.TabIndex = 44;
@@ -174,7 +175,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(171, 180);
+            this.txtValor.Location = new System.Drawing.Point(161, 124);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(123, 20);
             this.txtValor.TabIndex = 4;
@@ -194,7 +195,7 @@
             // 
             this.dtpDataMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpDataMatricula.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataMatricula.Location = new System.Drawing.Point(171, 130);
+            this.dtpDataMatricula.Location = new System.Drawing.Point(161, 74);
             this.dtpDataMatricula.Name = "dtpDataMatricula";
             this.dtpDataMatricula.Size = new System.Drawing.Size(110, 20);
             this.dtpDataMatricula.TabIndex = 0;
@@ -202,7 +203,7 @@
             // lblDataMatricula
             // 
             this.lblDataMatricula.AutoSize = true;
-            this.lblDataMatricula.Location = new System.Drawing.Point(42, 136);
+            this.lblDataMatricula.Location = new System.Drawing.Point(32, 80);
             this.lblDataMatricula.Name = "lblDataMatricula";
             this.lblDataMatricula.Size = new System.Drawing.Size(114, 13);
             this.lblDataMatricula.TabIndex = 39;
@@ -211,7 +212,7 @@
             // lblSerie
             // 
             this.lblSerie.AutoSize = true;
-            this.lblSerie.Location = new System.Drawing.Point(42, 83);
+            this.lblSerie.Location = new System.Drawing.Point(32, 27);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(40, 13);
             this.lblSerie.TabIndex = 34;
@@ -222,7 +223,7 @@
             this.cmbSerie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSerie.FormattingEnabled = true;
-            this.cmbSerie.Location = new System.Drawing.Point(171, 80);
+            this.cmbSerie.Location = new System.Drawing.Point(161, 24);
             this.cmbSerie.Name = "cmbSerie";
             this.cmbSerie.Size = new System.Drawing.Size(163, 21);
             this.cmbSerie.TabIndex = 1;
@@ -232,7 +233,7 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(42, 183);
+            this.lblValor.Location = new System.Drawing.Point(32, 127);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(68, 13);
             this.lblValor.TabIndex = 0;
@@ -310,12 +311,27 @@
             this.ucDesconectarLogin1.TabIndex = 138;
             this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
+            // btnVincularAluno
+            // 
+            this.btnVincularAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.atividade_mais;
+            this.btnVincularAluno.FlatAppearance.BorderSize = 0;
+            this.btnVincularAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVincularAluno.Location = new System.Drawing.Point(44, 505);
+            this.btnVincularAluno.Name = "btnVincularAluno";
+            this.btnVincularAluno.Size = new System.Drawing.Size(34, 33);
+            this.btnVincularAluno.TabIndex = 139;
+            this.btnVincularAluno.UseVisualStyleBackColor = true;
+            this.btnVincularAluno.MouseLeave += new System.EventHandler(this.btnVincularAluno_MouseLeave);
+            this.btnVincularAluno.Click += new System.EventHandler(this.btnVincularAluno_Click);
+            this.btnVincularAluno.MouseEnter += new System.EventHandler(this.btnVincularAluno_MouseEnter);
+            // 
             // telaAlunoMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(990, 680);
+            this.Controls.Add(this.btnVincularAluno);
             this.Controls.Add(this.ucDesconectarLogin1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucMenuInferior1);
@@ -365,5 +381,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderTela;
         private System.Windows.Forms.PictureBox pictureBox1;
         private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
+        private System.Windows.Forms.Button btnVincularAluno;
     }
 }
