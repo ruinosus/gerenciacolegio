@@ -17,6 +17,7 @@ using System.Globalization;
 using Negocios.ModuloBasico.Enums;
 using Negocios.ModuloAluno.Processos;
 using Negocios.ModuloAtividadeTurma.Processos;
+using Negocios.ModuloMatriculaVinculo.Processos;
 
 namespace GuiWindowsForms
 {
@@ -29,7 +30,17 @@ namespace GuiWindowsForms
         IMatriculaProcesso matriculaControlador = MatriculaProcesso.Instance;
         ISalaPeriodoProcesso salaPeriodoControlador = null;
         IDescontoProcesso descontoControlador = null;
-        IBoletoMensalidadeProcesso boletoMensalidadeControlador = null; 
+        IBoletoMensalidadeProcesso boletoMensalidadeControlador = null;
+
+
+        //#region NOVO BOLETO VINCULO
+
+        //IMatriculaVinculoProcesso processo = MatriculaVinculoProcesso.Instance;
+        //MatriculaVinculo mv = new MatriculaVinculo();
+        //mv.MatriculaPrincipalID = <ID_DA_MATRICULA_PRINCIPAL>;
+        //mv.Status = (int)Status.Ativo;
+
+        //#endregion
 
         List<SalaAuxiliar> listaSalaAuxiliar = null;
         List<SalaPeriodo> listaSalaPeriodo = null;

@@ -109,7 +109,7 @@
             this.gpbDadosProfissionais.Location = new System.Drawing.Point(39, 191);
             this.gpbDadosProfissionais.Name = "gpbDadosProfissionais";
             this.gpbDadosProfissionais.Size = new System.Drawing.Size(820, 437);
-            this.gpbDadosProfissionais.TabIndex = 40;
+            this.gpbDadosProfissionais.TabIndex = 0;
             this.gpbDadosProfissionais.TabStop = false;
             this.gpbDadosProfissionais.Text = "DADOS PROFISSIONAIS DO FUNCIONÁRIO";
             // 
@@ -117,31 +117,31 @@
             // 
             this.txtCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtCurso.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCurso.Location = new System.Drawing.Point(172, 299);
+            this.txtCurso.Location = new System.Drawing.Point(128, 299);
             this.txtCurso.MaxLength = 30;
             this.txtCurso.Name = "txtCurso";
             this.txtCurso.Size = new System.Drawing.Size(227, 20);
-            this.txtCurso.TabIndex = 96;
+            this.txtCurso.TabIndex = 20;
             this.txtCurso.TextChanged += new System.EventHandler(this.txtCurso_TextChanged);
             // 
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(55, 299);
+            this.lblCurso.Location = new System.Drawing.Point(7, 301);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(43, 13);
-            this.lblCurso.TabIndex = 92;
+            this.lblCurso.TabIndex = 19;
             this.lblCurso.Text = "Curso:";
             // 
             // txtInstituicao
             // 
             this.txtInstituicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtInstituicao.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtInstituicao.Location = new System.Drawing.Point(483, 352);
+            this.txtInstituicao.Location = new System.Drawing.Point(439, 352);
             this.txtInstituicao.MaxLength = 30;
             this.txtInstituicao.Name = "txtInstituicao";
             this.txtInstituicao.Size = new System.Drawing.Size(225, 20);
-            this.txtInstituicao.TabIndex = 91;
+            this.txtInstituicao.TabIndex = 24;
             this.txtInstituicao.TextChanged += new System.EventHandler(this.txtInstituicao_TextChanged);
             // 
             // dtpDataFormacao
@@ -151,27 +151,27 @@
             this.dtpDataFormacao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpDataFormacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.dtpDataFormacao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataFormacao.Location = new System.Drawing.Point(172, 352);
+            this.dtpDataFormacao.Location = new System.Drawing.Point(128, 352);
             this.dtpDataFormacao.Name = "dtpDataFormacao";
             this.dtpDataFormacao.Size = new System.Drawing.Size(91, 20);
-            this.dtpDataFormacao.TabIndex = 90;
+            this.dtpDataFormacao.TabIndex = 22;
             // 
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(51, 352);
+            this.lblData.Location = new System.Drawing.Point(7, 354);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(97, 13);
-            this.lblData.TabIndex = 89;
+            this.lblData.TabIndex = 21;
             this.lblData.Text = "Data Formação:";
             // 
             // lbInstituicao
             // 
             this.lbInstituicao.AutoSize = true;
-            this.lbInstituicao.Location = new System.Drawing.Point(364, 352);
+            this.lbInstituicao.Location = new System.Drawing.Point(320, 354);
             this.lbInstituicao.Name = "lbInstituicao";
             this.lbInstituicao.Size = new System.Drawing.Size(70, 13);
-            this.lbInstituicao.TabIndex = 88;
+            this.lbInstituicao.TabIndex = 23;
             this.lbInstituicao.Text = "Instituição:";
             // 
             // cmbFuncao
@@ -189,38 +189,38 @@
             "Segurança",
             "Supervisor(a)",
             "Tesoureiro(a)"});
-            this.cmbFuncao.Location = new System.Drawing.Point(482, 398);
+            this.cmbFuncao.Location = new System.Drawing.Point(438, 398);
             this.cmbFuncao.Name = "cmbFuncao";
             this.cmbFuncao.Size = new System.Drawing.Size(226, 21);
-            this.cmbFuncao.TabIndex = 87;
+            this.cmbFuncao.TabIndex = 28;
             this.cmbFuncao.TextChanged += new System.EventHandler(this.cmbFuncao_TextChanged);
             // 
             // lblFuncaoFuncionario
             // 
             this.lblFuncaoFuncionario.AutoSize = true;
-            this.lblFuncaoFuncionario.Location = new System.Drawing.Point(364, 398);
+            this.lblFuncaoFuncionario.Location = new System.Drawing.Point(320, 400);
             this.lblFuncaoFuncionario.Name = "lblFuncaoFuncionario";
             this.lblFuncaoFuncionario.Size = new System.Drawing.Size(53, 13);
-            this.lblFuncaoFuncionario.TabIndex = 86;
+            this.lblFuncaoFuncionario.TabIndex = 27;
             this.lblFuncaoFuncionario.Text = "Função:";
             // 
             // txtCBO
             // 
             this.txtCBO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtCBO.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCBO.Location = new System.Drawing.Point(170, 46);
+            this.txtCBO.Location = new System.Drawing.Point(126, 46);
             this.txtCBO.Name = "txtCBO";
             this.txtCBO.Size = new System.Drawing.Size(169, 20);
-            this.txtCBO.TabIndex = 85;
+            this.txtCBO.TabIndex = 1;
             this.txtCBO.TextChanged += new System.EventHandler(this.txtCBO_TextChanged);
             // 
             // lblCBO
             // 
             this.lblCBO.AutoSize = true;
-            this.lblCBO.Location = new System.Drawing.Point(51, 51);
+            this.lblCBO.Location = new System.Drawing.Point(7, 48);
             this.lblCBO.Name = "lblCBO";
             this.lblCBO.Size = new System.Drawing.Size(58, 13);
-            this.lblCBO.TabIndex = 84;
+            this.lblCBO.TabIndex = 0;
             this.lblCBO.Text = "C.B.O Nº";
             // 
             // dtpDataAdmissao
@@ -230,27 +230,27 @@
             this.dtpDataAdmissao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpDataAdmissao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.dtpDataAdmissao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataAdmissao.Location = new System.Drawing.Point(172, 398);
+            this.dtpDataAdmissao.Location = new System.Drawing.Point(128, 398);
             this.dtpDataAdmissao.Name = "dtpDataAdmissao";
             this.dtpDataAdmissao.Size = new System.Drawing.Size(91, 20);
-            this.dtpDataAdmissao.TabIndex = 83;
+            this.dtpDataAdmissao.TabIndex = 26;
             // 
             // lblDataAdmissao
             // 
             this.lblDataAdmissao.AutoSize = true;
-            this.lblDataAdmissao.Location = new System.Drawing.Point(54, 401);
+            this.lblDataAdmissao.Location = new System.Drawing.Point(7, 400);
             this.lblDataAdmissao.Name = "lblDataAdmissao";
             this.lblDataAdmissao.Size = new System.Drawing.Size(95, 13);
-            this.lblDataAdmissao.TabIndex = 82;
+            this.lblDataAdmissao.TabIndex = 25;
             this.lblDataAdmissao.Text = "Data Admissão:";
             // 
             // rdbNao
             // 
             this.rdbNao.AutoSize = true;
-            this.rdbNao.Location = new System.Drawing.Point(234, 245);
+            this.rdbNao.Location = new System.Drawing.Point(190, 245);
             this.rdbNao.Name = "rdbNao";
             this.rdbNao.Size = new System.Drawing.Size(48, 17);
-            this.rdbNao.TabIndex = 81;
+            this.rdbNao.TabIndex = 18;
             this.rdbNao.TabStop = true;
             this.rdbNao.Text = "Não";
             this.rdbNao.UseVisualStyleBackColor = true;
@@ -259,10 +259,10 @@
             // rdbSim
             // 
             this.rdbSim.AutoSize = true;
-            this.rdbSim.Location = new System.Drawing.Point(174, 245);
+            this.rdbSim.Location = new System.Drawing.Point(130, 245);
             this.rdbSim.Name = "rdbSim";
             this.rdbSim.Size = new System.Drawing.Size(45, 17);
-            this.rdbSim.TabIndex = 80;
+            this.rdbSim.TabIndex = 17;
             this.rdbSim.TabStop = true;
             this.rdbSim.Text = "Sim";
             this.rdbSim.UseVisualStyleBackColor = true;
@@ -271,10 +271,10 @@
             // lblPrimeiroEmprego
             // 
             this.lblPrimeiroEmprego.AutoSize = true;
-            this.lblPrimeiroEmprego.Location = new System.Drawing.Point(51, 249);
+            this.lblPrimeiroEmprego.Location = new System.Drawing.Point(7, 247);
             this.lblPrimeiroEmprego.Name = "lblPrimeiroEmprego";
             this.lblPrimeiroEmprego.Size = new System.Drawing.Size(112, 13);
-            this.lblPrimeiroEmprego.TabIndex = 79;
+            this.lblPrimeiroEmprego.TabIndex = 16;
             this.lblPrimeiroEmprego.Text = "Primeiro Emprego?";
             // 
             // cmbCor
@@ -289,19 +289,19 @@
             "parda",
             "indígena",
             "amarela"});
-            this.cmbCor.Location = new System.Drawing.Point(482, 193);
+            this.cmbCor.Location = new System.Drawing.Point(438, 193);
             this.cmbCor.Name = "cmbCor";
             this.cmbCor.Size = new System.Drawing.Size(133, 21);
-            this.cmbCor.TabIndex = 78;
+            this.cmbCor.TabIndex = 15;
             this.cmbCor.TextChanged += new System.EventHandler(this.cmbCor_TextChanged);
             // 
             // lblCor
             // 
             this.lblCor.AutoSize = true;
-            this.lblCor.Location = new System.Drawing.Point(433, 196);
+            this.lblCor.Location = new System.Drawing.Point(389, 195);
             this.lblCor.Name = "lblCor";
             this.lblCor.Size = new System.Drawing.Size(30, 13);
-            this.lblCor.TabIndex = 77;
+            this.lblCor.TabIndex = 14;
             this.lblCor.Text = "Cor:";
             // 
             // cmbGrau
@@ -324,115 +324,115 @@
             "Pós-graduação",
             "Mestrado",
             "Doutorado"});
-            this.cmbGrau.Location = new System.Drawing.Point(173, 193);
+            this.cmbGrau.Location = new System.Drawing.Point(129, 193);
             this.cmbGrau.Name = "cmbGrau";
             this.cmbGrau.Size = new System.Drawing.Size(226, 21);
-            this.cmbGrau.TabIndex = 76;
+            this.cmbGrau.TabIndex = 13;
             this.cmbGrau.TextChanged += new System.EventHandler(this.cmbGrau_TextChanged);
             // 
             // lblGrauInstrucao
             // 
             this.lblGrauInstrucao.AutoSize = true;
-            this.lblGrauInstrucao.Location = new System.Drawing.Point(51, 196);
+            this.lblGrauInstrucao.Location = new System.Drawing.Point(7, 195);
             this.lblGrauInstrucao.Name = "lblGrauInstrucao";
             this.lblGrauInstrucao.Size = new System.Drawing.Size(113, 13);
-            this.lblGrauInstrucao.TabIndex = 75;
+            this.lblGrauInstrucao.TabIndex = 12;
             this.lblGrauInstrucao.Text = "Grau de Instrução:";
             // 
             // txtSerie
             // 
             this.txtSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtSerie.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtSerie.Location = new System.Drawing.Point(683, 147);
+            this.txtSerie.Location = new System.Drawing.Point(639, 147);
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(133, 20);
-            this.txtSerie.TabIndex = 74;
+            this.txtSerie.TabIndex = 11;
             this.txtSerie.TextChanged += new System.EventHandler(this.txtSerie_TextChanged);
             // 
             // lblSerie
             // 
             this.lblSerie.AutoSize = true;
-            this.lblSerie.Location = new System.Drawing.Point(634, 147);
+            this.lblSerie.Location = new System.Drawing.Point(590, 149);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(48, 13);
-            this.lblSerie.TabIndex = 73;
+            this.lblSerie.TabIndex = 10;
             this.lblSerie.Text = "SERIE:";
             // 
             // txtCtps
             // 
             this.txtCtps.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtCtps.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCtps.Location = new System.Drawing.Point(483, 147);
+            this.txtCtps.Location = new System.Drawing.Point(439, 147);
             this.txtCtps.Name = "txtCtps";
             this.txtCtps.Size = new System.Drawing.Size(133, 20);
-            this.txtCtps.TabIndex = 72;
+            this.txtCtps.TabIndex = 9;
             this.txtCtps.TextChanged += new System.EventHandler(this.txtCtps_TextChanged);
             // 
             // lblCtps
             // 
             this.lblCtps.AutoSize = true;
-            this.lblCtps.Location = new System.Drawing.Point(434, 147);
+            this.lblCtps.Location = new System.Drawing.Point(390, 149);
             this.lblCtps.Name = "lblCtps";
             this.lblCtps.Size = new System.Drawing.Size(43, 13);
-            this.lblCtps.TabIndex = 71;
+            this.lblCtps.TabIndex = 8;
             this.lblCtps.Text = "CTPS:";
             // 
             // txtPis
             // 
             this.txtPis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtPis.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPis.Location = new System.Drawing.Point(173, 147);
+            this.txtPis.Location = new System.Drawing.Point(129, 147);
             this.txtPis.MaxLength = 40;
             this.txtPis.Name = "txtPis";
             this.txtPis.Size = new System.Drawing.Size(227, 20);
-            this.txtPis.TabIndex = 70;
+            this.txtPis.TabIndex = 7;
             this.txtPis.TextChanged += new System.EventHandler(this.txtPis_TextChanged);
             // 
             // lblPis
             // 
             this.lblPis.AutoSize = true;
-            this.lblPis.Location = new System.Drawing.Point(51, 147);
+            this.lblPis.Location = new System.Drawing.Point(7, 149);
             this.lblPis.Name = "lblPis";
             this.lblPis.Size = new System.Drawing.Size(31, 13);
-            this.lblPis.TabIndex = 69;
+            this.lblPis.TabIndex = 6;
             this.lblPis.Text = "PIS:";
             // 
             // txtZona
             // 
             this.txtZona.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtZona.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtZona.Location = new System.Drawing.Point(415, 96);
+            this.txtZona.Location = new System.Drawing.Point(371, 96);
             this.txtZona.Name = "txtZona";
             this.txtZona.Size = new System.Drawing.Size(124, 20);
-            this.txtZona.TabIndex = 68;
+            this.txtZona.TabIndex = 5;
             this.txtZona.TextChanged += new System.EventHandler(this.txtZona_TextChanged);
             // 
             // lblZona
             // 
             this.lblZona.AutoSize = true;
-            this.lblZona.Location = new System.Drawing.Point(359, 101);
+            this.lblZona.Location = new System.Drawing.Point(315, 98);
             this.lblZona.Name = "lblZona";
             this.lblZona.Size = new System.Drawing.Size(40, 13);
-            this.lblZona.TabIndex = 67;
+            this.lblZona.TabIndex = 4;
             this.lblZona.Text = "Zona:";
             // 
             // txtTituloEleitor
             // 
             this.txtTituloEleitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtTituloEleitor.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTituloEleitor.Location = new System.Drawing.Point(170, 96);
+            this.txtTituloEleitor.Location = new System.Drawing.Point(126, 96);
             this.txtTituloEleitor.Name = "txtTituloEleitor";
-            this.txtTituloEleitor.Size = new System.Drawing.Size(158, 20);
-            this.txtTituloEleitor.TabIndex = 66;
+            this.txtTituloEleitor.Size = new System.Drawing.Size(169, 20);
+            this.txtTituloEleitor.TabIndex = 3;
             this.txtTituloEleitor.TextChanged += new System.EventHandler(this.txtTituloEleitor_TextChanged);
             // 
             // lblTituloEleitor
             // 
             this.lblTituloEleitor.AutoSize = true;
-            this.lblTituloEleitor.Location = new System.Drawing.Point(51, 101);
+            this.lblTituloEleitor.Location = new System.Drawing.Point(7, 98);
             this.lblTituloEleitor.Name = "lblTituloEleitor";
             this.lblTituloEleitor.Size = new System.Drawing.Size(103, 13);
-            this.lblTituloEleitor.TabIndex = 65;
+            this.lblTituloEleitor.TabIndex = 2;
             this.lblTituloEleitor.Text = "Título de Eleitor:";
             // 
             // btnImprimir
@@ -461,9 +461,10 @@
             this.ucMenuInferior1.Location = new System.Drawing.Point(39, 637);
             this.ucMenuInferior1.Name = "ucMenuInferior1";
             this.ucMenuInferior1.Size = new System.Drawing.Size(404, 43);
-            this.ucMenuInferior1.TabIndex = 133;
+            this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucMenuInferior1_EventoVoltar);
+            this.ucMenuInferior1.EventoAlterar += new GuiWindowsForms.ucMenuInferior.delegateAlterar(this.ucMenuInferior1_EventoAlterar);
             // 
             // ucMenuImagemFunc1
             // 
@@ -525,6 +526,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaFuncionarioDadosProfissionais_Load);
+            this.Activated += new System.EventHandler(this.telaFuncionarioDadosProfissionais_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaFuncionarioDadosProfissionais_FormClosing);
             this.gpbDadosProfissionais.ResumeLayout(false);
             this.gpbDadosProfissionais.PerformLayout();

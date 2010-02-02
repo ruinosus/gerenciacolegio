@@ -452,7 +452,6 @@ namespace GuiWindowsForms
         {
             try
             {
-
                 #region CADASTRAR ALUNO
 
 
@@ -642,14 +641,14 @@ namespace GuiWindowsForms
                             memoria.Aluno = aluno;
                         }
 
-                        MessageBox.Show(AlunoConstantes.ALUNO_INCLUIDO, "Colégio Conhecer - Cadastrar Aluno");
+                        MessageBox.Show(AlunoConstantes.ALUNO_INCLUIDO, "Colégio Conhecer");
                     }
                     else
                     {
                         alunoControlador.Alterar(aluno);
                         uMenuImagem1.carregaAluno(aluno);
 
-                        MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer - Alterar Aluno");
+                        MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer");
                     }
                 }
                 #endregion
@@ -832,14 +831,13 @@ namespace GuiWindowsForms
                     if (memoria.Aluno != null)
                     {
                         alunoControlador.Alterar(aluno);
-                        MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer - Alterar Aluno");
+                        MessageBox.Show(AlunoConstantes.ALUNO_ALTERADO, "Colégio Conhecer");
                         uMenuImagem1.carregaAluno(aluno);
                     }
 
 
                 }
                 #endregion
-
             }
             catch (Exception ex)
             {

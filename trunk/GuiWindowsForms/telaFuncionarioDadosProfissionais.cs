@@ -145,6 +145,8 @@ namespace GuiWindowsForms
         #endregion
 
         #region USER CONTROLS - MENU INFERIOR
+
+        #region EVENTO VOLTAR
         private void ucMenuInferior1_EventoVoltar()
         {
             this.Hide();
@@ -158,39 +160,6 @@ namespace GuiWindowsForms
                 Program.ultimaTela = 6;
                 Program.SelecionaForm(Program.ultimaTela);
             }
-        }
-        #endregion
-
-        #region USER CONTROLS - MENU LATERAL
-        private void ucMenuLateralFunc1_EventoAbrirDadosProfissionais()
-        {
-            this.Hide();
-            Program.ultimaTela = 17;
-            telaFuncionarioDadosProfissionais telaafuncprofissionais = telaFuncionarioDadosProfissionais.getInstancia();
-            telaafuncprofissionais.Show();
-        }
-
-        private void ucMenuLateralFunc1_EventoAbrirDadosPessoais()
-        {
-            this.Hide();
-            Program.ultimaTela = 17;
-            telaFuncionario telaafuncdados = telaFuncionario.getInstancia();
-            telaafuncdados.Show();
-        }
-
-        private void ucMenuLateralFunc1_Load(object sender, EventArgs e)
-        {
-            ucMenuLateralFunc1.verificaTela(teladfuncProfissional);
-        }
-        #endregion
-
-        #region LOAD
-        private void telaFuncionarioDadosProfissionais_Load(object sender, EventArgs e)
-        {
-            funcionario = Program.funcionarioAux;
-            if(funcionario!=null)
-            ucMenuImagemFunc1.carregaFuncionario(funcionario);
-            carregarCampos();
         }
         #endregion
 
@@ -223,7 +192,7 @@ namespace GuiWindowsForms
                 }
                 funcionario.TituloEleitor = txtTituloEleitor.Text;
 
-                #endregion            
+                #endregion
 
                 #region VALIDA - ZONA
 
@@ -359,9 +328,51 @@ namespace GuiWindowsForms
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
         }
         #endregion
+
+        #region EVENTO ALTERAR
+        private void ucMenuInferior1_EventoAlterar()
+        {
+
+        }
+        #endregion
+
+        #endregion
+
+        #region USER CONTROLS - MENU LATERAL
+        private void ucMenuLateralFunc1_EventoAbrirDadosProfissionais()
+        {
+            this.Hide();
+            Program.ultimaTela = 17;
+            telaFuncionarioDadosProfissionais telaafuncprofissionais = telaFuncionarioDadosProfissionais.getInstancia();
+            telaafuncprofissionais.Show();
+        }
+
+        private void ucMenuLateralFunc1_EventoAbrirDadosPessoais()
+        {
+            this.Hide();
+            Program.ultimaTela = 17;
+            telaFuncionario telaafuncdados = telaFuncionario.getInstancia();
+            telaafuncdados.Show();
+        }
+
+        private void ucMenuLateralFunc1_Load(object sender, EventArgs e)
+        {
+            ucMenuLateralFunc1.verificaTela(teladfuncProfissional);
+        }
+        #endregion
+
+        #region LOAD
+        private void telaFuncionarioDadosProfissionais_Load(object sender, EventArgs e)
+        {
+            funcionario = Program.funcionarioAux;
+            if(funcionario!=null)
+            ucMenuImagemFunc1.carregaFuncionario(funcionario);
+            carregarCampos();
+        }
+        #endregion  
 
         #region LIMPAR ERRO PROVIDER
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
@@ -450,6 +461,7 @@ namespace GuiWindowsForms
         }
 #endregion
 
+        #region LIMPAR CAMPOS
         public void limparCamposTela()
         {
             txtCBO.Clear();
@@ -468,7 +480,9 @@ namespace GuiWindowsForms
             rdbNao.Checked = false;
             rdbSim.Checked = false;
         }
+        #endregion
 
+        #region CARREGAR CAMPOS
         public void carregarCampos()
         {
             txtCBO.Text = funcionario.Cbo;
@@ -491,7 +505,9 @@ namespace GuiWindowsForms
                 rdbNao.Select();
             }
         }
+        #endregion
 
+        #region DESCONECTAR
         private void ucDesconectarLogin1_EventoDesconectar()
         {
             Program.ultimaTela = 9;
@@ -499,6 +515,92 @@ namespace GuiWindowsForms
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
         }
+        #endregion
+
+        #region ACTIVATED
+        private void telaFuncionarioDadosProfissionais_Activated(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region METODOS ENABLED
+
+        /// <summary>
+        ///  Método para Ativar a Alteração
+        ///  de todos os campos de Funcionario
+        /// </summary>
+        private void Enabled_True()
+        {
+            txtCBO.Enabled = true;
+            txtTituloEleitor.Enabled = true;
+            txtZona.Enabled = true;
+            txtPis.Enabled = true;
+            txtCtps.Enabled = true;
+            txtSerie.Enabled = true;
+            cmbGrau.Enabled = true;
+            cmbCor.Enabled = true;
+            rdbSim.Enabled = true;
+            rdbNao.Enabled = true;
+            txtCurso.Enabled = true;
+            dtpDataAdmissao.Enabled = true;
+            dtpDataFormacao.Enabled = true;
+            txtInstituicao.Enabled = true;
+            cmbFuncao.Enabled = true;
+        }
+
+        /// <summary>
+        ///  Método para Desativar a Alteração
+        ///  de todos os campos de Funcionario
+        /// </summary>
+        private void Enabled_False()
+        {
+            txtCBO.Enabled = false;
+            txtTituloEleitor.Enabled = false;
+            txtZona.Enabled = false;
+            txtPis.Enabled = false;
+            txtCtps.Enabled = false;
+            txtSerie.Enabled = false;
+            cmbGrau.Enabled = false;
+            cmbCor.Enabled = false;
+            rdbSim.Enabled = false;
+            rdbNao.Enabled = false;
+            txtCurso.Enabled = false;
+            dtpDataAdmissao.Enabled = false;
+            dtpDataFormacao.Enabled = false;
+            txtInstituicao.Enabled = false;
+            cmbFuncao.Enabled = false;
+        }
+
+        #endregion
+
+        #region CARREGAR FUNCIONARIO
+        public void carregarFuncionario()
+        {
+            txtCBO.Text = funcionario.Cbo;
+            txtTituloEleitor.Text = funcionario.TituloEleitor;
+            txtZona.Text = funcionario.Zona;
+            txtPis.Text = funcionario.Pis;
+            txtCtps.Text = funcionario.Serie;
+            txtSerie.Text = funcionario.Serie;
+            cmbGrau.Text = funcionario.GrauInstrucao;
+            cmbCor.Text = funcionario.Cor;
+            txtCurso.Text = funcionario.Curso;
+            dtpDataAdmissao.Value = funcionario.DataEfetivacao.Value;
+            dtpDataFormacao.Value = funcionario.DataFormacao.Value;
+            txtInstituicao.Text = funcionario.Instituicao;
+            cmbFuncao.Text = funcionario.Cargo;
+
+            if (funcionario.PrimeiroEmprego == 0)
+            {
+                rdbSim.Select();
+            }
+            else
+            {
+                rdbNao.Select();
+            }
+        }
+        #endregion
 
     }
 }
