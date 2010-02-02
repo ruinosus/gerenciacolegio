@@ -185,19 +185,8 @@ namespace GuiWindowsForms
             telaConfiguracoesDescontoMatricula telaconfdesconto = telaConfiguracoesDescontoMatricula.getInstancia();
             telaconfdesconto.Show();
         }
-
-        private void ucMenuDireita1_Load(object sender, EventArgs e)
-        {
-            ucMenuDireita1.verificaTela(telaconfiguracoes);
-        }
         #endregion
 
-        #region LOAD
-        private void telaConfiguracoes_Load(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
 
         private void ucDesconectarLogin1_EventoDesconectar()
         {
@@ -205,6 +194,11 @@ namespace GuiWindowsForms
             this.Close();
             telaLogin telalogin = telaLogin.getInstancia();
             telalogin.Show();
+        }
+
+        private void telaConfiguracoes_Activated(object sender, EventArgs e)
+        {
+            ucMenuDireita1.verificaTela(telaconfiguracoes);
         }
 
 

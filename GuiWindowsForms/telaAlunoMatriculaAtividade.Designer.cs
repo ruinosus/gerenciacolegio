@@ -39,8 +39,6 @@
             this.lblDesconto = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lblNumeroMatricula = new System.Windows.Forms.Label();
-            this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
-            this.lblDataMatricula = new System.Windows.Forms.Label();
             this.lblAtividade = new System.Windows.Forms.Label();
             this.cmbAtividade = new System.Windows.Forms.ComboBox();
             this.lblValor = new System.Windows.Forms.Label();
@@ -68,8 +66,6 @@
             this.gpbMatricula.Controls.Add(this.lblDesconto);
             this.gpbMatricula.Controls.Add(this.txtValor);
             this.gpbMatricula.Controls.Add(this.lblNumeroMatricula);
-            this.gpbMatricula.Controls.Add(this.dtpNascimento);
-            this.gpbMatricula.Controls.Add(this.lblDataMatricula);
             this.gpbMatricula.Controls.Add(this.lblAtividade);
             this.gpbMatricula.Controls.Add(this.cmbAtividade);
             this.gpbMatricula.Controls.Add(this.lblValor);
@@ -154,24 +150,6 @@
             this.lblNumeroMatricula.Size = new System.Drawing.Size(126, 13);
             this.lblNumeroMatricula.TabIndex = 41;
             this.lblNumeroMatricula.Text = "Número da Matrícula";
-            // 
-            // dtpNascimento
-            // 
-            this.dtpNascimento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(500, 21);
-            this.dtpNascimento.Name = "dtpNascimento";
-            this.dtpNascimento.Size = new System.Drawing.Size(110, 20);
-            this.dtpNascimento.TabIndex = 40;
-            // 
-            // lblDataMatricula
-            // 
-            this.lblDataMatricula.AutoSize = true;
-            this.lblDataMatricula.Location = new System.Drawing.Point(380, 27);
-            this.lblDataMatricula.Name = "lblDataMatricula";
-            this.lblDataMatricula.Size = new System.Drawing.Size(114, 13);
-            this.lblDataMatricula.TabIndex = 39;
-            this.lblDataMatricula.Text = "Data da Matrícula:";
             // 
             // lblAtividade
             // 
@@ -318,8 +296,6 @@
         private System.Windows.Forms.Label lblDesconto;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblNumeroMatricula;
-        private System.Windows.Forms.DateTimePicker dtpNascimento;
-        private System.Windows.Forms.Label lblDataMatricula;
         private System.Windows.Forms.Label lblAtividade;
         private System.Windows.Forms.ComboBox cmbAtividade;
         private System.Windows.Forms.Label lblValor;

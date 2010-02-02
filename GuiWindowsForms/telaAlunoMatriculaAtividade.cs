@@ -293,7 +293,7 @@ namespace GuiWindowsForms
 
                 alunoAtividadeTurma.AlunoID = memoria.Aluno.ID;
                 alunoAtividadeTurma.Ano = DateTime.Now.Year;
-                alunoAtividadeTurma.DataMatricula = dtpNascimento.Value;
+                alunoAtividadeTurma.DataMatricula = DateTime.Now;
                 alunoAtividadeTurma.Status = (int)Status.Ativo;
 
                 int matriculaAux = -1;
@@ -315,12 +315,14 @@ namespace GuiWindowsForms
 
                         boletoAtividade.Descricao = "BOLETO";
 
-                        boletoAtividade.DataVencimento = DateTime.Now.AddMonths(i);
+                        DateTime novoDtParcela = new DateTime(DateTime.Now.Year, 1, 1);
+
+                        boletoAtividade.DataVencimento = novoDtParcela.AddMonths(i); ;
 
                         boletoAtividade.Status = (int)Status.Ativo;
                         boletoAtividade.Desconto = Convert.ToDouble(txtDesconto.Text);
 
-                        boletoAtividade.Parcela = meses[DateTime.Now.AddMonths(i).Month];
+                        boletoAtividade.Parcela = meses[novoDtParcela.AddMonths(i).Month];
 
                         boletoAtividade.MatriculaID = matriculaAux;
                         boletoAtividade.DataEmissao = DateTime.Now;

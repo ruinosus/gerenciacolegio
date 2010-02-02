@@ -272,9 +272,10 @@ namespace GuiWindowsForms
             //Operações responsáveis por alimentar o grid principal da tela
             dtgResultado.AutoGenerateColumns = false;
             dtgResultado.DataSource = null;
-            dtgResultado.DataSource = carregarDataGridFinanceiro();
+            dtgResultado.DataSource = carregarDataGridFinanceiroMensalidade();
         }
 
+        #region Métodos Auxiliares
         /// <summary>
         /// Método responsável por carregar o combo de série 
         /// </summary>
@@ -293,16 +294,51 @@ namespace GuiWindowsForms
         }
 
         /// <summary>
-        /// Método para carregar o DataGrid inicial da tela
+        /// Método para carregar o DataGrid de Boleto Mensalidade
         /// </summary>
         /// <returns>Lista da classe auxiliar para alimentar o financeiro</returns>
-        private List<ClasseAuxiliarFinanceiro> carregarDataGridFinanceiro()
+        private List<ClasseAuxiliarFinanceiro> carregarDataGridFinanceiroMensalidade()
         {
-            ClasseAuxiliarFinanceiro classeAuxiliarFinanceiro = new ClasseAuxiliarFinanceiro();
             List<ClasseAuxiliarFinanceiro> classeAuxiliarFinanceiroList = new List<ClasseAuxiliarFinanceiro>();
 
             foreach (BoletoMensalidade b in retornaListaAtivosMensalidade())
             {
+                ClasseAuxiliarFinanceiro classeAuxiliarFinanceiro = new ClasseAuxiliarFinanceiro();
+
+                classeAuxiliarFinanceiro.aluno = b.Matricula.Aluno.Nome;
+                if (b.DataPagamento.HasValue == true)
+                {
+                    classeAuxiliarFinanceiro.dataPagamento = Convert.ToDateTime(b.DataPagamento);
+                }
+                classeAuxiliarFinanceiro.dataVencimento = b.DataVencimento;
+                if (b.Desconto.HasValue == true)
+                {
+                    classeAuxiliarFinanceiro.desconto = Convert.ToDouble(b.Desconto);
+                }
+                classeAuxiliarFinanceiro.matriculaId = Convert.ToInt32(b.MatriculaID);
+                classeAuxiliarFinanceiro.parcela = b.Parcela;
+                classeAuxiliarFinanceiro.serie = b.Matricula.SalaPeriodo.Sala.Serie.Nome;
+                classeAuxiliarFinanceiro.valor = Convert.ToDouble(b.Valor);
+
+                classeAuxiliarFinanceiroList.Add(classeAuxiliarFinanceiro);
+            }
+
+            return classeAuxiliarFinanceiroList;
+
+        }
+
+        /// <summary>
+        /// Método para carregar o DataGrid de Boleto Atividade
+        /// </summary>
+        /// <returns>Lista da classe auxiliar para alimentar o financeiro</returns>
+        private List<ClasseAuxiliarFinanceiro> carregarDataGridFinanceiroAtividade()
+        {
+            List<ClasseAuxiliarFinanceiro> classeAuxiliarFinanceiroList = new List<ClasseAuxiliarFinanceiro>();
+
+            foreach (BoletoAtividade b in retornaListaAtivosAtividade())
+            {
+                ClasseAuxiliarFinanceiro classeAuxiliarFinanceiro = new ClasseAuxiliarFinanceiro();
+
                 classeAuxiliarFinanceiro.aluno = b.Matricula.Aluno.Nome;
                 if (b.DataPagamento.HasValue == true)
                 {
@@ -370,5 +406,6 @@ namespace GuiWindowsForms
 
             return boletoMensalidadeList2;
         }
+        #endregion
     }
 }

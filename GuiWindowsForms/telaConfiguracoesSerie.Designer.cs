@@ -387,6 +387,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaConfiguracoesSerie_Load);
+            this.Activated += new System.EventHandler(this.telaConfiguracoesSerie_Activated);
             this.gpbSerie.ResumeLayout(false);
             this.gpbSerie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

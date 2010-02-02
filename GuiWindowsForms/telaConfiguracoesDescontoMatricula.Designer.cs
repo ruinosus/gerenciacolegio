@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaConfiguracoesDescontoMatricula));
             this.gpbSerie = new System.Windows.Forms.GroupBox();
             this.txtValor = new System.Windows.Forms.TextBox();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnAdicionarDesconto = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.lblValor = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
@@ -44,9 +47,6 @@
             this.ucMenuDireita1 = new GuiWindowsForms.User_Control.ucMenuDireita();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnAdicionarDesconto = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.gpbSerie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
@@ -80,6 +80,50 @@
             this.txtValor.Size = new System.Drawing.Size(100, 20);
             this.txtValor.TabIndex = 71;
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
+            this.btnAlterar.FlatAppearance.BorderSize = 0;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Location = new System.Drawing.Point(520, 152);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(32, 32);
+            this.btnAlterar.TabIndex = 0;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.MouseLeave += new System.EventHandler(this.btnAlterar_MouseLeave);
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btnAlterar.MouseEnter += new System.EventHandler(this.btnAlterar_MouseEnter);
+            // 
+            // btnAdicionarDesconto
+            // 
+            this.btnAdicionarDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
+            this.btnAdicionarDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionarDesconto.FlatAppearance.BorderSize = 0;
+            this.btnAdicionarDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionarDesconto.Location = new System.Drawing.Point(579, 152);
+            this.btnAdicionarDesconto.Name = "btnAdicionarDesconto";
+            this.btnAdicionarDesconto.Size = new System.Drawing.Size(32, 32);
+            this.btnAdicionarDesconto.TabIndex = 70;
+            this.btnAdicionarDesconto.UseVisualStyleBackColor = true;
+            this.btnAdicionarDesconto.MouseLeave += new System.EventHandler(this.btnAdicionarDesconto_MouseLeave);
+            this.btnAdicionarDesconto.Click += new System.EventHandler(this.btnAdicionarDesconto_Click);
+            this.btnAdicionarDesconto.MouseEnter += new System.EventHandler(this.btnAdicionarDesconto_MouseEnter);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Location = new System.Drawing.Point(632, 173);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(32, 11);
+            this.btnExcluir.TabIndex = 69;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.MouseLeave += new System.EventHandler(this.btnExcluir_MouseLeave);
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            this.btnExcluir.MouseEnter += new System.EventHandler(this.btnExcluir_MouseEnter);
             // 
             // lblValor
             // 
@@ -204,50 +248,6 @@
             this.pictureBox1.TabIndex = 135;
             this.pictureBox1.TabStop = false;
             // 
-            // btnAlterar
-            // 
-            this.btnAlterar.BackgroundImage = global::GuiWindowsForms.Properties.Resources.alterar_final;
-            this.btnAlterar.FlatAppearance.BorderSize = 0;
-            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Location = new System.Drawing.Point(520, 152);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(32, 32);
-            this.btnAlterar.TabIndex = 0;
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            this.btnAlterar.MouseLeave += new System.EventHandler(this.btnAlterar_MouseLeave);
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            this.btnAlterar.MouseEnter += new System.EventHandler(this.btnAlterar_MouseEnter);
-            // 
-            // btnAdicionarDesconto
-            // 
-            this.btnAdicionarDesconto.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_mais;
-            this.btnAdicionarDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarDesconto.FlatAppearance.BorderSize = 0;
-            this.btnAdicionarDesconto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionarDesconto.Location = new System.Drawing.Point(579, 152);
-            this.btnAdicionarDesconto.Name = "btnAdicionarDesconto";
-            this.btnAdicionarDesconto.Size = new System.Drawing.Size(32, 32);
-            this.btnAdicionarDesconto.TabIndex = 70;
-            this.btnAdicionarDesconto.UseVisualStyleBackColor = true;
-            this.btnAdicionarDesconto.MouseLeave += new System.EventHandler(this.btnAdicionarDesconto_MouseLeave);
-            this.btnAdicionarDesconto.Click += new System.EventHandler(this.btnAdicionarDesconto_Click);
-            this.btnAdicionarDesconto.MouseEnter += new System.EventHandler(this.btnAdicionarDesconto_MouseEnter);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackgroundImage = global::GuiWindowsForms.Properties.Resources.conf_menos;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(632, 173);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(32, 11);
-            this.btnExcluir.TabIndex = 69;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.MouseLeave += new System.EventHandler(this.btnExcluir_MouseLeave);
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            this.btnExcluir.MouseEnter += new System.EventHandler(this.btnExcluir_MouseEnter);
-            // 
             // telaConfiguracoesDescontoMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +268,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaConfiguracoesDescontoMatricula_Load);
+            this.Activated += new System.EventHandler(this.telaConfiguracoesDescontoMatricula_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.telaConfiguracoesDescontoMatricula_FormClosing);
             this.gpbSerie.ResumeLayout(false);
             this.gpbSerie.PerformLayout();

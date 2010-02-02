@@ -39,8 +39,6 @@
             this.lblDesconto = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lblNumeroMatricula = new System.Windows.Forms.Label();
-            this.dtpDataMatricula = new System.Windows.Forms.DateTimePicker();
-            this.lblDataMatricula = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
             this.cmbSerie = new System.Windows.Forms.ComboBox();
             this.lblValor = new System.Windows.Forms.Label();
@@ -68,15 +66,13 @@
             this.gpbMatricula.Controls.Add(this.lblDesconto);
             this.gpbMatricula.Controls.Add(this.txtValor);
             this.gpbMatricula.Controls.Add(this.lblNumeroMatricula);
-            this.gpbMatricula.Controls.Add(this.dtpDataMatricula);
-            this.gpbMatricula.Controls.Add(this.lblDataMatricula);
             this.gpbMatricula.Controls.Add(this.lblSerie);
             this.gpbMatricula.Controls.Add(this.cmbSerie);
             this.gpbMatricula.Controls.Add(this.lblValor);
             this.gpbMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbMatricula.Location = new System.Drawing.Point(39, 191);
             this.gpbMatricula.Name = "gpbMatricula";
-            this.gpbMatricula.Size = new System.Drawing.Size(820, 283);
+            this.gpbMatricula.Size = new System.Drawing.Size(820, 228);
             this.gpbMatricula.TabIndex = 0;
             this.gpbMatricula.TabStop = false;
             this.gpbMatricula.Text = "MATRÍCULA DO ALUNO";
@@ -114,11 +110,8 @@
             "25",
             "26",
             "27",
-            "28",
-            "29",
-            "30",
-            "31"});
-            this.cmbVencimento.Location = new System.Drawing.Point(161, 224);
+            "28"});
+            this.cmbVencimento.Location = new System.Drawing.Point(161, 176);
             this.cmbVencimento.Name = "cmbVencimento";
             this.cmbVencimento.Size = new System.Drawing.Size(62, 21);
             this.cmbVencimento.TabIndex = 6;
@@ -127,7 +120,7 @@
             // lblVencimento
             // 
             this.lblVencimento.AutoSize = true;
-            this.lblVencimento.Location = new System.Drawing.Point(32, 227);
+            this.lblVencimento.Location = new System.Drawing.Point(32, 179);
             this.lblVencimento.Name = "lblVencimento";
             this.lblVencimento.Size = new System.Drawing.Size(118, 13);
             this.lblVencimento.TabIndex = 49;
@@ -135,7 +128,7 @@
             // 
             // txtTotalValor
             // 
-            this.txtTotalValor.Location = new System.Drawing.Point(662, 224);
+            this.txtTotalValor.Location = new System.Drawing.Point(668, 184);
             this.txtTotalValor.Name = "txtTotalValor";
             this.txtTotalValor.ReadOnly = true;
             this.txtTotalValor.Size = new System.Drawing.Size(123, 20);
@@ -146,7 +139,7 @@
             this.lblTotalValor.AutoSize = true;
             this.lblTotalValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalValor.ForeColor = System.Drawing.Color.Red;
-            this.lblTotalValor.Location = new System.Drawing.Point(490, 222);
+            this.lblTotalValor.Location = new System.Drawing.Point(496, 182);
             this.lblTotalValor.Name = "lblTotalValor";
             this.lblTotalValor.Size = new System.Drawing.Size(160, 20);
             this.lblTotalValor.TabIndex = 46;
@@ -157,7 +150,7 @@
             this.cmbDesconto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbDesconto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDesconto.FormattingEnabled = true;
-            this.cmbDesconto.Location = new System.Drawing.Point(161, 170);
+            this.cmbDesconto.Location = new System.Drawing.Point(161, 130);
             this.cmbDesconto.Name = "cmbDesconto";
             this.cmbDesconto.Size = new System.Drawing.Size(163, 21);
             this.cmbDesconto.TabIndex = 5;
@@ -167,7 +160,7 @@
             // lblDesconto
             // 
             this.lblDesconto.AutoSize = true;
-            this.lblDesconto.Location = new System.Drawing.Point(32, 173);
+            this.lblDesconto.Location = new System.Drawing.Point(32, 133);
             this.lblDesconto.Name = "lblDesconto";
             this.lblDesconto.Size = new System.Drawing.Size(65, 13);
             this.lblDesconto.TabIndex = 44;
@@ -175,7 +168,7 @@
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(161, 124);
+            this.txtValor.Location = new System.Drawing.Point(161, 84);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(123, 20);
             this.txtValor.TabIndex = 4;
@@ -185,34 +178,16 @@
             // 
             this.lblNumeroMatricula.AutoSize = true;
             this.lblNumeroMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroMatricula.Location = new System.Drawing.Point(665, 27);
+            this.lblNumeroMatricula.Location = new System.Drawing.Point(665, 42);
             this.lblNumeroMatricula.Name = "lblNumeroMatricula";
             this.lblNumeroMatricula.Size = new System.Drawing.Size(126, 13);
             this.lblNumeroMatricula.TabIndex = 41;
             this.lblNumeroMatricula.Text = "Número da Matrícula";
             // 
-            // dtpDataMatricula
-            // 
-            this.dtpDataMatricula.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpDataMatricula.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataMatricula.Location = new System.Drawing.Point(161, 74);
-            this.dtpDataMatricula.Name = "dtpDataMatricula";
-            this.dtpDataMatricula.Size = new System.Drawing.Size(110, 20);
-            this.dtpDataMatricula.TabIndex = 0;
-            // 
-            // lblDataMatricula
-            // 
-            this.lblDataMatricula.AutoSize = true;
-            this.lblDataMatricula.Location = new System.Drawing.Point(32, 80);
-            this.lblDataMatricula.Name = "lblDataMatricula";
-            this.lblDataMatricula.Size = new System.Drawing.Size(114, 13);
-            this.lblDataMatricula.TabIndex = 39;
-            this.lblDataMatricula.Text = "Data da Matrícula:";
-            // 
             // lblSerie
             // 
             this.lblSerie.AutoSize = true;
-            this.lblSerie.Location = new System.Drawing.Point(32, 27);
+            this.lblSerie.Location = new System.Drawing.Point(32, 42);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(40, 13);
             this.lblSerie.TabIndex = 34;
@@ -223,7 +198,7 @@
             this.cmbSerie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSerie.FormattingEnabled = true;
-            this.cmbSerie.Location = new System.Drawing.Point(161, 24);
+            this.cmbSerie.Location = new System.Drawing.Point(161, 39);
             this.cmbSerie.Name = "cmbSerie";
             this.cmbSerie.Size = new System.Drawing.Size(163, 21);
             this.cmbSerie.TabIndex = 1;
@@ -233,7 +208,7 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(32, 127);
+            this.lblValor.Location = new System.Drawing.Point(32, 87);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(68, 13);
             this.lblValor.TabIndex = 0;
@@ -364,8 +339,6 @@
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.ComboBox cmbSerie;
         private System.Windows.Forms.Label lblSerie;
-        private System.Windows.Forms.DateTimePicker dtpDataMatricula;
-        private System.Windows.Forms.Label lblDataMatricula;
         private System.Windows.Forms.Label lblNumeroMatricula;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblDesconto;
