@@ -602,3 +602,8 @@ E:\Projetos\gerenciacolegio\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.manife
 E:\Projetos\gerenciacolegio\GuiWindowsForms\bin\Debug\GuiWindowsForms.application
 E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe.manifest
 E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.application
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.manifest
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\bin\Debug\GuiWindowsForms.application
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatriculaVinculo.resources
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe.manifest
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.application

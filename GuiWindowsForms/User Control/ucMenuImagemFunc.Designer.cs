@@ -110,7 +110,6 @@
             this.btnAdicionarImagem.TabIndex = 135;
             this.btnAdicionarImagem.Tag = "Adicionar Foto";
             this.btnAdicionarImagem.UseVisualStyleBackColor = false;
-            this.btnAdicionarImagem.Click += new System.EventHandler(this.btnAdicionarImagem_Click);
             // 
             // openFileDialog1
             // 

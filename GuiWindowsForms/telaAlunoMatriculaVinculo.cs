@@ -191,13 +191,6 @@ namespace GuiWindowsForms
 
         #endregion
 
-        #region USER CONTROLS - Menu Lateral
-        private void uMenuLateral1_Load(object sender, EventArgs e)
-        {
-            uMenuLateral1.verificaTela(telaalunomatriculavinculo);
-        }
-        #endregion
-
         #region MÉTODOS DE MANIPULAÇÃO DE INFORMAÇÃO
         /// <summary>
         /// Metodo responsável por verificar se o Aluno atual está com vinculo dependente com outro aluno.

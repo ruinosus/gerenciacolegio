@@ -64,6 +64,7 @@ namespace GuiWindowsForms
             //return SelecionaForm(aux);
         }
 
+        #region BUTTON DESCONECTAR
         /// <summary>
         /// Botão para esconder a tela e voltar para a tela de login
         /// </summary>
@@ -78,8 +79,21 @@ namespace GuiWindowsForms
             telalogin.Show();
         }
 
+        private void ucDesconectarLogin1_EventoDesconectar()
+        {
+            Program.ultimaTela = 9;
+            this.Close();
+            telaLogin telalogin = telaLogin.getInstancia();
+            telalogin.Show();
+        }
+
+
+        #endregion
+
+        #region FECHA TELA
         /// <summary>
-        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, garantindo a usabilidade da tela
+        /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, 
+        /// garantindo a usabilidade da tela
         /// pelo singleton
         /// </summary>
         /// <param name="sender">Tela</param>
@@ -101,6 +115,7 @@ namespace GuiWindowsForms
                 Program.SelecionaForm(Program.ultimaTela);
             }
         }
+        #endregion
 
 
         private void btnImprimir_MouseEnter(object sender, EventArgs e)
@@ -191,32 +206,31 @@ namespace GuiWindowsForms
             telaalunoacademico.Show();
         }
 
-        #endregion
-
         private void uMenuLateral1_Load(object sender, EventArgs e)
         {
             uMenuLateral1.verificaTela(telaAlunofinanceiro);
         }
 
+
+        #endregion
+
+        #region BUTTON IMPRIMIR
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             telaRelatorioBoletoMensalidade telaBoleto = new telaRelatorioBoletoMensalidade();
             telaBoleto.ShowDialog();
         }
+        #endregion
 
+        #region USER CONTROLS - Controle Imagem - Botões de Navegação
         private void telaAlunoFinanceiro_Load(object sender, EventArgs e)
         {
             uMenuImagem1.ocultarBotaoAdicionarImagem();
         }
 
-        private void ucDesconectarLogin1_EventoDesconectar()
-        {
-            Program.ultimaTela = 9;
-            this.Close();
-            telaLogin telalogin = telaLogin.getInstancia();
-            telalogin.Show();
-        }
+        #endregion
 
+        #region ACTIVATED
         private void telaAlunoFinanceiro_Activated(object sender, EventArgs e)
         {
             uMenuLateral1.verificaTela(telaAlunofinanceiro);
@@ -227,5 +241,10 @@ namespace GuiWindowsForms
                 uMenuImagem1.carregaAluno(memoria.Aluno);
             }
         }
+
+        #endregion
+
     }
+
+    
 }

@@ -149,14 +149,13 @@ namespace GuiWindowsForms
         private void btnMatriculaAtividade_MouseEnter(object sender, EventArgs e)
         {
             this.btnMatriculaAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_add_atividade_48x48_hover;
-            //lblInfoControles.Text = "Matricular aluno em uma atividade.";
-            //lblInfoControles.Visible = true;
+            ucMenuInferior1.exibirMensagem("Matricular aluno em uma atividade");
         }
 
         private void btnMatriculaAtividade_MouseLeave(object sender, EventArgs e)
         {
             this.btnMatriculaAtividade.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_add_atividade_48x48;
-            //lblInfoControles.Visible = false;
+            ucMenuInferior1.ocultarMensagem();
         }
         #endregion
 
@@ -575,6 +574,24 @@ namespace GuiWindowsForms
                 aux = listaAtvTurmaAux.Count;
             }
             return aux;
+        }
+
+        private void btnVincularAluno_MouseEnter(object sender, EventArgs e)
+        {
+            ucMenuInferior1.exibirMensagem("Vincular aluno a um outro aluno matriculado");
+        }
+
+        private void btnVincularAluno_MouseLeave(object sender, EventArgs e)
+        {
+            ucMenuInferior1.ocultarMensagem();
+        }
+
+        private void btnVincularAluno_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 4;
+            telaAlunoMatriculaVinculo telaalunomatriculavinculo = telaAlunoMatriculaVinculo.getInstancia();
+            telaalunomatriculavinculo.Show();
         }
     }
 
