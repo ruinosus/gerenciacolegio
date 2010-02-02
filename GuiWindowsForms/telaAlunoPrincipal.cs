@@ -92,72 +92,6 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region BUTTON CADASTRAR ALUNO
-        /// <summary>
-        /// Fecha a tela ativa e exibe a tela de Aluno
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void btnCadastrarAluno_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Program.ultimaTela = 6;
-
-            # region Verifica a existência de uma sala cadastrada
-            Sala salaVerifica = new Sala();
-            ISalaProcesso salaControlador = SalaProcesso.Instance;
-
-            List<Sala> listaSalaVerifica = new List<Sala>();
-
-            salaVerifica.Status = (int)Status.Ativo;
-
-            listaSalaVerifica = salaControlador.Consultar(salaVerifica, TipoPesquisa.E);
-
-            int contaSala = listaSalaVerifica.Count;
-            #endregion
-
-            #region Verifica a existência de um desconto cadastrado
-
-            Desconto descontoVerifica = new Desconto();
-            IDescontoProcesso descontoControlador = DescontoProcesso.Instance;
-
-            List<Desconto> listaDescontoVerifica = new List<Desconto>();
-
-            descontoVerifica.Status = (int)Status.Ativo;
-
-            listaDescontoVerifica = descontoControlador.Consultar(descontoVerifica, TipoPesquisa.E);
-
-            int contaDesconto = listaDescontoVerifica.Count;
-
-            #endregion
-
-
-            //Quando abrir a telaAluno do clique do botao cadastrar
-            // os campos "Alterar" e "Excluir" ficam inativos
-            Program.ultimaTelaCadastrar = 1;
-
-            Memoria memoria = Memoria.Instance;
-            memoria.Aluno = null;
-            memoria.Status = Negocios.ModuloBasico.Enums.StatusBanco.Inativo;
-
-            telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
-            telaalunoresponsavel.limparTela();
-
-            if (contaDesconto != 0 && contaSala != 0)
-            {
-                telaAluno telaAlunoAuxiliar = telaAluno.getInstancia();
-                telaAlunoAuxiliar.limparTelaAluno();
-                telaAlunoAuxiliar.Show();
-            }
-            else
-            {
-                MessageBox.Show("Só é possível acessar o cadastro de aluno com uma sala cadastrada ao qual o aluno será matriculado e um desconto, mesmo que este seja não aplicável");
-                telaalunoprincipal.Show();
-            }
-        }
-        #endregion
-
         #region MÉTODO PARA FECHAR A TELA
         /// <summary>
         /// Evento para o fechamento da tela, não fecha de verdade, só a esconde, 
@@ -422,6 +356,72 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        #region BUTTON CADASTRAR ALUNO
+        /// <summary>
+        /// Fecha a tela ativa e exibe a tela de Aluno
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnCadastrarAluno_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 6;
+
+            # region Verifica a existência de uma sala cadastrada
+            Sala salaVerifica = new Sala();
+            ISalaProcesso salaControlador = SalaProcesso.Instance;
+
+            List<Sala> listaSalaVerifica = new List<Sala>();
+
+            salaVerifica.Status = (int)Status.Ativo;
+
+            listaSalaVerifica = salaControlador.Consultar(salaVerifica, TipoPesquisa.E);
+
+            int contaSala = listaSalaVerifica.Count;
+            #endregion
+
+            #region Verifica a existência de um desconto cadastrado
+
+            Desconto descontoVerifica = new Desconto();
+            IDescontoProcesso descontoControlador = DescontoProcesso.Instance;
+
+            List<Desconto> listaDescontoVerifica = new List<Desconto>();
+
+            descontoVerifica.Status = (int)Status.Ativo;
+
+            listaDescontoVerifica = descontoControlador.Consultar(descontoVerifica, TipoPesquisa.E);
+
+            int contaDesconto = listaDescontoVerifica.Count;
+
+            #endregion
+
+
+            //Quando abrir a telaAluno do clique do botao cadastrar
+            // os campos "Alterar" e "Excluir" ficam inativos
+            Program.ultimaTelaCadastrar = 1;
+
+            Memoria memoria = Memoria.Instance;
+            memoria.Aluno = null;
+            memoria.Status = Negocios.ModuloBasico.Enums.StatusBanco.Inativo;
+
+            telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            telaalunoresponsavel.limparTela();
+
+            if (contaDesconto != 0 && contaSala != 0)
+            {
+                telaAluno telaAlunoAuxiliar = telaAluno.getInstancia();
+                telaAlunoAuxiliar.limparTelaAluno();
+                telaAlunoAuxiliar.Show();
+            }
+            else
+            {
+                MessageBox.Show("Só é possível acessar o cadastro de aluno com uma sala cadastrada ao qual o aluno será matriculado e um desconto, mesmo que este seja não aplicável");
+                telaalunoprincipal.Show();
+            }
+        }
+        #endregion
+
         #region BUTTON CADASTRAR FUNCIONARIO
         private void btnCadastrarFuncionario_Click(object sender, EventArgs e)
         {
@@ -437,6 +437,7 @@ namespace GuiWindowsForms
             memoria.Status = Negocios.ModuloBasico.Enums.StatusBanco.Inativo;
 
             telaFuncionario telafuncionario = telaFuncionario.getInstancia();
+            telafuncionario.limparFuncionario();
             telafuncionario.Show();
 
 
@@ -752,6 +753,7 @@ namespace GuiWindowsForms
                 btnPesquisar.Enabled = true;
                 txtBusca.Enabled = true;
                 dgvAluno.Visible = true;
+                btnCadastrarAluno.Visible = true;
                 CarregarGrid(); 
             }
 
@@ -760,6 +762,7 @@ namespace GuiWindowsForms
                 btnPesquisar.Enabled = true;
                 txtBusca.Enabled = true;
                 dgvFuncionario.Visible = true;
+                btnCadastrarFuncionario.Visible = true;
                 CarregarGrid(); 
             }
             
@@ -778,6 +781,9 @@ namespace GuiWindowsForms
             txtBusca.Enabled = false;
             dgvAluno.Visible = false;
             dgvFuncionario.Visible = false;
+            btnCadastrarFuncionario.Visible = false;
+            btnCadastrarAluno.Visible = false;
+
         }
         #endregion
 

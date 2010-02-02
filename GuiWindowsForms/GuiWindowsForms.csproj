@@ -89,6 +89,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Relatorios\BoletoMensalidadeRelatorioVinculo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BoletoMensalidadeRelatorioVinculo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Relatorios\BoletoMensalidadeDataSet.cs">
       <DependentUpon>BoletoMensalidadeDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -163,6 +169,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Relatorios\BoletoMensalidadeRelatorioVinculo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BoletoMensalidadeRelatorioVinculo.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\BoletoMensalidadeRelatorio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BoletoMensalidadeRelatorio.cs</LastGenOutput>
@@ -258,6 +268,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telaRelatorioBoletoMensalidade.resx">
       <DependentUpon>telaRelatorioBoletoMensalidade.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaRelatorioBoletoMensalidadeVinculo.resx">
+      <DependentUpon>telaRelatorioBoletoMensalidadeVinculo.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\ucDesconectarLogin.resx">
@@ -389,6 +403,12 @@
     </Compile>
     <Compile Include="telaRelatorioBoletoMensalidade.Designer.cs">
       <DependentUpon>telaRelatorioBoletoMensalidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaRelatorioBoletoMensalidadeVinculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaRelatorioBoletoMensalidadeVinculo.Designer.cs">
+      <DependentUpon>telaRelatorioBoletoMensalidadeVinculo.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\ucDesconectarLogin.cs">
       <SubType>UserControl</SubType>

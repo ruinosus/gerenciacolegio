@@ -213,6 +213,7 @@
             this.cmbUf.Name = "cmbUf";
             this.cmbUf.Size = new System.Drawing.Size(58, 21);
             this.cmbUf.TabIndex = 28;
+            this.cmbUf.SelectedIndexChanged += new System.EventHandler(this.cmbUf_SelectedIndexChanged);
             // 
             // txtComplemento
             // 
@@ -408,7 +409,7 @@
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNascimento.Location = new System.Drawing.Point(105, 82);
             this.dtpNascimento.Name = "dtpNascimento";
-            this.dtpNascimento.Size = new System.Drawing.Size(97, 20);
+            this.dtpNascimento.Size = new System.Drawing.Size(91, 20);
             this.dtpNascimento.TabIndex = 6;
             this.dtpNascimento.Value = new System.DateTime(2010, 1, 16, 0, 0, 0, 0);
             // 

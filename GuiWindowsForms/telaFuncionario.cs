@@ -21,6 +21,9 @@ namespace GuiWindowsForms
         //atributo para verificar se o button de Alterar foi clicado 
         int verificaButton = 0;
 
+
+        public static int verificaFoto = 0;
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -123,7 +126,7 @@ namespace GuiWindowsForms
         }
         #endregion
 
-        #region USER CONTROLS - MENU INFERIOR
+        #region USER CONTROLS - Controle Inferior - Botões de Navegação
 
         #region EVENTO VOLTAR
         private void ucMenuInferior1_EventoVoltar()
@@ -158,247 +161,533 @@ namespace GuiWindowsForms
         {
             try
             {
-                #region VALIDA - NOME
+                #region CADASTRAR FUNCIONARIO
 
-                if (String.IsNullOrEmpty(txtNome.Text))
+
+                if (verificaButton == 0)
                 {
-                    errorProviderTela.SetError(txtNome, "Informe o nome");
-                    txtNome.Clear();
-                    return;
+
+                    #region VALIDA - NOME
+
+                    if (String.IsNullOrEmpty(txtNome.Text))
+                    {
+                        errorProviderTela.SetError(txtNome, "Informe o nome");
+                        txtNome.Clear();
+                        return;
+                    }
+                    funcionario.Nome = txtNome.Text;
+
+                    #endregion
+
+                    #region VALIDA - SEXO
+
+                    if (rdbMasc.Checked == false && rdbFem.Checked == false)
+                    {
+                        errorProviderTela.SetError(rdbFem, "Informe o sexo");
+                        return;
+                    }
+                    if (rdbFem.Checked == true)
+                    {
+                        funcionario.Sexo = 0;
+                    }
+                    else
+                    {
+                        funcionario.Sexo = 1;
+                    }
+
+                    #endregion
+
+                    #region VALIDA - NASCIMENTO
+
+                    funcionario.Nascimento = dtpNascimento.Value;
+
+                    #endregion
+
+                    #region VALIDA - IDENTIDADE
+
+                    //if (String.IsNullOrEmpty(txtRg.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtRg, "Informe a identidade");
+                    //    txtRg.Clear();
+                    //    return;
+                    //}
+                    funcionario.Rg = txtRg.Text;
+
+                    #endregion
+
+                    #region VALIDA - CPF
+
+                    //if (mskCpf.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskCpf, "Informe o cpf");
+                    //    mskCpf.Clear();
+                    //    return;
+                    //}
+                    funcionario.Cpf = mskCpf.Text;
+
+                    #endregion
+
+                    #region VALIDA - NACIONALIDADE
+
+                    //if (String.IsNullOrEmpty(cmbNacionalidade.Text))
+                    //{
+                    //    errorProviderTela.SetError(cmbNacionalidade, "Informe a nacionalidade");
+                    //    return;
+                    //}
+                    funcionario.Nacionalidade = cmbNacionalidade.Text;
+
+                    #endregion
+
+                    #region VALIDA - NATURALIDADE
+
+                    //if (String.IsNullOrEmpty(txtNaturalidade.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtNaturalidade, "Informe a naturalidade");
+                    //    txtNaturalidade.Clear();
+                    //    return;
+                    //}
+                    funcionario.Naturalidade = txtNaturalidade.Text;
+
+                    #endregion
+
+                    #region VALIDA - ESTADO CIVIL
+
+                    //if (String.IsNullOrEmpty(cmbEstadoCivil.Text))
+                    //{
+                    //    errorProviderTela.SetError(cmbEstadoCivil, "Informe o estado civil");
+                    //    return;
+                    //}
+                    funcionario.EstadoCivil = cmbEstadoCivil.Text;
+
+                    #endregion
+
+                    #region VALIDA - ENDEREÇO
+
+                    //if (String.IsNullOrEmpty(txtLogradouro.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
+                    //    txtLogradouro.Clear();
+                    //    return;
+                    //}
+                    funcionario.Logradouro = txtLogradouro.Text;
+
+                    #endregion
+
+                    #region VALIDA - COMPLEMENTO
+
+                    //if (String.IsNullOrEmpty(txtComplemento.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
+                    //    txtComplemento.Clear();
+                    //    return;
+                    //}
+                    funcionario.ComplementoEndereco = txtComplemento.Text;
+
+                    #endregion
+
+                    #region VALIDA - NOME EDIFÍCIL
+
+                    //if (String.IsNullOrEmpty(txtNomeEdificil.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
+                    //    txtNomeEdificil.Clear();
+                    //    return;
+                    //}
+                    funcionario.Edificio = txtNomeEdificil.Text;
+
+                    #endregion
+
+                    #region VALIDA - BAIRRO
+
+                    //if (String.IsNullOrEmpty(txtBairro.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtBairro, "Informe o bairro");
+                    //    txtBairro.Clear();
+                    //    return;
+                    //}
+                    funcionario.Bairro = txtBairro.Text;
+
+                    #endregion
+
+                    #region VALIDA - CEP
+
+                    //if (mskCep.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskCep, "Informe o cep");
+                    //    mskCep.Clear();
+                    //    return;
+                    //}
+                    funcionario.Cep = mskCep.Text;
+
+                    #endregion
+
+                    #region VALIDA - UF
+
+                    //if (String.IsNullOrEmpty(cmbUf.Text))
+                    //{
+                    //    errorProviderTela.SetError(cmbUf, "Informe o uf");
+                    //    return;
+                    //}
+                    funcionario.Uf = cmbUf.Text;
+
+                    #endregion
+
+                    #region VALIDA - CIDADE
+
+                    //if (String.IsNullOrEmpty(txtCidade.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtCidade, "Informe a cidade");
+                    //    txtCidade.Clear();
+                    //    return;
+                    //}
+                    funcionario.Cidade = txtCidade.Text;
+
+                    #endregion
+
+                    #region VALIDA - FONE
+
+                    //if (mskFoneResidencia.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
+                    //    mskFoneResidencia.Clear();
+                    //    return;
+                    //}
+                    funcionario.FoneEmergencia = mskFoneResidencia.Text;
+
+                    #endregion
+
+                    #region VALIDA - FONE OPCIONAL
+
+                    //if (mskFoneOpcional.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFoneOpcional, "Informe um fone opcional");
+                    //    mskFoneOpcional.Clear();
+                    //    return;
+                    //}
+                    funcionario.FoneOpcional = mskFoneOpcional.Text;
+
+                    #endregion
+
+                    #region VALIDA - FILIAÇÃO PAI
+
+                    //if (String.IsNullOrEmpty(txtFiliacaoPai.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtFiliacaoPai, "Informe o nome do pai");
+                    //    txtFiliacaoPai.Clear();
+                    //    return;
+                    //}
+                    funcionario.FiliacaoPai = txtFiliacaoPai.Text;
+
+                    #endregion
+
+                    #region VALIDA - FILIAÇÃO MÃE
+
+                    //if (String.IsNullOrEmpty(txtFiliacaoMae.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtFiliacaoMae, "Informe o nome da mãe");
+                    //    txtFiliacaoMae.Clear();
+                    //    return;
+                    //}
+                    funcionario.FiliacaoMae = txtFiliacaoMae.Text;
+
+                    #endregion
+
+                    funcionario.PerfilID = 1;
+                    funcionario.Status = (int)Status.Ativo;
+
+                    funcionario = ucMenuImagemFunc1.retornaFuncionario(funcionario);
+                    Memoria memoria = Memoria.Instance;
+                    if (memoria.Funcionario == null)
+                    {
+                        if (verificaSeJaCadastrado(funcionario) == false)
+                        {
+                            funcionario = ucMenuImagemFunc1.retornaFuncionario(funcionario);
+                            funcionarioControlador.Incluir(funcionario);
+                            funcionarioControlador.Confirmar();
+                            ucMenuImagemFunc1.carregaFuncionario(funcionario);
+
+                            memoria.Funcionario = funcionario;
+
+                            MessageBox.Show(FuncionarioConstantes.FUNCIONARIO_INCLUIDO, "Colégio Conhecer");
+                        }
+                        else
+                        {
+                            funcionarioControlador.Alterar(funcionario);
+                            ucMenuImagemFunc1.carregaFuncionario(funcionario);
+
+                            MessageBox.Show(FuncionarioConstantes.FUNCIONARIO_ALTERADO, "Colégio Conhecer");
+                        }
+
+                    }
                 }
-                funcionario.Nome = txtNome.Text;
 
                 #endregion
 
-                #region VALIDA - SEXO
+                #region ALTERAR FUNCIONARIO
 
-                if (rdbMasc.Checked == false && rdbFem.Checked == false)
+
+                if (verificaButton == 1)
                 {
-                    errorProviderTela.SetError(rdbFem, "Informe o sexo");
-                    return;
+
+                    #region VALIDA - NOME
+
+                    if (String.IsNullOrEmpty(txtNome.Text))
+                    {
+                        errorProviderTela.SetError(txtNome, "Informe o nome");
+                        txtNome.Clear();
+                        return;
+                    }
+                    funcionario.Nome = txtNome.Text;
+
+                    #endregion
+
+                    #region VALIDA - SEXO
+
+                    if (rdbMasc.Checked == false && rdbFem.Checked == false)
+                    {
+                        errorProviderTela.SetError(rdbFem, "Informe o sexo");
+                        return;
+                    }
+                    if (rdbFem.Checked == true)
+                    {
+                        funcionario.Sexo = 0;
+                    }
+                    else
+                    {
+                        funcionario.Sexo = 1;
+                    }
+
+                    #endregion
+
+                    #region VALIDA - NASCIMENTO
+
+                    funcionario.Nascimento = dtpNascimento.Value;
+
+                    #endregion
+
+                    #region VALIDA - IDENTIDADE
+
+                    //if (String.IsNullOrEmpty(txtRg.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtRg, "Informe a identidade");
+                    //    txtRg.Clear();
+                    //    return;
+                    //}
+                    funcionario.Rg = txtRg.Text;
+
+                    #endregion
+
+                    #region VALIDA - CPF
+
+                    //if (mskCpf.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskCpf, "Informe o cpf");
+                    //    mskCpf.Clear();
+                    //    return;
+                    //}
+                    funcionario.Cpf = mskCpf.Text;
+
+                    #endregion
+
+                    #region VALIDA - NACIONALIDADE
+
+                    //if (String.IsNullOrEmpty(cmbNacionalidade.Text))
+                    //{
+                    //    errorProviderTela.SetError(cmbNacionalidade, "Informe a nacionalidade");
+                    //    return;
+                    //}
+                    funcionario.Nacionalidade = cmbNacionalidade.Text;
+
+                    #endregion
+
+                    #region VALIDA - NATURALIDADE
+
+                    //if (String.IsNullOrEmpty(txtNaturalidade.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtNaturalidade, "Informe a naturalidade");
+                    //    txtNaturalidade.Clear();
+                    //    return;
+                    //}
+                    funcionario.Naturalidade = txtNaturalidade.Text;
+
+                    #endregion
+
+                    #region VALIDA - ESTADO CIVIL
+
+                    //if (String.IsNullOrEmpty(cmbEstadoCivil.Text))
+                    //{
+                    //    errorProviderTela.SetError(cmbEstadoCivil, "Informe o estado civil");
+                    //    return;
+                    //}
+                    funcionario.EstadoCivil = cmbEstadoCivil.Text;
+
+                    #endregion
+
+                    #region VALIDA - ENDEREÇO
+
+                    //if (String.IsNullOrEmpty(txtLogradouro.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
+                    //    txtLogradouro.Clear();
+                    //    return;
+                    //}
+                    funcionario.Logradouro = txtLogradouro.Text;
+
+                    #endregion
+
+                    #region VALIDA - COMPLEMENTO
+
+                    //if (String.IsNullOrEmpty(txtComplemento.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
+                    //    txtComplemento.Clear();
+                    //    return;
+                    //}
+                    funcionario.ComplementoEndereco = txtComplemento.Text;
+
+                    #endregion
+
+                    #region VALIDA - NOME EDIFÍCIL
+
+                    //if (String.IsNullOrEmpty(txtNomeEdificil.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
+                    //    txtNomeEdificil.Clear();
+                    //    return;
+                    //}
+                    funcionario.Edificio = txtNomeEdificil.Text;
+
+                    #endregion
+
+                    #region VALIDA - BAIRRO
+
+                    //if (String.IsNullOrEmpty(txtBairro.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtBairro, "Informe o bairro");
+                    //    txtBairro.Clear();
+                    //    return;
+                    //}
+                    funcionario.Bairro = txtBairro.Text;
+
+                    #endregion
+
+                    #region VALIDA - CEP
+
+                    //if (mskCep.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskCep, "Informe o cep");
+                    //    mskCep.Clear();
+                    //    return;
+                    //}
+                    funcionario.Cep = mskCep.Text;
+
+                    #endregion
+
+                    #region VALIDA - UF
+
+                    //if (String.IsNullOrEmpty(cmbUf.Text))
+                    //{
+                    //    errorProviderTela.SetError(cmbUf, "Informe o uf");
+                    //    return;
+                    //}
+                    funcionario.Uf = cmbUf.Text;
+
+                    #endregion
+
+                    #region VALIDA - CIDADE
+
+                    //if (String.IsNullOrEmpty(txtCidade.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtCidade, "Informe a cidade");
+                    //    txtCidade.Clear();
+                    //    return;
+                    //}
+                    funcionario.Cidade = txtCidade.Text;
+
+                    #endregion
+
+                    #region VALIDA - FONE
+
+                    //if (mskFoneResidencia.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
+                    //    mskFoneResidencia.Clear();
+                    //    return;
+                    //}
+                    funcionario.FoneEmergencia = mskFoneResidencia.Text;
+
+                    #endregion
+
+                    #region VALIDA - FONE OPCIONAL
+
+                    //if (mskFoneOpcional.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFoneOpcional, "Informe um fone opcional");
+                    //    mskFoneOpcional.Clear();
+                    //    return;
+                    //}
+                    funcionario.FoneOpcional = mskFoneOpcional.Text;
+
+                    #endregion
+
+                    #region VALIDA - FILIAÇÃO PAI
+
+                    //if (String.IsNullOrEmpty(txtFiliacaoPai.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtFiliacaoPai, "Informe o nome do pai");
+                    //    txtFiliacaoPai.Clear();
+                    //    return;
+                    //}
+                    funcionario.FiliacaoPai = txtFiliacaoPai.Text;
+
+                    #endregion
+
+                    #region VALIDA - FILIAÇÃO MÃE
+
+                    //if (String.IsNullOrEmpty(txtFiliacaoMae.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtFiliacaoMae, "Informe o nome da mãe");
+                    //    txtFiliacaoMae.Clear();
+                    //    return;
+                    //}
+                    funcionario.FiliacaoMae = txtFiliacaoMae.Text;
+
+                    #endregion
+
+                    funcionario.PerfilID = 1;
+                    funcionario.Status = (int)Status.Ativo;
+
+
+                    Memoria memoria = Memoria.Instance;
+                    if (memoria.Funcionario == null)
+                    {                                
+                        funcionarioControlador.Alterar(funcionario);
+                        MessageBox.Show(FuncionarioConstantes.FUNCIONARIO_ALTERADO, "Colégio Conhecer");
+                        ucMenuImagemFunc1.carregaFuncionario(funcionario);
+                    }
                 }
-                if (rdbFem.Checked == true)
-                {
-                    funcionario.Sexo = 0;
-                }
-                else
-                {
-                    funcionario.Sexo = 1;
-                }
 
                 #endregion
 
-                #region VALIDA - NASCIMENTO
-
-                funcionario.Nascimento = dtpNascimento.Value;
-
-                #endregion
-
-                #region VALIDA - IDENTIDADE
-
-                //if (String.IsNullOrEmpty(txtRg.Text))
-                //{
-                //    errorProviderTela.SetError(txtRg, "Informe a identidade");
-                //    txtRg.Clear();
-                //    return;
-                //}
-                funcionario.Rg = txtRg.Text;
-
-                #endregion
-                
-                #region VALIDA - CPF
-
-                //if (mskCpf.MaskCompleted == false)
-                //{
-                //    errorProviderTela.SetError(mskCpf, "Informe o cpf");
-                //    mskCpf.Clear();
-                //    return;
-                //}
-                funcionario.Cpf = mskCpf.Text;
-
-                #endregion
-
-                #region VALIDA - NACIONALIDADE
-
-                //if (String.IsNullOrEmpty(cmbNacionalidade.Text))
-                //{
-                //    errorProviderTela.SetError(cmbNacionalidade, "Informe a nacionalidade");
-                //    return;
-                //}
-                funcionario.Nacionalidade = cmbNacionalidade.Text;
-
-                #endregion
-
-                #region VALIDA - NATURALIDADE
-
-                //if (String.IsNullOrEmpty(txtNaturalidade.Text))
-                //{
-                //    errorProviderTela.SetError(txtNaturalidade, "Informe a naturalidade");
-                //    txtNaturalidade.Clear();
-                //    return;
-                //}
-                funcionario.Naturalidade = txtNaturalidade.Text;
-
-                #endregion
-
-                #region VALIDA - ESTADO CIVIL
-
-                //if (String.IsNullOrEmpty(cmbEstadoCivil.Text))
-                //{
-                //    errorProviderTela.SetError(cmbEstadoCivil, "Informe o estado civil");
-                //    return;
-                //}
-                funcionario.EstadoCivil = cmbEstadoCivil.Text;
-
-                #endregion
-
-                #region VALIDA - ENDEREÇO
-
-                //if (String.IsNullOrEmpty(txtLogradouro.Text))
-                //{
-                //    errorProviderTela.SetError(txtLogradouro, "Informe o endereço");
-                //    txtLogradouro.Clear();
-                //    return;
-                //}
-                funcionario.Logradouro = txtLogradouro.Text;
-
-                #endregion
-
-                #region VALIDA - COMPLEMENTO
-
-                //if (String.IsNullOrEmpty(txtComplemento.Text))
-                //{
-                //    errorProviderTela.SetError(txtComplemento, "Informe o complemento");
-                //    txtComplemento.Clear();
-                //    return;
-                //}
-                funcionario.ComplementoEndereco = txtComplemento.Text;
-
-                #endregion
-
-                #region VALIDA - NOME EDIFÍCIL
-
-                //if (String.IsNullOrEmpty(txtNomeEdificil.Text))
-                //{
-                //    errorProviderTela.SetError(txtNomeEdificil, "Informe o nome edifícil");
-                //    txtNomeEdificil.Clear();
-                //    return;
-                //}
-                funcionario.Edificio = txtNomeEdificil.Text;
-
-                #endregion
-
-                #region VALIDA - BAIRRO
-
-                //if (String.IsNullOrEmpty(txtBairro.Text))
-                //{
-                //    errorProviderTela.SetError(txtBairro, "Informe o bairro");
-                //    txtBairro.Clear();
-                //    return;
-                //}
-                funcionario.Bairro = txtBairro.Text;
-
-                #endregion
-
-                #region VALIDA - CEP
-
-                //if (mskCep.MaskCompleted == false)
-                //{
-                //    errorProviderTela.SetError(mskCep, "Informe o cep");
-                //    mskCep.Clear();
-                //    return;
-                //}
-                funcionario.Cep = mskCep.Text;
-
-                #endregion
-
-                #region VALIDA - UF
-
-                //if (String.IsNullOrEmpty(cmbUf.Text))
-                //{
-                //    errorProviderTela.SetError(cmbUf, "Informe o uf");
-                //    return;
-                //}
-                funcionario.Uf = cmbUf.Text;
-
-                #endregion
-
-                #region VALIDA - CIDADE
-
-                //if (String.IsNullOrEmpty(txtCidade.Text))
-                //{
-                //    errorProviderTela.SetError(txtCidade, "Informe a cidade");
-                //    txtCidade.Clear();
-                //    return;
-                //}
-                funcionario.Cidade = txtCidade.Text;
-
-                #endregion
-
-                #region VALIDA - FONE 
-
-                //if (mskFoneResidencia.MaskCompleted == false)
-                //{
-                //    errorProviderTela.SetError(mskFoneResidencia, "Informe o fone da residência");
-                //    mskFoneResidencia.Clear();
-                //    return;
-                //}
-                funcionario.FoneEmergencia = mskFoneResidencia.Text;
-
-                #endregion
-
-                #region VALIDA - FONE OPCIONAL
-
-                //if (mskFoneOpcional.MaskCompleted == false)
-                //{
-                //    errorProviderTela.SetError(mskFoneOpcional, "Informe um fone opcional");
-                //    mskFoneOpcional.Clear();
-                //    return;
-                //}
-                funcionario.FoneOpcional= mskFoneOpcional.Text;
-
-                #endregion
-
-                #region VALIDA - FILIAÇÃO PAI
-
-                //if (String.IsNullOrEmpty(txtFiliacaoPai.Text))
-                //{
-                //    errorProviderTela.SetError(txtFiliacaoPai, "Informe o nome do pai");
-                //    txtFiliacaoPai.Clear();
-                //    return;
-                //}
-                funcionario.FiliacaoPai = txtFiliacaoPai.Text;
-
-                #endregion
-
-                #region VALIDA - FILIAÇÃO MÃE
-
-                //if (String.IsNullOrEmpty(txtFiliacaoMae.Text))
-                //{
-                //    errorProviderTela.SetError(txtFiliacaoMae, "Informe o nome da mãe");
-                //    txtFiliacaoMae.Clear();
-                //    return;
-                //}
-                funcionario.FiliacaoMae = txtFiliacaoMae.Text;
-
-                #endregion
-
-                ucMenuImagemFunc1.retornaFuncionario(funcionario);
-                funcionario.PerfilID = 1;
-
-                funcionarioControlador.Incluir(funcionario);
-                funcionarioControlador.Confirmar();
-
-                //Habilitar o User Control lateral
-                ucMenuLateralFunc1.Enabled = true;
-
-                //Habilitar o Button Imprimir
-                btnImprimir.Enabled = false;
+           
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            //Habilitar o User Control lateral
+            ucMenuLateralFunc1.Enabled = true;
+
+            //Habilitar o Button Imprimir
+            btnImprimir.Enabled = false;
+
+            //Desabilitar todos os campos da tela
+            Enabled_False();
+
+            //Zerar o verificador de botao "Alterar" e "Cadastrar"
+            verificaButton = 0;
+
         }
         #endregion
 
@@ -421,13 +710,16 @@ namespace GuiWindowsForms
             telaFuncionario telaafuncdados = telaFuncionario.getInstancia();
             telaafuncdados.Show();
         }
-        #endregion
+
 
         #region LOAD
         private void ucMenuLateralFunc1_Load(object sender, EventArgs e)
         {
             ucMenuLateralFunc1.verificaTela(teladfunc);
         }
+        #endregion
+
+
         #endregion
 
         #region STRING PARA ALIMENTAR COMBOBOX
@@ -613,12 +905,14 @@ namespace GuiWindowsForms
             txtFiliacaoMae.Text = funcionario.FiliacaoMae;
             txtFiliacaoPai.Text = funcionario.FiliacaoPai;
             txtLogradouro.Text = funcionario.Logradouro;
+            txtNaturalidade.Text = funcionario.Naturalidade;
             txtNome.Text = funcionario.Nome;
             txtNomeEdificil.Text = funcionario.Edificio;
             txtRg.Text = funcionario.Rg;
             mskCep.Text = funcionario.Cep;
             mskCpf.Text = funcionario.Cpf;
             mskFoneResidencia.Text = funcionario.FoneEmergencia;
+            mskFoneOpcional.Text = funcionario.FoneOpcional;
             cmbEstadoCivil.Text = funcionario.EstadoCivil;
             cmbNacionalidade.Text = funcionario.Nacionalidade;
             cmbUf.Text = funcionario.Uf;
@@ -648,6 +942,7 @@ namespace GuiWindowsForms
 
         private void telaFuncionario_Activated_1(object sender, EventArgs e)
         {
+           // ucMenuImagemFunc1.
             Memoria memoria = Memoria.Instance;
 
             cmbUf.DataSource = estados;
@@ -754,8 +1049,62 @@ namespace GuiWindowsForms
 
         #endregion
 
-   
+        #region SELECIONA CIDADE
+        private void cmbUf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbUf.Text == "") { txtCidade.Text = ""; }
+            if (cmbUf.Text == "AC") { txtCidade.Text = "RIO BRANCO"; }
+            if (cmbUf.Text == "AL") { txtCidade.Text = "MACEIO"; }
+            if (cmbUf.Text == "AM") { txtCidade.Text = "MANAUS"; }
+            if (cmbUf.Text == "AP") { txtCidade.Text = "MACAPÁ"; }
+            if (cmbUf.Text == "BA") { txtCidade.Text = "SALVADOR"; }
+            if (cmbUf.Text == "CE") { txtCidade.Text = "FORTALEZA"; }
+            if (cmbUf.Text == "DF") { txtCidade.Text = "BRASÍLIA"; }
+            if (cmbUf.Text == "ES") { txtCidade.Text = "VITÓRIA"; }
+            if (cmbUf.Text == "GO") { txtCidade.Text = "GOIÂNIA"; }
+            if (cmbUf.Text == "MA") { txtCidade.Text = "SÃO LUIZ"; }
+            if (cmbUf.Text == "MG") { txtCidade.Text = "BELO HORIZONTE"; }
+            if (cmbUf.Text == "MS") { txtCidade.Text = "CAMPO GRANDE"; }
+            if (cmbUf.Text == "MT") { txtCidade.Text = "CUIABÁ"; }
+            if (cmbUf.Text == "PA") { txtCidade.Text = "BELÉM"; }
+            if (cmbUf.Text == "PB") { txtCidade.Text = "JOÃO PESSOA"; }
+            if (cmbUf.Text == "PE") { txtCidade.Text = "RECIFE"; }
+            if (cmbUf.Text == "PI") { txtCidade.Text = "TEREZINA"; }
+            if (cmbUf.Text == "PR") { txtCidade.Text = "PARANÁ"; }
+            if (cmbUf.Text == "RJ") { txtCidade.Text = "RIO DE JANEIRO"; }
+            if (cmbUf.Text == "RN") { txtCidade.Text = "NATAL"; }
+            if (cmbUf.Text == "RO") { txtCidade.Text = "PORTO VELHO"; }
+            if (cmbUf.Text == "RR") { txtCidade.Text = "BOA VISTA"; }
+            if (cmbUf.Text == "RS") { txtCidade.Text = "PORTO ALEFRE"; }
+            if (cmbUf.Text == "SC") { txtCidade.Text = "FLORIANÓPOLIS"; }
+            if (cmbUf.Text == "SE") { txtCidade.Text = "ARACAJÚ"; }
+            if (cmbUf.Text == "SP") { txtCidade.Text = "SÃO PAULO"; }
+            if (cmbUf.Text == "TO") { txtCidade.Text = "PALMAS"; }
+        }
+        #endregion
 
-        
+        #region METODO VERIFICA_SE_JA_CADASTRADO
+        public Boolean verificaSeJaCadastrado(Funcionario funcionarioAux)
+        {
+            bool testa = false;
+
+            List<Funcionario> listaFuncionario = new List<Funcionario>();
+            
+            listaFuncionario = funcionarioControlador.Consultar();
+
+            foreach (Funcionario f in listaFuncionario)
+            {
+
+                if ((f.Nome == funcionarioAux.Nome) && (f.Nascimento == funcionarioAux.Nascimento)) 
+                {
+                    testa = true;
+                }
+
+            }
+            return testa;
+        }
+        #endregion
+
+
     }
 }

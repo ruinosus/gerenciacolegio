@@ -218,6 +218,7 @@ namespace GuiWindowsForms
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             telaRelatorioBoletoMensalidade telaBoleto = new telaRelatorioBoletoMensalidade();
+            //telaRelatorioBoletoMensalidadeVinculo telaBoleto = new telaRelatorioBoletoMensalidadeVinculo();
             telaBoleto.ShowDialog();
         }
         #endregion
