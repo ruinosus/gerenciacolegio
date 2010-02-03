@@ -703,6 +703,8 @@ namespace GuiWindowsForms
                                 limparTela();
 
                                 MessageBox.Show(ResponsavelConstantes.RESPONSAVEL_INCLUIDO, "Colégio Conhecer");
+                                this.Hide();
+                                telaAlunoResponsavelBusca.getInstancia().Show();
                             }
                             else
                             {
@@ -717,8 +719,8 @@ namespace GuiWindowsForms
                             memoria.Responsavel.ID = id;
                             responsavelControlador.Alterar(responsavel);
                             responsavelControlador.Confirmar();
-                        
-                            MessageBox.Show("Responsável inserido com sucesso.", "Colégio Conhecer");
+
+                            MessageBox.Show("Responsável inserido com sucesso.", "Colégio Conhecer"); telaAlunoResponsavelBusca.getInstancia().Show(); 
                             break;
 
                         }
