@@ -266,13 +266,13 @@ namespace GuiWindowsForms
         {
             //Operações responsáveis por carregar o Combo de Série
             cmbSerie.DataSource = null;
-            cmbSerie.DataSource = carregarComboSerie();
+            cmbSerie.DataSource = CarregarComboSerie();
             cmbSerie.DisplayMember = "Nome";
 
             //Operações responsáveis por alimentar o grid principal da tela
             dtgResultado.AutoGenerateColumns = false;
             dtgResultado.DataSource = null;
-            dtgResultado.DataSource = carregarDataGridFinanceiroMensalidade();
+            dtgResultado.DataSource = CarregarDataGridGeral();
         }
 
         #region Métodos Auxiliares
@@ -280,7 +280,7 @@ namespace GuiWindowsForms
         /// Método responsável por carregar o combo de série 
         /// </summary>
         /// <returns>Lista de séries ativas</returns>
-        private List<Serie> carregarComboSerie()
+        private List<Serie> CarregarComboSerie()
         {
             Serie serieObj = new Serie();
             serieObj.Status = (int)Status.Ativo;
@@ -294,14 +294,96 @@ namespace GuiWindowsForms
         }
 
         /// <summary>
-        /// Método para carregar o DataGrid de Boleto Mensalidade
+        /// Método responsável por filtrar os resultados no grid de acordo com a escolha do usuário
         /// </summary>
-        /// <returns>Lista da classe auxiliar para alimentar o financeiro</returns>
-        private List<ClasseAuxiliarFinanceiro> carregarDataGridFinanceiroMensalidade()
+        /// <param name="dataInicio">dataInicioPeriodo</param>
+        /// <param name="dataFim">dataFimPeriodo</param>
+        /// <param name="tipoPagamento">tipoPagamento(Atividade/Mensalidade)</param>
+        /// <param name="situacaoAluno">situacaoAluno(Regular/Pendente)</param>
+        /// <param name="contemDesconto">contemDesconto(Sim/Nao)</param>
+        /// <returns></returns>
+        //private List<ClasseAuxiliarFinanceiro> FiltroGeral(DateTime dataInicio, DateTime dataFim, bool tipoPagamento, bool situacaoAluno, bool contemDesconto)
+        //{
+        //    IEnumerable<ClasseAuxiliarFinanceiro> query = null;
+        //    string condicoesWhere = null;
+
+        //    try
+        //    {
+        //        if (ValidaDatas(dataInicio, dataFim))
+        //        {
+        //            condicoesWhere = "DataVencimento > dataInicio AND DataVencimento < dataFim"
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Colégio Conhecer - Financeiro");
+        //    }
+        //}
+
+        /// <summary>
+        /// Método para validar a data dentro do período permitido
+        /// </summary>
+        /// <param name="dataInicio">dataInicioPeriodo</param>
+        /// <param name="dataFim">dataFimPeriodo</param>
+        /// <returns>Retorna Verdadeiro se aceito e Falso se não aceito</returns>
+        private bool ValidaDatas(DateTime dataInicio, DateTime dataFim)
+        {
+            int? validaData = null;
+            bool retornoMetodo = false;
+
+            if (dataInicio != null && dataFim == null && validaData == null)
+            {
+                dataFim = DateTime.Now;
+                validaData = DateTime.Compare(dataInicio, dataFim);
+            }
+            else if (dataInicio != null && dataFim != null && validaData == null)
+            {
+                validaData = DateTime.Compare(dataInicio, dataFim);
+            }
+
+            if (validaData > 0)
+            {
+                throw new Exception("A data inicial deve ser inferior a data final");
+            }
+            else
+            {
+                retornoMetodo = true;
+            }
+            return retornoMetodo;
+        }
+
+        /// <summary>
+        /// Método para carregar o dataGrid com todos os resultados
+        /// </summary>
+        /// <returns>Lista da classe auxiliar para alimentar o DataGrid Financeiro</returns>
+        private List<ClasseAuxiliarFinanceiro> CarregarDataGridGeral()
         {
             List<ClasseAuxiliarFinanceiro> classeAuxiliarFinanceiroList = new List<ClasseAuxiliarFinanceiro>();
 
-            foreach (BoletoMensalidade b in retornaListaAtivosMensalidade())
+            classeAuxiliarFinanceiroList.AddRange(CarregarDataGridFinanceiroAtividade());
+            classeAuxiliarFinanceiroList.AddRange(CarregarDataGridFinanceiroMensalidade());
+
+            IEnumerable<ClasseAuxiliarFinanceiro> query = from objFinanceiro in classeAuxiliarFinanceiroList orderby objFinanceiro.aluno, objFinanceiro.dataVencimento select objFinanceiro;
+
+            List<ClasseAuxiliarFinanceiro> classeAuxiliarFinanceiroList2 = new List<ClasseAuxiliarFinanceiro>();
+
+            foreach (ClasseAuxiliarFinanceiro objFinanceiro in query)
+            {
+                classeAuxiliarFinanceiroList2.Add(objFinanceiro);
+            }
+
+            return classeAuxiliarFinanceiroList2;
+        }
+
+        /// <summary>
+        /// Método para carregar o DataGrid de Boleto Mensalidade
+        /// </summary>
+        /// <returns>Lista da classe auxiliar para alimentar o financeiro</returns>
+        private List<ClasseAuxiliarFinanceiro> CarregarDataGridFinanceiroMensalidade()
+        {
+            List<ClasseAuxiliarFinanceiro> classeAuxiliarFinanceiroList = new List<ClasseAuxiliarFinanceiro>();
+
+            foreach (BoletoMensalidade b in RetornaListaAtivosMensalidade())
             {
                 ClasseAuxiliarFinanceiro classeAuxiliarFinanceiro = new ClasseAuxiliarFinanceiro();
 
@@ -331,11 +413,11 @@ namespace GuiWindowsForms
         /// Método para carregar o DataGrid de Boleto Atividade
         /// </summary>
         /// <returns>Lista da classe auxiliar para alimentar o financeiro</returns>
-        private List<ClasseAuxiliarFinanceiro> carregarDataGridFinanceiroAtividade()
+        private List<ClasseAuxiliarFinanceiro> CarregarDataGridFinanceiroAtividade()
         {
             List<ClasseAuxiliarFinanceiro> classeAuxiliarFinanceiroList = new List<ClasseAuxiliarFinanceiro>();
 
-            foreach (BoletoAtividade b in retornaListaAtivosAtividade())
+            foreach (BoletoAtividade b in RetornaListaAtivosAtividade())
             {
                 ClasseAuxiliarFinanceiro classeAuxiliarFinanceiro = new ClasseAuxiliarFinanceiro();
 
@@ -365,7 +447,7 @@ namespace GuiWindowsForms
         /// Método responsável por retornar uma lista dos objetos ativos de BoletoAtividade
         /// </summary>
         /// <returns>Lista de Boleto Atividade ativos</returns>
-        private List<BoletoAtividade> retornaListaAtivosAtividade()
+        private List<BoletoAtividade> RetornaListaAtivosAtividade()
         {
             IBoletoAtividadeProcesso boletoAtividadeControlador = BoletoAtividadeProcesso.Instance;
 
@@ -388,7 +470,7 @@ namespace GuiWindowsForms
         /// Método responsável por retornar uma lista dos objetos ativos de BoletoMensalidade
         /// </summary>
         /// <returns>Lista de Boleto Mensalidade ativos</returns>
-        private List<BoletoMensalidade> retornaListaAtivosMensalidade()
+        private List<BoletoMensalidade> RetornaListaAtivosMensalidade()
         {
             IBoletoMensalidadeProcesso boletoMensalidadeControlador = BoletoMensalidadeProcesso.Instance;
 
