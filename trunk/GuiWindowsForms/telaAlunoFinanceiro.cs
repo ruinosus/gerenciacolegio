@@ -7,6 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Negocios.ModuloBasico.VOs;
+using Microsoft.Office;
+using Microsoft.Office.Interop.Word;
+using Word = Microsoft.Office.Interop.Word;
+using Negocios.ModuloBoletoMensalidade.Processos;
+using Negocios.ModuloAluno.Processos;
+using Negocios.ModuloMatricula.Processos;
+using Negocios.ModuloMatricula.Entidades;
+
 
 namespace GuiWindowsForms
 {
@@ -17,6 +25,8 @@ namespace GuiWindowsForms
          * Atributo para o Singleton da tela
          * Atributo para controle de exibição da tela
          * */
+
+        int iTotalFields = 0;
 
         Memoria memoria = Memoria.Instance;
 
@@ -217,11 +227,139 @@ namespace GuiWindowsForms
         #region BUTTON IMPRIMIR
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            telaRelatorioBoletoMensalidade telaBoleto = new telaRelatorioBoletoMensalidade();
+            //telaRelatorioBoletoMensalidade telaBoleto = new telaRelatorioBoletoMensalidade();
             //telaRelatorioBoletoMensalidadeVinculo telaBoleto = new telaRelatorioBoletoMensalidadeVinculo();
-            telaBoleto.ShowDialog();
+            //telaBoleto.ShowDialog();
+
+            //PreencheAlunoExibicao();
+            GerarRelatorioBoletoMensalidade();
         }
         #endregion
+
+        //ClasseAuxiliarExibicaoMatricula alunoAuxiliarExibicao = new ClasseAuxiliarExibicaoMatricula();
+
+        //private void PreencheAlunoExibicao()
+        //{
+        //    alunoAuxiliarExibicao.numeroMatExibicao = GerarMatriculaAluno().NumMatricula;
+        //    alunoAuxiliarExibicao.mensalidade = GerarMatriculaAluno().Valor.ToString();
+        //    alunoAuxiliarExibicao.parcela = GerarBoletoMensalidadeAluno().Parcela;
+        //    alunoAuxiliarExibicao.vencimento = GerarBoletoMensalidadeAluno().DataVencimento.ToString("dd/MM/yyyy");       
+        //}
+
+        private Matricula GerarMatriculaAluno()
+        {
+            Matricula matricula = new Matricula();
+
+            matricula.Status = 1;
+            matricula.AlunoID = memoria.Aluno.ID;
+
+            IMatriculaProcesso matriculaControlador = MatriculaProcesso.Instance;
+
+            List<Matricula> matriculaAuxiliarList = new List<Matricula>();
+
+            matricula = matriculaControlador.Consultar(matricula, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+
+            return matricula;
+        }
+
+        private BoletoMensalidade GerarBoletoMensalidadeAluno()
+        {
+            BoletoMensalidade boletoMensalidade = new BoletoMensalidade();
+
+            boletoMensalidade.Status = 1;
+            boletoMensalidade.MatriculaID = GerarMatriculaAluno().ID;
+
+            IBoletoMensalidadeProcesso boletoMensalidadeControlador = BoletoMensalidadeProcesso.Instance;
+
+            List<BoletoMensalidade> boletoMensalidadeAuxiliarList = new List<BoletoMensalidade>();
+
+            boletoMensalidade = boletoMensalidadeControlador.Consultar(boletoMensalidade, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+
+            //IEnumerable<BoletoMensalidade> query = from objBoletoMensalidade in boletoMensalidadeAuxiliarList
+            //                                       where objBoletoMensalidade.MatriculaID == GerarMatriculaAluno().ID
+            //                                       select objBoletoMensalidade;
+
+            //List<BoletoMensalidade> boletoMensalidadeAuxiliarList2 = new List<BoletoMensalidade>();
+
+            //foreach (BoletoMensalidade boleto in query)
+            //{
+            //    boletoMensalidadeAuxiliarList2.Add(boleto);
+            //}
+            return boletoMensalidade;
+        }
+
+        private void GerarRelatorioBoletoMensalidade()
+        {       
+            Object oMissing = System.Reflection.Missing.Value;
+
+            Object oTrue = true;
+            Object oFalse = false;
+
+            Word.Application oWord = new Word.Application();
+            Word.Document oWordDoc = new Word.Document();
+
+
+            oWord.Visible = true;
+
+            Object oTemplatePath = "C:\\ModeloTeste2.dotx";
+
+            oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oMissing);
+
+            foreach (Word.Field myMergeField in oWordDoc.Fields)
+            {
+
+                iTotalFields++;
+                Word.Range rngFieldCode = myMergeField.Code;
+                String fieldText = rngFieldCode.Text;
+
+                if (fieldText.StartsWith(" MERGEFIELD"))
+                {
+
+                    Int32 endMerge = fieldText.IndexOf("\\");
+                    Int32 fieldNameLength = fieldText.Length - endMerge;
+                    String fieldName = fieldText.Substring(11, endMerge - 11);
+
+                    fieldName = fieldName.Trim();
+
+                    if (fieldName == "_nomeUm")
+                    {
+                        myMergeField.Select();
+                        oWord.Selection.TypeText(memoria.Aluno.Nome);
+                    }
+
+                    if (fieldName == "_matriculaUm")
+                    {
+                        myMergeField.Select();
+                        oWord.Selection.TypeText(GerarMatriculaAluno().NumMatricula);
+                    }
+
+                    if (fieldName == "_parcela")
+                    {
+                        myMergeField.Select();
+                        oWord.Selection.TypeText(GerarBoletoMensalidadeAluno().Parcela);
+                    }
+
+                    if (fieldName == "_anoUm")
+                    {
+                        myMergeField.Select();
+                        oWord.Selection.TypeText(memoria.Aluno.SerieAtual);
+                    }
+
+                    if (fieldName == "_vencimento")
+                    {
+                        myMergeField.Select();
+                        oWord.Selection.TypeText(GerarBoletoMensalidadeAluno().DataVencimento.ToString("dd/MM/yyyy"));
+                    }
+
+                    if (fieldName == "_mensalidade")
+                    {
+                        myMergeField.Select();
+                        oWord.Selection.TypeText(GerarMatriculaAluno().Valor.ToString());
+                    }
+                }
+            }
+        }
+
 
         #region USER CONTROLS - Controle Imagem - Botões de Navegação
         private void telaAlunoFinanceiro_Load(object sender, EventArgs e)

@@ -4,14 +4,18 @@
   <description asmv2:publisher="Microsoft" asmv2:product="GuiWindowsForms" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="GuiWindowsForms.exe.manifest" size="7770">
+    <dependentAssembly dependencyType="install" codebase="GuiWindowsForms.exe.manifest" size="8830">
       <assemblyIdentity name="GuiWindowsForms.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<<<<<<< .mine
+        <dsig:DigestValue>+aVbHLsTvkE2qGemJC24oBPWjdk=</dsig:DigestValue>
+=======
         <dsig:DigestValue>a81mPNC79VEI6exUOquXDytzV34=</dsig:DigestValue>
+>>>>>>> .r267
       </hash>
     </dependentAssembly>
   </dependency>
