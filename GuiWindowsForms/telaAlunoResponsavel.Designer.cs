@@ -543,7 +543,7 @@
             this.ucAluno1.BackColor = System.Drawing.Color.Transparent;
             this.ucAluno1.Location = new System.Drawing.Point(39, 637);
             this.ucAluno1.Name = "ucAluno1";
-            this.ucAluno1.Size = new System.Drawing.Size(404, 43);
+            this.ucAluno1.Size = new System.Drawing.Size(820, 43);
             this.ucAluno1.TabIndex = 1;
             this.ucAluno1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucAluno1_EventoCadastrar);
             this.ucAluno1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
