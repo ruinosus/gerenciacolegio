@@ -102,7 +102,7 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (string.IsNullOrEmpty(boletoMensalidade.Descricao))
+                        if (!string.IsNullOrEmpty(boletoMensalidade.Descricao))
                         {
 
                             resultado = ((from bm in resultado
@@ -200,7 +200,7 @@ namespace Negocios.ModuloBoletoMensalidade.Repositorios
                             resultado = resultado.Distinct().ToList();
                         }
 
-                        if (string.IsNullOrEmpty(boletoMensalidade.Descricao))
+                        if (!string.IsNullOrEmpty(boletoMensalidade.Descricao))
                         {
 
                             resultado.AddRange((from bm in Consultar()
