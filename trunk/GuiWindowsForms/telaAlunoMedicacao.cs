@@ -117,84 +117,10 @@ namespace GuiWindowsForms
 
         #region USER CONTROLS - Controle Inferior - Botões de Navegação
 
-        private void ucAluno1_EventoVoltar()
+        #region EVENTO VOLTAR
+        private void ucMenuInferior1_EventoDeletar()
         {
-            this.Hide();
 
-            if (Program.ultimaTela == 1)
-            {
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-            else
-            {
-                Program.ultimaTela = 6;
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-        }
-
-        #endregion
-
-        #region USER CONTROLS - Controle Lateral - Botões de Navegação
-
-        private void uMenuLateral1_EventoAbrirTelaResponsavel()
-        {
-            //this.Hide();
-            //Program.ultimaTela = 7;
-            //telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
-            //telaalunoresponsavel.Show();
-
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
-            tela.Show();
-        }
-
-        private void uMenuLateral1_EventoAbrirTelaMedica()
-        {
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAlunoMedicacao telaalunomedicacao = telaAlunoMedicacao.getInstancia();
-            telaalunomedicacao.Show();
-        }
-
-        private void uMenuLateral1_EventoAbrirTelaMatricula()
-        {
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAlunoMatricula telaalunomatricula = telaAlunoMatricula.getInstancia();
-            telaalunomatricula.Show();
-        }
-
-        private void uMenuLateral1_EventoAbrirTelaFinanceiro()
-        {
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAlunoFinanceiro telaalunofinanceiro = telaAlunoFinanceiro.getInstancia();
-            telaalunofinanceiro.Show();
-        }
-
-        private void uMenuLateral1_EventoAbrirTelaDados()
-        {
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAluno telaaluno = telaAluno.getInstancia();
-            telaaluno.Show();
-        }
-
-        private void uMenuLateral1_EventoAbrirTelaAcademico()
-        {
-            this.Hide();
-            Program.ultimaTela = 1;
-            telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
-            telaalunoacademico.Show();
-        }
-
-        #endregion
-
-        #region USER CONTROLS - Menu Lateral
-        private void uMenuLateral1_Load(object sender, EventArgs e)
-        {
-            uMenuLateral1.verificaTela(telaalunomedicacao);
         }
         #endregion
 
@@ -246,7 +172,7 @@ namespace GuiWindowsForms
 
                 #endregion
 
-                #region VALIDA - FONE 
+                #region VALIDA - FONE
 
                 //if (mskFone.MaskCompleted == false)
                 //{
@@ -323,13 +249,105 @@ namespace GuiWindowsForms
                 alunoControlador.Confirmar();
 
                 MessageBox.Show(AlunoConstantes.ALUNO_MEDICACAO_ALTERADA, "Colégio Conhecer");
-                
+
             }
             catch (Exception ex)
             {
-               
+
             }
 
+        }
+        #endregion
+
+        #region EVENTO ALTERAR
+        private void ucMenuInferior1_EventoAlterar()
+        {
+            Enabled_True();
+            
+
+        }
+        #endregion
+
+        #region EVENTO VOLTAR
+        private void ucAluno1_EventoVoltar()
+        {
+            this.Hide();
+
+            if (Program.ultimaTela == 1)
+            {
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+            else
+            {
+                Program.ultimaTela = 6;
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region USER CONTROLS - Controle Lateral - Botões de Navegação
+
+        private void uMenuLateral1_EventoAbrirTelaResponsavel()
+        {
+            //this.Hide();
+            //Program.ultimaTela = 7;
+            //telaAlunoResponsavel telaalunoresponsavel = telaAlunoResponsavel.getInstancia();
+            //telaalunoresponsavel.Show();
+
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
+            tela.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaMedica()
+        {
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoMedicacao telaalunomedicacao = telaAlunoMedicacao.getInstancia();
+            telaalunomedicacao.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaMatricula()
+        {
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoMatricula telaalunomatricula = telaAlunoMatricula.getInstancia();
+            telaalunomatricula.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaFinanceiro()
+        {
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoFinanceiro telaalunofinanceiro = telaAlunoFinanceiro.getInstancia();
+            telaalunofinanceiro.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaDados()
+        {
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAluno telaaluno = telaAluno.getInstancia();
+            telaaluno.Show();
+        }
+
+        private void uMenuLateral1_EventoAbrirTelaAcademico()
+        {
+            this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoAcademico telaalunoacademico = telaAlunoAcademico.getInstancia();
+            telaalunoacademico.Show();
+        }
+
+        #endregion
+
+        #region USER CONTROLS - Menu Lateral
+        private void uMenuLateral1_Load(object sender, EventArgs e)
+        {
+            uMenuLateral1.verificaTela(telaalunomedicacao);
         }
         #endregion
 
@@ -452,9 +470,12 @@ namespace GuiWindowsForms
             telalogin.Show();
         }
 
+        #region ACTIVATED
         private void telaAlunoMedicacao_Activated(object sender, EventArgs e)
         {
-
+            Enabled_False();
+            ucMenuInferior1.exibirBotaoAlterar();
+            ucMenuInferior1.exibirBotaoDeletar();
             uMenuLateral1.verificaTela(telaalunomedicacao);
             cmbGrupoSanguineo.DataSource = gruposanguineo;
             uMenuImagem1.ocultarBotaoAdicionarImagem();
@@ -469,8 +490,53 @@ namespace GuiWindowsForms
                 limparTela();
             }
         }
+        #endregion
 
 
+
+        #region METODOS ENABLED
+
+        /// <summary>
+        ///  Método para Ativar a Alteração
+        ///  de todos os campos de Medicacao
+        /// </summary>
+        private void Enabled_True()
+        {
+            txtAlergico.Enabled = true;
+            cmbGrupoSanguineo.Enabled = true;
+            rdbPositivo.Enabled = true;
+            rdbNegativo.Enabled = true;
+            txtNomeMedico.Enabled = true;
+            mskFone.Enabled = true;
+            txtHospital.Enabled = true;
+            txtPlanoSaude.Enabled = true;
+            txtDescricaoMedica.Enabled = true;
+            txtSituacaoEspecial.Enabled = true;
+            txtContato.Enabled = true;
+        }
+
+        /// <summary>
+        ///  Método para Desativar a Alteração
+        ///  de todos os campos de Medicacao
+        /// </summary>
+        private void Enabled_False()
+        {
+            txtAlergico.Enabled = false;
+            cmbGrupoSanguineo.Enabled = false;
+            rdbPositivo.Enabled = false;
+            rdbNegativo.Enabled = false;
+            txtNomeMedico.Enabled = false;
+            mskFone.Enabled = false;
+            txtHospital.Enabled = false;
+            txtPlanoSaude.Enabled = false;
+            txtDescricaoMedica.Enabled = false;
+            txtSituacaoEspecial.Enabled = false;
+            txtContato.Enabled = false;
+        }
+
+        #endregion
+
+    
 
     }
 }

@@ -53,11 +53,11 @@
             this.lblGrupoSanguineo = new System.Windows.Forms.Label();
             this.lblAlergico = new System.Windows.Forms.Label();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuLateral1 = new GuiWindowsForms.User_Control.uMenuLateral();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.gpbContato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -302,6 +302,24 @@
             // 
             this.errorProviderTela.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
+            this.pictureBox1.TabIndex = 138;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ucDesconectarLogin1
+            // 
+            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
+            this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
+            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
+            this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
+            this.ucDesconectarLogin1.TabIndex = 139;
+            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
+            // 
             // ucMenuInferior1
             // 
             this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
@@ -311,6 +329,9 @@
             this.ucMenuInferior1.TabIndex = 1;
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
+            this.ucMenuInferior1.EventoIncluir += new GuiWindowsForms.ucMenuInferior.delegateIncluir(this.ucMenuInferior1_EventoIncluir);
+            this.ucMenuInferior1.EventoAlterar += new GuiWindowsForms.ucMenuInferior.delegateAlterar(this.ucMenuInferior1_EventoAlterar);
+            this.ucMenuInferior1.EventoDeletar += new GuiWindowsForms.ucMenuInferior.delegateDeletar(this.ucMenuInferior1_EventoDeletar);
             // 
             // uMenuLateral1
             // 
@@ -334,24 +355,6 @@
             this.uMenuImagem1.Name = "uMenuImagem1";
             this.uMenuImagem1.Size = new System.Drawing.Size(560, 201);
             this.uMenuImagem1.TabIndex = 124;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GuiWindowsForms.Properties.Resources.simbolo_colegio;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 112);
-            this.pictureBox1.TabIndex = 138;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ucDesconectarLogin1
-            // 
-            this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
-            this.ucDesconectarLogin1.Location = new System.Drawing.Point(738, 0);
-            this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
-            this.ucDesconectarLogin1.Size = new System.Drawing.Size(253, 39);
-            this.ucDesconectarLogin1.TabIndex = 139;
-            this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
             // telaAlunoMedicacao
             // 
