@@ -32,6 +32,8 @@ namespace GuiWindowsForms
 
         private static telaAlunoFinanceiro telaAlunofinanceiro;
 
+        ClasseAuxiliarExibicaoMatricula alunoAuxiliarExibicao = new ClasseAuxiliarExibicaoMatricula();
+
         private static bool IsShown = false;
 
         /// <summary>
@@ -232,19 +234,22 @@ namespace GuiWindowsForms
             //telaBoleto.ShowDialog();
 
             //PreencheAlunoExibicao();
-            GerarRelatorioBoletoMensalidade();
+            List<BoletoMensalidade> listaOperacao = GerarBoletoMensalidadeAluno();
+            GerarRelatorioBoletoMensalidadeWord(listaOperacao);
         }
         #endregion
 
-        //ClasseAuxiliarExibicaoMatricula alunoAuxiliarExibicao = new ClasseAuxiliarExibicaoMatricula();
+        private ClasseAuxiliarExibicaoMatricula PreencheAlunoExibicao(int posicaoLista)
+        {
+            alunoAuxiliarExibicao.nomeMatExibicao = memoria.Aluno.Nome;
+            alunoAuxiliarExibicao.ano = memoria.Aluno.SerieAtual;
+            alunoAuxiliarExibicao.numeroMatExibicao = GerarMatriculaAluno().NumMatricula;
+            alunoAuxiliarExibicao.mensalidade = GerarMatriculaAluno().Valor.ToString();
+            alunoAuxiliarExibicao.parcela = GerarBoletoMensalidadeAluno()[posicaoLista].Parcela;
+            alunoAuxiliarExibicao.vencimento = GerarBoletoMensalidadeAluno()[posicaoLista].DataVencimento.ToString("dd/MM/yyyy");
 
-        //private void PreencheAlunoExibicao()
-        //{
-        //    alunoAuxiliarExibicao.numeroMatExibicao = GerarMatriculaAluno().NumMatricula;
-        //    alunoAuxiliarExibicao.mensalidade = GerarMatriculaAluno().Valor.ToString();
-        //    alunoAuxiliarExibicao.parcela = GerarBoletoMensalidadeAluno().Parcela;
-        //    alunoAuxiliarExibicao.vencimento = GerarBoletoMensalidadeAluno().DataVencimento.ToString("dd/MM/yyyy");       
-        //}
+            return alunoAuxiliarExibicao;
+        }
 
         private Matricula GerarMatriculaAluno()
         {
@@ -262,7 +267,7 @@ namespace GuiWindowsForms
             return matricula;
         }
 
-        private BoletoMensalidade GerarBoletoMensalidadeAluno()
+        private List<BoletoMensalidade> GerarBoletoMensalidadeAluno()
         {
             BoletoMensalidade boletoMensalidade = new BoletoMensalidade();
 
@@ -273,22 +278,23 @@ namespace GuiWindowsForms
 
             List<BoletoMensalidade> boletoMensalidadeAuxiliarList = new List<BoletoMensalidade>();
 
-            boletoMensalidade = boletoMensalidadeControlador.Consultar(boletoMensalidade, Negocios.ModuloBasico.Enums.TipoPesquisa.E)[0];
+            boletoMensalidadeAuxiliarList = boletoMensalidadeControlador.Consultar(boletoMensalidade, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
 
-            //IEnumerable<BoletoMensalidade> query = from objBoletoMensalidade in boletoMensalidadeAuxiliarList
-            //                                       where objBoletoMensalidade.MatriculaID == GerarMatriculaAluno().ID
-            //                                       select objBoletoMensalidade;
-
-            //List<BoletoMensalidade> boletoMensalidadeAuxiliarList2 = new List<BoletoMensalidade>();
-
-            //foreach (BoletoMensalidade boleto in query)
-            //{
-            //    boletoMensalidadeAuxiliarList2.Add(boleto);
-            //}
-            return boletoMensalidade;
+            return boletoMensalidadeAuxiliarList;
         }
 
-        private void GerarRelatorioBoletoMensalidade()
+        private void GerarRelatorioBoletoMensalidadeWord(List<BoletoMensalidade> listaBoletoMensalidadeAuxiliar)
+        {
+            int iteraPosicao = 0;
+            foreach (BoletoMensalidade boleto in listaBoletoMensalidadeAuxiliar)
+            {
+                alunoAuxiliarExibicao = PreencheAlunoExibicao(iteraPosicao);
+                GerarRelatorioBoletoMensalidade(alunoAuxiliarExibicao);
+                iteraPosicao++;
+            }
+        }
+
+        private void GerarRelatorioBoletoMensalidade(ClasseAuxiliarExibicaoMatricula alunoAuxiliarExibicao)
         {       
             Object oMissing = System.Reflection.Missing.Value;
 
@@ -301,7 +307,7 @@ namespace GuiWindowsForms
 
             oWord.Visible = true;
 
-            Object oTemplatePath = "C:\\ModeloTeste2.dotx";
+            Object oTemplatePath = "C:\\ModeloTeste3.dotx";
 
             oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oMissing);
 
@@ -324,40 +330,55 @@ namespace GuiWindowsForms
                     if (fieldName == "_nomeUm")
                     {
                         myMergeField.Select();
-                        oWord.Selection.TypeText(memoria.Aluno.Nome);
+                        oWord.Selection.Font.Name = "Times New Roman";
+                        oWord.Selection.Font.Size = 10;
+                        oWord.Selection.TypeText(alunoAuxiliarExibicao.nomeMatExibicao);
                     }
 
                     if (fieldName == "_matriculaUm")
                     {
                         myMergeField.Select();
-                        oWord.Selection.TypeText(GerarMatriculaAluno().NumMatricula);
+                        oWord.Selection.Font.Name = "Times New Roman";
+                        oWord.Selection.Font.Size = 10;
+                        oWord.Selection.TypeText(alunoAuxiliarExibicao.numeroMatExibicao);
                     }
 
                     if (fieldName == "_parcela")
                     {
                         myMergeField.Select();
-                        oWord.Selection.TypeText(GerarBoletoMensalidadeAluno().Parcela);
+                        oWord.Selection.Font.Bold = 1;
+                        oWord.Selection.Font.Name = "Bodoni MT Black";
+                        oWord.Selection.Font.Size = 12;
+                        oWord.Selection.TypeText(alunoAuxiliarExibicao.parcela);
                     }
 
                     if (fieldName == "_anoUm")
                     {
                         myMergeField.Select();
-                        oWord.Selection.TypeText(memoria.Aluno.SerieAtual);
+                        oWord.Selection.Font.Name = "Times New Roman";
+                        oWord.Selection.Font.Size = 10;
+                        oWord.Selection.TypeText(alunoAuxiliarExibicao.ano);
                     }
 
                     if (fieldName == "_vencimento")
                     {
                         myMergeField.Select();
-                        oWord.Selection.TypeText(GerarBoletoMensalidadeAluno().DataVencimento.ToString("dd/MM/yyyy"));
+                        oWord.Selection.Font.Name = "Times New Roman";
+                        oWord.Selection.Font.Size = 10;
+                        oWord.Selection.TypeText(alunoAuxiliarExibicao.vencimento);
                     }
 
                     if (fieldName == "_mensalidade")
                     {
                         myMergeField.Select();
-                        oWord.Selection.TypeText(GerarMatriculaAluno().Valor.ToString());
+                        oWord.Selection.Font.Name = "Times New Roman";
+                        oWord.Selection.Font.Size = 10;
+                        oWord.Selection.TypeText(alunoAuxiliarExibicao.mensalidade);
                     }
                 }
             }
+            object pageBreak = WdBreakType.wdPageBreak;
+            oWord.Selection.InsertBreak(ref pageBreak); 
         }
 
 
