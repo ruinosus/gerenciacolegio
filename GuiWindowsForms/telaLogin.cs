@@ -170,15 +170,8 @@ namespace GuiWindowsForms
             errorProviderTela.Clear();
         }
 
-        private void telaLogin_Load(object sender, EventArgs e)
-        {
-            
-          
-        }
-
         private void btnLogar_Enter(object sender, EventArgs e)
         {
-
             //Conexao c = new Conexao();
 
             //c.Banco = "ColegioDB";

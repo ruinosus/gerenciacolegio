@@ -1240,8 +1240,9 @@ namespace GuiWindowsForms
         #region BUTTON VINCULAR RESPONSAVEL
         private void btnVincularResponsavel_Click(object sender, EventArgs e)
         {
-            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
             this.Hide();
+            Program.ultimaTela = 1;
+            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
             tela.Show();
         }
         #endregion 

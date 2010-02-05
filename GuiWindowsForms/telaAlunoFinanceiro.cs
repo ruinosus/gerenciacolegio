@@ -117,15 +117,7 @@ namespace GuiWindowsForms
             IsShown = false;
             this.Hide();
 
-            if (Program.ultimaTela != 1)
-            {
-                Program.SelecionaForm(Program.ultimaTela);
-            }
-            else
-            {
-                Program.ultimaTela = 6;
-                Program.SelecionaForm(Program.ultimaTela);
-            }
+            Program.SelecionaForm(Program.ultimaTela);
         }
         #endregion
 
@@ -234,8 +226,8 @@ namespace GuiWindowsForms
             //telaBoleto.ShowDialog();
 
             //PreencheAlunoExibicao();
-            List<BoletoMensalidade> listaOperacao = GerarBoletoMensalidadeAluno();
-            GerarRelatorioBoletoMensalidadeWord(listaOperacao);
+            //List<BoletoMensalidade> listaOperacao = GerarBoletoMensalidadeAluno();
+            //GerarRelatorioBoletoMensalidadeWord(listaOperacao);
         }
         #endregion
 
