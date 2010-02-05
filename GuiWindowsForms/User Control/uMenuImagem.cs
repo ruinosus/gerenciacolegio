@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using Negocios.ModuloBasico.Enums;
 using Negocios.ModuloMatricula.Processos;
+using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms
 {
@@ -100,6 +101,7 @@ namespace GuiWindowsForms
                     if (m.AlunoID == aluno.ID)
                     {
                         numMatricula = m.NumMatricula;
+                        Memoria.Instance.Matricula = m;
                     }
                 }
                 #endregion
