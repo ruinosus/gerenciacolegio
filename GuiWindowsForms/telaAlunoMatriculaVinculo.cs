@@ -429,7 +429,7 @@ namespace GuiWindowsForms
             foreach (MatriculaVinculo mv in matriculaVinculoLista)
             {
                 classeAuxiliar = new ClasseGridAuxiliar();
-                classeAuxiliar.NomeAluno = mv.MatriculaDependente.Aluno.Nome;
+                classeAuxiliar.NomeAluno1 = mv.MatriculaDependente.Aluno.Nome;
                 classeAuxiliar.ID = mv.MatriculaDependente.Aluno.ID;
                 classeAuxiliar.SerieAluno = mv.MatriculaDependente.Aluno.SerieAtual;
                 classeAuxiliar.Ano = mv.MatriculaDependente.Ano.Value.ToString();

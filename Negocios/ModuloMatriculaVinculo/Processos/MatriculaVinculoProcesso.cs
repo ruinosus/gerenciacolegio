@@ -116,16 +116,31 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
                 meses.Add("Novembro");
                 meses.Add("Dezembro");
                 //List<BoletoMensalidade> boletoMensalidadeLista = listaMatricula[0].MatriculaPrincipal.BoletoMensalidade.ToList();
-                mvbBase.NomeAluno += listaMatricula[0].MatriculaMestre.Aluno.Nome;
-                mvbBase.Ano += listaMatricula[0].MatriculaMestre.Ano;
+                mvbBase.NomeAluno1 = listaMatricula[0].MatriculaMestre.Aluno.Nome;
+                mvbBase.NumeroMatriculaAluno1 = listaMatricula[0].MatriculaMestre.NumMatricula;
+                mvbBase.Ano = listaMatricula[0].MatriculaMestre.Ano.Value.ToString();
                 mvbBase.SerieAluno += listaMatricula[0].MatriculaMestre.Aluno.SerieAtual;
                 mvbBase.Valor += listaMatricula[0].MatriculaMestre.Valor.Value;
                 mvbBase.Vencimento = new DateTime(DateTime.Now.Year, 1, listaMatricula[0].MatriculaMestre.DiaVencimento.Value);
                 //mvb.Vencimento 
+
+                if (listaMatricula.Count == 2)
+                {
+                    mvbBase.NomeAluno2 = listaMatricula[0].MatriculaDependente.Aluno.Nome;
+                    mvbBase.NumeroMatriculaAluno2 = listaMatricula[0].MatriculaDependente.NumMatricula;
+                    mvbBase.NomeAluno3 = listaMatricula[1].MatriculaDependente.Aluno.Nome;
+                    mvbBase.NumeroMatriculaAluno3 = listaMatricula[1].MatriculaDependente.NumMatricula;
+                }
+                else if (listaMatricula.Count == 1)
+                {
+                    mvbBase.NomeAluno2 = listaMatricula[0].MatriculaDependente.Aluno.Nome;
+                    mvbBase.NumeroMatriculaAluno2 = listaMatricula[0].MatriculaDependente.NumMatricula;
+                    mvbBase.NomeAluno3 = "";
+                    mvbBase.NumeroMatriculaAluno3 = "";
+                }
                 foreach (MatriculaVinculo mv in listaMatricula)
                 {
-                    mvbBase.NomeAluno += ", " + mv.MatriculaDependente.Aluno.Nome;
-                    mvbBase.Ano += ", " + mv.MatriculaDependente.Ano;
+                 
                     mvbBase.SerieAluno += ", " + mv.MatriculaDependente.Aluno.SerieAtual;
                     mvbBase.Valor += mv.MatriculaDependente.Valor.Value;
                 }
@@ -135,7 +150,14 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
                 {
                     mvbMes = new MatriculaVinculoBoleto();
 
-                    mvbMes.NomeAluno = mvbBase.NomeAluno;
+                    mvbMes.NomeAluno1 = mvbBase.NomeAluno1;
+                    mvbMes.NomeAluno2 = mvbBase.NomeAluno2;
+                    mvbMes.NomeAluno3 = mvbBase.NomeAluno3;
+
+                    mvbMes.NumeroMatriculaAluno1 = mvbBase.NumeroMatriculaAluno1;
+                    mvbMes.NumeroMatriculaAluno2 = mvbBase.NumeroMatriculaAluno2;
+                    mvbMes.NumeroMatriculaAluno3 = mvbBase.NumeroMatriculaAluno3;
+
                     mvbMes.Ano = mvbBase.Ano;
                     mvbMes.SerieAluno = mvbBase.SerieAluno;
                     mvbMes.Valor= mvbBase.Valor;

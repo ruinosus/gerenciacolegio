@@ -29,27 +29,21 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.boletoMensalidadeJuncaoDataSet1 = new GuiWindowsForms.Relatorios.BoletoMensalidadeJuncaoDataSet();
-            ((System.ComponentModel.ISupportInitialize)(this.boletoMensalidadeJuncaoDataSet1)).BeginInit();
+            this.BoletoMensalidadeRelatorioVinculo1 = new GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorioVinculo();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.DisplayGroupTree = false;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.SelectionFormula = "";
+            this.crystalReportViewer1.ReportSource = this.BoletoMensalidadeRelatorioVinculo1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(790, 716);
             this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ViewTimeSelectionFormula = "";
-            // 
-            // boletoMensalidadeJuncaoDataSet1
-            // 
-            this.boletoMensalidadeJuncaoDataSet1.DataSetName = "BoletoMensalidadeJuncaoDataSet";
-            this.boletoMensalidadeJuncaoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // telaRelatorioBoletoMensalidadeVinculo
             // 
@@ -65,7 +59,7 @@
             this.Opacity = 0.95;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
-            ((System.ComponentModel.ISupportInitialize)(this.boletoMensalidadeJuncaoDataSet1)).EndInit();
+            this.Load += new System.EventHandler(this.telaRelatorioBoletoMensalidadeVinculo_Load);
             this.ResumeLayout(false);
 
         }
@@ -73,6 +67,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private GuiWindowsForms.Relatorios.BoletoMensalidadeJuncaoDataSet boletoMensalidadeJuncaoDataSet1;
+        private GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorioVinculo BoletoMensalidadeRelatorioVinculo1;
     }
 }
