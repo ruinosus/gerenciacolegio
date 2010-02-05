@@ -1,4 +1,4 @@
-﻿C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe
+C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe
 C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWindowsForms\bin\Debug\GuiWindowsForms.pdb
 C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWindowsForms\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Ruinosus\Desktop\ColegioConhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.Properties.Resources.resources
@@ -480,7 +480,6 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelBusca.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoes.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividade.resources
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividades.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesAtividadeTurma.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesControleDeAcesso.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaConfiguracoesDescontoMatricula.resources
@@ -580,4 +579,3 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaRelatorioBoletoMensalidadeVinculo.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe.manifest
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.application
-

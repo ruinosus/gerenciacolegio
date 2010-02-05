@@ -16,6 +16,7 @@ namespace GuiWindowsForms
     {
         IAlunoProcesso alunoControlador = AlunoProcesso.Instance;
         Memoria memoria =  Memoria.Instance;
+        int verificaButton = 0;
 
         #region SINGLETON DA TELA
         /*
@@ -124,137 +125,151 @@ namespace GuiWindowsForms
         }
         #endregion
 
+
         #region EVENTO CADASTRAR
         private void ucMenuInferior1_EventoCadastrar()
         {
+
+            
             try
             {
-                #region VALIDA - NOME
-
-                //if (String.IsNullOrEmpty(txtAlergico.Text))
-                //{
-                //    errorProviderTela.SetError(txtAlergico, "Informe a alergia");
-                //    txtAlergico.Clear();
-                //    return;
-                //}
-                memoria.Aluno.Alergico = txtAlergico.Text;
-
-
-                #endregion
-
-                #region VALIDA - FATOR RH
-
-                if (rdbPositivo.Checked == false && rdbNegativo.Checked == false)
+                #region CADASTRAR ALUNO
+                if (verificaButton == 1)
                 {
-                    errorProviderTela.SetError(rdbNegativo, "Informe o fator rh");
-                    return;
+
+                    #region VALIDA - NOME
+
+                    //if (String.IsNullOrEmpty(txtAlergico.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtAlergico, "Informe a alergia");
+                    //    txtAlergico.Clear();
+                    //    return;
+                    //}
+                    memoria.Aluno.Alergico = txtAlergico.Text;
+
+
+                    #endregion
+
+                    #region VALIDA - FATOR RH
+
+                    if (rdbPositivo.Checked == false && rdbNegativo.Checked == false)
+                    {
+                        errorProviderTela.SetError(rdbNegativo, "Informe o fator rh");
+                        return;
+                    }
+                    if (rdbNegativo.Checked == true)
+                    {
+                        memoria.Aluno.FatorRh = 0;
+                    }
+                    else
+                    {
+                        memoria.Aluno.FatorRh = 1;
+                    }
+
+                    #endregion
+
+                    #region VALIDA - NOME
+
+                    //if (String.IsNullOrEmpty(txtNomeMedico.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtNomeMedico, "Informe o nome do médico");
+                    //    txtNomeMedico.Clear();
+                    //    return;
+                    //}
+                    memoria.Aluno.NomeMedico = txtNomeMedico.Text;
+
+                    #endregion
+
+                    #region VALIDA - FONE
+
+                    //if (mskFone.MaskCompleted == false)
+                    //{
+                    //    errorProviderTela.SetError(mskFone, "Informe o fone");
+                    //    return;
+                    //}
+                    memoria.Aluno.FoneMedico = mskFone.Text;
+
+                    #endregion
+
+                    #region VALIDA - HOSPITAL
+
+                    //if (String.IsNullOrEmpty(txtHospital.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtHospital, "Informe o hospital");
+                    //    txtHospital.Clear();
+                    //    return;
+                    //}
+                    memoria.Aluno.Hospital = txtHospital.Text;
+
+                    #endregion
+
+                    #region VALIDA - PLANO DE SAÚDE
+
+                    //if (String.IsNullOrEmpty(txtPlanoSaude.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtPlanoSaude, "Informe o plano de saúde");
+                    //    txtPlanoSaude.Clear();
+                    //    return;
+                    //}
+                    memoria.Aluno.PlanoSaude = txtPlanoSaude.Text;
+
+                    #endregion
+
+                    #region VALIDA - DESCRIÇÃO MÉDICA
+
+                    //if (String.IsNullOrEmpty(txtDescricaoMedica.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtDescricaoMedica, "Informe a descrição médica");
+                    //    txtDescricaoMedica.Clear();
+                    //    return;
+                    //}
+                    memoria.Aluno.DescricaoMedica = txtDescricaoMedica.Text;
+
+                    #endregion
+
+                    #region VALIDA - SITUAÇÃO ESPECIAL
+
+                    //if (String.IsNullOrEmpty(txtSituacaoEspecial.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtSituacaoEspecial, "Informe a situação especial");
+                    //    txtSituacaoEspecial.Clear();
+                    //    return;
+                    //}
+                    memoria.Aluno.SituacaoEspecial = txtSituacaoEspecial.Text;
+
+                    #endregion
+
+                    #region VALIDA - CONTATO
+
+                    //if (String.IsNullOrEmpty(txtContato.Text))
+                    //{
+                    //    errorProviderTela.SetError(txtContato, "Informe o contato");
+                    //    txtContato.Clear();
+                    //    return;
+                    //}
+                    memoria.Aluno.Contato = txtContato.Text;
+
+                    #endregion
+
+                    memoria.Aluno.GrupoSanguineo = cmbGrupoSanguineo.Text;
+
+                    alunoControlador.Alterar(memoria.Aluno);
+                    alunoControlador.Confirmar();
+
+                    MessageBox.Show(AlunoConstantes.ALUNO_MEDICACAO_ALTERADA, "Colégio Conhecer");
+
+                    Enabled_False();
+                    verificaButton = 0;
                 }
-                if (rdbNegativo.Checked == true)
-                {
-                    memoria.Aluno.FatorRh = 0;
-                }
-                else
-                {
-                    memoria.Aluno.FatorRh = 1;
-                }
-
                 #endregion
-
-                #region VALIDA - NOME
-
-                //if (String.IsNullOrEmpty(txtNomeMedico.Text))
-                //{
-                //    errorProviderTela.SetError(txtNomeMedico, "Informe o nome do médico");
-                //    txtNomeMedico.Clear();
-                //    return;
-                //}
-                memoria.Aluno.NomeMedico = txtNomeMedico.Text;
-
-                #endregion
-
-                #region VALIDA - FONE
-
-                //if (mskFone.MaskCompleted == false)
-                //{
-                //    errorProviderTela.SetError(mskFone, "Informe o fone");
-                //    return;
-                //}
-                memoria.Aluno.FoneMedico = mskFone.Text;
-
-                #endregion
-
-                #region VALIDA - HOSPITAL
-
-                //if (String.IsNullOrEmpty(txtHospital.Text))
-                //{
-                //    errorProviderTela.SetError(txtHospital, "Informe o hospital");
-                //    txtHospital.Clear();
-                //    return;
-                //}
-                memoria.Aluno.Hospital = txtHospital.Text;
-
-                #endregion
-
-                #region VALIDA - PLANO DE SAÚDE
-
-                //if (String.IsNullOrEmpty(txtPlanoSaude.Text))
-                //{
-                //    errorProviderTela.SetError(txtPlanoSaude, "Informe o plano de saúde");
-                //    txtPlanoSaude.Clear();
-                //    return;
-                //}
-                memoria.Aluno.PlanoSaude = txtPlanoSaude.Text;
-
-                #endregion
-
-                #region VALIDA - DESCRIÇÃO MÉDICA
-
-                //if (String.IsNullOrEmpty(txtDescricaoMedica.Text))
-                //{
-                //    errorProviderTela.SetError(txtDescricaoMedica, "Informe a descrição médica");
-                //    txtDescricaoMedica.Clear();
-                //    return;
-                //}
-                memoria.Aluno.DescricaoMedica = txtDescricaoMedica.Text;
-
-                #endregion
-
-                #region VALIDA - SITUAÇÃO ESPECIAL
-
-                //if (String.IsNullOrEmpty(txtSituacaoEspecial.Text))
-                //{
-                //    errorProviderTela.SetError(txtSituacaoEspecial, "Informe a situação especial");
-                //    txtSituacaoEspecial.Clear();
-                //    return;
-                //}
-                memoria.Aluno.SituacaoEspecial = txtSituacaoEspecial.Text;
-
-                #endregion
-
-                #region VALIDA - CONTATO
-
-                //if (String.IsNullOrEmpty(txtContato.Text))
-                //{
-                //    errorProviderTela.SetError(txtContato, "Informe o contato");
-                //    txtContato.Clear();
-                //    return;
-                //}
-                memoria.Aluno.Contato = txtContato.Text;
-
-                #endregion
-
-                memoria.Aluno.GrupoSanguineo = cmbGrupoSanguineo.Text;
-
-                alunoControlador.Alterar(memoria.Aluno);
-                alunoControlador.Confirmar();
-
-                MessageBox.Show(AlunoConstantes.ALUNO_MEDICACAO_ALTERADA, "Colégio Conhecer");
 
             }
             catch (Exception ex)
             {
 
             }
+      
+
 
         }
         #endregion
@@ -263,8 +278,7 @@ namespace GuiWindowsForms
         private void ucMenuInferior1_EventoAlterar()
         {
             Enabled_True();
-            
-
+            verificaButton = 1;
         }
         #endregion
 
@@ -475,7 +489,6 @@ namespace GuiWindowsForms
         {
             Enabled_False();
             ucMenuInferior1.exibirBotaoAlterar();
-            ucMenuInferior1.exibirBotaoDeletar();
             uMenuLateral1.verificaTela(telaalunomedicacao);
             cmbGrupoSanguineo.DataSource = gruposanguineo;
             uMenuImagem1.ocultarBotaoAdicionarImagem();
