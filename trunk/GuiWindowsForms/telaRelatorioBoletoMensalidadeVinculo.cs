@@ -20,8 +20,7 @@ namespace GuiWindowsForms
 
         private void telaRelatorioBoletoMensalidadeVinculo_Load(object sender, EventArgs e)
         {
-            Memoria.Instance.Matricula = new Matricula();
-            Memoria.Instance.Matricula.ID = 1;
+
             
             if (Memoria.Instance.Matricula != null)
             {
