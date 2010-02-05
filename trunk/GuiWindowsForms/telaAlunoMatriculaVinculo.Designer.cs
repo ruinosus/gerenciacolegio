@@ -34,12 +34,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoMatriculaVinculo));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
+            this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             this.cmbAluno = new System.Windows.Forms.ComboBox();
             this.lblAluno = new System.Windows.Forms.Label();
             this.dgvAlunosVinculados = new System.Windows.Forms.DataGridView();
             this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
-            this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
-            this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GrauParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,6 +58,25 @@
             // errorProviderTela
             // 
             this.errorProviderTela.ContainerControl = this;
+            // 
+            // ucMenuInferior1
+            // 
+            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
+            this.errorProviderTela.SetIconAlignment(this.ucMenuInferior1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucMenuInferior1.IconAlignment"))));
+            resources.ApplyResources(this.ucMenuInferior1, "ucMenuInferior1");
+            this.ucMenuInferior1.Name = "ucMenuInferior1";
+            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
+            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
+            this.ucMenuInferior1.EventoIncluir += new GuiWindowsForms.ucMenuInferior.delegateIncluir(this.ucMenuInferior1_EventoIncluir);
+            this.ucMenuInferior1.EventoAlterar += new GuiWindowsForms.ucMenuInferior.delegateAlterar(this.ucMenuInferior1_EventoAlterar);
+            this.ucMenuInferior1.EventoDeletar += new GuiWindowsForms.ucMenuInferior.delegateDeletar(this.ucMenuInferior1_EventoDeletar);
+            // 
+            // uMenuImagem1
+            // 
+            this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
+            this.errorProviderTela.SetIconAlignment(this.uMenuImagem1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("uMenuImagem1.IconAlignment"))));
+            resources.ApplyResources(this.uMenuImagem1, "uMenuImagem1");
+            this.uMenuImagem1.Name = "uMenuImagem1";
             // 
             // cmbAluno
             // 
@@ -115,28 +134,9 @@
             this.ucDesconectarLogin1.Name = "ucDesconectarLogin1";
             this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
-            // ucMenuInferior1
-            // 
-            this.ucMenuInferior1.BackColor = System.Drawing.Color.Transparent;
-            this.errorProviderTela.SetIconAlignment(this.ucMenuInferior1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("ucMenuInferior1.IconAlignment"))));
-            resources.ApplyResources(this.ucMenuInferior1, "ucMenuInferior1");
-            this.ucMenuInferior1.Name = "ucMenuInferior1";
-            this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucMenuInferior1_EventoCadastrar);
-            this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
-            this.ucMenuInferior1.EventoIncluir += new GuiWindowsForms.ucMenuInferior.delegateIncluir(this.ucMenuInferior1_EventoIncluir);
-            this.ucMenuInferior1.EventoAlterar += new GuiWindowsForms.ucMenuInferior.delegateAlterar(this.ucMenuInferior1_EventoAlterar);
-            this.ucMenuInferior1.EventoDeletar += new GuiWindowsForms.ucMenuInferior.delegateDeletar(this.ucMenuInferior1_EventoDeletar);
-            // 
-            // uMenuImagem1
-            // 
-            this.uMenuImagem1.BackColor = System.Drawing.Color.Transparent;
-            this.errorProviderTela.SetIconAlignment(this.uMenuImagem1, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("uMenuImagem1.IconAlignment"))));
-            resources.ApplyResources(this.uMenuImagem1, "uMenuImagem1");
-            this.uMenuImagem1.Name = "uMenuImagem1";
-            // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "NomeAluno";
+            this.Column3.DataPropertyName = "NomeAluno1";
             resources.ApplyResources(this.Column3, "Column3");
             this.Column3.MaxInputLength = 30;
             this.Column3.Name = "Column3";

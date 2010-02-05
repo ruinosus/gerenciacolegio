@@ -9,7 +9,24 @@ namespace Negocios.ModuloMatriculaVinculo.VOs
     public class MatriculaVinculoBoleto
     {
         [Conversion(AllowDbNull = true, DataTableConversion = true, KeyField = false)]
-        public string NomeAluno{ get; set; }
+        public string NomeAluno1{ get; set; }
+
+        [Conversion(AllowDbNull = true, DataTableConversion = true, KeyField = false)]
+        public string NomeAluno2 { get; set; }
+
+        [Conversion(AllowDbNull = true, DataTableConversion = true, KeyField = false)]
+        public string NomeAluno3 { get; set; }
+
+        [Conversion(AllowDbNull = true, DataTableConversion = true, KeyField = false)]
+        public string NumeroMatriculaAluno1 { get; set; }
+
+        [Conversion(AllowDbNull = true, DataTableConversion = true, KeyField = false)]
+        public string NumeroMatriculaAluno2 { get; set; }
+
+        [Conversion(AllowDbNull = true, DataTableConversion = true, KeyField = false)]
+        public string NumeroMatriculaAluno3 { get; set; }
+
+
         [Conversion(AllowDbNull = true, DataTableConversion = true, KeyField = false)]
         public string SerieAluno { get; set; }
         [Conversion(AllowDbNull = true, DataTableConversion = true, KeyField = false)]
