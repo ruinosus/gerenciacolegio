@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaRelatorioBoletoMensalidade));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.BoletoMensalidadeRelatorio1 = new GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio();
+         
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -43,7 +43,6 @@
             this.crystalReportViewer1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.BoletoMensalidadeRelatorio1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(790, 716);
             this.crystalReportViewer1.TabIndex = 5;
             // 
@@ -70,6 +69,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private GuiWindowsForms.Relatorios.BoletoMensalidadeRelatorio BoletoMensalidadeRelatorio1;
+     
     }
 }

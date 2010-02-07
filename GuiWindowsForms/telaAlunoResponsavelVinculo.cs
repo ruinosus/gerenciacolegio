@@ -539,5 +539,11 @@ namespace GuiWindowsForms
         }
         #endregion
 
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            telaAlunoResponsavelBusca tela = new telaAlunoResponsavelBusca();
+            tela.ShowDialog();
+        }
+
     }
 }

@@ -96,15 +96,6 @@
       <DependentUpon>BoletoMensalidadeRelatorioVinculo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Relatorios\BoletoMensalidadeDataSet.cs">
-      <DependentUpon>BoletoMensalidadeDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Relatorios\BoletoMensalidadeDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BoletoMensalidadeDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Relatorios\BoletoMensalidadeJuncaoDataSet.cs">
       <DependentUpon>BoletoMensalidadeJuncaoDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -113,12 +104,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BoletoMensalidadeJuncaoDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Relatorios\BoletoMensalidadeRelatorio.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BoletoMensalidadeRelatorio.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="telaAluno.cs">
       <SubType>Form</SubType>
@@ -174,10 +159,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BoletoMensalidadeRelatorioVinculo.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorios\BoletoMensalidadeRelatorio.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BoletoMensalidadeRelatorio.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="telaAluno.resx">
       <DependentUpon>telaAluno.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -218,6 +199,9 @@
     <EmbeddedResource Include="telaAlunoResponsavel.resx">
       <DependentUpon>telaAlunoResponsavel.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaAlunoResponsavelBusca.resx">
+      <DependentUpon>telaAlunoResponsavelBusca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telaAlunoResponsavelVinculo.resx">
       <DependentUpon>telaAlunoResponsavelVinculo.cs</DependentUpon>
@@ -322,6 +306,12 @@
     </Compile>
     <Compile Include="telaAlunoResponsavel.Designer.cs">
       <DependentUpon>telaAlunoResponsavel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaAlunoResponsavelBusca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaAlunoResponsavelBusca.Designer.cs">
+      <DependentUpon>telaAlunoResponsavelBusca.cs</DependentUpon>
     </Compile>
     <Compile Include="telaAlunoResponsavelVinculo.cs">
       <SubType>Form</SubType>
@@ -756,17 +746,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Relatorios\BoletoMensalidadeDataSet.xsc">
-      <DependentUpon>BoletoMensalidadeDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Relatorios\BoletoMensalidadeDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BoletoMensalidadeDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Relatorios\BoletoMensalidadeDataSet.xss">
-      <DependentUpon>BoletoMensalidadeDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\func_profissional_64x71_disabled_h.png" />
   </ItemGroup>
   <ItemGroup>

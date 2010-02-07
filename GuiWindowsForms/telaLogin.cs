@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using Negocios.ModuloAluno.Processos;
 
 using GuiWindowsForms.Relatorios;
-using GuiWindowsForms.Relatorios.BoletoMensalidadeDataSetTableAdapters;
 using Negocios.ModuloBasico.VOs;
 
 using System.Runtime.Serialization;

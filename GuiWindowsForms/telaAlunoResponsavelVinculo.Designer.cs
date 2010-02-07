@@ -232,6 +232,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.BackColor = System.Drawing.SystemColors.Window;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.txtNome.Location = new System.Drawing.Point(357, 217);
             this.txtNome.MaxLength = 40;
@@ -275,6 +276,7 @@
             this.btnPesquisar.Size = new System.Drawing.Size(32, 32);
             this.btnPesquisar.TabIndex = 144;
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // ucDesconectarLogin1
             // 
@@ -308,7 +310,7 @@
             this.uMenuImagem1.Size = new System.Drawing.Size(533, 201);
             this.uMenuImagem1.TabIndex = 75;
             // 
-            // telaAlunoResponsavelBusca
+            // telaAlunoResponsavelVinculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -335,7 +337,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "telaAlunoResponsavelBusca";
+            this.Name = "telaAlunoResponsavelVinculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Activated += new System.EventHandler(this.telaAlunoResponsavelBusca_Activated);
