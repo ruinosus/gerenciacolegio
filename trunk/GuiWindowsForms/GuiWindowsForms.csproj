@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D79963B9-116E-4E56-ABA5-26F9392FD1C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -219,8 +219,8 @@
       <DependentUpon>telaAlunoResponsavel.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="telaAlunoResponsavelBusca.resx">
-      <DependentUpon>telaAlunoResponsavelBusca.cs</DependentUpon>
+    <EmbeddedResource Include="telaAlunoResponsavelVinculo.resx">
+      <DependentUpon>telaAlunoResponsavelVinculo.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="telaConfiguracoes.resx">
@@ -323,11 +323,11 @@
     <Compile Include="telaAlunoResponsavel.Designer.cs">
       <DependentUpon>telaAlunoResponsavel.cs</DependentUpon>
     </Compile>
-    <Compile Include="telaAlunoResponsavelBusca.cs">
+    <Compile Include="telaAlunoResponsavelVinculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="telaAlunoResponsavelBusca.Designer.cs">
-      <DependentUpon>telaAlunoResponsavelBusca.cs</DependentUpon>
+    <Compile Include="telaAlunoResponsavelVinculo.Designer.cs">
+      <DependentUpon>telaAlunoResponsavelVinculo.cs</DependentUpon>
     </Compile>
     <Compile Include="telaConfiguracoes.cs">
       <SubType>Form</SubType>
