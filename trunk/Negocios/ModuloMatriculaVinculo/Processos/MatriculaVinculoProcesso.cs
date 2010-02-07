@@ -13,6 +13,7 @@ using System.Data;
 using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloMatriculaVinculo.VOs;
 using Negocios.ModuloBoletoMensalidade.Processos;
+using Negocios.ModuloMatricula.Processos;
 
 namespace Negocios.ModuloMatriculaVinculo.Processos
 {
@@ -91,16 +92,29 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
 
         public DataTable GerarRelatorio(MatriculaVinculo matriculaVinculo, TipoPesquisa tipoPesquisa)
         {
-            matriculaVinculo.Status = (int)Status.Ativo;
-            List<MatriculaVinculo> listaMatricula = this.Consultar(matriculaVinculo, tipoPesquisa);
+            List<MatriculaVinculo> listaMatricula = ConsultarMatriculaMestre(matriculaVinculo, tipoPesquisa);
 
             CoreList<MatriculaVinculoBoleto> resultado = new CoreList<MatriculaVinculoBoleto>();
 
+            if (listaMatricula.Count == 0)
+            {
+                IMatriculaProcesso processo = MatriculaProcesso.Instance;
+                Matricula m = new Matricula();
+                m.Status = (int)Status.Ativo;
+                m.ID = matriculaVinculo.MatriculaMestreID;
+                List<Matricula> matriculaMestreLista = processo.Consultar(m,tipoPesquisa);
+
+                if (matriculaMestreLista.Count > 0)
+                {
+                    MatriculaVinculo matriculaVinculoUnica = new MatriculaVinculo();
+                    matriculaVinculoUnica.MatriculaMestre = matriculaMestreLista[0];
+                    matriculaVinculoUnica.MatriculaMestreID = matriculaMestreLista[0].ID;
+                    listaMatricula.Add(matriculaVinculoUnica);
+                }
+            }
+
             if (listaMatricula.Count > 0)
             {
-                //IBoletoMensalidadeProcesso processo = BoletoMensalidadeProcesso.Instance;
-                //BoletoMensalidade boletoMensalidade = new BoletoMensalidade();
-                //boletoMensalidade.MatriculaID = listaMatricula[0].MatriculaPrincipal.ID;
                 MatriculaVinculoBoleto mvbBase = new MatriculaVinculoBoleto();
                 List<String> meses = new List<String>();
                 meses.Add("Janeiro");
@@ -115,14 +129,13 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
                 meses.Add("Outubro");
                 meses.Add("Novembro");
                 meses.Add("Dezembro");
-                //List<BoletoMensalidade> boletoMensalidadeLista = listaMatricula[0].MatriculaPrincipal.BoletoMensalidade.ToList();
+
                 mvbBase.NomeAluno1 = listaMatricula[0].MatriculaMestre.Aluno.Nome;
                 mvbBase.NumeroMatriculaAluno1 = listaMatricula[0].MatriculaMestre.NumMatricula;
                 mvbBase.Ano = listaMatricula[0].MatriculaMestre.Ano.Value.ToString();
                 mvbBase.SerieAluno += listaMatricula[0].MatriculaMestre.Aluno.SerieAtual;
                 mvbBase.Valor += listaMatricula[0].MatriculaMestre.Valor.Value;
                 mvbBase.Vencimento = new DateTime(DateTime.Now.Year, 1, listaMatricula[0].MatriculaMestre.DiaVencimento.Value);
-                //mvb.Vencimento 
 
                 if (listaMatricula.Count == 2)
                 {
@@ -131,20 +144,30 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
                     mvbBase.NomeAluno3 = listaMatricula[1].MatriculaDependente.Aluno.Nome;
                     mvbBase.NumeroMatriculaAluno3 = listaMatricula[1].MatriculaDependente.NumMatricula;
                 }
-                else if (listaMatricula.Count == 1)
+                else if (listaMatricula.Count == 1 && listaMatricula[0].MatriculaDependente!= null && listaMatricula[0].MatriculaDependente.AlunoID.Value!= 0 )
                 {
                     mvbBase.NomeAluno2 = listaMatricula[0].MatriculaDependente.Aluno.Nome;
                     mvbBase.NumeroMatriculaAluno2 = listaMatricula[0].MatriculaDependente.NumMatricula;
                     mvbBase.NomeAluno3 = "";
                     mvbBase.NumeroMatriculaAluno3 = "";
                 }
+                else if (listaMatricula[0].MatriculaDependente == null)
+                {
+                    mvbBase.NomeAluno2 = "";
+                    mvbBase.NumeroMatriculaAluno2 = "";
+                    mvbBase.NomeAluno3 = "";
+                    mvbBase.NumeroMatriculaAluno3 = "";
+                }
+
                 foreach (MatriculaVinculo mv in listaMatricula)
                 {
-                 
-                    mvbBase.SerieAluno += ", " + mv.MatriculaDependente.Aluno.SerieAtual;
-                    mvbBase.Valor += mv.MatriculaDependente.Valor.Value;
+                    if (mv.MatriculaDependente != null)
+                    {
+                        mvbBase.SerieAluno += ", " + mv.MatriculaDependente.Aluno.SerieAtual;
+                        mvbBase.Valor += mv.MatriculaDependente.Valor.Value;
+                    }
                 }
-                
+
                 MatriculaVinculoBoleto mvbMes;
                 for (int i = 0; i < 12; i++)
                 {
@@ -160,8 +183,8 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
 
                     mvbMes.Ano = mvbBase.Ano;
                     mvbMes.SerieAluno = mvbBase.SerieAluno;
-                    mvbMes.Valor= mvbBase.Valor;
-                    mvbMes.Vencimento= mvbBase.Vencimento.AddMonths(i);
+                    mvbMes.Valor = mvbBase.Valor;
+                    mvbMes.Vencimento = mvbBase.Vencimento.AddMonths(i);
 
                     mvbMes.Parcela = meses[i];
                     resultado.Add(mvbMes);
@@ -170,9 +193,36 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
 
             }
 
+
             return (DataTable)resultado;
         }
 
         #endregion
+
+        private List<MatriculaVinculo> ConsultarMatriculaMestre(MatriculaVinculo matriculaVinculo, TipoPesquisa tipoPesquisa)
+        {
+            List<MatriculaVinculo> resultado = new List<MatriculaVinculo>();
+            matriculaVinculo.Status = (int)Status.Ativo;
+            resultado = this.Consultar(matriculaVinculo, tipoPesquisa);
+
+            if (resultado.Count == 0)
+            {
+                MatriculaVinculo mv = new MatriculaVinculo();
+                mv.Status = (int)Status.Ativo;
+                mv.MatriculaDependenteID = matriculaVinculo.MatriculaMestreID;
+                List<MatriculaVinculo> listaMatricula = this.Consultar(mv, tipoPesquisa);
+                if (listaMatricula.Count > 0)
+                {
+                    resultado = new List<MatriculaVinculo>();
+                    MatriculaVinculo matriculaVinculo2 = new MatriculaVinculo();
+                    matriculaVinculo2.MatriculaMestreID = listaMatricula[0].MatriculaMestreID;
+                    resultado = this.Consultar(matriculaVinculo2, tipoPesquisa);
+                }
+
+            }
+
+
+            return resultado;
+        }
     }
 }
