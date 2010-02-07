@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using GuiWindowsForms.Relatorios.BoletoMensalidadeDataSetTableAdapters;
 using Negocios.ModuloBasico.VOs;
 
 namespace GuiWindowsForms
@@ -23,12 +22,12 @@ namespace GuiWindowsForms
             Memoria memoria = Memoria.Instance;
             if (memoria.Aluno != null)
             {
-                BoletoMensalidadeDataTableTableAdapter ta = new BoletoMensalidadeDataTableTableAdapter();
-                GuiWindowsForms.Relatorios.BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable dataTable = ta.GetData(memoria.Aluno.ID);
-                BoletoMensalidadeRelatorio1.SetDataSource((DataTable)dataTable);
-                crystalReportViewer1.ReportSource = BoletoMensalidadeRelatorio1;
-                BoletoMensalidadeRelatorio1.Refresh();
-                crystalReportViewer1.Zoom(1);
+                //BoletoMensalidadeDataTableTableAdapter ta = new BoletoMensalidadeDataTableTableAdapter();
+                //GuiWindowsForms.Relatorios.BoletoMensalidadeDataSet.BoletoMensalidadeDataTableDataTable dataTable = ta.GetData(memoria.Aluno.ID);
+                //BoletoMensalidadeRelatorio1.SetDataSource((DataTable)dataTable);
+                //crystalReportViewer1.ReportSource = BoletoMensalidadeRelatorio1;
+                //BoletoMensalidadeRelatorio1.Refresh();
+                //crystalReportViewer1.Zoom(1);
             }
         }
     }
