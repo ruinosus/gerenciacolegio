@@ -156,7 +156,7 @@ namespace GuiWindowsForms.User_Control
                 lblDados_Menu.Visible = true;
                 lblDados_Menu.ForeColor = System.Drawing.Color.Yellow;
             }
-            else if (formAux.Equals(telaAlunoResponsavel.getInstancia()) || formAux.Equals(telaAlunoResponsavelBusca.getInstancia()))
+            else if (formAux.Equals(telaAlunoResponsavel.getInstancia()) || formAux.Equals(telaAlunoResponsavelVinculo.getInstancia()))
             {
                 controlaBotoesMenu(telaAlunoResponsavel.getInstancia());
                 this.btnResponsaveis.BackgroundImage = global::GuiWindowsForms.Properties.Resources.responsavel_73x66;

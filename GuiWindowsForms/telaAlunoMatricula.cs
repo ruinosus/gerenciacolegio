@@ -200,7 +200,7 @@ namespace GuiWindowsForms
 
             this.Hide();
             Program.ultimaTela = 1;
-            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
+            telaAlunoResponsavelVinculo tela = telaAlunoResponsavelVinculo.getInstancia();
             tela.Show();
         }
 

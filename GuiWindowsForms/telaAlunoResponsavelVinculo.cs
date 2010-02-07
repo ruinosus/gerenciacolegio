@@ -13,7 +13,7 @@ using Negocios.ModuloBasico.Enums;
 
 namespace GuiWindowsForms
 {
-    public partial class telaAlunoResponsavelBusca : Form
+    public partial class telaAlunoResponsavelVinculo : Form
     {
         #region ATRIBUTOS
         List<ResponsavelAluno> responsavelAlunoLista;
@@ -26,18 +26,18 @@ namespace GuiWindowsForms
         * Atributo para o Singleton da tela
         * Atributo para controle de exibição da tela
         * */
-        private static telaAlunoResponsavelBusca telaalunoresponsavelbusca;
+        private static telaAlunoResponsavelVinculo telaalunoresponsavelbusca;
         private static bool IsShown = false;
         /// <summary>
         /// Padrão Singleton, verifica se a instância já esta em uso. 
         /// Evita abertura de múltiplas instâncias
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
-        public static telaAlunoResponsavelBusca getInstancia()
+        public static telaAlunoResponsavelVinculo getInstancia()
         {
             if (telaalunoresponsavelbusca == null)
             {
-                telaalunoresponsavelbusca = new telaAlunoResponsavelBusca();
+                telaalunoresponsavelbusca = new telaAlunoResponsavelVinculo();
             }
             return telaalunoresponsavelbusca;
         }
@@ -47,7 +47,7 @@ namespace GuiWindowsForms
         /// <summary>
         /// Construtor da tela
         /// </summary>
-        public telaAlunoResponsavelBusca()
+        public telaAlunoResponsavelVinculo()
         {
             InitializeComponent();
 

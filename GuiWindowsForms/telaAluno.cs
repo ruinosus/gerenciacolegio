@@ -865,7 +865,7 @@ namespace GuiWindowsForms
 
             this.Hide();
             Program.ultimaTela = 1;
-            telaAlunoResponsavelBusca telaalunoresponsavelbusca = telaAlunoResponsavelBusca.getInstancia();
+            telaAlunoResponsavelVinculo telaalunoresponsavelbusca = telaAlunoResponsavelVinculo.getInstancia();
             Memoria.Instance.StatusTelaAlunoResponsavelBusca = OperacoesDaTela.AbrirTela;
             telaalunoresponsavelbusca.Show();
 
@@ -1242,7 +1242,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
             Program.ultimaTela = 1;
-            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
+            telaAlunoResponsavelVinculo tela = telaAlunoResponsavelVinculo.getInstancia();
             tela.Show();
         }
         #endregion 

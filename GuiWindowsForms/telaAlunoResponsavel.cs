@@ -417,7 +417,7 @@ namespace GuiWindowsForms
         {
             this.Hide();
             Program.ultimaTela = 1;
-            telaAlunoResponsavelBusca tela = telaAlunoResponsavelBusca.getInstancia();
+            telaAlunoResponsavelVinculo tela = telaAlunoResponsavelVinculo.getInstancia();
             tela.Show();
         }
 
@@ -704,7 +704,7 @@ namespace GuiWindowsForms
 
                                 MessageBox.Show(ResponsavelConstantes.RESPONSAVEL_INCLUIDO, "Colégio Conhecer");
                                 this.Hide();
-                                telaAlunoResponsavelBusca.getInstancia().Show();
+                                telaAlunoResponsavelVinculo.getInstancia().Show();
                             }
                             else
                             {
@@ -720,7 +720,7 @@ namespace GuiWindowsForms
                             responsavelControlador.Alterar(responsavel);
                             responsavelControlador.Confirmar();
 
-                            MessageBox.Show("Responsável inserido com sucesso.", "Colégio Conhecer"); telaAlunoResponsavelBusca.getInstancia().Show(); 
+                            MessageBox.Show("Responsável inserido com sucesso.", "Colégio Conhecer"); telaAlunoResponsavelVinculo.getInstancia().Show(); 
                             break;
 
                         }

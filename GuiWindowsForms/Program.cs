@@ -90,7 +90,7 @@ namespace GuiWindowsForms
             }
             else if (formId == 8)
             {
-                telaAlunoResponsavelBusca telaalunoresponsavelbuscaaux = telaAlunoResponsavelBusca.getInstancia();
+                telaAlunoResponsavelVinculo telaalunoresponsavelbuscaaux = telaAlunoResponsavelVinculo.getInstancia();
                 telaalunoresponsavelbuscaaux.Show();
             }
             else if (formId == 9)
