@@ -5,25 +5,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiWindowsForms", "GuiWindo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocios", "Negocios\Negocios.csproj", "{E035BBFD-00D4-461F-9AF9-D57B45582B93}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GuiWebSite", "C:\Users\Ruinosus\Documents\Visual Studio 2008\WebSites\GuiWebSite\", "{D6EAC7EC-1E82-437A-9053-A098F3A21A94}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GuiWebSite", "GuiWebSite\", "{819F42C6-F980-415A-A28A-E57FD99C6D0D}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFramework = "3.5"
 		Debug.AspNetCompiler.VirtualPath = "/GuiWebSite"
-		Debug.AspNetCompiler.PhysicalPath = "C:\Users\Ruinosus\Documents\Visual Studio 2008\WebSites\GuiWebSite\"
+		Debug.AspNetCompiler.PhysicalPath = "GuiWebSite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\GuiWebSite\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/GuiWebSite"
-		Release.AspNetCompiler.PhysicalPath = "C:\Users\Ruinosus\Documents\Visual Studio 2008\WebSites\GuiWebSite\"
+		Release.AspNetCompiler.PhysicalPath = "GuiWebSite\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\GuiWebSite\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "49204"
-		DefaultWebSiteLanguage = "Visual C#"
+		VWDPort = "49216"
 	EndProjectSection
 EndProject
 Global
@@ -40,10 +39,10 @@ Global
 		{E035BBFD-00D4-461F-9AF9-D57B45582B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E035BBFD-00D4-461F-9AF9-D57B45582B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E035BBFD-00D4-461F-9AF9-D57B45582B93}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6EAC7EC-1E82-437A-9053-A098F3A21A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6EAC7EC-1E82-437A-9053-A098F3A21A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6EAC7EC-1E82-437A-9053-A098F3A21A94}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6EAC7EC-1E82-437A-9053-A098F3A21A94}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{819F42C6-F980-415A-A28A-E57FD99C6D0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{819F42C6-F980-415A-A28A-E57FD99C6D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{819F42C6-F980-415A-A28A-E57FD99C6D0D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{819F42C6-F980-415A-A28A-E57FD99C6D0D}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
