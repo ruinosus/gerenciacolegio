@@ -17,7 +17,7 @@ using Negocios.ModuloSala.Processos;
 
 namespace GuiWindowsForms
 {
-    public partial class telaAlunoPrincipal : Form
+    public partial class telaPrincipal : Form
     {
         enum TelaSelecionada
         {
@@ -38,7 +38,7 @@ namespace GuiWindowsForms
          * */
 
 
-        private static telaAlunoPrincipal telaalunoprincipal;
+        private static telaPrincipal telaalunoprincipal;
 
         private static bool IsShown = false;
 
@@ -51,11 +51,11 @@ namespace GuiWindowsForms
         /// </summary>
         /// <returns>retorna a instância da tela em uso ou uma nova</returns>
 
-        public static telaAlunoPrincipal getInstancia()
+        public static telaPrincipal getInstancia()
         {
             if (telaalunoprincipal == null)
             {
-                telaalunoprincipal = new telaAlunoPrincipal();
+                telaalunoprincipal = new telaPrincipal();
             }
             return telaalunoprincipal;
 
@@ -68,7 +68,7 @@ namespace GuiWindowsForms
         /// Construtor da tela
         /// </summary>
 
-        public telaAlunoPrincipal()
+        public telaPrincipal()
         {
             InitializeComponent();
         }

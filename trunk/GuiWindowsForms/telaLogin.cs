@@ -94,7 +94,7 @@ namespace GuiWindowsForms
                             this.Hide();
                             Program.ultimaTela = 9;
                             Program.usuarioLogin = "Olá, Liane";
-                            telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+                            telaPrincipal telaalunoprincipal = telaPrincipal.getInstancia();
                             telaalunoprincipal.Show();
             //            }
             //            else
@@ -221,7 +221,7 @@ namespace GuiWindowsForms
                             this.Hide();
                             Program.ultimaTela = 9;
                             Program.usuarioLogin = "Olá, Liane";
-                            telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+                            telaPrincipal telaalunoprincipal = telaPrincipal.getInstancia();
                             telaalunoprincipal.Show();
         //                }
         //                else 
@@ -287,7 +287,7 @@ namespace GuiWindowsForms
                         this.Hide();
                         Program.ultimaTela = 9;
                         Program.usuarioLogin = "Olá, Liane";
-                        telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+                        telaPrincipal telaalunoprincipal = telaPrincipal.getInstancia();
                         telaalunoprincipal.Show();
         //            }
         //        }
@@ -340,7 +340,7 @@ namespace GuiWindowsForms
                         this.Hide();
                         Program.ultimaTela = 9;
                         Program.usuarioLogin = "Olá, Liane";
-                        telaAlunoPrincipal telaalunoprincipal = telaAlunoPrincipal.getInstancia();
+                        telaPrincipal telaalunoprincipal = telaPrincipal.getInstancia();
                         telaalunoprincipal.Show();
         //            }
         //        }
