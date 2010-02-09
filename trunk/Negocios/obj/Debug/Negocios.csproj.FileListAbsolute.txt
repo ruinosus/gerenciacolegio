@@ -105,3 +105,8 @@ C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\Negocios\bin\Deb
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\Negocios\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\Negocios\obj\Debug\Negocios.dll
 C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\Negocios\obj\Debug\Negocios.pdb
+D:\gerenciacolegio\Negocios\bin\Debug\Negocios.dll
+D:\gerenciacolegio\Negocios\bin\Debug\Negocios.pdb
+D:\gerenciacolegio\Negocios\obj\Debug\ResolveAssemblyReference.cache
+D:\gerenciacolegio\Negocios\obj\Debug\Negocios.dll
+D:\gerenciacolegio\Negocios\obj\Debug\Negocios.pdb
