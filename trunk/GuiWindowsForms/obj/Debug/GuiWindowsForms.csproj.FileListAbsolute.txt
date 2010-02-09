@@ -598,7 +598,6 @@ D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatricula.
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatriculaAtividade.resources
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatriculaVinculo.resources
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMedicacao.resources
-D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoPrincipal.resources
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.Properties.Resources.resources
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavel.resources
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelBusca.resources
@@ -626,3 +625,4 @@ D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.User_Control.uMenuL
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateResource.Cache
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe.manifest
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.application
+D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources

@@ -20,7 +20,7 @@ namespace Negocios.ModuloBasico.VOs
 
         public Conexao()
         {
-            if (File.Exists("config.xml"))
+            if (File.Exists("c://config.xml"))
             {
                 SoapFormatter sXML = new SoapFormatter();
                 FileStream f = new FileStream("config.xml", FileMode.Open, FileAccess.Read);
