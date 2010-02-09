@@ -1,6 +1,6 @@
 ﻿namespace GuiWindowsForms
 {
-    partial class telaAlunoPrincipal
+    partial class telaPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaAlunoPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(telaPrincipal));
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.lblAlunoOculto = new System.Windows.Forms.Label();
             this.lblFuncOculto = new System.Windows.Forms.Label();

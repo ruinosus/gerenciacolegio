@@ -80,7 +80,7 @@ namespace GuiWindowsForms
             }
             else if (formId == 6)
             {
-                telaAlunoPrincipal telaalunoprincipalaux = telaAlunoPrincipal.getInstancia();
+                telaPrincipal telaalunoprincipalaux = telaPrincipal.getInstancia();
                 telaalunoprincipalaux.Show();
             }
             else if (formId == 7)
