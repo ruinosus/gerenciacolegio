@@ -296,7 +296,6 @@
             this.btnFuncionario.BackColor = System.Drawing.Color.Transparent;
             this.btnFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.icone_prof_142x113;
             this.btnFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFuncionario.Enabled = false;
             this.btnFuncionario.FlatAppearance.BorderSize = 0;
             this.btnFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuncionario.Location = new System.Drawing.Point(365, 9);
@@ -372,7 +371,7 @@
             this.ucDesconectarLogin1.TabIndex = 6;
             this.ucDesconectarLogin1.EventoDesconectar += new GuiWindowsForms.User_Control.ucDesconectarLogin.delegateDesconectar(this.ucDesconectarLogin1_EventoDesconectar);
             // 
-            // telaAlunoPrincipal
+            // telaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -400,7 +399,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "telaAlunoPrincipal";
+            this.Name = "telaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Colégio Conhecer - Educação Infantil ao Ensino Médio";
             this.Load += new System.EventHandler(this.telaAlunoPrincipal_Load);

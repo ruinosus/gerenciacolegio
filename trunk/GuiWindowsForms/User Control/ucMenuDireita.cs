@@ -18,6 +18,75 @@ namespace GuiWindowsForms.User_Control
             InitializeComponent();
         }
 
+        #region Metodo travaBotao
+        /// <summary>
+        /// Método ultilizado para travar ou destravar determinados botões de acordo com
+        /// a tela que o usuário se encontra e o tipo de ação.
+        /// </summary>
+        /// <param name="form">
+        /// Identifica a tela atual
+        /// </param>
+        /// <param name="mudarStatus">
+        /// "False" para desabilitar os botões ou "True" para habilitar
+        /// os botões do menu.
+        /// </param>
+        public void travaBotao(Form form, Boolean mudarStatus) {
+
+            formAux3 = null;
+            formAux3 = form;
+
+            if (formAux3.Equals(telaConfiguracoes.getInstancia()))
+            {
+                //não implementado
+            }
+            else if (formAux3.Equals(telaConfiguracoesControleDeAcesso.getInstancia()))
+            {
+                //não implementado
+            }
+            else if (formAux3.Equals(telaConfiguracoesDescontoMatricula.getInstancia()))
+            {
+                if (mudarStatus == true)
+                {
+                    btnSerie.Enabled = true;
+                    btnAtividade.Enabled = true;
+                }
+                else
+                {
+                    btnSerie.Enabled = false;
+                    btnAtividade.Enabled = false;
+                }
+            }
+            else if (formAux3.Equals(telaConfiguracoesSerie.getInstancia()))
+            {
+                if (mudarStatus == true)
+                {
+                    btnAtividade.Enabled = true;
+                    btnDesconto.Enabled = true;
+                }
+                else
+                {
+                    btnAtividade.Enabled = false;
+                    btnDesconto.Enabled = false;
+                }
+            }
+            else if (formAux3.Equals(telaConfiguracoesAtividade.getInstancia()))
+            {
+                if (mudarStatus == true)
+                {
+                    btnSerie.Enabled = true;
+                    btnDesconto.Enabled = true;
+                }
+                else {
+                    btnSerie.Enabled = false;
+                    btnDesconto.Enabled = false;
+                }
+            }
+
+
+        }
+        #endregion
+
+
         public void verificaTela(Form form)
         {
             formAux3 = null;

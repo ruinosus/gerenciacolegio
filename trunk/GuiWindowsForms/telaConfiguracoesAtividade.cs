@@ -496,17 +496,26 @@ namespace GuiWindowsForms
             {
                 limparTela(opcao);
 
+
+                txtNome.Enabled = false;
+                txtDescricao.Enabled = false;
+
+                ucMenuDireita1.travaBotao(telaConfiguracoesAtividade.getInstancia(), true);
                 ucMenuInferior1.BotaoCadastrar.Enabled = false;
                 btnAdicionarImagem.Enabled = false;
                 btnAdicionar.Enabled = true;
                 btnExcluir.Enabled = true;
                 btnAlterar.Enabled = true;
                 dataGridView1.Enabled = true;
+                btnAbrirAtividadeTurma.Enabled = true;
             }
             else if (operacao == (int)OperacoesDaTela.Incluir)
             {
                 limparTela(opcao);
 
+                txtNome.Focus();
+
+                ucMenuDireita1.travaBotao(telaConfiguracoesAtividade.getInstancia(), false);
                 txtNome.Enabled = true;
                 txtDescricao.Enabled = true;
                 btnAdicionarImagem.Enabled = true;
@@ -514,9 +523,13 @@ namespace GuiWindowsForms
                 dataGridView1.Enabled = false;
                 btnAlterar.Enabled = false;
                 btnExcluir.Enabled = false;
+                btnAbrirAtividadeTurma.Enabled = false;
             }
             else if (operacao == (int)OperacoesDaTela.Alterar)
             {
+                txtNome.Focus();
+
+                ucMenuDireita1.travaBotao(telaConfiguracoesAtividade.getInstancia(), false);
                 txtNome.Enabled = true;
                 txtDescricao.Enabled = true;
                 btnAdicionarImagem.Enabled = true;

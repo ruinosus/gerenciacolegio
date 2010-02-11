@@ -494,6 +494,7 @@ namespace GuiWindowsForms
                 #endregion
             }
             verificaButton = 0;
+            ucMenuDireita1.travaBotao(telaConfiguracoesSerie.getInstancia(), true);
             cmbSerie.Enabled = false;
             cmbCiclo.Enabled = false;
             cmbTurno.Enabled = false;
@@ -760,6 +761,9 @@ namespace GuiWindowsForms
             
             IniciarCampos();
 
+            cmbSerie.Focus();
+            ucMenuDireita1.travaBotao(telaConfiguracoesSerie.getInstancia(), false);
+
             verificaButton = 1;
 
             cmbSerie.Enabled = true;
@@ -810,6 +814,9 @@ namespace GuiWindowsForms
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             verificaButton = 2;
+
+            cmbSerie.Focus();
+            ucMenuDireita1.travaBotao(telaConfiguracoesSerie.getInstancia(), false);
 
             cmbSerie.Enabled = true;
             cmbCiclo.Enabled = true;
