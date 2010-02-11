@@ -473,7 +473,6 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatricula.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatriculaAtividade.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMedicacao.resources
-C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoPrincipal.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.Properties.Resources.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavel.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelBusca.resources
@@ -626,3 +625,5 @@ D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.GenerateReso
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe.manifest
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.application
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources
+C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelVinculo.resources

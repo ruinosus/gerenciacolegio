@@ -211,7 +211,9 @@ namespace GuiWindowsForms
         #region EVENTO INSERIR
         private void btnAdicionarDesconto_Click(object sender, EventArgs e)
         {
+            txtDescricao.Focus();
 
+            ucMenuDireita1.travaBotao(telaConfiguracoesDescontoMatricula.getInstancia(), false);
             txtDescricao.Enabled = true;
             txtValor.Enabled = true;
             dataGridView1.Enabled = false;
@@ -353,6 +355,7 @@ namespace GuiWindowsForms
                 #endregion
             }
 
+            ucMenuDireita1.travaBotao(telaConfiguracoesDescontoMatricula.getInstancia(), true);
             txtDescricao.Enabled = false;
             txtValor.Enabled = false;
             dataGridView1.Enabled = true;
@@ -562,6 +565,9 @@ namespace GuiWindowsForms
         #region EVENTO ALTERAR
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            txtDescricao.Focus();
+
+            ucMenuDireita1.travaBotao(telaConfiguracoesDescontoMatricula.getInstancia(), false);
             txtDescricao.Enabled = true;
             txtValor.Enabled = true;
             dataGridView1.Enabled = false;

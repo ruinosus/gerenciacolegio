@@ -478,6 +478,7 @@ namespace GuiWindowsForms
             {
                 limparTela();
 
+                DesabilitarTela();
                 ucMenuInferior1.BotaoCadastrar.Enabled = false;
                 btnAdicionar.Enabled = true;
                 btnExcluir.Enabled = true;
