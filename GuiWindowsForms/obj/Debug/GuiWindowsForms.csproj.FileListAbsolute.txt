@@ -576,6 +576,9 @@ C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaRelatorioBoletoMensalidadeVinculo.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe.manifest
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.application
+<<<<<<< .mine
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelVinculo.resources
+=======
 D:\gerenciacolegio\GuiWindowsForms\bin\Debug\GuiWindowsForms.exe.config
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.ResolveComReference.cache
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.exe
@@ -627,3 +630,4 @@ D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.application
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelVinculo.resources
+>>>>>>> .r284
