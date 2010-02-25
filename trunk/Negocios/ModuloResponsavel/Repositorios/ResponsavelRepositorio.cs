@@ -233,7 +233,7 @@ namespace Negocios.ModuloResponsavel.Repositorios
                         }
 
 
-                        if (responsavel.PerfilID != 0)
+                        if (responsavel.PerfilID!= null && responsavel.PerfilID != 0)
                         {
 
                             resultado = ((from r in resultado
