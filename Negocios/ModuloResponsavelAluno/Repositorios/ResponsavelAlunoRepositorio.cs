@@ -96,7 +96,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
 
                             resultado = ((from ra in resultado
                                           where
-                                          ra.Restricoes.Contains(responsavelAluno.Restricoes)
+                                           ra.Restricoes!=null && ra.Restricoes.Contains(responsavelAluno.Restricoes)
                                           select ra).ToList());
 
                             resultado = resultado.Distinct().ToList();
@@ -193,7 +193,7 @@ namespace Negocios.ModuloResponsavelAluno.Repositorios
 
                             resultado.AddRange((from ra in Consultar()
                                                 where
-                                                ra.Restricoes.Contains(responsavelAluno.Restricoes)
+                                                ra.Restricoes!= null && ra.Restricoes.Contains(responsavelAluno.Restricoes)
                                                 select ra).ToList());
 
                             resultado = resultado.Distinct().ToList();

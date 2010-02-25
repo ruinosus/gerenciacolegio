@@ -253,7 +253,7 @@
             this.mskCpf.TabIndex = 143;
             this.mskCpf.Leave += new System.EventHandler(this.mskCpf_Leave);
             this.mskCpf.Enter += new System.EventHandler(this.mskCpf_Enter);
-            this.mskCpf.TextChanged += new System.EventHandler(this.mskCpf_TextChanged);
+            
             // 
             // lblCpf
             // 
