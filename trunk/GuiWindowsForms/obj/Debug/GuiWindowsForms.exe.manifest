@@ -116,22 +116,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-<<<<<<< .mine
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GuiWindowsForms.exe" size="1582592">
-=======
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GuiWindowsForms.exe" size="1584128">
->>>>>>> .r284
       <assemblyIdentity name="GuiWindowsForms" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-<<<<<<< .mine
-        <dsig:DigestValue>flj8kNsnaz57JcfTgE+hD6PqLHc=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>p5HGhqPFmYB0K9D6GKtpNEFEXns=</dsig:DigestValue>
->>>>>>> .r284
+        <dsig:DigestValue>lCGPxVBwR418CzBtFHnaKuHC3I4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -148,22 +140,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-<<<<<<< .mine
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocios.dll" size="389632">
-=======
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocios.dll" size="390144">
->>>>>>> .r284
       <assemblyIdentity name="Negocios" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-<<<<<<< .mine
-        <dsig:DigestValue>mVOlRxfv/NSXbmb0ZbsKukh+CGA=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>x06FkGfrzHo8/yDbgTE6vUizyEY=</dsig:DigestValue>
->>>>>>> .r284
+        <dsig:DigestValue>9xr+/1wjlrnz7liYLekesG2ew78=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
