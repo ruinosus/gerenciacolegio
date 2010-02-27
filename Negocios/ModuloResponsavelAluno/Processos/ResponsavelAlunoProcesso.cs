@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloAuxiliar.Singleton;
+using Negocios.ModuloBasico.Singleton;
 using Negocios.ModuloResponsavelAluno.Repositorios;
 using Negocios.ModuloResponsavelAluno.Processos;
 using Negocios.ModuloResponsavelAluno.Fabricas;

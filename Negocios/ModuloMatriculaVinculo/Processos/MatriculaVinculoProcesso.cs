@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Negocios.ModuloBasico.Constantes;
-using Negocios.ModuloAuxiliar.Singleton;
+using Negocios.ModuloBasico.Singleton;
 using Negocios.ModuloMatriculaVinculo.Repositorios;
 using Negocios.ModuloMatriculaVinculo.Processos;
 using Negocios.ModuloMatriculaVinculo.Fabricas;
@@ -20,7 +20,7 @@ namespace Negocios.ModuloMatriculaVinculo.Processos
     /// <summary>
     /// Classe MatriculaVinculoProcesso
     /// </summary>
-    public class MatriculaVinculoProcesso : Negocios.ModuloAuxiliar.Singleton.Singleton<MatriculaVinculoProcesso>, IMatriculaVinculoProcesso
+    public class MatriculaVinculoProcesso : Negocios.ModuloBasico.Singleton.Singleton<MatriculaVinculoProcesso>, IMatriculaVinculoProcesso
     {
         #region Atributos
         private IMatriculaVinculoRepositorio matriculaVinculoRepositorio = null;
