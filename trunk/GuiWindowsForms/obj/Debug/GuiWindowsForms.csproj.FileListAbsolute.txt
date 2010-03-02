@@ -627,5 +627,9 @@ D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.application
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelVinculo.resources
+<<<<<<< .mine
+C:\Users\Alexandre Alves\Desktop\Colégio Conhecer - 2a Release\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources
+=======
 E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.ResolveComReference.cache
 E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelVinculo.resources
+>>>>>>> .r289
