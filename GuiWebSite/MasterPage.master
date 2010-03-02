@@ -1,0 +1,108 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="ajax" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+<meta http-equiv="content-type" content="text/html;charset=iso-8859-2" />
+<title>Colégio Conhecer</title>
+<link href="~/App_Themes/Default/Estilo/style.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.style1 {color: #0065AA}
+</style>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <ajax:UpdatePanel ID="updTopo" runat="server">
+        <ContentTemplate>
+        <div id="conteudo"><!-- Início da Div Conteúdo -->
+	
+		<div id="cabecalho"><!-- Início da Div Cabecalho -->
+		     
+            <div id="barraLogin"><!-- Início da Div Barra Login, contem o Login e Senha, Barra e Símbolo do Colégio -->   
+				
+                <div id="login"><!-- Início da Div de Login e Senha -->
+        			<p>
+        			<asp:Label ID="lblLogin" runat="server" Text="Login:" />
+        			<asp:TextBox runat="server" type="text" name="txtLogin" EnableViewState="false" ID="txtLogin"
+                                class="input" MaxLength="20" /> 
+        			<asp:Label ID="lblSenha" runat="server" Text="Senha:" />
+        			<asp:TextBox runat="server" type="text" name="txtSenha" EnableViewState="false" ID="txtSenha"
+                                class="input" TextMode="Password" MaxLength="20" />
+                    <asp:Button ID="btnLogar" Text="Logar" runat="server" onclick="btnLogar_Click"/>
+                    <asp:LinkButton ID="lnkDeslogar" runat="server" Text="Deslogar" 
+                            onclick="lnkDeslogar_Click" />
+        			</p>
+        		</div><!-- Fim Login -->
+                
+            	<div id="simboloCabecalho"></div><!-- Símbolo do Colégio -->
+            	        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                        </asp:ScriptManager>
+			</div><!-- Fim BarraLogin -->
+		</div><!-- Fim Cabecalho -->
+        
+		<div class="menu"><!-- Inicio da Div do Menu Principal -->
+            	<ul>
+                	<li><a href="#">Colégio</a>
+                        <ul>
+                            <li><asp:LinkButton runat="server" ID="lkbHistorico" PostBackUrl="~/colegioHistorico.aspx">Histórico</asp:LinkButton></li>  
+                            <li><asp:LinkButton runat="server" ID="lkbPrincipios" PostBackUrl="~/colegioPrincipios.aspx">Princípios</asp:LinkButton></li> 
+                            <li><asp:LinkButton runat="server" ID="lkbInfra" PostBackUrl="~/colegioInfraEstrutura.aspx">Infra-Estrutura</asp:LinkButton></li> 
+                        </ul>
+                    </li>                  
+                    <li><asp:LinkButton runat="server" ID="lkbEdInfantil" PostBackUrl="~/colegioInfantil.aspx">Educaç&atilde;o Infantil</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="lkbFundamental1" PostBackUrl="~/colegioFundamental1.aspx">Fundamental I</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="lkbFundamental2" PostBackUrl="~/colegioFundamental2.aspx">Fundamental II</asp:LinkButton></li>                  
+                    <li><asp:LinkButton runat="server" ID="lkbMedio" PostBackUrl="~/colegioMedio.aspx">Ensino<br /> Médio</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="lkbAtividades" PostBackUrl="~/colegioAtividades.aspx">Atividades</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="lkbExAlunos" PostBackUrl="~/colegioExAlunos.aspx">Ex-Alunos</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="LkbContato" PostBackUrl="~/colegioContato.aspx">Contato</asp:LinkButton></li>                                 
+  		  </ul>
+		</div><!-- Fim Menu Principal -->
+		        </ContentTemplate>
+    </ajax:UpdatePanel>
+        <table width="100%">
+        <tr>
+            <td align="center">
+                <ajax:UpdateProgress ID="UpdateProgress1" Visible="true" runat="server" DisplayAfter="200"
+                    AssociatedUpdatePanelID="updMaster">
+                    <ProgressTemplate>
+                        Aguarde...
+                        <asp:Image ID="Image1" runat="server" 
+                            ImageUrl="~/App_Themes/Default/Imagens/loading.gif" />
+                    </ProgressTemplate>
+                </ajax:UpdateProgress>
+                <ajax:UpdateProgress ID="UpdateProgress2" Visible="true" runat="server" DisplayAfter="200"
+                    AssociatedUpdatePanelID="updTopo">
+                    <ProgressTemplate>
+                        Aguarde...
+                        <asp:Image ID="Image2" runat="server" 
+                            ImageUrl="~/App_Themes/Default/Imagens/loading.gif" />
+                    </ProgressTemplate>
+                </ajax:UpdateProgress>
+            </td>
+        </tr>
+    </table>
+    <ajax:UpdatePanel ID="updMaster" runat="server">
+        <ContentTemplate>
+                <!-- Inicio do Conteúdo Principal da Página -->
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </ContentTemplate>
+    </ajax:UpdatePanel>
+   </div>
+   </form>
+</body>
+</html>
+
+
+
+
