@@ -394,7 +394,6 @@ E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoF
 E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatricula.resources
 E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMatriculaAtividade.resources
 E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoMedicacao.resources
-E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoPrincipal.resources
 E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.Properties.Resources.resources
 E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavel.resources
 E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelBusca.resources
@@ -628,3 +627,5 @@ D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.application
 D:\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaPrincipal.resources
 C:\Users\Dudu\Desktop\Colegio Conhecer\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelVinculo.resources
+E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.csproj.ResolveComReference.cache
+E:\Projetos\gerenciacolegio\GuiWindowsForms\obj\Debug\GuiWindowsForms.telaAlunoResponsavelVinculo.resources

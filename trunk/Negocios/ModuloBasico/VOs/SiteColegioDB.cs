@@ -1,4 +1,4 @@
-#region Auto-generated classes for SiteColegioDB database on 2010-02-27 13:26:30Z
+#region Auto-generated classes for SiteColegioDB database on 2010-03-01 22:56:12Z
 
 //
 //  ____  _     __  __      _        _
@@ -7,7 +7,7 @@
 // | |_| | |_) | |  | |  __/ || (_| | |
 // |____/|_.__/|_|  |_|\___|\__\__,_|_|
 //
-// Auto-generated from SiteColegioDB on 2010-02-27 13:26:30Z
+// Auto-generated from SiteColegioDB on 2010-03-01 22:56:12Z
 // Please visit http://linq.to/db for more information
 
 #endregion
@@ -79,16 +79,14 @@ namespace Negocios.ModuloBasico.VOs
         }
 #endif  // !MONO_STRICT
 
-        public Table<Atividade> Atividade { get { return GetTable<Atividade>(); } }
-        public Table<Evento> Evento { get { return GetTable<Evento>(); } }
         public Table<Imagem> Imagem { get { return GetTable<Imagem>(); } }
         public Table<Postagem> Postagem { get { return GetTable<Postagem>(); } }
         public Table<Usuario> Usuario { get { return GetTable<Usuario>(); } }
 
     }
 
-    [Table(Name = "SiteColegioDB.atividade")]
-    public partial class Atividade : INotifyPropertyChanging, INotifyPropertyChanged
+    [Table(Name = "SiteColegioDB.imagem")]
+    public partial class Imagem : INotifyPropertyChanging, INotifyPropertyChanged
     {
         #region INotifyPropertyChanging handling
 
@@ -122,8 +120,6 @@ namespace Negocios.ModuloBasico.VOs
         #region Extensibility Method Definitions
 
         partial void OnCreated();
-        partial void OnCorpoChanged();
-        partial void OnCorpoChanging(string value);
         partial void OnIDChanged();
         partial void OnIDChanging(int value);
         partial void OnImagemIChanged();
@@ -138,38 +134,10 @@ namespace Negocios.ModuloBasico.VOs
         partial void OnLegendaIiChanging(string value);
         partial void OnLegendaIiiChanged();
         partial void OnLegendaIiiChanging(string value);
-        partial void OnLocalChanged();
-        partial void OnLocalChanging(int value);
-        partial void OnPaginaChanged();
-        partial void OnPaginaChanging(int value);
+        partial void OnPostagemIDChanged();
+        partial void OnPostagemIDChanging(int value);
         partial void OnTituloChanged();
         partial void OnTituloChanging(string value);
-
-        #endregion
-
-        #region string Corpo
-
-        private string _corpo;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_corpo", Name = "Corpo", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string Corpo
-        {
-            get
-            {
-                return _corpo;
-            }
-            set
-            {
-                if (value != _corpo)
-                {
-                    OnCorpoChanging(value);
-                    SendPropertyChanging();
-                    _corpo = value;
-                    SendPropertyChanged("Corpo");
-                    OnCorpoChanged();
-                }
-            }
-        }
 
         #endregion
 
@@ -225,12 +193,12 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
-        #region Byte[] ImagemII
+        #region Byte[] ImagemIi
 
         private Byte[] _imagemIi;
         [DebuggerNonUserCode]
         [Column(Storage = "_imagemIi", Name = "ImagemII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemII
+        public Byte[] ImagemIi
         {
             get
             {
@@ -243,7 +211,7 @@ namespace Negocios.ModuloBasico.VOs
                     OnImagemIiChanging(value);
                     SendPropertyChanging();
                     _imagemIi = value;
-                    SendPropertyChanged("ImagemII");
+                    SendPropertyChanged("ImagemIi");
                     OnImagemIiChanged();
                 }
             }
@@ -251,12 +219,12 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
-        #region Byte[] ImagemIII
+        #region Byte[] ImagemIii
 
         private Byte[] _imagemIii;
         [DebuggerNonUserCode]
         [Column(Storage = "_imagemIii", Name = "ImagemIII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemIII
+        public Byte[] ImagemIii
         {
             get
             {
@@ -269,7 +237,7 @@ namespace Negocios.ModuloBasico.VOs
                     OnImagemIiiChanging(value);
                     SendPropertyChanging();
                     _imagemIii = value;
-                    SendPropertyChanged("ImagemIII");
+                    SendPropertyChanged("ImagemIii");
                     OnImagemIiiChanged();
                 }
             }
@@ -355,52 +323,30 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
-        #region int Local
+        #region int PostagemID
 
-        private int _local;
+        private int _postagemID;
         [DebuggerNonUserCode]
-        [Column(Storage = "_local", Name = "Local", DbType = "int", AutoSync = AutoSync.Never, CanBeNull = false)]
-        public int Local
+        [Column(Storage = "_postagemID", Name = "PostagemID", DbType = "int", AutoSync = AutoSync.Never, CanBeNull = false)]
+        public int PostagemID
         {
             get
             {
-                return _local;
+                return _postagemID;
             }
             set
             {
-                if (value != _local)
+                if (value != _postagemID)
                 {
-                    OnLocalChanging(value);
+                    if (_postageM.HasLoadedOrAssignedValue)
+                    {
+                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+                    }
+                    OnPostagemIDChanging(value);
                     SendPropertyChanging();
-                    _local = value;
-                    SendPropertyChanged("Local");
-                    OnLocalChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region int Pagina
-
-        private int _pagina;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_pagina", Name = "Pagina", DbType = "int", AutoSync = AutoSync.Never, CanBeNull = false)]
-        public int Pagina
-        {
-            get
-            {
-                return _pagina;
-            }
-            set
-            {
-                if (value != _pagina)
-                {
-                    OnPaginaChanging(value);
-                    SendPropertyChanging();
-                    _pagina = value;
-                    SendPropertyChanged("Pagina");
-                    OnPaginaChanged();
+                    _postagemID = value;
+                    SendPropertyChanged("PostagemID");
+                    OnPostagemIDChanged();
                 }
             }
         }
@@ -433,10 +379,49 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
+        #region Parents
+
+        private EntityRef<Postagem> _postageM;
+        [Association(Storage = "_postageM", OtherKey = "ID", ThisKey = "PostagemID", Name = "fk_Imagem_Postagem", IsForeignKey = true)]
+        [DebuggerNonUserCode]
+        public Postagem Postagem
+        {
+            get
+            {
+                return _postageM.Entity;
+            }
+            set
+            {
+                if (value != _postageM.Entity)
+                {
+                    if (_postageM.Entity != null)
+                    {
+                        var previousPostagem = _postageM.Entity;
+                        _postageM.Entity = null;
+                        previousPostagem.Imagem.Remove(this);
+                    }
+                    _postageM.Entity = value;
+                    if (value != null)
+                    {
+                        value.Imagem.Add(this);
+                        _postagemID = value.ID;
+                    }
+                    else
+                    {
+                        _postagemID = default(int);
+                    }
+                }
+            }
+        }
+
+
+        #endregion
+
         #region ctor
 
-        public Atividade()
+        public Imagem()
         {
+            _postageM = new EntityRef<Postagem>();
             OnCreated();
         }
 
@@ -444,8 +429,8 @@ namespace Negocios.ModuloBasico.VOs
 
     }
 
-    [Table(Name = "SiteColegioDB.evento")]
-    public partial class Evento : INotifyPropertyChanging, INotifyPropertyChanged
+    [Table(Name = "SiteColegioDB.postagem")]
+    public partial class Postagem : INotifyPropertyChanging, INotifyPropertyChanged
     {
         #region INotifyPropertyChanging handling
 
@@ -482,7 +467,7 @@ namespace Negocios.ModuloBasico.VOs
         partial void OnCorpoChanged();
         partial void OnCorpoChanging(string value);
         partial void OnEmDestaqueChanged();
-        partial void OnEmDestaqueChanging(sbyte value);
+        partial void OnEmDestaqueChanging(sbyte? value);
         partial void OnIDChanged();
         partial void OnIDChanging(int value);
         partial void OnImagemIChanged();
@@ -501,6 +486,8 @@ namespace Negocios.ModuloBasico.VOs
         partial void OnLocalChanging(int value);
         partial void OnPaginaChanged();
         partial void OnPaginaChanging(int value);
+        partial void OnTipoChanged();
+        partial void OnTipoChanging(int value);
         partial void OnTituloChanged();
         partial void OnTituloChanging(string value);
 
@@ -532,12 +519,12 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
-        #region sbyte EmDestaque
+        #region sbyte? EmDestaque
 
-        private sbyte _emDestaque;
+        private sbyte? _emDestaque;
         [DebuggerNonUserCode]
-        [Column(Storage = "_emDestaque", Name = "EmDestaque", DbType = "tinyint(1)", AutoSync = AutoSync.Never, CanBeNull = false)]
-        public sbyte EmDestaque
+        [Column(Storage = "_emDestaque", Name = "EmDestaque", DbType = "tinyint(1)", AutoSync = AutoSync.Never)]
+        public sbyte? EmDestaque
         {
             get
             {
@@ -610,12 +597,12 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
-        #region Byte[] ImagemII
+        #region Byte[] ImagemIi
 
         private Byte[] _imagemIi;
         [DebuggerNonUserCode]
         [Column(Storage = "_imagemIi", Name = "ImagemII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemII
+        public Byte[] ImagemIi
         {
             get
             {
@@ -628,7 +615,7 @@ namespace Negocios.ModuloBasico.VOs
                     OnImagemIiChanging(value);
                     SendPropertyChanging();
                     _imagemIi = value;
-                    SendPropertyChanged("ImagemII");
+                    SendPropertyChanged("ImagemIi");
                     OnImagemIiChanged();
                 }
             }
@@ -636,12 +623,12 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
-        #region Byte[] ImagemIII
+        #region Byte[] ImagemIii
 
         private Byte[] _imagemIii;
         [DebuggerNonUserCode]
         [Column(Storage = "_imagemIii", Name = "ImagemIII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemIII
+        public Byte[] ImagemIii
         {
             get
             {
@@ -654,7 +641,7 @@ namespace Negocios.ModuloBasico.VOs
                     OnImagemIiiChanging(value);
                     SendPropertyChanging();
                     _imagemIii = value;
-                    SendPropertyChanged("ImagemIII");
+                    SendPropertyChanged("ImagemIii");
                     OnImagemIiiChanged();
                 }
             }
@@ -786,6 +773,32 @@ namespace Negocios.ModuloBasico.VOs
                     _pagina = value;
                     SendPropertyChanged("Pagina");
                     OnPaginaChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region int Tipo
+
+        private int _tipo;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_tipo", Name = "Tipo", DbType = "int", AutoSync = AutoSync.Never, CanBeNull = false)]
+        public int Tipo
+        {
+            get
+            {
+                return _tipo;
+            }
+            set
+            {
+                if (value != _tipo)
+                {
+                    OnTipoChanging(value);
+                    SendPropertyChanging();
+                    _tipo = value;
+                    SendPropertyChanged("Tipo");
+                    OnTipoChanged();
                 }
             }
         }
@@ -821,7 +834,7 @@ namespace Negocios.ModuloBasico.VOs
         #region Children
 
         private EntitySet<Imagem> _imageM;
-        [Association(Storage = "_imageM", OtherKey = "EventoID", ThisKey = "ID", Name = "fk_Imagem_Evento1")]
+        [Association(Storage = "_imageM", OtherKey = "PostagemID", ThisKey = "ID", Name = "fk_Imagem_Postagem")]
         [DebuggerNonUserCode]
         public EntitySet<Imagem> Imagem
         {
@@ -842,716 +855,14 @@ namespace Negocios.ModuloBasico.VOs
 
         private void Imagem_Attach(Imagem entity)
         {
-            entity.Evento = this;
+            entity.Postagem = this;
         }
 
         private void Imagem_Detach(Imagem entity)
         {
-            entity.Evento = null;
+            entity.Postagem = null;
         }
 
-
-        #endregion
-
-        #region ctor
-
-        public Evento()
-        {
-            _imageM = new EntitySet<Imagem>(Imagem_Attach, Imagem_Detach);
-            OnCreated();
-        }
-
-        #endregion
-
-    }
-
-    [Table(Name = "SiteColegioDB.imagem")]
-    public partial class Imagem : INotifyPropertyChanging, INotifyPropertyChanged
-    {
-        #region INotifyPropertyChanging handling
-
-        public event PropertyChangingEventHandler PropertyChanging;
-
-        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs("");
-        protected virtual void SendPropertyChanging()
-        {
-            if (PropertyChanging != null)
-            {
-                PropertyChanging(this, emptyChangingEventArgs);
-            }
-        }
-
-        #endregion
-
-        #region INotifyPropertyChanged handling
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void SendPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion
-
-        #region Extensibility Method Definitions
-
-        partial void OnCreated();
-        partial void OnEventoIDChanged();
-        partial void OnEventoIDChanging(int value);
-        partial void OnIDChanged();
-        partial void OnIDChanging(int value);
-        partial void OnImagemIChanged();
-        partial void OnImagemIChanging(Byte[] value);
-        partial void OnImagemIiChanged();
-        partial void OnImagemIiChanging(Byte[] value);
-        partial void OnImagemIiiChanged();
-        partial void OnImagemIiiChanging(Byte[] value);
-        partial void OnLegendaIChanged();
-        partial void OnLegendaIChanging(string value);
-        partial void OnLegendaIiChanged();
-        partial void OnLegendaIiChanging(string value);
-        partial void OnLegendaIiiChanged();
-        partial void OnLegendaIiiChanging(string value);
-        partial void OnTituloChanged();
-        partial void OnTituloChanging(string value);
-
-        #endregion
-
-        #region int EventoID
-
-        private int _eventoID;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_eventoID", Name = "EventoID", DbType = "int", AutoSync = AutoSync.Never, CanBeNull = false)]
-        public int EventoID
-        {
-            get
-            {
-                return _eventoID;
-            }
-            set
-            {
-                if (value != _eventoID)
-                {
-                    if (_eventO.HasLoadedOrAssignedValue)
-                    {
-                        throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-                    }
-                    OnEventoIDChanging(value);
-                    SendPropertyChanging();
-                    _eventoID = value;
-                    SendPropertyChanged("EventoID");
-                    OnEventoIDChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region int ID
-
-        private int _id;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_id", Name = "ID", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.Never, CanBeNull = false)]
-        public int ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (value != _id)
-                {
-                    OnIDChanging(value);
-                    SendPropertyChanging();
-                    _id = value;
-                    SendPropertyChanged("ID");
-                    OnIDChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region Byte[] ImagemI
-
-        private Byte[] _imagemI;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_imagemI", Name = "ImagemI", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemI
-        {
-            get
-            {
-                return _imagemI;
-            }
-            set
-            {
-                if (value != _imagemI)
-                {
-                    OnImagemIChanging(value);
-                    SendPropertyChanging();
-                    _imagemI = value;
-                    SendPropertyChanged("ImagemI");
-                    OnImagemIChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region Byte[] ImagemII
-
-        private Byte[] _imagemIi;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_imagemIi", Name = "ImagemII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemII
-        {
-            get
-            {
-                return _imagemIi;
-            }
-            set
-            {
-                if (value != _imagemIi)
-                {
-                    OnImagemIiChanging(value);
-                    SendPropertyChanging();
-                    _imagemIi = value;
-                    SendPropertyChanged("ImagemII");
-                    OnImagemIiChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region Byte[] ImagemIII
-
-        private Byte[] _imagemIii;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_imagemIii", Name = "ImagemIII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemIII
-        {
-            get
-            {
-                return _imagemIii;
-            }
-            set
-            {
-                if (value != _imagemIii)
-                {
-                    OnImagemIiiChanging(value);
-                    SendPropertyChanging();
-                    _imagemIii = value;
-                    SendPropertyChanged("ImagemIII");
-                    OnImagemIiiChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region string LegendaI
-
-        private string _legendaI;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_legendaI", Name = "LegendaI", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string LegendaI
-        {
-            get
-            {
-                return _legendaI;
-            }
-            set
-            {
-                if (value != _legendaI)
-                {
-                    OnLegendaIChanging(value);
-                    SendPropertyChanging();
-                    _legendaI = value;
-                    SendPropertyChanged("LegendaI");
-                    OnLegendaIChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region string LegendaIi
-
-        private string _legendaIi;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_legendaIi", Name = "LegendaII", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string LegendaIi
-        {
-            get
-            {
-                return _legendaIi;
-            }
-            set
-            {
-                if (value != _legendaIi)
-                {
-                    OnLegendaIiChanging(value);
-                    SendPropertyChanging();
-                    _legendaIi = value;
-                    SendPropertyChanged("LegendaIi");
-                    OnLegendaIiChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region string LegendaIii
-
-        private string _legendaIii;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_legendaIii", Name = "LegendaIII", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string LegendaIii
-        {
-            get
-            {
-                return _legendaIii;
-            }
-            set
-            {
-                if (value != _legendaIii)
-                {
-                    OnLegendaIiiChanging(value);
-                    SendPropertyChanging();
-                    _legendaIii = value;
-                    SendPropertyChanged("LegendaIii");
-                    OnLegendaIiiChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region string Titulo
-
-        private string _titulo;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_titulo", Name = "Titulo", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string Titulo
-        {
-            get
-            {
-                return _titulo;
-            }
-            set
-            {
-                if (value != _titulo)
-                {
-                    OnTituloChanging(value);
-                    SendPropertyChanging();
-                    _titulo = value;
-                    SendPropertyChanged("Titulo");
-                    OnTituloChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region Parents
-
-        private EntityRef<Evento> _eventO;
-        [Association(Storage = "_eventO", OtherKey = "ID", ThisKey = "EventoID", Name = "fk_Imagem_Evento1", IsForeignKey = true)]
-        [DebuggerNonUserCode]
-        public Evento Evento
-        {
-            get
-            {
-                return _eventO.Entity;
-            }
-            set
-            {
-                if (value != _eventO.Entity)
-                {
-                    if (_eventO.Entity != null)
-                    {
-                        var previousEvento = _eventO.Entity;
-                        _eventO.Entity = null;
-                        previousEvento.Imagem.Remove(this);
-                    }
-                    _eventO.Entity = value;
-                    if (value != null)
-                    {
-                        value.Imagem.Add(this);
-                        _eventoID = value.ID;
-                    }
-                    else
-                    {
-                        _eventoID = default(int);
-                    }
-                }
-            }
-        }
-
-
-        #endregion
-
-        #region ctor
-
-        public Imagem()
-        {
-            _eventO = new EntityRef<Evento>();
-            OnCreated();
-        }
-
-        #endregion
-
-    }
-
-    [Table(Name = "SiteColegioDB.postagem")]
-    public partial class Postagem : INotifyPropertyChanging, INotifyPropertyChanged
-    {
-        #region INotifyPropertyChanging handling
-
-        public event PropertyChangingEventHandler PropertyChanging;
-
-        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs("");
-        protected virtual void SendPropertyChanging()
-        {
-            if (PropertyChanging != null)
-            {
-                PropertyChanging(this, emptyChangingEventArgs);
-            }
-        }
-
-        #endregion
-
-        #region INotifyPropertyChanged handling
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void SendPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion
-
-        #region Extensibility Method Definitions
-
-        partial void OnCreated();
-        partial void OnCorpoChanged();
-        partial void OnCorpoChanging(string value);
-        partial void OnIDChanged();
-        partial void OnIDChanging(int value);
-        partial void OnImagemIChanged();
-        partial void OnImagemIChanging(Byte[] value);
-        partial void OnImagemIiChanged();
-        partial void OnImagemIiChanging(Byte[] value);
-        partial void OnImagemIiiChanged();
-        partial void OnImagemIiiChanging(Byte[] value);
-        partial void OnLegendaIChanged();
-        partial void OnLegendaIChanging(string value);
-        partial void OnLegendaIiChanged();
-        partial void OnLegendaIiChanging(string value);
-        partial void OnLegendaIiiChanged();
-        partial void OnLegendaIiiChanging(string value);
-        partial void OnLocalChanged();
-        partial void OnLocalChanging(int value);
-        partial void OnPaginaChanged();
-        partial void OnPaginaChanging(int value);
-        partial void OnTituloChanged();
-        partial void OnTituloChanging(string value);
-
-        #endregion
-
-        #region string Corpo
-
-        private string _corpo;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_corpo", Name = "Corpo", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string Corpo
-        {
-            get
-            {
-                return _corpo;
-            }
-            set
-            {
-                if (value != _corpo)
-                {
-                    OnCorpoChanging(value);
-                    SendPropertyChanging();
-                    _corpo = value;
-                    SendPropertyChanged("Corpo");
-                    OnCorpoChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region int ID
-
-        private int _id;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_id", Name = "ID", DbType = "int", IsPrimaryKey = true, IsDbGenerated = true, AutoSync = AutoSync.Never, CanBeNull = false)]
-        public int ID
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (value != _id)
-                {
-                    OnIDChanging(value);
-                    SendPropertyChanging();
-                    _id = value;
-                    SendPropertyChanged("ID");
-                    OnIDChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region Byte[] ImagemI
-
-        private Byte[] _imagemI;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_imagemI", Name = "ImagemI", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemI
-        {
-            get
-            {
-                return _imagemI;
-            }
-            set
-            {
-                if (value != _imagemI)
-                {
-                    OnImagemIChanging(value);
-                    SendPropertyChanging();
-                    _imagemI = value;
-                    SendPropertyChanged("ImagemI");
-                    OnImagemIChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region Byte[] ImagemII
-
-        private Byte[] _imagemIi;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_imagemIi", Name = "ImagemII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemII
-        {
-            get
-            {
-                return _imagemIi;
-            }
-            set
-            {
-                if (value != _imagemIi)
-                {
-                    OnImagemIiChanging(value);
-                    SendPropertyChanging();
-                    _imagemIi = value;
-                    SendPropertyChanged("ImagemII");
-                    OnImagemIiChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region Byte[] ImagemIII
-
-        private Byte[] _imagemIii;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_imagemIii", Name = "ImagemIII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemIII
-        {
-            get
-            {
-                return _imagemIii;
-            }
-            set
-            {
-                if (value != _imagemIii)
-                {
-                    OnImagemIiiChanging(value);
-                    SendPropertyChanging();
-                    _imagemIii = value;
-                    SendPropertyChanged("ImagemIII");
-                    OnImagemIiiChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region string LegendaI
-
-        private string _legendaI;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_legendaI", Name = "LegendaI", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string LegendaI
-        {
-            get
-            {
-                return _legendaI;
-            }
-            set
-            {
-                if (value != _legendaI)
-                {
-                    OnLegendaIChanging(value);
-                    SendPropertyChanging();
-                    _legendaI = value;
-                    SendPropertyChanged("LegendaI");
-                    OnLegendaIChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region string LegendaIi
-
-        private string _legendaIi;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_legendaIi", Name = "LegendaII", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string LegendaIi
-        {
-            get
-            {
-                return _legendaIi;
-            }
-            set
-            {
-                if (value != _legendaIi)
-                {
-                    OnLegendaIiChanging(value);
-                    SendPropertyChanging();
-                    _legendaIi = value;
-                    SendPropertyChanged("LegendaIi");
-                    OnLegendaIiChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region string LegendaIii
-
-        private string _legendaIii;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_legendaIii", Name = "LegendaIII", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string LegendaIii
-        {
-            get
-            {
-                return _legendaIii;
-            }
-            set
-            {
-                if (value != _legendaIii)
-                {
-                    OnLegendaIiiChanging(value);
-                    SendPropertyChanging();
-                    _legendaIii = value;
-                    SendPropertyChanged("LegendaIii");
-                    OnLegendaIiiChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region int Local
-
-        private int _local;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_local", Name = "Local", DbType = "int", AutoSync = AutoSync.Never, CanBeNull = false)]
-        public int Local
-        {
-            get
-            {
-                return _local;
-            }
-            set
-            {
-                if (value != _local)
-                {
-                    OnLocalChanging(value);
-                    SendPropertyChanging();
-                    _local = value;
-                    SendPropertyChanged("Local");
-                    OnLocalChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region int Pagina
-
-        private int _pagina;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_pagina", Name = "Pagina", DbType = "int", AutoSync = AutoSync.Never, CanBeNull = false)]
-        public int Pagina
-        {
-            get
-            {
-                return _pagina;
-            }
-            set
-            {
-                if (value != _pagina)
-                {
-                    OnPaginaChanging(value);
-                    SendPropertyChanging();
-                    _pagina = value;
-                    SendPropertyChanged("Pagina");
-                    OnPaginaChanged();
-                }
-            }
-        }
-
-        #endregion
-
-        #region string Titulo
-
-        private string _titulo;
-        [DebuggerNonUserCode]
-        [Column(Storage = "_titulo", Name = "Titulo", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string Titulo
-        {
-            get
-            {
-                return _titulo;
-            }
-            set
-            {
-                if (value != _titulo)
-                {
-                    OnTituloChanging(value);
-                    SendPropertyChanging();
-                    _titulo = value;
-                    SendPropertyChanged("Titulo");
-                    OnTituloChanged();
-                }
-            }
-        }
 
         #endregion
 
@@ -1559,6 +870,7 @@ namespace Negocios.ModuloBasico.VOs
 
         public Postagem()
         {
+            _imageM = new EntitySet<Imagem>(Imagem_Attach, Imagem_Detach);
             OnCreated();
         }
 
