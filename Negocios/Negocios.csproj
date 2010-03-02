@@ -279,6 +279,15 @@
     <Compile Include="ModuloSerie\Processos\SerieProcesso.cs" />
     <Compile Include="ModuloSerie\Repositorios\Interfaces\ISerieRepositorio.cs" />
     <Compile Include="ModuloSerie\Repositorios\SerieRepositorio.cs" />
+    <Compile Include="ModuloSite\Constantes\SiteConstantes.cs" />
+    <Compile Include="ModuloSite\Excecoes\PostagemNaoAlteradaExcecao.cs" />
+    <Compile Include="ModuloSite\Excecoes\PostagemNaoExcluidaExcecao.cs" />
+    <Compile Include="ModuloSite\Excecoes\PostagemNaoIncluidaExcecao.cs" />
+    <Compile Include="ModuloSite\Fabricas\PostagemFabrica.cs" />
+    <Compile Include="ModuloSite\Processos\Interfaces\IPostagemProcesso.cs" />
+    <Compile Include="ModuloSite\Processos\PostagemProcesso.cs" />
+    <Compile Include="ModuloSite\Repositorios\Interfaces\IPostagemRepositorio.cs" />
+    <Compile Include="ModuloSite\Repositorios\PostagemRepositorio.cs" />
     <Compile Include="ModuloTurma\Constantes\TurmaConstantes.cs" />
     <Compile Include="ModuloTurma\Excecoes\TurmaNaoAlteradaExcecao.cs" />
     <Compile Include="ModuloTurma\Excecoes\TurmaNaoExcluidaExcecao.cs" />
