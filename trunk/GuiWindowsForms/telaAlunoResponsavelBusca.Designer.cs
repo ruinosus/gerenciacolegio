@@ -100,12 +100,16 @@
             // 
             // btnSelecionarResponsavel
             // 
-            this.btnSelecionarResponsavel.Location = new System.Drawing.Point(608, 347);
+            this.btnSelecionarResponsavel.BackColor = System.Drawing.Color.Transparent;
+            this.btnSelecionarResponsavel.BackgroundImage = global::GuiWindowsForms.Properties.Resources.ok_32x32_tipo2_final;
+            this.btnSelecionarResponsavel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelecionarResponsavel.FlatAppearance.BorderSize = 0;
+            this.btnSelecionarResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelecionarResponsavel.Location = new System.Drawing.Point(649, 347);
             this.btnSelecionarResponsavel.Name = "btnSelecionarResponsavel";
-            this.btnSelecionarResponsavel.Size = new System.Drawing.Size(75, 33);
+            this.btnSelecionarResponsavel.Size = new System.Drawing.Size(34, 33);
             this.btnSelecionarResponsavel.TabIndex = 74;
-            this.btnSelecionarResponsavel.Text = "Selecionar";
-            this.btnSelecionarResponsavel.UseVisualStyleBackColor = true;
+            this.btnSelecionarResponsavel.UseVisualStyleBackColor = false;
             this.btnSelecionarResponsavel.Click += new System.EventHandler(this.btnSelecionarResponsavel_Click);
             // 
             // telaAlunoResponsavelBusca

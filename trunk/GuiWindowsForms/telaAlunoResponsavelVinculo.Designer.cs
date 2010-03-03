@@ -50,6 +50,7 @@
             this.mskCpf = new System.Windows.Forms.MaskedTextBox();
             this.lblCpf = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnCadastrarResponsavel = new System.Windows.Forms.Button();
             this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             this.ucMenuInferior1 = new GuiWindowsForms.ucMenuInferior();
             this.uMenuImagem1 = new GuiWindowsForms.uMenuImagem();
@@ -144,7 +145,7 @@
             "Avô(ó)",
             "Primo(a)",
             "Irmão(ã)"});
-            this.cmbGrauParentesco.Location = new System.Drawing.Point(357, 256);
+            this.cmbGrauParentesco.Location = new System.Drawing.Point(273, 256);
             this.cmbGrauParentesco.Name = "cmbGrauParentesco";
             this.cmbGrauParentesco.Size = new System.Drawing.Size(144, 21);
             this.cmbGrauParentesco.TabIndex = 1;
@@ -155,7 +156,7 @@
             this.lblGrauParentesco.AutoSize = true;
             this.lblGrauParentesco.BackColor = System.Drawing.Color.Transparent;
             this.lblGrauParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrauParentesco.Location = new System.Drawing.Point(224, 264);
+            this.lblGrauParentesco.Location = new System.Drawing.Point(140, 264);
             this.lblGrauParentesco.Name = "lblGrauParentesco";
             this.lblGrauParentesco.Size = new System.Drawing.Size(124, 13);
             this.lblGrauParentesco.TabIndex = 4;
@@ -167,7 +168,7 @@
             this.ckbResideCom.BackColor = System.Drawing.Color.Transparent;
             this.ckbResideCom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbResideCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbResideCom.Location = new System.Drawing.Point(611, 264);
+            this.ckbResideCom.Location = new System.Drawing.Point(527, 264);
             this.ckbResideCom.Name = "ckbResideCom";
             this.ckbResideCom.Size = new System.Drawing.Size(15, 14);
             this.ckbResideCom.TabIndex = 77;
@@ -178,7 +179,7 @@
             this.lblResideCom.AutoSize = true;
             this.lblResideCom.BackColor = System.Drawing.Color.Transparent;
             this.lblResideCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResideCom.Location = new System.Drawing.Point(517, 264);
+            this.lblResideCom.Location = new System.Drawing.Point(433, 264);
             this.lblResideCom.Name = "lblResideCom";
             this.lblResideCom.Size = new System.Drawing.Size(78, 13);
             this.lblResideCom.TabIndex = 78;
@@ -189,7 +190,7 @@
             this.lblRestricoes.AutoSize = true;
             this.lblRestricoes.BackColor = System.Drawing.Color.Transparent;
             this.lblRestricoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRestricoes.Location = new System.Drawing.Point(224, 291);
+            this.lblRestricoes.Location = new System.Drawing.Point(140, 291);
             this.lblRestricoes.Name = "lblRestricoes";
             this.lblRestricoes.Size = new System.Drawing.Size(71, 13);
             this.lblRestricoes.TabIndex = 79;
@@ -197,11 +198,11 @@
             // 
             // txtRestricoes
             // 
-            this.txtRestricoes.Location = new System.Drawing.Point(357, 291);
+            this.txtRestricoes.Location = new System.Drawing.Point(273, 291);
             this.txtRestricoes.MaxLength = 300;
             this.txtRestricoes.Multiline = true;
             this.txtRestricoes.Name = "txtRestricoes";
-            this.txtRestricoes.Size = new System.Drawing.Size(553, 65);
+            this.txtRestricoes.Size = new System.Drawing.Size(637, 65);
             this.txtRestricoes.TabIndex = 80;
             this.txtRestricoes.Leave += new System.EventHandler(this.txtRestricoes_Leave);
             this.txtRestricoes.Enter += new System.EventHandler(this.txtRestricoes_Enter);
@@ -224,7 +225,7 @@
             this.lblNome.AutoSize = true;
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(224, 224);
+            this.lblNome.Location = new System.Drawing.Point(140, 224);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(43, 13);
             this.lblNome.TabIndex = 140;
@@ -234,7 +235,7 @@
             // 
             this.txtNome.BackColor = System.Drawing.SystemColors.Window;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtNome.Location = new System.Drawing.Point(357, 217);
+            this.txtNome.Location = new System.Drawing.Point(273, 217);
             this.txtNome.MaxLength = 40;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(330, 20);
@@ -246,20 +247,19 @@
             // 
             this.mskCpf.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.mskCpf.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.mskCpf.Location = new System.Drawing.Point(744, 217);
+            this.mskCpf.Location = new System.Drawing.Point(660, 217);
             this.mskCpf.Mask = "000.000.000-00";
             this.mskCpf.Name = "mskCpf";
             this.mskCpf.Size = new System.Drawing.Size(100, 20);
             this.mskCpf.TabIndex = 143;
             this.mskCpf.Leave += new System.EventHandler(this.mskCpf_Leave);
             this.mskCpf.Enter += new System.EventHandler(this.mskCpf_Enter);
-            
             // 
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
             this.lblCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpf.Location = new System.Drawing.Point(704, 224);
+            this.lblCpf.Location = new System.Drawing.Point(620, 224);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(34, 13);
             this.lblCpf.TabIndex = 142;
@@ -271,12 +271,27 @@
             this.btnPesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPesquisar.FlatAppearance.BorderSize = 0;
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisar.Location = new System.Drawing.Point(864, 214);
+            this.btnPesquisar.Location = new System.Drawing.Point(780, 214);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(32, 32);
             this.btnPesquisar.TabIndex = 144;
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // btnCadastrarResponsavel
+            // 
+            this.btnCadastrarResponsavel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastrarResponsavel.BackgroundImage = global::GuiWindowsForms.Properties.Resources.ok_32x32_tipo2_final;
+            this.btnCadastrarResponsavel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCadastrarResponsavel.Enabled = false;
+            this.btnCadastrarResponsavel.FlatAppearance.BorderSize = 0;
+            this.btnCadastrarResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrarResponsavel.Location = new System.Drawing.Point(871, 214);
+            this.btnCadastrarResponsavel.Name = "btnCadastrarResponsavel";
+            this.btnCadastrarResponsavel.Size = new System.Drawing.Size(34, 32);
+            this.btnCadastrarResponsavel.TabIndex = 145;
+            this.btnCadastrarResponsavel.UseVisualStyleBackColor = false;
+            this.btnCadastrarResponsavel.Click += new System.EventHandler(this.btnCadastrarResponsavel_Click);
             // 
             // ucDesconectarLogin1
             // 
@@ -316,6 +331,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(990, 680);
+            this.Controls.Add(this.btnCadastrarResponsavel);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.mskCpf);
             this.Controls.Add(this.lblCpf);
@@ -373,5 +389,6 @@
         private System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnCadastrarResponsavel;
     }
 }

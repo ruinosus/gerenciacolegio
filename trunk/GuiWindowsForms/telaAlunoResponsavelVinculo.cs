@@ -158,8 +158,6 @@ namespace GuiWindowsForms
                                 break;
                             }
                     }
-
-
                     Atualizar();
 
                 }
@@ -327,6 +325,7 @@ namespace GuiWindowsForms
                         CarregarGrid();
                         uMenuImagem1.carregaAluno(Memoria.Instance.Aluno);
                         AjustarBotoes();
+                        btnCadastrarResponsavel.Enabled = false;
                         break;
                     }
                 case OperacoesDaTela.AbrirTela:
@@ -338,6 +337,7 @@ namespace GuiWindowsForms
                             CarregarGrid();
                             uMenuImagem1.carregaAluno(Memoria.Instance.Aluno);
                             AjustarBotoes();
+                            btnCadastrarResponsavel.Enabled = false;
                         }
                         break;
                     }
@@ -371,6 +371,7 @@ namespace GuiWindowsForms
                     {
                         ApagarBotoes();
                         btnPesquisar.Enabled = true;
+                        btnCadastrarResponsavel.Enabled = true;
                         break;
                     }
                 case OperacoesDaTela.Alterar:
@@ -486,6 +487,19 @@ namespace GuiWindowsForms
         {
             telaAlunoResponsavelBusca tela = new telaAlunoResponsavelBusca();
             tela.ShowDialog();
+        }
+
+        private void btnCadastrarResponsavel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.ultimaTela = 8;
+
+            Memoria.Instance.Responsavel = null;;
+            Memoria.Instance.Status = Negocios.ModuloBasico.Enums.StatusBanco.Inativo;
+            Memoria.Instance.StatusTelaAlunoResponsavelBusca = OperacoesDaTela.Navegar;
+            telaAlunoResponsavel telaAlunoRespon = telaAlunoResponsavel.getInstancia();
+            telaAlunoRespon.limparTela();
+            telaAlunoRespon.Show();
         }
 
     }
