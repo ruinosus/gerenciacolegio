@@ -52,6 +52,28 @@ input.button { padding: 3px; }
 	background-position: left top;
 }
 
+#conteudoTop {
+	width: 960px;
+	clear: both;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	height: 195px;
+}
+#conteudoCorpo {
+	width: 960px;
+	clear: both;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	height: 379px;
+	background-image: url(../Imagens/bckContentFull.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
 /* cabecalho */
 #cabecalho {
 	height: 139px;
@@ -233,7 +255,7 @@ input.button { padding: 3px; }
 #login {
 	color: #fff;
 	padding: 0;
-	width: 410px;
+	width: 610px;
 	margin: 0;
 	float: right;
 	position: relative;
@@ -876,11 +898,11 @@ input.button { padding: 3px; }
 	width: 16px;
 	background-position: left top;
 }
-	direita_artigos_detalhe_inferior {
+	.direita_artigos_detalhe_inferior {
 	height: 16px;
 	width: 300px;
 }
-	direita_artigos_detalhe_inferior2 {
+	.direita_artigos_detalhe_inferior2 {
 	height: 16px;
 	width: 420px;
 }
