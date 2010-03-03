@@ -124,16 +124,16 @@ namespace Negocios.ModuloBasico.VOs
         partial void OnIDChanging(int value);
         partial void OnImagemIChanged();
         partial void OnImagemIChanging(Byte[] value);
-        partial void OnImagemIiChanged();
-        partial void OnImagemIiChanging(Byte[] value);
-        partial void OnImagemIiiChanged();
-        partial void OnImagemIiiChanging(Byte[] value);
+        partial void OnImagemIIChanged();
+        partial void OnImagemIIChanging(Byte[] value);
+        partial void OnImagemIIIChanged();
+        partial void OnImagemIIIChanging(Byte[] value);
         partial void OnLegendaIChanged();
         partial void OnLegendaIChanging(string value);
-        partial void OnLegendaIiChanged();
-        partial void OnLegendaIiChanging(string value);
-        partial void OnLegendaIiiChanged();
-        partial void OnLegendaIiiChanging(string value);
+        partial void OnLegendaIIChanged();
+        partial void OnLegendaIIChanging(string value);
+        partial void OnLegendaIIIChanged();
+        partial void OnLegendaIIIChanging(string value);
         partial void OnPostagemIDChanged();
         partial void OnPostagemIDChanging(int value);
         partial void OnTituloChanged();
@@ -193,12 +193,12 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
-        #region Byte[] ImagemIi
+        #region Byte[] ImagemII
 
         private Byte[] _imagemIi;
         [DebuggerNonUserCode]
         [Column(Storage = "_imagemIi", Name = "ImagemII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemIi
+        public Byte[] ImagemII
         {
             get
             {
@@ -208,23 +208,23 @@ namespace Negocios.ModuloBasico.VOs
             {
                 if (value != _imagemIi)
                 {
-                    OnImagemIiChanging(value);
+                    OnImagemIIChanging(value);
                     SendPropertyChanging();
                     _imagemIi = value;
-                    SendPropertyChanged("ImagemIi");
-                    OnImagemIiChanged();
+                    SendPropertyChanged("ImagemII");
+                    OnImagemIIChanged();
                 }
             }
         }
 
         #endregion
 
-        #region Byte[] ImagemIii
+        #region Byte[] ImagemIII
 
         private Byte[] _imagemIii;
         [DebuggerNonUserCode]
         [Column(Storage = "_imagemIii", Name = "ImagemIII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemIii
+        public Byte[] ImagemIII
         {
             get
             {
@@ -234,11 +234,11 @@ namespace Negocios.ModuloBasico.VOs
             {
                 if (value != _imagemIii)
                 {
-                    OnImagemIiiChanging(value);
+                    OnImagemIIIChanging(value);
                     SendPropertyChanging();
                     _imagemIii = value;
-                    SendPropertyChanged("ImagemIii");
-                    OnImagemIiiChanged();
+                    SendPropertyChanged("ImagemIII");
+                    OnImagemIIIChanged();
                 }
             }
         }
@@ -271,12 +271,12 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
-        #region string LegendaIi
+        #region string LegendaII
 
         private string _legendaIi;
         [DebuggerNonUserCode]
         [Column(Storage = "_legendaIi", Name = "LegendaII", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string LegendaIi
+        public string LegendaII
         {
             get
             {
@@ -286,23 +286,23 @@ namespace Negocios.ModuloBasico.VOs
             {
                 if (value != _legendaIi)
                 {
-                    OnLegendaIiChanging(value);
+                    OnLegendaIIChanging(value);
                     SendPropertyChanging();
                     _legendaIi = value;
-                    SendPropertyChanged("LegendaIi");
-                    OnLegendaIiChanged();
+                    SendPropertyChanged("LegendaII");
+                    OnLegendaIIChanged();
                 }
             }
         }
 
         #endregion
 
-        #region string LegendaIii
+        #region string LegendaIII
 
         private string _legendaIii;
         [DebuggerNonUserCode]
         [Column(Storage = "_legendaIii", Name = "LegendaIII", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string LegendaIii
+        public string LegendaIII
         {
             get
             {
@@ -312,11 +312,11 @@ namespace Negocios.ModuloBasico.VOs
             {
                 if (value != _legendaIii)
                 {
-                    OnLegendaIiiChanging(value);
+                    OnLegendaIIIChanging(value);
                     SendPropertyChanging();
                     _legendaIii = value;
-                    SendPropertyChanged("LegendaIii");
-                    OnLegendaIiiChanged();
+                    SendPropertyChanged("LegendaIII");
+                    OnLegendaIIIChanged();
                 }
             }
         }
@@ -472,16 +472,16 @@ namespace Negocios.ModuloBasico.VOs
         partial void OnIDChanging(int value);
         partial void OnImagemIChanged();
         partial void OnImagemIChanging(Byte[] value);
-        partial void OnImagemIiChanged();
-        partial void OnImagemIiChanging(Byte[] value);
-        partial void OnImagemIiiChanged();
-        partial void OnImagemIiiChanging(Byte[] value);
+        partial void OnImagemIIChanged();
+        partial void OnImagemIIChanging(Byte[] value);
+        partial void OnImagemIIIChanged();
+        partial void OnImagemIIIChanging(Byte[] value);
         partial void OnLegendaIChanged();
         partial void OnLegendaIChanging(string value);
-        partial void OnLegendaIiChanged();
-        partial void OnLegendaIiChanging(string value);
-        partial void OnLegendaIiiChanged();
-        partial void OnLegendaIiiChanging(string value);
+        partial void OnLegendaIIChanged();
+        partial void OnLegendaIIChanging(string value);
+        partial void OnLegendaIIIChanged();
+        partial void OnLegendaIIIChanging(string value);
         partial void OnLocalChanged();
         partial void OnLocalChanging(int value);
         partial void OnPaginaChanged();
@@ -597,12 +597,12 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
-        #region Byte[] ImagemIi
+        #region Byte[] ImagemII
 
         private Byte[] _imagemIi;
         [DebuggerNonUserCode]
         [Column(Storage = "_imagemIi", Name = "ImagemII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemIi
+        public Byte[] ImagemII
         {
             get
             {
@@ -612,23 +612,23 @@ namespace Negocios.ModuloBasico.VOs
             {
                 if (value != _imagemIi)
                 {
-                    OnImagemIiChanging(value);
+                    OnImagemIIChanging(value);
                     SendPropertyChanging();
                     _imagemIi = value;
-                    SendPropertyChanged("ImagemIi");
-                    OnImagemIiChanged();
+                    SendPropertyChanged("ImagemII");
+                    OnImagemIIChanged();
                 }
             }
         }
 
         #endregion
 
-        #region Byte[] ImagemIii
+        #region Byte[] ImagemIII
 
         private Byte[] _imagemIii;
         [DebuggerNonUserCode]
         [Column(Storage = "_imagemIii", Name = "ImagemIII", DbType = "longblob", AutoSync = AutoSync.Never)]
-        public Byte[] ImagemIii
+        public Byte[] ImagemIII
         {
             get
             {
@@ -638,11 +638,11 @@ namespace Negocios.ModuloBasico.VOs
             {
                 if (value != _imagemIii)
                 {
-                    OnImagemIiiChanging(value);
+                    OnImagemIIIChanging(value);
                     SendPropertyChanging();
                     _imagemIii = value;
-                    SendPropertyChanged("ImagemIii");
-                    OnImagemIiiChanged();
+                    SendPropertyChanged("ImagemIII");
+                    OnImagemIIIChanged();
                 }
             }
         }
@@ -675,12 +675,12 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
-        #region string LegendaIi
+        #region string LegendaII
 
         private string _legendaIi;
         [DebuggerNonUserCode]
         [Column(Storage = "_legendaIi", Name = "LegendaII", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string LegendaIi
+        public string LegendaII
         {
             get
             {
@@ -690,23 +690,23 @@ namespace Negocios.ModuloBasico.VOs
             {
                 if (value != _legendaIi)
                 {
-                    OnLegendaIiChanging(value);
+                    OnLegendaIIChanging(value);
                     SendPropertyChanging();
                     _legendaIi = value;
-                    SendPropertyChanged("LegendaIi");
-                    OnLegendaIiChanged();
+                    SendPropertyChanged("LegendaII");
+                    OnLegendaIIChanged();
                 }
             }
         }
 
         #endregion
 
-        #region string LegendaIii
+        #region string LegendaIII
 
         private string _legendaIii;
         [DebuggerNonUserCode]
         [Column(Storage = "_legendaIii", Name = "LegendaIII", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
-        public string LegendaIii
+        public string LegendaIII
         {
             get
             {
@@ -716,11 +716,11 @@ namespace Negocios.ModuloBasico.VOs
             {
                 if (value != _legendaIii)
                 {
-                    OnLegendaIiiChanging(value);
+                    OnLegendaIIIChanging(value);
                     SendPropertyChanging();
                     _legendaIii = value;
-                    SendPropertyChanged("LegendaIii");
-                    OnLegendaIiiChanged();
+                    SendPropertyChanged("LegendaIII");
+                    OnLegendaIIIChanged();
                 }
             }
         }
