@@ -43,14 +43,19 @@ namespace Negocios.ModuloSite.Repositorios
 
 
             postagemAux = resultado[0];
-            //postagemAux.Descricao = postagem.Descricao;
-            //postagemAux.Nome = postagem.Nome;
-            //postagemAux.DataPostagem = postagem.DataPostagem;
-            //postagemAux.PontoID = postagem.PontoID;
-            //postagemAux.UsuarioID = postagem.UsuarioID;
-            //postagemAux.ImagemGrande = postagem.ImagemGrande;
-            //postagemAux.ImagemMedia = postagem.ImagemMedia;
-            //postagemAux.ImagemPequena = postagem.ImagemPequena;
+			postagemAux.Titulo = postagem.Titulo;
+			postagemAux.Corpo = postagem.Corpo;
+            postagemAux.ImagemI = postagem.ImagemI;
+            postagemAux.ImagemII = postagem.ImagemII;
+			postagemAux.ImagemIII = postagem.ImagemIII;
+			postagemAux.LegendaI = postagem.LegendaI;
+            postagemAux.LegendaII = postagem.LegendaII;	
+			postagemAux.LegendaIII = postagem.LegendaIII;
+			postagemAux.Local = postagem.Local;
+			postagemAux.Tipo = postagem.Tipo;
+			postagemAux.Pagina = postagem.Pagina;
+			postagemAux.EmDestaque = postagem.EmDestaque;
+			
 
             Confirmar();
         }
@@ -61,132 +66,154 @@ namespace Negocios.ModuloSite.Repositorios
 
             switch (tipoPesquisa)
             {
-                //#region Case E
-                //case TipoPesquisa.E:
-                //    {
-                //        if (postagem.ID != 0)
-                //        {
+                #region Case E
+                case TipoPesquisa.E:
+                    {
+                        if (postagem.ID != 0)
+                        {
 
-                //            resultado = ((from p in resultado
-                //                          where
-                //                          p.ID == postagem.ID
-                //                          select p).ToList());
+                            resultado = ((from p in resultado
+                                          where
+                                          p.ID == postagem.ID
+                                          select p).ToList());
 
-                //            resultado = resultado.Distinct().ToList();
-                //        }
+                            resultado = resultado.Distinct().ToList();
+                        }
 
-                //        if (!string.IsNullOrEmpty(postagem.Descricao))
-                //        {
+                        if (!string.IsNullOrEmpty(postagem.Titulo))
+                        {
 
-                //            resultado = ((from p in resultado
-                //                          where
-                //                          p.Descricao.Contains(postagem.Descricao)
-                //                          select p).ToList());
-
-
-                //            resultado = resultado.Distinct().ToList();
-                //        }                        
-
-                //        if (postagem.DataPostagem.HasValue)
-                //        {
-
-                //            resultado = ((from p in resultado
-                //                          where
-                //                            p.DataPostagem.HasValue && p.DataPostagem.Value == postagem.DataPostagem.Value
-                //                          select p).ToList());
+                            resultado = ((from p in resultado
+                                          where
+                                          p.Titulo.Contains(postagem.Titulo)
+                                          select p).ToList());
 
 
-                //            resultado = resultado.Distinct().ToList();
-                //        }					
+                            resultado = resultado.Distinct().ToList();
+                       }   
+					   
+					    if (postagem.Pagina != 0)
+                        {
+
+                            resultado = ((from p in resultado
+                                          where
+                                          p.Pagina  == postagem.Pagina 
+                                          select p).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
 						
+						if (postagem.Local != 0)
+                        {
 
-                //        if (!string.IsNullOrEmpty(postagem.Nome))
-                //        {
+                            resultado =((from p in resultado
+                                          where
+                                          p.Local  == postagem.Local 
+                                          select p).ToList());
 
-                //            resultado = ((from p in resultado
-                //                          where
-                //                          p.Nome.Contains(postagem.Nome)
-                //                          select p).ToList());
-
-
-                //            resultado = resultado.Distinct().ToList();
-                //        }
+                            resultado = resultado.Distinct().ToList();
+                        }
 						
-                //        if(postagem.PontoID!=null && postagem.PontoID!=0)
-                //        {
-                //             resultado = ((from p in resultado
-                //                          where
-                //                          p.PontoID == postagem.PontoID
-                //                          select p).ToList());
+						if (postagem.Tipo != 0)
+                        {
 
-                //            resultado = resultado.Distinct().ToList();
-                //        }
-                //       break;
-                //    } 
-                //#endregion
-                //#region Case Ou
-                //case TipoPesquisa.Ou:
-                //    {
-                //         if (postagem.ID != 0)
-                //        {
+                            resultado =((from p in resultado
+                                          where
+                                          p.Tipo  == postagem.Tipo 
+                                          select p).ToList());
 
-                //            resultado.AddRange((from p in resultado
-                //                          where
-                //                          p.ID == postagem.ID
-                //                          select p).ToList());
-
-                //            resultado = resultado.Distinct().ToList();
-                //        }
-
-                //        if (!string.IsNullOrEmpty(postagem.Descricao))
-                //        {
-
-                //            resultado.AddRange((from p in resultado
-                //                          where
-                //                          p.Descricao.Contains(postagem.Descricao)
-                //                          select p).ToList());
-
-
-                //            resultado = resultado.Distinct().ToList();
-                //        }                        
-
-                //        if (postagem.DataPostagem.HasValue)
-                //        {
-
-                //            resultado.AddRange((from p in resultado
-                //                          where
-                //                            p.DataPostagem.HasValue && p.DataPostagem.Value == postagem.DataPostagem.Value
-                //                          select p).ToList());
-
-
-                //            resultado = resultado.Distinct().ToList();
-                //        }					
+                            resultado = resultado.Distinct().ToList();
+                        }
 						
+						if (postagem.EmDestaque.HasValue)
+                        {
 
-                //        if (!string.IsNullOrEmpty(postagem.Nome))
-                //        {
+                            resultado =((from p in resultado
+                                          where
+                                          p.EmDestaque.HasValue && p.EmDestaque.Value== postagem.EmDestaque 
+                                          select p).ToList());
 
-                //            resultado.AddRange((from p in resultado
-                //                          where
-                //                          p.Nome.Contains(postagem.Nome)
-                //                          select p).ToList());
+                            resultado = resultado.Distinct().ToList();
+                        }
+					   
+					   
+                       break;
+                    } 
+                #endregion
+                #region Case Ou
+                case TipoPesquisa.Ou:
+                    {
+                        if (postagem.ID != 0)
+                        {
+
+                            resultado.AddRange((from p in resultado
+                                          where
+                                          p.ID == postagem.ID
+                                          select p).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+
+                        if (!string.IsNullOrEmpty(postagem.Titulo))
+                        {
+
+                            resultado.AddRange ((from p in resultado
+                                          where
+                                          p.Titulo.Contains(postagem.Titulo)
+                                          select p).ToList());
 
 
-                //            resultado = resultado.Distinct().ToList();
-                //        }
+                            resultado = resultado.Distinct().ToList();
+                       }   
+					   
+					    if (postagem.Pagina != 0)
+                        {
+
+                            resultado.AddRange((from p in resultado
+                                          where
+                                          p.Pagina  == postagem.Pagina 
+                                          select p).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
 						
-                //        if(postagem.PontoID!=null && postagem.PontoID!=0)
-                //        {
-                //             resultado.AddRange((from p in resultado
-                //                          where
-                //                          p.PontoID == postagem.PontoID
-                //                          select p).ToList());
+						if (postagem.Local != 0)
+                        {
 
-                //            resultado = resultado.Distinct().ToList();
-                //        }
-                //       break;
-                //    }
-                //#endregion
+                            resultado.AddRange((from p in resultado
+                                          where
+                                          p.Local  == postagem.Local 
+                                          select p).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+						
+						if (postagem.Tipo != 0)
+                        {
+
+                            resultado.AddRange((from p in resultado
+                                          where
+                                          p.Tipo  == postagem.Tipo 
+                                          select p).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+						
+						if (postagem.EmDestaque.HasValue)
+                        {
+
+                            resultado.AddRange((from p in resultado
+                                          where
+                                          p.EmDestaque.HasValue && p.EmDestaque.Value == postagem.EmDestaque 
+                                          select p).ToList());
+
+                            resultado = resultado.Distinct().ToList();
+                        }
+					   
+					   
+                       break;
+                    }
+                #endregion
             }
 
             return resultado;
