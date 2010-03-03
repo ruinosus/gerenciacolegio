@@ -1,9 +1,7 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
     Namespace="System.Web.UI" TagPrefix="ajax" %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,17 +11,79 @@
 <link href="~/App_Themes/Default/Estilo/style.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 .style1 {color: #0065AA}
+.style1Atividades {
+	color: #0065AA;
+	font-family: Impact;
+	font-size: 20px;
+}
+	.unico_informacoes_colegio_Atividades {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #0065AA;
+	font-weight: bold;
+}
+.style4Atividades {
+	color: #000000;
+	font-family: Arial;
+	font-size: 14px;
+	text-align: left;
+}
+.unico_informacoes_colegioContato {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #0065AA;
+	font-weight: bold;
+}
+.style4Contato {
+	color: #000000;
+	font-family: Arial;
+	font-size: 14px;
+	text-align: left;
+}
+input.submit {
+	background-color: #ffffff;
+	border: 0;
+	padding: 0px 0;
+	width: 60px;
+	margin: 0 1px 1px 0;
+	color: #0065AA;
+	font-family: Impact;
+	font-size: 14px;
+}
+.style0Fund1 {color: #0065AA}
+.style1Fund1 {color: #E77817}
+.style2Fund1 {color: #B8DB7C}
+.style3Fund1 {color: #B74F8F}
+.style0Fund2 {color: #0065AA}
+.style1Fund2 {color: #FF0000}
+.style2Fund2 {color: #9966CC}
+.style3Hist {
+	word-spacing: 2px;
+}
+.style4Hist {
+	color: #000000;
+	font-family: Arial;
+	font-size: 14px;
+	text-align: left;
+}
+.style2Infra {
+	font-size: 12px;
+	text-align:justify;
+}
+.style0Meio {color: #0065AA}
+.style1Meio {color: #009900}
 </style>
         <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
 
 <body>
     <form id="form1" runat="server">
     <ajax:UpdatePanel ID="updTopo" runat="server">
         <ContentTemplate>
-        <div id="conteudo"><!-- Início da Div Conteúdo -->
+                    	        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                        </asp:ScriptManager>
+        <div id="conteudoTop"><!-- Início da Div Conteúdo -->
 	
 		<div id="cabecalho"><!-- Início da Div Cabecalho -->
 		     
@@ -32,10 +92,10 @@
                 <div id="login"><!-- Início da Div de Login e Senha -->
         			<p>
         			<asp:Label ID="lblLogin" runat="server" Text="Login:" />
-        			<asp:TextBox runat="server" type="text" name="txtLogin" EnableViewState="false" ID="txtLogin"
+        			<asp:TextBox runat="server" ID="txtLogin" EnableViewState="false"
                                 class="input" MaxLength="20" /> 
         			<asp:Label ID="lblSenha" runat="server" Text="Senha:" />
-        			<asp:TextBox runat="server" type="text" name="txtSenha" EnableViewState="false" ID="txtSenha"
+        			<asp:TextBox runat="server" type="text" ID="txtSenha" EnableViewState="false"
                                 class="input" TextMode="Password" MaxLength="20" />
                     <asp:Button ID="btnLogar" Text="Logar" runat="server" onclick="btnLogar_Click"/>
                     <asp:LinkButton ID="lnkDeslogar" runat="server" Text="Deslogar" 
@@ -44,8 +104,7 @@
         		</div><!-- Fim Login -->
                 
             	<div id="simboloCabecalho"></div><!-- Símbolo do Colégio -->
-            	        <asp:ScriptManager ID="ScriptManager1" runat="server">
-                        </asp:ScriptManager>
+
 			</div><!-- Fim BarraLogin -->
 		</div><!-- Fim Cabecalho -->
         
@@ -58,18 +117,31 @@
                             <li><asp:LinkButton runat="server" ID="lkbInfra" PostBackUrl="~/colegioInfraEstrutura.aspx">Infra-Estrutura</asp:LinkButton></li> 
                         </ul>
                     </li>                  
-                    <li><asp:LinkButton runat="server" ID="lkbEdInfantil" PostBackUrl="~/colegioInfantil.aspx">Educaç&atilde;o Infantil</asp:LinkButton></li>
-                    <li><asp:LinkButton runat="server" ID="lkbFundamental1" PostBackUrl="~/colegioFundamental1.aspx">Fundamental I</asp:LinkButton></li>
-                    <li><asp:LinkButton runat="server" ID="lkbFundamental2" PostBackUrl="~/colegioFundamental2.aspx">Fundamental II</asp:LinkButton></li>                  
-                    <li><asp:LinkButton runat="server" ID="lkbMedio" PostBackUrl="~/colegioMedio.aspx">Ensino<br /> Médio</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="lkbEdInfantil" PostBackUrl="~/colegioInfantil.aspx">Educaç&atilde;o 
+                        Infantil</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="lkbFundamental1" PostBackUrl="~/colegioFundamental1.aspx">Fundamental 
+                        I</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="lkbFundamental2" PostBackUrl="~/colegioFundamental2.aspx">Fundamental 
+                        II</asp:LinkButton></li>                  
+                    <li><asp:LinkButton runat="server" ID="lkbMedio" PostBackUrl="~/colegioMedio.aspx">Ensino<br /> 
+                        Médio</asp:LinkButton></li>
                     <li><asp:LinkButton runat="server" ID="lkbAtividades" PostBackUrl="~/colegioAtividades.aspx">Atividades</asp:LinkButton></li>
                     <li><asp:LinkButton runat="server" ID="lkbExAlunos" PostBackUrl="~/colegioExAlunos.aspx">Ex-Alunos</asp:LinkButton></li>
                     <li><asp:LinkButton runat="server" ID="LkbContato" PostBackUrl="~/colegioContato.aspx">Contato</asp:LinkButton></li>                                 
   		  </ul>
 		</div><!-- Fim Menu Principal -->
+		</div>
 		        </ContentTemplate>
     </ajax:UpdatePanel>
-        <table width="100%">
+    <ajax:UpdatePanel ID="updMaster" runat="server">
+        <ContentTemplate>
+                <!-- Inicio do Conteúdo Principal da Página -->
+                    <asp:ContentPlaceHolder ID="corpo" runat="server">
+            </asp:ContentPlaceHolder>
+        </ContentTemplate>
+    </ajax:UpdatePanel>
+    
+            <table width="100%">
         <tr>
             <td align="center">
                 <ajax:UpdateProgress ID="UpdateProgress1" Visible="true" runat="server" DisplayAfter="200"
@@ -91,14 +163,6 @@
             </td>
         </tr>
     </table>
-    <ajax:UpdatePanel ID="updMaster" runat="server">
-        <ContentTemplate>
-                <!-- Inicio do Conteúdo Principal da Página -->
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </ContentTemplate>
-    </ajax:UpdatePanel>
-   </div>
    </form>
 </body>
 </html>
