@@ -162,7 +162,7 @@ namespace Negocios.ModuloSite.Repositorios
         #region Construtor
         public ImagemRepositorio()
         {
-            Conexao conexao = new Conexao();
+            ConexaoSite conexao = new ConexaoSite();
             db = new SiteColegioDB(new MySqlConnection(conexao.ToString()));
 
         }

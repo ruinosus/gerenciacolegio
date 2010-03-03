@@ -72,8 +72,10 @@
     <Compile Include="ModuloAtividadeTurma\Repositorios\AtividadeTurmaRepositorio.cs" />
     <Compile Include="ModuloAtividadeTurma\Repositorios\Interfaces\IAtividadeTurmaRepositorio.cs" />
     <Compile Include="ModuloBasico\Singleton\Singleton.cs" />
+    <Compile Include="ModuloBasico\VOs\ClasseAuxiliar.cs" />
     <Compile Include="ModuloBasico\VOs\Conexao.cs" />
     <Compile Include="ModuloBasico\VOs\ConversionAttribute.cs" />
+    <Compile Include="ModuloBasico\VOs\ConexaoSite.cs" />
     <Compile Include="ModuloBasico\VOs\CoreList.cs" />
     <Compile Include="ModuloBasico\VOs\DataTableConverter.cs" />
     <Compile Include="ModuloBasico\VOs\Interfaces\IDataTableConverter.cs" />
