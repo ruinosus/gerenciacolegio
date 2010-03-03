@@ -654,6 +654,7 @@ namespace GuiWindowsForms
             this.ucMenuInferior1.EventoCadastrar += new GuiWindowsForms.ucMenuInferior.delegateCadastrar(this.ucAluno1_EventoCadastrar);
             this.ucMenuInferior1.EventoVoltar += new GuiWindowsForms.ucMenuInferior.delegateVoltar(this.ucAluno1_EventoVoltar);
             this.ucMenuInferior1.EventoAlterar += new GuiWindowsForms.ucMenuInferior.delegateAlterar(this.ucMenuInferior1_EventoAlterar);
+            this.ucMenuInferior1.EventoDeletar += new GuiWindowsForms.ucMenuInferior.delegateDeletar(this.ucMenuInferior1_EventoDeletar);
             // 
             // uMenuLateral1
             // 

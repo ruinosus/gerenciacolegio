@@ -66,7 +66,8 @@ namespace GuiWindowsForms
 
         #region MÉTODO PARA VERIFICAR USO DA TELA
         /// <summary>
-        /// Método para verificar se a tela já esta sendo exibida ou não, avita que a tela seja descarregada da memória
+        /// Método para verificar se a tela já esta sendo exibida ou não, 
+        /// evita que a tela seja descarregada da memória
         /// </summary>
 
         public new void Show()
@@ -851,6 +852,37 @@ namespace GuiWindowsForms
 
         #endregion
 
+        #region EVENTO EXCLUIR
+        private void ucMenuInferior1_EventoDeletar()
+        {
+            try 
+            {
+                alunoControlador = AlunoProcesso.Instance;
+
+                aluno.Status = (int)Status.Inativo;
+
+
+                Memoria memoria = Memoria.Instance;
+                if (memoria.Aluno != null)
+                {
+                    alunoControlador.Alterar(aluno);
+                    MessageBox.Show(AlunoConstantes.ALUNO_EXCLUIDO, "Colégio Conhecer");
+                }
+
+                //Quando Excluir o aluno, a tela voltar para o menu principal
+                this.Hide();
+
+                Program.ultimaTela = 6;
+                Program.SelecionaForm(Program.ultimaTela);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        #endregion
+
         #endregion
 
         #region USER CONTROLS - Controle Lateral - Botões de Navegação
@@ -1184,12 +1216,14 @@ namespace GuiWindowsForms
                 {
                     Enabled_False();
                     ucMenuInferior1.exibirBotaoAlterar();
+                    ucMenuInferior1.exibirBotaoDeletar();
                 }
 
                 if (Program.ultimaTelaCadastrar == 3)
                 {
                     Enabled_False();
                     ucMenuInferior1.exibirBotaoAlterar();
+                    ucMenuInferior1.exibirBotaoDeletar();
                 }
 
                 if (Program.ultimaTelaCadastrar == 1)
@@ -1310,5 +1344,7 @@ namespace GuiWindowsForms
         }
 
         #endregion
+
+     
     }
 }
