@@ -175,7 +175,7 @@ namespace Negocios.ModuloSite.Repositorios
         #region Construtor
         public UsuarioRepositorio()
         {
-            Conexao conexao = new Conexao();
+            ConexaoSite conexao = new ConexaoSite();
             db = new SiteColegioDB(new MySqlConnection(conexao.ToString()));
 
         }
