@@ -116,18 +116,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GuiWindowsForms.exe" size="1584640">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GuiWindowsForms.exe" size="1586688">
       <assemblyIdentity name="GuiWindowsForms" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-<<<<<<< .mine
-        <dsig:DigestValue>Dxt2PDc4rAuT3IQpsUooThE8C5Q=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>rYjSHxO0RBQhsAEUL8+/dqVA96w=</dsig:DigestValue>
->>>>>>> .r294
+        <dsig:DigestValue>PHkaX2BM9TtqVb52NMEXv6B4C8Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -144,22 +140,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-<<<<<<< .mine
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocios.dll" size="333824">
-=======
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Negocios.dll" size="345600">
->>>>>>> .r294
       <assemblyIdentity name="Negocios" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-<<<<<<< .mine
-        <dsig:DigestValue>PapQt9vn+msZIRhMA11mWFVXS7A=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>dnDtOilpZyVx9CT4xInyN8z4oFI=</dsig:DigestValue>
->>>>>>> .r294
+        <dsig:DigestValue>OMEQ6Yk8KLR9JMZQINulgUSL/2Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

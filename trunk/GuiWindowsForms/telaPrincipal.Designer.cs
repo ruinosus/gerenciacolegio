@@ -36,10 +36,6 @@
             this.lblErro = new System.Windows.Forms.Label();
             this.lblFinanceiro = new System.Windows.Forms.Label();
             this.dgvAluno = new System.Windows.Forms.DataGridView();
-            this.colunaNomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FoneAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCadastrarFuncionario = new System.Windows.Forms.Button();
@@ -52,6 +48,14 @@
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaNomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FoneAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbCiclo = new System.Windows.Forms.ComboBox();
+            this.cmbSerie = new System.Windows.Forms.ComboBox();
+            this.lblCiclo = new System.Windows.Forms.Label();
+            this.lblSerie = new System.Windows.Forms.Label();
             this.ucDesconectarLogin1 = new GuiWindowsForms.User_Control.ucDesconectarLogin();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +67,7 @@
             this.txtBusca.Enabled = false;
             this.txtBusca.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusca.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtBusca.Location = new System.Drawing.Point(285, 248);
+            this.txtBusca.Location = new System.Drawing.Point(365, 205);
             this.txtBusca.MaxLength = 60;
             this.txtBusca.Name = "txtBusca";
             this.txtBusca.Size = new System.Drawing.Size(415, 26);
@@ -147,55 +151,16 @@
             this.FoneAluno,
             this.EmailAluno});
             this.dgvAluno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvAluno.Location = new System.Drawing.Point(122, 341);
+            this.dgvAluno.Location = new System.Drawing.Point(203, 262);
             this.dgvAluno.MultiSelect = false;
             this.dgvAluno.Name = "dgvAluno";
             this.dgvAluno.ReadOnly = true;
-            this.dgvAluno.Size = new System.Drawing.Size(750, 266);
+            this.dgvAluno.Size = new System.Drawing.Size(750, 344);
             this.dgvAluno.TabIndex = 17;
             this.dgvAluno.Visible = false;
             this.dgvAluno.DoubleClick += new System.EventHandler(this.dgvAluno_DoubleClick);
             this.dgvAluno.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellClick);
             this.dgvAluno.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAluno_CellEnter);
-            // 
-            // colunaNomeAluno
-            // 
-            this.colunaNomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colunaNomeAluno.DataPropertyName = "Nome";
-            this.colunaNomeAluno.HeaderText = "Nome do Aluno";
-            this.colunaNomeAluno.MaxInputLength = 40;
-            this.colunaNomeAluno.Name = "colunaNomeAluno";
-            this.colunaNomeAluno.ReadOnly = true;
-            this.colunaNomeAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colunaNomeAluno.Width = 250;
-            // 
-            // Serie
-            // 
-            this.Serie.DataPropertyName = "SerieAtual";
-            this.Serie.HeaderText = "Série";
-            this.Serie.Name = "Serie";
-            this.Serie.ReadOnly = true;
-            // 
-            // FoneAluno
-            // 
-            this.FoneAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FoneAluno.DataPropertyName = "FoneResidencia";
-            this.FoneAluno.HeaderText = "Fone Resid.";
-            this.FoneAluno.MaxInputLength = 15;
-            this.FoneAluno.Name = "FoneAluno";
-            this.FoneAluno.ReadOnly = true;
-            this.FoneAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // EmailAluno
-            // 
-            this.EmailAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.EmailAluno.DataPropertyName = "Email";
-            this.EmailAluno.HeaderText = "Email do Aluno";
-            this.EmailAluno.MaxInputLength = 20;
-            this.EmailAluno.Name = "EmailAluno";
-            this.EmailAluno.ReadOnly = true;
-            this.EmailAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.EmailAluno.Width = 180;
             // 
             // Column3
             // 
@@ -216,7 +181,7 @@
             this.btnCadastrarFuncionario.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_ok_cadastrar_145x52;
             this.btnCadastrarFuncionario.FlatAppearance.BorderSize = 0;
             this.btnCadastrarFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarFuncionario.Location = new System.Drawing.Point(31, 628);
+            this.btnCadastrarFuncionario.Location = new System.Drawing.Point(203, 628);
             this.btnCadastrarFuncionario.Margin = new System.Windows.Forms.Padding(0);
             this.btnCadastrarFuncionario.Name = "btnCadastrarFuncionario";
             this.btnCadastrarFuncionario.Size = new System.Drawing.Size(145, 52);
@@ -269,7 +234,7 @@
             this.btnPesquisar.Enabled = false;
             this.btnPesquisar.FlatAppearance.BorderSize = 0;
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisar.Location = new System.Drawing.Point(737, 225);
+            this.btnPesquisar.Location = new System.Drawing.Point(801, 181);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(74, 75);
             this.btnPesquisar.TabIndex = 1;
@@ -282,7 +247,7 @@
             this.btnCadastrarAluno.BackgroundImage = global::GuiWindowsForms.Properties.Resources.btn_ok_cadastrar_110x52;
             this.btnCadastrarAluno.FlatAppearance.BorderSize = 0;
             this.btnCadastrarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrarAluno.Location = new System.Drawing.Point(31, 628);
+            this.btnCadastrarAluno.Location = new System.Drawing.Point(203, 628);
             this.btnCadastrarAluno.Margin = new System.Windows.Forms.Padding(0);
             this.btnCadastrarAluno.Name = "btnCadastrarAluno";
             this.btnCadastrarAluno.Size = new System.Drawing.Size(110, 52);
@@ -333,11 +298,11 @@
             this.dataGridViewTextBoxColumn2,
             this.Cargo});
             this.dgvFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvFuncionario.Location = new System.Drawing.Point(122, 341);
+            this.dgvFuncionario.Location = new System.Drawing.Point(203, 262);
             this.dgvFuncionario.MultiSelect = false;
             this.dgvFuncionario.Name = "dgvFuncionario";
             this.dgvFuncionario.ReadOnly = true;
-            this.dgvFuncionario.Size = new System.Drawing.Size(750, 266);
+            this.dgvFuncionario.Size = new System.Drawing.Size(750, 344);
             this.dgvFuncionario.TabIndex = 72;
             this.dgvFuncionario.Visible = false;
             this.dgvFuncionario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellDoubleClick_1);
@@ -360,6 +325,89 @@
             this.Cargo.Name = "Cargo";
             this.Cargo.ReadOnly = true;
             // 
+            // colunaNomeAluno
+            // 
+            this.colunaNomeAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colunaNomeAluno.DataPropertyName = "Nome";
+            this.colunaNomeAluno.HeaderText = "Nome do Aluno";
+            this.colunaNomeAluno.MaxInputLength = 40;
+            this.colunaNomeAluno.Name = "colunaNomeAluno";
+            this.colunaNomeAluno.ReadOnly = true;
+            this.colunaNomeAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colunaNomeAluno.Width = 300;
+            // 
+            // Serie
+            // 
+            this.Serie.DataPropertyName = "SerieAtual";
+            this.Serie.HeaderText = "Série";
+            this.Serie.Name = "Serie";
+            this.Serie.ReadOnly = true;
+            // 
+            // FoneAluno
+            // 
+            this.FoneAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FoneAluno.DataPropertyName = "FoneResidencia";
+            this.FoneAluno.HeaderText = "Fone Resid.";
+            this.FoneAluno.MaxInputLength = 15;
+            this.FoneAluno.Name = "FoneAluno";
+            this.FoneAluno.ReadOnly = true;
+            this.FoneAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // EmailAluno
+            // 
+            this.EmailAluno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.EmailAluno.DataPropertyName = "Email";
+            this.EmailAluno.HeaderText = "Email do Aluno";
+            this.EmailAluno.MaxInputLength = 20;
+            this.EmailAluno.Name = "EmailAluno";
+            this.EmailAluno.ReadOnly = true;
+            this.EmailAluno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EmailAluno.Width = 180;
+            // 
+            // cmbCiclo
+            // 
+            this.cmbCiclo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiclo.FormattingEnabled = true;
+            this.cmbCiclo.Items.AddRange(new object[] {
+            "selecione",
+            "Educação Infantil",
+            "Ensino Fundamental I",
+            "Ensino Fundamental II",
+            "Ensino Médio"});
+            this.cmbCiclo.Location = new System.Drawing.Point(0, 317);
+            this.cmbCiclo.Name = "cmbCiclo";
+            this.cmbCiclo.Size = new System.Drawing.Size(186, 21);
+            this.cmbCiclo.TabIndex = 75;
+            // 
+            // cmbSerie
+            // 
+            this.cmbSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSerie.FormattingEnabled = true;
+            this.cmbSerie.Items.AddRange(new object[] {
+            ""});
+            this.cmbSerie.Location = new System.Drawing.Point(0, 262);
+            this.cmbSerie.Name = "cmbSerie";
+            this.cmbSerie.Size = new System.Drawing.Size(186, 21);
+            this.cmbSerie.TabIndex = 74;
+            // 
+            // lblCiclo
+            // 
+            this.lblCiclo.AutoSize = true;
+            this.lblCiclo.Location = new System.Drawing.Point(-2, 303);
+            this.lblCiclo.Name = "lblCiclo";
+            this.lblCiclo.Size = new System.Drawing.Size(39, 13);
+            this.lblCiclo.TabIndex = 76;
+            this.lblCiclo.Text = "Ciclo:";
+            // 
+            // lblSerie
+            // 
+            this.lblSerie.AutoSize = true;
+            this.lblSerie.Location = new System.Drawing.Point(-3, 248);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(40, 13);
+            this.lblSerie.TabIndex = 73;
+            this.lblSerie.Text = "Série:";
+            // 
             // ucDesconectarLogin1
             // 
             this.ucDesconectarLogin1.BackColor = System.Drawing.Color.Transparent;
@@ -377,6 +425,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(179)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(990, 680);
+            this.Controls.Add(this.cmbCiclo);
+            this.Controls.Add(this.cmbSerie);
+            this.Controls.Add(this.lblCiclo);
+            this.Controls.Add(this.lblSerie);
             this.Controls.Add(this.dgvFuncionario);
             this.Controls.Add(this.ucDesconectarLogin1);
             this.Controls.Add(this.pictureBox1);
@@ -432,12 +484,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private GuiWindowsForms.User_Control.ucDesconectarLogin ucDesconectarLogin1;
+        private System.Windows.Forms.DataGridView dgvFuncionario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colunaNomeAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Serie;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoneAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAluno;
-        private System.Windows.Forms.DataGridView dgvFuncionario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
+        private System.Windows.Forms.ComboBox cmbCiclo;
+        private System.Windows.Forms.ComboBox cmbSerie;
+        private System.Windows.Forms.Label lblCiclo;
+        private System.Windows.Forms.Label lblSerie;
     }
 }

@@ -31,6 +31,9 @@ namespace GuiWindowsForms
 
         TelaSelecionada tela = TelaSelecionada.Aluno;
 
+
+        ISerieProcesso serieControlador = SerieProcesso.Instance;
+
         #region SINGLETON DA TELA
         /*
          * Atributo para o Singleton da tela
@@ -320,7 +323,6 @@ namespace GuiWindowsForms
             btnCadastrarFuncionario.Visible = false;
             btnCadastrarAluno.Visible = true;
 
-
         }
         #endregion
 
@@ -333,8 +335,6 @@ namespace GuiWindowsForms
 
             btnCadastrarAluno.Visible = false;
             btnCadastrarFuncionario.Visible = true;
-
-
         }
         #endregion
 
@@ -443,6 +443,7 @@ namespace GuiWindowsForms
         private void telaAlunoPrincipal_Load(object sender, EventArgs e)
         {
             CarregarGrid();
+
         }
         #endregion
 
@@ -461,6 +462,7 @@ namespace GuiWindowsForms
                         Aluno a = new Aluno();
                         a.Nome = txtBusca.Text;
                         a.PerfilID = 0;
+                        a.Status = (int)Status.Ativo;
                         alunosAxiliarLista = processo.Consultar(a, Negocios.ModuloBasico.Enums.TipoPesquisa.E);
 
                         dgvAluno.DataSource = alunosAxiliarLista;
@@ -749,6 +751,21 @@ namespace GuiWindowsForms
                 txtBusca.Enabled = true;
                 dgvAluno.Visible = true;
                 btnCadastrarAluno.Visible = true;
+                cmbSerie.Visible = true;
+                lblSerie.Visible = true;
+                cmbCiclo.Visible = true;
+                lblCiclo.Visible = true;
+
+
+                List<Serie> listaSerie = new List<Serie>();
+                Serie serieInicio = new Serie();
+                serieInicio.Nome = "selecione";
+                serieInicio.ID = 0;
+                listaSerie = serieControlador.Consultar();
+                listaSerie.Insert(0, serieInicio);
+                cmbSerie.DataSource = listaSerie;
+                cmbSerie.DisplayMember = "Nome";
+
                 CarregarGrid();
             }
 
@@ -758,6 +775,10 @@ namespace GuiWindowsForms
                 txtBusca.Enabled = true;
                 dgvFuncionario.Visible = true;
                 btnCadastrarFuncionario.Visible = true;
+                cmbSerie.Visible = false;
+                lblSerie.Visible = false;
+                cmbCiclo.Visible = false;
+                lblCiclo.Visible = false;
                 CarregarGrid();
             }
 
@@ -778,6 +799,10 @@ namespace GuiWindowsForms
             dgvFuncionario.Visible = false;
             btnCadastrarFuncionario.Visible = false;
             btnCadastrarAluno.Visible = false;
+            cmbSerie.Visible = false;
+            lblSerie.Visible = false;
+            cmbCiclo.Visible = false;
+            lblCiclo.Visible = false;
 
         }
         #endregion
