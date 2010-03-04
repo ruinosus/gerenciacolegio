@@ -23,8 +23,10 @@
                                                         width="150" height="55" hspace="0" vspace="0" border="0" /></div>
               <div class="esquerda_artigos_imagem_menu1"><asp:ImageButton ID="imbFund1_2" runat="server" ImageUrl="App_Themes/Default/Imagens/menuEsquerda2.png"
                                                         width="150" height="55" hspace="0" vspace="0" border="0" /></div>
-              <div class="esquerda_artigos_imagem_menu2"><asp:ImageButton ID="imbFund1_3" runat="server" ImageUrl="App_Themes/Default/Imagens/menuEsquerda3.png"
-                                                        width="150" height="45" hspace="0" vspace="0" border="0" /></div>
+              <div class="esquerda_artigos_imagem_menu2"><asp:ImageButton ID="imbFund1_3" 
+                      runat="server" ImageUrl="App_Themes/Default/Imagens/menuEsquerda3.png"
+                                                        width="150" height="45" hspace="0" 
+                      vspace="0" border="0" PostBackUrl="~/colegioImagens.aspx" /></div>
               <div class="esquerda_artigos_imagem_menu2"><asp:ImageButton ID="imbFund1_4" runat="server" ImageUrl="App_Themes/Default/Imagens/menuEsquerda4.png"
                                                         width="150" height="45" hspace="0" vspace="0" border="0" /></div>
               <div class="esquerda_artigos_imagem_menu"><asp:ImageButton ID="imbFund1_5" runat="server" ImageUrl="App_Themes/Default/Imagens/menuEsquerda5.png"
