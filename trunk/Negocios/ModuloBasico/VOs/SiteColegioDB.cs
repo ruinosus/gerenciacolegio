@@ -1,4 +1,4 @@
-#region Auto-generated classes for SiteColegioDB database on 2010-03-01 22:56:12Z
+#region Auto-generated classes for SiteColegioDB database on 2010-03-04 00:24:10Z
 
 //
 //  ____  _     __  __      _        _
@@ -7,7 +7,7 @@
 // | |_| | |_) | |  | |  __/ || (_| | |
 // |____/|_.__/|_|  |_|\___|\__\__,_|_|
 //
-// Auto-generated from SiteColegioDB on 2010-03-01 22:56:12Z
+// Auto-generated from SiteColegioDB on 2010-03-04 00:24:10Z
 // Please visit http://linq.to/db for more information
 
 #endregion
@@ -120,6 +120,8 @@ namespace Negocios.ModuloBasico.VOs
         #region Extensibility Method Definitions
 
         partial void OnCreated();
+        partial void OnCorpoChanged();
+        partial void OnCorpoChanging(string value);
         partial void OnIDChanged();
         partial void OnIDChanging(int value);
         partial void OnImagemIChanged();
@@ -136,8 +138,36 @@ namespace Negocios.ModuloBasico.VOs
         partial void OnLegendaIIIChanging(string value);
         partial void OnPostagemIDChanged();
         partial void OnPostagemIDChanging(int value);
+        partial void OnSubTituloChanged();
+        partial void OnSubTituloChanging(string value);
         partial void OnTituloChanged();
         partial void OnTituloChanging(string value);
+
+        #endregion
+
+        #region string Corpo
+
+        private string _corpo;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_corpo", Name = "Corpo", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
+        public string Corpo
+        {
+            get
+            {
+                return _corpo;
+            }
+            set
+            {
+                if (value != _corpo)
+                {
+                    OnCorpoChanging(value);
+                    SendPropertyChanging();
+                    _corpo = value;
+                    SendPropertyChanged("Corpo");
+                    OnCorpoChanged();
+                }
+            }
+        }
 
         #endregion
 
@@ -353,6 +383,32 @@ namespace Negocios.ModuloBasico.VOs
 
         #endregion
 
+        #region string SubTitulo
+
+        private string _subTitulo;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_subTitulo", Name = "SubTitulo", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
+        public string SubTitulo
+        {
+            get
+            {
+                return _subTitulo;
+            }
+            set
+            {
+                if (value != _subTitulo)
+                {
+                    OnSubTituloChanging(value);
+                    SendPropertyChanging();
+                    _subTitulo = value;
+                    SendPropertyChanged("SubTitulo");
+                    OnSubTituloChanged();
+                }
+            }
+        }
+
+        #endregion
+
         #region string Titulo
 
         private string _titulo;
@@ -486,6 +542,8 @@ namespace Negocios.ModuloBasico.VOs
         partial void OnLocalChanging(int value);
         partial void OnPaginaChanged();
         partial void OnPaginaChanging(int value);
+        partial void OnSubTituloChanged();
+        partial void OnSubTituloChanging(string value);
         partial void OnTipoChanged();
         partial void OnTipoChanging(int value);
         partial void OnTituloChanged();
@@ -773,6 +831,32 @@ namespace Negocios.ModuloBasico.VOs
                     _pagina = value;
                     SendPropertyChanged("Pagina");
                     OnPaginaChanged();
+                }
+            }
+        }
+
+        #endregion
+
+        #region string SubTitulo
+
+        private string _subTitulo;
+        [DebuggerNonUserCode]
+        [Column(Storage = "_subTitulo", Name = "SubTitulo", DbType = "varchar(8000)", AutoSync = AutoSync.Never)]
+        public string SubTitulo
+        {
+            get
+            {
+                return _subTitulo;
+            }
+            set
+            {
+                if (value != _subTitulo)
+                {
+                    OnSubTituloChanging(value);
+                    SendPropertyChanging();
+                    _subTitulo = value;
+                    SendPropertyChanged("SubTitulo");
+                    OnSubTituloChanged();
                 }
             }
         }

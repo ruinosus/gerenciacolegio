@@ -46,9 +46,73 @@ namespace Negocios.ModuloBasico.Enums
         VoltarTela = 5,
         Navegar = 6,
         Bloquear = 7,
-        Inativa= 8
+        Inativa = 8
     }
 
-    
+
+    public enum LocalPostagem
+    {
+        [Description("")]
+        NaoAlterar = 0,
+        [Description("Um")]
+        Um = 1,
+        [Description("Dois")]
+        Dois = 2,
+        [Description("Três")]
+        Tres = 3,
+        [Description("Quatro")]
+        Quatro = 4,
+        [Description("Cinco")]
+        Cinco = 5,
+        [Description("Seis")]
+        Seis = 6,
+        [Description("Sete")]
+        Amapa = 7,
+        [Description("Oito")]
+        Oito = 8,
+        [Description("Nove")]
+        Nove = 9,
+        [Description("Dez")]
+        Dez = 10
+
+    }
+
+    public enum TipoPagina
+    {
+        [Description("")]
+        NaoAlterar = 0,
+        [Description("Colégio")]
+        Colegio = 1,
+        [Description("Educação Infantil")]
+        EducacaoInfantil = 2,
+        [Description("Fundamental I")]
+        FundamentalI = 3,
+        [Description("Fundamental II")]
+        FundamentalII = 4,
+        [Description("Ensino Médio")]
+        EnsinoMedio = 5,
+        [Description("Atividades")]
+        Atividades = 6,
+        [Description("Ex-Alunos")]
+        ExAlunos = 7,
+        [Description("Contato")]
+        Contato = 8,
+
+    }
+
+    public enum TipoPostagem
+    {
+        [Description("")]
+        NaoAlterar = 0,
+        [Description("Postagem")]
+        Postagem = 1,
+        [Description("Evento")]
+        Evento = 2,
+        [Description("Atividade")]
+        Atividade = 3
+
+
+    }
+
 
 }

@@ -44,6 +44,8 @@ namespace Negocios.ModuloSite.Repositorios
 
             imagemAux = resultado[0];
             imagemAux.Titulo = imagem.Titulo;
+            imagemAux.SubTitulo = imagem.SubTitulo;
+            imagemAux.Corpo = imagem.Corpo;
             imagemAux.ImagemI = imagem.ImagemI;
             imagemAux.ImagemII = imagem.ImagemII;
 			imagemAux.ImagemIII = imagem.ImagemIII;

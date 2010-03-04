@@ -44,6 +44,7 @@ namespace Negocios.ModuloSite.Repositorios
 
             postagemAux = resultado[0];
 			postagemAux.Titulo = postagem.Titulo;
+            postagemAux.SubTitulo = postagem.SubTitulo;
 			postagemAux.Corpo = postagem.Corpo;
             postagemAux.ImagemI = postagem.ImagemI;
             postagemAux.ImagemII = postagem.ImagemII;

@@ -8,6 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GuiWebSite", "GuiWebSite\", "{819F42C6-F980-415A-A28A-E57FD99C6D0D}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFramework = "3.5"
+		ProjectReferences = "{E035BBFD-00D4-461F-9AF9-D57B45582B93}|Negocios.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/GuiWebSite"
 		Debug.AspNetCompiler.PhysicalPath = "GuiWebSite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\GuiWebSite\"
