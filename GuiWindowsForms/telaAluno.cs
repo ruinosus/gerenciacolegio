@@ -861,6 +861,7 @@ namespace GuiWindowsForms
 
                 aluno.Status = (int)Status.Inativo;
 
+               
 
                 Memoria memoria = Memoria.Instance;
                 if (memoria.Aluno != null)
