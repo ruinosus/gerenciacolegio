@@ -28,6 +28,12 @@
 	font-size: 14px;
 	text-align: left;
 }
+style5Atividades {
+	color: #000000;
+	font-family: Arial Black;
+	font-size: 16px;
+	text-align: center;
+}
 .unico_informacoes_colegioContato {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 9px;
