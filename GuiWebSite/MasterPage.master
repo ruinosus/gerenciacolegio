@@ -72,6 +72,20 @@ input.submit {
 }
 .style0Meio {color: #0065AA}
 .style1Meio {color: #009900}
+.style2Principios {
+	color: #000000;
+	font-family: Arial;
+	font-size: 10px;
+	text-align: left;
+	font-stretch:normal;
+}
+.style3Principios {
+	color: #000000;
+	font-family: Arial;
+	font-size: 12px;
+	text-align: left;
+	font-stretch:normal;
+}
 </style>
         <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -117,7 +131,7 @@ input.submit {
                             <li><asp:LinkButton runat="server" ID="lkbInfra" PostBackUrl="~/colegioInfraEstrutura.aspx">Infra-Estrutura</asp:LinkButton></li> 
                         </ul>
                     </li>                  
-                    <li><asp:LinkButton runat="server" ID="lkbEdInfantil" PostBackUrl="~/colegioInfantil.aspx">Educaç&atilde;o 
+                    <li><asp:LinkButton runat="server" ID="lkbEdInfantil" PostBackUrl="~/colegioConstrucao.aspx">Educaç&atilde;o 
                         Infantil</asp:LinkButton></li>
                     <li><asp:LinkButton runat="server" ID="lkbFundamental1" PostBackUrl="~/colegioFundamental1.aspx">Fundamental 
                         I</asp:LinkButton></li>
@@ -126,7 +140,7 @@ input.submit {
                     <li><asp:LinkButton runat="server" ID="lkbMedio" PostBackUrl="~/colegioMedio.aspx">Ensino<br /> 
                         Médio</asp:LinkButton></li>
                     <li><asp:LinkButton runat="server" ID="lkbAtividades" PostBackUrl="~/colegioAtividades.aspx">Atividades</asp:LinkButton></li>
-                    <li><asp:LinkButton runat="server" ID="lkbExAlunos" PostBackUrl="~/colegioExAlunos.aspx">Ex-Alunos</asp:LinkButton></li>
+                    <li><asp:LinkButton runat="server" ID="lkbExAlunos" PostBackUrl="~/colegioConstrucao.aspx">Ex-Alunos</asp:LinkButton></li>
                     <li><asp:LinkButton runat="server" ID="LkbContato" PostBackUrl="~/colegioContato.aspx">Contato</asp:LinkButton></li>                                 
   		  </ul>
 		</div><!-- Fim Menu Principal -->

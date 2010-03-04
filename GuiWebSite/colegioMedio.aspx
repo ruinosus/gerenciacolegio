@@ -68,7 +68,7 @@
               </div>
                 
               <div class="meio_artigos_texto_index3">
-              	<div class="meio_artigos_texto_index3_div1"><asp:Label ID="lblTextoArtigoMeio1" runat="server" /> </div>
+              	<div class="meio_artigos_texto_index3_div1"><asp:Image ID="imgArtigo1Meio" runat="server" Width="150" Height="80" /> </div>
               	<div class="meio_artigos_texto_index3_div2"><asp:Label ID="lblTextoArtigoMeio2" runat="server" /></div>
               </div>
 
@@ -77,7 +77,7 @@
               	<div class="meio_artigos_texto_index5_div1">
               	<asp:Image ID="imgMedio1" runat="server" ImageUrl="App_Themes/Default/Imagens/imagemFundoLetras.png" Width="35" Height="220" hspace="0" vspace="0" border="0" /></div>
               	<div class="meio_artigos_texto_index5_div2">
-              	<div class="meio_artigos_texto_index5_div2_div1"><asp:Label ID="lblTextoArtigoMeio3" runat="server" /> </div>
+              	<div class="meio_artigos_texto_index5_div2_div1"><asp:Image ID="imgArtigo2Meio" runat="server" Width="235" Height="80" /> </div>
               	<div class="meio_artigos_texto_index5_div2_div2"><asp:Label ID="lblTextoArtigoMeio4" runat="server" /></div>
               </div>
               </div>
@@ -114,7 +114,7 @@
               </div>
                 
               	<div class="direita_artigos_texto_index2"><asp:Label ID="lblTextoArtigoMeio5" runat="server" /> </div>
-              	<div class="direita_artigos_imagem_index2"><asp:Label ID="lblTextoArtigoMeio6" runat="server" /></div>          
+              	<div class="direita_artigos_imagem_index2"><asp:Image ID="imgArtigo3Meio" runat="server" Width="390" Height="130" /></div>          
             
             </div><!-- Fim direita_artigos -->
             
