@@ -20,6 +20,10 @@ namespace Negocios.ModuloBasico.VOs
 
         public ConexaoSite()
         {
+            this.Banco = "SiteColegioDB";
+            this.Usuario = "root";
+            this.Senha = "123";
+            this.Caminho = "localhost";
             //if (File.Exists("c://config.xml"))
             //{
             //    SoapFormatter sXML = new SoapFormatter();
@@ -44,8 +48,8 @@ namespace Negocios.ModuloBasico.VOs
 
         public override string ToString()
         {
-            return "Database=localhost;Data Source=sitecolegiodb;User Id=root;Password=123";
-            //return "Database="+Banco+";Data Source="+Caminho+";User Id="+Usuario+";Password="+Senha;
+            //return "Database=localhost;Data Source=sitecolegiodb;User Id=root;Password=123";
+            return "Database="+Banco+";Data Source="+Caminho+";User Id="+Usuario+";Password="+Senha;
         }
 
     }

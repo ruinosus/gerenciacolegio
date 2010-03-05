@@ -308,6 +308,7 @@
     <Compile Include="ModuloSite\Repositorios\Interfaces\IUsuarioRepositorio.cs" />
     <Compile Include="ModuloSite\Repositorios\PostagemRepositorio.cs" />
     <Compile Include="ModuloSite\Repositorios\UsuarioRepositorio.cs" />
+    <Compile Include="ModuloSite\VOs\PostagemExibicao.cs" />
     <Compile Include="ModuloTurma\Constantes\TurmaConstantes.cs" />
     <Compile Include="ModuloTurma\Excecoes\TurmaNaoAlteradaExcecao.cs" />
     <Compile Include="ModuloTurma\Excecoes\TurmaNaoExcluidaExcecao.cs" />

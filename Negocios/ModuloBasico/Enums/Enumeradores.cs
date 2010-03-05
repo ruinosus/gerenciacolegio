@@ -54,27 +54,25 @@ namespace Negocios.ModuloBasico.Enums
     {
         [Description("")]
         NaoAlterar = 0,
-        [Description("Um")]
-        Um = 1,
-        [Description("Dois")]
-        Dois = 2,
-        [Description("Três")]
-        Tres = 3,
-        [Description("Quatro")]
-        Quatro = 4,
-        [Description("Cinco")]
-        Cinco = 5,
-        [Description("Seis")]
-        Seis = 6,
-        [Description("Sete")]
-        Amapa = 7,
-        [Description("Oito")]
-        Oito = 8,
-        [Description("Nove")]
-        Nove = 9,
-        [Description("Dez")]
-        Dez = 10
+        [Description("Esquerda Um")]
+        EsquerdaUm = 1,
+        [Description("Esquerda Dois")]
+        EsquerdaDois = 2,
+        [Description("Esquerda Três")]
+        EsquerdaTres = 3,
+        [Description("Meio Um")]
+        MeioUm = 4,
+        [Description("Meio Dois")]
+        MeioDois = 5,
+        [Description("Meio Três")]
+        MeioTres = 6,
 
+        [Description("Direita Um")]
+        DireitaUm = 7,
+        [Description("Direita Dois")]
+        DireitaDois = 8,
+        [Description("Direita Três")]
+        DireitaTres = 9
     }
 
     public enum TipoPagina
@@ -97,6 +95,8 @@ namespace Negocios.ModuloBasico.Enums
         ExAlunos = 7,
         [Description("Contato")]
         Contato = 8,
+        [Description("Principal")]
+        Principal = 9
 
     }
 
@@ -106,10 +106,16 @@ namespace Negocios.ModuloBasico.Enums
         NaoAlterar = 0,
         [Description("Postagem")]
         Postagem = 1,
-        [Description("Evento")]
-        Evento = 2,
+        [Description("Evento Educação Infantil")]
+        EventoEducacaoInfantil = 2,
+        [Description("Evento Ensino Fundamental I")]
+        EventoEnsinoFundamentalI = 3,
+        [Description("Evento Ensino Fundamental II")]
+        EventoEnsinoFundamentalII = 4,
+        [Description("Evento Ensino Médio")]
+        EventoEnsinoMedio = 5,
         [Description("Atividade")]
-        Atividade = 3
+        Atividade = 6
 
 
     }
