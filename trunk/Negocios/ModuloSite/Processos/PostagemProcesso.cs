@@ -8,10 +8,11 @@ using MySql.Data.MySqlClient;
 using Negocios.ModuloBasico.Singleton;
 using Negocios.ModuloSite.Repositorios;
 using Negocios.ModuloSite.Fabricas;
+using Negocios.ModuloSite.VOs;
 
 namespace Negocios.ModuloSite.Processos
 {
-    public class PostagemProcesso :Negocios.ModuloBasico.Singleton.Singleton<PostagemProcesso>, IPostagemProcesso
+    public class PostagemProcesso : Negocios.ModuloBasico.Singleton.Singleton<PostagemProcesso>, IPostagemProcesso
     {
         #region Atributos
         private IPostagemRepositorio postagemRepositorio = null;
@@ -73,6 +74,54 @@ namespace Negocios.ModuloSite.Processos
             return postagemList;
         }
 
+        public PostagemExibicao Consultar(TipoPagina tipo)
+        {
+            PostagemExibicao resultado = new PostagemExibicao();
+            List<Postagem> PostagemList = Consultar();
+            #region Direita
+            resultado.PostagemDireitaUm = (from p in PostagemList
+                                           where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.DireitaUm
+                                           select p).SingleOrDefault();
+            resultado.PostagemDireitaTres = (from p in PostagemList
+                                             where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.DireitaTres
+                                             select p).SingleOrDefault();
+            resultado.PostagemDireitaDois = (from p in PostagemList
+                                             where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.DireitaDois
+                                             select p).SingleOrDefault();
+            #endregion
+
+            #region Esquerda
+
+            resultado.PostagemEsquerdaDois = (from p in PostagemList
+                                              where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.EsquerdaDois
+                                              select p).SingleOrDefault();
+            resultado.PostagemEsquerdaTres = (from p in PostagemList
+                                              where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.EsquerdaTres
+                                              select p).SingleOrDefault();
+
+            resultado.PostagemEsquerdaUm = (from p in PostagemList
+                                            where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.EsquerdaUm
+                                            select p).SingleOrDefault();
+
+            #endregion
+
+            #region Meio
+
+            resultado.PostagemMeioDois = (from p in PostagemList
+                                          where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.MeioDois
+                                          select p).SingleOrDefault();
+            resultado.PostagemMeioTres = (from p in PostagemList
+                                          where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.MeioTres
+                                          select p).SingleOrDefault();
+
+            resultado.PostagemMeioUm = (from p in PostagemList
+                                        where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.MeioUm
+                                        select p).SingleOrDefault();
+
+            #endregion
+            return resultado;
+        }
+
         public void Confirmar()
         {
             postagemRepositorio.Confirmar();
@@ -80,5 +129,5 @@ namespace Negocios.ModuloSite.Processos
 
         #endregion
     }
-        
+
 }

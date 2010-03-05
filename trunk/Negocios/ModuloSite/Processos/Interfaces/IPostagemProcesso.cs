@@ -5,6 +5,7 @@ using System.Text;
 
 using Negocios.ModuloBasico.Enums;
 using Negocios.ModuloBasico.VOs;
+using Negocios.ModuloSite.VOs;
 
 namespace Negocios.ModuloSite.Processos
 {
@@ -41,6 +42,13 @@ namespace Negocios.ModuloSite.Processos
         /// </summary>
         /// <returns>Lista contendo todos os postagems cadastrados.</returns>
         List<Postagem> Consultar();
+
+        /// <summary>
+        /// Método responsável por Consultar uma postagem 
+        /// </summary>
+        /// <param name="tipo">Tipo da postagem a ser pesquisada</param>
+        /// <returns>Postagem encontrada com o local informado</returns>
+        PostagemExibicao Consultar(TipoPagina tipo);
 
         /// <summary>
         /// Método responsável por confirmar as alterações no sistema.

@@ -4,20 +4,40 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Negocios.ModuloBasico.Enums;
-using Negocios.ModuloSite.Constantes;
-using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloSite.Processos;
+using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloBasico.VOs;
+using Negocios.ModuloSite.Constantes;
 
-public partial class ModuloPostagem_Incluir : System.Web.UI.Page
+public partial class ModuloPostagem_Alterar : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
+
             ClasseAuxiliar.CarregarComboEnum<TipoPostagem>(ddlTipoPostagem);
-            CarregarComboLocal(null, null);
+            
             LimparCampos();
+            CarregarDados();
+        }
+    }
+
+    private void CarregarDados()
+    {
+        if (Session["PostagemAlterar"] != null)
+        {
+            Postagem postagem = (Postagem)Session["PostagemAlterar"];
+
+
+            ddlTipoPostagem.SelectedValue = ((int)postagem.Tipo).ToString();
+            CarregarComboLocal(null, null);
+            ddlLocalPostagem.SelectedValue = ((int)postagem.Local).ToString();
+            txtCorpo.Text= postagem.Corpo;
+            
+            txtSubTitulo.Text = postagem.SubTitulo;
+            txtTitulo.Text = postagem.Titulo;
+            //fupImgPostagem.
         }
     }
 
@@ -33,13 +53,13 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
             case TipoPostagem.NaoAlterar:
                 {
                     lblLocalPostagem.Visible = false;
-                    ddlLocalPostagem.Visible = false;                   
+                    ddlLocalPostagem.Visible = false;
                     break;
                 }
             default:
                 {
                     lblLocalPostagem.Visible = true;
-                    ddlLocalPostagem.Visible = true; 
+                    ddlLocalPostagem.Visible = true;
                     break;
                 }
         }
@@ -49,7 +69,7 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
 
 
     #region Métodos Privados
-   
+
 
 
     protected void Confirmar(object sender, EventArgs e)
@@ -64,12 +84,13 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
                 throw new Exception("Informe o local da postagem.");
 
             Postagem postagem = new Postagem();
+            postagem = (Postagem)Session["PostagemAlterar"];
             postagem.Titulo = txtTitulo.Text;
             postagem.SubTitulo = txtSubTitulo.Text;
 
             postagem.Corpo = txtCorpo.Text;
 
-            
+
             postagem.Local = int.Parse(ddlLocalPostagem.SelectedValue);
             postagem.Tipo = int.Parse(ddlTipoPostagem.SelectedValue);
             if (fupImgPostagem.HasFile)
@@ -85,9 +106,9 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
                 postagem.ImagemI = ClasseAuxiliar.ImageToByteArray(thumbNailImg);
             }
 
-            processo.Incluir(postagem);
+            processo.Alterar(postagem);
             processo.Confirmar();
-            cvaAvisoDeInformacao.ErrorMessage = SiteConstantes.POSTAGEM_INCLUIDA;
+            cvaAvisoDeInformacao.ErrorMessage = SiteConstantes.POSTAGEM_ALTERADA;
             cvaAvisoDeInformacao.IsValid = false;
             //LimparCampos();
             //CarregarComboLocal(null, null);
@@ -117,8 +138,8 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
 
     private void LimparCampos()
     {
- 
-        txtCorpo.Text= string.Empty;
+
+        txtCorpo.Text = string.Empty;
         txtTitulo.Text = string.Empty;
         txtSubTitulo.Text = string.Empty;
         ddlLocalPostagem.SelectedIndex = 0;
