@@ -33,10 +33,18 @@ public partial class colegioPost : System.Web.UI.Page
                 {
                     lblArtigoUnico1.Text = postagemExibicao.PostagemMeioUm.Corpo.Substring(0, 4000);
                 }
+                else
+                {
+                    lblArtigoUnico1.Text = postagemExibicao.PostagemMeioUm.Corpo; 
+                }
 
                 if (postagemExibicao.PostagemMeioUm.Titulo.Length > 40)
                 {
                     lblTituloMeio1.Text = postagemExibicao.PostagemMeioUm.Titulo.Substring(0, 40);
+                }
+                else
+                {
+                    lblTituloMeio1.Text = postagemExibicao.PostagemMeioUm.Titulo; 
                 }
             }
         }

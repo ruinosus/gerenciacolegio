@@ -115,7 +115,8 @@
         	<div class="direita_artigos"><!-- Inicio do Artigo 1 a Direita da Página -->
             
                 <div class="direita_artigos_titulo">
-                	<p><span class="style0Fund1"><asp:Label ID="lblTituloMeio4" runat="server" Text="TÍTULO 02" /> </span><asp:Image ID="imgTituloMeio4" runat="server" ImageUrl="App_Themes/Default/Imagens/barraArtigoEsquerda.png" Width="410" Height="6" /></p>                
+                	<p><span class="style0Fund1"><asp:Label ID="lblTituloDireita1" runat="server" 
+                            Text="TÍTULO 02" /> </span><asp:Image ID="imgTituloMeio4" runat="server" ImageUrl="App_Themes/Default/Imagens/barraArtigoEsquerda.png" Width="410" Height="6" /></p>                
                 </div>
               
               <div class="direita_artigos_texto_index2"><asp:Label ID="lblTextoArtigoDireita1" runat="server" /></div>
