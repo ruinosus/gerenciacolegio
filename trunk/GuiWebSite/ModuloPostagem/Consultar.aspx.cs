@@ -17,6 +17,7 @@ public partial class ModuloPostagem_Consultar : System.Web.UI.Page
     #endregion
     protected void Page_Load(object sender, EventArgs e)
     {
+        ClasseAuxiliar.ValidarUsuarioLogado();
         // ClasseAuxiliar.ValidarUsuarioLogado(true);
         PostagemSelecionar1.OnSelect += new EventHandler(PostagemSelecionar1_OnSelect);
         HabilitarBotoes();
@@ -113,6 +114,7 @@ public partial class ModuloPostagem_Consultar : System.Web.UI.Page
             postagem.ID = PostagemSelecionar1.IdPostagem;
 
             processo.Excluir(postagem);
+            processo.Confirmar();
             cvaAvisoDeInformacao.ErrorMessage = SiteConstantes.POSTAGEM_EXCLUIDA;
             cvaAvisoDeInformacao.IsValid = false;
             PostagemSelecionar1.Consultar();

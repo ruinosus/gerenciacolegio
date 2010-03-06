@@ -202,6 +202,12 @@
                             <asp:LinkButton runat="server" ID="lkbExAlunos" PostBackUrl="~/colegioConstrucao.aspx">Ex-Alunos</asp:LinkButton></li>
                         <li>
                             <asp:LinkButton runat="server" ID="LkbContato" PostBackUrl="~/colegioContato.aspx">Contato</asp:LinkButton></li>
+                            
+                             <li>
+                            <asp:LinkButton runat="server" ID="lkbAdmin" PostBackUrl="~/ModuloAdministrador/Admin.aspx">Admin</asp:LinkButton></li>
+                        <li>
+                            <asp:LinkButton runat="server" ID="lkbAlterarUsuario" OnClick="lkbAlterarUsuario_OnClick">Alterar</asp:LinkButton></li>
+                  
                     </ul>
                 </div>
                 <!-- Fim Menu Principal -->
