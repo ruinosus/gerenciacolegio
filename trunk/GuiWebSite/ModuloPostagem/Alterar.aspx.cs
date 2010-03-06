@@ -107,6 +107,8 @@ public partial class ModuloPostagem_Alterar : System.Web.UI.Page
         {
             IPostagemProcesso processo = PostagemProcesso.Instance;
 
+            if (((TipoPagina)int.Parse(ddlTipoPagina.SelectedValue)) == TipoPagina.NaoAlterar)
+                throw new Exception("Informe o tipo da página.");
             if (((TipoPostagem)int.Parse(ddlTipoPostagem.SelectedValue)) == TipoPostagem.NaoAlterar)
                 throw new Exception("Informe o tipo da postagem.");
             if (((LocalPostagem)int.Parse(ddlLocalPostagem.SelectedValue)) == LocalPostagem.NaoAlterar)
@@ -122,6 +124,7 @@ public partial class ModuloPostagem_Alterar : System.Web.UI.Page
 
             postagem.Local = int.Parse(ddlLocalPostagem.SelectedValue);
             postagem.Tipo = int.Parse(ddlTipoPostagem.SelectedValue);
+            postagem.Pagina = int.Parse(ddlTipoPagina.SelectedValue);
             if (fupImgPostagem.HasFile)
             {
                 HttpPostedFile myFile = fupImgPostagem.PostedFile;
