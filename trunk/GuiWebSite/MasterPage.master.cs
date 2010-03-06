@@ -17,7 +17,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
     private void CarregarLogin()
     {
         lkbAdmin.Visible = false;
-        lkbAlterarUsuario.Visible = false;
         if (Session["UsuarioLogado"] == null)
         {
             lblLogin.Text = "Login:";
@@ -36,7 +35,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
             lblLogin.Text = "Bem vindo(a), " + usuario.Login;
             lblSenha.Text = string.Empty;
             lkbAdmin.Visible = true;
-            lkbAlterarUsuario.Visible = false;
 
             txtLogin.Visible = false;
             txtSenha.Visible = false;
@@ -97,11 +95,5 @@ public partial class MasterPage : System.Web.UI.MasterPage
         CarregarLogin();
         ClasseAuxiliar.ValidarUsuarioLogado();
         System.Web.HttpContext.Current.Response.Redirect(BasicoConstantes.PAGINA_PRINCIPAL, false);
-    }
-
-    protected void lkbAlterarUsuario_OnClick(object sender, EventArgs e)
-    {
-        Session.Add("UsuarioAlterar", ClasseAuxiliar.UsuarioLogado);
-        Response.Redirect("~/ModuloUsuario/Alterar.aspx");
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Negocios.ModuloSite.Processos;
 using Negocios.ModuloBasico.VOs;
-using Negocios.ModuloBasico.Enums;
+using Negocios.ModuloSite.Processos;
 using Negocios.ModuloSite.VOs;
+using Negocios.ModuloBasico.Enums;
 
 public partial class colegioFundamental2 : System.Web.UI.Page
 {
@@ -18,7 +18,6 @@ public partial class colegioFundamental2 : System.Web.UI.Page
             CarregarTela();
         }
     }
-
 
     private void CarregarTela()
     {
@@ -85,5 +84,7 @@ public partial class colegioFundamental2 : System.Web.UI.Page
             }
 
         }
+
+
     }
 }

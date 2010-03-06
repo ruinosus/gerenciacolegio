@@ -28,9 +28,9 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
     {
 
         TipoPostagem tipo = (TipoPostagem)int.Parse(ddlTipoPostagem.SelectedValue);
+        TipoPagina tipoPagina = (TipoPagina)int.Parse(ddlTipoPagina.SelectedValue);
         lblLocalPostagem.Visible = true;
         ddlLocalPostagem.Visible = true;
-        ClasseAuxiliar.CarregarComboEnum<LocalPostagem>(ddlLocalPostagem);
         switch (tipo)
         {
             case TipoPostagem.NaoAlterar:
@@ -47,6 +47,29 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
                 }
         }
 
+        switch (tipoPagina)
+        {
+            case TipoPagina.Colegio:
+                {
+                    ClasseAuxiliar.CarregarComboEnum<LocalPostagemDefault>(ddlLocalPostagem);
+                    break;
+                }
+            case TipoPagina.FundamentalI:
+                {
+                    ClasseAuxiliar.CarregarComboEnum<LocalPostagemFundamental1>(ddlLocalPostagem);
+                    break;
+                }
+            case TipoPagina.FundamentalII:
+                {
+                    ClasseAuxiliar.CarregarComboEnum<LocalPostagemInfantilFund2>(ddlLocalPostagem);
+                    break;
+                }
+            case TipoPagina.EducacaoInfantil:
+                {
+                    ClasseAuxiliar.CarregarComboEnum<LocalPostagemInfantilFund2>(ddlLocalPostagem);
+                    break;
+                }
+        }
     }
 
     #region Métodos Privados
