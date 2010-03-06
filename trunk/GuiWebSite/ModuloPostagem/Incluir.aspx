@@ -4,7 +4,6 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
     Namespace="System.Web.UI" TagPrefix="ajax" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="corpo" runat="Server">
@@ -18,27 +17,39 @@
         <asp:CustomValidator ID="cvaAvisoDeInformacao" runat="server" ValidationGroup="AvisoDeInformacao"
             ForeColor="#14A351" Visible="False"></asp:CustomValidator>
     </div>
-    
     <table width="100%">
         <tr align="center">
             <td>
                 <table>
                     <tr>
-                        <td>
-                            <asp:Label ID="lblTipoPostagem" runat="server" Text="Tipo da Postagem:"></asp:Label>
-                        </td>
                         <ajax:UpdatePanel ID="updEnuns" runat="server">
                             <ContentTemplate>
-                                <td align="left">
-                                    <asp:DropDownList ID="ddlTipoPostagem" AutoPostBack="true" runat="server" OnSelectedIndexChanged="CarregarComboLocal">
-                                    </asp:DropDownList>
-                                </td>
-                                <td>
-                                    <asp:Label ID="lblLocalPostagem" runat="server" Text="Local da Postagem:"></asp:Label>
-                                </td>
-                                <td align="left">
-                                    <asp:DropDownList ID="ddlLocalPostagem" runat="server">
-                                    </asp:DropDownList>
+                                <td colspan="4">
+                                    <table>
+                                        <tr>
+                                            <td >
+                                                <asp:Label ID="lblTipoPagina" runat="server" Text="Tipo da Pagina:"></asp:Label>
+                                            </td>
+                                            <td >
+                                                <asp:DropDownList ID="ddlTipoPagina" AutoPostBack="true" runat="server" OnSelectedIndexChanged="CarregarComboTipoPagina">
+                                                </asp:DropDownList>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="lblTipoPostagem" runat="server" Text="Tipo da Postagem:"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:DropDownList ID="ddlTipoPostagem" AutoPostBack="true" runat="server" OnSelectedIndexChanged="CarregarComboLocal">
+                                                </asp:DropDownList>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="lblLocalPostagem" runat="server" Text="Local da Postagem:"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:DropDownList ID="ddlLocalPostagem" runat="server">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                             </ContentTemplate>
                         </ajax:UpdatePanel>
@@ -62,8 +73,8 @@
                             <asp:Label ID="lblCorpo" runat="server" Text="Corpo:"></asp:Label>
                         </td>
                         <td colspan="3" align="left">
-                            <asp:TextBox ID="txtCorpo"  runat="server" Height="90" Width="850" 
-                                AutoFocus="true" TextMode="MultiLine" />
+                            <asp:TextBox ID="txtCorpo" runat="server" Height="90" Width="850" AutoFocus="true"
+                                TextMode="MultiLine" />
                         </td>
                     </tr>
                     <tr>
@@ -77,7 +88,7 @@
                                 </ContentTemplate>
                                 <Triggers>
                                     <asp:PostBackTrigger ControlID="btnConfirmar" />
-<ajax:PostBackTrigger ControlID="btnConfirmar"></ajax:PostBackTrigger>
+                                    <ajax:PostBackTrigger ControlID="btnConfirmar"></ajax:PostBackTrigger>
                                 </Triggers>
                             </ajax:UpdatePanel>
                         </td>
