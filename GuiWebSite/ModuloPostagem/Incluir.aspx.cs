@@ -13,6 +13,7 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        ClasseAuxiliar.ValidarUsuarioLogado();
         if (!IsPostBack)
         {
             ClasseAuxiliar.CarregarComboEnum<TipoPostagem>(ddlTipoPostagem);
