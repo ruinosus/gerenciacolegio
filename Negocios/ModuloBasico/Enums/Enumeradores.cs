@@ -66,7 +66,6 @@ namespace Negocios.ModuloBasico.Enums
         MeioDois = 5,
         [Description("Meio Três")]
         MeioTres = 6,
-
         [Description("Direita Um")]
         DireitaUm = 7,
         [Description("Direita Dois")]

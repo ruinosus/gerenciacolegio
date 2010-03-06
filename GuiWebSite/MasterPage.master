@@ -13,6 +13,7 @@
         .style1
         {
             color: #0065AA;
+            text-align: left;
         }
         .style1Atividades
         {

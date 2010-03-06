@@ -29,8 +29,15 @@ public partial class colegioPost : System.Web.UI.Page
             PostagemExibicao postagemExibicao = processo.Consultar(TipoPagina.Colegio);
             if (postagemExibicao.PostagemMeioUm != null)
             {
-                lblArtigoUnico1.Text = postagemExibicao.PostagemMeioUm.Corpo;
-                lblTituloMeio1.Text = postagemExibicao.PostagemMeioUm.Titulo;
+                if (postagemExibicao.PostagemMeioUm.Corpo.Length > 4000)
+                {
+                    lblArtigoUnico1.Text = postagemExibicao.PostagemMeioUm.Corpo.Substring(0, 4000);
+                }
+
+                if (postagemExibicao.PostagemMeioUm.Titulo.Length > 40)
+                {
+                    lblTituloMeio1.Text = postagemExibicao.PostagemMeioUm.Titulo.Substring(0, 40);
+                }
             }
         }
     }

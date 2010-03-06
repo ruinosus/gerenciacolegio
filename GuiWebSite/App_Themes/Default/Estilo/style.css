@@ -327,7 +327,6 @@ input.button { padding: 3px; }
 }
 	.esquerda_artigos p {
 	margin: 0px;
-	text-align: justify;
 	color: #000;
 	padding-top: 0px;
 	padding-right: 5px;
@@ -686,7 +685,6 @@ input.button { padding: 3px; }
 }
 	.meio_artigos p {
 	margin: 0px;
-	text-align: left;
 	color: #000;
 	padding-top: 0px;
 	padding-right: 5px;
@@ -846,7 +844,6 @@ input.button { padding: 3px; }
 }
 	.direita_artigos p {
 	margin: 0px;
-	text-align: left;
 	color: #000;
 	padding-top: 0px;
 	padding-right: 5px;

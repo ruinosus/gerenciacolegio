@@ -25,7 +25,7 @@
               </div>
               
               <div class="esquerda_artigos_texto_index">
-              	<p><asp:Label ID="lblTextoArtigoEsquerda1" runat="server"/></p>
+              	<p align="justify"><asp:Label ID="lblTextoArtigoEsquerda1" runat="server"/></p>
               </div>
               
         	</div>
@@ -44,7 +44,7 @@
               </div>
               
               <div class="esquerda_artigos_imagem_index">
-              	<p><asp:Label ID="lblTextoArtigoEsquerda2" runat="server"/></p>
+              	<p align="justify"><asp:Label ID="lblTextoArtigoEsquerda2" runat="server"/></p>
               </div>
               
         	</div>
@@ -88,7 +88,7 @@
               </div>
               
               <div class="meio_artigos_texto_index">
-              	<p><asp:Label ID="lblTextoArtigoMeio1" runat="server"/></p>
+              	<p align="justify"><asp:Label ID="lblTextoArtigoMeio1" runat="server"/></p>
               </div>
               
               <div class="meio_artigos_imagem_index"><asp:Image ID="imgArtigoMeio1" runat="server" Width="270"  Height="130" /> </div>
@@ -124,10 +124,11 @@
               </div>
               
               <div class="direita_artigos_texto_index">
-              	<p><asp:Label ID="lblTextoArtigoDireita1" runat="server"/></p>
+              	<p align="justify"><asp:Label ID="lblTextoArtigoDireita1" runat="server"/></p>
               </div>
               
-              <div class="direita_artigos_imagem_index"><asp:Image ID="Image1" runat="server" Width="290"  Height="165" /></div>            
+              <div class="direita_artigos_imagem_index"><asp:Image ID="imgArtigoDireita1" 
+                      runat="server" Width="290"  Height="165" /></div>            
             
             </div><!-- Fim direita_artigos -->
             
