@@ -33,6 +33,8 @@ public partial class ClasseAuxiliar
         {
             if (System.Web.HttpContext.Current.Session["UsuarioLogado"] != null)
                 usuarioLogado = (Usuario)System.Web.HttpContext.Current.Session["UsuarioLogado"];
+            else
+                usuarioLogado = null;
 
             return usuarioLogado;
         }
