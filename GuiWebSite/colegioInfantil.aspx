@@ -1,12 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="colegioMedio.aspx.cs" Inherits="colegioMedio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="colegioInfantil.aspx.cs" Inherits="colegioInfantil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="corpo" runat="Server"> 
             <div id="conteudoCorpo">
-            
-            <div class="esquerda2">
+              <div class="esquerda2">
         
         	<div class="esquerda_artigos_detalhe_superior2"><!-- Inicio da Curva de Estilo do Arquivo a Esquerda -->
         		<div class="esquerda_artigos_detalhe_superior_esquerda2"></div>
@@ -53,7 +52,10 @@
             </div>
             
         </div><!-- Fim esquerda -->
-            
+        
+        
+        <!-- Inicio do Conteúdo do Meio da Página -->
+        
                 <div class="meio2"><!-- Inicio do Conteúdo Meio da Página -->
         
         	<div class="meio_artigos_detalhe_superior2"><!-- Inicio da Curva de Estilo do Arquivo a Meio -->
@@ -64,28 +66,29 @@
             
         	<div class="meio_artigos"><!-- Inicio do Artigo 1 a Meio da Página -->
             
-             <div class="meio_artigos_titulo">
-                	<p><span class="style1Meio"><asp:Label ID="lblTituloMeio1" runat="server" Text="CURIOSIDADES" /> </span>
-                	<asp:Image ID="imgBarraArtigoMeio1" runat="server" ImageUrl="App_Themes/Default/Imagens/barraArtigoEsquerda_cor6.png" Width="320" Height="6" />    </p>                
+                <div class="meio_artigos_titulo">
+                	<p><span class="style1Fund1"><asp:Label ID="lblTituloMeio1" runat="server" Text="QUEM AMA CUIDA" /> 
+                	<asp:Image ID="imgTituloMeio1"  runat="server" ImageUrl="App_Themes/Default/Imagens/icone_coracoes.png" width="44" height="22" /></span>
+                	<asp:Image ID="imgBarraArtigoMeio1" runat="server" ImageUrl="App_Themes/Default/Imagens/barraArtigoEsquerda_cor1.png" Width="320" Height="6" />    </p>                
               </div>
                 
-              <div class="meio_artigos_texto_index3">
-              	<div class="meio_artigos_texto_index3_div1"><asp:Image ID="imgArtigo1Meio" runat="server" Width="150" Height="80" /> </div>
-              	<div class="meio_artigos_texto_index3_div2"><asp:Label ID="lblTextoArtigoMeio1" 
-                        runat="server" /></div>
-              </div>
-
-                
-              <div class="meio_artigos_texto_index5">
-              	<div class="meio_artigos_texto_index5_div1">
-              	<asp:Image ID="imgMedio1" runat="server" ImageUrl="App_Themes/Default/Imagens/imagemFundoLetras.png" Width="35" Height="220" hspace="0" vspace="0" border="0" /></div>
-              	<div class="meio_artigos_texto_index5_div2">
-              	<div class="meio_artigos_texto_index5_div2_div1"><asp:Image ID="imgArtigo2Meio" runat="server" Width="235" Height="80" /> </div>
-              	<div class="meio_artigos_texto_index5_div2_div2">
-                    <asp:Label ID="lblTextoArtigoMeio2" runat="server" /></div>
-              </div>
-              </div>
+              <div class="meio_artigos_texto_index3"><asp:Label ID="lblTextoArtigoMeio1" runat="server" /></div>
               
+                              <div class="meio_artigos_titulo">
+                 <p><span class="style2Fund1"><asp:Label ID="lblTituloMeio2" runat="server" Text="PÉ DE RUA" /></span>
+                	<asp:Image ID="imgBarraArtigoMeio2" runat="server" ImageUrl="App_Themes/Default/Imagens/barraArtigoEsquerda_cor2.png" Width="320" Height="6" />                
+                </div>
+                
+              <div class="meio_artigos_texto_index3"><asp:Label ID="lblTextoArtigoMeio2" runat="server" /></div>
+              
+                              <div class="meio_artigos_titulo">
+                              <p><span class="style3Fund1"><asp:Label ID="lblTituloMeio3" runat="server" Text="HORA DO LANCHE!" /> 
+                	<asp:Image ID="imgTituloMeio3"  runat="server" ImageUrl="App_Themes/Default/Imagens/icone_maca.png" width="20" height="27" /></span>
+                	<asp:Image ID="imgBarraArtigoMeio3" runat="server" ImageUrl="App_Themes/Default/Imagens/barraArtigoEsquerda_cor3.png" Width="320" Height="6" />    </p>                
+          
+              </div>
+                
+              <div class="meio_artigos_texto_index3"><asp:Label ID="lblTextoArtigoMeio3" runat="server" /></div>
               
             
             </div><!-- Fim meio_artigos -->
@@ -111,16 +114,14 @@
             
         	<div class="direita_artigos"><!-- Inicio do Artigo 1 a Direita da Página -->
             
+                <div class="direita_artigos_titulo">
+                	<p><span class="style0Fund1"><asp:Label ID="lblTituloDireita1" runat="server" 
+                            Text="TÍTULO 02" /> </span><asp:Image ID="imgTituloMeio4" runat="server" ImageUrl="App_Themes/Default/Imagens/barraArtigoEsquerda.png" Width="410" Height="6" /></p>                
+                </div>
               
-              <div class="meio_artigos_titulo">
-                	<p><span class="style1Atividades"><asp:Label ID="lblTituloDireita1" runat="server" 
-                            Text="TÍTULO 02" /></span> 
-                	<asp:Image ID="imgBarraArtigoMeio2" runat="server" ImageUrl="App_Themes/Default/Imagens/barraArtigoEsquerda.png" Width="410" Height="6" />    </p>                
-              </div>
-                
-              	<div class="direita_artigos_texto_index2"><asp:Label ID="lblTextoArtigoDireita1" 
-                        runat="server" /> </div>
-              	<div class="direita_artigos_imagem_index2"><asp:Image ID="imgArtigo3Meio" runat="server" Width="390" Height="130" /></div>          
+              <div class="direita_artigos_texto_index2"><asp:Label ID="lblTextoArtigoDireita1" runat="server" /></div>
+              <div class="direita_artigos_imagem_index2"><asp:Image ID="imgArtigo1Direita" runat="server" Width="390" Height="130" /></div>
+                        
             
             </div><!-- Fim direita_artigos -->
             

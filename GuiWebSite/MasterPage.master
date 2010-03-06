@@ -185,7 +185,7 @@
                             </ul>
                         </li>
                         <li>
-                            <asp:LinkButton runat="server" ID="lkbEdInfantil" PostBackUrl="~/colegioConstrucao.aspx">Educaç&atilde;o 
+                            <asp:LinkButton runat="server" ID="lkbEdInfantil" PostBackUrl="~/colegioInfantil.aspx">Educaç&atilde;o 
                         Infantil</asp:LinkButton></li>
                         <li>
                             <asp:LinkButton runat="server" ID="lkbFundamental1" PostBackUrl="~/colegioFundamental1.aspx">Fundamental 
@@ -194,20 +194,15 @@
                             <asp:LinkButton runat="server" ID="lkbFundamental2" PostBackUrl="~/colegioFundamental2.aspx">Fundamental 
                         II</asp:LinkButton></li>
                         <li>
-                            <asp:LinkButton runat="server" ID="lkbMedio" PostBackUrl="~/colegioMedio.aspx">Ensino<br /> 
+                            <asp:LinkButton runat="server" ID="lkbMedio" PostBackUrl="~/colegioConstrucao.aspx">Ensino<br /> 
                         Médio</asp:LinkButton></li>
                         <li>
                             <asp:LinkButton runat="server" ID="lkbAtividades" PostBackUrl="~/colegioAtividades.aspx">Atividades</asp:LinkButton></li>
-                        <li>
-                            <asp:LinkButton runat="server" ID="lkbExAlunos" PostBackUrl="~/colegioConstrucao.aspx">Ex-Alunos</asp:LinkButton></li>
                         <li>
                             <asp:LinkButton runat="server" ID="LkbContato" PostBackUrl="~/colegioContato.aspx">Contato</asp:LinkButton></li>
                             
                              <li>
                             <asp:LinkButton runat="server" ID="lkbAdmin" PostBackUrl="~/ModuloAdministrador/Admin.aspx">Admin</asp:LinkButton></li>
-                        <li>
-                            <asp:LinkButton runat="server" ID="lkbAlterarUsuario" OnClick="lkbAlterarUsuario_OnClick">Alterar</asp:LinkButton></li>
-                  
                     </ul>
                 </div>
                 <!-- Fim Menu Principal -->

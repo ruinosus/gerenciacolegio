@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloSite.Processos;
+using Negocios.ModuloBasico.VOs;
 using Negocios.ModuloSite.VOs;
 using Negocios.ModuloBasico.Enums;
 
-public partial class colegioMedio : System.Web.UI.Page
+public partial class colegioInfantil : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -19,6 +19,7 @@ public partial class colegioMedio : System.Web.UI.Page
         }
     }
 
+
     private void CarregarTela()
     {
         IPostagemProcesso processo = PostagemProcesso.Instance;
@@ -26,7 +27,7 @@ public partial class colegioMedio : System.Web.UI.Page
 
         if (PostagemList.Count > 0)
         {
-            PostagemExibicao postagemExibicao = processo.Consultar(TipoPagina.EnsinoMedio);
+            PostagemExibicao postagemExibicao = processo.Consultar(TipoPagina.EducacaoInfantil);
 
             if (postagemExibicao.PostagemMeioUm != null)
             {
@@ -58,7 +59,34 @@ public partial class colegioMedio : System.Web.UI.Page
                 else
                 {
                     lblTextoArtigoMeio2.Text = postagemExibicao.PostagemMeioDois.Corpo;
+                }
+                if (postagemExibicao.PostagemMeioDois.Titulo.Length > 20)
+                {
+                    lblTituloMeio2.Text = postagemExibicao.PostagemMeioDois.Titulo.Substring(0, 20);
+                }
+                else
+                {
+                    lblTituloMeio2.Text = postagemExibicao.PostagemMeioDois.Titulo;
+                }
+            }
 
+            if (postagemExibicao.PostagemMeioTres != null)
+            {
+                if (postagemExibicao.PostagemMeioTres.Corpo.Length > 320)
+                {
+                    lblTextoArtigoMeio3.Text = postagemExibicao.PostagemMeioTres.Corpo.Substring(0, 320);
+                }
+                else
+                {
+                    lblTextoArtigoMeio3.Text = postagemExibicao.PostagemMeioTres.Corpo;
+                }
+                if (postagemExibicao.PostagemMeioTres.Titulo.Length > 20)
+                {
+                    lblTituloMeio3.Text = postagemExibicao.PostagemMeioTres.Titulo.Substring(0, 20);
+                }
+                else
+                {
+                    lblTituloMeio3.Text = postagemExibicao.PostagemMeioTres.Titulo;
                 }
             }
 
@@ -84,7 +112,5 @@ public partial class colegioMedio : System.Web.UI.Page
             }
 
         }
-
-
     }
 }

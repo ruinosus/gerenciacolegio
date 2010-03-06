@@ -74,6 +74,46 @@ namespace Negocios.ModuloBasico.Enums
         DireitaTres = 9
     }
 
+    public enum LocalPostagemInfantilFund2
+    {
+        [Description("")]
+        NaoAlterar = 0,
+        [Description("Meio Um")]
+        MeioUm = 4,
+        [Description("Meio Dois")]
+        MeioDois = 5,
+        [Description("Direita Um")]
+        DireitaUm = 7
+    }
+
+    public enum LocalPostagemFundamental1
+    {
+        [Description("")]
+        NaoAlterar = 0,
+        [Description("Meio Um")]
+        MeioUm = 4,
+        [Description("Meio Dois")]
+        MeioDois = 5,
+        [Description("Meio Três")]
+        MeioTres = 6,
+        [Description("Direita Um")]
+        DireitaUm = 7
+    }
+
+    public enum LocalPostagemDefault
+    {
+        [Description("")]
+        NaoAlterar = 0,
+        [Description("Esquerda Um")]
+        EsquerdaUm = 1,
+        [Description("Esquerda Dois")]
+        EsquerdaDois = 2,
+        [Description("Meio Um")]
+        MeioUm = 4,
+        [Description("Direita Um")]
+        DireitaUm = 7
+    }
+
     public enum TipoPagina
     {
         [Description("")]
@@ -86,16 +126,8 @@ namespace Negocios.ModuloBasico.Enums
         FundamentalI = 3,
         [Description("Fundamental II")]
         FundamentalII = 4,
-        [Description("Ensino Médio")]
-        EnsinoMedio = 5,
         [Description("Atividades")]
         Atividades = 6,
-        [Description("Ex-Alunos")]
-        ExAlunos = 7,
-        [Description("Contato")]
-        Contato = 8,
-        [Description("Principal")]
-        Principal = 9
 
     }
 
@@ -111,8 +143,6 @@ namespace Negocios.ModuloBasico.Enums
         EventoEnsinoFundamentalI = 3,
         [Description("Evento Ensino Fundamental II")]
         EventoEnsinoFundamentalII = 4,
-        [Description("Evento Ensino Médio")]
-        EventoEnsinoMedio = 5,
         [Description("Atividade")]
         Atividade = 6
 
