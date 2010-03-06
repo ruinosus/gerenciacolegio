@@ -14,10 +14,12 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         ClasseAuxiliar.ValidarUsuarioLogado();
+
         if (!IsPostBack)
         {
-            ClasseAuxiliar.CarregarComboEnum<TipoPostagem>(ddlTipoPostagem);
-            CarregarComboLocal(null, null);
+            ClasseAuxiliar.CarregarComboEnum<TipoPagina>(ddlTipoPagina);
+
+            CarregarComboTipoPagina(null, null);
             LimparCampos();
         }
     }
@@ -34,24 +36,20 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
             case TipoPostagem.NaoAlterar:
                 {
                     lblLocalPostagem.Visible = false;
-                    ddlLocalPostagem.Visible = false;                   
+                    ddlLocalPostagem.Visible = false;
                     break;
                 }
             default:
                 {
                     lblLocalPostagem.Visible = true;
-                    ddlLocalPostagem.Visible = true; 
+                    ddlLocalPostagem.Visible = true;
                     break;
                 }
         }
 
-
     }
 
-
     #region Métodos Privados
-   
-
 
     protected void Confirmar(object sender, EventArgs e)
     {
@@ -59,6 +57,9 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
         {
             IPostagemProcesso processo = PostagemProcesso.Instance;
 
+
+            if (((TipoPagina)int.Parse(ddlTipoPagina.SelectedValue)) == TipoPagina.NaoAlterar)
+                throw new Exception("Informe o tipo da página.");
             if (((TipoPostagem)int.Parse(ddlTipoPostagem.SelectedValue)) == TipoPostagem.NaoAlterar)
                 throw new Exception("Informe o tipo da postagem.");
             if (((LocalPostagem)int.Parse(ddlLocalPostagem.SelectedValue)) == LocalPostagem.NaoAlterar)
@@ -70,9 +71,10 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
 
             postagem.Corpo = txtCorpo.Text;
 
-            
+
             postagem.Local = int.Parse(ddlLocalPostagem.SelectedValue);
             postagem.Tipo = int.Parse(ddlTipoPostagem.SelectedValue);
+            postagem.Pagina = int.Parse(ddlTipoPagina.SelectedValue);
             if (fupImgPostagem.HasFile)
             {
                 HttpPostedFile myFile = fupImgPostagem.PostedFile;
@@ -116,10 +118,37 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
         LimparCampos();
     }
 
+    protected void CarregarComboTipoPagina(object sender, EventArgs e)
+    {
+        TipoPagina tipoPagina = (TipoPagina)int.Parse(ddlTipoPagina.SelectedValue);
+        lblTipoPostagem.Visible = true;
+        ddlTipoPostagem.Visible = true;
+        lblLocalPostagem.Visible = true;
+        ddlLocalPostagem.Visible = true;
+        switch (tipoPagina)
+        {
+            case TipoPagina.NaoAlterar:
+                {
+                    lblTipoPostagem.Visible = false;
+                    ddlTipoPostagem.Visible = false;
+                    lblLocalPostagem.Visible = false;
+                    ddlLocalPostagem.Visible = false;
+                    break;
+                }
+            default:
+                {
+                    ClasseAuxiliar.CarregarComboEnum<TipoPostagem>(ddlTipoPostagem);
+                    CarregarComboLocal(null, null);
+                    break;
+                }
+        }
+
+    }
+
     private void LimparCampos()
     {
- 
-        txtCorpo.Text= string.Empty;
+
+        txtCorpo.Text = string.Empty;
         txtTitulo.Text = string.Empty;
         txtSubTitulo.Text = string.Empty;
         ddlLocalPostagem.SelectedIndex = 0;

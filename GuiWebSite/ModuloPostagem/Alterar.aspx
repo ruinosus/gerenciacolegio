@@ -23,21 +23,34 @@
             <td>
                 <table>
                     <tr>
-                        <td>
-                            <asp:Label ID="lblTipoPostagem" runat="server" Text="Tipo da Postagem:"></asp:Label>
-                        </td>
                         <ajax:UpdatePanel ID="updEnuns" runat="server">
                             <ContentTemplate>
-                                <td align="left">
-                                    <asp:DropDownList ID="ddlTipoPostagem" AutoPostBack="true" runat="server" OnSelectedIndexChanged="CarregarComboLocal">
-                                    </asp:DropDownList>
-                                </td>
-                                <td>
-                                    <asp:Label ID="lblLocalPostagem" runat="server" Text="Local da Postagem:"></asp:Label>
-                                </td>
-                                <td align="left">
-                                    <asp:DropDownList ID="ddlLocalPostagem" runat="server">
-                                    </asp:DropDownList>
+                                <td colspan="4">
+                                    <table>
+                                        <tr>
+                                            <td >
+                                                <asp:Label ID="lblTipoPagina" runat="server" Text="Tipo da Pagina:"></asp:Label>
+                                            </td>
+                                            <td >
+                                                <asp:DropDownList ID="ddlTipoPagina" AutoPostBack="true" runat="server" OnSelectedIndexChanged="CarregarComboTipoPagina">
+                                                </asp:DropDownList>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="lblTipoPostagem" runat="server" Text="Tipo da Postagem:"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:DropDownList ID="ddlTipoPostagem" AutoPostBack="true" runat="server" OnSelectedIndexChanged="CarregarComboLocal">
+                                                </asp:DropDownList>
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="lblLocalPostagem" runat="server" Text="Local da Postagem:"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:DropDownList ID="ddlLocalPostagem" runat="server">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </td>
                             </ContentTemplate>
                         </ajax:UpdatePanel>

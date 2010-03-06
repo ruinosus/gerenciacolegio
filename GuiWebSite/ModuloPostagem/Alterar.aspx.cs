@@ -16,9 +16,9 @@ public partial class ModuloPostagem_Alterar : System.Web.UI.Page
         ClasseAuxiliar.ValidarUsuarioLogado();
         if (!IsPostBack)
         {
+            ClasseAuxiliar.CarregarComboEnum<TipoPagina>(ddlTipoPagina);
 
-            ClasseAuxiliar.CarregarComboEnum<TipoPostagem>(ddlTipoPostagem);
-            
+            CarregarComboTipoPagina(null, null);
             LimparCampos();
             CarregarDados();
         }
@@ -40,6 +40,34 @@ public partial class ModuloPostagem_Alterar : System.Web.UI.Page
             txtTitulo.Text = postagem.Titulo;
             //fupImgPostagem.
         }
+    }
+
+
+    protected void CarregarComboTipoPagina(object sender, EventArgs e)
+    {
+        TipoPagina tipoPagina = (TipoPagina)int.Parse(ddlTipoPagina.SelectedValue);
+        lblTipoPostagem.Visible = true;
+        ddlTipoPostagem.Visible = true;
+        lblLocalPostagem.Visible = true;
+        ddlLocalPostagem.Visible = true;
+        switch (tipoPagina)
+        {
+            case TipoPagina.NaoAlterar:
+                {
+                    lblTipoPostagem.Visible = false;
+                    ddlTipoPostagem.Visible = false;
+                    lblLocalPostagem.Visible = false;
+                    ddlLocalPostagem.Visible = false;
+                    break;
+                }
+            default:
+                {
+                    ClasseAuxiliar.CarregarComboEnum<TipoPostagem>(ddlTipoPostagem);
+                    CarregarComboLocal(null, null);
+                    break;
+                }
+        }
+
     }
 
     protected void CarregarComboLocal(object sender, EventArgs e)
