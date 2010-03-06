@@ -74,7 +74,8 @@
                 
               <div class="meio_artigos_texto_index3">
               	<div class="meio_artigos_texto_index3_div1"><asp:Image ID="imgArtigo1Meio" runat="server" Width="150" Height="80" /> </div>
-              	<div class="meio_artigos_texto_index3_div2"><asp:Label ID="lblTextoArtigoMeio2" runat="server" /></div>
+              	<div class="meio_artigos_texto_index3_div2"><asp:Label ID="lblTextoArtigoMeio1" 
+                        runat="server" /></div>
               </div>
               
               <div class="meio_artigos_titulo">
@@ -84,7 +85,7 @@
               </div>
                 
               <div class="meio_artigos_texto_index3">
-              	<div class="meio_artigos_texto_index4_div1"><asp:Label ID="lblTextoArtigoMeio3" runat="server" /> </div>
+              	<div class="meio_artigos_texto_index4_div1"><asp:Label ID="lblTextoArtigoMeio2" runat="server" /> </div>
               	<div class="meio_artigos_texto_index4_div2"><asp:Image ID="imgArtigo2Meio" runat="server" Width="150" Height="160" /></div>
               </div>
               

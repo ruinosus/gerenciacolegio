@@ -36,7 +36,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
             lblLogin.Text = "Bem vindo(a), " + usuario.Login;
             lblSenha.Text = string.Empty;
             lkbAdmin.Visible = true;
-            lkbAlterarUsuario.Visible = true;
+            lkbAlterarUsuario.Visible = false;
 
             txtLogin.Visible = false;
             txtSenha.Visible = false;

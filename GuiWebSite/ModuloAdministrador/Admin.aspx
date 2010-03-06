@@ -10,19 +10,10 @@
                 <table>
                     <tr>
                         <td>
-                            <asp:Label ID="lblUsuario" runat="server" Text="Verificar Usuários"></asp:Label>
-                        </td>
-                        <td>
-                            <asp:ImageButton ID="imgUsuario" runat="server" ImageUrl="~/App_Themes/Default/images/usuarios.png"
-                                PostBackUrl="~/ModuloUsuario/Consultar.aspx" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
                          <asp:Label ID="lblPostagem" runat="server" Text="Painel de Postagens"></asp:Label>
                         </td>
                         <td>
-                         <asp:ImageButton ID="imgPostagem" runat="server" ImageUrl="~/App_Themes/Default/images/postagens.png"
+                         <asp:ImageButton ID="imgPostagem" runat="server" ImageUrl="~/App_Themes/Default/Imagens/postagens.png"
                                 PostBackUrl="~/ModuloPostagem/Consultar.aspx" />
 
                         </td>

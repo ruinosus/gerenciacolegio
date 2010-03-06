@@ -80,27 +80,26 @@ namespace Negocios.ModuloSite.Processos
             List<Postagem> PostagemList = Consultar();
             #region Direita
             resultado.PostagemDireitaUm = (from p in PostagemList
-                                           where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.DireitaUm
+                                           where p.Pagina == (int)tipo && p.Local == (int)LocalPostagem.DireitaUm
                                            select p).SingleOrDefault();
             resultado.PostagemDireitaTres = (from p in PostagemList
-                                             where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.DireitaTres
+                                             where p.Pagina == (int)tipo && p.Local == (int)LocalPostagem.DireitaTres
                                              select p).SingleOrDefault();
             resultado.PostagemDireitaDois = (from p in PostagemList
-                                             where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.DireitaDois
+                                             where p.Pagina == (int)tipo && p.Local == (int)LocalPostagem.DireitaDois
                                              select p).SingleOrDefault();
             #endregion
 
             #region Esquerda
 
             resultado.PostagemEsquerdaDois = (from p in PostagemList
-                                              where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.EsquerdaDois
+                                              where p.Pagina == (int)tipo && p.Local == (int)LocalPostagem.EsquerdaDois
                                               select p).SingleOrDefault();
             resultado.PostagemEsquerdaTres = (from p in PostagemList
-                                              where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.EsquerdaTres
+                                              where p.Pagina == (int)tipo && p.Local == (int)LocalPostagem.EsquerdaTres
                                               select p).SingleOrDefault();
-
             resultado.PostagemEsquerdaUm = (from p in PostagemList
-                                            where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.EsquerdaUm
+                                            where p.Pagina == (int)tipo && p.Local == (int)LocalPostagem.EsquerdaUm
                                             select p).SingleOrDefault();
 
             #endregion
@@ -108,14 +107,13 @@ namespace Negocios.ModuloSite.Processos
             #region Meio
 
             resultado.PostagemMeioDois = (from p in PostagemList
-                                          where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.MeioDois
+                                          where p.Pagina == (int)tipo && p.Local == (int)LocalPostagem.MeioDois
                                           select p).SingleOrDefault();
             resultado.PostagemMeioTres = (from p in PostagemList
-                                          where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.MeioTres
+                                          where p.Pagina == (int)tipo && p.Local == (int)LocalPostagem.MeioTres
                                           select p).SingleOrDefault();
-
             resultado.PostagemMeioUm = (from p in PostagemList
-                                        where p.Tipo == (int)tipo && p.Local == (int)LocalPostagem.MeioUm
+                                        where p.Pagina == (int)tipo && p.Local == (int)LocalPostagem.MeioUm
                                         select p).SingleOrDefault();
 
             #endregion

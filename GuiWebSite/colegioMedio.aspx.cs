@@ -30,14 +30,22 @@ public partial class colegioMedio : System.Web.UI.Page
 
             if (postagemExibicao.PostagemMeioUm != null)
             {
-                if (postagemExibicao.PostagemMeioUm.Corpo.Length > 320)
+                if (postagemExibicao.PostagemMeioUm.Corpo.Length > 80)
                 {
-                    lblTextoArtigoMeio1.Text = postagemExibicao.PostagemMeioUm.Corpo.Substring(0, 320);
+                    lblTextoArtigoMeio1.Text = postagemExibicao.PostagemMeioUm.Corpo.Substring(0, 80);
+                }
+                else
+                {
+                    lblTextoArtigoMeio1.Text = postagemExibicao.PostagemMeioUm.Corpo;
                 }
 
                 if (postagemExibicao.PostagemMeioUm.Titulo.Length > 20)
                 {
                     lblTituloMeio1.Text = postagemExibicao.PostagemMeioUm.Titulo.Substring(0, 20);
+                }
+                else
+                {
+                    lblTituloMeio1.Text = postagemExibicao.PostagemMeioUm.Titulo;
                 }
             }
 
@@ -47,7 +55,11 @@ public partial class colegioMedio : System.Web.UI.Page
                 {
                     lblTextoArtigoMeio2.Text = postagemExibicao.PostagemMeioDois.Corpo.Substring(0, 320);
                 }
+                else
+                {
+                    lblTextoArtigoMeio2.Text = postagemExibicao.PostagemMeioDois.Corpo;
 
+                }
             }
 
             if (postagemExibicao.PostagemDireitaUm != null)
@@ -56,10 +68,18 @@ public partial class colegioMedio : System.Web.UI.Page
                 {
                     lblTextoArtigoDireita1.Text = postagemExibicao.PostagemDireitaUm.Corpo.Substring(0, 284);
                 }
+                else
+                {
+                    lblTextoArtigoDireita1.Text = postagemExibicao.PostagemDireitaUm.Corpo;
 
+                }
                 if (postagemExibicao.PostagemDireitaUm.Titulo.Length > 20)
                 {
                     lblTituloDireita1.Text = postagemExibicao.PostagemDireitaUm.Titulo.Substring(0, 20);
+                }
+                else
+                {
+                    lblTituloDireita1.Text = postagemExibicao.PostagemDireitaUm.Titulo;
                 }
             }
 
