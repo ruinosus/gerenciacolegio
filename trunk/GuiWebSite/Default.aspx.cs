@@ -29,21 +29,55 @@ public partial class _Default : System.Web.UI.Page
             PostagemExibicao postagemExibicao = processo.Consultar(TipoPagina.Colegio);
             if (postagemExibicao.PostagemEsquerdaUm != null)
             {
-                lblTextoArtigoEsquerda1.Text = postagemExibicao.PostagemEsquerdaUm.Corpo;
-                lblTituloEsquerda1.Text = postagemExibicao.PostagemEsquerdaUm.Titulo;
+                if (postagemExibicao.PostagemEsquerdaUm.Corpo.Length > 230)
+                {
+                    lblTextoArtigoEsquerda1.Text = postagemExibicao.PostagemEsquerdaUm.Corpo.Substring(0, 230);
+                }
+
+                if (postagemExibicao.PostagemEsquerdaUm.Titulo.Length > 20)
+                {
+                    lblTituloEsquerda1.Text = postagemExibicao.PostagemEsquerdaUm.Titulo.Substring(0, 20);
+                }
             }
 
             if (postagemExibicao.PostagemEsquerdaDois != null)
             {
-                lblTextoArtigoEsquerda2.Text = postagemExibicao.PostagemEsquerdaDois.Corpo;
-                lblTituloEsquerda2.Text = postagemExibicao.PostagemEsquerdaDois.Titulo;
+                if (postagemExibicao.PostagemEsquerdaDois.Corpo.Length > 160)
+                {
+                    lblTextoArtigoEsquerda2.Text = postagemExibicao.PostagemEsquerdaDois.Corpo.Substring(0, 160);
+                }
+
+                if (postagemExibicao.PostagemEsquerdaDois.Titulo.Length > 20)
+                {
+                    lblTituloEsquerda2.Text = postagemExibicao.PostagemEsquerdaDois.Titulo.Substring(0, 20);
+                }
             }
 
             if (postagemExibicao.PostagemMeioUm != null)
             {
-                lblTextoArtigoMeio1.Text = postagemExibicao.PostagemMeioUm.Corpo;
-                lblTituloMeio1.Text = postagemExibicao.PostagemMeioUm.Titulo;
-            }            
+                if (postagemExibicao.PostagemMeioUm.Corpo.Length > 320)
+                {
+                    lblTextoArtigoMeio1.Text = postagemExibicao.PostagemMeioUm.Corpo.Substring(0, 320);
+                }
+
+                if (postagemExibicao.PostagemMeioUm.Titulo.Length > 20)
+                {
+                    lblTituloMeio1.Text = postagemExibicao.PostagemMeioUm.Titulo.Substring(0, 20);
+                }
+            }
+
+            if (postagemExibicao.PostagemDireitaUm != null)
+            {
+                if (postagemExibicao.PostagemDireitaUm.Corpo.Length > 284)
+                {
+                    lblTextoArtigoDireita1.Text = postagemExibicao.PostagemDireitaUm.Corpo.Substring(0, 284);
+                }
+
+                if (postagemExibicao.PostagemDireitaUm.Titulo.Length > 20)
+                {
+                    lblTituloDireita1.Text = postagemExibicao.PostagemDireitaUm.Titulo.Substring(0, 20);
+                }
+            }  
 
         }
 
