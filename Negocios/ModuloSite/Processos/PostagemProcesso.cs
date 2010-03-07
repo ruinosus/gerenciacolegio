@@ -55,6 +55,26 @@ namespace Negocios.ModuloSite.Processos
             //this.postagemRepositorio.Excluir(postagem);
         }
 
+        public bool verificaSeJaExiste(Postagem postagem)
+        {
+            bool resultadoVerificacao = false;
+
+            List<Postagem> resultadoConsulta = new List<Postagem>();
+            resultadoConsulta = Consultar();
+
+            foreach (Postagem p in resultadoConsulta)
+            {
+                if (p.Local == postagem.Local &&
+                    p.Pagina == postagem.Pagina &&
+                    p.Tipo == postagem.Tipo)
+                {
+                    resultadoVerificacao = true;
+                }
+            }
+
+            return resultadoVerificacao;
+        }
+
         public void Alterar(Postagem postagem)
         {
             this.postagemRepositorio.Alterar(postagem);
