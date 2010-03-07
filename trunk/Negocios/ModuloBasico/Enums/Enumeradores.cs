@@ -74,7 +74,7 @@ namespace Negocios.ModuloBasico.Enums
         DireitaTres = 9
     }
 
-    public enum LocalPostagemInfantilFund2
+    public enum LocalPostagemFundamental
     {
         [Description("")]
         NaoAlterar = 0,
@@ -86,7 +86,7 @@ namespace Negocios.ModuloBasico.Enums
         DireitaUm = 7
     }
 
-    public enum LocalPostagemFundamental1
+    public enum LocalPostagemInfantil
     {
         [Description("")]
         NaoAlterar = 0,

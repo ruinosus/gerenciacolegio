@@ -54,8 +54,10 @@
                 </tr>
                 <tr>
                   <td height="19" colspan="2">
-                    <asp:Button ID="btnEnviar" runat="server" Text="Enviar" />
-                    <asp:Button ID="btnLimpar" runat="server" Text="Limpar" />                 
+                    <asp:Button ID="btnEnviar" runat="server" Text="Enviar" 
+                          onclick="btnEnviar_Click" />
+                    <asp:Button ID="btnLimpar" runat="server" Text="Limpar" 
+                          onclick="btnLimpar_Click" />                 
                   </td>
                 </tr>
               </table>

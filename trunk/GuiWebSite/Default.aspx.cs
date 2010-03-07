@@ -11,6 +11,7 @@ using Negocios.ModuloSite.VOs;
 
 public partial class _Default : System.Web.UI.Page
 {
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -18,7 +19,6 @@ public partial class _Default : System.Web.UI.Page
             CarregarTela();
         }
     }
-
     private void CarregarTela()
     {
         IPostagemProcesso processo = PostagemProcesso.Instance;
@@ -110,10 +110,6 @@ public partial class _Default : System.Web.UI.Page
                     lblTituloDireita1.Text = postagemExibicao.PostagemDireitaUm.Titulo;
                 }
             }
-
         }
-
-
     }
-
 }
