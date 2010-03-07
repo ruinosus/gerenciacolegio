@@ -17,9 +17,11 @@ public partial class ModuloPostagem_Alterar : System.Web.UI.Page
         if (!IsPostBack)
         {
             ClasseAuxiliar.CarregarComboEnum<TipoPagina>(ddlTipoPagina);
+            ClasseAuxiliar.CarregarComboEnum<TipoPostagem>(ddlTipoPostagem);
+            ClasseAuxiliar.CarregarComboEnum<LocalPostagem>(ddlLocalPostagem);
 
-            CarregarComboTipoPagina(null, null);
             LimparCampos();
+            AlterarCenario();
             CarregarDados();
         }
     }
@@ -30,9 +32,8 @@ public partial class ModuloPostagem_Alterar : System.Web.UI.Page
         {
             Postagem postagem = (Postagem)Session["PostagemAlterar"];
 
-
+            ddlTipoPagina.SelectedValue = ((int)postagem.Pagina).ToString();
             ddlTipoPostagem.SelectedValue = ((int)postagem.Tipo).ToString();
-            CarregarComboLocal(null, null);
             ddlLocalPostagem.SelectedValue = ((int)postagem.Local).ToString();
             txtCorpo.Text= postagem.Corpo;
             
@@ -42,6 +43,15 @@ public partial class ModuloPostagem_Alterar : System.Web.UI.Page
         }
     }
 
+    protected void AlterarCenario()
+    {
+        ddlTipoPagina.Visible = true;
+        ddlTipoPostagem.Visible = true;
+        ddlLocalPostagem.Visible = true;
+        ddlLocalPostagem.Enabled = false;
+        ddlTipoPagina.Enabled = false;
+        ddlTipoPostagem.Enabled = false;
+    }
 
     protected void CarregarComboTipoPagina(object sender, EventArgs e)
     {

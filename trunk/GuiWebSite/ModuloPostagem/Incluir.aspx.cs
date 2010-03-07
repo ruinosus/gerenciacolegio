@@ -110,8 +110,14 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
 
                 postagem.ImagemI = ClasseAuxiliar.ImageToByteArray(thumbNailImg);
             }
-
-            processo.Incluir(postagem);
+            if (processo.verificaSeJaExiste(postagem))
+            {
+                processo.Alterar(postagem);
+            }
+            else
+            {
+                processo.Incluir(postagem);
+            }
             processo.Confirmar();
             cvaAvisoDeInformacao.ErrorMessage = SiteConstantes.POSTAGEM_INCLUIDA;
             cvaAvisoDeInformacao.IsValid = false;
