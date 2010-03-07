@@ -31,9 +31,9 @@ public partial class colegioInfantil : System.Web.UI.Page
 
             if (postagemExibicao.PostagemMeioUm != null)
             {
-                if (postagemExibicao.PostagemMeioUm.Corpo.Length > 80)
+                if (postagemExibicao.PostagemMeioUm.Corpo.Length > 260)
                 {
-                    lblTextoArtigoMeio1.Text = postagemExibicao.PostagemMeioUm.Corpo.Substring(0, 80);
+                    lblTextoArtigoMeio1.Text = postagemExibicao.PostagemMeioUm.Corpo.Substring(0, 260);
                 }
                 else
                 {
@@ -52,9 +52,9 @@ public partial class colegioInfantil : System.Web.UI.Page
 
             if (postagemExibicao.PostagemMeioDois != null)
             {
-                if (postagemExibicao.PostagemMeioDois.Corpo.Length > 320)
+                if (postagemExibicao.PostagemMeioDois.Corpo.Length > 260)
                 {
-                    lblTextoArtigoMeio2.Text = postagemExibicao.PostagemMeioDois.Corpo.Substring(0, 320);
+                    lblTextoArtigoMeio2.Text = postagemExibicao.PostagemMeioDois.Corpo.Substring(0, 260);
                 }
                 else
                 {
@@ -72,9 +72,9 @@ public partial class colegioInfantil : System.Web.UI.Page
 
             if (postagemExibicao.PostagemMeioTres != null)
             {
-                if (postagemExibicao.PostagemMeioTres.Corpo.Length > 320)
+                if (postagemExibicao.PostagemMeioTres.Corpo.Length > 265)
                 {
-                    lblTextoArtigoMeio3.Text = postagemExibicao.PostagemMeioTres.Corpo.Substring(0, 320);
+                    lblTextoArtigoMeio3.Text = postagemExibicao.PostagemMeioTres.Corpo.Substring(0, 265);
                 }
                 else
                 {
@@ -92,9 +92,9 @@ public partial class colegioInfantil : System.Web.UI.Page
 
             if (postagemExibicao.PostagemDireitaUm != null)
             {
-                if (postagemExibicao.PostagemDireitaUm.Corpo.Length > 284)
+                if (postagemExibicao.PostagemDireitaUm.Corpo.Length > 790)
                 {
-                    lblTextoArtigoDireita1.Text = postagemExibicao.PostagemDireitaUm.Corpo.Substring(0, 284);
+                    lblTextoArtigoDireita1.Text = postagemExibicao.PostagemDireitaUm.Corpo.Substring(0, 790);
                 }
                 else
                 {

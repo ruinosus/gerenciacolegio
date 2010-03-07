@@ -174,7 +174,7 @@
                 <div class="menu">
                     <!-- Inicio da Div do Menu Principal -->
                     <ul>
-                        <li><a href="#">Colégio</a>
+                        <li><asp:LinkButton runat="server" ID="lkbPrincipal" PostBackUrl="~/default.aspx">Colégio</asp:LinkButton>
                             <ul>
                                 <li>
                                     <asp:LinkButton runat="server" ID="lkbHistorico" PostBackUrl="~/colegioHistorico.aspx">Histórico</asp:LinkButton></li>

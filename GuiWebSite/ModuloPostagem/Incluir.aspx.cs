@@ -56,17 +56,17 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
                 }
             case TipoPagina.FundamentalI:
                 {
-                    ClasseAuxiliar.CarregarComboEnum<LocalPostagemFundamental1>(ddlLocalPostagem);
+                    ClasseAuxiliar.CarregarComboEnum<LocalPostagemFundamental>(ddlLocalPostagem);
                     break;
                 }
             case TipoPagina.FundamentalII:
                 {
-                    ClasseAuxiliar.CarregarComboEnum<LocalPostagemInfantilFund2>(ddlLocalPostagem);
+                    ClasseAuxiliar.CarregarComboEnum<LocalPostagemFundamental>(ddlLocalPostagem);
                     break;
                 }
             case TipoPagina.EducacaoInfantil:
                 {
-                    ClasseAuxiliar.CarregarComboEnum<LocalPostagemInfantilFund2>(ddlLocalPostagem);
+                    ClasseAuxiliar.CarregarComboEnum<LocalPostagemInfantil>(ddlLocalPostagem);
                     break;
                 }
         }
