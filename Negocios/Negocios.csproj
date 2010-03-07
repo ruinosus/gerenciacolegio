@@ -79,6 +79,7 @@
     <Compile Include="ModuloBasico\VOs\CoreList.cs" />
     <Compile Include="ModuloBasico\VOs\DataTableConverter.cs" />
     <Compile Include="ModuloBasico\VOs\Interfaces\IDataTableConverter.cs" />
+    <Compile Include="ModuloBasico\VOs\MapeamentoImagens.cs" />
     <Compile Include="ModuloBasico\VOs\Serializador.cs" />
     <Compile Include="ModuloBasico\VOs\Singleton.cs" />
     <Compile Include="ModuloBasico\VOs\Memoria.cs" />

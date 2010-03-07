@@ -71,9 +71,15 @@ public partial class _Default : System.Web.UI.Page
 
             if (postagemExibicao.PostagemMeioUm != null)
             {
-                if (postagemExibicao.PostagemMeioUm.ImagemI != null)
+                if (postagemExibicao.PostagemMeioUm.ImagemI != null &&
+                    postagemExibicao.PostagemMeioUm.ImagemI.Length > 0)
                 {
+                    imgArtigoMeio1.Visible = true;
                     imgArtigoMeio1.ImageUrl = "~/ModuloAuxiliar/Handler.ashx?postId=" + postagemExibicao.PostagemMeioUm.ID;
+                }
+                else
+                {
+                    imgArtigoMeio1.Visible = false;
                 }
 
                 if (postagemExibicao.PostagemMeioUm.Corpo.Length > 320)
@@ -97,9 +103,15 @@ public partial class _Default : System.Web.UI.Page
 
             if (postagemExibicao.PostagemDireitaUm != null)
             {
-                if (postagemExibicao.PostagemDireitaUm.ImagemI != null)
+                if (postagemExibicao.PostagemDireitaUm.ImagemI != null &&
+                    postagemExibicao.PostagemDireitaUm.ImagemI.Length > 0)
                 {
+                    imgArtigoDireita1.Visible = true;
                     imgArtigoDireita1.ImageUrl = "~/ModuloAuxiliar/Handler.ashx?postId=" + postagemExibicao.PostagemDireitaUm.ID;
+                }
+                else
+                {
+                    imgArtigoDireita1.Visible = false;
                 }
 
 

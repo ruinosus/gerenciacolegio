@@ -100,13 +100,15 @@ public partial class ModuloPostagem_Incluir : System.Web.UI.Page
             postagem.Pagina = int.Parse(ddlTipoPagina.SelectedValue);
             if (fupImgPostagem.HasFile)
             {
+                MapeamentoImagens imagemMapeada = ClasseAuxiliar.obterImagemMapeada(postagem);
+
                 HttpPostedFile myFile = fupImgPostagem.PostedFile;
 
                 System.Drawing.Image fullSizeImg = System.Drawing.Image.FromStream(myFile.InputStream);
 
                 System.Drawing.Image.GetThumbnailImageAbort dummyCallBack = new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback);
 
-                System.Drawing.Image thumbNailImg = fullSizeImg.GetThumbnailImage(200, 200, dummyCallBack, IntPtr.Zero);
+                System.Drawing.Image thumbNailImg = fullSizeImg.GetThumbnailImage(imagemMapeada.Comprimento, imagemMapeada.Altura, dummyCallBack, IntPtr.Zero);
 
                 postagem.ImagemI = ClasseAuxiliar.ImageToByteArray(thumbNailImg);
             }
