@@ -98,5 +98,49 @@ public partial class ClasseAuxiliar
 
     }
 
+    public static List<MapeamentoImagens> listaMapeamento = new List<MapeamentoImagens>();
+
+    public static void CarregarMapeamentos()
+    {
+        MapeamentoImagens mapeamento1 = new MapeamentoImagens(4, 1, 1, 130, 270);
+        MapeamentoImagens mapeamento2 = new MapeamentoImagens(7, 1, 1, 290, 165);
+        MapeamentoImagens mapeamento3 = new MapeamentoImagens(7, 1, 2, 390, 130);
+        MapeamentoImagens mapeamento4 = new MapeamentoImagens(4, 1, 4, 150, 80);
+        MapeamentoImagens mapeamento5 = new MapeamentoImagens(5, 1, 4, 235, 80);
+        MapeamentoImagens mapeamento6 = new MapeamentoImagens(7, 1, 4, 390, 130);
+        MapeamentoImagens mapeamento7 = new MapeamentoImagens(4, 1, 3, 150, 80);
+        MapeamentoImagens mapeamento8 = new MapeamentoImagens(5, 1, 3, 150, 160);
+        MapeamentoImagens mapeamento9 = new MapeamentoImagens(7, 1, 3, 390, 130);
+
+        listaMapeamento.Add(mapeamento1);
+        listaMapeamento.Add(mapeamento2);
+        listaMapeamento.Add(mapeamento3);
+        listaMapeamento.Add(mapeamento4);
+        listaMapeamento.Add(mapeamento5);
+        listaMapeamento.Add(mapeamento6);
+        listaMapeamento.Add(mapeamento7);
+        listaMapeamento.Add(mapeamento8);
+        listaMapeamento.Add(mapeamento9);
+
+    }
+
+    public static MapeamentoImagens obterImagemMapeada(Postagem postagem)
+    {
+        ClasseAuxiliar.CarregarMapeamentos();
+        MapeamentoImagens imagemMapeada = new MapeamentoImagens();
+
+        foreach (MapeamentoImagens map in ClasseAuxiliar.listaMapeamento)
+        {
+            if (map.LocalPostagem == postagem.Local &&
+                map.PaginaPostagem == postagem.Pagina &&
+                map.TipoPostagem == postagem.Tipo)
+            {
+                imagemMapeada = map;
+            }
+        }
+
+        return imagemMapeada;
+    }
+
 
 }

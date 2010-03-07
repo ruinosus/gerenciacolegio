@@ -91,7 +91,7 @@
               	<p align="justify"><asp:Label ID="lblTextoArtigoMeio1" runat="server"/></p>
               </div>
               
-              <div class="meio_artigos_imagem_index"><asp:Image ID="imgArtigoMeio1" runat="server" Width="270"  Height="130" /> </div>
+              <div class="meio_artigos_imagem_index"><asp:Image ID="imgArtigoMeio1" runat="server" Width="270"  Height="130" Visible="False" /> </div>
             
             </div><!-- Fim meio_artigos -->
             
@@ -128,7 +128,7 @@
               </div>
               
               <div class="direita_artigos_imagem_index"><asp:Image ID="imgArtigoDireita1" 
-                      runat="server" Width="290"  Height="165" /></div>            
+                      runat="server" Width="290"  Height="165" Visible="False" /></div>            
             
             </div><!-- Fim direita_artigos -->
             

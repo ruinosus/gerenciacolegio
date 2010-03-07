@@ -120,7 +120,8 @@
                 </div>
               
               <div class="direita_artigos_texto_index2"><p><asp:Label ID="lblTextoArtigoDireita1" runat="server" /></p></div>
-              <div class="direita_artigos_imagem_index2"><asp:Image ID="imgArtigo1Direita" runat="server" Width="390" Height="130" /></div>
+              <div class="direita_artigos_imagem_index2"><asp:Image ID="imgArtigoDireita1" 
+                      runat="server" Width="390" Height="130" /></div>
                         
             
             </div><!-- Fim direita_artigos -->
