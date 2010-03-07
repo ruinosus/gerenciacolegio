@@ -71,6 +71,11 @@ public partial class _Default : System.Web.UI.Page
 
             if (postagemExibicao.PostagemMeioUm != null)
             {
+                if (postagemExibicao.PostagemMeioUm.ImagemI != null)
+                {
+                    imgArtigoMeio1.ImageUrl = "~/ModuloAuxiliar/Handler.ashx?postId=" + postagemExibicao.PostagemMeioUm.ID;
+                }
+
                 if (postagemExibicao.PostagemMeioUm.Corpo.Length > 320)
                 {
                     lblTextoArtigoMeio1.Text = postagemExibicao.PostagemMeioUm.Corpo.Substring(0, 320);
@@ -92,6 +97,12 @@ public partial class _Default : System.Web.UI.Page
 
             if (postagemExibicao.PostagemDireitaUm != null)
             {
+                if (postagemExibicao.PostagemDireitaUm.ImagemI != null)
+                {
+                    imgArtigoDireita1.ImageUrl = "~/ModuloAuxiliar/Handler.ashx?postId=" + postagemExibicao.PostagemDireitaUm.ID;
+                }
+
+
                 if (postagemExibicao.PostagemDireitaUm.Corpo.Length > 284)
                 {
                     lblTextoArtigoDireita1.Text = postagemExibicao.PostagemDireitaUm.Corpo.Substring(0, 284);
