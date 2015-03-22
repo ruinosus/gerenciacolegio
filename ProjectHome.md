@@ -1,0 +1,1 @@
+Software voltado para a Gerência de Colégio.
